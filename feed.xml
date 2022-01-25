@@ -3,10 +3,10 @@
     <channel>
         <title></title>
         <description>Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.</description>
-        <link>/</link>
-        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 25 Jan 2022 15:21:22 +0900</pubDate>
-        <lastBuildDate>Tue, 25 Jan 2022 15:21:22 +0900</lastBuildDate>
+        <link>staeho-3rd.github.io/</link>
+        <atom:link href="staeho-3rd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Tue, 25 Jan 2022 15:24:04 +0900</pubDate>
+        <lastBuildDate>Tue, 25 Jan 2022 15:24:04 +0900</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -21,8 +21,8 @@
 
 </description>
             <pubDate>Fri, 26 Feb 2016 00:00:00 +0900</pubDate>
-            <link>/samplepost.html</link>
-            <guid isPermaLink="true">/samplepost.html</guid>
+            <link>staeho-3rd.github.io/samplepost.html</link>
+            <guid isPermaLink="true">staeho-3rd.github.io/samplepost.html</guid>
             
             <category>news</category>
             
@@ -47,8 +47,8 @@
 
 </description>
             <pubDate>Wed, 24 Feb 2016 00:00:00 +0900</pubDate>
-            <link>/myupdate.html</link>
-            <guid isPermaLink="true">/myupdate.html</guid>
+            <link>staeho-3rd.github.io/myupdate.html</link>
+            <guid isPermaLink="true">staeho-3rd.github.io/myupdate.html</guid>
             
             <category>news</category>
             
@@ -61,8 +61,8 @@
 
 </description>
             <pubDate>Sun, 12 Apr 2015 00:00:00 +0900</pubDate>
-            <link>/test-post-from-last-year.html</link>
-            <guid isPermaLink="true">/test-post-from-last-year.html</guid>
+            <link>staeho-3rd.github.io/test-post-from-last-year.html</link>
+            <guid isPermaLink="true">staeho-3rd.github.io/test-post-from-last-year.html</guid>
             
             <category>news</category>
             

@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: staeho-3rd.github.io/docs/sitemap.xml

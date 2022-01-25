@@ -66,7 +66,7 @@
 					contentPreview = getPreview(query, item.content, 170),
 					titlePreview = getPreview(query, item.title);
 
-				resultsHTML += "<li><h3><a href='" + item.url.trim() + "'>" + titlePreview + "</a></h3><p><small>" + contentPreview + "</small></p></li>";
+				resultsHTML += "<li><h3><a href='/docs" + item.url.trim() + "'>" + titlePreview + "</a></h3><p><small>" + contentPreview + "</small></p></li>";
 			});
 
 			searchResultsEl.innerHTML = resultsHTML;
