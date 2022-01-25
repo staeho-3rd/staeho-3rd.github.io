@@ -3,10 +3,10 @@
     <channel>
         <title></title>
         <description>Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.</description>
-        <link>http://localhost:4001/</link>
-        <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 25 Jan 2022 14:55:27 +0900</pubDate>
-        <lastBuildDate>Tue, 25 Jan 2022 14:55:27 +0900</lastBuildDate>
+        <link>/</link>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Tue, 25 Jan 2022 15:21:22 +0900</pubDate>
+        <lastBuildDate>Tue, 25 Jan 2022 15:21:22 +0900</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -21,8 +21,8 @@
 
 </description>
             <pubDate>Fri, 26 Feb 2016 00:00:00 +0900</pubDate>
-            <link>http://localhost:4001/samplepost.html</link>
-            <guid isPermaLink="true">http://localhost:4001/samplepost.html</guid>
+            <link>/samplepost.html</link>
+            <guid isPermaLink="true">/samplepost.html</guid>
             
             <category>news</category>
             
@@ -47,8 +47,8 @@
 
 </description>
             <pubDate>Wed, 24 Feb 2016 00:00:00 +0900</pubDate>
-            <link>http://localhost:4001/myupdate.html</link>
-            <guid isPermaLink="true">http://localhost:4001/myupdate.html</guid>
+            <link>/myupdate.html</link>
+            <guid isPermaLink="true">/myupdate.html</guid>
             
             <category>news</category>
             
@@ -61,8 +61,8 @@
 
 </description>
             <pubDate>Sun, 12 Apr 2015 00:00:00 +0900</pubDate>
-            <link>http://localhost:4001/test-post-from-last-year.html</link>
-            <guid isPermaLink="true">http://localhost:4001/test-post-from-last-year.html</guid>
+            <link>/test-post-from-last-year.html</link>
+            <guid isPermaLink="true">/test-post-from-last-year.html</guid>
             
             <category>news</category>
             

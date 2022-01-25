@@ -3,19 +3,19 @@
   
   
   <url>
-    <loc>http://localhost:4001/samplepost.html</loc>
+    <loc>/samplepost.html</loc>
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/myupdate.html</loc>
+    <loc>/myupdate.html</loc>
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/test-post-from-last-year.html</loc>
+    <loc>/test-post-from-last-year.html</loc>
   </url>
   
   
@@ -25,7 +25,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/aws/aws_s3_lifecycle_management.html</loc>
+    <loc>/aws/aws_s3_lifecycle_management.html</loc>
     
         <lastmod>2021-09-16T00:00:00+09:00</lastmod>
     
@@ -34,7 +34,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/etc/etc_pdf_merge_php_sample.html</loc>
+    <loc>/etc/etc_pdf_merge_php_sample.html</loc>
     
         <lastmod>2021-05-03T00:00:00+09:00</lastmod>
     
@@ -45,7 +45,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_about.html</loc>
+    <loc>/mydoc_about.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -54,14 +54,14 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_about_ruby_gems_etc.html</loc>
+    <loc>/mydoc_about_ruby_gems_etc.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_adding_tooltips.html</loc>
+    <loc>/mydoc_adding_tooltips.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -70,7 +70,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_alerts.html</loc>
+    <loc>/mydoc_alerts.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -79,7 +79,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_atom_text_editor.html</loc>
+    <loc>/mydoc_atom_text_editor.html</loc>
     
         <lastmod>2016-03-20T00:00:00+09:00</lastmod>
     
@@ -88,7 +88,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_build_arguments.html</loc>
+    <loc>/mydoc_build_arguments.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -97,7 +97,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_build_scripts.html</loc>
+    <loc>/mydoc_build_scripts.html</loc>
     
         <lastmod>2016-11-30T00:00:00+09:00</lastmod>
     
@@ -106,7 +106,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_code_samples.html</loc>
+    <loc>/mydoc_code_samples.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -115,7 +115,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_collections.html</loc>
+    <loc>/mydoc_collections.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -124,7 +124,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_commenting_on_files.html</loc>
+    <loc>/mydoc_commenting_on_files.html</loc>
     
         <lastmod>2016-11-30T00:00:00+09:00</lastmod>
     
@@ -133,7 +133,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_conditional_logic.html</loc>
+    <loc>/mydoc_conditional_logic.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -142,7 +142,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_content_reuse.html</loc>
+    <loc>/mydoc_content_reuse.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -151,7 +151,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_exluding_files.html</loc>
+    <loc>/mydoc_exluding_files.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -160,7 +160,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_faq_layout.html</loc>
+    <loc>/mydoc_faq_layout.html</loc>
     
         <lastmod>2015-11-30T00:00:00+09:00</lastmod>
     
@@ -169,7 +169,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_generating_pdfs.html</loc>
+    <loc>/mydoc_generating_pdfs.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -178,7 +178,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_glossary.html</loc>
+    <loc>/mydoc_glossary.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -187,7 +187,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_help_api.html</loc>
+    <loc>/mydoc_help_api.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -196,7 +196,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_hyperlinks.html</loc>
+    <loc>/mydoc_hyperlinks.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -205,7 +205,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_icons.html</loc>
+    <loc>/mydoc_icons.html</loc>
     
         <lastmod>2016-07-16T00:00:00+09:00</lastmod>
     
@@ -214,7 +214,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_images.html</loc>
+    <loc>/mydoc_images.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -223,28 +223,28 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_install_jekyll_on_mac.html</loc>
+    <loc>/mydoc_install_jekyll_on_mac.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_install_jekyll_on_windows.html</loc>
+    <loc>/mydoc_install_jekyll_on_windows.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_introduction.html</loc>
+    <loc>/mydoc_introduction.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_iterm_profiles.html</loc>
+    <loc>/mydoc_iterm_profiles.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -253,7 +253,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_kb_layout.html</loc>
+    <loc>/mydoc_kb_layout.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -262,7 +262,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_labels.html</loc>
+    <loc>/mydoc_labels.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -271,14 +271,14 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_lists.html</loc>
+    <loc>/mydoc_lists.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_navtabs.html</loc>
+    <loc>/mydoc_navtabs.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -287,7 +287,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_pages.html</loc>
+    <loc>/mydoc_pages.html</loc>
     
         <lastmod>2016-07-16T00:00:00+09:00</lastmod>
     
@@ -296,7 +296,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_posts.html</loc>
+    <loc>/mydoc_posts.html</loc>
     
         <lastmod>2016-02-25T00:00:00+09:00</lastmod>
     
@@ -305,14 +305,14 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_publishing_github_pages.html</loc>
+    <loc>/mydoc_publishing_github_pages.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_push_build_to_server.html</loc>
+    <loc>/mydoc_push_build_to_server.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -321,7 +321,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_release_notes_50.html</loc>
+    <loc>/mydoc_release_notes_50.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -330,7 +330,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_release_notes_60.html</loc>
+    <loc>/mydoc_release_notes_60.html</loc>
     
         <lastmod>2016-07-16T00:00:00+09:00</lastmod>
     
@@ -339,7 +339,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_search_configuration.html</loc>
+    <loc>/mydoc_search_configuration.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -348,7 +348,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_series.html</loc>
+    <loc>/mydoc_series.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -357,7 +357,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_seriesdemo1.html</loc>
+    <loc>/mydoc_seriesdemo1.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -366,7 +366,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_seriesdemo2.html</loc>
+    <loc>/mydoc_seriesdemo2.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -375,7 +375,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_seriesdemo3.html</loc>
+    <loc>/mydoc_seriesdemo3.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -384,7 +384,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_seriesdemo4.html</loc>
+    <loc>/mydoc_seriesdemo4.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -393,7 +393,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_shuffle.html</loc>
+    <loc>/mydoc_shuffle.html</loc>
     
         <lastmod>2015-11-30T00:00:00+09:00</lastmod>
     
@@ -402,7 +402,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_sidebar_navigation.html</loc>
+    <loc>/mydoc_sidebar_navigation.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -411,7 +411,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_special_layouts.html</loc>
+    <loc>/mydoc_special_layouts.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -420,7 +420,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_support.html</loc>
+    <loc>/mydoc_support.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -429,7 +429,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_supported_features.html</loc>
+    <loc>/mydoc_supported_features.html</loc>
     
         <lastmod>2016-07-16T00:00:00+09:00</lastmod>
     
@@ -438,7 +438,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_syntax_highlighting.html</loc>
+    <loc>/mydoc_syntax_highlighting.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -447,7 +447,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_tables.html</loc>
+    <loc>/mydoc_tables.html</loc>
     
         <lastmod>2016-07-16T00:00:00+09:00</lastmod>
     
@@ -456,7 +456,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_tag_archives_overview.html</loc>
+    <loc>/mydoc_tag_archives_overview.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -465,7 +465,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_tags.html</loc>
+    <loc>/mydoc_tags.html</loc>
     
         <lastmod>2016-07-16T00:00:00+09:00</lastmod>
     
@@ -474,7 +474,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_themes.html</loc>
+    <loc>/mydoc_themes.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -483,7 +483,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_troubleshooting.html</loc>
+    <loc>/mydoc_troubleshooting.html</loc>
     
         <lastmod>2016-07-03T00:00:00+09:00</lastmod>
     
@@ -492,7 +492,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_webstorm_text_editor.html</loc>
+    <loc>/mydoc_webstorm_text_editor.html</loc>
     
         <lastmod>2016-03-20T00:00:00+09:00</lastmod>
     
@@ -501,7 +501,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_workflow_maps.html</loc>
+    <loc>/mydoc_workflow_maps.html</loc>
     
         <lastmod>2016-07-16T00:00:00+09:00</lastmod>
     
@@ -510,14 +510,14 @@
   
   
   <url>
-    <loc>http://localhost:4001/mydoc_yaml_tutorial.html</loc>
+    <loc>/mydoc_yaml_tutorial.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/analytics/ncloud_analytics_cloud_log_analytics_info.html</loc>
+    <loc>/analytics/ncloud_analytics_cloud_log_analytics_info.html</loc>
     
         <lastmod>2021-12-07T00:00:00+09:00</lastmod>
     
@@ -526,7 +526,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/api/ncloud_api_call_php_sample.html</loc>
+    <loc>/api/ncloud_api_call_php_sample.html</loc>
     
         <lastmod>2021-04-06T00:00:00+09:00</lastmod>
     
@@ -535,7 +535,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/application-service/ncloud_application_service_nshorturl_php_sample.html</loc>
+    <loc>/application-service/ncloud_application_service_nshorturl_php_sample.html</loc>
     
         <lastmod>2021-04-30T00:00:00+09:00</lastmod>
     
@@ -544,7 +544,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/database/ncloud_database_compare.html</loc>
+    <loc>/database/ncloud_database_compare.html</loc>
     
         <lastmod>2021-01-26T00:00:00+09:00</lastmod>
     
@@ -553,7 +553,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/management/ncloud_sub_account_guide.html</loc>
+    <loc>/management/ncloud_sub_account_guide.html</loc>
     
         <lastmod>2021-08-19T00:00:00+09:00</lastmod>
     
@@ -562,7 +562,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/media/ncloud_media_video_player_sample.html</loc>
+    <loc>/media/ncloud_media_video_player_sample.html</loc>
     
         <lastmod>2021-06-15T00:00:00+09:00</lastmod>
     
@@ -571,7 +571,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/networking/ncloud_networking_service_port_info.html</loc>
+    <loc>/networking/ncloud_networking_service_port_info.html</loc>
     
         <lastmod>2021-01-14T00:00:00+09:00</lastmod>
     
@@ -580,7 +580,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/security/ncloud_security_service_summary.html</loc>
+    <loc>/security/ncloud_security_service_summary.html</loc>
     
         <lastmod>2021-04-26T00:00:00+09:00</lastmod>
     
@@ -589,7 +589,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/compute/cloud_functions/ncloud_server_cloud_functions_dotnet_csharp_cmd.html</loc>
+    <loc>/compute/cloud_functions/ncloud_server_cloud_functions_dotnet_csharp_cmd.html</loc>
     
         <lastmod>2021-03-09T00:00:00+09:00</lastmod>
     
@@ -598,7 +598,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/compute/server/ncloud_server_vpc_create.html</loc>
+    <loc>/compute/server/ncloud_server_vpc_create.html</loc>
     
         <lastmod>2021-01-12T00:00:00+09:00</lastmod>
     
@@ -607,7 +607,7 @@
   
   
   <url>
-    <loc>http://localhost:4001/storage/ncloud_storage_compare.html</loc>
+    <loc>/storage/ncloud_storage_compare.html</loc>
     
         <lastmod>2020-12-28T00:00:00+09:00</lastmod>
     
@@ -616,175 +616,175 @@
   
   
   <url>
-    <loc>http://localhost:4001/news.html</loc>
+    <loc>/news.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/news_archive.html</loc>
+    <loc>/news_archive.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_landing_page.html</loc>
+    <loc>/p1_landing_page.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_sample1.html</loc>
+    <loc>/p1_sample1.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_sample2.html</loc>
+    <loc>/p1_sample2.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_sample3.html</loc>
+    <loc>/p1_sample3.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_sample4.html</loc>
+    <loc>/p1_sample4.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_sample5.html</loc>
+    <loc>/p1_sample5.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_sample6.html</loc>
+    <loc>/p1_sample6.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p1_sample7.html</loc>
+    <loc>/p1_sample7.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_landing_page.html</loc>
+    <loc>/p2_landing_page.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample1.html</loc>
+    <loc>/p2_sample1.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample10.html</loc>
+    <loc>/p2_sample10.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample11.html</loc>
+    <loc>/p2_sample11.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample12.html</loc>
+    <loc>/p2_sample12.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample13.html</loc>
+    <loc>/p2_sample13.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample14.html</loc>
+    <loc>/p2_sample14.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample2.html</loc>
+    <loc>/p2_sample2.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample3.html</loc>
+    <loc>/p2_sample3.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample4.html</loc>
+    <loc>/p2_sample4.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample5.html</loc>
+    <loc>/p2_sample5.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample6.html</loc>
+    <loc>/p2_sample6.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample7.html</loc>
+    <loc>/p2_sample7.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample8.html</loc>
+    <loc>/p2_sample8.html</loc>
     
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4001/p2_sample9.html</loc>
+    <loc>/p2_sample9.html</loc>
     
   </url>
   
