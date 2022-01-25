@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ncloud Security 서비스 요약">
+<meta name="keywords" content=",  Security">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Security 서비스 요약</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Security 서비스 요약" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<meta property="og:description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<link rel="canonical" href="http://localhost:4001/security/ncloud_security_service_summary.html" />
+<meta property="og:url" content="http://localhost:4001/security/ncloud_security_service_summary.html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Security 서비스 요약" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4001/security/ncloud_security_service_summary.html","description":"Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.","headline":"Security 서비스 요약","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>Security 서비스 요약 | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4001/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<header>
+<!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="/mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="/p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="/p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tech@3rdeyesys.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Security 서비스 요약 page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" placeholder="Search" autofocus>
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form> </div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+
+</header>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">3rdEyeSys Docs 2.0</li>
+  
+  
+  
+  <li>
+      <a title="Compute" href="#">Compute</a>
+      <ul>
+          
+          
+          
+          <li><a title="VPC 환경에서 서버 생성" href="/compute/server/ncloud_server_vpc_create.html">VPC 환경에서 서버 생성</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Cloud Functions" href="#">Cloud Functions</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법" href="/compute/cloud_functions/ncloud_server_cloud_functions_dotnet_csharp_cmd.html">Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Networking" href="#">Networking</a>
+      <ul>
+          
+          
+          
+          <li><a title="주요 서비스 포트(Port) 정보" href="/networking/ncloud_networking_service_port_info.html">주요 서비스 포트(Port) 정보</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Storage" href="#">Storage</a>
+      <ul>
+          
+          
+          
+          <li><a title="네이버 클라우드 스토리지 비교" href="/storage/ncloud_storage_compare.html">네이버 클라우드 스토리지 비교</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Database" href="#">Database</a>
+      <ul>
+          
+          
+          
+          <li><a title="설치형 DB서버와 관리형 Cloud DB 비교" href="/database/ncloud_database_compare.html">설치형 DB서버와 관리형 Cloud DB 비교</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Security" href="#">Security</a>
+      <ul>
+          
+          
+          
+          <li class="active"><a title="Security 서비스 요약" href="/security/ncloud_security_service_summary.html">Security 서비스 요약</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Management" href="#">Management</a>
+      <ul>
+          
+          
+          
+          <li><a title="Sub Account 생성 가이드" href="/management/ncloud_sub_account_guide.html">Sub Account 생성 가이드</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Analytics" href="#">Analytics</a>
+      <ul>
+          
+          
+          
+          <li><a title="Cloud Log Analytics에서 수집하는 로그 유형" href="/analytics/ncloud_analytics_cloud_log_analytics_info.html">Cloud Log Analytics에서 수집하는 로그 유형</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="API" href="#">API</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 Ncloud API를 호출하는 샘플 예제" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API를 호출하는 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Application Service" href="#">Application Service</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 nShortURL 서비스 이용하기 샘플 예제" href="/application-service/ncloud_application_service_nshorturl_php_sample.html">PHP로 nShortURL 서비스 이용하기 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Media" href="#">Media</a>
+      <ul>
+          
+          
+          
+          <li><a title="Video Player 구현하기 샘플 예제" href="/media/ncloud_media_video_player_sample.html">Video Player 구현하기 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="AWS" href="#">AWS</a>
+      <ul>
+          
+          
+          
+          <li><a title="AWS S3 수명 주기 (LifeCycle) 설정하기" href="/aws/aws_s3_lifecycle_management.html">AWS S3 수명 주기 (LifeCycle) 설정하기</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ETC" href="#">ETC</a>
+      <ul>
+          
+          
+          
+          <li><a title="Pdf 문서 합치기 PHP로 구현하는 방법" href="/etc/etc_pdf_merge_php_sample.html">Pdf 문서 합치기 PHP로 구현하는 방법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tag archives" href="#">Tag archives</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tag archives overview" href="/mydoc_tag_archives_overview.html">Tag archives overview</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Tag archive pages" href="#">Tag archive pages</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="VPC pages" href="/tag_vpc.html">VPC pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions pages" href="/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title=".Net (C#) pages" href="/tag_csharp.html">.Net (C#) pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account pages" href="/tag_account.html">Account pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Log pages" href="/tag_log.html">Log pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analytics pages" href="/tag_analytics.html">Analytics pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="API pages" href="/tag_api.html">API pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="PHP pages" href="/tag_php.html">PHP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Media pages" href="/tag_media.html">Media pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Object Storage pages" href="/tag_object_storage.html">Object Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="AWS pages" href="/tag_object_aws.html">AWS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="S3 pages" href="/tag_object_s3.html">S3 pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Security 서비스 요약</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Ncloud Security 서비스 요약</div>
+   
+
+    
+
+   <h2 id="개요">개요</h2>
+<p>네이버 클라우드에서 제공하는 Security 서비스 상품들을 간단한 설명과 함께 요약 정리한 내용입니다.
+이 내용도 파트너 테크데이에서 공개된 자료입니다.</p>
+
+<h2 id="서비스-요약">서비스 요약</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">구분</th>
+      <th style="text-align: left">상품</th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">침입탐지/대응</td>
+      <td style="text-align: left">Basic Security</td>
+      <td style="text-align: left">모든 고객에게 기본으로 제공되는 무료 보안 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Security Monitoring</td>
+      <td style="text-align: left">IDS, Anti-DDos, Anti-Virus, IPS, WAF와 같은 다양한 보안 상품들을 이용하여 높은 수준의 보안 서비스를 제공</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Site Safer</td>
+      <td style="text-align: left">고객이 개발한 웹사이트가 해킹 또는 다른 보안 문제로 인해 악성코드를 배포하는지 검사</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">File Safer</td>
+      <td style="text-align: left">고객의 서비스에서 제공하는 파일과 아웃링크 URL의 악성코드 감염 여부를 해시 기반으로 검사</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">App Safer</td>
+      <td style="text-align: left">고객의 앱이 모바일에서 실행될 때, 루팅/탈옥, 악성 앱 설치, 앱 변조 등 보안 위협 여부를 실시간으로 탐지</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Webshell Behavior Detector</td>
+      <td style="text-align: left">고객의 웹 서비스를 공격하는 다양한 웹셀을 행위기반으로 실시간 탐지하는 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">접근제어</td>
+      <td style="text-align: left">ACG</td>
+      <td style="text-align: left">인스턴스 그룹 단위로 IP, Port 기반의 네트워크 패킷 필터링 기능을 제공</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Secure Zone</td>
+      <td style="text-align: left">개인정보와 같이 중요한 정보를 보다 더 안전하게 보호할 수 있도록 대외 인터넷 망과 분리된 별도의 존을 제공</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">인증/권한 관리</td>
+      <td style="text-align: left">Sub Account</td>
+      <td style="text-align: left">사용자 업무 역할별로 권한 관리를 할 수 있는 기능 제공</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">암호화</td>
+      <td style="text-align: left">KMS</td>
+      <td style="text-align: left">고객 데이터의 암/복호화에 이용되는 키를 안전하게 보호할 수 있는 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">SSL VPN</td>
+      <td style="text-align: left">고객 사이트로 안전하게 접근 가능한 SSL방식의 가상 사설망을 제공</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Certificate Manager</td>
+      <td style="text-align: left">SSL 인증서의 손쉬운 등록 및 관리 서비스를 제공</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">로깅 및 모니터링</td>
+      <td style="text-align: left">Resource Manager</td>
+      <td style="text-align: left">네이버 클라우드 서비스 내에 생성한 모든 리소스를 한 눈에 볼 수 있는 통합관리 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Cloud Activity Tracer</td>
+      <td style="text-align: left">네이버 클라우드 서비스에서 발생한 계정 활동 로그를 자동으로 수집해주는 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Cloud Advisor</td>
+      <td style="text-align: left">네이버 클라우드 모범 사례에 따른 서비스 이용 권장 지침 안내</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">취약점 관리</td>
+      <td style="text-align: left">System Security Checker</td>
+      <td style="text-align: left">고객 서버의 운영체제 및 WAS 시스템에 대해서 보안상 취약점이 없는지 점검하고 결과 리포트를 제공해주는 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Web Security Checker</td>
+      <td style="text-align: left">고객의 웹서비스에 대해 총 20가지의 주요 웹 취약점을 자동으로 진단하고 결과 리포트를 제공해주는 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">App Security Checker</td>
+      <td style="text-align: left">고객의 Andorid 모바일 앱에 대해 취약점을 자동으로 점검하고 결과 리포트를 제공해주는 서비스</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Compliance</td>
+      <td style="text-align: left">Compliance Guide</td>
+      <td style="text-align: left">고객이 보안 인증이나 규제에 대응하는데 필요한 사항을 알기 쉽게 정리한 가이드</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure><img class="docimage" src="/images/security/ncp_security_service_summary.png" alt="네이버 클라우드 Security 서비스 요약" style="width: 850px; max-width: 100%" /><figcaption></figcaption></figure>
+
+<h2 id="참고-url">참고 URL</h2>
+<p><a href="https://guide.ncloud-docs.com/docs/security-security-1-1" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/security-security-1-1.html</a></p>
+
+   
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+    </div>
+   
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+<span>Page last updated:</span> 2021-04-26<br/> Site last generated: 2022-01-25 <br />
+<p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+                </div>
+            </div>
+</footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+<script>
+    $(function() {
+        $('svg').click(function() {
+            $(this).parent('form').submit();
+        });
+    });
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pdf 문서 합치기 PHP로 구현하는 방법">
+<meta name="keywords" content="php,  PDF, PHP">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Pdf 문서 합치기 PHP로 구현하는 방법</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Pdf 문서 합치기 PHP로 구현하는 방법" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<meta property="og:description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<link rel="canonical" href="http://localhost:4001/etc/etc_pdf_merge_php_sample.html" />
+<meta property="og:url" content="http://localhost:4001/etc/etc_pdf_merge_php_sample.html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Pdf 문서 합치기 PHP로 구현하는 방법" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4001/etc/etc_pdf_merge_php_sample.html","description":"Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.","headline":"Pdf 문서 합치기 PHP로 구현하는 방법","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>Pdf 문서 합치기 PHP로 구현하는 방법 | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4001/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<header>
+<!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="/mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="/p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="/p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tech@3rdeyesys.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Pdf 문서 합치기 PHP로 구현하는 방법 page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" placeholder="Search" autofocus>
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form> </div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+
+</header>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">3rdEyeSys Docs 2.0</li>
+  
+  
+  
+  <li>
+      <a title="Compute" href="#">Compute</a>
+      <ul>
+          
+          
+          
+          <li><a title="VPC 환경에서 서버 생성" href="/compute/server/ncloud_server_vpc_create.html">VPC 환경에서 서버 생성</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Cloud Functions" href="#">Cloud Functions</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법" href="/compute/cloud_functions/ncloud_server_cloud_functions_dotnet_csharp_cmd.html">Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Networking" href="#">Networking</a>
+      <ul>
+          
+          
+          
+          <li><a title="주요 서비스 포트(Port) 정보" href="/networking/ncloud_networking_service_port_info.html">주요 서비스 포트(Port) 정보</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Storage" href="#">Storage</a>
+      <ul>
+          
+          
+          
+          <li><a title="네이버 클라우드 스토리지 비교" href="/storage/ncloud_storage_compare.html">네이버 클라우드 스토리지 비교</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Database" href="#">Database</a>
+      <ul>
+          
+          
+          
+          <li><a title="설치형 DB서버와 관리형 Cloud DB 비교" href="/database/ncloud_database_compare.html">설치형 DB서버와 관리형 Cloud DB 비교</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Security" href="#">Security</a>
+      <ul>
+          
+          
+          
+          <li><a title="Security 서비스 요약" href="/security/ncloud_security_service_summary.html">Security 서비스 요약</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Management" href="#">Management</a>
+      <ul>
+          
+          
+          
+          <li><a title="Sub Account 생성 가이드" href="/management/ncloud_sub_account_guide.html">Sub Account 생성 가이드</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Analytics" href="#">Analytics</a>
+      <ul>
+          
+          
+          
+          <li><a title="Cloud Log Analytics에서 수집하는 로그 유형" href="/analytics/ncloud_analytics_cloud_log_analytics_info.html">Cloud Log Analytics에서 수집하는 로그 유형</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="API" href="#">API</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 Ncloud API를 호출하는 샘플 예제" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API를 호출하는 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Application Service" href="#">Application Service</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 nShortURL 서비스 이용하기 샘플 예제" href="/application-service/ncloud_application_service_nshorturl_php_sample.html">PHP로 nShortURL 서비스 이용하기 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Media" href="#">Media</a>
+      <ul>
+          
+          
+          
+          <li><a title="Video Player 구현하기 샘플 예제" href="/media/ncloud_media_video_player_sample.html">Video Player 구현하기 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="AWS" href="#">AWS</a>
+      <ul>
+          
+          
+          
+          <li><a title="AWS S3 수명 주기 (LifeCycle) 설정하기" href="/aws/aws_s3_lifecycle_management.html">AWS S3 수명 주기 (LifeCycle) 설정하기</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ETC" href="#">ETC</a>
+      <ul>
+          
+          
+          
+          <li class="active"><a title="Pdf 문서 합치기 PHP로 구현하는 방법" href="/etc/etc_pdf_merge_php_sample.html">Pdf 문서 합치기 PHP로 구현하는 방법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tag archives" href="#">Tag archives</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tag archives overview" href="/mydoc_tag_archives_overview.html">Tag archives overview</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Tag archive pages" href="#">Tag archive pages</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="VPC pages" href="/tag_vpc.html">VPC pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions pages" href="/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title=".Net (C#) pages" href="/tag_csharp.html">.Net (C#) pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account pages" href="/tag_account.html">Account pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Log pages" href="/tag_log.html">Log pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analytics pages" href="/tag_analytics.html">Analytics pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="API pages" href="/tag_api.html">API pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="PHP pages" href="/tag_php.html">PHP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Media pages" href="/tag_media.html">Media pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Object Storage pages" href="/tag_object_storage.html">Object Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="AWS pages" href="/tag_object_aws.html">AWS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="S3 pages" href="/tag_object_s3.html">S3 pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Pdf 문서 합치기 PHP로 구현하는 방법</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Pdf 문서 합치기 PHP로 구현하는 방법</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+
+
+    
+
+   <h2 id="개요">개요</h2>
+<p>요즘은 회사 업무에서 파일을 전달할 때 PDF 문서를 활용하는 경우가 매우 많습니다. <br />
+그런데 이때 보내야 하는 PDF 문서가 여러개 일 경우 받는 쪽에서 각각의 파일을 일일이 열어봐야 해서 불편한 경우가 있습니다.<br />
+이럴때 여러 PDF 문서를 합쳐서 하나의 문서로 만들어 보내면 편리한 경우에 사용할 수 있는 PDF 문서 합치기 - merge 기능을 PHP로 구현하는 방법입니다.</p>
+
+<h2 id="라이브러리-설치">라이브러리 설치</h2>
+<p>PDF 문서를 합쳐 주는 기능을 가진 라이브러리는 [ php pdf merger ]라고 검색해보면 여러가지 버전이 존재하는데 여기서는 Jurosh 라는 사람이 만든 것을 사용하겠습니다.<br />
+우선 composer 를 이용해서 라이브러리를 설치합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# composer require jurosh/pdf-merge
+</code></pre></div></div>
+
+<h2 id="기본-사용법">기본 사용법</h2>
+<p>아래 기본 사용법은 라이브러리 개발자가 GitHub에 올려둔 가이드에 있는 사용법입니다.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="c1">// and now we can use library</span>
+  <span class="nv">$pdf</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nc">Jurosh\PDFMerge\PDFMerger</span><span class="p">;</span>
+
+  <span class="c1">// add as many pdfs as you want</span>
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">addPDF</span><span class="p">(</span><span class="s1">'path/to/source/file.pdf'</span><span class="p">,</span> <span class="s1">'all'</span><span class="p">,</span> <span class="s1">'vertical'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">addPDF</span><span class="p">(</span><span class="s1">'path/to/source/file1.pdf'</span><span class="p">,</span> <span class="s1">'all'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">addPDF</span><span class="p">(</span><span class="s1">'path/to/source/file2.pdf'</span><span class="p">,</span> <span class="s1">'all'</span><span class="p">,</span> <span class="s1">'horizontal'</span><span class="p">);</span>
+
+  <span class="c1">// call merge, output format `file`</span>
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="s1">'file'</span><span class="p">,</span> <span class="s1">'path/to/export/dir/file.pdf'</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h2 id="응용-사용법">응용 사용법</h2>
+<p>여기서는 파일 업로드 웹페이지를 통해 업로드 된 여러 파일들을 합쳐서 다운로드 받는 방식으로 구현해보겠습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+  
+  <span class="nv">$pdf</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nc">Jurosh\PDFMerge\PDFMerger</span><span class="p">;</span>
+
+
+  <span class="nv">$source_file_array</span> <span class="o">=</span> <span class="k">Array</span><span class="p">();</span>
+  <span class="nv">$source_filename_array</span> <span class="o">=</span> <span class="k">Array</span><span class="p">();</span>
+
+  <span class="nv">$source_file_array</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"pdf_file"</span><span class="p">];</span>
+  <span class="nv">$source_filename_array</span> <span class="o">=</span> <span class="nv">$source_file_array</span><span class="p">[</span><span class="s2">"name"</span><span class="p">];</span>
+  <span class="nv">$upload_filename_array</span> <span class="o">=</span> <span class="nv">$source_file_array</span><span class="p">[</span><span class="s2">"tmp_name"</span><span class="p">];</span>
+
+  <span class="nv">$cnt_file</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$source_filename_array</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$cnt_file</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">addPDF</span><span class="p">(</span><span class="nv">$upload_filename_array</span><span class="p">[</span><span class="nv">$i</span><span class="p">],</span> <span class="s1">'all'</span><span class="p">,</span> <span class="s1">'vertical'</span><span class="p">);</span>    
+  <span class="p">}</span>
+
+  <span class="nv">$output_filename</span> <span class="o">=</span> <span class="nv">$source_filename_array</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="s1">'download'</span><span class="p">,</span> <span class="nv">$output_filename</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="업로드-된-파일명-배열에-저장">업로드 된 파일명 배열에 저장</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="nv">$source_file_array</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"pdf_file"</span><span class="p">];</span>
+  <span class="nv">$source_filename_array</span> <span class="o">=</span> <span class="nv">$source_file_array</span><span class="p">[</span><span class="s2">"name"</span><span class="p">];</span>
+  <span class="nv">$upload_filename_array</span> <span class="o">=</span> <span class="nv">$source_file_array</span><span class="p">[</span><span class="s2">"tmp_name"</span><span class="p">];</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="합칠-파일들-리스트에-추가">합칠 파일들 리스트에 추가</h3>
+<p>업로드 된 개수 만큼 파일들을 리스트에 추가합니다.<br />
+$pdf-&gt;addPDF의 파라미터에는 옵션으로 페이지와 문서방향이 들어갑니다.<br />
+$pdf-&gt;addPDF(파일경로, 페이지, 문서방향);</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="nv">$cnt_file</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$source_filename_array</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$cnt_file</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">addPDF</span><span class="p">(</span><span class="nv">$upload_filename_array</span><span class="p">[</span><span class="nv">$i</span><span class="p">],</span> <span class="s1">'all'</span><span class="p">,</span> <span class="s1">'vertical'</span><span class="p">);</span>    
+  <span class="p">}</span>
+
+  <span class="cm">/* 사용 예시
+  $pdf-&gt;addPDF($upload_filename_array[$i], 'all', 'vertical');
+  $pdf-&gt;addPDF($upload_filename_array[$i], '1,3,6', 'horizontal');
+  $pdf-&gt;addPDF($upload_filename_array[$i], '12-16', 'vertical');
+  */</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="파일-합치기">파일 합치기</h3>
+<p>합치기 옵션은 [download], [browser], [file], [string] 이렇게 4가지가 있습니다.<br />
+보통 로컬PC로 다운로드 받을 때는 [download], 서버에 저장할 때는 [file]를 선택하면 됩니다.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="s1">'download'</span><span class="p">,</span> <span class="nv">$output_filename</span><span class="p">);</span>
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="s1">'browser'</span><span class="p">,</span> <span class="nv">$output_filename</span><span class="p">);</span>
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="s1">'file'</span><span class="p">,</span> <span class="nv">$output_filename</span><span class="p">);</span>
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="s1">'string'</span><span class="p">,</span> <span class="nv">$output_filename</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="한글-깨짐-해결">한글 깨짐 해결</h2>
+
+<p>PDF 파일을 합치면 문서 내의 텍스트는 한글이나 기타 UTF-8 문자들이 문제없이 잘나타납니다.<br />
+그런데 파일명은 UTF-8이 지원되지 않아 한글이 깨지는 현상이 나타납니다.</p>
+
+<p>이를 해결하기 위해서는 여기서 사용한 pdf merger 소스 파일을 수정해야 합니다.<br />
+소스파일 위치는 ./vendor/jurosh/pdf-merge/src/Jurosh/PDFMerge/PDFMerger.php 입니다.</p>
+
+<p>PDFMerger.php 파일에서 파일 합치기 함수 merge를 찾습니다.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="cm">/* ./vendor/jurosh/pdf-merge/src/Jurosh/PDFMerge/PDFMerger.php */</span>
+  
+  <span class="cm">/*== 기존 ==*/</span> 
+  <span class="k">public</span> <span class="k">function</span> <span class="n">merge</span><span class="p">(</span><span class="nv">$outputmode</span> <span class="o">=</span> <span class="s1">'browser'</span><span class="p">,</span> <span class="nv">$outputpath</span> <span class="o">=</span> <span class="s1">'newfile.pdf'</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="cm">/* ====*/</span>
+    <span class="cm">/* 중략 */</span>
+    <span class="cm">/* ====*/</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$mode</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="nv">$mode</span><span class="p">)</span> <span class="o">==</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="p">(</span><span class="s2">"Error outputting PDF to '</span><span class="nv">$outputmode</span><span class="s2">'."</span><span class="p">);</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="cm">/*== 수정 ==*/</span> 
+  <span class="k">public</span> <span class="k">function</span> <span class="n">merge</span><span class="p">(</span><span class="nv">$outputmode</span> <span class="o">=</span> <span class="s1">'browser'</span><span class="p">,</span> <span class="nv">$outputpath</span> <span class="o">=</span> <span class="s1">'newfile.pdf'</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="cm">/* ====*/</span>
+    <span class="cm">/* 중략 */</span>
+    <span class="cm">/* ====*/</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$mode</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="nv">$mode</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span> <span class="o">==</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="p">(</span><span class="s2">"Error outputting PDF to '</span><span class="nv">$outputmode</span><span class="s2">'."</span><span class="p">);</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p><br />
+위에서 바뀐 부분은 Output 함수의 파라미터 하나입니다.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+  <span class="c1">// 기존</span>
+  <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">);</span>
+  <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="nv">$mode</span><span class="p">);</span>
+  
+  <span class="c1">// 수정</span>
+  <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">Output</span><span class="p">(</span><span class="nv">$outputpath</span><span class="p">,</span> <span class="nv">$mode</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p><br />
+왜 그런지 실제 Output 함수가 선언된 곳을 찾아가보겠습니다.
+파일 위치는 ./vendor/setasign/fpdf/fpdf.php 입니다.<br />
+아래와 같이 Output 함수의 파라미터는 3개로 마지막이 UTF-8 여부를 설정하는 것이었습니다.<br />
+그러므로 마지막 파라미터를 true 로 설정만 해도 한글, UTF-8 문제가 해결됩니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="cm">/* ./vendor/setasign/fpdf/fpdf.php */</span>
+
+  <span class="k">function</span> <span class="n">Output</span><span class="p">(</span><span class="nv">$dest</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="nv">$name</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="nv">$isUTF8</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
+  <span class="p">{</span>
+	<span class="cm">/* 중략 */</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h2 id="문서-속성-추가">문서 속성 추가</h2>
+<p>또 하나의 문제가 제목, 작성자, 주제 등의 문서 속성 정보가 추가되지 않는다는 점입니다.<br />
+이 또한 파일 2개를 수정해야 합니다.</p>
+
+<h3 id="문서-합치기-파일-ex-pdf_mergephp">문서 합치기 파일 (ex: pdf_merge.php)</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+  <span class="c1">// 문서 속성 정보를 추가합니다.</span>
+  <span class="nv">$author</span> <span class="o">=</span> <span class="s2">"써드아이시스템"</span><span class="p">;</span>
+  <span class="nv">$creator</span> <span class="o">=</span> <span class="s2">"써드아이시스템"</span><span class="p">;</span>
+  <span class="nv">$title</span> <span class="o">=</span> <span class="s2">"문서 제목"</span><span class="p">;</span>
+  <span class="nv">$subject</span> <span class="o">=</span> <span class="s2">"문서 주제"</span><span class="p">;</span>
+  <span class="nv">$keywords</span> <span class="o">=</span> <span class="s2">"키워드"</span><span class="p">;</span>
+
+  <span class="c1">// merge 함수에 문서 속성 옵션을 추가합니다.</span>
+  <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="s1">'download'</span><span class="p">,</span> <span class="nv">$output_filename</span><span class="p">,</span> <span class="nv">$author</span><span class="p">,</span> <span class="nv">$creator</span><span class="p">,</span> <span class="nv">$title</span><span class="p">,</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$keywords</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="merge-함수-정의-파일-pdfmergerphp">merge 함수 정의 파일 (PDFMerger.php)</h3>
+<p>위치 : ./vendor/jurosh/pdf-merge/src/Jurosh/PDFMerge/PDFMerger.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="cm">/* ./vendor/jurosh/pdf-merge/src/Jurosh/PDFMerge/PDFMerger.php */</span>
+
+  <span class="c1">// 파라미터 추가</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">merge</span><span class="p">(</span><span class="nv">$outputmode</span> <span class="o">=</span> <span class="s1">'browser'</span><span class="p">,</span> <span class="nv">$outputpath</span> <span class="o">=</span> <span class="s1">'newfile.pdf'</span><span class="p">,</span> <span class="nv">$author</span> <span class="o">=</span> <span class="s1">'3rdEYESYS'</span><span class="p">,</span> <span class="nv">$creator</span> <span class="o">=</span> <span class="s1">'3rdEYESYS'</span><span class="p">,</span> <span class="nv">$title</span> <span class="o">=</span> <span class="s1">'title'</span><span class="p">,</span> <span class="nv">$subject</span> <span class="o">=</span> <span class="s1">'subject'</span><span class="p">,</span> <span class="nv">$keywords</span> <span class="o">=</span> <span class="s1">'keywords'</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="cm">/* 중략 */</span>
+
+    <span class="c1">// 속성 항목 설정</span>
+    <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">SetAuthor</span><span class="p">(</span><span class="nv">$author</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">setCreator</span><span class="p">(</span><span class="nv">$creator</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">setTitle</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">setSubject</span><span class="p">(</span><span class="nv">$subject</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nv">$fpdi</span><span class="o">-&gt;</span><span class="nf">setKeywords</span><span class="p">(</span><span class="nv">$keywords</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>문서 속성을 저렇게 설정하면 되는 이유는 해당 함수가 정의된 곳을 찾아보면 알 수 있습니다.</p>
+
+<p>파일 위치는 ./vendor/setasign/fpdf/fpdf.php 입니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span> <span class="n">php</span>
+
+  <span class="cm">/* ./vendor/setasign/fpdf/fpdf.php */</span>
+
+  <span class="k">function</span> <span class="n">SetTitle</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="nv">$isUTF8</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// Title of document</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$isUTF8</span> <span class="o">?</span> <span class="nv">$title</span> <span class="o">:</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$title</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">function</span> <span class="n">SetAuthor</span><span class="p">(</span><span class="nv">$author</span><span class="p">,</span> <span class="nv">$isUTF8</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// Author of document</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'Author'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$isUTF8</span> <span class="o">?</span> <span class="nv">$author</span> <span class="o">:</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$author</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">function</span> <span class="n">SetSubject</span><span class="p">(</span><span class="nv">$subject</span><span class="p">,</span> <span class="nv">$isUTF8</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// Subject of document</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'Subject'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$isUTF8</span> <span class="o">?</span> <span class="nv">$subject</span> <span class="o">:</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$subject</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">function</span> <span class="n">SetKeywords</span><span class="p">(</span><span class="nv">$keywords</span><span class="p">,</span> <span class="nv">$isUTF8</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// Keywords of document</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'Keywords'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$isUTF8</span> <span class="o">?</span> <span class="nv">$keywords</span> <span class="o">:</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$keywords</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">function</span> <span class="n">SetCreator</span><span class="p">(</span><span class="nv">$creator</span><span class="p">,</span> <span class="nv">$isUTF8</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// Creator of document</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'Creator'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$isUTF8</span> <span class="o">?</span> <span class="nv">$creator</span> <span class="o">:</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$creator</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h2 id="참고-url">참고 URL</h2>
+<ol>
+  <li>PDF Merge GitHub Source and Download
+    <ul>
+      <li><a href="https://github.com/jurosh/php-pdf-merge" target="_blank" style="word-break:break-all;">https://github.com/jurosh/php-pdf-merge</a></li>
+    </ul>
+  </li>
+</ol>
+
+   
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="/tag_php.html" class="btn btn-default navbar-btn cursorNorm" role="button">php</a>
+        
+        
+        
+    </div>
+   
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+<span>Page last updated:</span> 2021-05-03<br/> Site last generated: 2022-01-25 <br />
+<p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+                </div>
+            </div>
+</footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+<script>
+    $(function() {
+        $('svg').click(function() {
+            $(this).parent('form').submit();
+        });
+    });
+</script>
+
+</body>
+</html>
+
+

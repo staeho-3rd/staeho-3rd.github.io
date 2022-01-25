@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="PHP로 Ncloud API를 호출하는 샘플 예제">
+<meta name="keywords" content="apiphp,  API">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>PHP로 네이버 클라우드 API를 호출하는 샘플 예제</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="PHP로 네이버 클라우드 API를 호출하는 샘플 예제" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<meta property="og:description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<link rel="canonical" href="http://localhost:4001/api/ncloud_api_call_php_sample.html" />
+<meta property="og:url" content="http://localhost:4001/api/ncloud_api_call_php_sample.html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PHP로 네이버 클라우드 API를 호출하는 샘플 예제" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4001/api/ncloud_api_call_php_sample.html","description":"Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.","headline":"PHP로 네이버 클라우드 API를 호출하는 샘플 예제","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>PHP로 네이버 클라우드 API를 호출하는 샘플 예제 | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4001/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<header>
+<!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="/mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="/p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="/p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tech@3rdeyesys.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the PHP로 네이버 클라우드 API를 호출하는 샘플 예제 page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" placeholder="Search" autofocus>
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form> </div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+
+</header>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">3rdEyeSys Docs 2.0</li>
+  
+  
+  
+  <li>
+      <a title="Compute" href="#">Compute</a>
+      <ul>
+          
+          
+          
+          <li><a title="VPC 환경에서 서버 생성" href="/compute/server/ncloud_server_vpc_create.html">VPC 환경에서 서버 생성</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Cloud Functions" href="#">Cloud Functions</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법" href="/compute/cloud_functions/ncloud_server_cloud_functions_dotnet_csharp_cmd.html">Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Networking" href="#">Networking</a>
+      <ul>
+          
+          
+          
+          <li><a title="주요 서비스 포트(Port) 정보" href="/networking/ncloud_networking_service_port_info.html">주요 서비스 포트(Port) 정보</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Storage" href="#">Storage</a>
+      <ul>
+          
+          
+          
+          <li><a title="네이버 클라우드 스토리지 비교" href="/storage/ncloud_storage_compare.html">네이버 클라우드 스토리지 비교</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Database" href="#">Database</a>
+      <ul>
+          
+          
+          
+          <li><a title="설치형 DB서버와 관리형 Cloud DB 비교" href="/database/ncloud_database_compare.html">설치형 DB서버와 관리형 Cloud DB 비교</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Security" href="#">Security</a>
+      <ul>
+          
+          
+          
+          <li><a title="Security 서비스 요약" href="/security/ncloud_security_service_summary.html">Security 서비스 요약</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Management" href="#">Management</a>
+      <ul>
+          
+          
+          
+          <li><a title="Sub Account 생성 가이드" href="/management/ncloud_sub_account_guide.html">Sub Account 생성 가이드</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Analytics" href="#">Analytics</a>
+      <ul>
+          
+          
+          
+          <li><a title="Cloud Log Analytics에서 수집하는 로그 유형" href="/analytics/ncloud_analytics_cloud_log_analytics_info.html">Cloud Log Analytics에서 수집하는 로그 유형</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="API" href="#">API</a>
+      <ul>
+          
+          
+          
+          <li class="active"><a title="PHP로 Ncloud API를 호출하는 샘플 예제" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API를 호출하는 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Application Service" href="#">Application Service</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 nShortURL 서비스 이용하기 샘플 예제" href="/application-service/ncloud_application_service_nshorturl_php_sample.html">PHP로 nShortURL 서비스 이용하기 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Media" href="#">Media</a>
+      <ul>
+          
+          
+          
+          <li><a title="Video Player 구현하기 샘플 예제" href="/media/ncloud_media_video_player_sample.html">Video Player 구현하기 샘플 예제</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="AWS" href="#">AWS</a>
+      <ul>
+          
+          
+          
+          <li><a title="AWS S3 수명 주기 (LifeCycle) 설정하기" href="/aws/aws_s3_lifecycle_management.html">AWS S3 수명 주기 (LifeCycle) 설정하기</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ETC" href="#">ETC</a>
+      <ul>
+          
+          
+          
+          <li><a title="Pdf 문서 합치기 PHP로 구현하는 방법" href="/etc/etc_pdf_merge_php_sample.html">Pdf 문서 합치기 PHP로 구현하는 방법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tag archives" href="#">Tag archives</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tag archives overview" href="/mydoc_tag_archives_overview.html">Tag archives overview</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Tag archive pages" href="#">Tag archive pages</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="VPC pages" href="/tag_vpc.html">VPC pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions pages" href="/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title=".Net (C#) pages" href="/tag_csharp.html">.Net (C#) pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account pages" href="/tag_account.html">Account pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Log pages" href="/tag_log.html">Log pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analytics pages" href="/tag_analytics.html">Analytics pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="API pages" href="/tag_api.html">API pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="PHP pages" href="/tag_php.html">PHP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Media pages" href="/tag_media.html">Media pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Object Storage pages" href="/tag_object_storage.html">Object Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="AWS pages" href="/tag_object_aws.html">AWS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="S3 pages" href="/tag_object_s3.html">S3 pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">PHP로 네이버 클라우드 API를 호출하는 샘플 예제</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">PHP로 Ncloud API를 호출하는 샘플 예제</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+
+
+    
+
+   <h2 id="개요">개요</h2>
+<p>네이버 클라우드 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 PHP로 호출하는 샘플 예제를 정리해봅니다.<br />
+네이버 클라우드 API는 RESTful API 방식으로 제공되며, XML와 JSON 형식으로 응답합니다
+우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.</p>
+
+<h2 id="api-호출-샘플-코드">API 호출 샘플 코드</h2>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	
+	<span class="c1">// 기본 데이터 설정</span>
+	<span class="nv">$unixtimestamp</span> <span class="o">=</span>  <span class="nb">round</span><span class="p">(</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+
+	<span class="nv">$ncp_accesskey</span> <span class="o">=</span> <span class="s2">"네이버 클라우드 AccessKey"</span><span class="p">;</span>
+	<span class="nv">$ncp_secretkey</span> <span class="o">=</span> <span class="s2">"네이버 클라우드 SecretKey"</span><span class="p">;</span>	
+
+	<span class="nv">$api_server</span> <span class="o">=</span> <span class="s2">"https://billingapi.apigw.ntruss.com"</span><span class="p">;</span>
+
+	<span class="c1">// API URL 예시 : 상품별 가격 리스트 호출 api</span>
+	<span class="nv">$api_url</span> <span class="o">=</span> <span class="s2">"/billing/v1/product/getProductPriceList"</span><span class="p">;</span>
+	<span class="nv">$api_url</span> <span class="o">=</span> <span class="nv">$api_url</span><span class="mf">.</span><span class="s2">"?regionCode=KR&amp;productItemKindCode=VSVR"</span><span class="p">;</span>
+
+	<span class="nv">$apicall_method</span> <span class="o">=</span> <span class="s2">"GET"</span><span class="p">;</span>
+	<span class="nv">$space</span> <span class="o">=</span> <span class="s2">" "</span><span class="p">;</span>
+	<span class="nv">$new_line</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+	<span class="nv">$is_post</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+	<span class="c1">// hmac으로 암호화할 문자열 설정</span>
+	<span class="nv">$message</span> <span class="o">=</span> 
+		<span class="nv">$apicall_method</span>
+		<span class="mf">.</span><span class="nv">$space</span>
+		<span class="mf">.</span><span class="nv">$api_url</span>
+		<span class="mf">.</span><span class="nv">$new_line</span>
+		<span class="mf">.</span><span class="nv">$unixtimestamp</span>
+		<span class="mf">.</span><span class="nv">$new_line</span>
+		<span class="mf">.</span><span class="nv">$ncp_accesskey</span><span class="p">;</span>	
+	
+	<span class="c1">// hmac_sha256 암호화</span>
+	<span class="nv">$msg_signature</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s2">"sha256"</span><span class="p">,</span> <span class="nv">$message</span><span class="p">,</span> <span class="nv">$ncp_secretkey</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+	<span class="nv">$msg_signature</span> <span class="o">=</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$msg_signature</span><span class="p">);</span>
+
+	<span class="c1">// http 호출 헤더값 설정</span>
+	<span class="nv">$http_header</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+	<span class="nv">$http_header</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"x-ncp-apigw-timestamp:"</span><span class="mf">.</span><span class="nv">$unixtimestamp</span><span class="mf">.</span><span class="s2">""</span><span class="p">;</span>
+	<span class="nv">$http_header</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"x-ncp-iam-access-key:"</span><span class="mf">.</span><span class="nv">$ncp_accesskey</span><span class="mf">.</span><span class="s2">""</span><span class="p">;</span>
+	<span class="nv">$http_header</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"x-ncp-apigw-signature-v2:"</span><span class="mf">.</span><span class="nv">$msg_signature</span><span class="mf">.</span><span class="s2">""</span><span class="p">;</span>
+
+	<span class="c1">// api 호출</span>
+	<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+	<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$api_server</span><span class="mf">.</span><span class="nv">$api_url</span><span class="p">);</span>
+	<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">);</span>
+	<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">);</span>	
+	<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_POST</span><span class="p">,</span> <span class="nv">$is_post</span><span class="p">);</span>
+	<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$http_header</span><span class="p">);</span>
+
+	<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+	<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h2 id="코드-상세-설명">코드 상세 설명</h2>
+<p><br /></p>
+<h3 id="유닉스-타임-스탬프">유닉스 타임 스탬프</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$unixtimestamp</span> <span class="o">=</span>  <span class="nb">round</span><span class="p">(</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+<p>네이버 클라우드 API를 호출할 때는 13자리 형식의 유닉스 타임 스탬프가 필요합니다.<br />
+PHP에서 일반적으로 사용하는 time()함수는 10자리 형식이기 때문에 여기서는 microtime()을 사용합니다.<br />
+microtime(true)은 float 형식의 값을 리턴하므로 1000을 곱하고 정수로 반올림합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$val1</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+<span class="nv">$val2</span> <span class="o">=</span> <span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$val3</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+
+<span class="cm">/*
+$val1 : 1617699570
+$val2 : 1617699570.1146
+$val3 : 1617699570115
+*/</span>
+</code></pre></div></div>
+<p><br /></p>
+<h3 id="네이버-클라우드-인증키">네이버 클라우드 인증키</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ncp_accesskey</span> <span class="o">=</span> <span class="s2">"네이버 클라우드 AccessKey"</span><span class="p">;</span>
+<span class="nv">$ncp_secretkey</span> <span class="o">=</span> <span class="s2">"네이버 클라우드 SecretKey"</span><span class="p">;</span>	
+</code></pre></div></div>
+
+<p>네이버 클라우드 인증키는 네이버 클라우드 포탈 -&gt; 마이페이지 -&gt; 계정관리 -&gt; 인증키 관리 - API 인증키 관리 메뉴에서 Access Key ID와 Secret Key를 가져오셔야 하며, 아직 만들어진 Key가 없다면 새로 만드셔야 합니다.</p>
+
+<figure><img class="docimage" src="/images/api/ncloud_api_auth_key_create.png" alt="Ncloud API 인증키 생성하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="hmac으로-암호화할-문자열-설정">hmac으로 암호화할 문자열 설정</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$apicall_method</span> <span class="o">=</span> <span class="s2">"GET"</span><span class="p">;</span>
+<span class="nv">$space</span> <span class="o">=</span> <span class="s2">" "</span><span class="p">;</span>
+<span class="nv">$new_line</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+</code></pre></div></div>
+<p>암호화할 문자열을 설정하는데 필요한 값을 사전에 정의합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$message</span> <span class="o">=</span> 
+	<span class="nv">$apicall_method</span>
+	<span class="mf">.</span><span class="nv">$space</span>
+	<span class="mf">.</span><span class="nv">$api_url</span>
+	<span class="mf">.</span><span class="nv">$new_line</span>
+	<span class="mf">.</span><span class="nv">$unixtimestamp</span>
+	<span class="mf">.</span><span class="nv">$new_line</span>
+	<span class="mf">.</span><span class="nv">$ncp_accesskey</span><span class="p">;</span>	
+</code></pre></div></div>
+<p>네이버 클라우드 API에서는 호출 방식(GET, POST)과 도메인을 제외한 API URL, 유닉스 타임스탬프, API ACCESSKEY를 공백과 개행문자 \n을 이용해서 하나의 문자열로 설정합니다.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>API 가이드:</b> API URL은 용도별로 각기 다른데, 네이버 클라우드 API 가이드 사이트에서 확인할 수 있습니다. <br /><a href="https://api.ncloud-docs.com/docs/ko/home/" target="_blank" style="word-break:break-all;">https://api.ncloud-docs.com/docs/ko/home/</a></div>
+
+<h3 id="hmac_sha256-방식으로-암호화">hmac_sha256 방식으로 암호화</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$msg_signature</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s2">"sha256"</span><span class="p">,</span> <span class="nv">$message</span><span class="p">,</span> <span class="nv">$ncp_secretkey</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
+<span class="nv">$msg_signature</span> <span class="o">=</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$msg_signature</span><span class="p">);</span>
+</code></pre></div></div>
+<p>hmac sha256 방식으로 네이버 클라우드 API SecretKey를 이용하여 $message 문자열을 암호화 즉, 해시값을 만들고, 다시 base64로 인코딩합니다.</p>
+
+<h3 id="http-호출-헤더값-설정">http 호출 헤더값 설정</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$http_header</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+<span class="nv">$http_header</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"x-ncp-apigw-timestamp:"</span><span class="mf">.</span><span class="nv">$unixtimestamp</span><span class="mf">.</span><span class="s2">""</span><span class="p">;</span>
+<span class="nv">$http_header</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"x-ncp-iam-access-key:"</span><span class="mf">.</span><span class="nv">$ncp_accesskey</span><span class="mf">.</span><span class="s2">""</span><span class="p">;</span>
+<span class="nv">$http_header</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"x-ncp-apigw-signature-v2:"</span><span class="mf">.</span><span class="nv">$msg_signature</span><span class="mf">.</span><span class="s2">""</span><span class="p">;</span>
+</code></pre></div></div>
+<p>API를 호출할 때는 http 헤더값에 다음 3가지를 추가해서 호출합니다.</p>
+<ul>
+  <li>유닉스 타임스탬프</li>
+  <li>네이버 클라우드 API AccessKey</li>
+  <li>hmac_256 으로 암호화한 문자열</li>
+</ul>
+
+<p>여기서 전송하는 타임스탬프는 위에서 $message를 암호화할 때 사용한 타임스탬프와 동일한 값이어야 합니다.</p>
+
+<h3 id="api-호출">api 호출</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$api_server</span><span class="mf">.</span><span class="nv">$api_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">);</span>	
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_POST</span><span class="p">,</span> <span class="nv">$is_post</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$http_header</span><span class="p">);</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</code></pre></div></div>
+<p>이제 위에서 준비한 값들을 사용해서 API를 호출합니다.<br />
+리턴값은 호출하는 용도별로 json 또는 xml 형태로 반환됩니다.</p>
+
+<h2 id="응답-예시">응답 예시</h2>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;getProductPriceListResponse&gt;</span>
+  <span class="nt">&lt;requestId&gt;</span>9a6b9f7c-f688-4cec-841f-634d355cef1e<span class="nt">&lt;/requestId&gt;</span>
+  <span class="nt">&lt;returnCode&gt;</span>0<span class="nt">&lt;/returnCode&gt;</span>
+  <span class="nt">&lt;returnMessage&gt;</span>success<span class="nt">&lt;/returnMessage&gt;</span>
+  <span class="nt">&lt;totalRows&gt;</span>2<span class="nt">&lt;/totalRows&gt;</span>
+  <span class="nt">&lt;productPriceList&gt;</span>
+    <span class="nt">&lt;productPrice&gt;</span>
+      <span class="nt">&lt;productItemKind&gt;</span>
+        <span class="nt">&lt;code&gt;</span>VSVR<span class="nt">&lt;/code&gt;</span>
+        <span class="nt">&lt;codeName&gt;</span>Server (VPC)<span class="nt">&lt;/codeName&gt;</span>
+      <span class="nt">&lt;/productItemKind&gt;</span>
+      <span class="nt">&lt;productItemKindDetail&gt;</span>
+        <span class="nt">&lt;code&gt;</span>BM<span class="nt">&lt;/code&gt;</span>
+        <span class="nt">&lt;codeName&gt;</span>BareMetal<span class="nt">&lt;/codeName&gt;</span>
+      <span class="nt">&lt;/productItemKindDetail&gt;</span>
+     ''' 중략 '''
+      <span class="nt">&lt;softwareType/&gt;</span>
+      <span class="nt">&lt;productType&gt;</span>
+        <span class="nt">&lt;code&gt;</span>BM<span class="nt">&lt;/code&gt;</span>
+        <span class="nt">&lt;codeName&gt;</span>BareMetal<span class="nt">&lt;/codeName&gt;</span>
+      <span class="nt">&lt;/productType&gt;</span>
+      <span class="nt">&lt;productType&gt;</span>
+        <span class="nt">&lt;code&gt;</span>BM<span class="nt">&lt;/code&gt;</span>
+        <span class="nt">&lt;codeName&gt;</span>BareMetal<span class="nt">&lt;/codeName&gt;</span>
+      <span class="nt">&lt;/productType&gt;</span>
+      <span class="nt">&lt;productTypeDetail/&gt;</span>
+      <span class="nt">&lt;gpuCount&gt;</span>0<span class="nt">&lt;/gpuCount&gt;</span>
+      <span class="nt">&lt;cpuCount&gt;</span>24<span class="nt">&lt;/cpuCount&gt;</span>
+      <span class="nt">&lt;memorySize&gt;</span>137438953472<span class="nt">&lt;/memorySize&gt;</span>
+      <span class="nt">&lt;baseBlockStorageSize&gt;</span>4123168604160<span class="nt">&lt;/baseBlockStorageSize&gt;</span>
+      <span class="nt">&lt;dbKind/&gt;</span>
+      <span class="nt">&lt;osInfomation/&gt;</span>
+      <span class="nt">&lt;platformType/&gt;</span>
+      <span class="nt">&lt;osType/&gt;</span>
+      <span class="nt">&lt;platformCategoryCode/&gt;</span>
+      <span class="nt">&lt;diskType&gt;</span>
+        <span class="nt">&lt;code&gt;</span>LOCAL<span class="nt">&lt;/code&gt;</span>
+        <span class="nt">&lt;codeName&gt;</span>Local storage<span class="nt">&lt;/codeName&gt;</span>
+      <span class="nt">&lt;/diskType&gt;</span>
+      <span class="nt">&lt;diskDetailType&gt;</span>
+        <span class="nt">&lt;code&gt;</span>SSD<span class="nt">&lt;/code&gt;</span>
+        <span class="nt">&lt;codeName&gt;</span>SSD<span class="nt">&lt;/codeName&gt;</span>
+      <span class="nt">&lt;/diskDetailType&gt;</span>
+      <span class="nt">&lt;generationCode&gt;</span>G1<span class="nt">&lt;/generationCode&gt;</span>     
+    ''' 중략 '''
+  <span class="nt">&lt;/productPriceList&gt;</span>
+<span class="nt">&lt;/getProductPriceListResponse&gt;</span>
+</code></pre></div></div>
+
+<h2 id="참고-url">참고 URL</h2>
+<p><a href="https://api.ncloud-docs.com/docs/ko/home/" target="_blank" style="word-break:break-all;">https://api.ncloud-docs.com/docs/ko/home/</a></p>
+
+   
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="/tag_api.html" class="btn btn-default navbar-btn cursorNorm" role="button">api</a>
+        
+        
+        
+        <a href="/tag_php.html" class="btn btn-default navbar-btn cursorNorm" role="button">php</a>
+        
+        
+        
+    </div>
+   
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+<span>Page last updated:</span> 2021-04-06<br/> Site last generated: 2022-01-25 <br />
+<p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+                </div>
+            </div>
+</footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+<script>
+    $(function() {
+        $('svg').click(function() {
+            $(this).parent('form').submit();
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
