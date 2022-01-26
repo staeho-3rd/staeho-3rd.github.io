@@ -1326,24 +1326,22 @@ h4.panel-title {
 .category li a svg {
     margin: 0 5px 0 0;
     fill: #4A4A4A;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     -webkit-transition: all .2s ease;
 }
 
 .category li a:hover svg {       
         fill: #111;
-        width: 30px;
-        height: 30px;    
+        width: 25px;
+        height: 25px;    
 }
 
 header {	
-    padding: 16px 0 10px 0;
+    padding: 5px 0 10px 0;
     background-color: #232C43;
     background: url("/images/ncp-header-bg_newyear.jpg");
     background-size: 2200px;
-    position: relative;
-    z-index: 1;
 }
 
 
@@ -1355,7 +1353,7 @@ header nav input{ border: solid 1px gray;}
 
 .hero_search form { position: relative; max-width: 800px; margin: 0 auto; padding: 70px 0 20px 0; }
 
-.hero_search form svg { fill: #eee; position: absolute; top: 60px; right: 12px; display: inline-block; width: 36px; height: 40px; cursor: pointer; }
+.hero_search form svg { fill: #eee; position: absolute; top: 80px; right: 12px; display: inline-block; width: 36px; height: 40px; cursor: pointer; }
 
 .hero_search h1, .hero_search p { color: #fff; }
 

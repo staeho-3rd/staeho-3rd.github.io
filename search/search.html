@@ -101,12 +101,15 @@
     </script>
     <script>
         $(document).ready(function() {
-            $("#tg-sb-link").click(function() {
-                $("#tg-sb-sidebar").toggle();
-                $("#tg-sb-content").toggleClass('col-md-9');
-                $("#tg-sb-content").toggleClass('col-md-12');
-                $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            $("#tg-sb-link").click(function() {                
+                if (!$("#tg-sb-link").attr("hide_sidebar"))
+                {
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
             });
         });
     </script>
@@ -128,9 +131,9 @@
             <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>
+            <ul class="nav navbar-nav navbar-center">
+                <!-- toggle sidebar button -->                
+                <li><a id="tg-sb-link" hide_sidebar="" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>                
                 <!-- entries without drop-downs appear here -->
 
 
@@ -138,41 +141,18 @@
 
                 
                 
-                
-                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
-                
-                
-                
+                                
                 <li><a href="/news">News</a></li>
+                
+                
+                
+                
                 
                 
                 
                 <!-- entries with drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
                 
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                        
-                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
-                        
-                        
-                        
-                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
-                        
-                        
-                        
-                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
-                        
-                        
-                        
-                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
-                        
-                        
-                    </ul>
-                </li>
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
@@ -195,23 +175,24 @@
                 
                 
                 
-			<li>
-
-
-
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tech@3rdeyesys.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Search page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
-
-</li>
-
-
-
-		
+                
+                
+                
+                
+                <li><a href="https://3rdeyesys.com/" target="_blank" rel="noopener">Company</a></li>                                
+                
+                
+                
+                <li><a href="https://www.3rdeyesys.com/question/" target="_blank" rel="noopener">1:1 문의하기</a></li>                                
+                
+                 
+                               
                 <!--comment out this block if you want to hide search-->
                 <li>
                     <!--start search-->
                     <div id="search-demo-container">                        
                             <div style="width:223px"><form action="/search/search.html" method="get">
-	<input type="search" name="q" id="search-input-nav" placeholder="Search" autofocus>
+	<input type="search" name="q" id="search-input-nav" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" placeholder="Search">
 	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -244,7 +225,7 @@
                 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">3rdEyeSys Docs 2.0</li>
+  <li class="sidebarTitle">Technical Documentation </li>
   
   
   
@@ -471,73 +452,73 @@
                   
                   
                   
-                  <li><a title="VPC pages" href="/tag_vpc.html">VPC pages</a></li>
+                  <li><a title="VPC pages" href="/tag/tag_vpc.html">VPC pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Cloud Functions pages" href="/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  <li><a title="Cloud Functions pages" href="/tag/tag_cloud_functions.html">Cloud Functions pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title=".Net (C#) pages" href="/tag_csharp.html">.Net (C#) pages</a></li>
+                  <li><a title=".Net (C#) pages" href="/tag/tag_csharp.html">.Net (C#) pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Account pages" href="/tag_account.html">Account pages</a></li>
+                  <li><a title="Account pages" href="/tag/tag_account.html">Account pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Log pages" href="/tag_log.html">Log pages</a></li>
+                  <li><a title="Log pages" href="/tag/tag_log.html">Log pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Analytics pages" href="/tag_analytics.html">Analytics pages</a></li>
+                  <li><a title="Analytics pages" href="/tag/tag_analytics.html">Analytics pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="API pages" href="/tag_api.html">API pages</a></li>
+                  <li><a title="API pages" href="/tag/tag_api.html">API pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="PHP pages" href="/tag_php.html">PHP pages</a></li>
+                  <li><a title="PHP pages" href="/tag/tag_php.html">PHP pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Media pages" href="/tag_media.html">Media pages</a></li>
+                  <li><a title="Media pages" href="/tag/tag_media.html">Media pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Object Storage pages" href="/tag_object_storage.html">Object Storage pages</a></li>
+                  <li><a title="Object Storage pages" href="/tag/tag_object_storage.html">Object Storage pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="AWS pages" href="/tag_object_aws.html">AWS pages</a></li>
+                  <li><a title="AWS pages" href="/tag/tag_object_aws.html">AWS pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="S3 pages" href="/tag_object_s3.html">S3 pages</a></li>
+                  <li><a title="S3 pages" href="/tag/tag_object_s3.html">S3 pages</a></li>
                   
                   
                   
@@ -847,7 +828,7 @@
 						"title": "Generating PDFs",
 						"categories": "",
 						"url": " /mydoc_generating_pdfs.html",
-						"content": "PDF overview\nThis process for creating a PDF relies on Prince XML to transform the HTML content into PDF. Prince costs about $500 per license. That might seem like a lot, but if you’re creating a PDF, you’re probably working for a company that sells a product, so you likely have access to some resources. There’s also a free license that prints a small “P” watermark on your title page, so if you’re fine with that, great.\n\nThe basic approach is to generate a list of all web pages that need to be added to the PDF, and then add leverage Prince to package them up into a PDF. Once you set it up, building a pdf is just a matter of running a couple of commands. Also, creating a PDF this way gives you a lot more control and customization capabilities than with other methods for creating PDFs. If you know CSS, you can entirely customize the output.\n\nDemo\n\nYou can see an example of the finished product here:\n\n PDF Download\n\nTo generate the PDF, browse to the theme’s directory in your terminal and run this script:\n\n. pdf-mydoc.sh\n\n\nThis builds a PDF for the documentation in the theme. Look in the pdf folder for the output, and see the “last generated date” to confirm that you generated the PDF.\n\nTo build a PDF for the other sample projects, run these commands:\n\n. pdf-product1.sh\n\n\nor\n\n. pdf-product2.sh\n\n\nYou can see the details of the script in these files in the theme’s root directory. For example, open pdf-mydoc.sh. It contains the following:\n\n# Note that .sh scripts work only on Mac. If you're on Windows, install Git Bash and use that as your client.\n\necho 'Kill all Jekyll instances'\nkill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')\nclear\n\necho \"Building PDF-friendly HTML site for Mydoc ...\";\nbundle exec jekyll serve --detach --config _config.yml,pdfconfigs/config_mydoc_pdf.yml;\necho \"done\";\n\necho \"Building the PDF ...\";\nprince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/mydoc.pdf;\n\necho \"Done. Look in the pdf directory to see if it printed successfully.\"\n\n\nAfter stopping all Jekyll instances, we build Jekyll using a special configuration file that specifies a unique stylesheet. The build contains a file (prince-list.txt) that contains a list of all pages to be included in the PDF. We feed this list into a Prince command to build the PDF.\n\nThe following sections explain more about the setup.\n\n1. Set up Prince\n\nDownload and install Prince.\n\nYou can install a fully functional trial version. The only difference is that the title page will have a small Prince PDF watermark.\n\n2. Create a new configuration file for each of your PDF targets\n\nThe PDF configuration file will build on the settings in the regular configuration file but will some additional fields. Here’s the configuration file for the mydoc product within this theme. This configuration file is located in the pdfconfigs folder.\n\ndestination: _site/\nurl: \"http://127.0.0.1:4010\"\nbaseurl: \"/mydoc-pdf\"\nport: 4010\noutput: pdf\nproduct: mydoc\nprint_title: Jekyll theme for documentation — mydoc product\nprint_subtitle: version 5.0\noutput: pdf\ndefaults:\n  -\n    scope:\n      path: \"\"\n      type: \"pages\"\n    values:\n      layout: \"page_print\"\n      comments: true\n      search: true\n\npdf_sidebar: mydoc_sidebar\n\n\n Note: Although you’re creating a PDF, you must still build an HTML web target before running Prince. Prince will pull from the HTML files and from the file-list for the TOC.\n\nNote that the default page layout specified by this configuration file is page_print. This layout strips out all the sections that shouldn’t appear in the print PDF, such as the sidebar and top navigation bar.\n\nAlso note that there’s a output: pdf property in case you want to make some of your content unique to PDF output. For example, you could add conditional logic that checks whether site.output is pdf or web. If it’s pdf, then include information only for the PDF, and so on. If you’re using nav tabs, you’ll definitely want to create an alternative experience in the PDF.\n\nIn the configuration file, customize the values for the print_title and print_subtitle that you want. These will appear on the title page of the PDF.\n\nWe will access this configure file in the PDF generation script.\n\n3. Make sure your sidebar data file has titlepage.html and tocpage.html entries\n\nThere are two template pages in the root directory that are critical to the PDF:\n\n\n  titlepage.html\n  tocpage.html\n\n\nThese pages should appear in your sidebar YML file (in this product, mydoc_sidebar.yml):\n\n- title:\n  output: pdf\n  type: frontmatter\n  folderitems:\n  - title:\n    url: /titlepage.html\n    output: pdf\n    type: frontmatter\n  - title:\n    url: /tocpage.html\n    output: pdf\n    type: frontmatter\n\n\nLeave these pages here in your sidebar. (The output: pdf property means they won’t appear in your online TOC because the conditional logic of the sidebar.html checks whether web is equal to pdf or not before including the item in the web version of the content.)\n\nThe code in the tocpage.html is mostly identical to that of the sidebar.html page. This is essential for Prince to create the page numbers correctly with cross references.\n\nThere’s another file (in the root directory of the theme) that is critical to the PDF generation process: prince-list.txt. This file simply iterates through the items in your sidebar and creates a list of links. Prince will consume the list of links from prince-list.txt and create a running PDF that contains all of the pages listed, with appropriate cross references and styling for them all.\n\n Note: If you have any files that you do not want to appear in the PDF, add output: web (rather than output: pdf) in the list of attributes in your sidebar. The prince-list.txt file that loops through the mydoc_sidebar.yml file to grab the URLs of each page that should appear in the PDF will skip over any items that do not list output: pdf in the item attributes. For example, you might not want your tag archives to appear in the PDF, but you probably will want to list them in the online help navigation.\n\n4. Customize your headers and footers\n\nOpen up the css/printstyles.css file and customize what you want for the headers and footers. At the very least, customize the email address (youremail@domain.com) that appears in the bottom left.\n\nExactly how the print styling works here is pretty nifty. You don’t need to understand the rest of the content in this section unless you want to customize your PDFs to look different from what I’ve configured. But I’m adding this information here in case you want to understand how to customize the look and feel of the PDF output.\n\nThis style creates a page reference for a link:\n\na[href]::after {\n    content: \" (page \" target-counter(attr(href), page) \")\"\n}\n\n\nYou don’t want cross references for any link that doesn’t reference another page, so this style specifies that the content after should be blank:\n\na[href*=\"mailto\"]::after, a[data-toggle=\"tooltip\"]::after, a[href].noCrossRef::after {\n    content: \"\";\n}\n\n\n Tip: If you have a link to a file download, or some other link that shouldn’t have a cross reference (such as link used in JavaScript for navtabs or collapsible sections, for example, add noCrossRef as a class to the link to avoid having it say “page 0” in the cross reference.\n\nThis style specifies that after links to web resources, the URL should be inserted instead of the page number:\n\na[href^=\"http:\"]::after, a[href^=\"https:\"]::after {\n    content: \" (\" attr(href) \")\";\n}\n\n\nThis style sets the page margins:\n\n@page {\n    margin: 60pt 90pt 60pt 90pt;\n    font-family: sans-serif;\n    font-style:none;\n    color: gray;\n\n}\n\n\nTo set a specific style property for a particular page, you have to name the page. This allows Prince to identify the page.\n\nFirst you add frontmatter to the page that specifies the type. For the titlepage.html, here’s the frontmatter:\n\n---\ntype: title\n---\n\n\nFor the tocpage, here’s the frontmatter:\n\n---\ntype: frontmatter\n---\n\n\nFor the index.html page, we have this type tag (among others):\n\n---\ntype: first_page\n---\n\n\nThe default_print.html layout will change the class of the body element based on the type value in the page’s frontmatter:\n\n&lt;body class=\"{% if page.type == \"title\"%}title{% elsif page.type == \"frontmatter\" %}frontmatter{% elsif page.type == \"first_page\" %}first_page{% endif %} print\"&gt;\n\n\nNow in the css/printstyles.css file, you can assign a page name based on a specific class:\n\nbody.title { page: title }\n\n\nThis means that for content inside of body class=\"title\", we can style this page in our stylesheet using @page title.\n\nHere’s how that title page is styled:\n\n@page title {\n    @top-left {\n        content: \" \";\n    }\n    @top-right {\n        content: \" \"\n    }\n    @bottom-right {\n        content: \" \";\n    }\n    @bottom-left {\n        content: \" \";\n    }\n}\n\n\nAs you can see, we don’t have any header or footer content, because it’s the title page.\n\nFor the tocpage.html, which has the type: frontmatter, this is specified in the stylesheet:\n\nbody.frontmatter { page: frontmatter }\nbody.frontmatter {counter-reset: page 1}\n\n\n@page frontmatter {\n    @top-left {\n        content: prince-script(guideName);\n    }\n    @top-right {\n        content: prince-script(datestamp);\n    }\n    @bottom-right {\n        content: counter(page, lower-roman);\n    }\n    @bottom-left {\n        content: \"youremail@domain.com\";   }\n}\n\n\nWith counter(page, lower-roman), we reset the page count to 1 so that the title page doesn’t start the count. Then we also add some header and footer info. The page numbers start counting in lower-roman numerals.\n\nFinally, for the first page (which doesn’t have a specific name), we restart the counting to 1 again and this time use regular numbers.\n\nbody.first_page {counter-reset: page 1}\n\nh1 { string-set: doctitle content() }\n\n@page {\n    @top-left {\n        content: string(doctitle);\n        font-size: 11px;\n        font-style: italic;\n    }\n    @top-right {\n        content: prince-script(datestamp);\n        font-size: 11px;\n    }\n\n    @bottom-right {\n        content: \"Page \" counter(page);\n        font-size: 11px;\n    }\n    @bottom-left {\n        content: prince-script(guideName);\n        font-size: 11px;\n    }\n}\n\n\nYou’ll see some other items in there such as prince-script. This means we’re using JavaScript to run some functions to dynamically generate that content. These JavaScript functions are located in the _includes/head_print.html:\n\n&lt;script&gt;\n    Prince.addScriptFunc(\"datestamp\", function() {\n        return \"PDF last generated: January 25, 2022\";\n    });\n&lt;/script&gt;\n\n&lt;script&gt;\n    Prince.addScriptFunc(\"guideName\", function() {\n        return \" User Guide\";\n    });\n&lt;/script&gt;\n\n\nThere are a couple of Prince functions that are default functions from Prince. This gets the heading title of the page:\n\n        content: string(doctitle);\n\n\nThis gets the current page:\n\n        content: \"Page \" counter(page);\n\n\nBecause the theme uses JavaScript in the CSS, you have to add the --javascript tag in the Prince command (detailed later on this page).\n\n5. Customize and run the PDF script\n\nDuplicate the pdf-mydoc.sh file in the root directory and customize it for your specific configuration files.\n\necho 'Killing all Jekyll instances'\nkill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')\nclear\n\necho \"Building PDF-friendly HTML site for Mydoc ...\";\njekyll serve --detach --config _config.yml,pdfconfigs/config_mydoc_pdf.yml;\necho \"done\";\n\necho \"Building the PDF ...\";\nprince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/mydoc.pdf;\necho \"done\";\n\n\nNote that the first part kills all Jekyll instances. This way you won’t try to serve Jekyll at a port that is already occupied.\n\nThe jekyll serve command serves up the HTML-friendly PDF configurations for our two projects. This web version is where Prince will go to get its content.\n\nThe prince script issues a command to the Prince utility. JavaScript is enabled (--javascript), and we tell it exactly where to find the list of files (--input-list) — just point to the prince-list.txt file. Then we tell it where and what to output (-o).\n\nMake sure that the path to the prince-list.txt is correct. For the output directory, I like to output the PDF file into my project’s source (into the files folder). Then when I build the web output, the PDF is included and something I can refer to.\n\n Note: You might not want to include the PDF in your project files, since you’re likely committing the PDF to Github and as a result saving the changes from one PDF version to another with each save.\n\n6. Add conditions for your new builds in the PDF config file\n\nIn the PDF configuration file, there’s a section that looks like this:\n\n{% if site.product == \"mydoc\" %}\npdf_sidebar: product2_sidebar\n{% endif %}\n\n\nPoint to the sidebar you want here.\n\nWhat this does is allow the prince-list.txt and toc.html files to iterate through the right sidebar.  Otherwise, you would need to create a unique prince-list.txt and toc.html file for each separate PDF output you have.\n\n7. Add a download button for the PDF\n\nYou can add a download button for your PDF using some Bootstrap button code:\n\n&lt;a target=\"_blank\" rel=\"noopener\" class=\"noCrossRef\" href=\"/pdf/mydoc.pdf\"&gt;&lt;button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\"&gt;&lt;span class=\"glyphicon glyphicon-download-alt\" aria-hidden=\"true\"&gt;&lt;/span&gt; PDF Download&lt;/button&gt;&lt;/a&gt;\n\n\nHere’s what that looks like:\n\n&lt;a target=”_blank” class=”noCrossRef” href={{ “pdf/mydoc.pdf”}}”&gt; PDF Download&lt;/a&gt;\n\nJavaScript conflicts\n\nIf you have JavaScript on any of your pages, Prince will note errors in Terminal like this:\n\nerror: TypeError: value is not an object\n\n\nHowever, the PDF will still build.\n\nYou need to conditionalize out any JavaScript from your PDF web output before building your PDFs. Make sure that the PDF configuration files have the output: pdf property.\n\nThen surround the JavaScript with conditional tags like this:\n\n{% raw %}{% unless site.output == \"pdf\" %}\njavascript content here ...\n{% endunless %}\n\n\nFor more detail about using unless in conditional logic, see Conditional logic. What this code means is “run this code unless this value is the case.”\n\nOverriding Bootstrap Print Styles\n\nThe theme relies on Bootstrap’s CSS for styling. However, for print media, Bootstrap applies the following style:\n\n@media print{*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}\n\nThis is minified, but basically the * (asterisk) means select all, and applied the color #000 (black). As a result, the Bootstrap style strips out all color from the PDF (for Bootstrap elements).\n\nThis is problematic for code snippets that have syntax highlighting. I decided to remove this de-coloring from the print output. I commented out the Bootstrap style:\n\n@media print{*,:after,:before{/*color:#000!important;*/text-shadow:none!important;/*background:0 0!important*/;-webkit-box-shadow:none!important;box-shadow:none!important}\n\n\nIf you update Bootrap, make sure you make this edit. (Sorry, admittedly I couldn’t figure out how to simply overwrite the * selector with a later style.)\n\nI did, however, remove the color from the alerts and lighten the background shading for pre elements. The printstyles.css has this setting."
+						"content": "PDF overview\nThis process for creating a PDF relies on Prince XML to transform the HTML content into PDF. Prince costs about $500 per license. That might seem like a lot, but if you’re creating a PDF, you’re probably working for a company that sells a product, so you likely have access to some resources. There’s also a free license that prints a small “P” watermark on your title page, so if you’re fine with that, great.\n\nThe basic approach is to generate a list of all web pages that need to be added to the PDF, and then add leverage Prince to package them up into a PDF. Once you set it up, building a pdf is just a matter of running a couple of commands. Also, creating a PDF this way gives you a lot more control and customization capabilities than with other methods for creating PDFs. If you know CSS, you can entirely customize the output.\n\nDemo\n\nYou can see an example of the finished product here:\n\n PDF Download\n\nTo generate the PDF, browse to the theme’s directory in your terminal and run this script:\n\n. pdf-mydoc.sh\n\n\nThis builds a PDF for the documentation in the theme. Look in the pdf folder for the output, and see the “last generated date” to confirm that you generated the PDF.\n\nTo build a PDF for the other sample projects, run these commands:\n\n. pdf-product1.sh\n\n\nor\n\n. pdf-product2.sh\n\n\nYou can see the details of the script in these files in the theme’s root directory. For example, open pdf-mydoc.sh. It contains the following:\n\n# Note that .sh scripts work only on Mac. If you're on Windows, install Git Bash and use that as your client.\n\necho 'Kill all Jekyll instances'\nkill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')\nclear\n\necho \"Building PDF-friendly HTML site for Mydoc ...\";\nbundle exec jekyll serve --detach --config _config.yml,pdfconfigs/config_mydoc_pdf.yml;\necho \"done\";\n\necho \"Building the PDF ...\";\nprince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/mydoc.pdf;\n\necho \"Done. Look in the pdf directory to see if it printed successfully.\"\n\n\nAfter stopping all Jekyll instances, we build Jekyll using a special configuration file that specifies a unique stylesheet. The build contains a file (prince-list.txt) that contains a list of all pages to be included in the PDF. We feed this list into a Prince command to build the PDF.\n\nThe following sections explain more about the setup.\n\n1. Set up Prince\n\nDownload and install Prince.\n\nYou can install a fully functional trial version. The only difference is that the title page will have a small Prince PDF watermark.\n\n2. Create a new configuration file for each of your PDF targets\n\nThe PDF configuration file will build on the settings in the regular configuration file but will some additional fields. Here’s the configuration file for the mydoc product within this theme. This configuration file is located in the pdfconfigs folder.\n\ndestination: _site/\nurl: \"http://127.0.0.1:4010\"\nbaseurl: \"/mydoc-pdf\"\nport: 4010\noutput: pdf\nproduct: mydoc\nprint_title: Jekyll theme for documentation — mydoc product\nprint_subtitle: version 5.0\noutput: pdf\ndefaults:\n  -\n    scope:\n      path: \"\"\n      type: \"pages\"\n    values:\n      layout: \"page_print\"\n      comments: true\n      search: true\n\npdf_sidebar: mydoc_sidebar\n\n\n Note: Although you’re creating a PDF, you must still build an HTML web target before running Prince. Prince will pull from the HTML files and from the file-list for the TOC.\n\nNote that the default page layout specified by this configuration file is page_print. This layout strips out all the sections that shouldn’t appear in the print PDF, such as the sidebar and top navigation bar.\n\nAlso note that there’s a output: pdf property in case you want to make some of your content unique to PDF output. For example, you could add conditional logic that checks whether site.output is pdf or web. If it’s pdf, then include information only for the PDF, and so on. If you’re using nav tabs, you’ll definitely want to create an alternative experience in the PDF.\n\nIn the configuration file, customize the values for the print_title and print_subtitle that you want. These will appear on the title page of the PDF.\n\nWe will access this configure file in the PDF generation script.\n\n3. Make sure your sidebar data file has titlepage.html and tocpage.html entries\n\nThere are two template pages in the root directory that are critical to the PDF:\n\n\n  titlepage.html\n  tocpage.html\n\n\nThese pages should appear in your sidebar YML file (in this product, mydoc_sidebar.yml):\n\n- title:\n  output: pdf\n  type: frontmatter\n  folderitems:\n  - title:\n    url: /titlepage.html\n    output: pdf\n    type: frontmatter\n  - title:\n    url: /tocpage.html\n    output: pdf\n    type: frontmatter\n\n\nLeave these pages here in your sidebar. (The output: pdf property means they won’t appear in your online TOC because the conditional logic of the sidebar.html checks whether web is equal to pdf or not before including the item in the web version of the content.)\n\nThe code in the tocpage.html is mostly identical to that of the sidebar.html page. This is essential for Prince to create the page numbers correctly with cross references.\n\nThere’s another file (in the root directory of the theme) that is critical to the PDF generation process: prince-list.txt. This file simply iterates through the items in your sidebar and creates a list of links. Prince will consume the list of links from prince-list.txt and create a running PDF that contains all of the pages listed, with appropriate cross references and styling for them all.\n\n Note: If you have any files that you do not want to appear in the PDF, add output: web (rather than output: pdf) in the list of attributes in your sidebar. The prince-list.txt file that loops through the mydoc_sidebar.yml file to grab the URLs of each page that should appear in the PDF will skip over any items that do not list output: pdf in the item attributes. For example, you might not want your tag archives to appear in the PDF, but you probably will want to list them in the online help navigation.\n\n4. Customize your headers and footers\n\nOpen up the css/printstyles.css file and customize what you want for the headers and footers. At the very least, customize the email address (youremail@domain.com) that appears in the bottom left.\n\nExactly how the print styling works here is pretty nifty. You don’t need to understand the rest of the content in this section unless you want to customize your PDFs to look different from what I’ve configured. But I’m adding this information here in case you want to understand how to customize the look and feel of the PDF output.\n\nThis style creates a page reference for a link:\n\na[href]::after {\n    content: \" (page \" target-counter(attr(href), page) \")\"\n}\n\n\nYou don’t want cross references for any link that doesn’t reference another page, so this style specifies that the content after should be blank:\n\na[href*=\"mailto\"]::after, a[data-toggle=\"tooltip\"]::after, a[href].noCrossRef::after {\n    content: \"\";\n}\n\n\n Tip: If you have a link to a file download, or some other link that shouldn’t have a cross reference (such as link used in JavaScript for navtabs or collapsible sections, for example, add noCrossRef as a class to the link to avoid having it say “page 0” in the cross reference.\n\nThis style specifies that after links to web resources, the URL should be inserted instead of the page number:\n\na[href^=\"http:\"]::after, a[href^=\"https:\"]::after {\n    content: \" (\" attr(href) \")\";\n}\n\n\nThis style sets the page margins:\n\n@page {\n    margin: 60pt 90pt 60pt 90pt;\n    font-family: sans-serif;\n    font-style:none;\n    color: gray;\n\n}\n\n\nTo set a specific style property for a particular page, you have to name the page. This allows Prince to identify the page.\n\nFirst you add frontmatter to the page that specifies the type. For the titlepage.html, here’s the frontmatter:\n\n---\ntype: title\n---\n\n\nFor the tocpage, here’s the frontmatter:\n\n---\ntype: frontmatter\n---\n\n\nFor the index.html page, we have this type tag (among others):\n\n---\ntype: first_page\n---\n\n\nThe default_print.html layout will change the class of the body element based on the type value in the page’s frontmatter:\n\n&lt;body class=\"{% if page.type == \"title\"%}title{% elsif page.type == \"frontmatter\" %}frontmatter{% elsif page.type == \"first_page\" %}first_page{% endif %} print\"&gt;\n\n\nNow in the css/printstyles.css file, you can assign a page name based on a specific class:\n\nbody.title { page: title }\n\n\nThis means that for content inside of body class=\"title\", we can style this page in our stylesheet using @page title.\n\nHere’s how that title page is styled:\n\n@page title {\n    @top-left {\n        content: \" \";\n    }\n    @top-right {\n        content: \" \"\n    }\n    @bottom-right {\n        content: \" \";\n    }\n    @bottom-left {\n        content: \" \";\n    }\n}\n\n\nAs you can see, we don’t have any header or footer content, because it’s the title page.\n\nFor the tocpage.html, which has the type: frontmatter, this is specified in the stylesheet:\n\nbody.frontmatter { page: frontmatter }\nbody.frontmatter {counter-reset: page 1}\n\n\n@page frontmatter {\n    @top-left {\n        content: prince-script(guideName);\n    }\n    @top-right {\n        content: prince-script(datestamp);\n    }\n    @bottom-right {\n        content: counter(page, lower-roman);\n    }\n    @bottom-left {\n        content: \"youremail@domain.com\";   }\n}\n\n\nWith counter(page, lower-roman), we reset the page count to 1 so that the title page doesn’t start the count. Then we also add some header and footer info. The page numbers start counting in lower-roman numerals.\n\nFinally, for the first page (which doesn’t have a specific name), we restart the counting to 1 again and this time use regular numbers.\n\nbody.first_page {counter-reset: page 1}\n\nh1 { string-set: doctitle content() }\n\n@page {\n    @top-left {\n        content: string(doctitle);\n        font-size: 11px;\n        font-style: italic;\n    }\n    @top-right {\n        content: prince-script(datestamp);\n        font-size: 11px;\n    }\n\n    @bottom-right {\n        content: \"Page \" counter(page);\n        font-size: 11px;\n    }\n    @bottom-left {\n        content: prince-script(guideName);\n        font-size: 11px;\n    }\n}\n\n\nYou’ll see some other items in there such as prince-script. This means we’re using JavaScript to run some functions to dynamically generate that content. These JavaScript functions are located in the _includes/head_print.html:\n\n&lt;script&gt;\n    Prince.addScriptFunc(\"datestamp\", function() {\n        return \"PDF last generated: January 26, 2022\";\n    });\n&lt;/script&gt;\n\n&lt;script&gt;\n    Prince.addScriptFunc(\"guideName\", function() {\n        return \" User Guide\";\n    });\n&lt;/script&gt;\n\n\nThere are a couple of Prince functions that are default functions from Prince. This gets the heading title of the page:\n\n        content: string(doctitle);\n\n\nThis gets the current page:\n\n        content: \"Page \" counter(page);\n\n\nBecause the theme uses JavaScript in the CSS, you have to add the --javascript tag in the Prince command (detailed later on this page).\n\n5. Customize and run the PDF script\n\nDuplicate the pdf-mydoc.sh file in the root directory and customize it for your specific configuration files.\n\necho 'Killing all Jekyll instances'\nkill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')\nclear\n\necho \"Building PDF-friendly HTML site for Mydoc ...\";\njekyll serve --detach --config _config.yml,pdfconfigs/config_mydoc_pdf.yml;\necho \"done\";\n\necho \"Building the PDF ...\";\nprince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/mydoc.pdf;\necho \"done\";\n\n\nNote that the first part kills all Jekyll instances. This way you won’t try to serve Jekyll at a port that is already occupied.\n\nThe jekyll serve command serves up the HTML-friendly PDF configurations for our two projects. This web version is where Prince will go to get its content.\n\nThe prince script issues a command to the Prince utility. JavaScript is enabled (--javascript), and we tell it exactly where to find the list of files (--input-list) — just point to the prince-list.txt file. Then we tell it where and what to output (-o).\n\nMake sure that the path to the prince-list.txt is correct. For the output directory, I like to output the PDF file into my project’s source (into the files folder). Then when I build the web output, the PDF is included and something I can refer to.\n\n Note: You might not want to include the PDF in your project files, since you’re likely committing the PDF to Github and as a result saving the changes from one PDF version to another with each save.\n\n6. Add conditions for your new builds in the PDF config file\n\nIn the PDF configuration file, there’s a section that looks like this:\n\n{% if site.product == \"mydoc\" %}\npdf_sidebar: product2_sidebar\n{% endif %}\n\n\nPoint to the sidebar you want here.\n\nWhat this does is allow the prince-list.txt and toc.html files to iterate through the right sidebar.  Otherwise, you would need to create a unique prince-list.txt and toc.html file for each separate PDF output you have.\n\n7. Add a download button for the PDF\n\nYou can add a download button for your PDF using some Bootstrap button code:\n\n&lt;a target=\"_blank\" rel=\"noopener\" class=\"noCrossRef\" href=\"/pdf/mydoc.pdf\"&gt;&lt;button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\"&gt;&lt;span class=\"glyphicon glyphicon-download-alt\" aria-hidden=\"true\"&gt;&lt;/span&gt; PDF Download&lt;/button&gt;&lt;/a&gt;\n\n\nHere’s what that looks like:\n\n&lt;a target=”_blank” class=”noCrossRef” href={{ “pdf/mydoc.pdf”}}”&gt; PDF Download&lt;/a&gt;\n\nJavaScript conflicts\n\nIf you have JavaScript on any of your pages, Prince will note errors in Terminal like this:\n\nerror: TypeError: value is not an object\n\n\nHowever, the PDF will still build.\n\nYou need to conditionalize out any JavaScript from your PDF web output before building your PDFs. Make sure that the PDF configuration files have the output: pdf property.\n\nThen surround the JavaScript with conditional tags like this:\n\n{% raw %}{% unless site.output == \"pdf\" %}\njavascript content here ...\n{% endunless %}\n\n\nFor more detail about using unless in conditional logic, see Conditional logic. What this code means is “run this code unless this value is the case.”\n\nOverriding Bootstrap Print Styles\n\nThe theme relies on Bootstrap’s CSS for styling. However, for print media, Bootstrap applies the following style:\n\n@media print{*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}\n\nThis is minified, but basically the * (asterisk) means select all, and applied the color #000 (black). As a result, the Bootstrap style strips out all color from the PDF (for Bootstrap elements).\n\nThis is problematic for code snippets that have syntax highlighting. I decided to remove this de-coloring from the print output. I commented out the Bootstrap style:\n\n@media print{*,:after,:before{/*color:#000!important;*/text-shadow:none!important;/*background:0 0!important*/;-webkit-box-shadow:none!important;box-shadow:none!important}\n\n\nIf you update Bootrap, make sure you make this edit. (Sorry, admittedly I couldn’t figure out how to simply overwrite the * selector with a later style.)\n\nI did, however, remove the color from the alerts and lighten the background shading for pre elements. The printstyles.css has this setting."
 					}
 					
 				
@@ -2120,7 +2101,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-<span>Page last updated:</span> 2021-03-09<br/> Site last generated: 2022-01-25 <br />
+<span>Page last updated:</span> 2021-03-09<br/> Site last generated: 2022-01-26 <br />
 <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
                 </div>
             </div>

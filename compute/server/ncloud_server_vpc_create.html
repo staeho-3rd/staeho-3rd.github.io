@@ -101,12 +101,15 @@
     </script>
     <script>
         $(document).ready(function() {
-            $("#tg-sb-link").click(function() {
-                $("#tg-sb-sidebar").toggle();
-                $("#tg-sb-content").toggleClass('col-md-9');
-                $("#tg-sb-content").toggleClass('col-md-12');
-                $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            $("#tg-sb-link").click(function() {                
+                if (!$("#tg-sb-link").attr("hide_sidebar"))
+                {
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
             });
         });
     </script>
@@ -128,9 +131,9 @@
             <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>
+            <ul class="nav navbar-nav navbar-center">
+                <!-- toggle sidebar button -->                
+                <li><a id="tg-sb-link" hide_sidebar="" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>                
                 <!-- entries without drop-downs appear here -->
 
 
@@ -138,41 +141,18 @@
 
                 
                 
-                
-                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
-                
-                
-                
+                                
                 <li><a href="/news">News</a></li>
+                
+                
+                
+                
                 
                 
                 
                 <!-- entries with drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
                 
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                        
-                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
-                        
-                        
-                        
-                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
-                        
-                        
-                        
-                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
-                        
-                        
-                        
-                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
-                        
-                        
-                    </ul>
-                </li>
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
@@ -195,23 +175,24 @@
                 
                 
                 
-			<li>
-
-
-
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tech@3rdeyesys.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the VPC 환경에서 서버 생성 page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
-
-</li>
-
-
-
-		
+                
+                
+                
+                
+                <li><a href="https://3rdeyesys.com/" target="_blank" rel="noopener">Company</a></li>                                
+                
+                
+                
+                <li><a href="https://www.3rdeyesys.com/question/" target="_blank" rel="noopener">1:1 문의하기</a></li>                                
+                
+                 
+                               
                 <!--comment out this block if you want to hide search-->
                 <li>
                     <!--start search-->
                     <div id="search-demo-container">                        
                             <div style="width:223px"><form action="/search/search.html" method="get">
-	<input type="search" name="q" id="search-input-nav" placeholder="Search" autofocus>
+	<input type="search" name="q" id="search-input-nav" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" placeholder="Search">
 	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -244,7 +225,7 @@
                 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">3rdEyeSys Docs 2.0</li>
+  <li class="sidebarTitle">Technical Documentation </li>
   
   
   
@@ -471,73 +452,73 @@
                   
                   
                   
-                  <li><a title="VPC pages" href="/tag_vpc.html">VPC pages</a></li>
+                  <li><a title="VPC pages" href="/tag/tag_vpc.html">VPC pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Cloud Functions pages" href="/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  <li><a title="Cloud Functions pages" href="/tag/tag_cloud_functions.html">Cloud Functions pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title=".Net (C#) pages" href="/tag_csharp.html">.Net (C#) pages</a></li>
+                  <li><a title=".Net (C#) pages" href="/tag/tag_csharp.html">.Net (C#) pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Account pages" href="/tag_account.html">Account pages</a></li>
+                  <li><a title="Account pages" href="/tag/tag_account.html">Account pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Log pages" href="/tag_log.html">Log pages</a></li>
+                  <li><a title="Log pages" href="/tag/tag_log.html">Log pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Analytics pages" href="/tag_analytics.html">Analytics pages</a></li>
+                  <li><a title="Analytics pages" href="/tag/tag_analytics.html">Analytics pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="API pages" href="/tag_api.html">API pages</a></li>
+                  <li><a title="API pages" href="/tag/tag_api.html">API pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="PHP pages" href="/tag_php.html">PHP pages</a></li>
+                  <li><a title="PHP pages" href="/tag/tag_php.html">PHP pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Media pages" href="/tag_media.html">Media pages</a></li>
+                  <li><a title="Media pages" href="/tag/tag_media.html">Media pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Object Storage pages" href="/tag_object_storage.html">Object Storage pages</a></li>
+                  <li><a title="Object Storage pages" href="/tag/tag_object_storage.html">Object Storage pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="AWS pages" href="/tag_object_aws.html">AWS pages</a></li>
+                  <li><a title="AWS pages" href="/tag/tag_object_aws.html">AWS pages</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="S3 pages" href="/tag_object_s3.html">S3 pages</a></li>
+                  <li><a title="S3 pages" href="/tag/tag_object_s3.html">S3 pages</a></li>
                   
                   
                   
@@ -686,7 +667,7 @@ VPC는 고객의 계정마다 <strong>최대 3개</strong>를 생성할 수 있�
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-<span>Page last updated:</span> 2021-01-12<br/> Site last generated: 2022-01-25 <br />
+<span>Page last updated:</span> 2021-01-12<br/> Site last generated: 2022-01-26 <br />
 <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
                 </div>
             </div>
