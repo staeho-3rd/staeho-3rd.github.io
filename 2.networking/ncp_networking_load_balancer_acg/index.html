@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html lang="kr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/screen.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+		
+		<!--link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400italic,400,300italic,300,700,700italic|Open+Sans:400italic,600italic,700italic,700,600,400|Inconsolata:400,700"-->
+
+		
+
+		<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Classic Load Balancer 운영을 위한 ACG 설정 방법 | 3rdeyesys</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Classic Load Balancer 운영을 위한 ACG 설정 방법" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="네이버 클라우드 Classic Load Balancer 운영을 위한 ACG 설정 방법" />
+<meta property="og:description" content="네이버 클라우드 Classic Load Balancer 운영을 위한 ACG 설정 방법" />
+<link rel="canonical" href="/2.networking/ncp_networking_load_balancer_acg/" />
+<meta property="og:url" content="/2.networking/ncp_networking_load_balancer_acg/" />
+<meta property="og:site_name" content="3rdeyesys" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Classic Load Balancer 운영을 위한 ACG 설정 방법" />
+<script type="application/ld+json">
+{"url":"/2.networking/ncp_networking_load_balancer_acg/","headline":"Classic Load Balancer 운영을 위한 ACG 설정 방법","dateModified":"2021-01-14T00:00:00+00:00","datePublished":"2021-01-14T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2.networking/ncp_networking_load_balancer_acg/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/siteicon.png"}},"description":"네이버 클라우드 Classic Load Balancer 운영을 위한 ACG 설정 방법","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="3rdeyesys" />
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+
+	<body class="">
+		<header>
+			<div class="wrapper">
+				<section class="top-bar">
+					<div class="logo"><a href="/"><img src="/images/title_logo_white.png" style="width:160px;height:33px;margin-top:5px"></a></div>
+					<a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
+<nav>
+	<a class="editor-link btn" href="cloudcannon:collections/_data/navigation.yml" class="btn" style="padding: 5px;"><strong>&#9998;</strong> Edit navigation</a>
+	
+	
+
+		
+		<a href="/" class="" target="_self">Docs<img src="/images/new_dot_10x10.png" style="width:8px;margin-left:3px;vertical-align:top;"></a>
+
+	
+	
+
+		
+		<a href="/update/" class="" target="_self">Update<img src="/images/new_dot_10x10.png" style="width:8px;margin-left:3px;vertical-align:top;"></a>
+
+	
+	
+
+		
+		<a href="/faq/" class="" target="_self">FAQ</a>
+
+	
+	
+
+		
+		<a href="/news/" class="" target="_self">NEWS</a>
+
+	
+	
+
+		
+		<a href="https://3rdeyesys.com" class="" target="_blank">Company<img src="/images/new_dot_10x10.png" style="width:8px;margin-left:3px;vertical-align:top;"></a>
+
+	
+	
+
+		
+		<a href="https://www.3rdeyesys.com/question/" class="" target="_blank">1:1 문의하기</a>
+
+	
+	
+		<span style="width:100px"><form action="/search/" method="get">
+	<input type="search" name="q"  placeholder="Search" autofocus>
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form></span>
+	
+</nav>
+
+				</section>
+				<section class="hero_search">
+					
+					<span>써드아이시스템(3rdeyesys) 기술문서</span>
+					
+					<p>써드아이시스템이 네이버 클라우드 프리미엄 파트너사로 활동하면서 보유하게 된 네이버 클라우드와 관련된 여러 기술 노하우들을 많은 분들께 공유하려고 합니다.</p>
+					<form action="/search/" method="get">
+	<input type="search" name="q"  placeholder="Search" autofocus>
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form>
+				</section>
+			</div>
+
+		</header>
+		<section class="content">
+			<div class="wrapper">
+				<section class="tutorial">
+	<section class="sidebar sticky">
+		<ul>
+			
+			
+				<li><a href="#개요">개요</a></li>
+			
+				<li><a href="#서버연결-실패-상황">서버연결 실패 상황</a></li>
+			
+				<li><a href="#acg-권한-설정">ACG 권한 설정</a></li>
+			
+				<li><a href="#서버연결-성공">서버연결 성공</a></li>
+			
+				<li><a href="#참고-url">참고 URL</a></li>
+			
+		</ul>
+	</section>
+	
+	
+	
+	
+	
+	
+	
+	<section class="tutorial-content">
+		<h1>Classic Load Balancer 운영을 위한 ACG 설정 방법
+		
+		</h1>
+
+		
+		
+		<div class="tutorial-main">
+			<h2 id="개요">개요</h2>
+<p>Load Balancer가 정상적으로 동작하기 위해서는 Load Balancer –&gt; Server의 지정된 포트로 접근할 수 있어야 합니다.<br />
+그러기 위해서는 Server의 ACG에 Load Balancer가 접근할 수 있도록 권한을 설정해주어야 하는데, 여기서는 네이버 클라우드의 Classic Load Balancer를 운영할 때 ACG 설정을 어떻게 하는가에 대한 내용을 정리해보겠습니다.</p>
+
+<h2 id="서버연결-실패-상황">서버연결 실패 상황</h2>
+<p>서버 등록하고 Load Balancer의 다른 설정들을 모두 올바르게 했는데도 아래와 같이 서버연결 상태가 실패로 나타나고 Load Balancer는 동작이 정지되는 경우가 있습니다.<br />
+이런 경우가 바로 ACG에 Load Balancer의 접근 권한을 설정하지 않았을 때 입니다.</p>
+
+<p><img src="/images/ncp_networking_load_balancer_acg_01.jpg" alt="Load Balancer 운영을 위한 ACG 설정" style="width:800px;align:center" /></p>
+
+<h2 id="acg-권한-설정">ACG 권한 설정</h2>
+<p>ACG에 Load Balancer가 접근할 수 있도록 권한을 설정하려면 접근소스에 아래와 같이 입력합니다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>접근소스 : ncloud-load-balancer
+</code></pre></div></div>
+
+<p>그 외에 프로토콜과 허용포트도 지정된 정보를 입력하고 추가를 하면 됩니다.</p>
+
+<p><img src="/images/ncp_networking_load_balancer_acg_02.jpg" alt="Load Balancer 운영을 위한 ACG 설정" style="width:800px;align:center" />
+<img src="/images/ncp_networking_load_balancer_acg_03.jpg" alt="Load Balancer 운영을 위한 ACG 설정" style="width:800px;align:center" /></p>
+
+<h2 id="서버연결-성공">서버연결 성공</h2>
+<p>ACG에 접근권한을 설정하고 나서 잠시 기다리면 Load Balancer가 서버에 접근시도를 하고 정상 접근이 되면서 서버연결 상태가 성공으로 바뀌고 Load Balancer도 정상 작동하게 됩니다.</p>
+
+<p><img src="/images/ncp_networking_load_balancer_acg_04.jpg" alt="Load Balancer 운영을 위한 ACG 설정" style="width:800px;align:center" /></p>
+
+<h2 id="참고-url">참고 URL</h2>
+<p><a href="https://guide.ncloud-docs.com/docs/networking-loadbalancer-classiclbconsole" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/networking-loadbalancer-classiclbconsole.html</a></p>
+
+
+			<p class="info last-modified-at">문서 최종 수정일 : 2021-01-14</p>
+		</div>
+		<div class="tutorial-share">
+			<a class="modalOpen no-smooth" href="#subscribe">
+			<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+		
+ Subscribe</a>
+			<a class="modalOpen no-smooth" href="#share">
+			<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+			</svg>
+		
+ Share</a>
+		</div>
+	</section>
+</section>
+
+
+	
+	
+	
+	<div class="tutorial-series">
+		<h3> - Series</h3>
+		<p></p>
+
+		<ul class="listing">
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/2.networking/ncp_networking_vpc_load_balancer/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>1. Load Balancer 상품군의 변화 
+							
+						</h3>
+						<p class="description">네이버 클라우드 Load Balancer 상품군의 변화</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li class="active">
+		
+		
+		
+		
+		
+		
+		
+			<a href="/2.networking/ncp_networking_load_balancer_acg/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>2. Classic Load Balancer 운영을 위한 ACG 설정 방법 
+							
+						</h3>
+						<p class="description">네이버 클라우드 Classic Load Balancer 운영을 위한 ACG 설정 방법</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/2.networking/ncp_networking_load_balancer_application_lb/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>3. VPC 환경에서 Application Load Balancer 생성하기 
+							
+						</h3>
+						<p class="description">네이버 클라우드 VPC 환경에서 Application Load Balancer 생성하기 가이드 입니다.</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/2.networking/ncp_networking_natgw_routetb/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>4. VPC 환경에서 NAT Gateway 설정하기 
+							
+						</h3>
+						<p class="description">네이버 클라우드 VPC 환경에서 NAT Gateway 설정하기 가이드입니다.</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+</ul>
+	</div>
+
+
+
+
+	<div class="related">
+		<h3>Related docs</h3>
+
+		<ul class="listing">
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>CentOS에서 NginX 설치, 설정하는 방법 
+							
+								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
+							
+						</h3>
+						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>Windows 서버 모니터링 성능 정보 수집 오류 해결 방법 
+							
+						</h3>
+						<p class="description">Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다.</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기 
+							
+						</h3>
+						<p class="description">네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법입니다</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>Cloud Log Analytics 설정 가이드 
+							
+						</h3>
+						<p class="description">Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법입니다.</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법 
+							
+						</h3>
+						<p class="description">네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법입니다.</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>네이버 클라우드 Classic 환경 vs VPC 환경 비교 
+							
+						</h3>
+						<p class="description">네이버 클라우드 Classic 환경 vs VPC 환경 비교 가이드입니다</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>VPC Peering 생성 가이드 
+							
+						</h3>
+						<p class="description">네이버 클라우드 VPC 환경에서 VPC Peering 생성 가이드입니다.</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>Archive Storage CLI 사용 가이드 - Windows 환경 
+							
+						</h3>
+						<p class="description">네이버 클라우드 Archive Storage CLI를 Windows 환경에서 사용하는 방법에 대한 가이드입니다.</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>PHP로 Archive Storage API 호출하기 - 컨테이너(버킷) 오브젝트 목록 조회 
+							
+						</h3>
+						<p class="description">네이버 클라우드에서 PHP로 Archive Storage API 호출해서 컨테이너(버킷) 오브젝트 목록 조회하는 방법입니다</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+		<li >
+		
+		
+		
+		
+		
+		
+		
+			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+				<div class="icon">
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+			<path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+</div>
+				<article>
+					<div>
+						<h3>PHP로 Archive Storage API 인증 토큰 생성하는 방법 
+							
+						</h3>
+						<p class="description">네이버 클라우드 PHP로 Archive Storage API 인증 토큰 생성하는 방법입니다</p>
+					</div>
+				</article>
+			</a>
+		</li>
+	
+</ul>
+	</div>
+
+
+
+
+<div id="subscribe" class="modalDialog">
+	<div>
+		<a title="Close" class="close">&times;</a>
+		<form action="" method="post">
+			<h2>Subscribe</h2>
+			<p>The latest tutorials sent straight to your inbox.</p>
+			<input type="email" name="EMAIL" placeholder="Email">
+			<input type="submit" value="Sign up">
+		</form>
+	</div>
+</div>
+
+<div id="share" class="modalDialog sharing">
+	<div>
+		<a title="Close" class="close">&times;</a>
+		<h2>Share</h2>
+		<p>Share this tutorial with your community.</p>
+		<ul>
+			<li><a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A4000%2F2.networking%2Fncp_networking_load_balancer_acg%2F">
+		<svg class="twitter" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" /></svg>
+	
+ Twitter</a></li>
+			<li><a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2.networking%2Fncp_networking_load_balancer_acg%2F">
+		<svg class="facebook" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="15.8 15.8 25 25"><path d="M32.8 24.7h-3.2v-2.1c0-0.8 0.5-1 0.9-1s2.3 0 2.3 0v-3.5l-3.1 0c-3.5 0-4.3 2.6-4.3 4.3v2.3h-2v3.6h2c0 4.6 0 10.2 0 10.2h4.2c0 0 0-5.6 0-10.2h2.8L32.8 24.7z"/></svg>
+	
+ Facebook</a></li>
+			<li><a class="google-plus" target="_blank" href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2F2.networking%2Fncp_networking_load_balancer_acg%2F">
+ Google+</a></li>
+			<li><a class="hacker-news" target="_blank" href="http://news.ycombinator.com/submitlink?u=http%3A%2F%2Flocalhost%3A4000%2F2.networking%2Fncp_networking_load_balancer_acg%2F&t=Classic%20Load%20Balancer%20%EC%9A%B4%EC%98%81%EC%9D%84%20%EC%9C%84%ED%95%9C%20ACG%20%EC%84%A4%EC%A0%95%20%EB%B0%A9%EB%B2%95">
+		<svg class="hacker-news" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.8 3.3c-0.4 0.8-5.6 11.1-5.6 11.2 0 2 0 6.2 0 6.2 -0.1 0-2.2 0-2.3 0 0 0 0-5.9 0-6.2 0 0-5.5-10.9-5.6-11.1C5.3 3.3 5.3 3.3 5.3 3.3 5.3 3.3 5.3 3.3 5.3 3.3c0 0 0 0 0.1 0 0.9 0 1.7 0 2.6 0 0 0 0 0 0 0.1 0.1 0.1 4 8.3 4.1 8.3 0 0 4.2-8.3 4.3-8.4 0.8 0 1.6 0 2.4 0 0 0 0 0 0 0C18.8 3.3 18.8 3.3 18.8 3.3z"/></svg>
+	
+ Hacker News</a></li>
+		</ul>
+	</div>
+</div>
+
+<script src="/js/main.js"></script>
+
+<script>
+	var headings = document.querySelectorAll("h2[id]");
+
+	console.log(headings);
+	for (var i = 0; i < headings.length; i++) {
+		var anchorLink = document.createElement("a");
+		anchorLink.innerText = "#";
+		anchorLink.href = "#" + headings[i].id;
+		anchorLink.classList.add("header-link");
+
+		headings[i].appendChild(anchorLink);
+	}
+
+	$(".modalOpen").click(function() {
+		var id = $(this).attr("href");
+		$(id).addClass("show");
+
+		$(window).click(function() {
+			$(".show").removeClass("show");
+		});
+
+		$(id + " > div").click(function(event){
+			event.stopPropagation();
+		});
+		return false;
+	});
+
+	$(".close").click(function() {
+		$(".show").removeClass("show");
+		return false;
+	});
+
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$(".show").removeClass("show");
+		}
+	});
+</script>
+
+			</div>
+		</section>
+
+		<footer>
+	<div class="wrapper">
+		<p class="edit-footer"><a class="editor-link btn" href="cloudcannon:collections/_data/footer.yml" class="btn" style="padding: 5px;"><strong>&#9998;</strong> Edit footer</a></p>
+		<ul class="footer-links">
+			
+				<li><a target="_blank" href="https://www.facebook.com/3rdeyesys" class="Facebook-icon">
+					
+						
+		<svg class="facebook" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19,4V7H17A1,1 0 0,0 16,8V10H19V13H16V20H13V13H11V10H13V7.5C13,5.56 14.57,4 16.5,4M20,2H4A2,2 0 0,0 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" /></svg>
+	
+
+					
+					</a></li>
+			
+				<li><a target="_blank" href="mailto:biz@3rdeyesys.com" class="Email-icon">
+					
+						
+			<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+		
+
+					
+					</a></li>
+			
+		</ul>
+		<p class="copyright">&copy; 3rdeyesys 2022. All rights reserved.</p>
+	</div>
+</footer>
+
+		<script>
+			$(function() {
+				$('a[href*=\\#]').not(".no-smooth").on('click', function(event){
+					var el = $(this.hash);
+					if (el.length > 0) {
+						// event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top - 50}, 500);
+					}
+				});
+
+				$('svg').click(function() {
+					$(this).parent('form').submit();
+				});
+			});
+
+			document.getElementById("open-nav").addEventListener("click", function (event) {
+				event.preventDefault();
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
