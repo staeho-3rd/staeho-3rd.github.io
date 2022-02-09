@@ -25,19 +25,109 @@
   
   
   <url>
+    <loc>staeho-3rd.github.io/aws/aws_cloud_watch_log.html</loc>
+  
+    <lastmod>2020-11-05T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
     <loc>staeho-3rd.github.io/aws/aws_s3_lifecycle_management.html</loc>
+  
+    <lastmod>2021-09-16T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-09-16T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/etc/etc_jekyll_base_theme_customizing.html</loc>
+  
+    <lastmod>2021-02-23T00:00:00+09:00</lastmod>
+  
     
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/etc/etc_jekyll_install.html</loc>
+  
+    <lastmod>2021-01-04T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/etc/etc_mkdocs_install.html</loc>
+  
+    <lastmod>2020-11-30T00:00:00+09:00</lastmod>
+  
+    
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/etc/etc_pdf_merge_php_sample.html</loc>
+  
+    <lastmod>2021-05-03T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-05-03T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/etc/etc_php_to_telegram_message_send.html</loc>
+  
+    <lastmod>2021-11-10T00:00:00+09:00</lastmod>
+  
     
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/etc/etc_phpspreadsheet_sample_code.html</loc>
+  
+    <lastmod>2021-04-03T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/etc/etc_smtp_auth_to_google_gmail_account.html</loc>
+  
+    <lastmod>2021-03-15T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/faq/faq.html</loc>
+  
+    
+  
   </url>
   
   
@@ -45,747 +135,1166 @@
   
   
   <url>
-    <loc>staeho-3rd.github.io/mydoc_about.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_about_ruby_gems_etc.html</loc>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_adding_tooltips.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_alerts.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_atom_text_editor.html</loc>
-    
-        <lastmod>2016-03-20T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_build_arguments.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_build_scripts.html</loc>
-    
-        <lastmod>2016-11-30T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_code_samples.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_collections.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_commenting_on_files.html</loc>
-    
-        <lastmod>2016-11-30T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_conditional_logic.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_content_reuse.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_exluding_files.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_faq_layout.html</loc>
-    
-        <lastmod>2015-11-30T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_generating_pdfs.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_glossary.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_help_api.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_hyperlinks.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_icons.html</loc>
-    
-        <lastmod>2016-07-16T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_images.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_install_jekyll_on_mac.html</loc>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_install_jekyll_on_windows.html</loc>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_introduction.html</loc>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_iterm_profiles.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_kb_layout.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_labels.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_lists.html</loc>
-    
-  </url>
-  
+    <loc>staeho-3rd.github.io/analytics/ncloud_analytics_cloud_log_analytics_guide.html</loc>
   
+    <lastmod>2021-12-14T00:00:00+09:00</lastmod>
   
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_navtabs.html</loc>
     
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_pages.html</loc>
-    
-        <lastmod>2016-07-16T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_posts.html</loc>
-    
-        <lastmod>2016-02-25T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_publishing_github_pages.html</loc>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_push_build_to_server.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_release_notes_50.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_release_notes_60.html</loc>
-    
-        <lastmod>2016-07-16T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_search_configuration.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_series.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_seriesdemo1.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_seriesdemo2.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_seriesdemo3.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_seriesdemo4.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_shuffle.html</loc>
-    
-        <lastmod>2015-11-30T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_sidebar_navigation.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_special_layouts.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_support.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_supported_features.html</loc>
-    
-        <lastmod>2016-07-16T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_syntax_highlighting.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_tables.html</loc>
-    
-        <lastmod>2016-07-16T00:00:00+09:00</lastmod>
-    
-  </url>
-  
   
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_tag_archives_overview.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_tags.html</loc>
-    
-        <lastmod>2016-07-16T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_themes.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_troubleshooting.html</loc>
-    
-        <lastmod>2016-07-03T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_webstorm_text_editor.html</loc>
-    
-        <lastmod>2016-03-20T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_workflow_maps.html</loc>
-    
-        <lastmod>2016-07-16T00:00:00+09:00</lastmod>
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>staeho-3rd.github.io/mydoc_yaml_tutorial.html</loc>
-    
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/analytics/ncloud_analytics_cloud_log_analytics_info.html</loc>
+  
+    <lastmod>2021-12-07T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-12-07T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/api/ncloud_api_call_csharp_sample.html</loc>
+  
+    <lastmod>2021-04-07T00:00:00+09:00</lastmod>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/api/ncloud_api_call_php_sample.html</loc>
+  
+    <lastmod>2021-04-06T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-04-06T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/application-service/ncloud_application_service_cloud_outbound_mailer_bulk_mail_send.html</loc>
+  
+    <lastmod>2021-05-12T00:00:00+09:00</lastmod>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/application-service/ncloud_application_service_nshorturl_php_sample.html</loc>
+  
+    <lastmod>2021-04-30T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-04-30T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/application-service/ncloud_application_service_papago_korean_name_romanizer_php_sample.html</loc>
+  
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  
     
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_autoscaling_classic_guide.html</loc>
+  
+    <lastmod>2021-09-16T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_autoscaling_event_setting.html</loc>
+  
+    <lastmod>2021-01-19T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_autoscaling_limit.html</loc>
+  
+    <lastmod>2021-07-01T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html</loc>
+  
+    <lastmod>2021-03-09T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html</loc>
+  
+    <lastmod>2021-03-12T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html</loc>
+  
+    <lastmod>2021-03-17T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_kubernetes_service_start_guide.html</loc>
+  
+    <lastmod>2021-07-12T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_lamp_config_basic.html</loc>
+  
+    <lastmod>2020-12-03T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_lamp_config_centos.html</loc>
+  
+    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_lamp_config_ubuntu.html</loc>
+  
+    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</loc>
+  
+    <lastmod>2022-01-18T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_connect_by_public_ip.html</loc>
+  
+    <lastmod>2020-12-22T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_connect_no_public_ip.html</loc>
+  
+    <lastmod>2020-12-21T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_http_to_https_centos.html</loc>
+  
+    <lastmod>2020-12-09T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_http_to_https_ubuntu.html</loc>
+  
+    <lastmod>2020-12-09T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_image_share_classic.html</loc>
+  
+    <lastmod>2021-05-31T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_micro_type_limit.html</loc>
+  
+    <lastmod>2021-01-09T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_pip_python_install_centos6.html</loc>
+  
+    <lastmod>2021-01-26T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_repository_change_on_private_network.html</loc>
+  
+    <lastmod>2021-10-25T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_spec_change.html</loc>
+  
+    <lastmod>2021-07-02T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_ssh_security_setting.html</loc>
+  
+    <lastmod>2021-05-27T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_stop_price.html</loc>
+  
+    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_storage_add_detail_process.html</loc>
+  
+    <lastmod>2021-06-04T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_storage_add_guide.html</loc>
+  
+    <lastmod>2020-11-19T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_storage_lvm_create.html</loc>
+  
+    <lastmod>2021-07-06T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_vpc_create.html</loc>
+  
+    <lastmod>2021-01-12T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html</loc>
+  
+    <lastmod>2021-05-31T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html</loc>
+  
+    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html</loc>
+  
+    <lastmod>2021-12-02T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_cloud_db_for_mysql_guide.html</loc>
+  
+    <lastmod>2021-12-13T00:00:00+09:00</lastmod>
+  
+    
+  
+    <image:image>
+    <image:loc>staeho-3rd.github.io/image/database/ncp_database_cloud_db_for_mysql_12-2.jpg</image:loc>
+    <image:title>VPC환경에서 Cloud DB for MySQL 생성하기</image:title>
+    <image:caption>VPC환경에서 Cloud DB for MySQL 생성하기</image:caption>
+    </image:image>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html</loc>
+  
+    <lastmod>2021-12-13T00:00:00+09:00</lastmod>
+  
+    
+  
+    <image:image>
+    <image:loc>staeho-3rd.github.io/image/database/ncp_database_cloud_db_for_mysql_public_domain_06.jpg</image:loc>
+    <image:title>Cloud DB for MySQL 생성후 Public 도메인으로 접속하기</image:title>
+    <image:caption>Cloud DB for MySQL 생성후 Public 도메인으로 접속하기</image:caption>
+    </image:image>
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/database/ncloud_database_compare.html</loc>
+  
+    <lastmod>2021-01-26T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-01-26T00:00:00+09:00</lastmod>
-    
+  
   </url>
   
   
   
   <url>
-    <loc>staeho-3rd.github.io/management/ncloud_sub_account_guide.html</loc>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mariadb_access_from_remote_centos.html</loc>
+  
+    <lastmod>2021-02-19T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-08-19T00:00:00+09:00</lastmod>
+  
+    <image:image>
+    <image:loc>staeho-3rd.github.io/image/database/ncp_database_mariadb_access_from_remote_ubuntu_03.jpg</image:loc>
+    <image:title>CentOS에서 mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL</image:title>
+    <image:caption>CentOS에서 mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL</image:caption>
+    </image:image>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mariadb_access_from_remote_ubuntu.html</loc>
+  
+    <lastmod>2021-02-19T00:00:00+09:00</lastmod>
+  
     
+  
+    <image:image>
+    <image:loc>staeho-3rd.github.io/image/database/ncp_database_mariadb_access_from_remote_ubuntu_03.jpg</image:loc>
+    <image:title>Ubuntu에서 mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL</image:title>
+    <image:caption>Ubuntu에서 mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL</image:caption>
+    </image:image>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mysql_auto_backup.html</loc>
+  
+    <lastmod>2021-06-11T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mysql_mariadb_config_bind_address.html</loc>
+  
+    <lastmod>2021-02-24T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mysql_mariadb_config_my_cnf.html</loc>
+  
+    <lastmod>2021-02-22T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mysql_mariadb_replication.html</loc>
+  
+    <lastmod>2021-04-13T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mysql_object_storage_auto_backup_centos.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+  
+    
+  
+    <image:image>
+    <image:loc>staeho-3rd.github.io/image/database/ncp_database_mysql_backup_to_object_storage_02.jpg</image:loc>
+    <image:title>CentOS에서 mysql DB를 Object Storage로 자동 백업하기</image:title>
+    <image:caption>CentOS에서 mysql DB를 Object Storage로 자동 백업하기</image:caption>
+    </image:image>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+  
+    
+  
+    <image:image>
+    <image:loc>staeho-3rd.github.io/image/database/ncp_database_mysql_backup_to_object_storage_02.jpg</image:loc>
+    <image:title>Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기</image:title>
+    <image:caption>Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기</image:caption>
+    </image:image>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/database/ncloud_database_mysql_root_password_set_update_guide.html</loc>
+  
+    <lastmod>2021-08-05T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/management/ncloud_management_classic_monitoring_guide.html</loc>
+  
+    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/management/ncloud_management_classic_vs_vpc_guide.html</loc>
+  
+    <lastmod>2021-12-03T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/management/ncloud_management_cloud_insight_guide.html</loc>
+  
+    <lastmod>2021-10-18T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html</loc>
+  
+    <lastmod>2021-12-28T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/management/ncloud_management_sub_account_guide.html</loc>
+  
+    <lastmod>2021-08-19T00:00:00+09:00</lastmod>
+  
+    
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/media/ncloud_media_video_player_sample.html</loc>
+  
+    <lastmod>2021-06-15T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-06-15T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_global_dns_guide.html</loc>
+  
+    <lastmod>2021-05-27T00:00:00+09:00</lastmod>
+  
     
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_load_balancer_acg.html</loc>
+  
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_load_balancer_application_lb.html</loc>
+  
+    <lastmod>2021-12-17T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_natgw_routetb.html</loc>
+  
+    <lastmod>2021-07-09T00:00:00+09:00</lastmod>
+  
+    
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/networking/ncloud_networking_service_port_info.html</loc>
+  
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_vpc_acg_nacl.html</loc>
+  
+    <lastmod>2020-12-01T00:00:00+09:00</lastmod>
+  
     
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_vpc_load_balancer.html</loc>
+  
+    <lastmod>2020-12-01T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_vpc_overview.html</loc>
+  
+    <lastmod>2020-11-30T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_vpc_peering_guide.html</loc>
+  
+    <lastmod>2021-11-25T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/networking/ncloud_networking_vpc_subnet_natgw.html</loc>
+  
+    <lastmod>2020-12-01T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/security/ncloud_security_acg_guide.html</loc>
+  
+    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/security/ncloud_security_onpremise_compare.html</loc>
+  
+    <lastmod>2020-12-02T00:00:00+09:00</lastmod>
+  
+    
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/security/ncloud_security_service_summary.html</loc>
+  
+    <lastmod>2021-04-26T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-04-26T00:00:00+09:00</lastmod>
-    
+  
   </url>
   
   
   
   <url>
-    <loc>staeho-3rd.github.io/compute/cloud_functions/ncloud_server_cloud_functions_dotnet_csharp_cmd.html</loc>
+    <loc>staeho-3rd.github.io/security/ncloud_security_ssl_dcv_method.html</loc>
+  
+    <lastmod>2021-09-09T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-03-09T00:00:00+09:00</lastmod>
-    
+  
   </url>
   
   
   
   <url>
-    <loc>staeho-3rd.github.io/compute/server/ncloud_server_vpc_create.html</loc>
+    <loc>staeho-3rd.github.io/security/ncloud_security_ssl_vpn_classic_guide.html</loc>
+  
+    <lastmod>2021-10-27T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2021-01-12T00:00:00+09:00</lastmod>
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/security/ncloud_security_ssl_vpn_vpc_guide.html</loc>
+  
+    <lastmod>2021-11-02T00:00:00+09:00</lastmod>
+  
     
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_archive_storage_api_access_token_create.html</loc>
+  
+    <lastmod>2021-11-11T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_archive_storage_api_get_container_by_php.html</loc>
+  
+    <lastmod>2021-11-17T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_archive_storage_cli_windows_guide.html</loc>
+  
+    <lastmod>2021-11-19T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_backup_guide.html</loc>
+  
+    <lastmod>2020-11-25T00:00:00+09:00</lastmod>
+  
+    
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/storage/ncloud_storage_compare.html</loc>
+  
+    <lastmod>2020-12-28T00:00:00+09:00</lastmod>
+  
     
-        <lastmod>2020-12-28T00:00:00+09:00</lastmod>
-    
+  
   </url>
   
   
   
   <url>
-    <loc>staeho-3rd.github.io/news.html</loc>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_nas_vpc_guide.html</loc>
+  
+    <lastmod>2021-07-27T00:00:00+09:00</lastmod>
+  
     
+  
   </url>
   
   
   
   <url>
-    <loc>staeho-3rd.github.io/news_archive.html</loc>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_object_storage_aws_cli_connect.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+  
     
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_object_storage_lifecycle_management.html</loc>
+  
+    <lastmod>2021-06-02T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_object_storage_required_service.html</loc>
+  
+    <lastmod>2021-02-16T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_object_storage_s3_client_cyberduck.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_object_storage_s3_client_s3browser.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html</loc>
+  
+    <lastmod>2021-04-12T00:00:00+09:00</lastmod>
+  
+    
+  
+  </url>
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/news/news.html</loc>
+  
+    
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_landing_page.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_sample1.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_sample2.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_sample3.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_sample4.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_sample5.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_sample6.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p1_sample7.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_landing_page.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample1.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample10.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample11.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample12.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample13.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample14.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample2.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample3.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample4.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample5.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample6.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample7.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample8.html</loc>
+  
     
+  
   </url>
   
   
   
   <url>
     <loc>staeho-3rd.github.io/p2_sample9.html</loc>
+  
     
+  
   </url>
   
   
@@ -843,6 +1352,105 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>staeho-3rd.github.io/update/update.html</loc>
+  
+    
+  
+  </url>
   
   
 </urlset>

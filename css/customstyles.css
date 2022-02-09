@@ -6,7 +6,7 @@ body {
     padding: 20px;
     margin: 20px 0;
     border: 1px solid #eee;
-    border-left-width: 16px;
+    border-left-width: 5px;
     border-radius: 3px;
 }
 .bs-callout h4 {
@@ -1225,6 +1225,9 @@ h4.panel-title {
     padding-top: 0px;
     margin-top: 0px;
 }
+h4.panel-title>a {
+    color:#555;
+}
 
 /*set navbar breakpoint so that it converts to hamburger earlier */
 
@@ -1297,7 +1300,8 @@ h4.panel-title {
     font-size: 2.0em;
 }
 .category h2 a {
-    color: #666;
+    color: #333;
+    text-decoration:none;
 }
 
 
@@ -1388,4 +1392,6 @@ header nav input{ border: solid 1px gray;}
 @media (min-width: 750px) { 
     .hero_search { display: block; } 
 }
+
+
 

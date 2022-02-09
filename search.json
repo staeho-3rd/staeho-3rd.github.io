@@ -4,11 +4,55 @@
 
 
 {
+"title": "AWS CLOUDWATCH LOG 수집 매뉴얼",
+"tags": "awsmonitoringlog",
+"keywords": "AWS, Monitoring, 모니터링",
+"url": "/aws/aws_cloud_watch_log.html",
+"summary": "AWS에서 CLOUDWATCH LOG를 수집하기 위해 필요한 절차와 오류 대처법에 대한 매뉴얼입니다"
+}
+,
+
+
+
+{
 "title": "AWS S3 수명 주기 (LifeCycle) 설정하기",
 "tags": "awss3object_storage",
 "keywords": "AWS, S3, LifeCycle",
 "url": "/aws/aws_s3_lifecycle_management.html",
 "summary": "AWS S3 수명 주기 (LifeCycle) 설정하기"
+}
+,
+
+
+
+{
+"title": "jekyll base-theme 커스터마이징",
+"tags": "markdownjekyllwindows",
+"keywords": "Markdown, Windows, Hugo",
+"url": "/etc/etc_jekyll_base_theme_customizing.html",
+"summary": "jekyll base-theme의 디자인과 각종 요소들을 커스터마이징하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "jekyll 설치(윈도 10) with base-theme",
+"tags": "markdownjekyllwindows",
+"keywords": "Markdown, Windows, Hugo",
+"url": "/etc/etc_jekyll_install.html",
+"summary": "윈도 10 환경에 base-theme를 사용한 jekyll을 설치하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "mkdocs 설치 (윈도 10)",
+"tags": "markdownjekyllwindows",
+"keywords": "Markdown, Windows, Hugo",
+"url": "/etc/etc_mkdocs_install.html",
+"summary": "윈도 10 환경에서 mkdocs를 설치하는 방법입니다"
 }
 ,
 
@@ -25,597 +69,58 @@
 
 
 
-
-
 {
-"title": "About the theme&#39;s author",
-"tags": "getting_started",
-"keywords": "documentation theme, jekyll, technical writers, help authoring tools, hat replacements",
-"url": "/mydoc_about.html",
-"summary": "I have used this theme for projects that I've worked on as a professional technical writer."
+"title": "PHP로 텔레그램 비공개 채널에 메시지 전송하기",
+"tags": "php",
+"keywords": "Telegram, Message",
+"url": "/etc/etc_php_to_telegram_message_send.html",
+"summary": "PHP로 텔레그램(Telegram) 대화방인 비공개 채널에 메시지 전송하는 방법입니다"
 }
 ,
 
 
 
 {
-"title": "About Ruby, Gems, Bundler, and other prerequisites",
-"tags": "getting_startedtroubleshooting",
-"keywords": "",
-"url": "/mydoc_about_ruby_gems_etc.html",
-"summary": "Ruby is a programming language you must have on your computer in order to build Jekyll locally. Ruby has various gems (or plugins) that provide various functionality. Each Jekyll project usually requires certain gems."
+"title": "PhpSpreadsheet 설정 샘플 코드",
+"tags": "phpexcel",
+"keywords": "PHP, Excel, 엑셀",
+"url": "/etc/etc_phpspreadsheet_sample_code.html",
+"summary": "PHP로 Excel 문서 생성, 데이터 읽기를 할 수 있는 PhpSpreadsheet 설정 샘플 코드입니다"
 }
 ,
 
 
 
 {
-"title": "Tooltips",
-"tags": "formatting",
-"keywords": "popovers, tooltips, user interface text, glossaries, definitions",
-"url": "/mydoc_adding_tooltips.html",
-"summary": "You can add tooltips to any word, such as an acronym or specialized term. Tooltips work well for glossary definitions, because you don't have to keep repeating the definition, nor do you assume the reader already knows the word's meaning."
+"title": "Gmail을 이용해 smtp 메일 발송할 때 인증오류 해결 방법",
+"tags": "gmailsmtpauth",
+"keywords": "Auth, 인증, 앱 비밀번호",
+"url": "/etc/etc_smtp_auth_to_google_gmail_account.html",
+"summary": "Gmail을 이용해 smtp 메일 발송할 때 인증오류 해결 방법입니다"
 }
 ,
 
 
 
 {
-"title": "Alerts",
-"tags": "formatting",
-"keywords": "notes, tips, cautions, warnings, admonitions",
-"url": "/mydoc_alerts.html",
-"summary": "You can insert notes, tips, warnings, and important alerts in your content. These notes make use of Bootstrap styling and are available through data references such as site.data.alerts.note."
-}
-,
-
-
-
-{
-"title": "Atom Text Editor",
+"title": "FAQ",
 "tags": "",
-"keywords": "atom, text editor,",
-"url": "/mydoc_atom_text_editor.html",
-"summary": "Atom is a free text editor that is a favorite tool of many writers because it is free. This page provides some tips for using Atom."
+"keywords": "frequently asked questions, FAQ, question and answer, Support",
+"url": "/faq/faq.html",
+"summary": "Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다"
 }
 ,
 
 
 
-{
-"title": "Build arguments",
-"tags": "publishing",
-"keywords": "building, serving, serve, build",
-"url": "/mydoc_build_arguments.html",
-"summary": "You use various build arguments with your Jekyll project. You can also create shell scripts to act as shortcuts for long build commands. You can store the commands in iTerm as profiles as well."
-}
-,
-
 
 
 {
-"title": "10. Configure the build scripts",
-"tags": "publishing",
-"keywords": "build scripts, generating outputs, building, publishing",
-"url": "/mydoc_build_scripts.html",
-"summary": "You need to customize the build scripts. These script automate the publishing of your PDFs and web outputs through shell scripts on the command line."
-}
-,
-
-
-
-{
-"title": "Code samples",
-"tags": "formatting",
-"keywords": "dcode samples syntax highlighting",
-"url": "/mydoc_code_samples.html",
-"summary": "You can use fenced code blocks with the language specified after the first set of backtick fences."
-}
-,
-
-
-
-{
-"title": "Collections",
-"tags": "content_types",
-"keywords": "groups, api, structure",
-"url": "/mydoc_collections.html",
-"summary": "Collections are useful if you want to loop through a special folder of pages that you make available in a content API. You could also use collections if you have a set of articles that you want to treat differently from the other content, with a different layout or format."
-}
-,
-
-
-
-{
-"title": "Commenting on files",
-"tags": "navigation",
-"keywords": "annotations, comments, feedback",
-"url": "/mydoc_commenting_on_files.html",
-"summary": "You can add a button to your pages that allows people to add comments."
-}
-,
-
-
-
-{
-"title": "Conditional logic",
-"tags": "single_sourcing",
-"keywords": "if else logic, conditions, conditional attributes, conditional filtering",
-"url": "/mydoc_conditional_logic.html",
-"summary": "You can implement advanced conditional logic that includes if statements, or statements, unless, and more. This conditional logic facilitates single sourcing scenarios in which you're outputting the same content for different audiences."
-}
-,
-
-
-
-{
-"title": "Content reuse",
-"tags": "single_sourcing",
-"keywords": "includes, conref, dita, transclusion, transclude, inclusion, reference",
-"url": "/mydoc_content_reuse.html",
-"summary": "You can reuse chunks of content by storing these files in the includes folder. You then choose to include the file where you need it. This works similar to conref in DITA, except that you can include the file in any content type."
-}
-,
-
-
-
-{
-"title": "Excluding files",
-"tags": "single_sourcing",
-"keywords": "exclusion, separating outputs, removing files from outputs",
-"url": "/mydoc_exluding_files.html",
-"summary": "By default, all the files in your Jekyll project are included in the output (this differs from DITA projects, which don't include files unless noted on the map). If you're single sourcing, you'll need to exclude the files that shouldn't be included in the output. The sidebar doesn't control inclusion or exclusion."
-}
-,
-
-
-
-{
-"title": "FAQ layout",
-"tags": "special_layouts",
-"keywords": "frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse",
-"url": "/mydoc_faq_layout.html",
-"summary": "You can use an accordion-layout that takes advantage of Bootstrap styling. This is useful for an FAQ page."
-}
-,
-
-
-
-{
-"title": "Generating PDFs",
-"tags": "publishingsingle_sourcingcontent_types",
-"keywords": "PDF, prince, prince XML, ant, xsl fo",
-"url": "/mydoc_generating_pdfs.html",
-"summary": "You can generate a PDF from your Jekyll project. You do this by creating a web version of your project that is printer friendly. You then use utility called Prince to iterate through the pages and create a PDF from them. It works quite well and gives you complete control to customize the PDF output through CSS, including page directives and dynamic tags from Prince."
-}
-,
-
-
-
-{
-"title": "Glossary layout",
-"tags": "formattingspecial_layouts",
-"keywords": "definitions, glossaries, terms, style guide",
-"url": "/mydoc_glossary.html",
-"summary": "Your glossary page can take advantage of definitions stored in a data file. This gives you the ability to reuse the same definition in multiple places. Additionally, you can use Bootstrap classes to arrange your definition list horizontally."
-}
-,
-
-
-
-{
-"title": "Help APIs and UI tooltips",
-"tags": "publishingsingle_sourcingcontent_types",
-"keywords": "API, content API, UI text, inline help, context-sensitive help, popovers, tooltips",
-"url": "/mydoc_help_api.html",
-"summary": "You can loop through files and generate a JSON file that developers can consume like a help API. Developers can pull in values from the JSON into interface elements, styling them as popovers for user interface text, for example. The beauty of this method is that the UI text remains in the help system (or at least in a single JSON file delivered to the dev team) and isn't hard-coded into the UI."
-}
-,
-
-
-
-{
-"title": "Links",
-"tags": "formattingnavigation",
-"keywords": "links, hyperlinks, cross references, related links, relationship tables",
-"url": "/mydoc_hyperlinks.html",
-"summary": "When creating links, you can use standard HTML or Markdown formatting. However, you can also implement an automated approach to linking that makes linking much less error-prone (meaning less chances of broken links in your output) and requiring less effort."
-}
-,
-
-
-
-{
-"title": "Icons",
-"tags": "formatting",
-"keywords": "font icons, buttons, images, vectors, font awesome, glyphicons",
-"url": "/mydoc_icons.html",
-"summary": "You can integrate font icons through the Font Awesome and Glyphical Halflings libraries. These libraries allow you to embed icons through their libraries delivered as a link reference. You don't need any image libraries downloaded in your project."
-}
-,
-
-
-
-{
-"title": "Images",
-"tags": "formatting",
-"keywords": "images, screenshots, vectors, svg, markdown syntax",
-"url": "/mydoc_images.html",
-"summary": "Store images in the images folder and use the image.html include to insert images. This include has several options, including figcaptions, that extract the content from the formatting."
-}
-,
-
-
-
-{
-"title": "Install Jekyll on Mac",
-"tags": "getting_startedtroubleshooting",
-"keywords": "",
-"url": "/mydoc_install_jekyll_on_mac.html",
-"summary": "Installation of Jekyll on Mac is usually less problematic than on Windows. However, you may run into permissions issues with Ruby that you must overcome. You should also use Bundler to be sure that you have all the required gems and other utilities on your computer to make the project run."
-}
-,
-
-
-
-{
-"title": "Install Jekyll on Windows",
-"tags": "",
-"keywords": "jekyll on windows, pc, ruby, ruby dev kit",
-"url": "/mydoc_install_jekyll_on_windows.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Introduction",
-"tags": "",
-"keywords": "",
-"url": "/mydoc_introduction.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "iTerm profiles",
-"tags": "publishing",
-"keywords": "iterm, terminal, build shortcuts, mac",
-"url": "/mydoc_iterm_profiles.html",
-"summary": "You can set up profiles in iTerm to facilitate the build process with just a few clicks. This can make it a lot easier to quickly build multiple outputs."
-}
-,
-
-
-
-{
-"title": "Knowledge-base layout",
-"tags": "special_layouts",
-"keywords": "knowledge base, support portal, grid, doc portal",
-"url": "/mydoc_kb_layout.html",
-"summary": "This shows a sample layout for a knowledge base. Each square could link to a tag archive page. In this example, font icons from Font Awesome are used for the graphics, and the layout is pulled from the Modern Business theme. ."
-}
-,
-
-
-
-{
-"title": "Labels",
-"tags": "formatting",
-"keywords": "labels, buttons, bootstrap, api methods",
-"url": "/mydoc_labels.html",
-"summary": "Labels are just a simple Bootstrap component that you can include in your pages as needed. They represent one of many Bootstrap options you can include in your theme."
-}
-,
-
-
-
-{
-"title": "Lists",
-"tags": "formatting",
-"keywords": "bulleted lists, numbered lists",
-"url": "/mydoc_lists.html",
-"summary": "This page shows how to create both bulleted and numbered lists"
-}
-,
-
-
-
-{
-"title": "Navtabs",
-"tags": "formatting",
-"keywords": "navigation tabs, hide sections, tabbers, interface tabs",
-"url": "/mydoc_navtabs.html",
-"summary": "Navtabs provide a tab-based navagation directly in your content, allowing users to click from tab to tab to see different panels of content. Navtabs are especially helpful for showing code samples for different programming languages. The only downside to using navtabs is that you must use HTML instead of Markdown."
-}
-,
-
-
-
-{
-"title": "Pages",
-"tags": "getting_startedformattingcontent_types",
-"keywords": "pages, authoring, exclusion, frontmatter",
-"url": "/mydoc_pages.html",
-"summary": "This theme primarily uses pages. You need to make sure your pages have the appropriate frontmatter. One frontmatter tag your users might find helpful is the summary tag. This functions similar in purpose to the shortdesc element in DITA."
-}
-,
-
-
-
-{
-"title": "Posts",
-"tags": "getting_startedformattingcontent_types",
-"keywords": "posts, blog, news, authoring, exclusion, frontmatter",
-"url": "/mydoc_posts.html",
-"summary": "You can use posts when you want to create blogs or news type of content."
-}
-,
-
-
-
-{
-"title": "Publishing on Github Pages",
-"tags": "",
-"keywords": "",
-"url": "/mydoc_publishing_github_pages.html",
-"summary": "You can publish your project on Github Pages, which is a free web hosting service provided by Github. All you need is to put your content into a Github repo branch called gh-pages and make this your default branch in your repo. With a Jekyll site, you just commit your entire project into the gh-pages branch and Github Pages will build the site for you."
-}
-,
-
-
-
-{
-"title": "Pushing builds to server",
-"tags": "publishing",
-"keywords": "AWS, Amazon, command line, pushing build",
-"url": "/mydoc_push_build_to_server.html",
-"summary": "You can push your build to AWS using commands from the command line. By including your copy commands in commands, you can package all of the build and deploy process into executable scripts."
-}
-,
-
-
-
-{
-"title": "Release notes 5.0",
-"tags": "getting_started",
-"keywords": "release notes, announcements, what's new, new features",
-"url": "/mydoc_release_notes_50.html",
-"summary": "Version 5.0 of the Documentation theme for Jekyll changes some fundamental ways the theme works to provide product-specific sidebars, intended to accommodate a site where multiple products are grouped together on the same site rather than generated out as separate outputs."
-}
-,
-
-
-
-{
-"title": "Release notes 6.0",
-"tags": "getting_started",
-"keywords": "release notes, announcements, what's new, new features",
-"url": "/mydoc_release_notes_60.html",
-"summary": "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
-}
-,
-
-
-
-{
-"title": "Search configuration",
-"tags": "publishingnavigation",
-"keywords": "search, json, configuration, findability",
-"url": "/mydoc_search_configuration.html",
-"summary": "The search feature uses JavaScript to look for keyword matches in a JSON file. The results show instant matches, but it doesn't provide a search results page like Google. Also, sometimes invalid formatting can break the JSON file."
-}
-,
-
-
-
-{
-"title": "Series",
-"tags": "content_types",
-"keywords": "series, connected articles, tutorials, hello world",
-"url": "/mydoc_series.html",
-"summary": "You can automatically link together topics belonging to the same series. This helps users know the context within a particular process."
-}
-,
-
-
-
-{
-"title": "Series demo 1",
-"tags": "",
-"keywords": "",
-"url": "/mydoc_seriesdemo1.html",
-"summary": "This is the first post in the series."
-}
-,
-
-
-
-{
-"title": "Series demo 2",
-"tags": "",
-"keywords": "",
-"url": "/mydoc_seriesdemo2.html",
-"summary": "This is the second post in the series."
-}
-,
-
-
-
-{
-"title": "Series demo 3",
-"tags": "",
-"keywords": "",
-"url": "/mydoc_seriesdemo3.html",
-"summary": "This is the third post in the series."
-}
-,
-
-
-
-{
-"title": "Series demo 4",
-"tags": "",
-"keywords": "",
-"url": "/mydoc_seriesdemo4.html",
-"summary": "This is the fourth post in the series."
-}
-,
-
-
-
-{
-"title": "Shuffle layout",
-"tags": "special_layouts",
-"keywords": "shuffle, card layout, dynamic grid, doc portal, support portal",
-"url": "/mydoc_shuffle.html",
-"summary": "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
-}
-,
-
-
-
-{
-"title": "Sidebar Navigation",
-"tags": "getting_started",
-"keywords": "sidebar, accordion, yaml, iteration, for loop, navigation, attributes, conditional filtering",
-"url": "/mydoc_sidebar_navigation.html",
-"summary": "The sidebar navigation uses a jQuery component called Navgoco. The sidebar is a somewhat complex part of the theme that remembers your current page, highlights the active item, stays in a fixed position on the page, and more. This page explains a bit about how the sidebar was put together."
-}
-,
-
-
-
-{
-"title": "Special layouts overview",
-"tags": "special_layouts",
-"keywords": "layouts, information design, presentation",
-"url": "/mydoc_special_layouts.html",
-"summary": "This theme has a few special layouts. Special layouts include the JS files they need directly in the page. The JavaScript for each special layout does not load by default for every page in the site."
-}
-,
-
-
-
-{
-"title": "Support",
-"tags": "getting_startedtroubleshooting",
-"keywords": "questions, troubleshooting, contact, support",
-"url": "/mydoc_support.html",
-"summary": "Contact me for any support issues."
-}
-,
-
-
-
-{
-"title": "Supported features",
-"tags": "getting_started",
-"keywords": "features, capabilities, scalability, multichannel output, dita, hats, comparison, benefits",
-"url": "/mydoc_supported_features.html",
-"summary": "If you're not sure whether Jekyll and this theme will support your requirements, this list provides a semi-comprehensive overview of available features."
-}
-,
-
-
-
-{
-"title": "Syntax highlighting",
-"tags": "formatting",
-"keywords": "rouge, pygments, prettify, color coding,",
-"url": "/mydoc_syntax_highlighting.html",
-"summary": "You can apply syntax highlighting to your code. This theme uses pygments and applies color coding based on the lexer you specify."
-}
-,
-
-
-
-{
-"title": "Tables",
-"tags": "formatting",
-"keywords": "datatables, tables, grids, markdown, multimarkdown, jquery plugins",
-"url": "/mydoc_tables.html",
-"summary": "You can format tables using either multimarkdown syntax or HTML. You can also use jQuery datatables (a plugin) if you need more robust tables."
-}
-,
-
-
-
-{
-"title": "Tag archives overview",
-"tags": "navigation",
-"keywords": "archives, tagging",
-"url": "/mydoc_tag_archives_overview.html",
-"summary": "This is an overview to the tag archives section. Really the only reason this section is listed explicitly in the TOC here is to demonstrate how to add a third-level to the navigation."
-}
-,
-
-
-
-{
-"title": "Tags",
-"tags": "navigation",
-"keywords": "tags, navigation, buttons, links, association",
-"url": "/mydoc_tags.html",
-"summary": "Tags provide another means of navigation for your content. Unlike the table of contents, tags can show the content in a variety of arrangements and groupings. Implementing tags in this Jekyll theme is somewhat of a manual process."
-}
-,
-
-
-
-{
-"title": "Themes",
-"tags": "publishing",
-"keywords": "themes, styles, colors, css",
-"url": "/mydoc_themes.html",
-"summary": "You can choose between two different themes (one green, the other blue) for your projects. The theme CSS is stored in the CSS folder and configured in the configuration file for each project."
-}
-,
-
-
-
-{
-"title": "Troubleshooting",
-"tags": "troubleshooting",
-"keywords": "trouble, problems, support, error messages, problems, failure, error,",
-"url": "/mydoc_troubleshooting.html",
-"summary": "This page lists common errors and the steps needed to troubleshoot them."
-}
-,
-
-
-
-{
-"title": "WebStorm Text Editor",
-"tags": "",
-"keywords": "webstorm, sublime, markdown, atom, gnome, notepad ++, textpad, bbedit",
-"url": "/mydoc_webstorm_text_editor.html",
-"summary": "You can use a variety of text editors when working with a Jekyll project. WebStorm from IntelliJ offers a lot of project-specific features, such as find and replace, that make it ideal for working with tech comm projects."
-}
-,
-
-
-
-{
-"title": "Workflow maps",
-"tags": "formatting",
-"keywords": "release notes, announcements, what's new, new features",
-"url": "/mydoc_workflow_maps.html",
-"summary": "Version 6.0 of the Documentation theme for Jekyll reverts back to relative links so you can view the files offline. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
-}
-,
-
-
-
-{
-"title": "YAML tutorial in the context of Jekyll",
-"tags": "formatting",
-"keywords": "search",
-"url": "/mydoc_yaml_tutorial.html",
-"summary": "YAML is a format that relies on white spacing to separate out the various elements of content. Jekyll lets you use Liquid with YAML as a way to parse through the data. Storing items for your table of contents is one of the most common uses of YAML with Jekyll."
+"title": "Cloud Log Analytics 설정 가이드",
+"tags": "loganalytics",
+"keywords": "분석",
+"url": "/analytics/ncloud_analytics_cloud_log_analytics_guide.html",
+"summary": "Ncloud 로그 분석 서비스인 Cloud Log Analytics를 생성하고 설정하는 방법입니다"
 }
 ,
 
@@ -633,11 +138,33 @@
 
 
 {
-"title": "PHP로 네이버 클라우드 API를 호출하는 샘플 예제",
+"title": "C#으로 Ncloud API를 호출하는 샘플 예제",
+"tags": "apicsharp",
+"keywords": "API",
+"url": "/api/ncloud_api_call_csharp_sample.html",
+"summary": "C#으로 Ncloud API를 호출하는 샘플 예제"
+}
+,
+
+
+
+{
+"title": "PHP로 Ncloud API를 호출하는 샘플 예제",
 "tags": "apiphp",
 "keywords": "API",
 "url": "/api/ncloud_api_call_php_sample.html",
 "summary": "PHP로 Ncloud API를 호출하는 샘플 예제"
+}
+,
+
+
+
+{
+"title": "Cloud Outbound Mailer로 대량 메일 발송하는 방법",
+"tags": "applicationmail",
+"keywords": "Mail",
+"url": "/application-service/ncloud_application_service_cloud_outbound_mailer_bulk_mail_send.html",
+"summary": "Ncloud Cloud Outbound Mailer로 대량 메일 발송하는 방법입니다"
 }
 ,
 
@@ -655,11 +182,506 @@
 
 
 {
+"title": "Papago Korean Name Romanizer 서비스 이용하기 PHP 샘플 예제",
+"tags": "applicationapi",
+"keywords": "파파고, 한글 이름, 로마자",
+"url": "/application-service/ncloud_application_service_papago_korean_name_romanizer_php_sample.html",
+"summary": "Ncloud Papago Korean Name Romanizer 서비스 이용하기 PHP 샘플 예제입니다"
+}
+,
+
+
+
+{
+"title": "Classic 환경에서 AutoScaling 설정하는 방법",
+"tags": "autoscalingclassic",
+"keywords": "Auto Scaling, 오토스케일링",
+"url": "/compute/ncloud_compute_autoscaling_classic_guide.html",
+"summary": "Ncloud Classic 환경에서 AutoScaling 설정하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "AutoScaling 이벤트 설정하는 방법",
+"tags": "autoscaling",
+"keywords": "Auto Scaling, Server, Limit, 오토스케일링",
+"url": "/compute/ncloud_compute_autoscaling_event_setting.html",
+"summary": "Ncloud 서버에서 AutoScaling Group 이벤트를 설정하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Auto Scaling 서비스 제한사항",
+"tags": "autoscalinglimit",
+"keywords": "Auto Scaling, Server, Limit",
+"url": "/compute/ncloud_compute_autoscaling_limit.html",
+"summary": "Ncloud Auto Scaling 서비스를 구성할 때 제한사항에 대한 정리입니다"
+}
+,
+
+
+
+{
+"title": "Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법",
+"tags": "cloud_functionscsharp",
+"keywords": "Server, Lamda",
+"url": "/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html",
+"summary": "Ncloud Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법",
+"tags": "cloud_functionscsharp",
+"keywords": "Server, Lamda",
+"url": "/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html",
+"summary": "NCloud Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Cloud Functions에서 PHPMailer를 사용하여 gmail을 통해 SMTP로 메일 발송하는 방법",
+"tags": "cloud_functionsphpsmtpgmailnatgateway",
+"keywords": "Email, 이메일, PHP",
+"url": "/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html",
+"summary": "NCloud Cloud Functions에서 PHPMailer를 사용하여 gmail을 통해 SMTP로 메일 발송하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Kubernetes Service 클러스터 생성 및 제어 가이드",
+"tags": "kubernetesvpc",
+"keywords": "k8s, K8S, 쿠버네티스",
+"url": "/compute/ncloud_compute_kubernetes_service_start_guide.html",
+"summary": "Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법에 대한 소개입니다"
+}
+,
+
+
+
+{
+"title": "Ncloud LAMP 기본 환경 설정 정보",
+"tags": "lampapachemysqlphpdatabase",
+"keywords": "Linux, Apache, MySql, PHP",
+"url": "/compute/ncloud_compute_lamp_config_basic.html",
+"summary": "Ncloud에서 제공하는 Application 이미지 중에서 LAMP의 기본 환경 설정 정보입니다"
+}
+,
+
+
+
+{
+"title": "LAMP(CentOS) 기본 명령어와 환경 설정 파일 위치",
+"tags": "lampcentosapachemysqlphpdatabase",
+"keywords": "Linux, Apache, MySql, PHP",
+"url": "/compute/ncloud_compute_lamp_config_centos.html",
+"summary": "Ncloud LAMP(CentOS) 기본 명령어와 환경 설정 파일 위치입니다"
+}
+,
+
+
+
+{
+"title": "LAMP(Ubuntu) 기본 명령어와 환경 설정 파일 위치",
+"tags": "lampubuntuapachemysqlphpdatabase",
+"keywords": "Linux, Apache, MySql, PHP",
+"url": "/compute/ncloud_compute_lamp_config_ubuntu.html",
+"summary": "Ncloud LAMP(Ubuntu) 기본 명령어와 환경 설정 파일 위치입니다"
+}
+,
+
+
+
+{
+"title": "CentOS에서 NginX 설치, 설정하는 방법",
+"tags": "centoslempnginxinstall",
+"keywords": "Linux, LEMP, LAMP",
+"url": "/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html",
+"summary": "Ncloud CentOS 서버에 NginX를 Package로 설치하고 기본 설정을 하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "서버 접속 가이드(Linux) - 공인IP 있을 때",
+"tags": "linux",
+"keywords": "Public IP",
+"url": "/compute/ncloud_compute_server_connect_by_public_ip.html",
+"summary": "공인IP를 사용해 Ncloud 서버(Linux)에 접속하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "서버 접속 가이드(Linux) - 공인IP 없을 때",
+"tags": "linux",
+"keywords": "Public IP",
+"url": "/compute/ncloud_compute_server_connect_no_public_ip.html",
+"summary": "공인IP 없이 Ncloud 서버(Linux)에 접속하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/CentOS",
+"tags": "apachecentos",
+"keywords": "redirect, 아파치",
+"url": "/compute/ncloud_compute_server_http_to_https_centos.html",
+"summary": "Ncloud에서 http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/CentOS입니다"
+}
+,
+
+
+
+{
+"title": "http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Ubuntu",
+"tags": "apacheubuntu",
+"keywords": "redirect, 아파치",
+"url": "/compute/ncloud_compute_server_http_to_https_ubuntu.html",
+"summary": "Ncloud에서 http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Ubuntu입니다"
+}
+,
+
+
+
+{
+"title": "Classic 환경에서 서버 이미지를 다른 계정에 공유하는 방법",
+"tags": "classic",
+"keywords": "Server, Image Share, ServerImage",
+"url": "/compute/ncloud_compute_server_image_share_classic.html",
+"summary": "Ncloud Classic 환경에서 서버 이미지를 다른 계정에 공유하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Micro 타입 서버에서 사용할 수 없는 서비스",
+"tags": "limit",
+"keywords": "limit",
+"url": "/compute/ncloud_compute_server_micro_type_limit.html",
+"summary": "Ncloud Micro 타입 서버에서 사용할 수 없는 서비스입니다"
+}
+,
+
+
+
+{
+"title": "CentOS 6에서 pip - Python 설치하기",
+"tags": "centospythoninstall",
+"keywords": "Linux",
+"url": "/compute/ncloud_compute_server_pip_python_install_centos6.html",
+"summary": "Ncloud CentOS 6.x에서 Repository를 변경해 pip - Python을 설치하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기",
+"tags": "linuxcentosubuntu",
+"keywords": "Package, Yum, Apt, Secure Zone, Private Network",
+"url": "/compute/ncloud_compute_server_repository_change_on_private_network.html",
+"summary": "Ncloud에서 외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "서버 스펙 변경",
+"tags": "classicvpc",
+"keywords": "Spec, Compace, Standard",
+"url": "/compute/ncloud_compute_server_spec_change.html",
+"summary": "Ncloud 서버들의 스펙을 변경하는 방법과 제한사항에 대한 내용입니다"
+}
+,
+
+
+
+{
+"title": "리눅스서버 SSH 접속 보안 설정하기",
+"tags": "linuxssh",
+"keywords": "Linux",
+"url": "/compute/ncloud_compute_server_ssh_security_setting.html",
+"summary": "Ncloud 리눅스서버 SSH 접속 보안 설정하기입니다"
+}
+,
+
+
+
+{
+"title": "서버 정지 시 요금할인",
+"tags": "price",
+"keywords": "Stop, Price",
+"url": "/compute/ncloud_compute_server_stop_price.html",
+"summary": "Ncloud에서 서버 정지 시 요금할인 횟수와 서버 정지 기한에 대한 안내입니다"
+}
+,
+
+
+
+{
+"title": "Linux 스토리지(디스크) 추가 상세 가이드",
+"tags": "linuxstorage",
+"keywords": "Storage, Disk",
+"url": "/compute/ncloud_compute_server_storage_add_detail_process.html",
+"summary": "Ncloud Linux 서버 스토리지(디스크) 추가 상세 가이드입니다"
+}
+,
+
+
+
+{
+"title": "스토리지 추가 생성 기본 가이드",
+"tags": "linuxstorage",
+"keywords": "Storage, Linux",
+"url": "/compute/ncloud_compute_server_storage_add_guide.html",
+"summary": "Ncloud Linux서버 스토리지 추가 생성 기본 가이드입니다"
+}
+,
+
+
+
+{
+"title": "리눅스서버 스토리지(디스크) LVM 구성하기",
+"tags": "linuxstorage",
+"keywords": "Linux, Storage, Disk",
+"url": "/compute/ncloud_compute_server_storage_lvm_create.html",
+"summary": "Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기입니다"
+}
+,
+
+
+
+{
+"title": "VPC 환경에서 서버 생성",
+"tags": "vpc",
+"keywords": "VPC, Server",
+"url": "/compute/ncloud_compute_server_vpc_create.html",
+"summary": "Ncloud VPC 환경에서 서버를 생성하는 방법을 간단하게 정리했습니다"
+}
+,
+
+
+
+{
+"title": "Classic 환경 Windows 서버 이미지를 VPC 환경으로 복제하는 방법",
+"tags": "classicwindows",
+"keywords": "Classic, Windows, Image Copy",
+"url": "/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html",
+"summary": "Ncloud Classic 환경 Windows 서버 이미지를 VPC 환경으로 복제하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기",
+"tags": "proxyload_balancerlog",
+"keywords": "프록시, 로드밸런서, 클라이언트IP",
+"url": "/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html",
+"summary": "Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기"
+}
+,
+
+
+
+{
+"title": "MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법",
+"tags": "databasebackupmysqlclouddb",
+"keywords": "Database, Restore, GTID",
+"url": "/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html",
+"summary": "Ncloud에서 Cloud DB for MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법입니다"
+}
+,
+
+
+
+{
+"title": "VPC환경에서 Cloud DB for MySQL 생성하기",
+"tags": "databasemysqlclouddbvpc",
+"keywords": "Database, Domain",
+"url": "/database/ncloud_database_cloud_db_for_mysql_guide.html",
+"summary": "Ncloud VPC환경에서 Cloud DB for MySQL 생성하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Cloud DB for MySQL 생성후 Public 도메인으로 접속하기",
+"tags": "databasemysqlclouddbvpc",
+"keywords": "Database, Domain",
+"url": "/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html",
+"summary": "Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법입니다"
+}
+,
+
+
+
+{
 "title": "설치형 DB서버와 관리형 Cloud DB 비교",
 "tags": "",
 "keywords": "Database",
 "url": "/database/ncloud_database_compare.html",
-"summary": "Ncloud 설치형 DB서버와 관리형 Cloud DB 비교"
+"summary": "Ncloud의 설치형 DB서버와 관리형 Cloud DB를 비교한 내용을 정리해보았습니다"
+}
+,
+
+
+
+{
+"title": "CentOS에서 mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL",
+"tags": "databasecentosmariadbmysql",
+"keywords": "Database, 마리아디비",
+"url": "/database/ncloud_database_mariadb_access_from_remote_centos.html",
+"summary": "Ncloud CentOS 서버에서 mariaDB 외부접속 허용하는 방법과 HeidiSQL으로 원격접속하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Ubuntu에서 mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL",
+"tags": "databaseubuntumariadbmysql",
+"keywords": "Database, 마리아디비",
+"url": "/database/ncloud_database_mariadb_access_from_remote_ubuntu.html",
+"summary": "Ncloud Ubuntu 서버에서 mariaDB 외부접속 허용하는 방법과 HeidiSQL으로 원격접속하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Mysql DB 자동백업 방법",
+"tags": "databasemysqlbackup",
+"keywords": "Database, BackUp",
+"url": "/database/ncloud_database_mysql_auto_backup.html",
+"summary": "Mysql DB를 지정된 시간에 자동으로 백업하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Mysql, mariadb 외부접속을 위한 환경설정 bind-address 위치",
+"tags": "databasemysqlmariadb",
+"keywords": "Database, Config",
+"url": "/database/ncloud_database_mysql_mariadb_config_bind_address.html",
+"summary": "Ncloud Mysql, mariadb 외부접속을 위한 환경설정 bind-address 위치 안내입니다"
+}
+,
+
+
+
+{
+"title": "Mysql, mariadb 환경설정 파일 my.cnf 위치",
+"tags": "databasemysqlmariadb",
+"keywords": "Database, Config",
+"url": "/database/ncloud_database_mysql_mariadb_config_my_cnf.html",
+"summary": "Ncloud Mysql, mariadb 환경설정 파일 my.cnf 위치 안내입니다"
+}
+,
+
+
+
+{
+"title": "MYSQL(MARIADB) replication 생성하기",
+"tags": "databasebackupmysqlmariadb",
+"keywords": "Database, 복제, Backup, 이중화, 고가용성, Master, Slave",
+"url": "/database/ncloud_database_mysql_mariadb_replication.html",
+"summary": "Ncloud에서 MYSQL(MARIADB) replication 생성하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "CentOS에서 mysql DB를 Object Storage로 자동 백업하기",
+"tags": "databasecentosbackupmysqlobject_storage",
+"keywords": "Database, 오브젝트스토리지, Backup",
+"url": "/database/ncloud_database_mysql_object_storage_auto_backup_centos.html",
+"summary": "Ncloud CentOS에서 mysql DB를 Object Storage로 자동 백업하기입니다"
+}
+,
+
+
+
+{
+"title": "Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기",
+"tags": "databaseubuntubackupmysqlobject_storage",
+"keywords": "Database, 오브젝트스토리지, Backup",
+"url": "/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html",
+"summary": "Ncloud Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기입니다"
+}
+,
+
+
+
+{
+"title": "설치형 MySQL DB에서 root Password 설정, 변경하는 방법",
+"tags": "databasemysqlpassword",
+"keywords": "Database, Config, 패스워드",
+"url": "/database/ncloud_database_mysql_root_password_set_update_guide.html",
+"summary": "Ncloud 설치형 MySQL DB에서 root Password 설정, 변경하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "서버 모니터링 서비스 Monitoring 설정 가이드",
+"tags": "classicmonitoring",
+"keywords": "Classic, 클래식, Log",
+"url": "/management/ncloud_management_classic_monitoring_guide.html",
+"summary": "Ncloud Classic 환경의 서버 모니터링 서비스 Monitoring 설정 가이드입니다"
+}
+,
+
+
+
+{
+"title": "Ncloud Classic 환경 vs VPC 환경 비교",
+"tags": "classicvpc",
+"keywords": "장단점, 클래식",
+"url": "/management/ncloud_management_classic_vs_vpc_guide.html",
+"summary": "Ncloud 서비스의 Classic 환경과 VPC 환경 각각의 장점과 주요 사용 환경에 대해 정리해보았습니다"
+}
+,
+
+
+
+{
+"title": "모니터링 서비스 Cloud Insight 설정 가이드",
+"tags": "monitoringlog",
+"keywords": "Monitoring, 모니터링, Log",
+"url": "/management/ncloud_management_cloud_insight_guide.html",
+"summary": "Ncloud 성능/운영 지표를 통합 관리해주고 모니터링 해주는 서비스 Cloud Insight 설정 가이드입니다"
+}
+,
+
+
+
+{
+"title": "Windows 서버 모니터링 성능 정보 수집 오류 해결 방법",
+"tags": "windowsmonitoringlog",
+"keywords": "Monitoring, Log, 윈도우",
+"url": "/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html",
+"summary": "Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다"
 }
 ,
 
@@ -669,7 +691,7 @@
 "title": "Sub Account 생성 가이드",
 "tags": "account",
 "keywords": "account, sub account",
-"url": "/management/ncloud_sub_account_guide.html",
+"url": "/management/ncloud_management_sub_account_guide.html",
 "summary": "Ncloud Sub Account 생성 가이드"
 }
 ,
@@ -679,9 +701,53 @@
 {
 "title": "Video Player 구현하기 샘플 예제",
 "tags": "mediaobject_storage",
-"keywords": "player, video, streaming",
+"keywords": "streaming",
 "url": "/media/ncloud_media_video_player_sample.html",
 "summary": "Ncloud Video Player 구현하기 샘플 예제"
+}
+,
+
+
+
+{
+"title": "Global DNS 사용 가이드 - 도메인 추가",
+"tags": "dns",
+"keywords": "Domain",
+"url": "/networking/ncloud_networking_global_dns_guide.html",
+"summary": "Ncloud Global DNS 사용 가이드 - 도메인 추가 방법입니다"
+}
+,
+
+
+
+{
+"title": "Classic Load Balancer 운영을 위한 ACG 설정 방법",
+"tags": "classicload_balanceracg",
+"keywords": "로드밸런서",
+"url": "/networking/ncloud_networking_load_balancer_acg.html",
+"summary": "Ncloud Classic Load Balancer 운영을 위한 ACG 설정 방법입니다"
+}
+,
+
+
+
+{
+"title": "VPC 환경에서 Application Load Balancer 생성하기",
+"tags": "vpcload_balancer",
+"keywords": "로드밸런서",
+"url": "/networking/ncloud_networking_load_balancer_application_lb.html",
+"summary": "Ncloud VPC 환경에서 Application Load Balancer 생성하기 가이드입니다"
+}
+,
+
+
+
+{
+"title": "VPC 환경에서 NAT Gateway 설정하기",
+"tags": "vpcnatgatewayroutetable",
+"keywords": "NATGW, RouteTable",
+"url": "/networking/ncloud_networking_natgw_routetb.html",
+"summary": "Ncloud VPC 환경에서 NAT Gateway 설정하기 가이드입니다"
 }
 ,
 
@@ -699,6 +765,83 @@
 
 
 {
+"title": "ACG와 NACL 비교",
+"tags": "vpcacg",
+"keywords": "VPC, Networking",
+"url": "/networking/ncloud_networking_vpc_acg_nacl.html",
+"summary": "Ncloud VPC 환경의 ACG와 NACL 비교입니다"
+}
+,
+
+
+
+{
+"title": "VPC 환경 Load Balancer 상품군의 변화",
+"tags": "load_balancer",
+"keywords": "로드밸런서",
+"url": "/networking/ncloud_networking_vpc_load_balancer.html",
+"summary": "Ncloud VPC 환경 Load Balancer 상품군의 변화입니다"
+}
+,
+
+
+
+{
+"title": "VPC 구성요소",
+"tags": "vpcacgnaclsubnetnatgatewayroute_tablevpc_peering",
+"keywords": "Subnet, ACG, NACL, NAT Gateway",
+"url": "/networking/ncloud_networking_vpc_overview.html",
+"summary": "Ncloud VPC를 구성하는 요소들에 대한 설명으로 네이버 클라우드 파트너 테크데이에서 발표된 내용입니다"
+}
+,
+
+
+
+{
+"title": "VPC Peering 생성 가이드",
+"tags": "vpc",
+"keywords": "Virtual Private Cloud",
+"url": "/networking/ncloud_networking_vpc_peering_guide.html",
+"summary": "Ncloud에서 분리되어 있는 VPC간의 통신이 필요할때 사용할 수 있는 서비스 VPC Peering 생성 가이드입니다"
+}
+,
+
+
+
+{
+"title": "Subnet 과 NAT Gateway",
+"tags": "vpcsubnetnatgatewayload_balancer",
+"keywords": "VPC, 서브넷",
+"url": "/networking/ncloud_networking_vpc_subnet_natgw.html",
+"summary": "Ncloud VPC 환경 Subnet 과 NAT Gateway 비교입니다"
+}
+,
+
+
+
+{
+"title": "ACG(Access Control Group) 가이드",
+"tags": "acgclassicvpc",
+"keywords": "방화벽, Firewall",
+"url": "/security/ncloud_security_acg_guide.html",
+"summary": "Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드입니다"
+}
+,
+
+
+
+{
+"title": "Ncloud vs On-Premise Security 비교",
+"tags": "",
+"keywords": "보안서비스",
+"url": "/security/ncloud_security_onpremise_compare.html",
+"summary": "Ncloud와 On-Premise 두 환경의 보안서비스에 대한 비교 정리입니다"
+}
+,
+
+
+
+{
 "title": "Security 서비스 요약",
 "tags": "",
 "keywords": "Security",
@@ -710,22 +853,77 @@
 
 
 {
-"title": "Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법",
-"tags": "cloud_functionscsharp",
-"keywords": "Cloud Functions, .Net, C#, cmd, Server",
-"url": "/compute/cloud_functions/ncloud_server_cloud_functions_dotnet_csharp_cmd.html",
-"summary": "네이버 클라우드 Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법"
+"title": "SSL인증서 DCV (Domain Control Validation) 인증 방법과 유의사항 정리",
+"tags": "ssldns",
+"keywords": "암호화 통신, 보안접속",
+"url": "/security/ncloud_security_ssl_dcv_method.html",
+"summary": "SSL인증서 DCV (Domain Control Validation) 인증 방법과 유의사항 정리입니다"
 }
 ,
 
 
 
 {
-"title": "VPC 환경에서 서버 생성",
-"tags": "vpc",
-"keywords": "VPC, Server",
-"url": "/compute/server/ncloud_server_vpc_create.html",
-"summary": "네이버 클라우드 VPC 환경에서 서버 생성"
+"title": "Classic 환경에서 SSL VPN 설정하고 접속하는 방법",
+"tags": "classicsslvpn",
+"keywords": "암호화 통신, 보안접속",
+"url": "/security/ncloud_security_ssl_vpn_classic_guide.html",
+"summary": "Ncloud Classic 환경에서 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 설정하고 접속하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "VPC 환경에서 SSL VPN 설정하고 접속하는 방법",
+"tags": "vpcsslvpn",
+"keywords": "암호화 통신, 보안접속",
+"url": "/security/ncloud_security_ssl_vpn_vpc_guide.html",
+"summary": "Ncloud VPC 환경에서 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 설정하고 접속하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "PHP로 Archive Storage API 인증 토큰 생성하는 방법",
+"tags": "object_storageapiauthphp",
+"keywords": "아카이브 스토리지, Auth, Token",
+"url": "/storage/ncloud_storage_archive_storage_api_access_token_create.html",
+"summary": "PHP로 Ncloud Archive Storage API 인증 토큰 생성하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "PHP로 Archive Storage API 호출하기 - 컨테이너(버킷) 오브젝트 목록 조회",
+"tags": "object_storageapiauthphp",
+"keywords": "아카이브 스토리지, Auth, Token",
+"url": "/storage/ncloud_storage_archive_storage_api_get_container_by_php.html",
+"summary": "PHP로 Ncloud Archive Storage API 호출하기 - 컨테이너(버킷) 오브젝트 목록 조회하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Archive Storage CLI 사용 가이드 - Windows 환경",
+"tags": "archive_storagecliapiwindows",
+"keywords": "아카이브 스토리지, 윈도우, API",
+"url": "/storage/ncloud_storage_archive_storage_cli_windows_guide.html",
+"summary": "Windows 환경에서 Ncloud Archive Storage CLI를 사용하는 방법에 대한 가이드입니다"
+}
+,
+
+
+
+{
+"title": "백업 서비스 가이드와 신청 절차",
+"tags": "backupdatabase",
+"keywords": "BackUp, Storage, DataBase",
+"url": "/storage/ncloud_storage_backup_guide.html",
+"summary": "Ncloud 서버 파일과 데이터베이스 등의 백업 서비스 가이드와 신청 절차입니다"
 }
 ,
 
@@ -743,22 +941,99 @@
 
 
 {
-"title": "News",
-"tags": "",
-"keywords": "news, blog, updates, release notes, announcements",
-"url": "/news.html",
-"summary": ""
+"title": "NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드",
+"tags": "linuxnasstorage",
+"keywords": "스토리지, Storage, 리눅스, mount",
+"url": "/storage/ncloud_storage_nas_vpc_guide.html",
+"summary": "Ncloud VPC환경에서 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드입니다"
 }
 ,
 
 
 
 {
-"title": "News",
+"title": "AWS CLI를 이용한 Object Storage 접속 방법",
+"tags": "awss3object_storagecliapiauth",
+"keywords": "오브젝트 스토리지, 아마존, API",
+"url": "/storage/ncloud_storage_object_storage_aws_cli_connect.html",
+"summary": "AWS CLI를 이용해 Ncloud Object Storage에 접속하는 방법입니다"
+}
+,
+
+
+
+{
+"title": "Object Storage Lifecycle Management 관리대상 설정 방법",
+"tags": "object_storage",
+"keywords": "오브젝트 스토리지, 수명주기",
+"url": "/storage/ncloud_storage_object_storage_lifecycle_management.html",
+"summary": "Ncloud Object Storage Lifecycle Management 관리대상 설정 방법입니다"
+}
+,
+
+
+
+{
+"title": "Object Storage와 연동이 필수인 서비스",
+"tags": "object_storagevod",
+"keywords": "오브젝트 스토리지, CLOVA, VOD",
+"url": "/storage/ncloud_storage_object_storage_required_service.html",
+"summary": "Ncloud Object Storage와 연동이 필수인 서비스를 정리해보았습니다"
+}
+,
+
+
+
+{
+"title": "Object Storage 접속용 Windows Client Tool - CloudBerry Explorer",
+"tags": "object_storagebackup",
+"keywords": "오브젝트 스토리지, 백업, backup, 클라우드베리",
+"url": "/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html",
+"summary": "Ncloud Object Storage 접속용 Windows Client Tool - CloudBerry Explorer 사용 방법입니다"
+}
+,
+
+
+
+{
+"title": "Object Storage 접속용 Windows, MacOS Client Tool - Cyberduck",
+"tags": "object_storagebackup",
+"keywords": "오브젝트 스토리지, 백업, backup, 사이버덕",
+"url": "/storage/ncloud_storage_object_storage_s3_client_cyberduck.html",
+"summary": "Ncloud Object Storage 접속용 Windows, MacOS Client Tool - Cyberduck 사용 방법입니다"
+}
+,
+
+
+
+{
+"title": "Object Storage 접속용 Windows Client Tool - S3 Browser",
+"tags": "object_storagebackup",
+"keywords": "오브젝트 스토리지, 백업, backup",
+"url": "/storage/ncloud_storage_object_storage_s3_client_s3browser.html",
+"summary": "Ncloud Object Storage 접속용 Windows Client Tool - S3 Browser 사용 방법입니다"
+}
+,
+
+
+
+{
+"title": "Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법",
+"tags": "object_storagearchive_storagebackup",
+"keywords": "오브젝트 스토리지, 아카이브 스토리지, 백업, backup",
+"url": "/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html",
+"summary": "Ncloud Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법입니다"
+}
+,
+
+
+
+{
+"title": "News &amp; Notice",
 "tags": "",
-"keywords": "news, blog, updates, release notes, announcements",
-"url": "/news_archive.html",
-"summary": ""
+"keywords": "news, updates, release notes, announcements",
+"url": "/news/news.html",
+"summary": "Ncloud 서비스와 관련된 새로운 소식들을 알려 드립니다."
 }
 ,
 
@@ -1070,6 +1345,107 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+"title": "Updates",
+"tags": "",
+"keywords": "news, updates, release notes, announcements",
+"url": "/update/update.html",
+"summary": "최근에 업데이트 된 기술문서 10개 리스트입니다."
+}
+,
 
 
 

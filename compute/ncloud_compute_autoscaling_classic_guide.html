@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ncloud Classic 환경에서 AutoScaling 설정하는 방법입니다">
+<meta name="keywords" content="autoscalingclassic,  Auto Scaling, 오토스케일링">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Classic 환경에서 AutoScaling 설정하는 방법</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Classic 환경에서 AutoScaling 설정하는 방법" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<meta property="og:description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<link rel="canonical" href="staeho-3rd.github.io/compute/ncloud_compute_autoscaling_classic_guide.html" />
+<meta property="og:url" content="staeho-3rd.github.io/compute/ncloud_compute_autoscaling_classic_guide.html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Classic 환경에서 AutoScaling 설정하는 방법" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"staeho-3rd.github.io/compute/ncloud_compute_autoscaling_classic_guide.html","description":"Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.","headline":"Classic 환경에서 AutoScaling 설정하는 방법","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>Classic 환경에서 AutoScaling 설정하는 방법 | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="staeho-3rd.github.io/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {                
+                if (!$("#tg-sb-link").attr("hide_sidebar"))
+                {
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<header>
+<!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                <!-- toggle sidebar button -->                
+                <li><a id="tg-sb-link" hide_sidebar="" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>                
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                                
+                <li><a href="/update/update.html">Update</a></li>
+                
+                
+                                
+                <li><a href="/news/news.html">News</a></li>
+                
+                
+                                
+                <li><a href="/faq/faq.html">FAQ</a></li>
+                
+                
+                                
+                <li><a href="/tag/tag_archives_overview.html">Tag</a></li>
+                
+                
+                
+                
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="https://3rdeyesys.com/" target="_blank" rel="noopener">Company</a></li>                                
+                
+                
+                
+                <li><a href="https://www.3rdeyesys.com/question/" target="_blank" rel="noopener">1:1 문의하기</a></li>                                
+                
+                 
+                               
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" placeholder="Search">
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form> </div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+
+</header>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Technical Documentation </li>
+  
+  
+  
+  <li>
+      <a title="Compute" href="#">Compute</a>
+      <ul>
+          
+          
+          
+          <li><a title="서버 접속 방법(Linux) - 공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html">서버 접속 방법(Linux) - 공인IP 없을 때</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 접속 방법(Linux) - 공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html">서버 접속 방법(Linux) - 공인IP 있을 때</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 서버 생성" href="/compute/ncloud_compute_server_vpc_create.html">VPC 환경에서 서버 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html">스토리지 추가 생성 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html">Linux 서버 디스크 추가 상세 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html">Linux 서버 디스크 LVM 구성하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html">서버 스펙 변경하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Micro 타입 서버에서 제한되는 서비스" href="/compute/ncloud_compute_server_micro_type_limit.html">Micro 타입 서버에서 제한되는 서비스</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 정지 시 요금할인" href="/compute/ncloud_compute_server_stop_price.html">서버 정지 시 요금할인</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 SSH 접속 보안 설정하기" href="/compute/ncloud_compute_server_ssh_security_setting.html">Linux 서버 SSH 접속 보안 설정하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li class="active"><a title="Classic 환경에서 AutoScaling 설정" href="/compute/ncloud_compute_autoscaling_classic_guide.html">Classic 환경에서 AutoScaling 설정</a></li>
+                    
+          
+          
+          
+          
+          
+          <li><a title="Auto Scaling 서비스 제한사항" href="/compute/ncloud_compute_autoscaling_limit.html">Auto Scaling 서비스 제한사항</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AutoScaling 이벤트 설정하는 방법" href="/compute/ncloud_compute_autoscaling_event_setting.html">AutoScaling 이벤트 설정하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="X-Forwarded-For로 Client IP 기록하기" href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">X-Forwarded-For로 Client IP 기록하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https로 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html">https로 리다이렉트 - Apache/CentOS</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https로 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html">https로 리다이렉트 - Apache/Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Repository 변경해 리눅스 패키지 설치" href="/compute/ncloud_compute_server_repository_change_on_private_network.html">Repository 변경해 리눅스 패키지 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS 6에서 pip - Python 설치하기" href="/compute/ncloud_compute_server_pip_python_install_centos6.html">CentOS 6에서 pip - Python 설치하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic환경 서버이미지 타 계정 공유" href="/compute/ncloud_compute_server_image_share_classic.html">Classic환경 서버이미지 타 계정 공유</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Windows 서버이미지 VPC 환경으로 복제" href="/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html">Classic 환경 Windows 서버이미지 VPC 환경으로 복제</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Cloud Functions" href="#">Cloud Functions</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 cmd에서 C#으로 작성하기" href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html">Cloud Functions Action을 cmd에서 C#으로 작성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 Visual Studio에서 C#으로 작성하기" href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html">Cloud Functions Action을 Visual Studio에서 C#으로 작성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions에서 gmail을 통해 SMTP로 메일 발송" href="/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html">Cloud Functions에서 gmail을 통해 SMTP로 메일 발송</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="LAMP" href="#">LAMP</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="LAMP 기본 환경 설정 정보" href="/compute/ncloud_compute_lamp_config_basic.html">LAMP 기본 환경 설정 정보</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LAMP(CentOS) 기본 명령어와 환경설정 파일 위치" href="/compute/ncloud_compute_lamp_config_centos.html">LAMP(CentOS) 기본 명령어와 환경설정 파일 위치</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LAMP(Ubuntu) 기본 명령어와 환경설정 파일 위치" href="/compute/ncloud_compute_lamp_config_ubuntu.html">LAMP(Ubuntu) 기본 명령어와 환경설정 파일 위치</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="LEMP" href="#">LEMP</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CentOS에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에서 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kubernetes 클러스터 생성 및 제어" href="/compute/ncloud_compute_kubernetes_service_start_guide.html">Kubernetes 클러스터 생성 및 제어</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Networking" href="#">Networking</a>
+      <ul>
+          
+          
+          
+          <li><a title="주요 서비스 포트(Port) 정보" href="/networking/ncloud_networking_service_port_info.html">주요 서비스 포트(Port) 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 구성요소" href="/networking/ncloud_networking_vpc_overview.html">VPC 구성요소</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="ACG와 NACL 비교" href="/networking/ncloud_networking_vpc_acg_nacl.html">ACG와 NACL 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic Load Balancer ACG 설정" href="/networking/ncloud_networking_load_balancer_acg.html">Classic Load Balancer ACG 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC Load Balancer 상품군의 변화" href="/networking/ncloud_networking_vpc_load_balancer.html">VPC Load Balancer 상품군의 변화</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Application Load Balancer 생성하기" href="/networking/ncloud_networking_load_balancer_application_lb.html">Application Load Balancer 생성하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Subnet 과 NAT Gateway 비교" href="/networking/ncloud_networking_vpc_subnet_natgw.html">Subnet 과 NAT Gateway 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 NAT Gateway 설정하기" href="/networking/ncloud_networking_natgw_routetb.html">VPC 환경에서 NAT Gateway 설정하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Global DNS 사용 가이드 - 도메인 추가" href="/networking/ncloud_networking_global_dns_guide.html">Global DNS 사용 가이드 - 도메인 추가</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC Peering 생성 가이드" href="/networking/ncloud_networking_vpc_peering_guide.html">VPC Peering 생성 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Storage" href="#">Storage</a>
+      <ul>
+          
+          
+          
+          <li><a title="네이버 클라우드 스토리지 비교" href="/storage/ncloud_storage_compare.html">네이버 클라우드 스토리지 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AWS CLI를 이용 Object Storage 접속" href="/storage/ncloud_storage_object_storage_aws_cli_connect.html">AWS CLI를 이용 Object Storage 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Lifecycle 정책 설정" href="/storage/ncloud_storage_object_storage_lifecycle_management.html">Object Storage Lifecycle 정책 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법" href="/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html">Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage 연동이 필수인 서비스" href="/storage/ncloud_storage_object_storage_required_service.html">Object Storage 연동이 필수인 서비스</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CloudBerry Explorer 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html">CloudBerry Explorer 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="S3 Browser 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_s3browser.html">S3 Browser 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cyberduck 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_cyberduck.html">Cyberduck 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage CLI 활용 - Windows" href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">Archive Storage CLI 활용 - Windows</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage API 인증 토큰 생성" href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">Archive Storage API 인증 토큰 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage API - 오브젝트 조회" href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">Archive Storage API - 오브젝트 조회</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="NAS 볼륨 Linux 서버에 마운트하기" href="/storage/ncloud_storage_nas_vpc_guide.html">NAS 볼륨 Linux 서버에 마운트하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 가이드와 신청 절차" href="/storage/ncloud_storage_backup_guide.html">백업 서비스 가이드와 신청 절차</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Database" href="#">Database</a>
+      <ul>
+          
+          
+          
+          <li><a title="설치형 DB와 관리형 Cloud DB 비교" href="/database/ncloud_database_compare.html">설치형 DB와 관리형 Cloud DB 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">Mysql DB 자동백업 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">Mysql, mariadb my.cnf 위치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">Mysql, mariadb bind-address 위치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html">CentOS에서 mariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ubuntu에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html">Ubuntu에서 mariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS Mysql Object Storage로 백업</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ubuntu Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu Mysql Object Storage로 백업</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경 Cloud DB for Mysql 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for Mysql 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB Mysql Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB Mysql Public 도메인 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql(MARIADB) replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">Mysql(MARIADB) replication 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">Mysql DB root Password 설정, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">Mysql 복구 시 ERROR 1227 해결</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Security" href="#">Security</a>
+      <ul>
+          
+          
+          
+          <li><a title="Security 서비스 요약" href="/security/ncloud_security_service_summary.html">Security 서비스 요약</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ncloud vs On-Premise Security 비교" href="/security/ncloud_security_onpremise_compare.html">Ncloud vs On-Premise Security 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="ACG 설정 가이드" href="/security/ncloud_security_acg_guide.html">ACG 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_classic_guide.html">Classic 환경에서 SSL VPN 설정, 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_vpc_guide.html">VPC 환경에서 SSL VPN 설정, 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html">SSL인증서 DCV 인증 방법 정리</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Management" href="#">Management</a>
+      <ul>
+          
+          
+          
+          <li><a title="Classic 환경 vs VPC 환경 비교" href="/management/ncloud_management_classic_vs_vpc_guide.html">Classic 환경 vs VPC 환경 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Sub Account 생성 가이드" href="/management/ncloud_management_sub_account_guide.html">Sub Account 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Monitoring 서비스 설정" href="/management/ncloud_management_classic_monitoring_guide.html">Classic 환경 Monitoring 서비스 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Windows 서버 모니터링 성능 정보 수집 오류 해결 방법" href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">Windows 서버 모니터링 성능 정보 수집 오류 해결 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Insight 설정 가이드" href="/management/ncloud_management_cloud_insight_guide.html">Cloud Insight 설정 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Analytics" href="#">Analytics</a>
+      <ul>
+          
+          
+          
+          <li><a title="Cloud Log Analytics 수집 로그 유형" href="/analytics/ncloud_analytics_cloud_log_analytics_info.html">Cloud Log Analytics 수집 로그 유형</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Log Analytics 설정 가이드" href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">Cloud Log Analytics 설정 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="API" href="#">API</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API를 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="C#으로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_csharp_sample.html">C#으로 Ncloud API를 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Application Service" href="#">Application Service</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 nShortURL 이용하기 샘플" href="/application-service/ncloud_application_service_nshorturl_php_sample.html">PHP로 nShortURL 이용하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Outbound Mailer 대량 메일" href="/application-service/ncloud_application_service_cloud_outbound_mailer_bulk_mail_send.html">Cloud Outbound Mailer 대량 메일</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Papago Korean Name Romanizer" href="/application-service/ncloud_application_service_papago_korean_name_romanizer_php_sample.html">Papago Korean Name Romanizer</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Media" href="#">Media</a>
+      <ul>
+          
+          
+          
+          <li><a title="Video Player 구현하기 샘플" href="/media/ncloud_media_video_player_sample.html">Video Player 구현하기 샘플</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="AWS" href="#">AWS</a>
+      <ul>
+          
+          
+          
+          <li><a title="AWS S3 수명주기 (LifeCycle) 설정" href="/aws/aws_s3_lifecycle_management.html">AWS S3 수명주기 (LifeCycle) 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AWS CLOUDWATCH LOG 수집" href="/aws/aws_cloud_watch_log.html">AWS CLOUDWATCH LOG 수집</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ETC" href="#">ETC</a>
+      <ul>
+          
+          
+          
+          <li><a title="Gmail smtp 메일발송 인증오류 해결" href="/etc/etc_smtp_auth_to_google_gmail_account.html">Gmail smtp 메일발송 인증오류 해결</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Pdf 문서 합치기 PHP로 구현" href="/etc/etc_pdf_merge_php_sample.html">Pdf 문서 합치기 PHP로 구현</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="PHP로 텔레그램 메시지 전송하기" href="/etc/etc_php_to_telegram_message_send.html">PHP로 텔레그램 메시지 전송하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="PhpSpreadsheet 설정 샘플 코드" href="/etc/etc_phpspreadsheet_sample_code.html">PhpSpreadsheet 설정 샘플 코드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="jekyll 설치(윈도 10) with base-theme" href="/etc/etc_jekyll_install.html">jekyll 설치(윈도 10) with base-theme</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="jekyll base-theme 커스터마이징" href="/etc/etc_jekyll_base_theme_customizing.html">jekyll base-theme 커스터마이징</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="mkdocs 설치 (윈도 10)" href="/etc/etc_mkdocs_install.html">mkdocs 설치 (윈도 10)</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tag archives" href="#">Tag archives</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tag archives overview" href="/tag/tag_archives_overview.html">Tag archives overview</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Tag archive pages" href="#">Tag archive pages</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="Classic pages" href="/tag/tag_classic.html">Classic pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPC pages" href="/tag/tag_vpc.html">VPC pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Apache pages" href="/tag/tag_apache.html">Apache pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux pages" href="/tag/tag_linux.html">Linux pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CentOS pages" href="/tag/tag_centOS.html">CentOS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu pages" href="/tag/tag_ubuntu.html">Ubuntu pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SSH pages" href="/tag/tag_ssh.html">SSH pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DATABASE pages" href="/tag/tag_database.html">DATABASE pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySql pages" href="/tag/tag_mysql.html">MySql pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB pages" href="/tag/tag_mariadb.html">MariaDB pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud DB pages" href="/tag/tag_clouddb.html">Cloud DB pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Load Balancer pages" href="/tag/tag_load_balancer.html">Load Balancer pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage pages" href="/tag/tag_storage.html">Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="ACG pages" href="/tag/tag_acg.html">ACG pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Subnet pages" href="/tag/tag_subnet.html">Subnet pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DNS pages" href="/tag/tag_dns.html">DNS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Price pages" href="/tag/tag_price.html">Price pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions pages" href="/tag/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title=".Net (C#) pages" href="/tag/tag_csharp.html">.Net (C#) pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account pages" href="/tag/tag_account.html">Account pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Log pages" href="/tag/tag_log.html">Log pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Monitoring pages" href="/tag/tag_monitoring.html">Monitoring pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analytics pages" href="/tag/tag_analytics.html">Analytics pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="API pages" href="/tag/tag_api.html">API pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="PHP pages" href="/tag/tag_php.html">PHP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Media pages" href="/tag/tag_media.html">Media pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Object Storage pages" href="/tag/tag_object_storage.html">Object Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Archive Storage pages" href="/tag/tag_archive_storage.html">Archive Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="BackUp pages" href="/tag/tag_backup.html">BackUp pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NAS pages" href="/tag/tag_nas.html">NAS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="AWS pages" href="/tag/tag_aws.html">AWS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="S3 pages" href="/tag/tag_s3.html">S3 pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Auto Scaling pages" href="/tag/tag_autoscaling.html">Auto Scaling pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Limit pages" href="/tag/tag_limit.html">Limit pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Proxy pages" href="/tag/tag_proxy.html">Proxy pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SSL pages" href="/tag/tag_ssl.html">SSL pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPN pages" href="/tag/tag_vpn.html">VPN pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Python pages" href="/tag/tag_python.html">Python pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Install pages" href="/tag/tag_install.html">Install pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LEMP pages" href="/tag/tag_lemp.html">LEMP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NginX pages" href="/tag/tag_nginx.html">NginX pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows pages" href="/tag/tag_windows.html">Windows pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SMTP pages" href="/tag/tag_smtp.html">SMTP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Gmail pages" href="/tag/tag_gmail.html">Gmail pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NAT Gateway pages" href="/tag/tag_natgateway.html">NAT Gateway pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Route Table pages" href="/tag/tag_route_table.html">Route Table pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPC Peering pages" href="/tag/tag_vpc_peering.html">VPC Peering pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Authentication pages" href="/tag/tag_auth.html">Authentication pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Password pages" href="/tag/tag_password.html">Password pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Mail pages" href="/tag/tag_mail.html">Mail pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Excel pages" href="/tag/tag_excel.html">Excel pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Markdown pages" href="/tag/tag_markdown.html">Markdown pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Jekyll pages" href="/tag/tag_jekyll.html">Jekyll pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Classic 환경에서 AutoScaling 설정하는 방법</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Ncloud Classic 환경에서 AutoScaling 설정하는 방법입니다</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+
+
+    
+
+   <h2 id="개요">개요</h2>
+<p>AutoScaling 서비스는 미리 등록한 설정에 따라 서버 수를 자동으로 증가 또는 감소시켜 안정적인 서비스를 유지하면서 비용을 절감할 수 있도록 해주는 서비스입니다.<br />
+여기서는 네이버 클라우드 Classic 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.</p>
+
+<h2 id="기본-설정">기본 설정</h2>
+<p>Auto Scaling 설정은 우선 [Auto Scaling] - [Launch Configuration]에서<br />
+[Launch Configuration 생성] 버튼을 클릭하는 것으로 시작합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_01.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 700px; " /><figcaption></figcaption></figure>
+
+<h3 id="서버-이미지-선택">서버 이미지 선택</h3>
+<p>서버 이미지는 네이버 클라우드에서 제공하는 기본 이미지를 선택할 수도 있고, 기존 서버로 만들어 둔 [내 서버 이미지]를 사용할 수도 있습니다. 여기서는 기본 이미지를 사용하는 것으로 하겠습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_02.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="서버-설정">서버 설정</h3>
+<p>스토리지 종류와 서버 타입 등을 선택합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_03.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="이름-설정">이름 설정</h3>
+<p>Launch Configuration의 이름을 입력합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_04.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="인증키-설정">인증키 설정</h3>
+<p>인증키는 기존에 보유하고 있던 인증키를 이용해도 되고, 새로운 인증키를 설정해도 됩니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_05.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="네트워크-접근-설정-acg">네트워크 접근 설정 (ACG)</h3>
+<p>ACG 설정도 기존에 보유하고 있던 ACG 중에서 선택해도 되고, 새로운 ACG를 생성해도 됩니다. 여기서는 새로운 ACG를 생성하는 방법으로 진행하겠습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_06.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<p>ACG 이름을 입력하고, [myIp]를 클릭, 허용할 포트를 입력한 후 [추가] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_07.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="최종-확인">최종 확인</h3>
+<p>지금까지 설정한 정보를 마지막으로 확인 한 후에 이상이 없으면 [Launch Configuration 생성] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_08.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="group-생성">Group 생성</h2>
+<p>다음으로 Auto Scaling Group을 생성합니다. [Auto Scaling] - [Auto Scaling Group]에서 [Auto Scaling Group 생성] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_09.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="launch-configuration-선택">Launch Configuration 선택</h3>
+<p>위에서 생성했던 Launch Configuration을 선택합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_10.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="그룹-설정">그룹 설정</h3>
+<p>여기서는 생성될 서버들의 이름과 최소, 최대 개수 등을 설정합니다.<br />
+Auto Scaling Group당 최대 30대의 서버를 생성할 수 있고, Zone, NAT Gateway 설정은 생성 후 변경할 수 없으며, 변경이 필요하면 새로 생성하여 사용해야 합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_11.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<ul>
+  <li><strong>서버이름 Prefix</strong> : 최대7자까지 지정할 수 있고, 나머지 이름의 뒷부분은 영문,숫자의 조합으로 무작위로 자동 생성됩니다.</li>
+  <li><strong>서버 용량</strong> : 최소, 최대, 기대 용량은 서버 대수를 의미하며 각각 <strong>0~30까지 입력 가능</strong>합니다.</li>
+  <li>
+    <p><strong>쿨다운 기본값</strong> : 새로운 서버가 생성되었다고 해도, init script 실행이나 업데이트 설치 등의 이유로 실제 서비스를 수행할 수 있을 정도로 준비되기까지는 시간이 소요될 수 있습니다. 
+즉, 쿨다운(Cooldown) 시간이란 실제 Scaling이 수행 중이거나 수행 완료된 이후에 모니터링 이벤트 알람이 발생하더라도 반응하지 않고 무시하도록 설정한 기간입니다.<br />
+<strong>값을 입력하지 않으면 기본값인 300초가 적용됩니다</strong>.</p>
+  </li>
+  <li><strong>헬스체크 보류기간</strong> : 서버 인스턴스가 생성되어 상태가 ‘운영 중’으로 바뀌었더라도, 서버의 업데이트 설치 등 작업에 의해서 헬스 체크에 정상 응답하지 못하는 경우가 생길 수 있습니다. 
+이런 경우 헬스 체크 보류 기간을 지정하면 해당 기간 동안에는 헬스 체크에 실패하더라도 서버에 이상이 있다고 판단하지 않습니다.<br />
+<strong>값을 입력하지 않으면 기본값인 300초가 적용됩니다</strong>.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="정책일정-설정">정책/일정 설정</h3>
+<p>정책과 일정을 여기서 바로 설정할 수도 있고 나중에 설정할 수도 있습니다. 여기서는 [나중에 설정]으로 선택하고 아래쪽에서 다시 살펴보겠습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_12.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="통보-설정">통보 설정</h3>
+<p>통보 설정을 여기서 바로 설정할 수도 있고 나중에 설정할 수도 있습니다. 여기서는 [나중에 설정]으로 선택하고 아래쪽에서 다시 살펴보겠습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_13.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="최종확인">최종확인</h3>
+<p>생성된 Group 설정값들을 마지막으로 확인하고 [Auto Scaling Group 생성] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_14.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="서버-생성-확인">서버 생성 확인</h2>
+<p>위에서 Auto Scaling Group을 생성하면 아래와 같이 즉시 서버가 생성되는 것을 확인할 수 있습니다. 처음에는 [기대용량]에 입력한 개수만큼 서버가 생성됩니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_15.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="설정-관리---정책">설정 관리 - 정책</h2>
+<p>위에서 나중에 설정하기로 하고 넘어갔던 Auto Scaling Group의 정책, 일정, 이력, 통보 설정 등을 확인해보겠습니다.<br />
+[Auto Scaling Group]에서 해당 그룹을 선택하고, [설정 및 관리] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_16.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="정책-설정">정책 설정</h3>
+<p>먼저 [정책] 탭을 선택하고, [생성] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_17.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<p>우선 서버를 증가시킬 정책으로 increase라는 이름을 입력하고, 증가시킬 서버 개수를 입력 후 [추가] 옵션을 선택하고 [생성] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_18.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<p>다음으로 서버를 감소시킬 정책으로 decrease라는 이름을 입력하고, 감소시킬 서버 개수를 입력 후 [반납] 옵션을 선택하고 [생성] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_19.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<p>서버 증가, 감소를 위한 정책 2가지가 생성된 것을 확인할 수 있습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_20.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="그룹-이벤트-설정">그룹 이벤트 설정</h2>
+<p>위에서 설정한 정책이 언제 실행되게할 것인가 즉, 서버에 어떤 이벤트가 발생했을 때 정책을 실행할 것인가를 결정하는 그룹 이벤트를 설정합니다.<br />
+그룹 이벤트 설정은 [Classic] - [Monitoring] - [Group Event Setting]에서 할 수 있으며, 위에서 만든 Auto Scaling 그룹을 선택하고 [그룹 이벤트 설정] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_21.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<p>그룹 이벤트 설정 화면에 들어가면 위에서 만든 increase, decrease 2가지 정책이 리스트에 나타나는 것을 확인할 수 있습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_22.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<p>정책이 발동되게 하는 이벤트는 여러가지가 있는데, 가장 많이 선택하는 것이 CPU 사용률입니다.<br />
+여기서는 <strong>CPU 사용률(used)이 60% 이상일 때 increase 정책</strong>, <strong>CPU 사용률(used)이 30% 이하일 때 decrease 정책</strong>이 실행되도록 이벤트를 추가했습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_23.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="설정-관리---일정">설정 관리 - 일정</h2>
+<p>위에서는 서버에 설정한 이벤트가 발생했을 때 정책이 발동되도록 했지만, 그 외에도 특정한 시간대에 사용자가 몰리는 피크 타임이 일정하다면 해당 시간 전후로 서버를 늘리거나 감소시키는 방법도 가능합니다.<br />
+여기 [일정] 탭에서 해당 내용을 설정해두면 피크 타임에 미리 서버를 증가시켜서 좀 더 안정적인 서비스가 가능하게 설정할 수 있습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_24.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="설정-관리---이력">설정 관리 - 이력</h2>
+<p>[이력] 탭에서는 서버가 생성되고 반납된 기록을 확인할 수 있습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_25.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="설정-관리---통보">설정 관리 - 통보</h2>
+<p>[통보] 탭에서는 서버가 생성되거나 반납될 때 지정한 담당자에게 SMS나 Email로 통보하도록 설정할 수 있습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_26.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="설정-관리---서버">설정 관리 - 서버</h2>
+<p>[서버] 탭은 현재 작동중인 서버 리스트를 확인할 수 있습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_27.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="중지---서버삭제">중지 - 서버삭제</h2>
+<p>마지막으로, Auto Scaling을 중지하고, 작동중인 서버를 한번에 모두 삭제하는 방법을 확인해보겠습니다.</p>
+
+<p>[Auto Scaling] - [Auto Scaling Group]에서 해당 그룹을 선택하고 상단에 있는 [수정] 버튼을 클릭합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_28.jpg" alt="Auto Scaling 서비스 제한사항" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<p>여기서 <strong>[최소 용량], [최대 용량], [기대 용량] 항목의 값을 모두 0으로 설정</strong>하면, 현재 작동중인 서버가 모두 반납되고, 더 이상 서버가 추가로 생성되지 않아서 Auto Scaling이 중지되게 됩니다.<br />
+사실 [최소 용량], [기대 용량] 2가지 항목만 0으로 설정해도 되지만, 혹시나 모르는 상황을 위해서 깔끔하게 3가지 항목 모두 0으로 설정합니다.</p>
+
+<figure><img class="docimage" src="/images/compute/autoscaling/ncp_server_autoscaling_guide_classic_29.jpg" alt="Ncloud Classic 환경에서 AutoScaling 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="서비스-제한사항">서비스 제한사항</h2>
+<p>Auto Scaling 설정과 서버 스펙 등에 대한 제한 사항을 정리해보겠습니다.</p>
+
+<h3 id="스펙-및-서비스-환경-제한-사항">스펙 및 서비스 환경 제한 사항</h3>
+<ul>
+  <li>총 디스크 사이즈 150GB 이하 서버만 가능</li>
+  <li>Windows OS는 Windows 2012. 2016만 지원</li>
+  <li>내 서버 이미지의 경우, 원본 서버의 부팅 디스크 크기가 50GB인 경우만 지원(100GB 디스크에 대해서는 추후 지원 예정)</li>
+</ul>
+
+<h3 id="설정-제한-사항">설정 제한 사항</h3>
+<ul>
+  <li>고객별 생성 가능한 Auto Scaling Group 최대 수: 10</li>
+  <li>고객별 생성 가능한 Launch Configuration 최대 수: 100</li>
+  <li>Auto Scaling Group당 생성 가능한 스케줄(Scheduled Action) 최대 수: 100</li>
+  <li>Auto Scaling Group당 생성 가능한 Scaling Policy 최대 수: 10</li>
+  <li>Auto Scaling Group당 생성 가능한 최대 서버 수: 30대</li>
+  <li>Auto Scaling Group당 연결 가능한 Load Balancer 최대 수 : 10</li>
+</ul>
+
+<h2 id="용어-정리">용어 정리</h2>
+<p>Auto Scaling에서 사용되는 주요 용어들을 정리해보겠습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">용어</th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Scale-in / Scale-out</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Auto Scaling Group을 생성하여 고객이 설정한 Policy에 따라 사용하고 있는 가상 서버의 자동 확장(Scale-out) 및 자동 축소(Scale-in)하도록 제공합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Auto Scaling Group</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">여러 개의 서버 인스턴스들을 Auto Scaling Group 이라는 하나의 그룹으로 묶어 놓게 됩니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Launch Configuration</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Auto Scaling Group에서 가상 서버를 시작 구성하는 데 사용하는 템플릿입니다. Auto Scaling Group을 생성할 때는 Launch Configuration을 지정해야 합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Auto Scaling Group의 최소 용량/최대 용량</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Auto Scaling Group의 최소/최대 서버 수를 말합니다. 최소 서버 수의 경우, 항상 이 값과 같거나 이 값보다 더 큰 서버 수가 유지됩니다. 서버를 한 대도 보유하지 않을 수 있게 하려면 0으로 설정합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">기대 용량 (Desired Capacity)</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">서버의 수는 기대 용량값에 따라서 조정됩니다. 이 값은 최소 용량 이상, 최대 용량 이하여야 합니다. 이 값이 지정되어 있지 않으면 초기에 최소 용량만큼 서버를 생성합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">쿨다운 기본값(초) (Default Cooldown)</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Default Cooldown(초) 새로운 서버가 생성되었다고 해도, Init-Script 실행이나 업데이트 설치 등의 이유로 실제 서비스를 수행할 수 있을 정도로 준비되기까지는 시간이 소요될 수 있습니다. 쿨다운(Cooldown) 시간이란 실제 Scaling이 수행 중이거나 수행 완료된 이후에 모니터링 이벤트 알람이 발생하더라도 무시하도록 설정한 기간입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">헬스체크</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Auto Scaling Group의 가상 서버에 주기적인 상태 확인을 수행하여 상태가 비정상인 가상 서버를 식별하도록 Health Check를 합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">헬스체크 보류 기간</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">서버가 생성되어 ‘운영중’으로 변경되었더라도 서버의 업데이트 설치 등 작업에 의해서 헬스 체크에 정상 응답하지 못하는 경우가 생길 수 있습니다. 이런 경우 헬스 체크 보류기간을 지정하면 해당 기간 동안에는 헬스 체크에 실패하더라도 서버 헬스에 이상이 있다고 판단하지 않습니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">헬스체크 유형</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">서버와 Load Balancer 둘 중에 선택할 수 있습니다. Auto Scaling Group 설정에서 Load Balancer 이름을 지정한 경우에는 헬스 체크 유형 역시 Load Balancer로 설정합니다. 이런 경우 Auto Scaling은 Load Balancer 헬스 체크 방식과 기준에 따라 서버의 상태를 판단합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">반납 정책</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Auto Scaling 과정에서 추가된 서버에 대한 Scale-in 작업에 대해, 고객이 API 질의 형식으로먼저 반납할 서버를 지정할 수 있습니다. 기본 설정은 먼저 생성된 서버부터 반납합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Policy</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: left">Auto Scaling이 일어나는 방식을 정의하고 있는데, 이를 ‘Policy’로 정의하고 있습니다. Auto Scale-out 이 발생할 때, 몇 대의 가상 서버를 늘릴 것인지, 반대로 Scale-in이 발생할 때 몇 대의 가상서버를 줄일 것인지를 정의합니다. 대수로 정의할 수 도 있고, %로 정의할 수도 있습니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="참고-url">참고 URL</h2>
+<p><a href="https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview</a></p>
+
+   
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="/tag/tag_autoscaling.html" class="btn btn-default navbar-btn cursorNorm" role="button">autoscaling</a>
+        
+        
+        
+        <a href="/tag/tag_classic.html" class="btn btn-default navbar-btn cursorNorm" role="button">classic</a>
+        
+        
+        
+    </div>
+   
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+<span>Page last updated:</span> 2021-09-16<br/> Site last generated: 2022-02-09 <br />
+<p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+                </div>
+            </div>
+</footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+<script>
+    $(function() {
+        $('svg').click(function() {
+            $(this).parent('form').submit();
+        });
+    });
+</script>
+
+</body>
+</html>
+
+

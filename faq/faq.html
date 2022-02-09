@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다">
+<meta name="keywords" content=" frequently asked questions, FAQ, question and answer, Support">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>FAQ</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="FAQ" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<meta property="og:description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<link rel="canonical" href="staeho-3rd.github.io/faq/faq.html" />
+<meta property="og:url" content="staeho-3rd.github.io/faq/faq.html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="FAQ" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"staeho-3rd.github.io/faq/faq.html","description":"Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.","headline":"FAQ","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>FAQ | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="staeho-3rd.github.io/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {                
+                if (!$("#tg-sb-link").attr("hide_sidebar"))
+                {
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<header>
+<!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                <!-- toggle sidebar button -->                
+                <li><a id="tg-sb-link" hide_sidebar="" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>                
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                                
+                <li><a href="/update/update.html">Update</a></li>
+                
+                
+                                
+                <li><a href="/news/news.html">News</a></li>
+                
+                
+                                
+                <li><a href="/faq/faq.html">FAQ</a></li>
+                
+                
+                                
+                <li><a href="/tag/tag_archives_overview.html">Tag</a></li>
+                
+                
+                
+                
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="https://3rdeyesys.com/" target="_blank" rel="noopener">Company</a></li>                                
+                
+                
+                
+                <li><a href="https://www.3rdeyesys.com/question/" target="_blank" rel="noopener">1:1 문의하기</a></li>                                
+                
+                 
+                               
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" placeholder="Search">
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form> </div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+
+</header>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Updates & News & FAQ" href="#">Updates & News & FAQ</a>
+      <ul>
+          
+          
+          
+          <li><a title="Updates" href="/update/update.html">Updates</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="News" href="/news/news.html">News</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li class="active"><a title="FAQ" href="/faq/faq.html">FAQ</a></li>
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">FAQ</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다</div>
+   
+
+    
+
+   <div class="panel-group" id="accordion">
+    
+	   
+         
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse19">AWS S3 데이터를 네이버 클라우드 Object Storage로 이전할 수 있는 방법은 없나요?</a>
+            </h4>
+        </div>
+        <div id="collapse19" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                이전 가능하니다. 네이버 클라우드에 있는 Object Migration 서비스를 이용하면 AWS S3에 있는 데이터를 그대로 이전할 수 있습니다. 현재는 AWS S3만 지원하지만, 향후에는 Microsoft Azure, Google Cloud Platform 등 다양한 클라우드를 지원할 예정입니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/product/migration/objectMigration" style="text-decoration:none" target="_blank">https://www.ncloud.com/product/migration/objectMigration</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse18">네이버 클라우드 VPC환경에서 Application Load Balancer를 만들었는데 왜 접속이 되지 않는가요?</a>
+            </h4>
+        </div>
+        <div id="collapse18" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 VPC 환경에서 Load Balancer가 정상 작동하기 위해서는 Network ACL과 Server ACG 설정에서 Load Balancer가 속한 Subnet 대역과 접속포트를 허용해 주어야 합니다. 자세한 내용은 아래 링크 문서를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/networking/ncloud_networking_load_balancer_application_lb.html" style="text-decoration:none" target="_self">/networking/ncloud_networking_load_balancer_application_lb.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse17">네이버 클라우드 Archive Storage 이용해지는 어떻게 하나요?</a>
+            </h4>
+        </div>
+        <div id="collapse17" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Archive Storage는 현재 이용해지 기능이 존재하지 않습니다. 다만, 생성된 버킷과 저장된 파일을 모두 삭제하면 더 이상 과금되지 않으니 걱정하지 않으셔도 됩니다.
+                
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse16">네이버 클라우드에서 디스크를 추가할 수 없는 서버도 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse16" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 서버에 직접 추가되는 디스크는 Block Storage로 Micro 타입의 서버, Bare Metal 서버, Application Server Launcher는 Block Storage를 추가할 수 없습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/storage/ncloud_storage_compare.html" style="text-decoration:none" target="_self">/storage/ncloud_storage_compare.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse15">네이버 클라우드에서 서버당 디스크는 최대 얼마까지 추가할 수 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse15" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 서버에 직접 추가되는 디스크는 Block Storage로 최대 2,000GB를 지원하며, 서버 1대당 최대 16개의 스토리지를 추가할 수 있습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/storage/ncloud_storage_compare.html" style="text-decoration:none" target="_self">/storage/ncloud_storage_compare.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse14">네이버 클라우드 Classic 환경에서 사용하던  Block Storage, NAS, Object Storage, Archive Storage 를 VPC 환경에서 사용할 수 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse14" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                Block Storage, NAS는 환경에 종속적이라 사용할 수 없지만, Object Storage와 Archive Storage는 환경에 독립적인 스토리지이기 때문에 Classic, VPC 어느 쪽에서 만들더라도 양쪽 모두에서 공용으로 사용할 수 있습니다.
+                
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse13">네이버 클라우드 Object Storage에 업로드 할 수 있는 파일의 최대 사이즈는 얼마인가요?</a>
+            </h4>
+        </div>
+        <div id="collapse13" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Object Storage는 <b>콘솔</b>에서 업로드시 파일당 최대 <b>2GB</b>, <b>API</b> 사용시 파일당 최대 <b>10TB</b>까지 업로드 가능합니다. (전체 저장용량에는 제한이 없습니다)
+                
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse12">네이버 클라우드 Load Balancer에서 지원하는 서버 부하 방식은 어떤 것이 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse12" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Load Balancer에서 지원하는 서버 부하 분산 방식에는 <b>Round Robin, Least Connection, Source IP Hash</b> 가 있습니다.
+                
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse11">네이버 클라우드 Object Storage에서 지정된 수명주기의 모든 파일과 폴더를 이동하려면 Object 이름 규칙을 어떻게 설정해야 하나요?</a>
+            </h4>
+        </div>
+        <div id="collapse11" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Object Storage에서 Lifecycle Management 관리대상을 설정할 때 수명주기에 해당하는 모든 파일과 폴더를 일괄 이동하려면 <b>Object 이름 규칙에 아무것도 입력하지 말고, 빈 공백</b>으로 두시면 됩니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/storage/ncloud_storage_object_storage_lifecycle_management.html" style="text-decoration:none" target="_self">/storage/ncloud_storage_object_storage_lifecycle_management.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse10">네이버 클라우드 AutoScaling 그룹 이벤트는 어디에서 설정하나요?</a>
+            </h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 AutoScaling 그룹 이벤트는 <b>Console - Monitoring - Group Event Setting 메뉴</b>에서 설정할 수 있습니다. 그리고 사전에 AutoScaling Group을 설정하셔야 합니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/compute/ncloud_compute_server_autoscaling_event_setting.html" style="text-decoration:none" target="_self">/compute/ncloud_compute_server_autoscaling_event_setting.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse9">AWS의 EBS와 비슷한 네이버 클라우드의 스토리지는 어떤 것인가요?</a>
+            </h4>
+        </div>
+        <div id="collapse9" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 하드 디스크를 추가 하듯이 서버에 할당하여 사용하는 스토리지는 <b>Block Storage</b>입니다. Console화면에서는 별도의 메뉴가 없고, 해당 서버의 관리 메뉴에서 <b>스토리지 생성</b> 기능을 이용하시면 됩니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/storage/ncloud_storage_compare.html" style="text-decoration:none" target="_self">/storage/ncloud_storage_compare.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse8">AWS의 S3와 비슷한 네이버 클라우드의 서비스는 어떤 것인가요?</a>
+            </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 어떤 종류의 데이터든지 언제 어디서나 데이터를 저장하고 확인할 수 있는 객체 스토리지 서비스는 <b>Object Storage</b>입니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/storage/ncloud_storage_compare.html" style="text-decoration:none" target="_self">/storage/ncloud_storage_compare.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse7">네이버 클라우드 Application Server는 상세 모니터링을 어떻게 하면 확인할 수 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Application Server Launcher 서비스에서 실행한 Application Server는 개발이나 테스트 용도의 최소 스펙과 최소 기능으로 제공되는 서버로, 기본 모니터링 외에 <b>상세 모니터링은 제공되지 않습니다</b>. 그 외에도 스토리지 추가, 스펙 변경 등도 제공되지 않습니다.
+                
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse6">네이버 클라우드에서 VPC는 최대 몇개까지 생성할 수 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 VPC는 고객의 계정마다 <b>최대 3개</b>를 생성할 수 있으며, 각 VPC는 최대 넷마스크 0.0.255.255/16 (IP 65,536개) 크기의 네트워크 주소 공간을 제공합니다
+                <br /><span style="font-size:15px">- 참고문서: <a href="/compute/ncloud_compute_server_vpc_create.html" style="text-decoration:none" target="_self">/compute/ncloud_compute_server_vpc_create.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse5">네이버 클라우드 VPC 환경에서 ACG는 몇개까지 생성할 수 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드는 VPC 당 최대 <b>500개</b>까지 ACG를 생성할 수 있습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/security/ncloud_security_acg_guide.html" style="text-decoration:none" target="_self">/security/ncloud_security_acg_guide.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse4">네이버 클라우드 Classic 환경에서 ACG는 몇개까지 생성할 수 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드는 Classic 환경에서 계정당 최대 <b>100개</b>까지 ACG를 생성할 수 있습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/security/ncloud_security_acg_guide.html" style="text-decoration:none" target="_self">/security/ncloud_security_acg_guide.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">AWS의 Security Group과 비슷한 네이버 클라우드의 서비스는 어떤 것인가요?</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 서버 간 네트워크 접근 제어 및 관리를 할 수 있는 IP/Port 기반 필터링 방화벽 서비스는 <b>ACG(Access Control Group)</b>입니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/security/ncloud_security_acg_guide.html" style="text-decoration:none" target="_self">/security/ncloud_security_acg_guide.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">네이버 클라우드에서 추가 가능한 스토리지의 최대 사이즈와 개수는 얼마인가요?</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 스토리지는 <b>최대 2,000GB</b>를 지원하며, 서버 1대당 <b>최대 16개</b>의 스토리지를 이용할 수 있습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/storage/ncloud_server_storage_add_guide.html" style="text-decoration:none" target="">/storage/ncloud_server_storage_add_guide.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">네이버 클라우드에서 서버를 계정당 최대 몇 대까지 생성할 수 있나요?</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 한 <b>계정당 생성할 수 있는 최대 서버 수는 리전별로 기본 50대</b>입니다. 서버 수 한도를 조정하려면 고객지원으로 문의해야 합니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="/compute/ncloud_compute_server_autoscaling_limit.html" style="text-decoration:none" target="_self">/compute/ncloud_compute_server_autoscaling_limit.html</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+    
+</div>
+
+   
+    <div class="tags">
+        
+    </div>
+   
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+ Site last generated: 2022-02-09 <br />
+<p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+                </div>
+            </div>
+</footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+<script>
+    $(function() {
+        $('svg').click(function() {
+            $(this).parent('form').submit();
+        });
+    });
+</script>
+
+</body>
+</html>
+
+

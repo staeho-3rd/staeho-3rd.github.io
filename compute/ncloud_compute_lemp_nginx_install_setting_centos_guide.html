@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ncloud CentOS 서버에 NginX를 Package로 설치하고 기본 설정을 하는 방법입니다">
+<meta name="keywords" content="centoslempnginxinstall,  Linux, LEMP, LAMP">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CentOS에서 NginX 설치, 설정하는 방법</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="CentOS에서 NginX 설치, 설정하는 방법" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<meta property="og:description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<link rel="canonical" href="staeho-3rd.github.io/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html" />
+<meta property="og:url" content="staeho-3rd.github.io/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CentOS에서 NginX 설치, 설정하는 방법" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"staeho-3rd.github.io/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html","description":"Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.","headline":"CentOS에서 NginX 설치, 설정하는 방법","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>CentOS에서 NginX 설치, 설정하는 방법 | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="staeho-3rd.github.io/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {                
+                if (!$("#tg-sb-link").attr("hide_sidebar"))
+                {
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<header>
+<!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                <!-- toggle sidebar button -->                
+                <li><a id="tg-sb-link" hide_sidebar="" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>                
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                                
+                <li><a href="/update/update.html">Update</a></li>
+                
+                
+                                
+                <li><a href="/news/news.html">News</a></li>
+                
+                
+                                
+                <li><a href="/faq/faq.html">FAQ</a></li>
+                
+                
+                                
+                <li><a href="/tag/tag_archives_overview.html">Tag</a></li>
+                
+                
+                
+                
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="https://3rdeyesys.com/" target="_blank" rel="noopener">Company</a></li>                                
+                
+                
+                
+                <li><a href="https://www.3rdeyesys.com/question/" target="_blank" rel="noopener">1:1 문의하기</a></li>                                
+                
+                 
+                               
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" placeholder="Search">
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form> </div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+
+</header>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Technical Documentation </li>
+  
+  
+  
+  <li>
+      <a title="Compute" href="#">Compute</a>
+      <ul>
+          
+          
+          
+          <li><a title="서버 접속 방법(Linux) - 공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html">서버 접속 방법(Linux) - 공인IP 없을 때</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 접속 방법(Linux) - 공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html">서버 접속 방법(Linux) - 공인IP 있을 때</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 서버 생성" href="/compute/ncloud_compute_server_vpc_create.html">VPC 환경에서 서버 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html">스토리지 추가 생성 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html">Linux 서버 디스크 추가 상세 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html">Linux 서버 디스크 LVM 구성하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html">서버 스펙 변경하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Micro 타입 서버에서 제한되는 서비스" href="/compute/ncloud_compute_server_micro_type_limit.html">Micro 타입 서버에서 제한되는 서비스</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 정지 시 요금할인" href="/compute/ncloud_compute_server_stop_price.html">서버 정지 시 요금할인</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 SSH 접속 보안 설정하기" href="/compute/ncloud_compute_server_ssh_security_setting.html">Linux 서버 SSH 접속 보안 설정하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경에서 AutoScaling 설정" href="/compute/ncloud_compute_autoscaling_classic_guide.html">Classic 환경에서 AutoScaling 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Auto Scaling 서비스 제한사항" href="/compute/ncloud_compute_autoscaling_limit.html">Auto Scaling 서비스 제한사항</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AutoScaling 이벤트 설정하는 방법" href="/compute/ncloud_compute_autoscaling_event_setting.html">AutoScaling 이벤트 설정하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="X-Forwarded-For로 Client IP 기록하기" href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">X-Forwarded-For로 Client IP 기록하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https로 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html">https로 리다이렉트 - Apache/CentOS</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https로 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html">https로 리다이렉트 - Apache/Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Repository 변경해 리눅스 패키지 설치" href="/compute/ncloud_compute_server_repository_change_on_private_network.html">Repository 변경해 리눅스 패키지 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS 6에서 pip - Python 설치하기" href="/compute/ncloud_compute_server_pip_python_install_centos6.html">CentOS 6에서 pip - Python 설치하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic환경 서버이미지 타 계정 공유" href="/compute/ncloud_compute_server_image_share_classic.html">Classic환경 서버이미지 타 계정 공유</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Windows 서버이미지 VPC 환경으로 복제" href="/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html">Classic 환경 Windows 서버이미지 VPC 환경으로 복제</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Cloud Functions" href="#">Cloud Functions</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 cmd에서 C#으로 작성하기" href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html">Cloud Functions Action을 cmd에서 C#으로 작성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 Visual Studio에서 C#으로 작성하기" href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html">Cloud Functions Action을 Visual Studio에서 C#으로 작성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions에서 gmail을 통해 SMTP로 메일 발송" href="/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html">Cloud Functions에서 gmail을 통해 SMTP로 메일 발송</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="LAMP" href="#">LAMP</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="LAMP 기본 환경 설정 정보" href="/compute/ncloud_compute_lamp_config_basic.html">LAMP 기본 환경 설정 정보</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LAMP(CentOS) 기본 명령어와 환경설정 파일 위치" href="/compute/ncloud_compute_lamp_config_centos.html">LAMP(CentOS) 기본 명령어와 환경설정 파일 위치</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LAMP(Ubuntu) 기본 명령어와 환경설정 파일 위치" href="/compute/ncloud_compute_lamp_config_ubuntu.html">LAMP(Ubuntu) 기본 명령어와 환경설정 파일 위치</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="LEMP" href="#">LEMP</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li class="active"><a title="CentOS에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에서 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kubernetes 클러스터 생성 및 제어" href="/compute/ncloud_compute_kubernetes_service_start_guide.html">Kubernetes 클러스터 생성 및 제어</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Networking" href="#">Networking</a>
+      <ul>
+          
+          
+          
+          <li><a title="주요 서비스 포트(Port) 정보" href="/networking/ncloud_networking_service_port_info.html">주요 서비스 포트(Port) 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 구성요소" href="/networking/ncloud_networking_vpc_overview.html">VPC 구성요소</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="ACG와 NACL 비교" href="/networking/ncloud_networking_vpc_acg_nacl.html">ACG와 NACL 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic Load Balancer ACG 설정" href="/networking/ncloud_networking_load_balancer_acg.html">Classic Load Balancer ACG 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC Load Balancer 상품군의 변화" href="/networking/ncloud_networking_vpc_load_balancer.html">VPC Load Balancer 상품군의 변화</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Application Load Balancer 생성하기" href="/networking/ncloud_networking_load_balancer_application_lb.html">Application Load Balancer 생성하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Subnet 과 NAT Gateway 비교" href="/networking/ncloud_networking_vpc_subnet_natgw.html">Subnet 과 NAT Gateway 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 NAT Gateway 설정하기" href="/networking/ncloud_networking_natgw_routetb.html">VPC 환경에서 NAT Gateway 설정하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Global DNS 사용 가이드 - 도메인 추가" href="/networking/ncloud_networking_global_dns_guide.html">Global DNS 사용 가이드 - 도메인 추가</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC Peering 생성 가이드" href="/networking/ncloud_networking_vpc_peering_guide.html">VPC Peering 생성 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Storage" href="#">Storage</a>
+      <ul>
+          
+          
+          
+          <li><a title="네이버 클라우드 스토리지 비교" href="/storage/ncloud_storage_compare.html">네이버 클라우드 스토리지 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AWS CLI를 이용 Object Storage 접속" href="/storage/ncloud_storage_object_storage_aws_cli_connect.html">AWS CLI를 이용 Object Storage 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Lifecycle 정책 설정" href="/storage/ncloud_storage_object_storage_lifecycle_management.html">Object Storage Lifecycle 정책 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법" href="/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html">Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage 연동이 필수인 서비스" href="/storage/ncloud_storage_object_storage_required_service.html">Object Storage 연동이 필수인 서비스</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CloudBerry Explorer 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html">CloudBerry Explorer 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="S3 Browser 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_s3browser.html">S3 Browser 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cyberduck 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_cyberduck.html">Cyberduck 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage CLI 활용 - Windows" href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">Archive Storage CLI 활용 - Windows</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage API 인증 토큰 생성" href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">Archive Storage API 인증 토큰 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage API - 오브젝트 조회" href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">Archive Storage API - 오브젝트 조회</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="NAS 볼륨 Linux 서버에 마운트하기" href="/storage/ncloud_storage_nas_vpc_guide.html">NAS 볼륨 Linux 서버에 마운트하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 가이드와 신청 절차" href="/storage/ncloud_storage_backup_guide.html">백업 서비스 가이드와 신청 절차</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Database" href="#">Database</a>
+      <ul>
+          
+          
+          
+          <li><a title="설치형 DB와 관리형 Cloud DB 비교" href="/database/ncloud_database_compare.html">설치형 DB와 관리형 Cloud DB 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">Mysql DB 자동백업 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">Mysql, mariadb my.cnf 위치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">Mysql, mariadb bind-address 위치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html">CentOS에서 mariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ubuntu에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html">Ubuntu에서 mariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS Mysql Object Storage로 백업</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ubuntu Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu Mysql Object Storage로 백업</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경 Cloud DB for Mysql 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for Mysql 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB Mysql Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB Mysql Public 도메인 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql(MARIADB) replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">Mysql(MARIADB) replication 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">Mysql DB root Password 설정, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Mysql 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">Mysql 복구 시 ERROR 1227 해결</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Security" href="#">Security</a>
+      <ul>
+          
+          
+          
+          <li><a title="Security 서비스 요약" href="/security/ncloud_security_service_summary.html">Security 서비스 요약</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ncloud vs On-Premise Security 비교" href="/security/ncloud_security_onpremise_compare.html">Ncloud vs On-Premise Security 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="ACG 설정 가이드" href="/security/ncloud_security_acg_guide.html">ACG 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_classic_guide.html">Classic 환경에서 SSL VPN 설정, 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_vpc_guide.html">VPC 환경에서 SSL VPN 설정, 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html">SSL인증서 DCV 인증 방법 정리</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Management" href="#">Management</a>
+      <ul>
+          
+          
+          
+          <li><a title="Classic 환경 vs VPC 환경 비교" href="/management/ncloud_management_classic_vs_vpc_guide.html">Classic 환경 vs VPC 환경 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Sub Account 생성 가이드" href="/management/ncloud_management_sub_account_guide.html">Sub Account 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Monitoring 서비스 설정" href="/management/ncloud_management_classic_monitoring_guide.html">Classic 환경 Monitoring 서비스 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Windows 서버 모니터링 성능 정보 수집 오류 해결 방법" href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">Windows 서버 모니터링 성능 정보 수집 오류 해결 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Insight 설정 가이드" href="/management/ncloud_management_cloud_insight_guide.html">Cloud Insight 설정 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Analytics" href="#">Analytics</a>
+      <ul>
+          
+          
+          
+          <li><a title="Cloud Log Analytics 수집 로그 유형" href="/analytics/ncloud_analytics_cloud_log_analytics_info.html">Cloud Log Analytics 수집 로그 유형</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Log Analytics 설정 가이드" href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">Cloud Log Analytics 설정 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="API" href="#">API</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API를 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="C#으로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_csharp_sample.html">C#으로 Ncloud API를 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Application Service" href="#">Application Service</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 nShortURL 이용하기 샘플" href="/application-service/ncloud_application_service_nshorturl_php_sample.html">PHP로 nShortURL 이용하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Outbound Mailer 대량 메일" href="/application-service/ncloud_application_service_cloud_outbound_mailer_bulk_mail_send.html">Cloud Outbound Mailer 대량 메일</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Papago Korean Name Romanizer" href="/application-service/ncloud_application_service_papago_korean_name_romanizer_php_sample.html">Papago Korean Name Romanizer</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Media" href="#">Media</a>
+      <ul>
+          
+          
+          
+          <li><a title="Video Player 구현하기 샘플" href="/media/ncloud_media_video_player_sample.html">Video Player 구현하기 샘플</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="AWS" href="#">AWS</a>
+      <ul>
+          
+          
+          
+          <li><a title="AWS S3 수명주기 (LifeCycle) 설정" href="/aws/aws_s3_lifecycle_management.html">AWS S3 수명주기 (LifeCycle) 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AWS CLOUDWATCH LOG 수집" href="/aws/aws_cloud_watch_log.html">AWS CLOUDWATCH LOG 수집</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ETC" href="#">ETC</a>
+      <ul>
+          
+          
+          
+          <li><a title="Gmail smtp 메일발송 인증오류 해결" href="/etc/etc_smtp_auth_to_google_gmail_account.html">Gmail smtp 메일발송 인증오류 해결</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Pdf 문서 합치기 PHP로 구현" href="/etc/etc_pdf_merge_php_sample.html">Pdf 문서 합치기 PHP로 구현</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="PHP로 텔레그램 메시지 전송하기" href="/etc/etc_php_to_telegram_message_send.html">PHP로 텔레그램 메시지 전송하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="PhpSpreadsheet 설정 샘플 코드" href="/etc/etc_phpspreadsheet_sample_code.html">PhpSpreadsheet 설정 샘플 코드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="jekyll 설치(윈도 10) with base-theme" href="/etc/etc_jekyll_install.html">jekyll 설치(윈도 10) with base-theme</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="jekyll base-theme 커스터마이징" href="/etc/etc_jekyll_base_theme_customizing.html">jekyll base-theme 커스터마이징</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="mkdocs 설치 (윈도 10)" href="/etc/etc_mkdocs_install.html">mkdocs 설치 (윈도 10)</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tag archives" href="#">Tag archives</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tag archives overview" href="/tag/tag_archives_overview.html">Tag archives overview</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Tag archive pages" href="#">Tag archive pages</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="Classic pages" href="/tag/tag_classic.html">Classic pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPC pages" href="/tag/tag_vpc.html">VPC pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Apache pages" href="/tag/tag_apache.html">Apache pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux pages" href="/tag/tag_linux.html">Linux pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CentOS pages" href="/tag/tag_centOS.html">CentOS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu pages" href="/tag/tag_ubuntu.html">Ubuntu pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SSH pages" href="/tag/tag_ssh.html">SSH pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DATABASE pages" href="/tag/tag_database.html">DATABASE pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySql pages" href="/tag/tag_mysql.html">MySql pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB pages" href="/tag/tag_mariadb.html">MariaDB pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud DB pages" href="/tag/tag_clouddb.html">Cloud DB pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Load Balancer pages" href="/tag/tag_load_balancer.html">Load Balancer pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage pages" href="/tag/tag_storage.html">Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="ACG pages" href="/tag/tag_acg.html">ACG pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Subnet pages" href="/tag/tag_subnet.html">Subnet pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DNS pages" href="/tag/tag_dns.html">DNS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Price pages" href="/tag/tag_price.html">Price pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions pages" href="/tag/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title=".Net (C#) pages" href="/tag/tag_csharp.html">.Net (C#) pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account pages" href="/tag/tag_account.html">Account pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Log pages" href="/tag/tag_log.html">Log pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Monitoring pages" href="/tag/tag_monitoring.html">Monitoring pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analytics pages" href="/tag/tag_analytics.html">Analytics pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="API pages" href="/tag/tag_api.html">API pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="PHP pages" href="/tag/tag_php.html">PHP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Media pages" href="/tag/tag_media.html">Media pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Object Storage pages" href="/tag/tag_object_storage.html">Object Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Archive Storage pages" href="/tag/tag_archive_storage.html">Archive Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="BackUp pages" href="/tag/tag_backup.html">BackUp pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NAS pages" href="/tag/tag_nas.html">NAS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="AWS pages" href="/tag/tag_aws.html">AWS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="S3 pages" href="/tag/tag_s3.html">S3 pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Auto Scaling pages" href="/tag/tag_autoscaling.html">Auto Scaling pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Limit pages" href="/tag/tag_limit.html">Limit pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Proxy pages" href="/tag/tag_proxy.html">Proxy pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SSL pages" href="/tag/tag_ssl.html">SSL pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPN pages" href="/tag/tag_vpn.html">VPN pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Python pages" href="/tag/tag_python.html">Python pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Install pages" href="/tag/tag_install.html">Install pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LEMP pages" href="/tag/tag_lemp.html">LEMP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NginX pages" href="/tag/tag_nginx.html">NginX pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows pages" href="/tag/tag_windows.html">Windows pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SMTP pages" href="/tag/tag_smtp.html">SMTP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Gmail pages" href="/tag/tag_gmail.html">Gmail pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NAT Gateway pages" href="/tag/tag_natgateway.html">NAT Gateway pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Route Table pages" href="/tag/tag_route_table.html">Route Table pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPC Peering pages" href="/tag/tag_vpc_peering.html">VPC Peering pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Authentication pages" href="/tag/tag_auth.html">Authentication pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Password pages" href="/tag/tag_password.html">Password pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Mail pages" href="/tag/tag_mail.html">Mail pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Excel pages" href="/tag/tag_excel.html">Excel pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Markdown pages" href="/tag/tag_markdown.html">Markdown pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Jekyll pages" href="/tag/tag_jekyll.html">Jekyll pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">CentOS에서 NginX 설치, 설정하는 방법</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Ncloud CentOS 서버에 NginX를 Package로 설치하고 기본 설정을 하는 방법입니다</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+
+
+    
+
+   <h2 id="개요">개요</h2>
+<p>네이버 클라우드 CentOS 서버에 NginX를 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.<br />
+사용한 서버는 CentOS 7.8 입니다.</p>
+
+<h2 id="yum-유틸리티-설치">yum 유틸리티 설치</h2>
+<p>yum으로 NginX를 설치하기 전에 yum-utils를 먼저 설치합니다. 이미 설치 되어 있을 경우에는 아래와 같이 설치되어 있다는 메시지가 출력됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nb">install </span>yum-utils
+</code></pre></div></div>
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_01.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="repository-설정">Repository 설정</h2>
+<p>NginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. 
+Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내용을 입력합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/yum.repos.d/nginx.repo
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>nginx-stable]
+<span class="nv">name</span><span class="o">=</span>nginx stable repo
+<span class="nv">baseurl</span><span class="o">=</span>http://nginx.org/packages/centos/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>/
+<span class="nv">gpgcheck</span><span class="o">=</span>1
+<span class="nv">enabled</span><span class="o">=</span>1
+<span class="nv">gpgkey</span><span class="o">=</span>https://nginx.org/keys/nginx_signing.key
+<span class="nv">module_hotfixes</span><span class="o">=</span><span class="nb">true</span>
+
+<span class="o">[</span>nginx-mainline]
+<span class="nv">name</span><span class="o">=</span>nginx mainline repo
+<span class="nv">baseurl</span><span class="o">=</span>http://nginx.org/packages/mainline/centos/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>/
+<span class="nv">gpgcheck</span><span class="o">=</span>1
+<span class="nv">enabled</span><span class="o">=</span>0
+<span class="nv">gpgkey</span><span class="o">=</span>https://nginx.org/keys/nginx_signing.key
+<span class="nv">module_hotfixes</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></div>
+
+<div class="bs-callout bs-callout-info bs-callout-level-2">NginX는 stable, mainline 두가지 버전이 있습니다. NginX의 공식 설명에 따르면 버그 수정이나 보안 패치 등은 항상 mainline 버전에 먼저 적용되기 때문에 mainline을 사용하는 것을 추천한다고 합니다. 
+stable 버전을 사용하는 주된 경우는 third-party 모듈을 사용하고 있어서 신규 버전에서 호환성 문제가 발생할 가능성이 걱정될 때라고 합니다.</div>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_02.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="버전-선택">버전 선택</h2>
+<p>stable, mainline 두가지 버전 중에서 기본은 stable 버전입니다.<br />
+stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되고, mainline 버전을 설치하기 위해서는 아래 명령어로 설정을 변경해주어야 합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum-config-manager <span class="nt">--enable</span> nginx-mainline
+</code></pre></div></div>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_03.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="nginx-설치">NginX 설치</h2>
+<p>설정을 마쳤으면 yum으로 NginX를 설치합니다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nt">-y</span> <span class="nb">install </span>nginx
+</code></pre></div></div>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_04.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="디렉토리-설정">디렉토리 설정</h2>
+<p>다음으로 홈으로 사용할 디렉토리를 생성하고, 해당 디렉토리의 소유권을 설정하겠습니다.<br />
+그리고, NginX가 정상 작동하는지 확인해보기 위해 설치시에 포함된 index.html을 홈 디렉토리로 복사합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# <span class="nb">mkdir</span> <span class="nt">-p</span> /ncp/data/www
+~# <span class="nb">chown</span> <span class="nt">-R</span> nginx:nginx /ncp/data/www
+~# <span class="nb">cp</span> /usr/share/nginx/html/index.html /ncp/data/www/index.html
+~# <span class="nb">ls</span> <span class="nt">-al</span> /ncp/data/www
+</code></pre></div></div>
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_05.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="환경-설정">환경 설정</h2>
+<p>주로 변경할 환경 설정 파일은 /etc/nginx/conf.d/default.conf 입니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/nginx/conf.d/default.conf
+</code></pre></div></div>
+<p><br /></p>
+<h3 id="port와-server-name-설정">Port와 Server Name 설정</h3>
+<p>80이 아닌 다른 Port를 사용할 경우나 도메인을 설정하게 될 경우 2, 3 라인에 있는 아래 항목들을 수정하면 됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server_name  localhost<span class="p">;</span>
+server_name  127.0.0.1<span class="p">;</span>
+</code></pre></div></div>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_06.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="홈-디렉토리-기본-문서-설정">홈 디렉토리, 기본 문서 설정</h3>
+<p>앞에서 만들었던 홈 디렉토리 경로를 설정하고 기본 문서를 지정하는 곳입니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 변경 전</span>
+    location / <span class="o">{</span>
+        root   /usr/share/nginx/html<span class="p">;</span>
+        index  index.html index.htm<span class="p">;</span>
+    <span class="o">}</span>
+
+<span class="c"># 변경 후</span>
+    root   /ncp/data/www<span class="p">;</span>
+    index  index.html index.htm<span class="p">;</span>
+
+    location / <span class="o">{</span>
+        try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ <span class="o">=</span> 404<span class="p">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_07.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_08.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="error-페이지-설정">error 페이지 설정</h3>
+<p>404, 500 등의 error 페이지를 설정할 경우 아래 내용들을 수정하면 됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 변경 전</span>
+    <span class="c">#error_page  404              /404.html;</span>
+
+    location <span class="o">=</span> /50x.html <span class="o">{</span>
+        root   /usr/share/nginx/html<span class="p">;</span>
+    <span class="o">}</span>
+
+<span class="c"># 변경 후</span>
+    error_page  404              /404.html<span class="p">;</span>
+
+    location <span class="o">=</span> /50x.html <span class="o">{</span>
+        root   /ncp/data/www<span class="p">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_09.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_10.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="htaccess-파일-접근-금지-설정">.htaccess 파일 접근 금지 설정</h3>
+<p>.htaccess 파일에 대한 접근 금지를 설정할 경우 아래 내용을 주석 해제하면 됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 변경 전</span>
+    <span class="c">#location ~ /\.ht {</span>
+    <span class="c">#    deny  all;</span>
+    <span class="c">#}</span>
+
+<span class="c"># 변경 후</span>
+    location ~ /<span class="se">\.</span>ht <span class="o">{</span>
+        deny  all<span class="p">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_11.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_12.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h2 id="nginx-실행">NginX 실행</h2>
+<p>설정을 모두 마쳤으면 NginX를 시작하고 상태를 확인합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl start nginx
+~# systemctl status nginx
+</code></pre></div></div>
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_13.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+
+<h3 id="사이트-접속">사이트 접속</h3>
+<p>NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 수 있습니다.</p>
+
+<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_14.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 600px; " /><figcaption></figcaption></figure>
+
+<h2 id="참고-url">참고 URL</h2>
+<ol>
+  <li>NginX Linux packages 설치 가이드
+    <ul>
+      <li><a href="http://nginx.org/en/linux_packages.html" target="_blank" style="word-break:break-all;">http://nginx.org/en/linux_packages.html</a></li>
+    </ul>
+  </li>
+</ol>
+
+   
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="/tag/tag_centos.html" class="btn btn-default navbar-btn cursorNorm" role="button">centos</a>
+        
+        
+        
+        <a href="/tag/tag_lemp.html" class="btn btn-default navbar-btn cursorNorm" role="button">lemp</a>
+        
+        
+        
+        <a href="/tag/tag_nginx.html" class="btn btn-default navbar-btn cursorNorm" role="button">nginx</a>
+        
+        
+        
+        <a href="/tag/tag_install.html" class="btn btn-default navbar-btn cursorNorm" role="button">install</a>
+        
+        
+        
+    </div>
+   
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+<span>Page last updated:</span> 2022-01-18<br/> Site last generated: 2022-02-09 <br />
+<p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+                </div>
+            </div>
+</footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+<script>
+    $(function() {
+        $('svg').click(function() {
+            $(this).parent('form').submit();
+        });
+    });
+</script>
+
+</body>
+</html>
+
+

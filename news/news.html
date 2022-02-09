@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ncloud 서비스와 관련된 새로운 소식들을 알려 드립니다.">
+<meta name="keywords" content=" news, updates, release notes, announcements">
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>News &amp; Notice</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="News &amp; Notice" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<meta property="og:description" content="Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features." />
+<link rel="canonical" href="staeho-3rd.github.io/news/news.html" />
+<meta property="og:url" content="staeho-3rd.github.io/news/news.html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="News &amp; Notice" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"staeho-3rd.github.io/news/news.html","description":"Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.","headline":"News &amp; Notice","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>News & Notice | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="staeho-3rd.github.io/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {                
+                if (!$("#tg-sb-link").attr("hide_sidebar"))
+                {
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<header>
+<!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                <!-- toggle sidebar button -->                
+                <li><a id="tg-sb-link" hide_sidebar="" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>                
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                                
+                <li><a href="/update/update.html">Update</a></li>
+                
+                
+                                
+                <li><a href="/news/news.html">News</a></li>
+                
+                
+                                
+                <li><a href="/faq/faq.html">FAQ</a></li>
+                
+                
+                                
+                <li><a href="/tag/tag_archives_overview.html">Tag</a></li>
+                
+                
+                
+                
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="https://3rdeyesys.com/" target="_blank" rel="noopener">Company</a></li>                                
+                
+                
+                
+                <li><a href="https://www.3rdeyesys.com/question/" target="_blank" rel="noopener">1:1 문의하기</a></li>                                
+                
+                 
+                               
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" placeholder="Search">
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form> </div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+
+</header>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Updates & News & FAQ" href="#">Updates & News & FAQ</a>
+      <ul>
+          
+          
+          
+          <li><a title="Updates" href="/update/update.html">Updates</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li class="active"><a title="News" href="/news/news.html">News</a></li>
+                    
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="/faq/faq.html">FAQ</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">News & Notice</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Ncloud 서비스와 관련된 새로운 소식들을 알려 드립니다.</div>
+   
+
+    
+
+   <div class="panel-group" id="accordion">
+    
+	    
+         
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse">[2021-11-16] 네이버 클라우드 Cloud Log Analytics 검색 문서 수 제한 적용 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                현재 네이버 클라우드 Cloud Log Analytics 상품에서 검색 가능한 문서 수에는 별도 제한이 없으나, 안정적인 서비스 제공을 위해 2021년 12월 16일 부터는 각 계정 별로 검색 가능한 문서 수의 제한이 적용될 예정입니다. 자세한 내용은 아래 링크를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1231" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1231</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-1">[2021-11-16] 네이버 클라우드 WORKPLACE AI OCR 베타 서비스 종료 및 유료화 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-1" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 WORKPLACE에서 NAVER CLOVA OCR 기술이 적용된 영수증 자동인식 기능으로 간편하게 비용정산 처리를 하실 수 있도록 베타서비스로 제공해 드리고 있던 서비스가 2021년 12월 17일(금)부터 정식 서비스로 제공함과 동시에 유료화가 됩니다. 자세한 내용은 아래 링크를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1230" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1230</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-2">[2021-10-18] 네이버 클라우드 Cloud Outbound Mailer 서비스 발송 요청 한도 제한 적용​ 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-2" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Cloud Outbound Mailer 서비스는 현재 별도의 발송 요청 한도가 지정되어 있지 않으나, 2021년 11월 18일 부터는 계정 당 발송 요청 한도를 월 1,000,000건으로 제한 적용할 예정입니다. 자세한 내용은 아래 링크를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1196" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1196</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-3">[2021-09-01] 네이버 클라우드 Web service Monitoring System의 SMS 요금 유료화 전환 안내​ </a>
+            </h4>
+        </div>
+        <div id="collapse-3" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 한시적 무료로 제공되던 Web service Monitoring System의 SMS 이용 요금이 2021년 10월 1일부로 유료화 될 예정입니다. 자세한 내용은 아래 링크를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1163" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1163</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-4">[2021-08-23] 네이버 클라우드 CentOS 6.3, CentOS 6.6 제공 종료 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-4" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드에서 기존 CentOS 6.3, CentOS 6.6 버전의 서비스 기간 종료에 따라 OS 이미지 및 설치형 상품의 제공을 종료할 예정입니다. 자세한 내용은 아래 링크를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1160" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1160</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-5">[2021-08-18] 네이버 클라우드 Classic 환경의 Network Traffic Monitoring 신규 신청 중단 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-5" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Classic 환경에서 Network Traffic Monitoring 신규 신청이 2021년 9월 16일(목)부터 중단됩니다. 자세한 내용은 아래 링크를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1158" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1158</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-6">[2021-06-30] 네이버 클라우드 Classic 환경의 Port Forwarding API / CLI 변경 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-6" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드 Classic 환경에서 PortForwarding API / CLI 의 응답 바디 부분에 변경사항이 생겼습니다. 자세한 내용은 아래 링크를 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1133" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1133</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-7">[2021-05-20] 네이버 클라우드 Cloud DB for MSSQL(VPC)서비스 일부 스펙 요금 인하 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-7" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                2021년 5월 27일부터 네이버 클라우드 플랫폼의Cloud DB for MSSQL(VPC) 서비스의 일부 스펙 요금이 인하됩니다. <br /> VPC환경의 High Memory (2 vCPU, 16 GB메모리, 100GB디스크) 타입의 Mirror DB이용 요금이 <b>343원에서 342원으로</b> 인하됩니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1104" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1104</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-8">[2021-05-18] 네이버 클라우드 Papago NMT 상품명 변경 및 기능 개선 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-8" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드의 Papago NMT 상품의 상품명 변경 및 기능 개선이 오는 5월 27일 진행됩니다. 상품명은 Papago Translation으로 변경되며, 문서번역, 웹번역 등의 번역 기능이 추가되고, 높임말 번역 제공과 치환번역 확대 등의 기능개선도 이루어집니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1103" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1103</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-9">[2021-04-28] 네이버 클라우드 Elasticsearch Service 상품명 및 API URL 변경 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-9" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드의 Elasticsearch Service 상품의 상품명 및 API URL이 오는 5월 27일 부터 S﻿earch Engine Service으로 변경됩니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1094" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1094</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-10">[2021-04-08] 네이버 클라우드 Cloud DB for MongoDB 출시 </a>
+            </h4>
+        </div>
+        <div id="collapse-10" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                개발자들에게 편리함을 주고 있어 관심과 인기가 많은 MongoDB이지만 지금까지 MongoDB를 클라우드 시스템으로 사용하기는 어려웠는데, 이번에 MongoDB와 네이버클라우드의 파트너십을 통해 네이버 클라우드에서 MongoDB를 이용할 수 있게 되었습니다. 4월 8일 오픈했고, VPC 환경에서 이용 가능합니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/product/database/cloudDbMongoDB" style="text-decoration:none" target="_blank">https://www.ncloud.com/product/database/cloudDbMongoDB</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-11">[2021-04-08] 네이버 클라우드 ‘네이버웍스-워크플레이스-워크박스’를 통합 활용할 수 있는 ‘NAVER Cloud for SMARTWORK’ 버티컬 솔루션 출시 </a>
+            </h4>
+        </div>
+        <div id="collapse-11" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드가 소상공인, 스타트업에서 대기업까지 기업 업무 환경의 디지털 전환을 위해 SaaS형태의 비즈니스 어플리케이션으로 구성된 ‘NAVER Cloud for SMARTWORK’를 선보였습니다. ‘NAVER Cloud for SMARTWORK’는 글로벌 20만 고객사가 선택한 업무용 협업 도구 ‘네이버웍스(NAVER WORKS)’, 네이버의 기업 운영 노하우가 담긴 기업 정보 시스템 ‘워크플레이스(WORKPLACE)’, 파일 공유 특화 서비스 ‘워크박스(WORKBOX)’로 구성, 통합 제공하는 패키지 솔루션으로 앞으로 다양한 산업별 특화 버티컬 솔루션이 추가될 계획이라고 합니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/solution/featured/smartWork" style="text-decoration:none" target="_blank">https://www.ncloud.com/solution/featured/smartWork</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-12">[2021-03-05] 네이버 클라우드 Cloud DB for MongoDB, 4월 8일 오픈예정 </a>
+            </h4>
+        </div>
+        <div id="collapse-12" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                개발자들에게 편리함을 주고 있어 관심과 인기가 많은 MongoDB이지만 지금까지 MongoDB를 클라우드 시스템으로 사용하기는 어려웠는데, 이번에 MongoDB와 네이버클라우드의 파트너십을 통해 네이버 클라우드에서 MongoDB를 이용할 수 있게 되었습니다. 다가오는 2021년 4월 8일 만나보실 수 있습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://blog.naver.com/n_cloudplatform/222265285120" style="text-decoration:none" target="_blank">https://blog.naver.com/n_cloudplatform/222265285120</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-13">[2021-03-05] 네이버 클라우드 블록체인 기반 시스템 구축을 위한 Blockchain Service 출시 </a>
+            </h4>
+        </div>
+        <div id="collapse-13" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                2021년 3월 네이버 클라우드는 블록체인 기반 시스템 구축을 위한 인프라 준비, 블록체인 프레임워크 설치, 노드 배포 및 네트워크 구성을 위한 설정까지 블록체인 구성의 복잡성은 줄이고 사용 편의성은 높인 Blockchain Service를 출시했습니다. 현재 Blockchain Service는 VPC환경에서 이용 가능합니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/product/blockChain/blockchainService" style="text-decoration:none" target="_blank">https://www.ncloud.com/product/blockChain/blockchainService</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-14">[2021-03-02] 네이버 클라우드 핀테크 서비스를 준비중인 기업에 500만원 상당의 크레딧과 기술 컨설팅 지원 </a>
+            </h4>
+        </div>
+        <div id="collapse-14" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버 클라우드는 레그테크, 결제·송금, 해외 송금, 금융투자, 자산관리 등 핀테크 서비스를 준비중인 기업에 인프라 영역에서 핀테크에 필요한 금융 컴플라이언스 심사를 적극 도와주고, 초기 구축까지 지원합니다. 지원대상은 담당자 상담 후 핀테크 지원 프로그램 참여 확정된 기업입니다. <b>신청기간=2021년 3월 1일 ~ 4월 30일</b>
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://blog.naver.com/n_cloudplatform/222262159607" style="text-decoration:none" target="_blank">https://blog.naver.com/n_cloudplatform/222262159607</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-15">[2021-03-02] 네이버 클라우드 Cloud IoT Core 유료화 예정 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-15" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                현재 한시적 무료로 제공되던 네이버 클라우드 Cloud IoT Core가 <b>2021년 4월 1일부로 유료화</b> 예정입니다. 2021년 3월 31일까지는 무료로 제공되지만, 4월 1일부터는 포털에 게시된 요금표에 따라 과금이 발생할 예정이니 참고하시기 바랍니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/1061" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/1061</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-16">[2021-02-25] 네이버 클라우드 블록체인 공공 연구개발 기업 대상 이용료 및 기술 컨설팅 지원 </a>
+            </h4>
+        </div>
+        <div id="collapse-16" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                네이버클라우드와 람다256이 블록체인 공공 연구개발 과제 수행 기업에 이용료와 특별 기술 컨설팅을 지원합니다. 지원대상은 2021년 블록체인 공공 연구 개발 과제 수행 또는 지원 기업 중 서비스형블록체인 (BaaS) 플랫폼 '루니버스' 도입을 검토중인 기업입니다. <b>신청기간=2021년 2월 25일 ~ 4월 30일</b>
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://blog.naver.com/n_cloudplatform/222261526627" style="text-decoration:none" target="_blank">https://blog.naver.com/n_cloudplatform/222261526627</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-17">[2021-02-22] 네이버 클라우드 미디어 솔루션 구축 지원 'CDN 도입 비용 50% 할인' </a>
+            </h4>
+        </div>
+        <div id="collapse-17" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                온라인 쇼핑, 라이브 커머스, 웨비나, 원격교육 등 미디어 솔루션 구축이 필요한 모든 기업을 위해 <b>2021년 12월까지</b> 네이버 클라우드 CDN+ 도입 비용 50% 지원과 미디어 구축 컨설팅 서비스를 무상으로 제공합니다. <b>신청기간=2021년 2월 22일 ~ 4월 30일</b>
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://blog.naver.com/n_cloudplatform/222252074557" style="text-decoration:none" target="_blank">https://blog.naver.com/n_cloudplatform/222252074557</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-18">[2021-02-18] 네이버 클라우드 재택근무를 위한 네이버 기업 정보 시스템 '워크플레이스' 이용료의 90%를 지원 </a>
+            </h4>
+        </div>
+        <div id="collapse-18" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                중소벤처기업부에서 시행하는 ‘K-비대면 서비스 바우처’ 사업에 재택근무 분야의 공급 기업으로 워크플레이스​가 선정되어, 비대면 바우처를 통해 워크플레이스를 구매하면, 기업 당 90%, 최대 180만원까지 비용을 지원받을 수 있습니다. <b>신청기간=예산 소진 시까지 선착순 마감</b>
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://blog.naver.com/n_cloudplatform/222246802200" style="text-decoration:none" target="_blank">https://blog.naver.com/n_cloudplatform/222246802200</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-19">[2021-02-08] 네이버 클라우드 공공 SaaS 보안인증 심사 준비 기업에 500만원 상당의 크레딧 제공 </a>
+            </h4>
+        </div>
+        <div id="collapse-19" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                2020년 8월부터 진행된 1차 프로모션에 이어 공공 SaaS 보안 인증을 준비하시는 더 많은 기업을 도와주기 위해, 인증 심사 준비 기간 중 사용하실 수 있는 500만 원 상당의 크레딧을 지원하는 2차 프로모션을 진행합니다. <b>신청기간=2021년 2월 8일 ~ 6월 30일</b>
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://blog.naver.com/n_cloudplatform/222236373653" style="text-decoration:none" target="_blank">https://blog.naver.com/n_cloudplatform/222236373653</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-20">[2021-01] 네이버 클라우드 Media 서비스에 Video Player 서비스 추가 </a>
+            </h4>
+        </div>
+        <div id="collapse-20" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                2021년 1월 네이버 클라우드 Media 서비스에 네이버 클라우드 서비스의 미디어 상품들과 함께 사용할 수 있는, 최신의 네이버 미디어 플레이어를 기반으로 개발된 클라우드 전용 Video Player 서비스가 추가되었습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/product/media/videoPlayer" style="text-decoration:none" target="_blank">https://www.ncloud.com/product/media/videoPlayer</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-21">[2021-01] 네이버 클라우드 Game 서비스에 Game Report 서비스 추가 </a>
+            </h4>
+        </div>
+        <div id="collapse-21" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                2021년 1월 네이버 클라우드 Game 서비스에 게임에서 발생하는 모든 데이터를 분석하고 정리하는 게임 데이터 전문 빅데이터 서비스인 Game Report 서비스가 추가되었습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/product/game/gameReport" style="text-decoration:none" target="_blank">https://www.ncloud.com/product/game/gameReport</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-22">[2021-01] 네이버 클라우드 Game 서비스에 Game Chat 서비스 추가 </a>
+            </h4>
+        </div>
+        <div id="collapse-22" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                2021년 1월 네이버 클라우드 Game 서비스에 게임에 꼭 필요한 라이브 채팅을 할 수 있는 플랫폼을 쉽고 빠르게 제공해주는 Game Chat 서비스가 추가되었습니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/product/game/gameChat" style="text-decoration:none" target="_blank">https://www.ncloud.com/product/game/gameChat</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-23">[2021-01] 네이버 클라우드 VPC 환경에 Cloud DB for MSSQL 서비스 추가 </a>
+            </h4>
+        </div>
+        <div id="collapse-23" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                2021년 1월 네이버 클라우드 VPC 환경에 Cloud DB for MSSQL 서비스가 추가되었습니다. 지원되는 MSSQL 버전은 MSSQL 2019 Standard edition입니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/product/database/cloudDbMssql" style="text-decoration:none" target="_blank">https://www.ncloud.com/product/database/cloudDbMssql</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+     
+      
+      
+      
+          
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-24">[2020-11-01] 네이버 클라우드 DNS (Beta) 상품 종료 안내 </a>
+            </h4>
+        </div>
+        <div id="collapse-24" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                지난 2020년 8월 정식 DNS 상품(Global DNS)가 출시됨에 따라 Beta로 무료제공되고 있는 DNS 서비스가 종료됩니다. 이에 따라 2020년 12월 1일부로 DNS(Beta)를 통한 신규등록/레코드 추가/레코드 삭제 기능이 차단되고, 2021년 3월 해당 서비스를 완전 종료될 예정입니다.
+                <br /><span style="font-size:15px">- 참고문서: <a href="https://www.ncloud.com/support/notice/all/991" style="text-decoration:none" target="_blank">https://www.ncloud.com/support/notice/all/991</a></span>
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+    
+</div>
+
+   
+    <div class="tags">
+        
+    </div>
+   
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+ Site last generated: 2022-02-09 <br />
+<p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+                </div>
+            </div>
+</footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+<script>
+    $(function() {
+        $('svg').click(function() {
+            $(this).parent('form').submit();
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
