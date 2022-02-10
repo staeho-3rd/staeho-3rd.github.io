@@ -382,7 +382,7 @@
 {
 "title": "CentOS 6에서 pip - Python 설치하기",
 "tags": "centospythoninstall",
-"keywords": "Linux",
+"keywords": "Linux, 파이썬, 센트OS",
 "url": "/compute/ncloud_compute_server_pip_python_install_centos6.html",
 "summary": "Ncloud CentOS 6.x에서 Repository를 변경해 pip - Python을 설치하는 방법입니다"
 }
@@ -535,7 +535,7 @@
 
 {
 "title": "설치형 DB서버와 관리형 Cloud DB 비교",
-"tags": "",
+"tags": "mysqlmssql",
 "keywords": "Database",
 "url": "/database/ncloud_database_compare.html",
 "summary": "Ncloud의 설치형 DB서버와 관리형 Cloud DB를 비교한 내용을 정리해보았습니다"
@@ -832,7 +832,7 @@
 
 {
 "title": "Ncloud vs On-Premise Security 비교",
-"tags": "",
+"tags": "security",
 "keywords": "보안서비스",
 "url": "/security/ncloud_security_onpremise_compare.html",
 "summary": "Ncloud와 On-Premise 두 환경의 보안서비스에 대한 비교 정리입니다"
@@ -843,7 +843,7 @@
 
 {
 "title": "Security 서비스 요약",
-"tags": "",
+"tags": "security",
 "keywords": "Security",
 "url": "/security/ncloud_security_service_summary.html",
 "summary": "Ncloud Security 서비스 요약"
@@ -1039,283 +1039,6 @@
 
 
 
-{
-"title": "Product 1",
-"tags": "",
-"keywords": "mydoc",
-"url": "/p1_landing_page.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Sample 1 Topic (Product 1)",
-"tags": "",
-"keywords": "sample",
-"url": "/p1_sample1.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 2 Topic (Product 1)",
-"tags": "",
-"keywords": "sample",
-"url": "/p1_sample2.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 3 Topic (Product 1)",
-"tags": "",
-"keywords": "sample",
-"url": "/p1_sample3.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 4 Topic (Product 1)",
-"tags": "",
-"keywords": "sample",
-"url": "/p1_sample4.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 5 Topic (Product 1)",
-"tags": "",
-"keywords": "sample",
-"url": "/p1_sample5.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 6 Topic (Product 1)",
-"tags": "",
-"keywords": "sample",
-"url": "/p1_sample6.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 7 Topic (Product 1)",
-"tags": "",
-"keywords": "sample",
-"url": "/p1_sample7.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Product 2",
-"tags": "",
-"keywords": "mydoc",
-"url": "/p2_landing_page.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Sample 1 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample1.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 10 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample10.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 11 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample11.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 12 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample12.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 13 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample13.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 14 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample14.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 2 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample2.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 3 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample3.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 4 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample4.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 5 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample5.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 6 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample6.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 7 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample7.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 8 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample8.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-{
-"title": "Sample 9 Topic",
-"tags": "",
-"keywords": "sample",
-"url": "/p2_sample9.html",
-"summary": "This is just a sample topic..."
-}
-,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1445,39 +1168,9 @@
 "url": "/update/update.html",
 "summary": "최근에 업데이트 된 기술문서 10개 리스트입니다."
 }
-,
 
 
 
-
-
-{
-"title": "Sample post",
-"tags": "newsgetting_started",
-"keywords": "",
-"url": "/samplepost.html",
-"summary": "This is some summary frontmatter for my sample post."
-}
-,
-
-
-{
-"title": "Welcome to Jekyll!",
-"tags": "news",
-"keywords": "",
-"url": "/myupdate.html",
-"summary": ""
-}
-,
-
-
-{
-"title": "Test post from last year",
-"tags": "news",
-"keywords": "",
-"url": "/test-post-from-last-year.html",
-"summary": ""
-}
 
 
 

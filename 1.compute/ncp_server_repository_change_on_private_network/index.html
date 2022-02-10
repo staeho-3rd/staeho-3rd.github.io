@@ -15,26 +15,53 @@
 		<!--link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400italic,400,300italic,300,700,700italic|Open+Sans:400italic,600italic,700italic,700,600,400|Inconsolata:400,700"-->
 
 		
+			
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4Q6RVEFJ3S');
+</script>
+			
+			
+			
+				<!-- NCloud Real User Analytics -->
+<script>
+  (function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = 'https://rua-api.ncloud.com/api/v1/beacon/boomerang/collect/'+
+      'e4c80491-1665-457b-9cec-550a5f554dde';
+    s.parentNode.insertBefore(p, s);
+  })();
+</script>
+
+			
+		
 
 		<!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="ko_KR" />
 <meta name="description" content="네이버 클라우드 Secure Zone이나 Private Network 환경에서 Repository를 변경해 리눅스 패키지 설치하는 방법입니다." />
 <meta property="og:description" content="네이버 클라우드 Secure Zone이나 Private Network 환경에서 Repository를 변경해 리눅스 패키지 설치하는 방법입니다." />
-<link rel="canonical" href="/1.compute/ncp_server_repository_change_on_private_network/" />
-<meta property="og:url" content="/1.compute/ncp_server_repository_change_on_private_network/" />
+<link rel="canonical" href="https://docs.3rdeyesys.com/1.compute/ncp_server_repository_change_on_private_network/" />
+<meta property="og:url" content="https://docs.3rdeyesys.com/1.compute/ncp_server_repository_change_on_private_network/" />
 <meta property="og:site_name" content="3rdeyesys" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-10-20T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기" />
 <script type="application/ld+json">
-{"url":"/1.compute/ncp_server_repository_change_on_private_network/","headline":"외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기","dateModified":"2021-10-25T00:00:00+00:00","datePublished":"2021-10-20T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/1.compute/ncp_server_repository_change_on_private_network/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/siteicon.png"}},"description":"네이버 클라우드 Secure Zone이나 Private Network 환경에서 Repository를 변경해 리눅스 패키지 설치하는 방법입니다.","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.3rdeyesys.com/1.compute/ncp_server_repository_change_on_private_network/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.3rdeyesys.com/siteicon.png"}},"url":"https://docs.3rdeyesys.com/1.compute/ncp_server_repository_change_on_private_network/","@type":"BlogPosting","headline":"외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기","dateModified":"2021-10-25T00:00:00+00:00","description":"네이버 클라우드 Secure Zone이나 Private Network 환경에서 Repository를 변경해 리눅스 패키지 설치하는 방법입니다.","datePublished":"2021-10-20T00:00:00+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-		<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="3rdeyesys" />
+		<link type="application/atom+xml" rel="alternate" href="https://docs.3rdeyesys.com/feed.xml" title="3rdeyesys" />
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
@@ -51,13 +78,13 @@
 	
 
 		
-		<a href="/" class="" target="_self">Docs<img src="/images/new_dot_10x10.png" style="width:8px;margin-left:3px;vertical-align:top;"></a>
+		<a href="/security/ncloud_security_acg_guide.html" class="" target="_self">Docs_v2<img src="/images/new_dot_10x10.png" style="width:8px;margin-left:3px;vertical-align:top;"></a>
 
 	
 	
 
 		
-		<a href="/update/" class="" target="_self">Update<img src="/images/new_dot_10x10.png" style="width:8px;margin-left:3px;vertical-align:top;"></a>
+		<a href="/update/" class="" target="_self">Update</a>
 
 	
 	
@@ -75,7 +102,7 @@
 	
 
 		
-		<a href="https://3rdeyesys.com" class="" target="_blank">Company<img src="/images/new_dot_10x10.png" style="width:8px;margin-left:3px;vertical-align:top;"></a>
+		<a href="https://3rdeyesys.com" class="" target="_blank">Company</a>
 
 	
 	
@@ -1297,17 +1324,17 @@ archive.ubuntu.conm <span class="nt">--</span><span class="o">&gt;</span> mirror
 		<h2>Share</h2>
 		<p>Share this tutorial with your community.</p>
 		<ul>
-			<li><a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A4000%2F1.compute%2Fncp_server_repository_change_on_private_network%2F">
+			<li><a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdocs.3rdeyesys.com%2F1.compute%2Fncp_server_repository_change_on_private_network%2F">
 		<svg class="twitter" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" /></svg>
 	
  Twitter</a></li>
-			<li><a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F1.compute%2Fncp_server_repository_change_on_private_network%2F">
+			<li><a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.3rdeyesys.com%2F1.compute%2Fncp_server_repository_change_on_private_network%2F">
 		<svg class="facebook" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="15.8 15.8 25 25"><path d="M32.8 24.7h-3.2v-2.1c0-0.8 0.5-1 0.9-1s2.3 0 2.3 0v-3.5l-3.1 0c-3.5 0-4.3 2.6-4.3 4.3v2.3h-2v3.6h2c0 4.6 0 10.2 0 10.2h4.2c0 0 0-5.6 0-10.2h2.8L32.8 24.7z"/></svg>
 	
  Facebook</a></li>
-			<li><a class="google-plus" target="_blank" href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2F1.compute%2Fncp_server_repository_change_on_private_network%2F">
+			<li><a class="google-plus" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fdocs.3rdeyesys.com%2F1.compute%2Fncp_server_repository_change_on_private_network%2F">
  Google+</a></li>
-			<li><a class="hacker-news" target="_blank" href="http://news.ycombinator.com/submitlink?u=http%3A%2F%2Flocalhost%3A4000%2F1.compute%2Fncp_server_repository_change_on_private_network%2F&t=%EC%99%B8%EB%B6%80%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%97%90%20%EC%97%B0%EA%B2%B0%ED%95%A0%20%EC%88%98%20%EC%97%86%EB%8A%94%20%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20Repository%EB%A5%BC%20%EB%B3%80%EA%B2%BD%ED%95%B4%20%EB%A6%AC%EB%88%85%EC%8A%A4%20%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0">
+			<li><a class="hacker-news" target="_blank" href="http://news.ycombinator.com/submitlink?u=https%3A%2F%2Fdocs.3rdeyesys.com%2F1.compute%2Fncp_server_repository_change_on_private_network%2F&t=%EC%99%B8%EB%B6%80%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%97%90%20%EC%97%B0%EA%B2%B0%ED%95%A0%20%EC%88%98%20%EC%97%86%EB%8A%94%20%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20Repository%EB%A5%BC%20%EB%B3%80%EA%B2%BD%ED%95%B4%20%EB%A6%AC%EB%88%85%EC%8A%A4%20%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0">
 		<svg class="hacker-news" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.8 3.3c-0.4 0.8-5.6 11.1-5.6 11.2 0 2 0 6.2 0 6.2 -0.1 0-2.2 0-2.3 0 0 0 0-5.9 0-6.2 0 0-5.5-10.9-5.6-11.1C5.3 3.3 5.3 3.3 5.3 3.3 5.3 3.3 5.3 3.3 5.3 3.3c0 0 0 0 0.1 0 0.9 0 1.7 0 2.6 0 0 0 0 0 0 0.1 0.1 0.1 4 8.3 4.1 8.3 0 0 4.2-8.3 4.3-8.4 0.8 0 1.6 0 2.4 0 0 0 0 0 0 0C18.8 3.3 18.8 3.3 18.8 3.3z"/></svg>
 	
  Hacker News</a></li>
