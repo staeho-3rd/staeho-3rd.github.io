@@ -274,6 +274,13 @@
           
           
           
+          <li><a title="Windows 서버 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html">Windows 서버 디스크 추가 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html">서버 스펙 변경하기</a></li>          
                     
           
@@ -854,14 +861,21 @@
           
           
           
-          <li><a title="PHP로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API를 호출하기 샘플</a></li>          
+          <li><a title="PHP로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API 호출하기 샘플</a></li>          
                     
           
           
           
           
           
-          <li><a title="C#으로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_csharp_sample.html">C#으로 Ncloud API를 호출하기 샘플</a></li>          
+          <li><a title="C#으로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_csharp_sample.html">C#으로 Ncloud API 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Python으로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_python_sample.html">Python으로 Ncloud API 호출하기 샘플</a></li>          
                     
           
           
@@ -1416,21 +1430,21 @@ Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내�
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/yum.repos.d/nginx.repo
 </code></pre></div></div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>nginx-stable]
-<span class="nv">name</span><span class="o">=</span>nginx stable repo
-<span class="nv">baseurl</span><span class="o">=</span>http://nginx.org/packages/centos/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>/
-<span class="nv">gpgcheck</span><span class="o">=</span>1
-<span class="nv">enabled</span><span class="o">=</span>1
-<span class="nv">gpgkey</span><span class="o">=</span>https://nginx.org/keys/nginx_signing.key
-<span class="nv">module_hotfixes</span><span class="o">=</span><span class="nb">true</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[nginx-stable]</span>
+<span class="s">name=nginx</span> <span class="s">stable</span> <span class="s">repo</span>
+<span class="s">baseurl=http://nginx.org/packages/centos/</span><span class="nv">$releasever</span><span class="n">/</span><span class="nv">$basearch</span><span class="n">/</span>
+<span class="s">gpgcheck=1</span>
+<span class="s">enabled=1</span>
+<span class="s">gpgkey=https://nginx.org/keys/nginx_signing.key</span>
+<span class="s">module_hotfixes=true</span>
 
-<span class="o">[</span>nginx-mainline]
-<span class="nv">name</span><span class="o">=</span>nginx mainline repo
-<span class="nv">baseurl</span><span class="o">=</span>http://nginx.org/packages/mainline/centos/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>/
-<span class="nv">gpgcheck</span><span class="o">=</span>1
-<span class="nv">enabled</span><span class="o">=</span>0
-<span class="nv">gpgkey</span><span class="o">=</span>https://nginx.org/keys/nginx_signing.key
-<span class="nv">module_hotfixes</span><span class="o">=</span><span class="nb">true</span>
+<span class="s">[nginx-mainline]</span>
+<span class="s">name=nginx</span> <span class="s">mainline</span> <span class="s">repo</span>
+<span class="s">baseurl=http://nginx.org/packages/mainline/centos/</span><span class="nv">$releasever</span><span class="n">/</span><span class="nv">$basearch</span><span class="n">/</span>
+<span class="s">gpgcheck=1</span>
+<span class="s">enabled=0</span>
+<span class="s">gpgkey=https://nginx.org/keys/nginx_signing.key</span>
+<span class="s">module_hotfixes=true</span>
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-info bs-callout-level-2">NginX는 stable, mainline 두가지 버전이 있습니다. NginX의 공식 설명에 따르면 버그 수정이나 보안 패치 등은 항상 mainline 버전에 먼저 적용되기 때문에 mainline을 사용하는 것을 추천한다고 합니다. 
@@ -1474,8 +1488,8 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 <h3 id="port와-server-name-설정">Port와 Server Name 설정</h3>
 <p>80이 아닌 다른 Port를 사용할 경우나 도메인을 설정하게 될 경우 2, 3 라인에 있는 아래 항목들을 수정하면 됩니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server_name  localhost<span class="p">;</span>
-server_name  127.0.0.1<span class="p">;</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server_name</span>  <span class="s">localhost</span><span class="p">;</span>
+<span class="k">server_name</span>  <span class="mi">127</span><span class="s">.0.0.1</span><span class="p">;</span>
 </code></pre></div></div>
 
 <figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_06.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
@@ -1483,19 +1497,19 @@ server_name  127.0.0.1<span class="p">;</span>
 <h3 id="홈-디렉토리-기본-문서-설정">홈 디렉토리, 기본 문서 설정</h3>
 <p>앞에서 만들었던 홈 디렉토리 경로를 설정하고 기본 문서를 지정하는 곳입니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 변경 전</span>
-    location / <span class="o">{</span>
-        root   /usr/share/nginx/html<span class="p">;</span>
-        index  index.html index.htm<span class="p">;</span>
-    <span class="o">}</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 변경 전</span>
+    <span class="k">location</span> <span class="n">/</span> <span class="p">{</span>
+        <span class="kn">root</span>   <span class="n">/usr/share/nginx/html</span><span class="p">;</span>
+        <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="c"># 변경 후</span>
-    root   /ncp/data/www<span class="p">;</span>
-    index  index.html index.htm<span class="p">;</span>
+<span class="c1"># 변경 후</span>
+    <span class="k">root</span>   <span class="n">/ncp/data/www</span><span class="p">;</span>
+    <span class="k">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
 
-    location / <span class="o">{</span>
-        try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ <span class="o">=</span> 404<span class="p">;</span>
-    <span class="o">}</span>
+    <span class="k">location</span> <span class="n">/</span> <span class="p">{</span>
+        <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri</span><span class="n">/</span> <span class="p">=</span> <span class="mi">404</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div></div>
 <figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_07.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
 
@@ -1504,19 +1518,19 @@ server_name  127.0.0.1<span class="p">;</span>
 <h3 id="error-페이지-설정">error 페이지 설정</h3>
 <p>404, 500 등의 error 페이지를 설정할 경우 아래 내용들을 수정하면 됩니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 변경 전</span>
-    <span class="c">#error_page  404              /404.html;</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 변경 전</span>
+    <span class="c1">#error_page  404              /404.html;</span>
 
-    location <span class="o">=</span> /50x.html <span class="o">{</span>
-        root   /usr/share/nginx/html<span class="p">;</span>
-    <span class="o">}</span>
+    <span class="k">location</span> <span class="p">=</span> <span class="n">/50x.html</span> <span class="p">{</span>
+        <span class="kn">root</span>   <span class="n">/usr/share/nginx/html</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="c"># 변경 후</span>
-    error_page  404              /404.html<span class="p">;</span>
+<span class="c1"># 변경 후</span>
+    <span class="k">error_page</span>  <span class="mi">404</span>              <span class="n">/404.html</span><span class="p">;</span>
 
-    location <span class="o">=</span> /50x.html <span class="o">{</span>
-        root   /ncp/data/www<span class="p">;</span>
-    <span class="o">}</span>
+    <span class="k">location</span> <span class="p">=</span> <span class="n">/50x.html</span> <span class="p">{</span>
+        <span class="kn">root</span>   <span class="n">/ncp/data/www</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div></div>
 
 <figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_09.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
@@ -1526,15 +1540,15 @@ server_name  127.0.0.1<span class="p">;</span>
 <h3 id="htaccess-파일-접근-금지-설정">.htaccess 파일 접근 금지 설정</h3>
 <p>.htaccess 파일에 대한 접근 금지를 설정할 경우 아래 내용을 주석 해제하면 됩니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 변경 전</span>
-    <span class="c">#location ~ /\.ht {</span>
-    <span class="c">#    deny  all;</span>
-    <span class="c">#}</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 변경 전</span>
+    <span class="c1">#location ~ /\.ht {</span>
+    <span class="c1">#    deny  all;</span>
+    <span class="c1">#}</span>
 
-<span class="c"># 변경 후</span>
-    location ~ /<span class="se">\.</span>ht <span class="o">{</span>
-        deny  all<span class="p">;</span>
-    <span class="o">}</span>
+<span class="c1"># 변경 후</span>
+    <span class="k">location</span> <span class="p">~</span> <span class="sr">/\.ht</span> <span class="p">{</span>
+        <span class="kn">deny</span>  <span class="s">all</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div></div>
 
 <figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_11.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
@@ -1618,7 +1632,7 @@ server_name  127.0.0.1<span class="p">;</span>
         		
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-        <span>Page last updated:</span> 2022-01-18<br/> Site last generated: 2022-02-10 <br />
+        <span>Page last updated:</span> 2022-01-18<br/> Site last generated: 2022-02-25 <br />
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>

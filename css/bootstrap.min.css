@@ -5885,11 +5885,7 @@ a.thumbnail:hover {
     color: #245269
 }
 
-.alert-warning {
-    color: #8a6d3b;
-    background-color: #fcf8e3;
-    border-color: #faebcc
-}
+.alert-warning {background:#f1f1f1;padding:1em;border-left:1em solid orange;overflow:auto}
 
 .alert-warning hr {
     border-top-color: #f7e1b5

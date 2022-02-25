@@ -274,6 +274,13 @@
           
           
           
+          <li><a title="Windows 서버 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html">Windows 서버 디스크 추가 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html">서버 스펙 변경하기</a></li>          
                     
           
@@ -854,14 +861,21 @@
           
           
           
-          <li><a title="PHP로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API를 호출하기 샘플</a></li>          
+          <li><a title="PHP로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_php_sample.html">PHP로 Ncloud API 호출하기 샘플</a></li>          
                     
           
           
           
           
           
-          <li><a title="C#으로 Ncloud API를 호출하기 샘플" href="/api/ncloud_api_call_csharp_sample.html">C#으로 Ncloud API를 호출하기 샘플</a></li>          
+          <li><a title="C#으로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_csharp_sample.html">C#으로 Ncloud API 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Python으로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_python_sample.html">Python으로 Ncloud API 호출하기 샘플</a></li>          
                     
           
           
@@ -1417,8 +1431,8 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="server-환경">Server 환경</h3>
 <ul>
-  <li>xxf-test-1 : CentOS 7.8</li>
-  <li>xxf-test-2 : Ubuntu 18.04</li>
+  <li>xff-test-1 : CentOS 7.8</li>
+  <li>xff-test-2 : Ubuntu 18.04</li>
 </ul>
 
 <h3 id="테스트-서버">테스트 서버</h3>
@@ -1472,21 +1486,22 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div></div>
 
 <p>httpd.conf 파일 196번째 라인의 LogFormat 항목에서 <strong>%h</strong> 를 <strong>%{X-Forwarded-For}i</strong> 로 수정합니다.</p>
+<div class="alert alert-success" role="alert"><i class="far fa-check-square"></i> <b>Line 번호:</b> 196번째 라인 등으로 표시한 해당 항목의 라인은 Ncloud 서버에 Apache를 설치했을 때의 기본 라인으로 환경설정 파일을 수정하거나 했을 경우에는 조금 달라질 수도 있습니다.</div>
 
 <h3 id="httpdconf-수정-전">httpd.conf 수정 전</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   LogFormat <span class="s2">"%h %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %b </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   <span class="ss">LogFormat</span> "%h %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 </code></pre></div></div>
 <figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_04.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
 
 <h3 id="httpdconf-수정-후">httpd.conf 수정 후</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   LogFormat <span class="s2">"%{X-Forwarded-For}i %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %b </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   <span class="ss">LogFormat</span> "%{X-Forwarded-For}i %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 </code></pre></div></div>
 <figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_05.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
 
 <h3 id="apache-재시작">Apache 재시작</h3>
 <p>httpd.conf 파일 수정 후에 Apache를 재시작합니다. 로그 테스트는 Ubuntu까지 설정을 마친 후에 진행하겠습니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl restart httpd
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">~</span><span class="c"># systemctl restart httpd</span>
 </code></pre></div></div>
 
 <h2 id="ubuntu-설정">Ubuntu 설정</h2>
@@ -1506,11 +1521,11 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div></div>
 
 <h3 id="remoteipload-수정-전">remoteip.load 수정 전</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LoadModule</span> remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
 </code></pre></div></div>
 <h3 id="remoteipload-수정-후">remoteip.load 수정 후</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
-RemoteIPHeader X-FORWARDED-FOR
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LoadModule</span> remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
+<span class="nc">RemoteIPHeader</span> <span class="ss">X-FORWARDED-FOR</span>
 </code></pre></div></div>
 <figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_07.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
 
@@ -1524,14 +1539,15 @@ RemoteIPHeader X-FORWARDED-FOR
 </code></pre></div></div>
 
 <p>apache2.conf 213번째 라인의 LogFormat 부분에서 <strong>%h</strong> 를 <strong>%a</strong> 로 변경합니다.</p>
+<div class="alert alert-success" role="alert"><i class="far fa-check-square"></i> <b>Line 번호:</b> 213번째 라인 등으로 표시한 해당 항목의 라인은 Ncloud 서버에 Apache를 설치했을 때의 기본 라인으로 환경설정 파일을 수정하거나 했을 경우에는 조금 달라질 수도 있습니다.</div>
 
 <h3 id="apache2conf-수정-전">apache2.conf 수정 전</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 LogFormat <span class="s2">"%h %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %O </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined  
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 <span class="ss">LogFormat</span> "%h %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined  
 </code></pre></div></div>
 <figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_08.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
 
 <h3 id="apache2conf-수정-후">apache2.conf 수정 후</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 LogFormat <span class="s2">"%a %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %O </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined  
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 <span class="ss">LogFormat</span> "%a %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined  
 </code></pre></div></div>
 <figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_09.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
 
@@ -1605,7 +1621,7 @@ RemoteIPHeader X-FORWARDED-FOR
         		
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-        <span>Page last updated:</span> 2021-12-29<br/> Site last generated: 2022-02-10 <br />
+        <span>Page last updated:</span> 2021-12-29<br/> Site last generated: 2022-02-25 <br />
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>

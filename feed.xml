@@ -5,10 +5,459 @@
         <description>써드아이시스템(3rdeyesys) 기술문서 사이트입니다 - Ncloud 프리미엄 파트너</description>
         <link>https://docs.3rdeyesys.com/</link>
         <atom:link href="https://docs.3rdeyesys.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 10 Feb 2022 13:20:01 +0900</pubDate>
-        <lastBuildDate>Thu, 10 Feb 2022 13:20:01 +0900</lastBuildDate>
+        <pubDate>Fri, 25 Feb 2022 12:20:12 +0900</pubDate>
+        <lastBuildDate>Fri, 25 Feb 2022 12:20:12 +0900</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
+        
+        <item>
+            <title>Python으로 Ncloud API를 호출하는 샘플 예제</title>
+            <description>## 개요
+Ncloud (네이버 클라우드) 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 Python으로 호출하는 샘플 예제를 정리해봅니다.  
+Ncloud API는 RESTful API 방식으로 제공되며, XML와 JSON 형식으로 응답합니다
+우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.
+
+
+## API 호출 샘플 코드
+
+``` python
+import sys
+import os
+import hashlib
+import hmac
+import base64
+import requests
+import time
+
+# unix timestamp 설정
+timestamp = int(time.time() * 1000)
+timestamp = str(timestamp)
+
+# Ncloud API Key 설정
+ncloud_accesskey = &quot;네이버 클라우드 AccessKey&quot;
+ncloud_secretkey = &quot;네이버 클라우드 SecretKey&quot;
+
+# 암호화 문자열 생성을 위한 기본값 설정
+apicall_method = &quot;GET&quot;
+space = &quot; &quot;
+new_line = &quot;\n&quot;
+
+# API 서버 정보
+api_server = &quot;https://billingapi.apigw.ntruss.com&quot;
+
+# API URL 예시 : 상품별 가격 리스트 호출 api
+api_url = &quot;/billing/v1/product/getProductPriceList&quot;
+api_url = api_url +&quot;?regionCode=KR&amp;productCode=SPCF000000000001&amp;responseFormatType=json&quot;
+
+# hmac으로 암호화할 문자열 생성
+message = apicall_method + space + api_url + new_line + timestamp + new_line + ncloud_accesskey
+message = bytes(message, &apos;UTF-8&apos;)
+
+# hmac_sha256 암호화
+ncloud_secretkey = bytes(ncloud_secretkey, &apos;UTF-8&apos;)
+signingKey = base64.b64encode(hmac.new(ncloud_secretkey, message, digestmod=hashlib.sha256).digest())
+
+# http 호출 헤더값 설정
+http_header = {
+    &apos;x-ncp-apigw-timestamp&apos;: timestamp,
+    &apos;x-ncp-iam-access-key&apos;: ncloud_accesskey,
+    &apos;x-ncp-apigw-signature-v2&apos;: signingKey
+}
+
+# api 호출
+response = requests.get(api_server + api_url, headers=http_header)
+
+print (response.text)
+```
+
+## 코드 상세 설명
+
+### 유닉스 타임 스탬프
+Ncloud API를 호출할 때는 13자리 형식의 유닉스 타임 스탬프가 필요합니다.  
+time.time()은 float 형식의 값을 리턴하므로 1000을 곱하고 정수로 반올림하고, 문자열로 변환합니다.  
+
+``` python
+timestamp = int(time.time() * 1000)
+timestamp = str(timestamp)
+```
+
+
+### Ncloud API 인증키 설정
+
+```python
+ncloud_accesskey = &quot;네이버 클라우드 AccessKey&quot;
+ncloud_secretkey = &quot;네이버 클라우드 SecretKey&quot;
+```
+
+Ncloud API 인증키는 Ncloud 포탈 -&gt; 마이페이지 -&gt; 계정관리 -&gt; 인증키 관리 - API 인증키 관리 메뉴에서 Access Key ID와 Secret Key를 가져오셔야 하며, 아직 만들어진 Key가 없다면 새로 만드셔야 합니다.
+
+{% include image.html file=&quot;api/ncloud_api_auth_key_create.png&quot; width=&quot;770&quot; alt=&quot;Ncloud API 인증키 생성하는 방법&quot; caption=&quot;&quot; %}
+
+{% include important.html title=&quot;API 인증키 사용 중지&quot; content=&quot;발급된 API 인증키는 사용중지/삭제가 가능하므로, 사용하지않는 API 인증키는 사용중지 또는 삭제하는것을 권장합니다.&quot; %}
+
+
+### hmac으로 암호화할 문자열 설정
+암호화할 문자열을 설정하는데 필요한 값을 사전에 정의합니다.  
+API 호출 방식은 GET과 POST 둘 다 가능한데, 일반적으로 많이 사용되는 GET 방식으로 소개하고, POST 방식은 아래쪽에 코드만 정리해두었습니다.
+
+``` python
+apicall_method = &quot;GET&quot;
+space = &quot; &quot;
+new_line = &quot;\n&quot;
+```
+
+### API 서버와 URL 정보
+API 서버와 URL 정보를 설정하면서 API 호출 후 리턴되는 결과값을 
+json, xml 어떤 형태로 받을 것인지를 responseFormatType=json, responseFormatType=xml 형식으로 설정할 수 있습니다. 
+기본 값은 xml로 값을 설정하지 않으면 xml로 리턴됩니다.
+
+``` python
+# API 서버 정보
+api_server = &quot;https://billingapi.apigw.ntruss.com&quot;
+
+# API URL 예시 : 상품별 가격 리스트 호출 api
+api_url = &quot;/billing/v1/product/getProductPriceList&quot;
+api_url = api_url +&quot;?regionCode=KR&amp;productCode=SPCF000000000001&amp;responseFormatType=json&quot;
+```
+
+
+{% include warning.html title=&quot;API URL 설정&quot; content=&quot;API 서버와 URL 정보를 설정할 때 2가지를 구분해서 설정하는 것이 좋습니다. 암호화 문자열을 설정할 때 도메인에 해당하는 API 서버 정보를 제외한 뒤쪽의 API URL만 사용하는데, https://로 시작하는 API 서버 정보까지 포함하면 API 호출 시에 오류가 발생하기 때문입니다.&quot; %}
+
+{% include note.html title=&quot;API 가이드&quot; content=&quot;API URL은 용도별로 각기 다른데, 네이버 클라우드 API 가이드 사이트에서 확인할 수 있습니다. &lt;br /&gt;&lt;a href=&apos;https://api.ncloud-docs.com/docs/ko/home/&apos; target=&apos;_blank&apos; style=&apos;word-break:break-all;&apos;&gt;https://api.ncloud-docs.com/docs/ko/home/&lt;/a&gt;&quot; %}
+
+
+### 암호화 문자열 생성
+Ncloud API에서는 호출 방식(GET, POST)과 도메인을 제외한 API URL, 유닉스 타임스탬프, API ACCESSKEY를 공백과 개행문자 \n을 이용해서 하나의 문자열로 설정합니다.  
+
+``` python
+message = apicall_method + space + api_url + new_line + timestamp + new_line + access_key
+message = bytes(message, &apos;UTF-8&apos;)
+```
+
+### hmac_sha256 방식으로 암호화
+hmac sha256 방식으로 Ncloud API SecretKey를 이용하여 message를 암호화 즉, 해시값을 만들고, 다시 base64로 인코딩합니다.
+
+``` python
+ncloud_secretkey = bytes(ncloud_secretkey, &apos;UTF-8&apos;)
+signingKey = base64.b64encode(hmac.new(ncloud_secretkey, message, digestmod=hashlib.sha256).digest())
+```
+
+
+### http 호출 헤더값 설정
+API를 호출할 때는 http 헤더값에 다음 3가지를 추가해서 호출합니다.
+- 유닉스 타임스탬프
+- Ncloud API AccessKey
+- hmac_256 으로 암호화한 문자열
+
+``` python
+http_header = {
+    &apos;x-ncp-apigw-timestamp&apos;: timestamp,
+    &apos;x-ncp-iam-access-key&apos;: ncloud_accesskey,
+    &apos;x-ncp-apigw-signature-v2&apos;: signingKey
+}
+```
+
+{% include tip.html title=&quot;timestamp&quot; content=&quot;이때 전송하는 timestamp는 위에서 message를 암호화할 때 사용한 timestamp와 동일한 값이어야 합니다. &lt;br /&gt;그리고, API Gateway 서버와 시간 차가 5분 이상 인 경우 유효하지 않은 요청으로 간주되어 호출 오류가 발생합니다.&quot; %}
+
+
+### api 호출
+이제 위에서 준비한 값들을 사용해서 API를 호출합니다.  
+리턴값은 호출하는 용도별로 json 또는 xml 형태로 반환됩니다.
+
+``` python
+response = requests.get(api_server + api_url, headers=http_header)
+```
+
+##  응답 예시
+
+``` json
+{&quot;getProductPriceListResponse&quot;: {
+  &quot;requestId&quot;: &quot;3e4fa6**-f967-4***-a8a9-9dd75****2d65&quot;,
+  &quot;returnCode&quot;: &quot;0&quot;,
+  &quot;returnMessage&quot;: &quot;success&quot;,
+  &quot;totalRows&quot;: 1,
+  &quot;productPriceList&quot;: [
+    {
+      &quot;productItemKind&quot;: {
+        &quot;code&quot;: &quot;CF&quot;,
+        &quot;codeName&quot;: &quot;Cloud Functions&quot;
+      },
+      &quot;productItemKindDetail&quot;: {},
+      &quot;productCode&quot;: &quot;SPCF000000000001&quot;,
+      &quot;productName&quot;: &quot;Cloud Functions&quot;,
+      &quot;productDescription&quot;: &quot;Cloud Functions&quot;,
+      &quot;softwareType&quot;: {},
+      &quot;productTypeDetail&quot;: {},
+      &quot;gpuCount&quot;: 0,
+      &quot;cpuCount&quot;: 0,
+      &quot;memorySize&quot;: 0,
+      &quot;baseBlockStorageSize&quot;: 0,
+      &quot;dbKind&quot;: {},
+      &quot;osInfomation&quot;: &quot;&quot;,
+      &quot;platformType&quot;: {},
+      &quot;osType&quot;: {},
+      &quot;platformCategoryCode&quot;: &quot;&quot;,
+      &quot;diskType&quot;: {},
+      &quot;diskDetailType&quot;: {},
+      &quot;generationCode&quot;: &quot;&quot;,
+      &quot;priceList&quot;: [
+        {
+          &quot;priceNo&quot;: &quot;3870&quot;,
+          &quot;priceType&quot;: {
+            &quot;code&quot;: &quot;MTRAT&quot;,
+            &quot;codeName&quot;: &quot;Meter rate&quot;
+          },
+          &quot;chargingUnitType&quot;: {
+            &quot;code&quot;: &quot;QUERY&quot;,
+            &quot;codeName&quot;: &quot;Query&quot;
+          },
+          &quot;ratingUnitType&quot;: {
+            &quot;code&quot;: &quot;SECT&quot;,
+            &quot;codeName&quot;: &quot;Period unit&quot;
+          },
+          &quot;chargingUnitBasicValue&quot;: &quot;1000000&quot;,
+          &quot;productRatingType&quot;: {
+            &quot;code&quot;: &quot;CFREQ&quot;,
+            &quot;codeName&quot;: &quot;Cloud Functions Request&quot;
+          },
+          &quot;unit&quot;: {
+            &quot;code&quot;: &quot;REQ_CNT&quot;,
+            &quot;codeName&quot;: &quot;Number of requests (per month)&quot;
+          },
+          &quot;price&quot;: 0,
+          &quot;conditionType&quot;: {},
+          &quot;conditionPrice&quot;: 0,
+          &quot;priceDescription&quot;: &quot;Number of requests (1000000) * Price&quot;,
+          &quot;freeUnit&quot;: {},
+          &quot;freeValue&quot;: 0,
+          &quot;meteringUnit&quot;: {
+            &quot;code&quot;: &quot;REQ_CNT&quot;,
+            &quot;codeName&quot;: &quot;Number of requests (per month)&quot;
+          },
+          &quot;startDate&quot;: &quot;2018-04-10T00:00:00+0900&quot;,
+          &quot;periodUnitList&quot;: [
+            {
+              &quot;startValue&quot;: 0,
+              &quot;endValue&quot;: 1000000,
+              &quot;price&quot;: 0
+            },
+            {
+              &quot;startValue&quot;: 1000000,
+              &quot;endValue&quot;: -1,
+              &quot;price&quot;: 200
+            }
+          ],
+          &quot;countryUnitList&quot;: [],
+          &quot;packageUnitList&quot;: []
+        }
+      ]
+    }
+  ]
+}}
+```
+
+
+## POST 방식 호출 코드
+Ncloud API는 일반적으로 GET 방식으로 호출하지만, POST 방식으로 호출하는 경우는 다음처럼 구성할 수 있습니다.
+
+``` python
+import sys
+import os
+import hashlib
+import hmac
+import base64
+import requests
+import time
+
+# unix timestamp 설정
+timestamp = int(time.time() * 1000)
+timestamp = str(timestamp)
+
+# Ncloud API Key 설정
+ncloud_accesskey = &quot;네이버 클라우드 AccessKey&quot;
+ncloud_secretkey = &quot;네이버 클라우드 SecretKey&quot;
+
+# 암호화 문자열 생성을 위한 기본값 설정
+apicall_method = &quot;POST&quot;
+space = &quot; &quot;
+new_line = &quot;\n&quot;
+
+# API 서버 정보
+api_server = &quot;https://billingapi.apigw.ntruss.com&quot;
+
+# API URL 예시 : 상품별 가격 리스트 호출 api
+api_url = &quot;/billing/v1/product/getProductPriceList&quot;
+
+# hmac으로 암호화할 문자열 생성
+message = apicall_method + space + api_url + new_line + timestamp + new_line + access_key
+message = bytes(message, &apos;UTF-8&apos;)
+
+# hmac_sha256 암호화
+ncloud_secretkey = bytes(ncloud_secretkey, &apos;UTF-8&apos;)
+signingKey = base64.b64encode(hmac.new(ncloud_secretkey, message, digestmod=hashlib.sha256).digest())
+
+# http 호출 헤더값 설정
+http_header = {
+    &apos;x-ncp-apigw-timestamp&apos;: timestamp,
+    &apos;x-ncp-iam-access-key&apos;: ncloud_accesskey,
+    &apos;x-ncp-apigw-signature-v2&apos;: signingKey
+}
+
+# POST 파라미터
+post_data =(
+    (&apos;regionCode&apos;,&apos;KR&apos;),
+    (&apos;productCode&apos;,&apos;SPCF000000000001&apos;),    
+    (&apos;responseFormatType&apos;,&apos;json&apos;)
+)
+
+# api 호출
+response = requests.post(api_server + api_url, headers=http_header, data=post_data)
+
+print (response.text)
+```
+
+
+## 오류 상황
+Python으로 코드를 작성할 때 발생할 수 있는 오류를 정리해보겠습니다.
+
+### import requests 오류
+requests는 Python에서 http 호출에 필요한 라이브러리입니다. 설치되어 있지 않으면 다음과 같은 오류가 발생할 수 있습니다.
+
+{% include warning.html title=&quot;ModuleNotFoundError&quot; content=&quot;No module named &apos;requests&apos;&quot; %}
+
+
+다음과 같이 requests 라이브러리를 설치하면 해결 됩니다.
+
+``` console
+D:\python&gt; pip install requests
+
+Collecting requests
+  Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)
+     |████████████████████████████████| 63 kB 790 kB/s
+Collecting urllib3&lt;1.27,&gt;=1.21.1
+  Downloading urllib3-1.26.8-py2.py3-none-any.whl (138 kB)
+     |████████████████████████████████| 138 kB ...
+Collecting idna&lt;4,&gt;=2.5
+     |████████████████████████████████| 61 kB ...
+Collecting certifi&gt;=2017.4.17
+  Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+     |████████████████████████████████| 149 kB 6.4 MB/s
+Collecting charset-normalizer~=2.0.0
+  Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+Successfully installed certifi-2021.10.8 charset-normalizer-2.0.12 idna-3.3 requests-2.27.1 urllib3-1.26.8f
+```
+
+### pip upgrade 오류
+Python 코드 작성과 직접 관계가 있는 것은 아니지만 Windows 환경에서 pip 버전을 업그레이드 하라는 메시지가 나타나서 아래와 같이 업그레이드를 하려고 할 때 오류 메시지가 발생하는 경우가 있습니다.
+
+``` console
+D:\python&gt; pip install --upgrade pip
+```
+
+{% include warning.html title=&quot;ERROR&quot; content=&quot;Could not install packages due to an OSError: [WinError 5] 액세스가 거부되었습니다&quot; %}
+
+이럴 때는 **Command Prompt를 관리자 권한으로 실행**하시면 해결 됩니다.
+
+
+## 참고 URL
+&lt;a href=&quot;https://api.ncloud-docs.com/docs/ko/home/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://api.ncloud-docs.com/docs/ko/home/&lt;/a&gt;</description>
+            <pubDate>Thu, 24 Feb 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/api/ncloud_api_call_python_sample.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/api/ncloud_api_call_python_sample.html</guid>
+            
+            <category>api</category>
+            
+            <category>python</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Windows 서버 스토리지(디스크) 추가 상세 가이드</title>
+            <description>## 개요
+**Ncloud (네이버 클라우드)는** 스토리지 당 **최대 2TB**까지 확장할 수 있으며, **최대 16개**의 스토리지를 이용할 수 있습니다.  
+이번에는 Windows 서버에 스토리지 즉, 디스크를 추가하는 방법에 대해 정리해보겠습니다.
+
+## 테스트 환경
+Windows Server 2016 (64-bit) English Edition 으로 진행 되었습니다. 추가 스토리지는 총 10G disk 총 4개 입니다.
+
+## 스토리지 생성
+
+- 서버 &gt; 서버 관리 및 설정 변경 &gt; 스토리지생성
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_01.png&quot; width=&quot;745&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+
+
+- 스토리지 생성에 필요한 내용을 입력합니다.
+- 크기는 스토리지 하나 당 **10GB~2000GB까지** 사용할 수 있습니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_02.png&quot; width=&quot;695&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+- 사용 될 추가디스크를 생성합니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_03.png&quot; width=&quot;680&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+## 윈도우 서버 디스크 관리
+
+- 디스크관리(윈도우키+r) : diskmgmt.msc
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_04.png&quot; width=&quot;450&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+### 디스크 초기화
+- initializeDisk를 선택하여 디스크를 초기화 합니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_05.png&quot; width=&quot;805&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+### 초기화 방식 선택
+- 두 가지 방식 중 하나를 선택합니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_06.png&quot; width=&quot;805&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+#### MBR과  GPT 차이
+
+| MBR | GTP |
+| :---: | :---: |
+| 주파티션을 4개까지 생성 가능 | 주 파티션을 128개까지 생성 가능 |
+| 디스크 용량 최대 2TB까지 인식 | 디스크 용량 최대 9.4ZB까지 인식 |
+| BIOS가 설치된 PC에서 사용 | UEFI 또는 EFI가 설치된 PC에서 사용 가능 |
+| Windows 32비트와 64비트 사용 가능 | Windows 32비트 사용 불가 |
+
+
+### 동적 디스크 변환
+- 추 후 레이드 구성을 위해 동적 디스크 변환을 선택합니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_07.png&quot; width=&quot;805&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+- 디스크의 상태가 Basic에서 Dynamic으로 바뀐 것을 확인할 수 있습니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_08.png&quot; width=&quot;665&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+### 볼륨 생성
+- 새 단순 볼륨 생성하기
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_09.png&quot; width=&quot;805&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+- 추가한 총 4개의 디스크 단순 볼륨 생성을 하였습니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_10.png&quot; width=&quot;805&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}
+
+
+## 디스크 추가 확인
+- 아래와 같이 추가 생성한 디스크 추가가 완료되었습니다.
+
+{% include image.html file=&quot;compute/ncloud_compute_server_windows_storage_add_detail_process_11.png&quot; width=&quot;837&quot; alt=&quot;cloud Windows 서버 스토리지(디스크) 추가 상세 가이드&quot; caption=&quot;&quot; %}</description>
+            <pubDate>Thu, 17 Feb 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_server_windows_storage_add_detail_process.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_server_windows_storage_add_detail_process.html</guid>
+            
+            <category>windows</category>
+            
+            <category>storage</category>
+            
+            
+        </item>
         
         <item>
             <title>CentOS에서 NginX 설치, 설정하는 방법</title>
@@ -33,7 +482,7 @@ Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내�
 ~# vi /etc/yum.repos.d/nginx.repo
 ```
 
-``` bash
+``` nginx
 [nginx-stable]
 name=nginx stable repo
 baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
@@ -103,7 +552,7 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 ### Port와 Server Name 설정
 80이 아닌 다른 Port를 사용할 경우나 도메인을 설정하게 될 경우 2, 3 라인에 있는 아래 항목들을 수정하면 됩니다.
 
-``` bash
+``` nginx
 server_name  localhost;
 server_name  127.0.0.1;
 ```
@@ -114,7 +563,7 @@ server_name  127.0.0.1;
 ### 홈 디렉토리, 기본 문서 설정
 앞에서 만들었던 홈 디렉토리 경로를 설정하고 기본 문서를 지정하는 곳입니다. 
 
-``` bash
+``` nginx
 # 변경 전
     location / {
         root   /usr/share/nginx/html;
@@ -138,7 +587,7 @@ server_name  127.0.0.1;
 ### error 페이지 설정
 404, 500 등의 error 페이지를 설정할 경우 아래 내용들을 수정하면 됩니다.
 
-``` bash
+``` nginx
 # 변경 전
     #error_page  404              /404.html;
 
@@ -162,7 +611,7 @@ server_name  127.0.0.1;
 ### .htaccess 파일 접근 금지 설정
 .htaccess 파일에 대한 접근 금지를 설정할 경우 아래 내용을 주석 해제하면 됩니다.
 
-``` bash
+``` nginx
 # 변경 전
     #location ~ /\.ht {
     #    deny  all;
@@ -200,7 +649,7 @@ NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 
 1.  NginX Linux packages 설치 가이드
 	- &lt;a href=&quot;http://nginx.org/en/linux_packages.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;
 </description>
-            <pubDate></pubDate>
+            <pubDate>Tue, 18 Jan 2022 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</guid>
             
@@ -211,6 +660,178 @@ NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 
             <category>nginx</category>
             
             <category>install</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기</title>
+            <description>## 개요
+X-Forwarded-For (XFF) 는 HTTP Header 중 하나로 Load Balancer(로드밸런서)나 Proxy Server를 통해 웹서버에 접속하는 Client의 IP 주소를 식별하는 표준 헤더입니다.  
+웹서버나 WAS 앞쪽에 Load Balancer 혹은 Proxy Server 등이 위치하게 된다면 서버 접근 로그에는 Client IP가 아닌 Load Balancer 혹은 Proxy Server의 IP 주소가 기록됩니다. 
+이때 웹 어플리케이션에서 X-Forwarded-For 헤더를 이용하면 Client IP를 서버 접근 로그에 남길 수 있습니다.  
+
+여기서는 Load Balancer와 연동된 CentOS 와 Ubuntu의 Apache 웹서버 환경에서 X-Forwarded-For 를 이용하여 Apache access_log에 Clinet의 IP를 저장하는 과정을 살펴보겠습니다.
+
+
+## 테스트 환경
+테스트는 CentOS, Ubuntu OS가 각각 설치된 2대의 서버를 Load Balancer와 연동한 후 Cloud Log Analytics에서 Apache access_log를  수집해 IP 주소를 확인하는 방식으로 진행하겠습니다.
+
+### Network 환경
+- VPC 대역 : 172.16.0.0/16
+- Subnet 대역 (Server) : 172.16.**10**.0/24
+- Sbunet 대역 (Load Balancer) : 172.16.**20**.0/24
+
+### Server 환경
+- xff-test-1 : CentOS 7.8
+- xff-test-2 : Ubuntu 18.04
+
+
+### 테스트 서버
+위 서버 환경에서 정리한 대로 CentOS, Ubuntu 2대의 서버를 준비했습니다.
+
+- VPC 환경에서 서버 생성하는 방법 : &lt;a href=&quot;/compute/ncloud_compute_server_vpc_create.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_server_vpc_create.html&lt;/a&gt;
+
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_01.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+로드밸런서도 마찬가지로 준비하고, 서버와 연동까지 완료했습니다.
+
+- VPC 환경에서 Application Load Balancer 생성하는 방법 : &lt;a href=&quot;/networking/ncloud_networking_load_balancer_application_lb.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_application_lb.html&lt;/a&gt;
+
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+## 설정 전 테스트
+우선, **X-Forwarded-For (XFF)** 설정을 하기 전에 어떻게 기록이 남는지 확인해보겠습니다.  
+아래와 같이 Load Balancer 주소로 접속해서 2대의 서버에 각각 접근하도록 합니다.  
+위에서 소개한 Application Load Balancer 생성하는 방법을 그대로 따라하면 아래와 같은 메시지를 확인할 수 있습니다.
+
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-1.png&quot; width=&quot;560&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-2.png&quot; width=&quot;560&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+### Apache 접속 로그 확인
+Apache 접속 로그 파일은 아래의 위치에 존재하지만, 저희는 네이버 클라우드 (Ncloud)의 상품 중 하나인 **Cloud Log Analytics**에서 로그를 수집해서 확인해보겠습니다. 
+- CentOS : /var/log/httpd/access_log
+- Ubuntu : /var/log/apache2/access.log
+
+- Cloud Log Analytics 설정 가이드 : &lt;a href=&quot;/analytics/ncloud_analytics_cloud_log_analytics_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_guide.html&lt;/a&gt;
+
+Cloud Log Analytics에서 수집한 로그를 확인해보면 위에서 설정했던 **Load Balancer의 IP 대역 (172.16.20.xx)**이 기록된 것을 확인할 수 있습니다.
+
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_03.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+## CentOS 설정
+이제 실제 Client IP가 기록 되도록 설정을 변경해보겠습니다.  
+우선 CentOS에서는 **httpd.conf** 파일만 수정하면 됩니다.
+
+``` bash
+~# vi /etc/httpd/conf/httpd.conf
+
+# vi Line Number 표시하기
+:set number
+```
+
+httpd.conf 파일 196번째 라인의 LogFormat 항목에서 **%h** 를 **%{X-Forwarded-For}i** 로 수정합니다.
+{% include tip.html title=&quot;Line 번호&quot; content=&quot;196번째 라인 등으로 표시한 해당 항목의 라인은 Ncloud 서버에 Apache를 설치했을 때의 기본 라인으로 환경설정 파일을 수정하거나 했을 경우에는 조금 달라질 수도 있습니다.&quot; %}
+
+### httpd.conf 수정 전
+``` apache   
+196   LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined
+```
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_04.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+### httpd.conf 수정 후  
+```apache
+196   LogFormat &quot;%{X-Forwarded-For}i %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined
+```
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_05.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+### Apache 재시작
+httpd.conf 파일 수정 후에 Apache를 재시작합니다. 로그 테스트는 Ubuntu까지 설정을 마친 후에 진행하겠습니다.
+
+``` apache
+~# systemctl restart httpd
+```
+
+## Ubuntu 설정
+Ubuntu에서는 apache2.conf 파일을 수정하기 전에 **remoteip 모듈**을 사용하도록 설정해줘야 합니다.
+
+### remoteip 설정
+아래 명령어를 실행하면 remoteip 모듈이 활성화 됩니다.
+
+``` bash
+~# a2enmod remoteip
+```
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_06.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+### remoteip.load 수정
+다음으로 remoteip.load 파일을 수정해서 아래쪽에 [**RemoteIPHeader X-FORWARDED-FOR**]을 추가 합니다.
+
+``` bash
+~# vi /etc/apache2/mods-enabled/remoteip.load
+```
+
+### remoteip.load 수정 전
+``` apache
+LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
+```
+### remoteip.load 수정 후
+``` apache
+LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
+RemoteIPHeader X-FORWARDED-FOR
+```
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_07.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+### apache2.conf 수정
+다음으로 **apache2.conf** 파일을 수정합니다.
+
+``` bash
+~# vi /etc/apache2/apache2.conf
+
+# vi Line Number 표시하기
+:set number
+```
+
+apache2.conf 213번째 라인의 LogFormat 부분에서 **%h** 를 **%a** 로 변경합니다. 
+{% include tip.html title=&quot;Line 번호&quot; content=&quot;213번째 라인 등으로 표시한 해당 항목의 라인은 Ncloud 서버에 Apache를 설치했을 때의 기본 라인으로 환경설정 파일을 수정하거나 했을 경우에는 조금 달라질 수도 있습니다.&quot; %}
+
+### apache2.conf 수정 전
+``` apache
+213 LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %O \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined  
+```
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_08.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+### apache2.conf 수정 후
+``` apache
+213 LogFormat &quot;%a %l %u %t \&quot;%r\&quot; %&gt;s %O \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined  
+```
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_09.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+### Apache 재시작
+``` bash
+~# systemctl restart apache2
+```
+
+## 설정 후 테스트
+위와 같이  CentOS, Ubuntu 2대 서버에서 설정을 모두 마친 후에 로드 밸런서 URL로 접속합니다.  
+이후에 Cloud Log Analytics에서 로그를 확인해보면 아래와 같이 로드밸런서 IP가 아닌 실제 접속한 Client의 IP가 기록된 것을 확인할 수 있습니다.
+
+{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_10.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 참고 URL
+1.  X-Forwarded-For 안내
+	- &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/X-Forwarded-For&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/X-Forwarded-For&lt;/a&gt;
+</description>
+            <pubDate>Wed, 29 Dec 2021 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html</guid>
+            
+            <category>proxy</category>
+            
+            <category>load_balancer</category>
+            
+            <category>log</category>
             
             
         </item>
@@ -339,183 +960,13 @@ Event를 발생 하게 하는 조건을 감시설정이라 하며 해당 Event�
 1.  상세 모니터링 사용 가이드
 	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/ko/management-management-1-1&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/ko/management-management-1-1&lt;/a&gt;
 </description>
-            <pubDate></pubDate>
+            <pubDate>Wed, 29 Dec 2021 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/management/ncloud_management_classic_monitoring_guide.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/management/ncloud_management_classic_monitoring_guide.html</guid>
             
             <category>classic</category>
             
             <category>monitoring</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기</title>
-            <description>## 개요
-X-Forwarded-For (XFF) 는 HTTP Header 중 하나로 Load Balancer(로드밸런서)나 Proxy Server를 통해 웹서버에 접속하는 Client의 IP 주소를 식별하는 표준 헤더입니다.  
-웹서버나 WAS 앞쪽에 Load Balancer 혹은 Proxy Server 등이 위치하게 된다면 서버 접근 로그에는 Client IP가 아닌 Load Balancer 혹은 Proxy Server의 IP 주소가 기록됩니다. 
-이때 웹 어플리케이션에서 X-Forwarded-For 헤더를 이용하면 Client IP를 서버 접근 로그에 남길 수 있습니다.  
-
-여기서는 Load Balancer와 연동된 CentOS 와 Ubuntu의 Apache 웹서버 환경에서 X-Forwarded-For 를 이용하여 Apache access_log에 Clinet의 IP를 저장하는 과정을 살펴보겠습니다.
-
-
-## 테스트 환경
-테스트는 CentOS, Ubuntu OS가 각각 설치된 2대의 서버를 Load Balancer와 연동한 후 Cloud Log Analytics에서 Apache access_log를  수집해 IP 주소를 확인하는 방식으로 진행하겠습니다.
-
-### Network 환경
-- VPC 대역 : 172.16.0.0/16
-- Subnet 대역 (Server) : 172.16.**10**.0/24
-- Sbunet 대역 (Load Balancer) : 172.16.**20**.0/24
-
-### Server 환경
-- xxf-test-1 : CentOS 7.8
-- xxf-test-2 : Ubuntu 18.04
-
-
-### 테스트 서버
-위 서버 환경에서 정리한 대로 CentOS, Ubuntu 2대의 서버를 준비했습니다.
-
-- VPC 환경에서 서버 생성하는 방법 : &lt;a href=&quot;/compute/ncloud_compute_server_vpc_create.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_server_vpc_create.html&lt;/a&gt;
-
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_01.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-로드밸런서도 마찬가지로 준비하고, 서버와 연동까지 완료했습니다.
-
-- VPC 환경에서 Application Load Balancer 생성하는 방법 : &lt;a href=&quot;/networking/ncloud_networking_load_balancer_application_lb.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_application_lb.html&lt;/a&gt;
-
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-## 설정 전 테스트
-우선, **X-Forwarded-For (XFF)** 설정을 하기 전에 어떻게 기록이 남는지 확인해보겠습니다.  
-아래와 같이 Load Balancer 주소로 접속해서 2대의 서버에 각각 접근하도록 합니다.  
-위에서 소개한 Application Load Balancer 생성하는 방법을 그대로 따라하면 아래와 같은 메시지를 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-1.png&quot; width=&quot;560&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-2.png&quot; width=&quot;560&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-### Apache 접속 로그 확인
-Apache 접속 로그 파일은 아래의 위치에 존재하지만, 저희는 네이버 클라우드 (Ncloud)의 상품 중 하나인 **Cloud Log Analytics**에서 로그를 수집해서 확인해보겠습니다. 
-- CentOS : /var/log/httpd/access_log
-- Ubuntu : /var/log/apache2/access.log
-
-- Cloud Log Analytics 설정 가이드 : &lt;a href=&quot;/analytics/ncloud_analytics_cloud_log_analytics_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_guide.html&lt;/a&gt;
-
-Cloud Log Analytics에서 수집한 로그를 확인해보면 위에서 설정했던 **Load Balancer의 IP 대역 (172.16.20.xx)**이 기록된 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_03.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-## CentOS 설정
-이제 실제 Client IP가 기록 되도록 설정을 변경해보겠습니다.  
-우선 CentOS에서는 **httpd.conf** 파일만 수정하면 됩니다.
-
-``` bash
-~# vi /etc/httpd/conf/httpd.conf
-
-# vi Line Number 표시하기
-:set number
-```
-
-httpd.conf 파일 196번째 라인의 LogFormat 항목에서 **%h** 를 **%{X-Forwarded-For}i** 로 수정합니다.
-
-### httpd.conf 수정 전
-``` bash   
-196   LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined
-```
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_04.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-### httpd.conf 수정 후  
-```bash
-196   LogFormat &quot;%{X-Forwarded-For}i %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined
-```
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_05.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-### Apache 재시작
-httpd.conf 파일 수정 후에 Apache를 재시작합니다. 로그 테스트는 Ubuntu까지 설정을 마친 후에 진행하겠습니다.
-
-``` bash
-~# systemctl restart httpd
-```
-
-## Ubuntu 설정
-Ubuntu에서는 apache2.conf 파일을 수정하기 전에 **remoteip 모듈**을 사용하도록 설정해줘야 합니다.
-
-### remoteip 설정
-아래 명령어를 실행하면 remoteip 모듈이 활성화 됩니다.
-
-``` bash
-~# a2enmod remoteip
-```
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_06.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-### remoteip.load 수정
-다음으로 remoteip.load 파일을 수정해서 아래쪽에 [**RemoteIPHeader X-FORWARDED-FOR**]을 추가 합니다.
-
-``` bash
-~# vi /etc/apache2/mods-enabled/remoteip.load
-```
-
-### remoteip.load 수정 전
-``` bash
-LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
-```
-### remoteip.load 수정 후
-``` bash
-LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
-RemoteIPHeader X-FORWARDED-FOR
-```
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_07.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-### apache2.conf 수정
-다음으로 **apache2.conf** 파일을 수정합니다.
-
-``` bash
-~# vi /etc/apache2/apache2.conf
-
-# vi Line Number 표시하기
-:set number
-```
-
-apache2.conf 213번째 라인의 LogFormat 부분에서 **%h** 를 **%a** 로 변경합니다. 
-
-### apache2.conf 수정 전
-``` bash
-213 LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %O \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined  
-```
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_08.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-### apache2.conf 수정 후
-``` bash
-213 LogFormat &quot;%a %l %u %t \&quot;%r\&quot; %&gt;s %O \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined  
-```
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_09.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-### Apache 재시작
-``` bash
-~# systemctl restart apache2
-```
-
-## 설정 후 테스트
-위와 같이  CentOS, Ubuntu 2대 서버에서 설정을 모두 마친 후에 로드 밸런서 URL로 접속합니다.  
-이후에 Cloud Log Analytics에서 로그를 확인해보면 아래와 같이 로드밸런서 IP가 아닌 실제 접속한 Client의 IP가 기록된 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_10.png&quot; width=&quot;770&quot; alt=&quot;Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1.  X-Forwarded-For 안내
-	- &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/X-Forwarded-For&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/X-Forwarded-For&lt;/a&gt;
-</description>
-            <pubDate></pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html</guid>
-            
-            <category>proxy</category>
-            
-            <category>load_balancer</category>
-            
-            <category>log</category>
             
             
         </item>
@@ -601,7 +1052,7 @@ ACG를 설정할 때 접근 소스 항목은 보통 IP주소를 입력하게 됩
 ## 참고 URL
 &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-compute-2-3&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-compute-2-3.html&lt;/a&gt;
 </description>
-            <pubDate></pubDate>
+            <pubDate>Wed, 29 Dec 2021 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</guid>
             
@@ -706,7 +1157,7 @@ C:\Program Files (x86)\NBP\NSight\
 1.  성능 수집 오류 해결 FAQ
 	- &lt;a href=&quot;https://www.ncloud.com/support/faq/all/1292&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://www.ncloud.com/support/faq/all/1292&lt;/a&gt;
 </description>
-            <pubDate></pubDate>
+            <pubDate>Tue, 28 Dec 2021 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html</guid>
             
@@ -877,7 +1328,7 @@ systemctl status httpd
 2. Target Group 가이드
 	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/networking-loadbalancer-targetgroupconsole&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/networking-loadbalancer-targetgroupconsole&lt;/a&gt;
 </description>
-            <pubDate></pubDate>
+            <pubDate>Fri, 17 Dec 2021 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_application_lb.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_application_lb.html</guid>
             
@@ -1099,7 +1550,7 @@ Windows 서버에서 Agent 삭제를 시도할 때 아래와 같이 오류 메�
 
 
 </description>
-            <pubDate></pubDate>
+            <pubDate>Tue, 14 Dec 2021 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_guide.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_guide.html</guid>
             
@@ -1265,7 +1716,7 @@ USER_ID, HOST, DB 권한, 암호를 입력하고 DB User 추가 버튼을 클릭
 2. Cloud DB 서버 외부 접근 가이드
 	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/database-database-5-10&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/database-database-5-10&lt;/a&gt;
 </description>
-            <pubDate></pubDate>
+            <pubDate>Mon, 13 Dec 2021 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_guide.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_guide.html</guid>
             
@@ -1276,214 +1727,6 @@ USER_ID, HOST, DB 권한, 암호를 입력하고 DB User 추가 버튼을 클릭
             <category>clouddb</category>
             
             <category>vpc</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Cloud DB for MySQL 생성후 Public 도메인으로 접속하기</title>
-            <description>## 개요
-네이버 클라우드의 Cloud DB for MySQL 서비스는 MySQL 데이터베이스를 쉽고 간편하게 구축하고 관리할 수 있고 자동 Fail-Over, 자동백업, 네이버 서비스에서 검증된 최적화된 설정 등을 제공해주는 
-완전 관리형 클라우드 데이터베이스 서비스입니다.  
-여기서는 VPC환경에서 Cloud DB for MySQL 서비스를 생성하고, Public 도메인으로 접속하는 과정을 정리해보겠습니다.
-
-{% include callout.html type=&quot;warning&quot; level=&quot;1&quot; content=&quot;네이버 클라우드는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다. 
-그러므로 VPC 환경에서 DB서버를 사용하려면 OS에 사용자가 직접 DB를 설치해서 사용하는 방법과 Cloud DB를 사용하는 방법 중에서 선택해야 합니다.&quot; %}
-
-
-## 특징
-- 기본 10GB 데이터 스토리지를 제공하며, 10GB 단위로 6,000GB까지 자동으로 용량이 증가합니다. 
-- 하나의 마스터 DB마다 최대 10대의 슬레이브 DB를 생성할 수 있습니다.
-- Load Balancer 상품을 통해 슬레이브 DB 서버들을 읽기 전용 복제본으로 사용함으로써 데이터베이스의 읽기 부하를 분산 시킬 수 있습니다.
-- 매일 1회 고객이 원하는 시간에 DB를 자동으로 백업하며, 백업한 데이터를 최대 30일까지 보관할 수 있습니다.
-- VPC 환경에서는 멀티 존으로 구성해 높은 안정성을 보장받을 수 있습니다.
-- Cloud DB for MySQL 서비스는 완전 관리형 상품으로 사용자는 DB서버의 운영체제에 접근할 수 없습니다.
-
-## DB 접속 방법 3가지
-1. Private 도메인을 이용해 접속하는 방법
-2. SSL VPN을 이용해 접속하는 방법
-3. Public 도메인을 이용해 접속하는 방법
-
-아래에서는 VPC환경 기준으로 네이버 클라우드 외부 환경에서  Cloud DB for MySQL로 접속할 때 필요한 Public 도메인을 이용해 접속하는 방법을 정리하도록 하겠습니다.  
-
-
-## VPC-Subnet  생성
-
-### VPC 생성
-VPC환경에서 작업할 것이므로 우선 VPC를 생성합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_01.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_02.jpg&quot; width=&quot;680&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-### Subnet 생성
-Subnet은 Public Subnet을 생성합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_03.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_04.jpg&quot; width=&quot;680&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-## DB 서버 생성
-[Database] - [Cloud DB for MySQL]에서 [DB Server 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_11.jpg&quot; width=&quot;670&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-### DB 서버 엔진 버전
-DB 엔진 버전은 MySQL 최신 버전 중 네이버에서 안정성이 검증된 버전인 5.7버전과 8.0버전을 제공합니다. (기본값 5.7.32)
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_01-1.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-### DB 서버 이름과 DB 서비스 이름
-- DB Server 이름은 고객이 DB 서버를 구분하기 위한 명칭으로, 사용자가 입력한 이름 뒤에 001, 002와 같이 숫자를 붙여 서버를 구분하게 됩니다.
-- 예를 들어 DB 서버 이름을 mydb라고 입력하면 생성되는 DB 서버 이름은 mydb-001, mydb-002와 같습니다.
-- DB 서비스 이름은 역할별 DB 서버를 구분하기 위한 이름입니다.
-- 일반적으로 하나의 액티브 마스터 DB, 스탠바이 마스터 DB, 다수의 슬레이브 DB로 구성되는 DB 서버군을 말하며, 동일한 데이터를 갖고 있는 DB 서버들을 하나의 DB 서비스라 말합니다.
-- 예를 들어 &quot;쇼핑 메인 DB&quot;, &quot;게임 유저 DB&quot;와 같은 식으로 DB 서비스의 역할을 구분하기 위해 사용합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_12-2.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-{% include callout.html type=&quot;success&quot; level=&quot;1&quot; content=&quot;Cloud DB를 위한 ACG는 자동 생성됩니다(예: cloud-mysql-*)&quot; %}
-
-### DB 서버 설정
-DB 이름과 계정. 비번, 접속 포트 등을 설정합니다.  
-HOST(IP) 설정에는 DB에 접근을 허용할 IP대역을 입력합니다. 여기서는 Public 도메인을 이용하게 되므로 우선 모든 대역을 허용하기 위해 [%]를 입력합니다. 
-대신 접속 IP 제한의 경우 ACG에서 설정하게 됩니다.
-
-{% include warning.html title=&quot;접속포트 설정&quot; content=&quot;DB 접속포트는 한번 설정하면 이후에 변경할 수 없으니 신중하게 설정하셔야 합니다.&quot; %}
-
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_01-3.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-
-## ACG 설정
-Cloud DB for MySQL을 생성할 때 자동 생성된 ACG [cloud-mysql-*]을 선택하고 ACG 설정을 클릭합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_14.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-Inbound 설정에 접속을 허용할 IP를 입력합니다. 여기서는 테스트를 위해 [myIp] 버튼을 클릭해 현재 로컬PC IP를 입력합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_02.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-## Public 도메인 할당
-DB 서버를 생성한 직후에는 아래 스샷과 같이 Public 도메인이 미할당 상태입니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_03.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-[DB 관리] - [Public 도메인 관리] 메뉴를 클릭해 Public 도메인을 신청합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_04.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-Public 도메인을 신청하면 네이버 클라우드 플랫폼 외부에서 DB 서버로 접근할 수 있습니다.   
-이때 외부에서 통신하는 데이터는 네트워크 사용량으로 과금이 됩니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_05.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-Public 도메인 신청을 하고  나면 할당된 Public 도메인을 확인할 수 있습니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_06.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-
-## DB User 관리
-네이버 클라우드 외부에서 DB에 접속하려고 할때는 보안을 위해 별도의 계정을 추가해서 사용하는 것을 추천합니다.  
-계정을 추가하기 위해 [DB 관리] - [DB User 관리] 메뉴를 클릭합니다. 
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_09.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-USER_ID, HOST, DB 권한, 암호를 입력하고 DB User 추가 버튼을 클릭합니다.  
-- 사용자가 변경한 DB 계정은 DB 서비스 전체에 적용됩니다.
-- USER_ID + HOST(IP) 단위로 계정 추가 및 권한 관리를 합니다.
-- DB 권한에서 DDL 권한은 CRUD 권한을 포함합니다.
-- 최대 1,000개까지 계정을 추가 및 조회 할 수 있습니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_10.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-## 외부접속 테스트
-네이버 클라우드 외부 접속을 테스트 하기 위해 로컬PC에 MySQL Workbench를 설치해서 접속해보겠습니다. 
-MySQL Workbench는 아래 경로에서 다운 받을 수 있습니다.
-
-&lt;a href=&quot;https://www.mysql.com/products/workbench/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://www.mysql.com/products/workbench/&lt;/a&gt;
-
-
-앞에서 확인한 Public 도메인을 입력하고 Port와 Username도 함께 입력한 후에 [Test Connection]을 클릭해 문제없이 연결되는지 확인합니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_07.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-DB 서버 접속 후에 Database를 확인해보면 처음 Cloud DB for MySQL을 생성할 때 설정한 test Database가 존재하는 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_public_domain_08.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-
-
-## 기타
-
-### DB 서버 상세보기
-DB 서버 상세보기 메뉴에서는 [Process list], [Variables], [Status], [Database 관리], [DB Config 관리], [DB User 관리], [Backup 설정 관리], [DB Server Logs] 등을 확인할 수 있습니다.
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_16.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;database/ncp_database_cloud_db_for_mysql_17.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Cloud DB for MySQL 생성후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1. Cloud DB for MySQL 기본 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/database-database-5-6&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/database-database-5-6&lt;/a&gt;
-
-2. Cloud DB 서버 외부 접근 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/database-database-5-10&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/database-database-5-10&lt;/a&gt;
-</description>
-            <pubDate></pubDate>
-            <link>https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html</guid>
-            
-            <category>database</category>
-            
-            <category>mysql</category>
-            
-            <category>clouddb</category>
-            
-            <category>vpc</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Cloud Log Analytics에서 수집하는 로그 유형</title>
-            <description>## 개요
-Cloud Log Analytics는 네이버 클라우드 플랫폼의 여러 서비스에서 발생하는 다양한 로그들을 한 곳에 모아 저장하고 손쉽게 분석하게 해주는 서비스입니다.
-
-## 로그 템플릿 종류
-Cloud Log Analytics에서 수집하는 각 종 서비스의 로그 템플릿 종류는 다음과 같습니다.
-
-- Server syslog
-- Apache 로그(Access log, Apache Error Log)
-- MySQL 설치형 상품의 로그(Error Log, Slow Log)
-- Microsoft SQL Server 설치형 상품의 Error Log
-- Tomcat 로그(Catalina Log)
-- Windows 서버의 Event Log
-- Windows 서버의 각종 text 형식의 로그
-- Cloud DB for MySQL 로그
-- Cloud DB for MSSQL 로그
-- Cloud DB for MongoDB 로그
-- Application Server Launcher 로그
-- Application Load Balancer 로그
-- Search Engine Service 로그
-- Cloud Data Streaming Service 로그
-- Bare Metal Server 로그
-- 그외 템플릿으로 제공되지 않는 로그도 Custom Log 기능으로 직접 대상 로그를 지정해서 수집할 수 있습니다
-
-
-## 로그 보관 기간
-로그 데이터의 **보관 기간은 30일**로, 30일이 지난 데이터는 자동 삭제되며, 사전에 별도로 통지하지 않습니다.
-
-
-## 참고 URL
-&lt;a href=&quot;https://guide.ncloud-docs.com/docs/cla-cla-1-1&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/cla-cla-1-1.html&lt;/a&gt;</description>
-            <pubDate></pubDate>
-            <link>https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_info.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_info.html</guid>
-            
-            <category>log</category>
-            
-            <category>analytics</category>
             
             
         </item>
