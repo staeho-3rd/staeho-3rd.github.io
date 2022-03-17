@@ -1399,5 +1399,58 @@ header nav input{ border: solid 1px gray;}
     .hero_search { display: block; } 
 }
 
+.bs-callout-v2 {
+    padding: 15px;
+    margin: 15px 0px;
+    border-left: 15px solid;
+    overflow:auto;
+    background:#f1f1f1;
+}
+.bs-callout-v2-primary{
+    border-left-color: #007bff;
+}
+.bs-callout-v2-secondary{
+    border-left-color:#6c757d;
+}
+.bs-callout-v2-success{
+    border-left-color:#28a745;
+}
+.bs-callout-v2-danger{
+    border-left-color:red;
+}
+.bs-callout-v2-warning{
+    border-left-color:#ff8b07;
+}
+.bs-callout-v2-info{
+    border-left-color:#17a2b8;
+}
+
+.bs-callout-v2-level-1 {
+    border-left-width: 5px;
+}
+
+.bs-callout-v2-level-2 {
+    border-left-width: 10px;
+}
+
+.bs-callout-v2-level-3 {
+    border-left-width: 15px;
+}
+
+.bs-callout-v2-level-4 {
+    border-left-width: 20px;
+}
+
+.bs-callout-v2-level-5 {
+    border-left-width: 25px;
+}
+
+.bs-callout-v2-level-10 {
+    border-left-width: 50px;
+}
 
 
+img.docimage{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
