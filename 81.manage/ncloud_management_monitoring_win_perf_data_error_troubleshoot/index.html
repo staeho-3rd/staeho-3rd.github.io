@@ -58,7 +58,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Windows 서버 모니터링 성능 정보 수집 오류 해결 방법" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.3rdeyesys.com/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.3rdeyesys.com/siteicon.png"}},"url":"https://docs.3rdeyesys.com/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/","@type":"BlogPosting","headline":"Windows 서버 모니터링 성능 정보 수집 오류 해결 방법","dateModified":"2021-12-28T00:00:00+00:00","description":"Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다.","datePublished":"2021-12-28T00:00:00+00:00","@context":"https://schema.org"}</script>
+{"url":"https://docs.3rdeyesys.com/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/","headline":"Windows 서버 모니터링 성능 정보 수집 오류 해결 방법","dateModified":"2021-12-28T00:00:00+00:00","datePublished":"2021-12-28T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.3rdeyesys.com/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.3rdeyesys.com/siteicon.png"}},"description":"Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="https://docs.3rdeyesys.com/feed.xml" title="3rdeyesys" />
@@ -193,14 +193,14 @@
 <h2 id="오류-상황">오류 상황</h2>
 <p>성능 정보가 수집되지 않을 경우 아래와 같이 Monitoring 정보에서 그래프가 특정 시점 이후로 끊겨서 표시되게 됩니다.</p>
 
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_01.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_01.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <h2 id="서버-상태-확인">서버 상태 확인</h2>
 
 <h4 id="서버-성능-정보-상태-확인">서버 성능 정보 상태 확인</h4>
 <p>우선 서버에 접속해서 서버의 작업 관리자 (Task Manager)를 실행, 성능(Performance)탭을 열고 CPU, Memory, Disk, Ethernet 등의 성능 정보가 제대로 표시되는지 확인합니다.</p>
 
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_04.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_04.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <h4 id="모니터링-agent-상태-확인">모니터링 Agent 상태 확인</h4>
 <p>Ncloud(네이버 클라우드) 서버들에는 모니터링 정보를 수집하기 위한 Agent가 설치되는데 이 모니터링 Agent가 작동하고 있는지 확인합니다.</p>
@@ -211,7 +211,7 @@ Agent가 표시되는지 Status가 Running 상태인지 확인합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> Get-Service <span class="nt">-name</span> <span class="k">*</span>nsight<span class="k">*</span>
 </code></pre></div></div>
 
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_03.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_03.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <h2 id="문제-해결">문제 해결</h2>
 
@@ -220,7 +220,7 @@ Agent가 표시되는지 Status가 Running 상태인지 확인합니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> lodctr /R
 </code></pre></div></div>
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_05.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_05.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <h4 id="서버-성능-정보가-정상인-경우">서버 성능 정보가 정상인 경우</h4>
 <p>서버의 성능 정보가 제대로 표시되는데도 Monitoring 데이터가 제대로 수집되지 않는다면 cmd 창에서 모니터링 Agent를 다시 실행합니다.</p>
@@ -228,18 +228,18 @@ Agent가 표시되는지 Status가 Running 상태인지 확인합니다.</p>
 <p>우선 Agent를 중지 시킵니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> sc stop noms_nsight
 </code></pre></div></div>
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_07.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_07.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <p>그리고 Agent를 다시 실행 시킵니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> sc start noms_nsight
 </code></pre></div></div>
 
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_06.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_06.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <h4 id="monitoring-정보-수집-복구">Monitoring 정보 수집 복구</h4>
 <p>문제가 해결되었다면 아래와 같이 Monitoring 정보가 제대로 수집되면서 그래프가 나타나기 시작합니다.</p>
 
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_02.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_02.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <h2 id="복구-불가-상황">복구 불가 상황</h2>
 <p>위 방법대로 했는데에도 복구가 되지 않을 경우에는 다음 2가지 데이터를 모아서 Ncloud(네이버 클라우드) 고객센터로 문의하셔야 합니다.</p>
@@ -254,7 +254,7 @@ Agent가 표시되는지 Status가 Running 상태인지 확인합니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\N</span>BP<span class="se">\N</span>Sight&gt;noms_nsight.exe <span class="nt">-status</span>
 </code></pre></div></div>
-<p><img src="../../images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_08.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
+<p><img src="/images/ncloud_management_monitoring_win_perf_data_error_troubleshoot_08.png" alt="Ncloud(네이버 클라우드) Classic 환경에서 Windows 서버의 모니터링 성능 정보를 수집할 때 발생하는 오류를 해결하는 방법입니다" style="width:770px;align:center" /></p>
 
 <h4 id="모니터링-agent-로그">모니터링 Agent 로그</h4>
 <p>모니터링 Agent가 설치된 경로에 있는 파일과 폴더를 모두 압축합니다.</p>

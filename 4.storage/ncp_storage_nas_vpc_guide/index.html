@@ -58,7 +58,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.3rdeyesys.com/4.storage/ncp_storage_nas_vpc_guide/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.3rdeyesys.com/siteicon.png"}},"url":"https://docs.3rdeyesys.com/4.storage/ncp_storage_nas_vpc_guide/","@type":"BlogPosting","headline":"NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드","dateModified":"2021-07-27T00:00:00+00:00","description":"네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드입니다","datePublished":"2021-07-27T00:00:00+00:00","@context":"https://schema.org"}</script>
+{"url":"https://docs.3rdeyesys.com/4.storage/ncp_storage_nas_vpc_guide/","headline":"NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드","dateModified":"2021-07-27T00:00:00+00:00","datePublished":"2021-07-27T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.3rdeyesys.com/4.storage/ncp_storage_nas_vpc_guide/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.3rdeyesys.com/siteicon.png"}},"description":"네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드입니다","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="https://docs.3rdeyesys.com/feed.xml" title="3rdeyesys" />
@@ -203,45 +203,45 @@
 <h4 id="vpc-생성">VPC 생성</h4>
 <p>VPC환경에서 작업할 것이므로 우선 VPC를 생성합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_01.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_01.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="../../images/ncp_storage_nas_guide_02.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_02.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
 
 <h4 id="subnet-생성">Subnet 생성</h4>
 <p>Subnet 설정은 [Public]과 [일반]을 선택합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_03.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_03.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="../../images/ncp_storage_nas_guide_04.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_04.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
 
 <h2 id="서버-생성">서버 생성</h2>
 <p>NAS 볼륨을 마운트할 서버 2개를 CentOS 7.8과 Ubuntu 18.04로 생성합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_05.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_05.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="nas-생성">NAS 생성</h2>
 <p>[NAS] - [Volume]에서 [NAS 볼륨 생성] 버튼을 클릭합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_06.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_06.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>NAS 볼륨 이름과 용량을 입력하고, 리눅스용 프로토콜인 NFS를 선택합니다.  CIFS는 윈도우용 프로토콜입니다.<br />
 용량은 500GB ~ 10,000GB까지 가능하며, 100GB단위로 추가할 수 있습니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_07.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_07.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h4 id="nfs-접근-제어-설정">NFS 접근 제어 설정</h4>
 <p>NFS 접근 제어 설정에서는 NAS 볼륨을 마운트할 장비를 선택해서 ACL(네트워그 접근제어) 설정을 하게 됩니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_08.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_08.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>NAS 볼륨을 마운트할 장비를 선택하고, [ &gt; ] 버튼을 클릭해 오른쪽으로 이동시킵니다.
-<img src="../../images/ncp_storage_nas_guide_09.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<img src="/images/ncp_storage_nas_guide_09.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="../../images/ncp_storage_nas_guide_10.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_10.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>마지막으로 설정 내용을 확인하고 [볼륨 생성] 버튼을 클릭합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_11.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_11.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="centos-설정">CentOS 설정</h2>
 
@@ -251,7 +251,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nb">install </span>nfs-utils
 </code></pre></div></div>
 
-<p><img src="../../images/ncp_storage_nas_guide_12.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_12.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="nas-볼륨-마운트하기">NAS 볼륨 마운트하기</h4>
 <p>NAS 볼륨을 마운트할 디렉토리를 생성하고 {NAS 볼륨 마운트 정보}를 이용해 마운트한 후에 상태를 확인합니다.<br />
@@ -261,14 +261,14 @@
 ~# mount <span class="nt">-t</span> nfs <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>3 <span class="o">{</span>NAS 볼륨 마운트 정보<span class="o">}</span> /nas
 ~# <span class="nb">df</span> <span class="nt">-Th</span>
 </code></pre></div></div>
-<p><img src="../../images/ncp_storage_nas_guide_20.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_20.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
-<p><img src="../../images/ncp_storage_nas_guide_13.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_13.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="fstab-설정">fstab 설정</h4>
 <p>부팅 후에도 마운트가 될 수 있도록 /etc/fstab 파일에 추가합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_14.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_14.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h2 id="ubuntu-설정">Ubuntu 설정</h2>
 
@@ -277,7 +277,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# apt-get <span class="nb">install </span>nfs-common <span class="nt">-y</span>
 </code></pre></div></div>
-<p><img src="../../images/ncp_storage_nas_guide_15.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_15.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="nas-마운트하기">NAS 마운트하기</h4>
 <p>NAS 볼륨을 마운트할 디렉토리를 생성하고 {NAS 볼륨 마운트 정보}를 이용해 마운트한 후에 상태를 확인합니다.<br />
@@ -287,22 +287,22 @@
 ~# mount <span class="nt">-t</span> nfs <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>3 <span class="o">{</span>NAS 볼륨 마운트 정보<span class="o">}</span> /nas
 ~# <span class="nb">df</span> <span class="nt">-Th</span>
 </code></pre></div></div>
-<p><img src="../../images/ncp_storage_nas_guide_16.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_16.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="fstab-설정-1">fstab 설정</h4>
 <p>부팅 후에도 마운트가 될 수 있도록 /etc/fstab 파일에 추가합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_17.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_17.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h2 id="이벤트-설정">이벤트 설정</h2>
 <p>이벤트 설정에서는 NAS 볼륨 사용량 임계치를 설정하고 이벤트 발생 시 SMS나 Email로 통보를 받습니다.<br />
 볼륨 설정에서 이벤트 설정을 클릭합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_18.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_18.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>이벤트 통보 방법과 휴대폰 또는 이메일 등을 입력하고 설정을 완료합니다.</p>
 
-<p><img src="../../images/ncp_storage_nas_guide_19.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="/images/ncp_storage_nas_guide_19.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>

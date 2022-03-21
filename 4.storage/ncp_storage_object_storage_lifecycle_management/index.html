@@ -58,7 +58,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Object Storage Lifecycle Management 관리대상 설정 방법" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.3rdeyesys.com/4.storage/ncp_storage_object_storage_lifecycle_management/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.3rdeyesys.com/siteicon.png"}},"url":"https://docs.3rdeyesys.com/4.storage/ncp_storage_object_storage_lifecycle_management/","@type":"BlogPosting","headline":"Object Storage Lifecycle Management 관리대상 설정 방법","dateModified":"2021-06-02T00:00:00+00:00","description":"네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법","datePublished":"2021-01-21T00:00:00+00:00","@context":"https://schema.org"}</script>
+{"url":"https://docs.3rdeyesys.com/4.storage/ncp_storage_object_storage_lifecycle_management/","headline":"Object Storage Lifecycle Management 관리대상 설정 방법","dateModified":"2021-06-02T00:00:00+00:00","datePublished":"2021-01-21T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.3rdeyesys.com/4.storage/ncp_storage_object_storage_lifecycle_management/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://docs.3rdeyesys.com/siteicon.png"}},"description":"네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="https://docs.3rdeyesys.com/feed.xml" title="3rdeyesys" />
@@ -195,18 +195,18 @@
 
 <p>그리고 이동 시점은 파일이 Object Storage에 저장-생성된 후 경과한 일자를 기준으로 하며 1일 ~ 3,650일 사이의 값을 입력합니다.</p>
 
-<p><img src="../../images/ncp_storage_object_storage_lifecycle_01.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:650px;align:center" /></p>
+<p><img src="/images/ncp_storage_object_storage_lifecycle_01.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:650px;align:center" /></p>
 
 <h3 id="관리대상-source">관리대상 (Source)</h3>
 <p>관리대상의 버킷(Bucket)을 선택하고 Object 이름의 규칙을 접두어 방식으로 입력합니다.</p>
 
-<p><img src="../../images/ncp_storage_object_storage_lifecycle_02.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:650px;align:center" /></p>
+<p><img src="/images/ncp_storage_object_storage_lifecycle_02.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:650px;align:center" /></p>
 
 <h3 id="이동위치-target">이동위치 (Target)</h3>
 <p>이동할 위치는 Archive Storage로 고정이며, Archive Storage의 컨테이너(버킷)을 선택하고 세부경로 즉, 폴더를 입력합니다.<br />
 세부경로에 아무것도 입력하지 않으면 Source 즉, Object Storage의 위치, 폴더 구조 그대로 이동됩니다.</p>
 
-<p><img src="../../images/ncp_storage_object_storage_lifecycle_03.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:650px;align:center" /></p>
+<p><img src="/images/ncp_storage_object_storage_lifecycle_03.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:650px;align:center" /></p>
 
 <h2 id="관리대상source-object-이름-규칙">관리대상(Source) Object 이름 규칙</h2>
 <ul>
@@ -227,7 +227,7 @@
 다른 항목들은 동일하고, 관리대상(Source) Object 이름 규칙에 따라 어떤 결과가 나오지는 확인해보겠습니다.<br />
 물론 아래의 예시들에서 공통적으로 위에서 지정한 수명주기 날짜에 해당하는 파일들만 이동하게 됩니다.</p>
 
-<p><img src="../../images/ncp_storage_object_storage_lifecycle_04.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:700px;align:center" /></p>
+<p><img src="/images/ncp_storage_object_storage_lifecycle_04.jpg" alt="네이버 클라우드 Object Storage Lifecycle Management의 관리대상(Source) Object 접두어 설정 방법" style="width:700px;align:center" /></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 3rdeyesys
 	- img_01.png
