@@ -47,7 +47,7 @@
 <title>리눅스서버 스토리지(디스크) LVM 구성하기 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="리눅스서버 스토리지(디스크) LVM 구성하기" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="네이버 클라우드 리눅스 서버의 Block Storage를 LVM으로 구성하는 방법입니다" />
 <meta property="og:description" content="네이버 클라우드 리눅스 서버의 Block Storage를 LVM으로 구성하는 방법입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/1.compute/ncp_server_storage_lvm_create/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -196,11 +196,11 @@
 <h2 id="스토리지-생성">스토리지 생성</h2>
 <p>2000GB 이상의 용량을 필요로 할 때에 대한 내용이지만, 테스트를 위해 10GB 스토리지 2개를 생성하겠습니다.</p>
 
-<p><img src="/images/ncp_server_storage_lvm_create_01.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_01.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:770px;align:center" /></p>
 
 <p>lvm-test-1, lvm-test-2 이름으로 생성된 스토리지 2개를 Ubuntu OS가 설치된 lvm-test-svr 서버에 연결했습니다.</p>
 
-<p><img src="/images/ncp_server_storage_lvm_create_02.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_02.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:770px;align:center" /></p>
 
 <h2 id="파티션-설정">파티션 설정</h2>
 <p>생성된 스토리지 2개에 각각 파티션을 설정합니다.<br />
@@ -217,7 +217,7 @@ p
 quit
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_03.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:700px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_03.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:700px;align:center" /></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# parted /dev/xvdc
 
@@ -230,13 +230,13 @@ p
 quit
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_04.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:700px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_04.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:700px;align:center" /></p>
 
 <p>설정된 파티션들을 확인합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# fdisk <span class="nt">-l</span>
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_05.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_05.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
 
 <h2 id="physical-volume-생성">Physical Volume 생성</h2>
 <p>각 스토리지 장치에 Physical Volume을 생성합니다.</p>
@@ -246,13 +246,13 @@ quit
 ~# pvcreate /dev/xvdc1
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_06.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:500px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_06.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:500px;align:center" /></p>
 
 <p>Physical Volume이 제대로 생성되었는지 확인합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# pvdisplay
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_07.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_07.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
 
 <h2 id="volume-group-생성">Volume Group 생성</h2>
 <p>준비된 두개의 Volume으로 하나의 Volume Group을 생성합니다.</p>
@@ -260,26 +260,26 @@ quit
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vgcreate VG01 /dev/xvdb1 /dev/xvdc1
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_08.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:500px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_08.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:500px;align:center" /></p>
 
 <p>생성된 Volume Group을 확인합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vgdisplay
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_09.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:550px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_09.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:550px;align:center" /></p>
 
 <h2 id="logical-volume-생성">Logical Volume 생성</h2>
 <p>생성된 Volume Group 전체 크기를 사용하는 Logical Volume을 생성합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# lvcreate <span class="nt">--extents</span> 100%FREE <span class="nt">-n</span> LV01 VG01
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_10.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:550px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_10.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:550px;align:center" /></p>
 
 <p>생성된 Logical Volume을 확인합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# lvdisplay
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_11.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:550px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_11.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:550px;align:center" /></p>
 
 <h2 id="포맷">포맷</h2>
 <p>다음으로 포맷을 해야하는데, OS별로 명령어가 다르므로 확인 후에 실행해야 합니다.<br />
@@ -293,14 +293,14 @@ quit
 - Ubuntu : mkfs.ext4 /dev/VG01/LV01
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_12.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:700px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_12.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:700px;align:center" /></p>
 
 <h2 id="마운트">마운트</h2>
 <p>마운트를 하기 위해 우선 생성된 디스크 장치명을 확인합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# fdisk <span class="nt">-l</span>
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_13.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_13.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
 
 <p>다음으로 디스크를 마운트할 포인트 즉, 디렉토리를 원하는 이름으로 생성하고 마운트를 합니다.<br />
 아래에 있는 마운트 경로 (/mnt/data)는 예시입니다. 원하는 경로를 직접 설정하시면 됩니다.</p>
@@ -309,18 +309,18 @@ quit
 ~# mount /dev/mapper/VG01-LV01 /mnt/data
 </code></pre></div></div>
 
-<p><img src="/images/ncp_server_storage_lvm_create_14.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_14.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:600px;align:center" /></p>
 
 <h2 id="fstab-설정">fstab 설정</h2>
 <p>새로 생성된 디스크를 부팅 후에도 인식할 수 있게 blkid 명령으로 UUID를 확인하고 fstab에 등록합니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# blkid |grep /dev/mapper/VG01-LV01
 </code></pre></div></div>
-<p><img src="/images/ncp_server_storage_lvm_create_15.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:650px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_15.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:650px;align:center" /></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/fstab
 </code></pre></div></div>
-<p><img src="/images/ncp_server_storage_lvm_create_16.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_server_storage_lvm_create_16.jpg" alt="리눅스서버 스토리지(디스크) LVM 구성하기" style="width:770px;align:center" /></p>
 
 <h2 id="fstab-설정-상세정보">fstab 설정 상세정보</h2>
 
@@ -418,7 +418,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_micro_limit/">
+			<a href="/compute/ncloud_compute_server_micro_type_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -444,7 +444,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_spec_change/">
+			<a href="/compute/ncloud_compute_server_spec_change.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -470,7 +470,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_stop_price/">
+			<a href="/compute/ncloud_compute_server_stop_price.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -496,7 +496,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_limit/">
+			<a href="/compute/ncloud_compute_autoscaling_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -522,7 +522,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_guide/">
+			<a href="/compute/ncloud_compute_server_storage_add_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -548,7 +548,7 @@ quit
 		
 		
 		
-			<a href="/3.security/ncp_security_acg_guide/">
+			<a href="/security/ncloud_security_acg_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -574,7 +574,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_detail_process/">
+			<a href="/compute/ncloud_compute_server_storage_add_detail_process.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -600,7 +600,7 @@ quit
 		
 		
 		
-			<a href="/4.storage/ncp_storage_backup_guide/">
+			<a href="/storage/ncloud_storage_backup_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -626,7 +626,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_no_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_no_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -652,7 +652,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_by_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_by_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -678,7 +678,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_vpc_create/">
+			<a href="/compute/ncloud_compute_server_vpc_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -704,7 +704,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_event_setting/">
+			<a href="/compute/ncloud_compute_autoscaling_event_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -730,7 +730,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_cmd/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -756,7 +756,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_vs/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -782,7 +782,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_php_smtp_via_gmail_with_phpmailer/">
+			<a href="/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -808,7 +808,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_ssh_security_setting/">
+			<a href="/compute/ncloud_compute_server_ssh_security_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -834,7 +834,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_server_image_share_classic/">
+			<a href="/compute/ncloud_compute_server_image_share_classic.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -860,7 +860,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_windows_server_image_copy_classic_to_vpc/">
+			<a href="/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -886,7 +886,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_lvm_create/">
+			<a href="/compute/ncloud_compute_server_storage_lvm_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -912,7 +912,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_kubernetes_service_start_guide/">
+			<a href="/compute/ncloud_compute_kubernetes_service_start_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -938,7 +938,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_classic_guide/">
+			<a href="/compute/ncloud_compute_autoscaling_classic_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -964,7 +964,7 @@ quit
 		
 		
 		
-			<a href="/81.manage/ncp_manage_monitoring_guide/">
+			<a href="/management/ncloud_management_classic_monitoring_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -990,7 +990,7 @@ quit
 		
 		
 		
-			<a href="/81.manage/ncp_manage_cloud_insight_guide/">
+			<a href="/management/ncloud_management_cloud_insight_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1016,7 +1016,7 @@ quit
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1042,7 +1042,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncp_server_repository_change_on_private_network/">
+			<a href="/compute/ncloud_compute_server_repository_change_on_private_network.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1068,7 +1068,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1094,7 +1094,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1104,8 +1104,6 @@ quit
 				<article>
 					<div>
 						<h3>27. CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -1133,7 +1131,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1143,8 +1141,6 @@ quit
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -1161,7 +1157,7 @@ quit
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1187,7 +1183,7 @@ quit
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1213,7 +1209,7 @@ quit
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1239,7 +1235,7 @@ quit
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1265,7 +1261,7 @@ quit
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1291,7 +1287,7 @@ quit
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1317,7 +1313,7 @@ quit
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1343,7 +1339,7 @@ quit
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1369,7 +1365,7 @@ quit
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

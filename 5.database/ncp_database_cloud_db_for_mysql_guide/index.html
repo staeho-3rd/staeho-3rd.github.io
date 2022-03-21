@@ -47,7 +47,7 @@
 <title>VPC환경에서 Cloud DB for MySQL 생성하기 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="VPC환경에서 Cloud DB for MySQL 생성하기" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드입니다" />
 <meta property="og:description" content="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/5.database/ncp_database_cloud_db_for_mysql_guide/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -220,35 +220,35 @@
 <h4 id="vpc-생성">VPC 생성</h4>
 <p>VPC환경에서 작업할 것이므로 우선 VPC를 생성합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_01.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_01.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_02.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:680px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_02.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:680px;align:center" /></p>
 
 <h4 id="subnet-생성">Subnet 생성</h4>
 <p>Subnet은 Cloud DB for MySQL을 위한 Private Subnet과 DB 접속 테스트를 위한 Server용 Public Subnet을 각각 생성합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_03.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_03.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h4 id="cloud-db-for-mysql을-위한-private-subnet">Cloud DB for MySQL을 위한 Private Subnet</h4>
-<p><img src="/images/ncp_database_cloud_db_for_mysql_05.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:680px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_05.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:680px;align:center" /></p>
 
 <h4 id="테스트용-server를-위한-public-subnet">테스트용 Server를 위한 Public Subnet</h4>
-<p><img src="/images/ncp_database_cloud_db_for_mysql_04.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:680px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_04.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:680px;align:center" /></p>
 
 <h2 id="테스트-server-생성">테스트 Server 생성</h2>
 <p>DB 서버 접속을 테스트 하기 위한 Server를 생성합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_06.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_06.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="db-서버-생성">DB 서버 생성</h2>
 <p>[Database] - [Cloud DB for MySQL]에서 [DB Server 생성] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_11.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:670px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_11.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:670px;align:center" /></p>
 
 <h4 id="db-서버-엔진-버전">DB 서버 엔진 버전</h4>
 <p>DB 엔진 버전은 MySQL 최신 버전 중 네이버에서 안정성이 검증된 버전인 5.7버전과 8.0버전을 제공합니다. (기본값 5.7.32)</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_12-1.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_12-1.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h4 id="db-서버-이름과-db-서비스-이름">DB 서버 이름과 DB 서비스 이름</h4>
 <ul>
@@ -259,7 +259,7 @@
   <li>예를 들어 “쇼핑 메인 DB”, “게임 유저 DB”와 같은 식으로 DB 서비스의 역할을 구분하기 위해 사용합니다.</li>
 </ul>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_12-2.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_12-2.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <p class="success">Cloud DB를 위한 ACG는 자동 생성됩니다(예: cloud-mysql-*)</p>
 
@@ -270,17 +270,17 @@ HOST(IP) 설정에는 DB에 접근을 허용할 IP대역을 입력합니다. 여
 
 <p class="error box">DB 접속포트는 한번 설정하면 이후에 변경할 수 없으니 신중하게 설정하셔야 합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_12-3.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_12-3.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="acg-설정">ACG 설정</h2>
 <p>Cloud DB for MySQL을 생성할 때 자동 생성된 ACG [cloud-mysql-*]을 선택하고 ACG 설정을 클릭합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_14.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_14.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <p>Inbound 설정에 테스트용 Server의 Subnet 대역인 192.168.2.0/24를 접근소스에 입력합니다.<br />
 또는 특정 서버 1대만 허용하려고 할 경우에는 앞에서 생성한 테스트 서버 IP처럼 [192.168.2.6]을 입력합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_15.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_15.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="mysql-client-설치">MySQL Client 설치</h2>
 <p>DB 접속 테스트를 위해 생성한 서버에서 MySQL Client를 설치합니다.</p>
@@ -296,12 +296,12 @@ HOST(IP) 설정에는 DB에 접근을 허용할 IP대역을 입력합니다. 여
 </code></pre></div></div>
 <p>CentOS 7부터는 yum으로 설치하는 MySQL의 기본 데이터베이스가 MariaDB로 변경되었습니다</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_19.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_19.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="db-서버-접속">DB 서버 접속</h2>
 <p>Cloud DB for MySQL에 접속하기 위한 주소인 [Private 도메인]을 확인 합니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_13.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_13.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <p>테스트용 Server에서 Cloud DB for MySQL로 접속하는 방법은 다음과 같습니다.</p>
 
@@ -310,14 +310,14 @@ HOST(IP) 설정에는 DB에 접근을 허용할 IP대역을 입력합니다. 여
 <p><br />
 DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이터베이스 [test]를 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_18.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:650px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_18.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:650px;align:center" /></p>
 
 <h2 id="db-서버-상세보기">DB 서버 상세보기</h2>
 <p>DB 서버 상세보기 메뉴에서는 [Process list], [Variables], [Status], [Database 관리], [DB Config 관리], [DB User 관리], [Backup 설정 관리], [DB Server Logs] 등을 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_16.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_16.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_17.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_17.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h4 id="db-user-관리">DB User 관리</h4>
 <p>DB 서버를 이용하다보면 여러 계정이 필요하게 됩니다. 이때 계정을 추가하기 위해 [DB 서버 상세보기] - [DB User 관리] 메뉴를 클릭합니다.</p>
@@ -330,7 +330,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
   <li>최대 1,000개까지 계정을 추가 및 조회 할 수 있습니다.</li>
 </ul>
 
-<p><img src="/images/ncp_database_cloud_db_for_mysql_20.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_database_cloud_db_for_mysql_20.jpg" alt="네이버 클라우드 VPC환경에서 Cloud DB for MySQL 생성하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -382,7 +382,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_compare/">
+			<a href="/database/ncloud_database_compare.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -408,7 +408,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_auto_backup/">
+			<a href="/database/ncloud_database_mysql_auto_backup.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -434,7 +434,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_object_storage_auto_backup_centos/">
+			<a href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -460,7 +460,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_object_storage_auto_backup_ubuntu/">
+			<a href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -486,7 +486,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/1.compute/ncp_server_pip_python_install_centos6/">
+			<a href="/compute/ncloud_compute_server_pip_python_install_centos6.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -512,7 +512,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mariadb_access_from_remote_centos/">
+			<a href="/database/ncloud_database_mariadb_access_from_remote_centos.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -538,7 +538,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mariadb_access_from_remote_ubuntu/">
+			<a href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -564,7 +564,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_mariadb_config_my_cnf/">
+			<a href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -590,7 +590,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_mariadb_config_bind_address/">
+			<a href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -616,7 +616,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_mariadb_replication/">
+			<a href="/database/ncloud_database_mysql_mariadb_replication.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -642,7 +642,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_cloud_db_for_mysql_guide/">
+			<a href="/database/ncloud_database_cloud_db_for_mysql_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -668,7 +668,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_cloud_db_for_mysql_public_domain_guide/">
+			<a href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -694,7 +694,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_root_password_set_update_guide/">
+			<a href="/database/ncloud_database_mysql_root_password_set_update_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -720,7 +720,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -757,7 +757,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -767,8 +767,6 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -785,7 +783,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -811,7 +809,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -837,7 +835,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -863,7 +861,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -889,7 +887,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -915,7 +913,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -941,7 +939,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -967,7 +965,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -993,7 +991,7 @@ DB에 접속해보면 처음 Cloud DB for MySQL 생성할 때 입력한 테이�
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

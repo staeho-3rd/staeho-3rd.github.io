@@ -47,7 +47,7 @@
 <title>MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법입니다." />
 <meta property="og:description" content="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법입니다." />
 <link rel="canonical" href="https://docs.3rdeyesys.com/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -214,13 +214,13 @@ GTID는 모든 트랜잭션과 1:1 관계이며, GTID를 활용하면 복제본�
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# mysqldump <span class="nt">-u</span> user <span class="nt">-p</span> <span class="nt">-h</span> db-......vpc-cdb.ntruss.com <span class="nt">-S</span> /var/lib/mysql/mysql.sock <span class="nt">--single-transaction</span> <span class="nt">--routines</span> <span class="nt">--triggers</span> <span class="nt">--events</span> <span class="nt">--databases</span> <span class="nb">test</span>  <span class="o">&gt;</span> dumpfile1.sql
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_01.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_01.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <p>위에서 생성한 [<strong>–set-gtid-purged=OFF</strong>] 옵션을 사용하지 않은 백업 파일(dumpfile1.sql)을 이용해서 복구(Restore)시에 아래와 같이 ERROR 1227 (42000) 오류가 발생하면서 복구가 되지 않습니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# mysql <span class="nt">-h</span> db-......vpc-cdb.ntruss.com <span class="nt">-u</span> user <span class="nt">-p</span> &lt; ./dumpfile1.sql
 </code></pre></div></div>
-<p><img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_03.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_03.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <h2 id="해결-방법-1">해결 방법 1</h2>
 <p>이번에는 Warning 메시지에 나온 것처럼 [<strong>–set-gtid-purged=OFF</strong>] 옵션을 사용해서 백업을 받아 보겠습니다.</p>
@@ -228,14 +228,14 @@ GTID는 모든 트랜잭션과 1:1 관계이며, GTID를 활용하면 복제본�
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# mysqldump <span class="nt">--set-gtid-purged</span><span class="o">=</span>OFF <span class="nt">-u</span> user <span class="nt">-p</span> <span class="nt">-h</span> db-......vpc-cdb.ntruss.com <span class="nt">-S</span> /var/lib/mysql/mysql.sock <span class="nt">--single-transaction</span> <span class="nt">--routines</span> <span class="nt">--triggers</span> <span class="nt">--events</span> <span class="nt">--databases</span> <span class="nb">test</span>  <span class="o">&gt;</span> dumpfile2.sql
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_02.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_02.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <p>[<strong>–set-gtid-purged=OFF</strong>] 옵션을 사용해서 생성한 백업 파일(dumpfile2.sql)을 이용해서 복구를 하면 아래와 같이 문제없이 복구가 잘됩니다.<br />
 그런데 이렇게 옵션을 적용해도 동일한 오류가 발생하는 경우가 있는데 이에 대해서는 아래쪽 [원인 2]에서 확인해보겠습니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# mysql <span class="nt">-h</span> db-......vpc-cdb.ntruss.com <span class="nt">-u</span> user <span class="nt">-p</span> &lt; ./dumpfile2.sql
 </code></pre></div></div>
-<p><img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_04.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_04.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <h2 id="해결-방법-2">해결 방법 2</h2>
 <p>그런데 서비스를 하다 보면 DB 사이즈가 너무 커서 다시 백업을 진행하기 어렵다던가 하는 경우가 있습니다. 이럴 때는 백업 파일에 있는 GTID 관련 내용을 삭제하고 복구하시면 문제가 해결됩니다.<br />
@@ -256,12 +256,12 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 <p>[원인 1]에서는 복구를 시도할 때 [user] 계정을 사용했었는데 이 [user]계정으로 Trigger, Stored Routines (Procedures and Functions), View, Event 등을 생성한 상황에서 다른 계정 [new_user]를 이용해서 복구를 시도하는 상황을 가정보겠습니다. 
 [new_user] 계정으로 복구를 시도하면 [<strong>–set-gtid-purged=OFF</strong>]을 적용한 백업 파일(dumpfile2.sql)을 이용했음에도 동일한 ERROR 1227 (42000) 오류가 발생하는 것을 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_05.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_05.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <p>아래와 같이 MySQL은 보안 강화를 위해 Trigger, Stored Routines (Procedures and Functions), View, Event를 처음 생성한 계정을 [<strong>DEFINER</strong>]로 명시해 둠으로써 다른 계정으로 접근하지 못하도록 하는 것이 기본 설정이 되어 있습니다.<br />
 그러므로 DB 복구를 시도할 때는 [<strong>DEFINER</strong>] 관련 내용을 삭제하거나 동일한 계정 또는 SUPER privilege를 가진 계정으로 복구해야 합니다.</p>
 
-<p><img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_08.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_08.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <h2 id="해결-방법-1-1">해결 방법 1</h2>
 <p>첫번째 해결 방법은 백업 파일에서 [<strong>DEFINER</strong>] 관련 내용을 모두 찾아서 삭제하는 방법이 있습니다. 
@@ -270,15 +270,15 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 <h4 id="function">FUNCTION</h4>
 <p>DB에서 FUNCTION을 사용했다면 아래와 같이 FUNCTION 생성 코드에 [<strong>CREATE DEFINER=`user`@`%` FUNCTION</strong>]처럼 계정이 표시되는데, 여기서 [<strong>DEFINER=`user`@`%`</strong>] 이 부분을 삭제하시면 됩니다.</p>
 
-<p><img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_06.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_06.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <h4 id="procedure">PROCEDURE</h4>
 <p>DB에서 PROCEDURE를 사용했다면 아래와 같이 PROCEDURE 생성 코드에 [<strong>CREATE DEFINER=`user`@`%` PROCEDURE</strong>]처럼 계정이 표시되는데, 여기서 [<strong>DEFINER=`user`@`%`</strong>] 이 부분을 삭제하시면 됩니다.
-<img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_07.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_07.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <h4 id="view">VIEW</h4>
 <p>DB에서 VIEW를 사용했다면 아래와 같이 VIEW 생성 코드에 [<strong>/*!50013 DEFINER=`user`@`%` SQL SECURITY DEFINER */</strong>]처럼 계정이 표시되는데, 여기서는 이 라인을 모두 삭제하시면 됩니다.
-<img src="/images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_08.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
+<img src="../../images/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting_08.png" alt="네이버 클라우드 Cloud DB for MySQL 복구(Restore)시에 발생하는 오류 ERROR 1227 (42000) 문제 원인과 해결방법" style="width:770px;align:center" /></p>
 
 <h2 id="해결-방법-2-1">해결 방법 2</h2>
 <p>두번째 해결 방법은 백업 파일 [<strong>DEFINER=</strong>]에 표시되어 있는 계정과 동일한 계정으로 복구를 진행하면 됩니다.</p>
@@ -343,7 +343,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_compare/">
+			<a href="/database/ncloud_database_compare.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -369,7 +369,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_auto_backup/">
+			<a href="/database/ncloud_database_mysql_auto_backup.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -395,7 +395,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_object_storage_auto_backup_centos/">
+			<a href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -421,7 +421,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_object_storage_auto_backup_ubuntu/">
+			<a href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -447,7 +447,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/1.compute/ncp_server_pip_python_install_centos6/">
+			<a href="/compute/ncloud_compute_server_pip_python_install_centos6.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -473,7 +473,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mariadb_access_from_remote_centos/">
+			<a href="/database/ncloud_database_mariadb_access_from_remote_centos.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -499,7 +499,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mariadb_access_from_remote_ubuntu/">
+			<a href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -525,7 +525,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_mariadb_config_my_cnf/">
+			<a href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -551,7 +551,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_mariadb_config_bind_address/">
+			<a href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -577,7 +577,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_mariadb_replication/">
+			<a href="/database/ncloud_database_mysql_mariadb_replication.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -603,7 +603,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_cloud_db_for_mysql_guide/">
+			<a href="/database/ncloud_database_cloud_db_for_mysql_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -629,7 +629,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_cloud_db_for_mysql_public_domain_guide/">
+			<a href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -655,7 +655,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncp_database_mysql_root_password_set_update_guide/">
+			<a href="/database/ncloud_database_mysql_root_password_set_update_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -681,7 +681,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -718,7 +718,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -728,8 +728,6 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -746,7 +744,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -772,7 +770,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -798,7 +796,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -824,7 +822,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -850,7 +848,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -876,7 +874,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -902,7 +900,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -928,7 +926,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -954,7 +952,7 @@ SET @@GLOBAL.GTID_PURGED<span class="o">=</span><span class="s1">'207****-4***-7
 		
 		
 		
-			<a href="/99.etc/ncp_etc_php_to_telegram_message_send/">
+			<a href="/etc/etc_php_to_telegram_message_send.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

@@ -47,7 +47,7 @@
 <title>AWS S3 수명 주기 (LifeCycle) 설정하기 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="AWS S3 수명 주기 (LifeCycle) 설정하기" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="AWS S3 수명 주기 (LifeCycle) 설정하기 가이드입니다" />
 <meta property="og:description" content="AWS S3 수명 주기 (LifeCycle) 설정하기 가이드입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/91.aws/aws_s3_lifecycle_management/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -180,21 +180,21 @@
 <h2 id="수명주기-설정">수명주기 설정</h2>
 <p>AWS 콘솔에 접속 후 수명 주기를 적용할 S3 버킷으로 이동해 [관리] 메뉴 클릭합니다.</p>
 
-<p><img src="/images/aws_s3_lifecycle_01.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/aws_s3_lifecycle_01.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
 
 <p>[수명 주기 규칙 생성] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/aws_s3_lifecycle_02.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/aws_s3_lifecycle_02.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
 
 <p>수명 주기 규칙 이름을 입력하고, 규칙 범위는 [하나 이상의 필터를 사용하여 이 규칙의 범위 제한]을 선택합니다.<br />
 접두사에는 수명 주기를 적용할 디렉토리나 파일 등의 필터를 작성합니다. 예를 들어 images 디렉토리가 포함된 모든 파일에 적용하려면 <strong>images/</strong> 라고 입력합니다. 이때 버킷명은 제외하고 입력해야 합니다.</p>
 
-<p><img src="/images/aws_s3_lifecycle_03.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/aws_s3_lifecycle_03.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
 
 <p>수명 주기 규칙 작업에서 [객체의 현재버전 만료],  [객체의 이전버전 영구 삭제] 두가지 항목을 선택하면, 몇일 후에 삭제할 것인지를 설정할 수 있는 [객체 생성 후 경과 일수], [객체가 이전 버전이 된 후 경과 일수] 항목이 나타납니다. 
 여기에 원하는 날짜를 각각 입력하고, [규칙 생성] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/aws_s3_lifecycle_06.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/aws_s3_lifecycle_06.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="주의사항">주의사항</h2>
 <p>AWS 수명 주기 관련해서 주의해야 할 사항이 몇가지 있습니다.</p>
@@ -208,7 +208,7 @@
 <p>수명 주기 규칙에서 접두사 필터에 디렉토리를 지정할 경우 접두사 필터의 끝에 / 문자를 지정해야 합니다. 접두사 필터의 처음에 / 문자가 있으면 수명 주기 규칙이 올바르게 평가되지 않습니다.<br />
 즉, images 디렉토리가 포함된 모든 파일에 적용하려면 <strong>images/</strong> 라고 입력해야 합니다.</p>
 
-<p><img src="/images/aws_s3_lifecycle_05.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/aws_s3_lifecycle_05.jpg" alt="AWS S3 수명주기 (LifeCycle) 설정하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -260,7 +260,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_compare/">
+			<a href="/storage/ncloud_storage_compare.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -286,7 +286,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_lifecycle_management/">
+			<a href="/storage/ncloud_storage_object_storage_lifecycle_management.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -312,7 +312,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_aws_cli_connect/">
+			<a href="/storage/ncloud_storage_object_storage_aws_cli_connect.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -338,7 +338,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_required_service/">
+			<a href="/storage/ncloud_storage_object_storage_required_service.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -364,7 +364,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_s3_client_s3browser/">
+			<a href="/storage/ncloud_storage_object_storage_s3_client_s3browser.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -390,7 +390,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_s3_client_cloudberry_explorer/">
+			<a href="/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -416,7 +416,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_s3_client_cyberduck/">
+			<a href="/storage/ncloud_storage_object_storage_s3_client_cyberduck.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -442,7 +442,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_transfer_to_archive_storage/">
+			<a href="/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -468,7 +468,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_nas_vpc_guide/">
+			<a href="/storage/ncloud_storage_nas_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -494,7 +494,7 @@
 		
 		
 		
-			<a href="/91.aws/aws_s3_lifecycle_management/">
+			<a href="/aws/aws_s3_lifecycle_management.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -520,7 +520,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -546,7 +546,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -572,7 +572,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -609,7 +609,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -619,8 +619,6 @@
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -637,7 +635,7 @@
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -663,7 +661,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -689,7 +687,7 @@
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -715,7 +713,7 @@
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -741,7 +739,7 @@
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -767,7 +765,7 @@
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -793,7 +791,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -819,7 +817,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -845,7 +843,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

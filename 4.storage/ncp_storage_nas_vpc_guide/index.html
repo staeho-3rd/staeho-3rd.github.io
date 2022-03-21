@@ -47,7 +47,7 @@
 <title>NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드입니다" />
 <meta property="og:description" content="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/4.storage/ncp_storage_nas_vpc_guide/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -203,45 +203,45 @@
 <h4 id="vpc-생성">VPC 생성</h4>
 <p>VPC환경에서 작업할 것이므로 우선 VPC를 생성합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_01.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_01.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncp_storage_nas_guide_02.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_02.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
 
 <h4 id="subnet-생성">Subnet 생성</h4>
 <p>Subnet 설정은 [Public]과 [일반]을 선택합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_03.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_03.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncp_storage_nas_guide_04.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_04.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:680px;align:center" /></p>
 
 <h2 id="서버-생성">서버 생성</h2>
 <p>NAS 볼륨을 마운트할 서버 2개를 CentOS 7.8과 Ubuntu 18.04로 생성합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_05.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_05.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="nas-생성">NAS 생성</h2>
 <p>[NAS] - [Volume]에서 [NAS 볼륨 생성] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_06.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_06.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>NAS 볼륨 이름과 용량을 입력하고, 리눅스용 프로토콜인 NFS를 선택합니다.  CIFS는 윈도우용 프로토콜입니다.<br />
 용량은 500GB ~ 10,000GB까지 가능하며, 100GB단위로 추가할 수 있습니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_07.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_07.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h4 id="nfs-접근-제어-설정">NFS 접근 제어 설정</h4>
 <p>NFS 접근 제어 설정에서는 NAS 볼륨을 마운트할 장비를 선택해서 ACL(네트워그 접근제어) 설정을 하게 됩니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_08.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_08.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>NAS 볼륨을 마운트할 장비를 선택하고, [ &gt; ] 버튼을 클릭해 오른쪽으로 이동시킵니다.
-<img src="/images/ncp_storage_nas_guide_09.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<img src="../../images/ncp_storage_nas_guide_09.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncp_storage_nas_guide_10.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_10.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>마지막으로 설정 내용을 확인하고 [볼륨 생성] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_11.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_11.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="centos-설정">CentOS 설정</h2>
 
@@ -251,7 +251,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nb">install </span>nfs-utils
 </code></pre></div></div>
 
-<p><img src="/images/ncp_storage_nas_guide_12.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_12.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="nas-볼륨-마운트하기">NAS 볼륨 마운트하기</h4>
 <p>NAS 볼륨을 마운트할 디렉토리를 생성하고 {NAS 볼륨 마운트 정보}를 이용해 마운트한 후에 상태를 확인합니다.<br />
@@ -261,14 +261,14 @@
 ~# mount <span class="nt">-t</span> nfs <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>3 <span class="o">{</span>NAS 볼륨 마운트 정보<span class="o">}</span> /nas
 ~# <span class="nb">df</span> <span class="nt">-Th</span>
 </code></pre></div></div>
-<p><img src="/images/ncp_storage_nas_guide_20.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_20.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
-<p><img src="/images/ncp_storage_nas_guide_13.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_13.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="fstab-설정">fstab 설정</h4>
 <p>부팅 후에도 마운트가 될 수 있도록 /etc/fstab 파일에 추가합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_14.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_14.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h2 id="ubuntu-설정">Ubuntu 설정</h2>
 
@@ -277,7 +277,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# apt-get <span class="nb">install </span>nfs-common <span class="nt">-y</span>
 </code></pre></div></div>
-<p><img src="/images/ncp_storage_nas_guide_15.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_15.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="nas-마운트하기">NAS 마운트하기</h4>
 <p>NAS 볼륨을 마운트할 디렉토리를 생성하고 {NAS 볼륨 마운트 정보}를 이용해 마운트한 후에 상태를 확인합니다.<br />
@@ -287,22 +287,22 @@
 ~# mount <span class="nt">-t</span> nfs <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>3 <span class="o">{</span>NAS 볼륨 마운트 정보<span class="o">}</span> /nas
 ~# <span class="nb">df</span> <span class="nt">-Th</span>
 </code></pre></div></div>
-<p><img src="/images/ncp_storage_nas_guide_16.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_16.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h4 id="fstab-설정-1">fstab 설정</h4>
 <p>부팅 후에도 마운트가 될 수 있도록 /etc/fstab 파일에 추가합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_17.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_17.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:660px;align:center" /></p>
 
 <h2 id="이벤트-설정">이벤트 설정</h2>
 <p>이벤트 설정에서는 NAS 볼륨 사용량 임계치를 설정하고 이벤트 발생 시 SMS나 Email로 통보를 받습니다.<br />
 볼륨 설정에서 이벤트 설정을 클릭합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_18.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_18.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <p>이벤트 통보 방법과 휴대폰 또는 이메일 등을 입력하고 설정을 완료합니다.</p>
 
-<p><img src="/images/ncp_storage_nas_guide_19.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncp_storage_nas_guide_19.jpg" alt="네이버 클라우드 NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드" style="width:770px;align:center" /></p>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -349,7 +349,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_compare/">
+			<a href="/storage/ncloud_storage_compare.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -375,7 +375,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_lifecycle_management/">
+			<a href="/storage/ncloud_storage_object_storage_lifecycle_management.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -401,7 +401,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_aws_cli_connect/">
+			<a href="/storage/ncloud_storage_object_storage_aws_cli_connect.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -427,7 +427,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_required_service/">
+			<a href="/storage/ncloud_storage_object_storage_required_service.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -453,7 +453,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_s3_client_s3browser/">
+			<a href="/storage/ncloud_storage_object_storage_s3_client_s3browser.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -479,7 +479,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_s3_client_cloudberry_explorer/">
+			<a href="/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -505,7 +505,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_s3_client_cyberduck/">
+			<a href="/storage/ncloud_storage_object_storage_s3_client_cyberduck.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -531,7 +531,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_object_storage_transfer_to_archive_storage/">
+			<a href="/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -557,7 +557,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_nas_vpc_guide/">
+			<a href="/storage/ncloud_storage_nas_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -583,7 +583,7 @@
 		
 		
 		
-			<a href="/91.aws/aws_s3_lifecycle_management/">
+			<a href="/aws/aws_s3_lifecycle_management.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -609,7 +609,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -635,7 +635,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -661,7 +661,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -698,7 +698,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -708,8 +708,6 @@
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -726,7 +724,7 @@
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -752,7 +750,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -778,7 +776,7 @@
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -804,7 +802,7 @@
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -830,7 +828,7 @@
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -856,7 +854,7 @@
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -882,7 +880,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -908,7 +906,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -934,7 +932,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

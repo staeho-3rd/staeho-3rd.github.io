@@ -47,7 +47,7 @@
 <title>서버 접속 가이드(Linux) - 공인IP 없을 때 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="서버 접속 가이드(Linux) - 공인IP 없을 때" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="네이버 클라우드 서버 접속 가이드 - 공인IP 없을 때" />
 <meta property="og:description" content="네이버 클라우드 서버 접속 가이드 - 공인IP 없을 때" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/1.compute/ncp_server_connect_no_public_ip/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -204,57 +204,57 @@
 
 <p>네이버 클라우드에서 공인IP 없이 서버에 접속하려면 외부 접속을 위한 포트 포워딩을 설정해야 합니다.<br />
 생성된 서버를 선택하면 상단 메뉴에 <strong>포트 포워딩 설정</strong>이 있습니다.
-<img src="/images/ncp_server_connect_01.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
+<img src="../../images/ncp_server_connect_01.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
 
 <p>포트 포워딩 메뉴에 들어가면 아래와 같이 서버 접속용 공인 IP가 보이고, 외부에서 접속할 포트 (Putty에 입력할 포트)를 입력하는 곳이 있습니다.
-<img src="/images/ncp_server_connect_02.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
+<img src="../../images/ncp_server_connect_02.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
 
 <p>포트 포워딩에서 사용할 수 있는 포트 번호 범위는 1,024 ~ 65,534 이며, 이 범위 내에서 원하는 포트를 입력하시면 됩니다.<br />
 (Tip: 서버 접속용 공인IP를 활용해서 포트 번호를 입력하면 기억하기 쉽습니다. )<br />
 (예: OOO.12.45.178 인 경우 포트를 17822,  106.10.OO.OO 인 경우 10622 )</p>
 
 <p>포트를 입력하고 +추가 버튼을 클릭합니다.
-<img src="/images/ncp_server_connect_03.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
+<img src="../../images/ncp_server_connect_03.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
 
 <p>추가된 포트와 서버 접속용 공인 IP 정보를 확인하고 수정할 부분이 있으면 수정합니다.
 더 이상 수정할 내용이 없으면 하단의 <strong>적용</strong> 버튼을 반드시 클릭합니다.
-<img src="/images/ncp_server_connect_04.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" />
-<img src="/images/ncp_server_connect_05.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
+<img src="../../images/ncp_server_connect_04.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" />
+<img src="../../images/ncp_server_connect_05.jpg" alt="포트 포워딩 설정" style="width:770px;align:center" /></p>
 
 <h2 id="관리자-비밀번호-확인">관리자 비밀번호 확인</h2>
 
 <p>네이버 클라우드에서 처음 서버를 생성하고 접속하게 되면 root와 비밀번호로 접속하게 됩니다.
 물론 매번 비번을 입력하고 접속하는 것은 번거롭기도 하고 보안 측면에서 좋지 않기 때문에 이후에 SSH Key를 생성해서 접속하는 방식으로 바꾸는 것이 좋습니다.
-<img src="/images/ncp_server_connect_06.jpg" alt="관리자 비밀번호 확인" style="width:770px;align:center" /></p>
+<img src="../../images/ncp_server_connect_06.jpg" alt="관리자 비밀번호 확인" style="width:770px;align:center" /></p>
 
 <p>관리자 비밀번호 확인 메뉴를 클릭하면 인증키를 확인하는 화면이 나옵니다.
 인증키는 서버 생성시에 설정하고 PC에 다운로드 해 둔 확장지 *.pem 파일입니다. 
-<img src="/images/ncp_server_connect_07.jpg" alt="관리자 비밀번호 확인" style="width:700px;align:center" /></p>
+<img src="../../images/ncp_server_connect_07.jpg" alt="관리자 비밀번호 확인" style="width:700px;align:center" /></p>
 
 <p>인증키 파일을 마우스로 끌어오거나 화면을 클릭해서 선택합니다.
-<img src="/images/ncp_server_connect_08.jpg" alt="관리자 비밀번호 확인" style="width:700px;align:center" /></p>
+<img src="../../images/ncp_server_connect_08.jpg" alt="관리자 비밀번호 확인" style="width:700px;align:center" /></p>
 
 <p>인증키가 일치하면 아래와 같이 root 계정에 해당하는 비밀번호가 나타납니다.
 이 비밀번호를 복사하여 저장해둡니다.
 혹시 복사-저장하는 것을 잊으셨어도 언제든지 관리자 비밀번호 확인 메뉴에 들어가서 인증키를 인증하면 다시 확인할 수 있으니 걱정하지 않으셔도 됩니다.
-<br /><img src="/images/ncp_server_connect_09.jpg" alt="관리자 비밀번호 확인" style="width:500px;align:center" /></p>
+<br /><img src="../../images/ncp_server_connect_09.jpg" alt="관리자 비밀번호 확인" style="width:500px;align:center" /></p>
 
 <h2 id="터미널-프로그램putty-실행">터미널 프로그램(Putty) 실행</h2>
 
 <p>Putty를 실행해서 포트 포워딩에서 설정한 포트와 서버 접속용 공인IP를 입력합니다.
-<br /><img src="/images/ncp_server_connect_10.jpg" alt="터미널 프로그램(Putty) 실행" style="width:450px;align:center" /></p>
+<br /><img src="../../images/ncp_server_connect_10.jpg" alt="터미널 프로그램(Putty) 실행" style="width:450px;align:center" /></p>
 
 <p>접속을 하면 rsa2 key fingerprint 를 Putty 캐시에 저장할 것인지 묻는 화면이 나타납니다. 
 보통 예(Y)를 선택하면 됩니다.
-<br /><img src="/images/ncp_server_connect_11.jpg" alt="터미널 프로그램(Putty) 실행" style="width:600px;align:center" /></p>
+<br /><img src="../../images/ncp_server_connect_11.jpg" alt="터미널 프로그램(Putty) 실행" style="width:600px;align:center" /></p>
 
 <h2 id="root-계정과-관리자-비밀번호-입력">root 계정과 관리자 비밀번호 입력</h2>
 
 <p>계정 root와 관리자 비밀번호 확인에서 저장해 둔 비밀번호를 입력합니다.
-<img src="/images/ncp_server_connect_12.jpg" alt="터미널 프로그램(Putty) 실행" style="width:600px;align:center" /></p>
+<img src="../../images/ncp_server_connect_12.jpg" alt="터미널 프로그램(Putty) 실행" style="width:600px;align:center" /></p>
 
 <p>접속이 완료되면 이렇게 화면이 나타납니다.
-<img src="/images/ncp_server_connect_13.jpg" alt="터미널 프로그램(Putty) 실행" style="width:600px;align:center" /></p>
+<img src="../../images/ncp_server_connect_13.jpg" alt="터미널 프로그램(Putty) 실행" style="width:600px;align:center" /></p>
 
 <h2 id="ssl-vpn으로-접속하기">SSL VPN으로 접속하기</h2>
 <p>SSL VPN은 Ncloud(네이버 클라우드) 외부에서 내부에 구성된 네트워크로 암호화된 보안 접속 통신을 제공하는 서비스입니다. 
@@ -303,7 +303,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_micro_limit/">
+			<a href="/compute/ncloud_compute_server_micro_type_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -329,7 +329,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_spec_change/">
+			<a href="/compute/ncloud_compute_server_spec_change.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -355,7 +355,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_stop_price/">
+			<a href="/compute/ncloud_compute_server_stop_price.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -381,7 +381,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_limit/">
+			<a href="/compute/ncloud_compute_autoscaling_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -407,7 +407,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_guide/">
+			<a href="/compute/ncloud_compute_server_storage_add_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -433,7 +433,7 @@
 		
 		
 		
-			<a href="/3.security/ncp_security_acg_guide/">
+			<a href="/security/ncloud_security_acg_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -459,7 +459,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_detail_process/">
+			<a href="/compute/ncloud_compute_server_storage_add_detail_process.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -485,7 +485,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_backup_guide/">
+			<a href="/storage/ncloud_storage_backup_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -511,7 +511,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_no_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_no_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -537,7 +537,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_by_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_by_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -563,7 +563,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_vpc_create/">
+			<a href="/compute/ncloud_compute_server_vpc_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -589,7 +589,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_event_setting/">
+			<a href="/compute/ncloud_compute_autoscaling_event_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -615,7 +615,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_cmd/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -641,7 +641,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_vs/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -667,7 +667,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_php_smtp_via_gmail_with_phpmailer/">
+			<a href="/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -693,7 +693,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_ssh_security_setting/">
+			<a href="/compute/ncloud_compute_server_ssh_security_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -719,7 +719,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_server_image_share_classic/">
+			<a href="/compute/ncloud_compute_server_image_share_classic.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -745,7 +745,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_windows_server_image_copy_classic_to_vpc/">
+			<a href="/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -771,7 +771,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_lvm_create/">
+			<a href="/compute/ncloud_compute_server_storage_lvm_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -797,7 +797,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_kubernetes_service_start_guide/">
+			<a href="/compute/ncloud_compute_kubernetes_service_start_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -823,7 +823,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_classic_guide/">
+			<a href="/compute/ncloud_compute_autoscaling_classic_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -849,7 +849,7 @@
 		
 		
 		
-			<a href="/81.manage/ncp_manage_monitoring_guide/">
+			<a href="/management/ncloud_management_classic_monitoring_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -875,7 +875,7 @@
 		
 		
 		
-			<a href="/81.manage/ncp_manage_cloud_insight_guide/">
+			<a href="/management/ncloud_management_cloud_insight_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -901,7 +901,7 @@
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -927,7 +927,7 @@
 		
 		
 		
-			<a href="/1.compute/ncp_server_repository_change_on_private_network/">
+			<a href="/compute/ncloud_compute_server_repository_change_on_private_network.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -953,7 +953,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -979,7 +979,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -989,8 +989,6 @@
 				<article>
 					<div>
 						<h3>27. CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -1018,7 +1016,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1028,8 +1026,6 @@
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -1046,7 +1042,7 @@
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1072,7 +1068,7 @@
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1098,7 +1094,7 @@
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1124,7 +1120,7 @@
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1150,7 +1146,7 @@
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1176,7 +1172,7 @@
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1202,7 +1198,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1228,7 +1224,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1254,7 +1250,7 @@
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

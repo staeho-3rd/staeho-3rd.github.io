@@ -47,7 +47,7 @@
 <title>CentOS에서 NginX 설치, 설정하는 방법 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="CentOS에서 NginX 설치, 설정하는 방법" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다" />
 <meta property="og:description" content="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/1.compute/ncloud_server_nginx_install_setting_centos_guide/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -178,8 +178,6 @@
 	<section class="tutorial-content">
 		<h1>CentOS에서 NginX 설치, 설정하는 방법
 		
-			<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
-		
 		</h1>
 
 		
@@ -194,7 +192,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nb">install </span>yum-utils
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_01.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_01.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="repository-설정">Repository 설정</h2>
 <p>NginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. 
@@ -223,7 +221,7 @@ Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내�
 <p class="info">NginX는 stable, mainline 두가지 버전이 있습니다. NginX의 공식 설명에 따르면 버그 수정이나 보안 패치 등은 항상 mainline 버전에 먼저 적용되기 때문에 mainline을 사용하는 것을 추천한다고 합니다. 
 stable 버전을 사용하는 주된 경우는 third-party 모듈을 사용하고 있어서 신규 버전에서 호환성 문제가 발생할 가능성이 걱정될 때라고 합니다.</p>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_02.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_02.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="버전-선택">버전 선택</h2>
 <p>stable, mainline 두가지 버전 중에서 기본은 stable 버전입니다.<br />
@@ -232,14 +230,14 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum-config-manager <span class="nt">--enable</span> nginx-mainline
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_03.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_03.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="nginx-설치">NginX 설치</h2>
 <p>설정을 마쳤으면 yum으로 NginX를 설치합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nt">-y</span> <span class="nb">install </span>nginx
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_04.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_04.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="디렉토리-설정">디렉토리 설정</h2>
 <p>다음으로 홈으로 사용할 디렉토리를 생성하고, 해당 디렉토리의 소유권을 설정하겠습니다.<br />
@@ -250,7 +248,7 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 ~# <span class="nb">cp</span> /usr/share/nginx/html/index.html /ncp/data/www/index.html
 ~# <span class="nb">ls</span> <span class="nt">-al</span> /ncp/data/www
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_05.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_05.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="환경-설정">환경 설정</h2>
 <p>주로 변경할 환경 설정 파일은 /etc/nginx/conf.d/default.conf 입니다.</p>
@@ -265,7 +263,7 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 server_name  127.0.0.1<span class="p">;</span>
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_06.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_06.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="홈-디렉토리-기본-문서-설정">홈 디렉토리, 기본 문서 설정</h4>
 <p>앞에서 만들었던 홈 디렉토리 경로를 설정하고 기본 문서를 지정하는 곳입니다.</p>
@@ -284,9 +282,9 @@ server_name  127.0.0.1<span class="p">;</span>
         try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ <span class="o">=</span> 404<span class="p">;</span>
     <span class="o">}</span>
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_07.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_07.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_08.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_08.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="error-페이지-설정">error 페이지 설정</h4>
 <p>404, 500 등의 error 페이지를 설정할 경우 아래 내용들을 수정하면 됩니다.</p>
@@ -306,9 +304,9 @@ server_name  127.0.0.1<span class="p">;</span>
     <span class="o">}</span>
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_09.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_09.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_10.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_10.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="htaccess-파일-접근-금지-설정">.htaccess 파일 접근 금지 설정</h4>
 <p>.htaccess 파일에 대한 접근 금지를 설정할 경우 아래 내용을 주석 해제하면 됩니다.</p>
@@ -324,9 +322,9 @@ server_name  127.0.0.1<span class="p">;</span>
     <span class="o">}</span>
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_11.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_11.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_12.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_12.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="nginx-실행">NginX 실행</h2>
 <p>설정을 모두 마쳤으면 NginX를 시작하고 상태를 확인합니다.</p>
@@ -334,12 +332,12 @@ server_name  127.0.0.1<span class="p">;</span>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl start nginx
 ~# systemctl status nginx
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_13.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_13.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="사이트-접속">사이트 접속</h4>
 <p>NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_server_nginx_install_setting_guide_centos_14.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:600px;align:center" /></p>
+<p><img src="../../images/ncloud_server_nginx_install_setting_guide_centos_14.png" alt="네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법" style="width:600px;align:center" /></p>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -386,7 +384,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_micro_limit/">
+			<a href="/compute/ncloud_compute_server_micro_type_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -412,7 +410,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_spec_change/">
+			<a href="/compute/ncloud_compute_server_spec_change.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -438,7 +436,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_stop_price/">
+			<a href="/compute/ncloud_compute_server_stop_price.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -464,7 +462,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_limit/">
+			<a href="/compute/ncloud_compute_autoscaling_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -490,7 +488,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_guide/">
+			<a href="/compute/ncloud_compute_server_storage_add_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -516,7 +514,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/3.security/ncp_security_acg_guide/">
+			<a href="/security/ncloud_security_acg_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -542,7 +540,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_detail_process/">
+			<a href="/compute/ncloud_compute_server_storage_add_detail_process.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -568,7 +566,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/4.storage/ncp_storage_backup_guide/">
+			<a href="/storage/ncloud_storage_backup_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -594,7 +592,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_no_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_no_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -620,7 +618,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_by_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_by_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -646,7 +644,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_vpc_create/">
+			<a href="/compute/ncloud_compute_server_vpc_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -672,7 +670,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_event_setting/">
+			<a href="/compute/ncloud_compute_autoscaling_event_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -698,7 +696,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_cmd/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -724,7 +722,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_vs/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -750,7 +748,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_php_smtp_via_gmail_with_phpmailer/">
+			<a href="/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -776,7 +774,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_ssh_security_setting/">
+			<a href="/compute/ncloud_compute_server_ssh_security_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -802,7 +800,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_server_image_share_classic/">
+			<a href="/compute/ncloud_compute_server_image_share_classic.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -828,7 +826,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_windows_server_image_copy_classic_to_vpc/">
+			<a href="/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -854,7 +852,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_lvm_create/">
+			<a href="/compute/ncloud_compute_server_storage_lvm_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -880,7 +878,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_kubernetes_service_start_guide/">
+			<a href="/compute/ncloud_compute_kubernetes_service_start_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -906,7 +904,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_classic_guide/">
+			<a href="/compute/ncloud_compute_autoscaling_classic_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -932,7 +930,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/81.manage/ncp_manage_monitoring_guide/">
+			<a href="/management/ncloud_management_classic_monitoring_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -958,7 +956,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/81.manage/ncp_manage_cloud_insight_guide/">
+			<a href="/management/ncloud_management_cloud_insight_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -984,7 +982,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1010,7 +1008,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncp_server_repository_change_on_private_network/">
+			<a href="/compute/ncloud_compute_server_repository_change_on_private_network.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1036,7 +1034,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1062,7 +1060,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1072,8 +1070,6 @@ server_name  127.0.0.1<span class="p">;</span>
 				<article>
 					<div>
 						<h3>27. CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -1101,7 +1097,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1127,7 +1123,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1153,7 +1149,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1179,7 +1175,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1205,7 +1201,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1231,7 +1227,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1257,7 +1253,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1283,7 +1279,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1309,7 +1305,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1335,7 +1331,7 @@ server_name  127.0.0.1<span class="p">;</span>
 		
 		
 		
-			<a href="/99.etc/ncp_etc_php_to_telegram_message_send/">
+			<a href="/etc/etc_php_to_telegram_message_send.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

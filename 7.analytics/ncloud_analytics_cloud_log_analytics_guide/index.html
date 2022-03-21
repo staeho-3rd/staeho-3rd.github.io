@@ -47,7 +47,7 @@
 <title>Cloud Log Analytics 설정 가이드 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="Cloud Log Analytics 설정 가이드" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법입니다." />
 <meta property="og:description" content="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법입니다." />
 <link rel="canonical" href="https://docs.3rdeyesys.com/7.analytics/ncloud_analytics_cloud_log_analytics_guide/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -233,17 +233,17 @@
 <p>Ncloud(네이버 클라우드) 콘솔 [Cloud Log Analytics] - [Subscription]에서 [이용 신청] 버튼을 클릭합니다. 
 Cloud Log Analytics는 Classic, VPC 환경 공통 서비스이므로 어느쪽 환경에서 이용신청을 해도 상관없습니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_01.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_01.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="설정---linux">설정 - Linux</h2>
 <p>먼저 Linux 서버에서 설정하는 방법을 알아보겠습니다.<br />
 [Cloud Log Analytics] - [Management]에서 로그를 수집할 서버를 선택하고, [수집 설정] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_02.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_02.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>Log 수집 설정 화면에서 수집할 로그 템플릿을 선택하거나, 직접 [Custom Log]를 선택해서 로그 형태를 설정한 후에 [적용] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_03.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_03.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="로그-수집-agent-설치">로그 수집 Agent 설치</h4>
 <p>Log 수집 설정을 마치면 [로그 수집 Agent] 설치 안내가 나옵니다.<br />
@@ -256,27 +256,27 @@ Cloud Log Analytics는 Classic, VPC 환경 공통 서비스이므로 어느쪽 �
 ~# curl <span class="nt">-s</span> http://cm.cla.ncloud.com/setUpCla/<span class="o">{</span>설치키<span class="o">(</span>Install Key<span class="o">)}</span> | <span class="nb">sudo </span>sh
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_04.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_04.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>서버에 실제로 설치해보면 아래와 같이 설치 과정이 진행되고,<br />
 설치가 완료되면 마지막에 <strong>Finish Installation</strong>이라는 메시지가 출력됩니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_06.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_06.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>설치된 Agent가 제대로 작동하고 있는지 확인해보면 아래와 같이 active (running) 상태인 것을 확인할 수 있습니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl status filebeat
 </code></pre></div></div>
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_07.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_07.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="설정---windows">설정 - Windows</h2>
 <p>다음으로 Windows 서버에서 설정하는 방법을 살펴보겠습니다.<br />
 마찬가지로 서버를 선택하고 [수집 설정] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_11.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_11.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>로그 수집 설정에서 Log Template은 [EventLog]를 선택합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_12.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_12.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>설정을 마치면 Agent 설치 가이드를 확인할 수 있습니다.<br />
 서버에서 [Windows PowerShell]을 열고, 아래 명령어를 실행합니다. 마찬가지로 마지막에는 설치 서버에 해당하는 <strong>설치키</strong>가 포함되어 있습니다.</p>
@@ -287,26 +287,26 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 <span class="c"># Classic 환경</span>
 Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="s2">"http://cm.cla.ncloud.com/setUpwinClaVPC/{설치키(Install Key)}"</span><span class="k">))</span>
 </code></pre></div></div>
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_13.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_13.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>설치가 완료되면 마지막에 <strong>Finish Installation</strong>이라는 메시지가 출력됩니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_14.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_14.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="windows-server-2019-지원-여부">Windows Server 2019 지원 여부</h4>
 <p>현재 Windows Server 2019는 지원하지 않고, 2022년 상반기 지원 예정입니다.<br />
 Windows Server 2019는 아래와 같이 선택을 해도 [수집 설정] 버튼을 활성화되지 않습니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_15.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_15.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="로그-확인">로그 확인</h2>
 <p>Agent 설치 후 [Dashboard]를 확인해보면 로그가 수집되고 있을 것을 알 수 있습니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_08.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_08.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>[Search] 메뉴에서는 로그 내용을 자세히 검색, 확인할 수 있고, 굳이 서버에 접속하지 않더라도 필요한 로그를 콘솔 화면에서 직접 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_09.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_09.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="로그-백업">로그 백업</h2>
 <p>Cloud Log Analytics는 수집된 로그를 Object Storage로 내보내기하거나 Excel 파일로 다운로드 해서 백업할 수 있는 기능을 지원합니다.</p>
@@ -314,24 +314,24 @@ Windows Server 2019는 아래와 같이 선택을 해도 [수집 설정] 버튼�
 <h4 id="수동-백업">수동 백업</h4>
 <p>[Search] 메뉴에 [Object Storage로 내보내기]와 [X 다운로드] 버튼이 있습니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_24.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_24.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>[Object Storage로 내보내기] 버튼을 클릭하면 내보내기 할 버킷을 선택할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_25.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:600px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_25.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:600px;align:center" /></p>
 
 <h4 id="자동-백업">자동 백업</h4>
 <p>[Export Log] 메뉴에서 [자동 내보내기 설정]을 클릭합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_16.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_16.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>설정 화면에서 내보내기를 할 Object Storage의 버킷을 선택합니다. 혹시 버킷이 생성되지 않았다면 Object Storage로 가서 먼저 버킷을 생성하고 와야 합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_17.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:600px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_17.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:600px;align:center" /></p>
 
 <p>내보내기는 하루에 한번 진행되므로 설정 후 다음 날 Object Storage에서 아래와 같이 파일이 저장되어 있는 것을 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_20.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_20.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="로그-수집-해제">로그 수집 해제</h2>
 <p>더 이상 로그를 수집할 필요가 없어지면, 로그 수집 설정을 해제하면 됩니다.</p>
@@ -339,7 +339,7 @@ Windows Server 2019는 아래와 같이 선택을 해도 [수집 설정] 버튼�
 <h4 id="linux-서버-로그-수집-해제">Linux 서버 로그 수집 해제</h4>
 <p>서버를 선택하고 [수집 해제] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_22.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_22.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>로그 수집 해제를 위한 가이드에서 로그 수집 Agent 삭제 명령어를 복사합니다.</p>
 
@@ -349,16 +349,16 @@ Windows Server 2019는 아래와 같이 선택을 해도 [수집 설정] 버튼�
 <span class="c"># Classic 환경</span>
 ~# curl <span class="nt">-s</span> http://cm.cla.ncloud.com/removeCla | <span class="nb">sudo </span>sh
 </code></pre></div></div>
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_05.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_05.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>Agent 삭제 명령어를 실행하면 아래와 같이 <strong>Success Remove Agent</strong> 메시지가 출력됩니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_10.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_10.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="windows-서버-로그-수집-해제">Windows 서버 로그 수집 해제</h4>
 <p>마찬가지로 서버를 선택하고 [수집 해제] 버튼을 클릭합니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_22.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_22.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>로그 수집 해제를 위한 가이드에서 로그 수집 Agent 삭제 명령어를 복사합니다.</p>
 
@@ -368,11 +368,11 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 <span class="c"># Classic 환경</span>
 Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="s2">"http://cm.cla.ncloud.com/removewinCla"</span><span class="k">))</span>
 </code></pre></div></div>
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_18.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_18.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <p>Agent 삭제 명령어를 실행하면 아래와 같이 <strong>Remove Agent</strong> 메시지가 출력됩니다.</p>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_19.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_19.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="windows-서버-agent-삭제-오류-상황">Windows 서버 Agent 삭제 오류 상황</h4>
 <p>Windows 서버에서 Agent 삭제를 시도할 때 아래와 같이 오류 메시지가 발생하는 경우가 있습니다.<br />
@@ -386,7 +386,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Stop-Service : Cannot find any service with service name <span class="s1">'filebeat'</span><span class="nb">.</span>
 </code></pre></div></div>
 
-<p><img src="/images/ncloud_analytics_cloud_log_analytics_guide_21.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_analytics_cloud_log_analytics_guide_21.png" alt="Ncloud(네이버 클라우드) Cloud Log Analytics를 설정하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -432,7 +432,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -442,8 +442,6 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -460,7 +458,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -486,7 +484,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -512,7 +510,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -538,7 +536,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -564,7 +562,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -590,7 +588,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -616,7 +614,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -642,7 +640,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -668,7 +666,7 @@ Invoke-Expression <span class="k">$((</span>New-Object System.Net.WebClient<span
 		
 		
 		
-			<a href="/99.etc/ncp_etc_php_to_telegram_message_send/">
+			<a href="/etc/etc_php_to_telegram_message_send.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>

@@ -47,7 +47,7 @@
 <title>X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기 | 3rdeyesys</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법입니다" />
 <meta property="og:description" content="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/" />
@@ -84,19 +84,19 @@
 	
 
 		
-		<a href="/update/" class="" target="_self">Update</a>
+		<a href="/update/update.html" class="" target="_self">Update</a>
 
 	
 	
 
 		
-		<a href="/faq/" class="" target="_self">FAQ</a>
+		<a href="/faq/faq.html" class="" target="_self">FAQ</a>
 
 	
 	
 
 		
-		<a href="/news/" class="" target="_self">NEWS</a>
+		<a href="/news/news.html" class="" target="_self">NEWS</a>
 
 	
 	
@@ -209,7 +209,7 @@
   <li>VPC 환경에서 서버 생성하는 방법 : <a href="/1.compute/ncp_server_vpc_create/" target="_blank" style="word-break:break-all;">https://docs.3rdeyesys.com/1.compute/ncp_server_vpc_create/</a></li>
 </ul>
 
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_01.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_01.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <p>로드밸런서도 마찬가지로 준비하고, 서버와 연동까지 완료했습니다.</p>
 
@@ -217,16 +217,16 @@
   <li>VPC 환경에서 Application Load Balancer 생성하는 방법 : <a href="/2.networking/ncp_networking_load_balancer_application_lb/" target="_blank" style="word-break:break-all;">https://docs.3rdeyesys.com/2.networking/ncp_networking_load_balancer_application_lb/</a></li>
 </ul>
 
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_02.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_02.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="설정-전-테스트">설정 전 테스트</h2>
 <p>우선, <strong>X-Forwarded-For (XFF)</strong> 설정을 하기 전에 어떻게 기록이 남는지 확인해보겠습니다.<br />
 아래와 같이 Load Balancer 주소로 접속해서 2대의 서버에 각각 접근하도록 합니다.<br />
 위에서 소개한 Application Load Balancer 생성하는 방법을 그대로 따라하면 아래와 같은 메시지를 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-1.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:560px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-1.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:560px;align:center" /></p>
 
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-2.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:560px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-2.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:560px;align:center" /></p>
 
 <h4 id="apache-접속-로그-확인">Apache 접속 로그 확인</h4>
 <p>Apache 접속 로그 파일은 아래의 위치에 존재하지만, 저희는 네이버 클라우드 (Ncloud)의 상품 중 하나인 <strong>Cloud Log Analytics</strong>에서 로그를 수집해서 확인해보겠습니다.</p>
@@ -240,7 +240,7 @@
 
 <p>Cloud Log Analytics에서 수집한 로그를 확인해보면 위에서 설정했던 <strong>Load Balancer의 IP 대역 (172.16.20.xx)</strong>이 기록된 것을 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_03.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_03.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="centos-설정">CentOS 설정</h2>
 <p>이제 실제 Client IP가 기록 되도록 설정을 변경해보겠습니다.<br />
@@ -257,12 +257,12 @@
 <h4 id="httpdconf-수정-전">httpd.conf 수정 전</h4>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   LogFormat <span class="s2">"%h %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %b </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_04.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_04.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="httpdconf-수정-후">httpd.conf 수정 후</h4>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   LogFormat <span class="s2">"%{X-Forwarded-For}i %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %b </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_05.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_05.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="apache-재시작">Apache 재시작</h4>
 <p>httpd.conf 파일 수정 후에 Apache를 재시작합니다. 로그 테스트는 Ubuntu까지 설정을 마친 후에 진행하겠습니다.</p>
@@ -278,7 +278,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# a2enmod remoteip
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_06.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_06.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="remoteipload-수정">remoteip.load 수정</h4>
 <p>다음으로 remoteip.load 파일을 수정해서 아래쪽에 [<strong>RemoteIPHeader X-FORWARDED-FOR</strong>]을 추가 합니다.</p>
@@ -293,7 +293,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
 RemoteIPHeader X-FORWARDED-FOR
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_07.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_07.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="apache2conf-수정">apache2.conf 수정</h4>
 <p>다음으로 <strong>apache2.conf</strong> 파일을 수정합니다.</p>
@@ -309,12 +309,12 @@ RemoteIPHeader X-FORWARDED-FOR
 <h4 id="apache2conf-수정-전">apache2.conf 수정 전</h4>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 LogFormat <span class="s2">"%h %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %O </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined  
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_08.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_08.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="apache2conf-수정-후">apache2.conf 수정 후</h4>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 LogFormat <span class="s2">"%a %l %u %t </span><span class="se">\"</span><span class="s2">%r</span><span class="se">\"</span><span class="s2"> %&gt;s %O </span><span class="se">\"</span><span class="s2">%{Referer}i</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">%{User-Agent}i</span><span class="se">\"</span><span class="s2">"</span> combined  
 </code></pre></div></div>
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_09.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_09.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h4 id="apache-재시작-1">Apache 재시작</h4>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl restart apache2
@@ -324,7 +324,7 @@ RemoteIPHeader X-FORWARDED-FOR
 <p>위와 같이  CentOS, Ubuntu 2대 서버에서 설정을 모두 마친 후에 로드 밸런서 URL로 접속합니다.<br />
 이후에 Cloud Log Analytics에서 로그를 확인해보면 아래와 같이 로드밸런서 IP가 아닌 실제 접속한 Client의 IP가 기록된 것을 확인할 수 있습니다.</p>
 
-<p><img src="/images/ncloud_server_x_forwarded_for_client_ip_logging_guide_10.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
+<p><img src="../../images/ncloud_server_x_forwarded_for_client_ip_logging_guide_10.png" alt="네이버 클라우드 서비스에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width:770px;align:center" /></p>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -371,7 +371,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_micro_limit/">
+			<a href="/compute/ncloud_compute_server_micro_type_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -397,7 +397,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_spec_change/">
+			<a href="/compute/ncloud_compute_server_spec_change.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -423,7 +423,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_stop_price/">
+			<a href="/compute/ncloud_compute_server_stop_price.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -449,7 +449,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_limit/">
+			<a href="/compute/ncloud_compute_autoscaling_limit.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -475,7 +475,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_guide/">
+			<a href="/compute/ncloud_compute_server_storage_add_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -501,7 +501,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/3.security/ncp_security_acg_guide/">
+			<a href="/security/ncloud_security_acg_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -527,7 +527,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_add_detail_process/">
+			<a href="/compute/ncloud_compute_server_storage_add_detail_process.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -553,7 +553,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/4.storage/ncp_storage_backup_guide/">
+			<a href="/storage/ncloud_storage_backup_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -579,7 +579,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_no_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_no_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -605,7 +605,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_connect_by_public_ip/">
+			<a href="/compute/ncloud_compute_server_connect_by_public_ip.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -631,7 +631,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_vpc_create/">
+			<a href="/compute/ncloud_compute_server_vpc_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -657,7 +657,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_event_setting/">
+			<a href="/compute/ncloud_compute_autoscaling_event_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -683,7 +683,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_cmd/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -709,7 +709,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_dotnet_csharp_vs/">
+			<a href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -735,7 +735,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_cloud_functions_php_smtp_via_gmail_with_phpmailer/">
+			<a href="/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -761,7 +761,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_ssh_security_setting/">
+			<a href="/compute/ncloud_compute_server_ssh_security_setting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -787,7 +787,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_server_image_share_classic/">
+			<a href="/compute/ncloud_compute_server_image_share_classic.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -813,7 +813,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_windows_server_image_copy_classic_to_vpc/">
+			<a href="/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -839,7 +839,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_storage_lvm_create/">
+			<a href="/compute/ncloud_compute_server_storage_lvm_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -865,7 +865,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_kubernetes_service_start_guide/">
+			<a href="/compute/ncloud_compute_kubernetes_service_start_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -891,7 +891,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_autoscaling_classic_guide/">
+			<a href="/compute/ncloud_compute_autoscaling_classic_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -917,7 +917,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/81.manage/ncp_manage_monitoring_guide/">
+			<a href="/management/ncloud_management_classic_monitoring_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -943,7 +943,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/81.manage/ncp_manage_cloud_insight_guide/">
+			<a href="/management/ncloud_management_cloud_insight_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -969,7 +969,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -995,7 +995,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncp_server_repository_change_on_private_network/">
+			<a href="/compute/ncloud_compute_server_repository_change_on_private_network.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1021,7 +1021,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncloud_server_x_forwarded_for_client_ip_logging_guide/">
+			<a href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1047,7 +1047,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1057,8 +1057,6 @@ RemoteIPHeader X-FORWARDED-FOR
 				<article>
 					<div>
 						<h3>27. CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -1086,7 +1084,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/1.compute/ncloud_server_nginx_install_setting_centos_guide/">
+			<a href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1096,8 +1094,6 @@ RemoteIPHeader X-FORWARDED-FOR
 				<article>
 					<div>
 						<h3>CentOS에서 NginX 설치, 설정하는 방법 
-							
-								<span class="badge badge-pill badge-danger" style="font-size:50%">new</span>
 							
 						</h3>
 						<p class="description">네이버 클라우드 CentOS에서 NginX 설치, 설정하는 방법입니다</p>
@@ -1114,7 +1110,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/81.manage/ncloud_management_monitoring_win_perf_data_error_troubleshoot/">
+			<a href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1140,7 +1136,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/7.analytics/ncloud_analytics_cloud_log_analytics_guide/">
+			<a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1166,7 +1162,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/5.database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting/">
+			<a href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1192,7 +1188,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/81.manage/ncp_manage_classic_vs_vpc_guide/">
+			<a href="/management/ncloud_management_classic_vs_vpc_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1218,7 +1214,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/2.networking/ncp_networking_vpc_peering_guide/">
+			<a href="/networking/ncloud_networking_vpc_peering_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1244,7 +1240,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_cli_windows_guide/">
+			<a href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1270,7 +1266,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_get_container_by_php/">
+			<a href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1296,7 +1292,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/4.storage/ncp_storage_archive_storage_api_access_token_create/">
+			<a href="/storage/ncloud_storage_archive_storage_api_access_token_create.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -1322,7 +1318,7 @@ RemoteIPHeader X-FORWARDED-FOR
 		
 		
 		
-			<a href="/99.etc/ncp_etc_php_to_telegram_message_send/">
+			<a href="/etc/etc_php_to_telegram_message_send.html">
 				<div class="icon">
 		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
