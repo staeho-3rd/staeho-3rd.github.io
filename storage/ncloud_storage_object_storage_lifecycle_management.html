@@ -1434,11 +1434,19 @@ $('#toc').on('click', 'a', function() {
 
   $(window).scrollTop(scroll_target - 10);
   return false
-})
+});
+
+$("#toc_onoff").click(function() {  
+        $("#toc").toggle();
+        $("#tg-toc-icon").toggleClass('fa-toggle-on');
+        $("#tg-toc-icon").toggleClass('fa-toggle-off');
+
+});
 
 });
 </script>
 
+<p><span class="label label-warning" style="cursor:pointer" id="toc_onoff"><i id="tg-toc-icon" class="fas fa-toggle-on"></i> ToC</span></p>
 <div id="toc"></div>
 
 
@@ -1608,7 +1616,7 @@ $('#toc').on('click', 'a', function() {
         		
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-        <span>Page last updated:</span> 2021-06-02<br/> Site last generated: 2022-03-17 <br />
+        <span>Page last updated:</span> 2021-06-02<br/> Site last generated: 2022-03-23 <br />
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>
