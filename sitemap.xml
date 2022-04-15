@@ -149,6 +149,54 @@
   
   
   <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</loc>
+  
+    <lastmod>2022-04-06T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html</loc>
+  
+    <lastmod>2022-04-06T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud-database-mysql-gtid-replication.html</loc>
+  
+    <lastmod>2022-04-08T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud-networking-proxy-protocol-client-ip-logging.html</loc>
+  
+    <lastmod>2022-04-12T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
     <loc>https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_guide.html</loc>
   
     <lastmod>2021-12-14T00:00:00+09:00</lastmod>
@@ -607,7 +655,7 @@
   <url>
     <loc>https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_guide.html</loc>
   
-    <lastmod>2021-12-13T00:00:00+09:00</lastmod>
+    <lastmod>2022-04-08T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>

@@ -4,27 +4,29 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="The following pages and posts are tagged with Port">
 <meta name="keywords" content=" ">
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v4.2.1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Port" />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:description" content="써드아이시스템(3rdeyesys) 기술문서 사이트입니다 - Ncloud 프리미엄 파트너" />
+<meta property="og:description" content="The following pages and posts are tagged with Port" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/tag/tag_port.html" />
 <meta property="og:url" content="https://docs.3rdeyesys.com/tag/tag_port.html" />
-<meta property="og:site_name" content="3rdeyesys" />
+<meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Port" />
 <script type="application/ld+json">
-{"headline":"Port","@type":"WebPage","url":"https://docs.3rdeyesys.com/tag/tag_port.html","description":"써드아이시스템(3rdeyesys) 기술문서 사이트입니다 - Ncloud 프리미엄 파트너","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"The following pages and posts are tagged with Port","headline":"Port","url":"https://docs.3rdeyesys.com/tag/tag_port.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>Port | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
 <link rel="stylesheet" href="/css/modern-business.css">
 <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
@@ -51,10 +53,11 @@
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
+<script src="/js/customscripts.js"></script>
 
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3rdeyesys" href="https://docs.3rdeyesys.com/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
 
 
 
@@ -76,6 +79,12 @@
                     easing: 'swing'
                 }
             });
+            
+            window_width = $(window).width();
+            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
+            {
+                $("#mysidebar").navgoco('toggle', false);
+            }
 
             $("#collapseAll").click(function(e) {
                 e.preventDefault();
@@ -110,6 +119,11 @@
         });
     </script>
     
+
+
+    <script>
+        new WOW().init();
+    </script>
 
 </head>
 <body>
@@ -191,7 +205,7 @@
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
 	<input type="submit" value="Search" style="display: none;">
-</form> </div>                                               
+</form></div>                                               
                     </div>                    
                     <!--end search-->
                 </li>
@@ -653,21 +667,21 @@
           
           
           
-          <li><a title="Mysql DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">Mysql DB 자동백업 방법</a></li>          
+          <li><a title="MySQL DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">MySQL DB 자동백업 방법</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">Mysql, mariadb my.cnf 위치</a></li>          
+          <li><a title="MySQL, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">MySQL, mariadb my.cnf 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">Mysql, mariadb bind-address 위치</a></li>          
+          <li><a title="MySQL, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">MySQL, mariadb bind-address 위치</a></li>          
                     
           
           
@@ -688,49 +702,70 @@
           
           
           
-          <li><a title="CentOS Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS Mysql Object Storage로 백업</a></li>          
+          <li><a title="CentOS MySQL Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS MySQL Object Storage로 백업</a></li>          
                     
           
           
           
           
           
-          <li><a title="Ubuntu Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu Mysql Object Storage로 백업</a></li>          
+          <li><a title="Ubuntu MySQL Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu MySQL Object Storage로 백업</a></li>          
                     
           
           
           
           
           
-          <li><a title="VPC 환경 Cloud DB for Mysql 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for Mysql 생성</a></li>          
+          <li><a title="VPC 환경 Cloud DB for MySQL 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for MySQL 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="Cloud DB Mysql Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB Mysql Public 도메인 접속</a></li>          
+          <li><a title="Cloud DB MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB MySQL Public 도메인 접속</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql(MARIADB) replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">Mysql(MARIADB) replication 생성</a></li>          
+          <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">Mysql DB root Password 설정, 변경</a></li>          
+          <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">Mysql 복구 시 ERROR 1227 해결</a></li>          
+          <li><a title="MySQL DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">MySQL DB root Password 설정, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="MySQL 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">MySQL 복구 시 ERROR 1227 해결</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">Cloud DB PostgreSQL 생성 | CentOS</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">Cloud DB PostgreSQL 생성 | Ubuntu</a></li>          
                     
           
           
@@ -1405,47 +1440,21 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
+
    <h1 class="post-title-main">Port</h1>
+
 </div>
+
 
 
 
 <div class="post-content">
 
    
-
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-});
-
-$("#toc_onoff").click(function() {  
-        $("#toc").toggle();
-        $("#tg-toc-icon").toggleClass('fa-toggle-on');
-        $("#tg-toc-icon").toggleClass('fa-toggle-off');
-
-});
-
-});
-</script>
-
-<p><span class="label label-warning" style="cursor:pointer" id="toc_onoff"><i id="tg-toc-icon" class="fas fa-toggle-on"></i> ToC</span></p>
-<div id="toc"></div>
-
-
+   
+    <div class="summary">The following pages and posts are tagged with Port</div>
+   
+   
 
     
 
@@ -1539,6 +1548,36 @@ $("#toc_onoff").click(function() {
     
    
     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
    
     
         
@@ -2117,9 +2156,9 @@ $("#toc_onoff").click(function() {
     
         
 
-        <tr><td><a href="/storage/ncloud_storage_compare.html">네이버 클라우드 스토리지 비교</a></td>
+        <tr><td><a href="/storage/ncloud_storage_compare.html">Ncloud 제공 스토리지 비교</a></td>
             <td><span class="label label-default">Page</span></td>
-          <td> 네이버 클라우드 스토리지 비교 </td>
+          <td> 개요 Ncloud에서 제공하는 스토리지들의 주요 기능과 용도를 QnA 형식으로 비교 정리해보겠습니다. 비교 대상 스토리지  Block Storage Object Storage NAS Archive Storage  가격 비교    스토리지 구분 과금 단위 시간 당 요금 500G 기준... </td>
         </tr>
         
      
@@ -2359,7 +2398,7 @@ $("#toc_onoff").click(function() {
         		
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-         Site last generated: 2022-03-23 <br />
+         Site last generated: 2022-04-15 <br />
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>

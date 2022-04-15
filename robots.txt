@@ -1,1 +1,3 @@
 Sitemap: https://docs.3rdeyesys.com/sitemap.xml
+User-agent: *
+Disallow: /tag/

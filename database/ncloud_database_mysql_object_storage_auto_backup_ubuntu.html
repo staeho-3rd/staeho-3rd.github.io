@@ -6,27 +6,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Ncloud Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기입니다">
 <meta name="keywords" content="database, ubuntu, backup, mysql, object_storage,  Database, 오브젝트스토리지, Backup">
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v4.2.1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:description" content="Ncloud Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html" />
 <meta property="og:url" content="https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html" />
-<meta property="og:site_name" content="3rdeyesys" />
-<meta property="og:image" content="https://docs.3rdeyesys.com/image/database/ncp_database_mysql_backup_to_object_storage_02.jpg" />
+<meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
+<meta property="og:image" content="https://docs.3rdeyesys.com/images/database/ncp_database_mysql_backup_to_object_storage_02.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-08T00:00:00+09:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://docs.3rdeyesys.com/image/database/ncp_database_mysql_backup_to_object_storage_02.jpg" />
+<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/database/ncp_database_mysql_backup_to_object_storage_02.jpg" />
 <meta property="twitter:title" content="Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기" />
 <script type="application/ld+json">
-{"image":"https://docs.3rdeyesys.com/image/database/ncp_database_mysql_backup_to_object_storage_02.jpg","headline":"Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기","@type":"WebPage","url":"https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html","description":"Ncloud Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기입니다","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기입니다","headline":"Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기","image":"https://docs.3rdeyesys.com/images/database/ncp_database_mysql_backup_to_object_storage_02.jpg","url":"https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기 | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
 <link rel="stylesheet" href="/css/modern-business.css">
 <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
@@ -53,10 +56,11 @@
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
+<script src="/js/customscripts.js"></script>
 
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3rdeyesys" href="https://docs.3rdeyesys.com/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
 
 
 
@@ -78,6 +82,12 @@
                     easing: 'swing'
                 }
             });
+            
+            window_width = $(window).width();
+            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
+            {
+                $("#mysidebar").navgoco('toggle', false);
+            }
 
             $("#collapseAll").click(function(e) {
                 e.preventDefault();
@@ -112,6 +122,11 @@
         });
     </script>
     
+
+
+    <script>
+        new WOW().init();
+    </script>
 
 </head>
 <body>
@@ -193,7 +208,7 @@
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
 	<input type="submit" value="Search" style="display: none;">
-</form> </div>                                               
+</form></div>                                               
                     </div>                    
                     <!--end search-->
                 </li>
@@ -655,21 +670,21 @@
           
           
           
-          <li><a title="Mysql DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">Mysql DB 자동백업 방법</a></li>          
+          <li><a title="MySQL DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">MySQL DB 자동백업 방법</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">Mysql, mariadb my.cnf 위치</a></li>          
+          <li><a title="MySQL, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">MySQL, mariadb my.cnf 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">Mysql, mariadb bind-address 위치</a></li>          
+          <li><a title="MySQL, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">MySQL, mariadb bind-address 위치</a></li>          
                     
           
           
@@ -690,49 +705,70 @@
           
           
           
-          <li><a title="CentOS Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS Mysql Object Storage로 백업</a></li>          
+          <li><a title="CentOS MySQL Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS MySQL Object Storage로 백업</a></li>          
                     
           
           
           
           
           
-          <li class="active"><a title="Ubuntu Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu Mysql Object Storage로 백업</a></li>
+          <li class="active"><a title="Ubuntu MySQL Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu MySQL Object Storage로 백업</a></li>
                     
           
           
           
           
           
-          <li><a title="VPC 환경 Cloud DB for Mysql 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for Mysql 생성</a></li>          
+          <li><a title="VPC 환경 Cloud DB for MySQL 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for MySQL 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="Cloud DB Mysql Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB Mysql Public 도메인 접속</a></li>          
+          <li><a title="Cloud DB MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB MySQL Public 도메인 접속</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql(MARIADB) replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">Mysql(MARIADB) replication 생성</a></li>          
+          <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">Mysql DB root Password 설정, 변경</a></li>          
+          <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">Mysql 복구 시 ERROR 1227 해결</a></li>          
+          <li><a title="MySQL DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">MySQL DB root Password 설정, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="MySQL 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">MySQL 복구 시 ERROR 1227 해결</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">Cloud DB PostgreSQL 생성 | CentOS</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">Cloud DB PostgreSQL 생성 | Ubuntu</a></li>          
                     
           
           
@@ -1407,8 +1443,11 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
+
    <h1 class="post-title-main">Ubuntu에서 mysql DB를 Object Storage로 자동 백업하기</h1>
+
 </div>
+
 
 
 
@@ -1489,7 +1528,7 @@ find <span class="nv">$BACKUP_DIR</span> <span class="nt">-ctime</span> +7 <span
 <h2 id="pip-설치">pip 설치</h2>
 <p>aws cli를 설치하려면 pip가 먼저 설치되어 있어야 합니다.<br />
 혹시 이미 pip가 설치되어 있다면 아래에 있는 <a href="#awscliinstall">AWS CLI설치</a>로 바로 이동하시면 되겠습니다.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# apt-get <span class="nb">install </span>python-pip
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# apt <span class="nb">install </span>python-pip
 </code></pre></div></div>
 <div class="bs-callout bs-callout-danger bs-callout-level-1"><strong>CentOS 6.x</strong> 버전은 기술지원 종료로 인해 위 방법대로 설치가 되지 않습니다. 아래 문서의 방법대로 설치하면 됩니다.
 <br /><a href="/compute/ncloud_compute_server_pip_python_install_centos6.html" target="_blank" style="word-break:break-all;">CentOS6에서 pip - Python 설치하기</a></div>
@@ -1638,7 +1677,7 @@ postfix를 설치하면 해결된다는 이야기도 있는데 굳이 필요하�
         		
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-        <span>Page last updated:</span> 2021-10-08<br/> Site last generated: 2022-03-23 <br />
+        <span>Page last updated:</span> 2021-10-08<br/> Site last generated: 2022-04-15 <br />
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>

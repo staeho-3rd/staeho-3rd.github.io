@@ -138,6 +138,50 @@
 
 
 {
+"title": "VPC환경에서 Cloud DB for PostgreSQL 생성하기 | CentOS",
+"tags": "databaseclouddbvpc",
+"keywords": "Database, Postgre",
+"url": "/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "VPC환경에서 Cloud DB for PostgreSQL 생성하기 | Ubuntu",
+"tags": "databaseclouddbvpc",
+"keywords": "Database, Postgre",
+"url": "/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "MySQL GTID Replication 생성 상세 가이드",
+"tags": "databasebackupmysql",
+"keywords": "Database, 복제, Backup, 이중화, 고가용성, Master, Slave",
+"url": "/database/ncloud-database-mysql-gtid-replication.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Proxy Protocol을 이용해 Client IP 확인하기",
+"tags": "vpcload_balancer",
+"keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
+"url": "/networking/ncloud-networking-proxy-protocol-client-ip-logging.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Cloud Log Analytics 설정 가이드",
 "tags": "loganalytics",
 "keywords": "분석",
@@ -644,7 +688,7 @@
 
 
 {
-"title": "MYSQL(MARIADB) replication 생성하기",
+"title": "MYSQL(MARIADB) Replication 생성하기",
 "tags": "databasebackupmysqlmariadb",
 "keywords": "Database, 복제, Backup, 이중화, 고가용성, Master, Slave",
 "url": "/database/ncloud_database_mysql_mariadb_replication.html",
@@ -879,7 +923,7 @@
 "tags": "vpc",
 "keywords": "Virtual Private Cloud",
 "url": "/networking/ncloud_networking_vpc_peering_guide.html",
-"summary": "Ncloud에서 분리되어 있는 VPC간의 통신이 필요할때 사용할 수 있는 서비스 VPC Peering 생성 가이드입니다"
+"summary": ""
 }
 ,
 
@@ -1007,11 +1051,11 @@
 
 
 {
-"title": "네이버 클라우드 스토리지 비교",
+"title": "Ncloud 제공 스토리지 비교",
 "tags": "port",
 "keywords": "Storage",
 "url": "/storage/ncloud_storage_compare.html",
-"summary": "네이버 클라우드 스토리지 비교"
+"summary": ""
 }
 ,
 

@@ -6,25 +6,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다">
 <meta name="keywords" content=" frequently asked questions, FAQ, question and answer, Support">
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v4.2.1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="FAQ" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:description" content="Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/faq/faq.html" />
 <meta property="og:url" content="https://docs.3rdeyesys.com/faq/faq.html" />
-<meta property="og:site_name" content="3rdeyesys" />
+<meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="FAQ" />
 <script type="application/ld+json">
-{"headline":"FAQ","@type":"WebPage","url":"https://docs.3rdeyesys.com/faq/faq.html","description":"Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다","headline":"FAQ","url":"https://docs.3rdeyesys.com/faq/faq.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>FAQ | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
 <link rel="stylesheet" href="/css/modern-business.css">
 <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
@@ -51,10 +53,11 @@
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
+<script src="/js/customscripts.js"></script>
 
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3rdeyesys" href="https://docs.3rdeyesys.com/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
 
 
 
@@ -76,6 +79,12 @@
                     easing: 'swing'
                 }
             });
+            
+            window_width = $(window).width();
+            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
+            {
+                $("#mysidebar").navgoco('toggle', false);
+            }
 
             $("#collapseAll").click(function(e) {
                 e.preventDefault();
@@ -110,6 +119,11 @@
         });
     </script>
     
+
+
+    <script>
+        new WOW().init();
+    </script>
 
 </head>
 <body>
@@ -191,7 +205,7 @@
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
 	<input type="submit" value="Search" style="display: none;">
-</form> </div>                                               
+</form></div>                                               
                     </div>                    
                     <!--end search-->
                 </li>
@@ -271,8 +285,11 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
+
    <h1 class="post-title-main">FAQ</h1>
+
 </div>
+
 
 
 
@@ -651,7 +668,7 @@
         		
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-         Site last generated: 2022-03-23 <br />
+         Site last generated: 2022-04-15 <br />
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>

@@ -6,25 +6,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="NCloud Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법입니다">
 <meta name="keywords" content="cloud_functions, csharp,  Server, Lamda">
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v4.2.1" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:description" content="NCloud Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html" />
 <meta property="og:url" content="https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html" />
-<meta property="og:site_name" content="3rdeyesys" />
+<meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-12T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법" />
 <script type="application/ld+json">
-{"headline":"Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법","@type":"WebPage","url":"https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html","description":"NCloud Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법입니다","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"NCloud Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법입니다","headline":"Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법","url":"https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법 | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
 <link rel="stylesheet" href="/css/modern-business.css">
 <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
@@ -51,10 +54,11 @@
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
+<script src="/js/customscripts.js"></script>
 
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3rdeyesys" href="https://docs.3rdeyesys.com/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
 
 
 
@@ -76,6 +80,12 @@
                     easing: 'swing'
                 }
             });
+            
+            window_width = $(window).width();
+            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
+            {
+                $("#mysidebar").navgoco('toggle', false);
+            }
 
             $("#collapseAll").click(function(e) {
                 e.preventDefault();
@@ -110,6 +120,11 @@
         });
     </script>
     
+
+
+    <script>
+        new WOW().init();
+    </script>
 
 </head>
 <body>
@@ -191,7 +206,7 @@
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
 	<input type="submit" value="Search" style="display: none;">
-</form> </div>                                               
+</form></div>                                               
                     </div>                    
                     <!--end search-->
                 </li>
@@ -653,21 +668,21 @@
           
           
           
-          <li><a title="Mysql DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">Mysql DB 자동백업 방법</a></li>          
+          <li><a title="MySQL DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html">MySQL DB 자동백업 방법</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">Mysql, mariadb my.cnf 위치</a></li>          
+          <li><a title="MySQL, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html">MySQL, mariadb my.cnf 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">Mysql, mariadb bind-address 위치</a></li>          
+          <li><a title="MySQL, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html">MySQL, mariadb bind-address 위치</a></li>          
                     
           
           
@@ -688,49 +703,70 @@
           
           
           
-          <li><a title="CentOS Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS Mysql Object Storage로 백업</a></li>          
+          <li><a title="CentOS MySQL Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html">CentOS MySQL Object Storage로 백업</a></li>          
                     
           
           
           
           
           
-          <li><a title="Ubuntu Mysql Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu Mysql Object Storage로 백업</a></li>          
+          <li><a title="Ubuntu MySQL Object Storage로 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html">Ubuntu MySQL Object Storage로 백업</a></li>          
                     
           
           
           
           
           
-          <li><a title="VPC 환경 Cloud DB for Mysql 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for Mysql 생성</a></li>          
+          <li><a title="VPC 환경 Cloud DB for MySQL 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html">VPC 환경 Cloud DB for MySQL 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="Cloud DB Mysql Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB Mysql Public 도메인 접속</a></li>          
+          <li><a title="Cloud DB MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html">Cloud DB MySQL Public 도메인 접속</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql(MARIADB) replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">Mysql(MARIADB) replication 생성</a></li>          
+          <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">Mysql DB root Password 설정, 변경</a></li>          
+          <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>          
                     
           
           
           
           
           
-          <li><a title="Mysql 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">Mysql 복구 시 ERROR 1227 해결</a></li>          
+          <li><a title="MySQL DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html">MySQL DB root Password 설정, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="MySQL 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html">MySQL 복구 시 ERROR 1227 해결</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">Cloud DB PostgreSQL 생성 | CentOS</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">Cloud DB PostgreSQL 생성 | Ubuntu</a></li>          
                     
           
           
@@ -1405,8 +1441,11 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
+
    <h1 class="post-title-main">Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법</h1>
+
 </div>
+
 
 
 
@@ -1660,14 +1699,14 @@ $("#toc_onoff").click(function() {
 <h2 id="오류-메시지">오류 메시지</h2>
 <p>위의 순서대로 진행을 하면 문제 없이 사용 가능한데, 이미 다른 방법으로 진행해보면서 오류 메시지를 경험하는 경우도 있을 듯하여 가장 많이 겪게 되는 오류 상황 2가지를 정리해보겠습니다.</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Main 함수 이름 입력 오류:</b> 액션 Main 함수 이름을 올바르게 입력하지 않으면 다음과 같은 오류 메시지가 나타납니다.<br /><br />“error” : “main required format is \“Assembly::Type::Function\”.”</div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b>Main 함수 이름 입력 오류:</b> 액션 Main 함수 이름을 올바르게 입력하지 않으면 다음과 같은 오류 메시지가 나타납니다.<br /><br />“error” : “main required format is \“Assembly::Type::Function\”.”</div>
 
 <figure><img class="docimage" src="/images/compute/cloud_functions/ncp_server_cloud_functions_dotnet_csharp_vs_30.jpg" alt="Ncloud Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법" style="width: 850px; max-width: 100%" /><figcaption></figcaption></figure>
 
 <p>상단에 설명한 [CF Action 생성] - [옵션 설정]에서 <a href="#mainFunctionNameRule">Main 함수 입력하는 부분</a>을 참고하셔서 정확하게 입력하시면 문제가 해결됩니다.</p>
 
 <p><br /></p>
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>.Net 대상 프레임워크 오류:</b> 네이버 클라우드 Cloud Functions은 .Net Standard 2.0 규약을 지원하고 있습니다.<br />
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b>.Net 대상 프레임워크 오류:</b> 네이버 클라우드 Cloud Functions은 .Net Standard 2.0 규약을 지원하고 있습니다.<br />
 그런데 이 대상 프레임워크가 맞지 않으면 다음과 같은 오류 메시지가 나타납니다.<br /><br />“error” : “Unable to locate requested type (\“CloudFunctionsTestVisualStudio.Hello\”).”</div>
 
 <figure><img class="docimage" src="/images/compute/cloud_functions/ncp_server_cloud_functions_dotnet_csharp_vs_31.jpg" alt="Ncloud Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법" style="width: 850px; max-width: 100%" /><figcaption></figcaption></figure>
@@ -1724,7 +1763,7 @@ $("#toc_onoff").click(function() {
         		
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
-        <span>Page last updated:</span> 2021-03-12<br/> Site last generated: 2022-03-23 <br />
+        <span>Page last updated:</span> 2021-03-12<br/> Site last generated: 2022-04-15 <br />
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>
