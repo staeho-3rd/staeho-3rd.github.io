@@ -171,17 +171,6 @@
 
 
 {
-"title": "Proxy Protocol을 이용해 Client IP 확인하기",
-"tags": "vpcload_balancer",
-"keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
-"url": "/networking/ncloud-networking-proxy-protocol-client-ip-logging.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "Cloud Log Analytics 설정 가이드",
 "tags": "loganalytics",
 "keywords": "분석",

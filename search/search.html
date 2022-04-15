@@ -53,7 +53,7 @@
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
-<script src="/js/customscripts.js"></script>
+
 
 <link rel="shortcut icon" href="/images/favicon.ico">
 
@@ -1683,21 +1683,6 @@
 						"categories": "",
 						"url": " /database/ncloud-database-mysql-gtid-replication.html",
 						"content": "GTID 란?\nGTID는 Global Transaction Identifier의 약자로 MySQL 복제에서 서버의 각 트랜잭션을 구분하는 고유한 식별자입니다. \nGTID는 모든 트랜잭션과 1:1 관계이며, GTID를 활용하면 복제본으로 장애 조치, 계층적 복제, 특정 시점으로 백업 복구하는 등의 작업을 더 쉽게 구현할 수 있으며, 오류 발생 빈도도 줄일 수 있습니다.\n\nGTID 구성\nGTID는 source_id:transaction_id의 형태로 저장됩니다.\n\n  예시: 2070b9863-4c88-72ef-9fa053db4612:1-12\n\n\nsource_id\n여기서 source_id는 서버의 uuid이며 다음의 방법으로 확인할 수 있습니다.\n\nmysql&gt; SELECT @@server_uuid;\n\n\n\n\n테스트 환경\n\n\n⁃ CentOS 7.8\n⁃ MySQL 5.7\n⁃ Master Server IP: 10.0.0.6\n⁃ Slave Server IP: 10.0.0.7\n⁃ VPC 대역: 10.0.0.0/16\n⁃ Subnet 대역: 10.0.0.0/24\n⁃ ACG: test3-vpc-default-acg\n\n\n파라미터 설정\nMaster 서버와 Slave 서버에 각각 파라미터를 설정합니다.\n\n# Master, Slave \n~# vi /etc/my.cnf\n\n\nMaster 서버\n\n# Master \n[mysqld]\nserver-id=1\nlog-bin=binlog\ngtid-mode=ON\nenforce-gtid-consistency=ON\nlog_slave_updates=ON\n\n\n\n\nSlave 서버\n\n# Slave\n[mysqld]\nserver-id=2\nlog-bin=binlog\ngtid-mode=ON\nenforce-gtid-consistency=ON\nlog_slave_updates=ON\n\n\n\n\ngtid_mode 상태 확인\n위 설정 변경 후 mysql DB를 재시작하고 Master와 Slave모두 gtid_mode가 ON상태인지 확인합니다.\n# Master, Slave \n~# systemctl restart mysqld\n\n/* Master, Slave */\nmysql&gt; show variables like '%gtid_mode%';\n\n\nMaster 서버\n\n\nSlave 서버\n\n\nReplication 전용 유저 생성\nMaster 서버에서 Replication 전용 유저를 생성합니다.\n\n/* Master */\nmysql&gt; create user '3rd'@'%' identified by 'Test123$';\nmysql&gt; grant replication slave,replication client on *.* to '3rd'@'%';\nmysql&gt; flush privileges;\nmysql&gt; SELECT user,host,authentication_string FROM mysql.user;\n\n\n\n\n테스트용 DB 생성\n테스트에 사용할 database를 생성합니다.\n\n/* Master */\nmysql&gt; CREATE DATABASE testdb default CHARACTER SET UTF8;\nmysql&gt; show databases;\n\n\n\n\n백업 파일 생성\nMaster 서버에서 백업 파일을 생성합니다.\n\n백업 디렉터리 생성\n\n# Master\n~# mkdir /root/db_backup\n\n\nmysqldump 명령으로 백업 파일 생성\n# Master \n~# mysqldump -u root -p -v --databases testdb \\\n--quick --single-transaction --routines --set-gtid-purged=ON \\\n--triggers --extended-insert --master-data=2 &gt; /root/db_backup/testdb.sql\n\n\n\n\n백업 파일 복사\n백업 파일을 Slave 서버로 복사하기 위해 Master 와 Slave 서버 모두 rsync를 설치합니다.\n(백업 파일 복사는 rsync를 사용하지 않고 다른 방법을 사용해도 됩니다.)\n\n~# yum -y install rsync\n\nMaster 서버\n\n\nSlave 서버\n\n\nACG (방화벽) 설정\n이제 Master, Slave 두 서버간에 동기화, 복제가 가능하도록 ACG (방화벽)를 설정합니다.\n두 서버를 설치할 때 사용하도록 설정한 ACG는 test3-vpc-default-acg이기에 해당 ACG를 선택하고, ACG 규칙 설정에서 접근소스에는 Subnet의 IP 대역인 10.0.0.0/24, 허용포트는 22, 3306를 입력하고 추가합니다.\n\n  접근소스: 10.0.0.0/24\n  허용포트 22: rsync 사용을 위한 포트\n  허용포트 3306: Replication을 위한 포트\n\n\n\n\n 접근 소스: 여기서는 테스트를 위해 접근소스에 Subnet IP 전체 대역을 지정했지만, 실제 서비스 환경에서는 해당 Subnet에 DB서버 외에 다른 서버들이 존재하는 경우도 있을 수 있으므로 각 DB서버 IP만 지정하는 것이 보안 측면에서는 더욱 안전할 수 있습니다.\n\n백업 파일 전송\nMaster -&gt; Slave로 DB 백업 파일을 전송합니다.\n전송 과정에서 정말 전송할 것인지 확인하는 단계와 Slave 서버의 root 패스워드를 확인하는 단계가 있습니다.\n\n# rsync -avzr --progress testdb.sql root@슬레이브서버IP:~/\n\n~# cd db_backup/\n~# rsync -avzr --progress testdb.sql root@10.0.0.7:~/\n\n\n\n\nSlave 서버에서 DB 복원\nrsync로 전송 받은 DB 백업 파일을 실행해서 DB를 복원합니다.\n\n/* Slave */\nmysql&gt; source testdb.sql;\n\n\n\n\nReplication 설정\nSlave 서버에서 Replication을 설정합니다.\n\n/* Slave \nmysql&gt; CHANGE MASTER TO MASTER_HOST='Master 서버 IP',\nMASTER_USER='Replication 계정',MASTER_PASSWORD='Replication 계정 비번', \nMASTER_AUTO_POSITION=1;\n*/\n\nmysql&gt; CHANGE MASTER TO MASTER_HOST='101.0.0.6',\nMASTER_USER='3rd',MASTER_PASSWORD='Test123$', \nMASTER_AUTO_POSITION=1;\n\nmysql&gt; start slave;\n\n\n\n\nReplication 대기 상태 확인\nSlave 서버에서 Replication 상태가 어떤지 확인합니다.\n아래 명령어를 실행해보면 Master에서의 이벤트 전송을 대기 중이라는 메시지와 Master 서버의 정보를 확인할 수 있습니다.\n\n/* Slave */\nmysql&gt; show slave status \\G\n\n\n\nReplication 테스트\nMaster 서버에서 테스트용 테이블을 생성하고, 데이터를 입력한 후 Slave 서버에도 복제가 되었는지 확인합니다.\n\nMaster 서버에 테스트용 데이터 입력\n/* Master */\nmysql&gt; use testdb;\nmysql&gt; create table 3rd (\n    no int(10) auto_increment , \n    name varchar(10), \n    primary key(no));\nmysql&gt; insert into 3rd values(1,'3rd');\nmysql&gt; commit;\nmysql&gt; select * from 3rd;\n\n\n\n\nSlave 서버에서 복제 확인\n/* Slave */\nmysql&gt; use testdb;\nmysql&gt; select * from 3rd;\n\n\n\n\n추가 테스트\n추가로 데이터를 다시 입력해보면 정상적으로 복제가 되는 것을 확인할 수 있습니다.\n\nMaster 서버\n\n\nSlave 서버\n\n\n오류 상황\nMaster 서버에서 데이터를 입력해도 Slave 서버에 제대로 복제되지 않는 등 Replication 기능에 문제가 생겼을 때에는 \n위쪽에서도 사용했었던 다음 명령어로 Replication 상태를 확인해봅니다.\n\n/* Slave */\nmysql&gt; show slave status \\G\n\n\n혹시 Slave_IO_State: Connecting to master 등의 Master 서버에 연결하지 못한다는 메시지가 보이는 경우 ACG (방화벽) 설정에 문제가 있는 것이니\n위쪽에서 설정했던 ACG (방화벽) 설정 을 다시 한번 확인해보시기 바랍니다.\n\n Slave_IO_State: Connecting to master\n\n Slave_IO_Running: Connecting\n\n\n\n참고 URL\n\n  GTID를 이용한 Mysql 복제 가이드\n    \n      https://dev.mysql.com/doc/refman/5.7/en/replication-gtids.html"
-					}
-					
-				
-			
-		
-			
-				
-					,
-					
-					"networking-ncloud-networking-proxy-protocol-client-ip-logging-html": {
-						"id": "networking-ncloud-networking-proxy-protocol-client-ip-logging-html",
-						"title": "Proxy Protocol을 이용해 Client IP 확인하기",
-						"categories": "",
-						"url": " /networking/ncloud-networking-proxy-protocol-client-ip-logging.html",
-						"content": "개요\nNcloud Load Balancer는 HTTP, HTTPS, TCP, SSL 이렇게 4가지의 프로토콜을 지원합니다.\n그런데, Load Balancer를 사용하면서 Client IP를 확인하려고 할 때 http, https 통신의 경우 X-Forwarded-For 헤더값이 지원되기에 Client IP를 확인할 수 있지만, \nTCP 통신의 경우 X-Forwarded-For 헤더를 사용할 수 없기에 Client IP를 확인하기 위해서는 Proxy Protocol 옵션을 활성화 시켜야 합니다.\n\n여기서는 Ncloud Network Proxy Load Balancer에서 TCP 프로토콜을 사용하면서 Proxy Protocol 옵션을 활성화시켜 Client IP를 기록하는 방법을 소개하겠습니다.\n\n테스트 환경\n\n  VPC 환경\n  CentOs 7.8\n  Ubuntu 18.04\n  Apache 2.4.6\n  Network Proxy Load Balancer\n  Protocol/Port: TCP/80\n\n\n서버 설치\n서버를 생성하고 Apache 웹서버와 개발용 추가 모듈이 포함된 httpd-devel 패키지를 설치합니다.\n\nCentOS\n~# yum -y install httpd httpd-devel\n\n\nUbuntu\n~# apt update\n~# apt -y install apache2 apache2-dev\n\n\n서버 생성 관련 가이드는 아래의 링크를 참고합니다.\n\n서버생성\n\n아파치 웹 서버에 다음과 같이 간단한 웹 페이지를 만들었습니다.\n\n\n\n타겟그룹 설정\n\n타겟그룹을 생성합니다.\n\n\n\n프로토콜을 PROTXY_TCP로 설정해주고\n\n포트는 80 으로 설정하겠습니다.\n\n\n\n사용할 웹 서버를 적용타겟으로 이동시키고 타겟그룹을 생성합니다.\n\nNetwork proxy loadbalncer 생성\n\n\n\n\n\nLoad Balancer 콘솔 탭에서 네트워크 프록시 로드밸런서를 선택합니다.\n\n\n\n생성 옵션을 설정 한 후 \n\n\n\n로드밸런서의 리스너는 TCP/80 을 추가합니다.\n\n\n\n생성해둔 타겟그룹을 선택하고 다음을 누르고 이어서 로드 밸런서 생성 클릭하여 완료합니다.\n\n\n\n생성된 로드밸런서의 주소로 접속을 하면 웹서버가 정상작동하는 것을 확인 할 수 있습니다.\n\n\n\n웹서버로 접속하여 /var/log/httpd/access_log 파일을 확인하면 접속 로그에 로드밸런서의 IP가 로깅 되고 있는 것을 확인 할 수 있습니다.\n\n이를 실제 Client IP가 로깅 되도록 하겠습니다.\n\nProxy protocol 설정\n\n\n\n타겟그룹 탭으로 들어가 앞에서 만들어 놓은 타겟그룹의 체크후 타겟그룹설정 버튼을 클릭하여 설정에 들어갑니다.\n\n\n\nproxy protocol 항목을 체크표시 하여 활성화 시켜 줍니다.\n\n\n\n체크 뒤 로드밸런서의 주소로 접속을 시도하면 Bad Request가 나옵니다.\n\n페이지를 정상적으로 나오게 하려면 웹 서버에서 아래의 과정을 진행 해야 합니다.\n\nApache 설정\n\n아파치가 설치되어 있는 서버로 들어가\n\n아파치 모듈(mod_myfixip.c)를 다운로드 받습니다.\n\nwget --no-check-certificate https://raw.githubusercontent.com/ggrandes/apache24-modules/master/mod_myfixip.c\n\n\n이어서 /{아파치가설치된경로}/bin/apxs -c -i mod_myfixip.c 명령어로 설치를 실행합니다.\n\nex)\n/usr/bin/apxs -c -i mod_myfixip.c\n\n\n모듈의 설치가 완료되면 httpd.conf로 들어가 맨밑에 설정을 추가합니다.\n\nex)\nLoadModule myfixip_module modules/mod_myfixip.so\n\n&lt;IfModule mod_myfixip.c&gt;\nRewriteIPResetHeader off\nRewriteIPAllow 10.31.0.0/16  #LB IP 대역으로 설정 (e.g. LB IP가 125.209.197.92인 경우 125.209.0.0/16)\n&lt;/IfModule&gt;\n\n\n실제적용시)\nLoadModule myfixip_module modules/mod_myfixip.so\n\n&lt;IfModule mod_myfixip.c&gt;\nRewriteIPResetHeader off\nRewriteIPAllow 192.168.0.0/16 \n&lt;/IfModule&gt;\n\n\nUbuntu\napxs2 -c -i mod_myfixip.c\nAfter:\n\nvi /etc/apache2/mods-available/myfixip.load\nLoadModule myfixip_module /usr/lib/apache2/modules/mod_myfixip.so\nvi /etc/apache2/mods-available/myfixip.conf\n&lt;IfModule mod_myfixip.c&gt;\n        RewriteIPResetHeader off\n        RewriteIPAllow 10.0.0.0/16\n&lt;/IfModule&gt;\n# vim: syntax=apache ts=4 sw=4 sts=4 sr noet\nAnd finally:\n\na2enmod myfixip\nsystemctl restart apache2\n\n\n\n\n\nApache를 재시작 후 로드밸런서의 주소로 접속을 해보면 정상적으로 페이지가 나타납니다.\n\n\n\n웹서버의 /var/log/http/access_log 파일에서 실제 Client IP 가 로깅 되는 것을 확인 할 수가 있습니다.\n\n참고URL\n\nProxy Protocol 설정하기:\n\n  https://guide.ncloud-docs.com/docs/networking-loadbalancer-targetgroupconsole#proxy-protocol-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0"
 					}
 					
 				
@@ -3361,19 +3346,18 @@
 
 
 
-        </div>        
-   
-    <!-- /.row -->        
-    </div>
+        </div>
+    <!-- /.row -->
+</div>
 
-        <div class="side-bar-right">    
+    <div class="side-bar-right">    
     <a href="https://hyphen.im/benefit/view?seq=31" target="_blank" class="no_icon"><img src="/images/slider/banner.jpg"></a>
 </div>  
-        
-  <!-- /.container -->
-  </div>
-<!-- /#main -->
+
+<!-- /.container -->
 </div>
+<!-- /#main -->
+    </div>
 <script>
     $(function() {
         $('svg').click(function() {
