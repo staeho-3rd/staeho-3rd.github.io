@@ -1491,15 +1491,15 @@ img.docimage{
   clear: both;
 }
 
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+display: block;
+width:100%;  
+height: 250px;
+}
+
 @media screen and (max-width: 990px)
 {
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-    display: block;
-    width:100%;  
-    height: 100px;
-    }
-
     .hidden-xs-desktop {
         display: none !important;
     }
@@ -1507,13 +1507,6 @@ img.docimage{
 
 @media screen and (min-width: 991px)
 {
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-    display: block;
-    width:100%;  
-    height: 250px;
-    }
-
     .hidden-xs-mobile {
         display: none !important;
     }
