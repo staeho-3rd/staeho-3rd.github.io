@@ -1520,7 +1520,12 @@ height: 250px;
 
 .carousel-indicators li.active{border-radius:0px;width:32px;height:5px;margin:0 5px;background-color:fff;opacity:1;border:none;transition:all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-webkit-transition:all 0.4s ease-in-out;-o-transition:all 0.4s ease-in-out}
 
-.side-bar-right{
+.carousel-title {
+    font-size: 30px;
+}
+.carousel-title a { color:#FFF; text-decoration:none}
+
+.side-banner-right{
     position:fixed;
     top:100px;
     right:50px;
@@ -1529,7 +1534,7 @@ height: 250px;
 
 @media screen and (max-width: 1650px)
 {
-    .side-bar-right{
+    .side-banner-right{
         display:none;
     }
 }
