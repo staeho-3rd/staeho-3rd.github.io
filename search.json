@@ -171,6 +171,28 @@
 
 
 {
+"title": "Proxy Protocol을 이용해 Client IP 확인하기 | CentOS",
+"tags": "vpcload_balancerproxy",
+"keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
+"url": "/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu",
+"tags": "vpcload_balancerproxy",
+"keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
+"url": "/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Cloud Log Analytics 설정 가이드",
 "tags": "loganalytics",
 "keywords": "분석",
@@ -208,7 +230,7 @@
 "tags": "apiphp",
 "keywords": "API",
 "url": "/api/ncloud_api_call_php_sample.html",
-"summary": "PHP로 Ncloud API를 호출하는 샘플 예제"
+"summary": ""
 }
 ,
 
@@ -1040,7 +1062,7 @@
 
 
 {
-"title": "Ncloud 제공 스토리지 비교",
+"title": "Ncloud에서 제공하는 스토리지들의 요금과 특징 비교",
 "tags": "port",
 "keywords": "Storage",
 "url": "/storage/ncloud_storage_compare.html",
