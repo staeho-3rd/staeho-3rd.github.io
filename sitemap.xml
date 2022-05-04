@@ -3,155 +3,10 @@
   
   
   
-  
   <url>
-    <loc>https://docs.3rdeyesys.com/aws/aws_cloud_watch_log.html</loc>
+    <loc>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html</loc>
   
-    <lastmod>2020-11-05T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/aws/aws_s3_lifecycle_management.html</loc>
-  
-    <lastmod>2021-09-16T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_base_theme_customizing.html</loc>
-  
-    <lastmod>2021-02-23T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_documentation_theme_install.html</loc>
-  
-    <lastmod>2022-03-04T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_documentation_theme_page_create_guide.html</loc>
-  
-    <lastmod>2022-03-07T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_install.html</loc>
-  
-    <lastmod>2021-01-04T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_mkdocs_install.html</loc>
-  
-    <lastmod>2020-11-30T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_pdf_merge_php_sample.html</loc>
-  
-    <lastmod>2021-05-03T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_php_to_telegram_message_send.html</loc>
-  
-    <lastmod>2021-11-10T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_phpspreadsheet_sample_code.html</loc>
-  
-    <lastmod>2021-04-03T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/etc/etc_smtp_auth_to_google_gmail_account.html</loc>
-  
-    <lastmod>2021-03-15T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/faq/faq.html</loc>
-    
-  
-    <priority>0.5</priority>
-   
-  </url>
-  
-  
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</loc>
-  
-    <lastmod>2022-04-06T00:00:00+09:00</lastmod>
+    <lastmod>2022-05-03T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -163,7 +18,103 @@
   <url>
     <loc>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html</loc>
   
-    <lastmod>2022-04-06T00:00:00+09:00</lastmod>
+    <lastmod>2022-04-27T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</loc>
+  
+    <lastmod>2022-04-27T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html</loc>
+  
+    <lastmod>2022-04-26T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html</loc>
+  
+    <lastmod>2022-04-26T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html</loc>
+  
+    <lastmod>2022-04-25T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</loc>
+  
+    <lastmod>2022-04-25T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/dev-tools/ncloud-dev-tools-source-commit-external-repository-copy.html</loc>
+  
+    <lastmod>2022-04-20T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html</loc>
+  
+    <lastmod>2022-04-19T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html</loc>
+  
+    <lastmod>2022-04-18T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -185,9 +136,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html</loc>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_guide.html</loc>
   
-    <lastmod>2022-04-12T00:00:00+09:00</lastmod>
+    <lastmod>2022-04-08T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -197,9 +148,141 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html</loc>
+    <loc>https://docs.3rdeyesys.com/management/ncloud_management_webservice_monitoring_system_step_guide.html</loc>
   
-    <lastmod>2022-04-12T00:00:00+09:00</lastmod>
+    <lastmod>2022-03-16T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/management/ncloud_management_webservice_monitoring_system_guide.html</loc>
+  
+    <lastmod>2022-03-15T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_documentation_theme_page_create_guide.html</loc>
+  
+    <lastmod>2022-03-07T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_documentation_theme_install.html</loc>
+  
+    <lastmod>2022-03-04T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_http_to_https.html</loc>
+  
+    <lastmod>2022-03-02T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/api/ncloud_api_call_python_sample.html</loc>
+  
+    <lastmod>2022-02-24T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_windows_storage_add_detail_process.html</loc>
+  
+    <lastmod>2022-02-17T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</loc>
+  
+    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/management/ncloud_management_classic_monitoring_guide.html</loc>
+  
+    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html</loc>
+  
+    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.8</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html</loc>
+  
+    <lastmod>2021-12-28T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_application_lb.html</loc>
+  
+    <lastmod>2021-12-17T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -221,9 +304,537 @@
   
   
   <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html</loc>
+  
+    <lastmod>2021-12-13T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
     <loc>https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_info.html</loc>
   
     <lastmod>2021-12-07T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/management/ncloud_management_classic_vs_vpc_guide.html</loc>
+  
+    <lastmod>2021-12-03T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html</loc>
+  
+    <lastmod>2021-12-02T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_peering_guide.html</loc>
+  
+    <lastmod>2021-11-25T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_archive_storage_cli_windows_guide.html</loc>
+  
+    <lastmod>2021-11-19T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_archive_storage_api_get_container_by_php.html</loc>
+  
+    <lastmod>2021-11-17T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_archive_storage_api_access_token_create.html</loc>
+  
+    <lastmod>2021-11-11T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/etc/etc_php_to_telegram_message_send.html</loc>
+  
+    <lastmod>2021-11-10T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/security/ncloud_security_ssl_vpn_vpc_guide.html</loc>
+  
+    <lastmod>2021-11-02T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/security/ncloud_security_ssl_vpn_classic_guide.html</loc>
+  
+    <lastmod>2021-10-27T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_repository_change_on_private_network.html</loc>
+  
+    <lastmod>2021-10-25T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/management/ncloud_management_cloud_insight_guide.html</loc>
+  
+    <lastmod>2021-10-18T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_cyberduck.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_aws_cli_connect.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_centos.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_s3browser.html</loc>
+  
+    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_classic_guide.html</loc>
+  
+    <lastmod>2021-09-16T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/aws/aws_s3_lifecycle_management.html</loc>
+  
+    <lastmod>2021-09-16T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/security/ncloud_security_ssl_dcv_method.html</loc>
+  
+    <lastmod>2021-09-09T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/management/ncloud_management_sub_account_guide.html</loc>
+  
+    <lastmod>2021-08-19T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_root_password_set_update_guide.html</loc>
+  
+    <lastmod>2021-08-05T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_nas_vpc_guide.html</loc>
+  
+    <lastmod>2021-07-27T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_kubernetes_service_start_guide.html</loc>
+  
+    <lastmod>2021-07-12T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_natgw_routetb.html</loc>
+  
+    <lastmod>2021-07-09T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_storage_lvm_create.html</loc>
+  
+    <lastmod>2021-07-06T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_spec_change.html</loc>
+  
+    <lastmod>2021-07-02T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_limit.html</loc>
+  
+    <lastmod>2021-07-01T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/media/ncloud_media_video_player_sample.html</loc>
+  
+    <lastmod>2021-06-15T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_auto_backup.html</loc>
+  
+    <lastmod>2021-06-11T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_storage_add_detail_process.html</loc>
+  
+    <lastmod>2021-06-04T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_lifecycle_management.html</loc>
+  
+    <lastmod>2021-06-02T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html</loc>
+  
+    <lastmod>2021-05-31T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_image_share_classic.html</loc>
+  
+    <lastmod>2021-05-31T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_ssh_security_setting.html</loc>
+  
+    <lastmod>2021-05-27T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_global_dns_guide.html</loc>
+  
+    <lastmod>2021-05-27T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/application-service/ncloud_application_service_papago_korean_name_romanizer_php_sample.html</loc>
+  
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/application-service/ncloud_application_service_cloud_outbound_mailer_bulk_mail_send.html</loc>
+  
+    <lastmod>2021-05-12T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/etc/etc_pdf_merge_php_sample.html</loc>
+  
+    <lastmod>2021-05-03T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/application-service/ncloud_application_service_nshorturl_php_sample.html</loc>
+  
+    <lastmod>2021-04-30T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/security/ncloud_security_service_summary.html</loc>
+  
+    <lastmod>2021-04-26T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_mariadb_replication.html</loc>
+  
+    <lastmod>2021-04-13T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html</loc>
+  
+    <lastmod>2021-04-12T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -257,105 +868,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/api/ncloud_api_call_python_sample.html</loc>
+    <loc>https://docs.3rdeyesys.com/etc/etc_phpspreadsheet_sample_code.html</loc>
   
-    <lastmod>2022-02-24T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/application-service/ncloud_application_service_cloud_outbound_mailer_bulk_mail_send.html</loc>
-  
-    <lastmod>2021-05-12T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/application-service/ncloud_application_service_nshorturl_php_sample.html</loc>
-  
-    <lastmod>2021-04-30T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/application-service/ncloud_application_service_papago_korean_name_romanizer_php_sample.html</loc>
-  
-    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_classic_guide.html</loc>
-  
-    <lastmod>2021-09-16T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_event_setting.html</loc>
-  
-    <lastmod>2021-01-19T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_limit.html</loc>
-  
-    <lastmod>2021-07-01T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html</loc>
-  
-    <lastmod>2021-03-09T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html</loc>
-  
-    <lastmod>2021-03-12T00:00:00+09:00</lastmod>
+    <lastmod>2021-04-03T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -377,9 +892,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_kubernetes_service_start_guide.html</loc>
+    <loc>https://docs.3rdeyesys.com/etc/etc_smtp_auth_to_google_gmail_account.html</loc>
   
-    <lastmod>2021-07-12T00:00:00+09:00</lastmod>
+    <lastmod>2021-03-15T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -389,9 +904,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lamp_config_basic.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html</loc>
   
-    <lastmod>2020-12-03T00:00:00+09:00</lastmod>
+    <lastmod>2021-03-12T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -401,9 +916,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lamp_config_centos.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html</loc>
   
-    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
+    <lastmod>2021-03-09T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -413,9 +928,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lamp_config_ubuntu.html</loc>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_mariadb_config_bind_address.html</loc>
   
-    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
+    <lastmod>2021-02-24T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -425,9 +940,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</loc>
+    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_base_theme_customizing.html</loc>
   
-    <lastmod>2022-01-18T00:00:00+09:00</lastmod>
+    <lastmod>2021-02-23T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -437,261 +952,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_connect_by_public_ip.html</loc>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_mariadb_config_my_cnf.html</loc>
   
-    <lastmod>2020-12-22T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_connect_no_public_ip.html</loc>
-  
-    <lastmod>2020-12-21T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_http_to_https_centos.html</loc>
-  
-    <lastmod>2020-12-09T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_http_to_https_ubuntu.html</loc>
-  
-    <lastmod>2020-12-09T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_image_share_classic.html</loc>
-  
-    <lastmod>2021-05-31T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_micro_type_limit.html</loc>
-  
-    <lastmod>2021-01-09T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_pip_python_install_centos6.html</loc>
-  
-    <lastmod>2021-01-26T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_repository_change_on_private_network.html</loc>
-  
-    <lastmod>2021-10-25T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_spec_change.html</loc>
-  
-    <lastmod>2021-07-02T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_ssh_security_setting.html</loc>
-  
-    <lastmod>2021-05-27T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_stop_price.html</loc>
-  
-    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_storage_add_detail_process.html</loc>
-  
-    <lastmod>2021-06-04T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_storage_add_guide.html</loc>
-  
-    <lastmod>2020-11-19T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_storage_lvm_create.html</loc>
-  
-    <lastmod>2021-07-06T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_vpc_create.html</loc>
-  
-    <lastmod>2021-01-12T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html</loc>
-  
-    <lastmod>2021-05-31T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_windows_storage_add_detail_process.html</loc>
-  
-    <lastmod>2022-02-17T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html</loc>
-  
-    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.8</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html</loc>
-  
-    <lastmod>2021-12-02T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_guide.html</loc>
-  
-    <lastmod>2022-04-08T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html</loc>
-  
-    <lastmod>2021-12-13T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_compare.html</loc>
-  
-    <lastmod>2021-01-26T00:00:00+09:00</lastmod>
+    <lastmod>2021-02-22T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -725,9 +988,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_auto_backup.html</loc>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_required_service.html</loc>
   
-    <lastmod>2021-06-11T00:00:00+09:00</lastmod>
+    <lastmod>2021-02-16T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -737,9 +1000,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_mariadb_config_bind_address.html</loc>
+    <loc>https://docs.3rdeyesys.com/database/ncloud_database_compare.html</loc>
   
-    <lastmod>2021-02-24T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-26T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -749,9 +1012,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_mariadb_config_my_cnf.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_pip_python_install_centos6.html</loc>
   
-    <lastmod>2021-02-22T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-26T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -761,9 +1024,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_mariadb_replication.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_event_setting.html</loc>
   
-    <lastmod>2021-04-13T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-19T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -773,141 +1036,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_centos.html</loc>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_service_port_info.html</loc>
   
-    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html</loc>
-  
-    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/database/ncloud_database_mysql_root_password_set_update_guide.html</loc>
-  
-    <lastmod>2021-08-05T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/management/ncloud_management_classic_monitoring_guide.html</loc>
-  
-    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/management/ncloud_management_classic_vs_vpc_guide.html</loc>
-  
-    <lastmod>2021-12-03T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/management/ncloud_management_cloud_insight_guide.html</loc>
-  
-    <lastmod>2021-10-18T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html</loc>
-  
-    <lastmod>2021-12-28T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/management/ncloud_management_sub_account_guide.html</loc>
-  
-    <lastmod>2021-08-19T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/management/ncloud_management_webservice_monitoring_system_guide.html</loc>
-  
-    <lastmod>2022-03-15T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/management/ncloud_management_webservice_monitoring_system_step_guide.html</loc>
-  
-    <lastmod>2022-03-16T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/media/ncloud_media_video_player_sample.html</loc>
-  
-    <lastmod>2021-06-15T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_global_dns_guide.html</loc>
-  
-    <lastmod>2021-05-27T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -929,9 +1060,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_application_lb.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_vpc_create.html</loc>
   
-    <lastmod>2021-12-17T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-12T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -941,9 +1072,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_http_to_https.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_micro_type_limit.html</loc>
   
-    <lastmod>2022-03-02T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-09T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -953,9 +1084,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_natgw_routetb.html</loc>
+    <loc>https://docs.3rdeyesys.com/etc/etc_jekyll_install.html</loc>
   
-    <lastmod>2021-07-09T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-04T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -965,9 +1096,81 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_service_port_info.html</loc>
+    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_compare.html</loc>
   
-    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+    <lastmod>2020-12-28T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_connect_by_public_ip.html</loc>
+  
+    <lastmod>2020-12-22T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_connect_no_public_ip.html</loc>
+  
+    <lastmod>2020-12-21T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_http_to_https_ubuntu.html</loc>
+  
+    <lastmod>2020-12-09T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_http_to_https_centos.html</loc>
+  
+    <lastmod>2020-12-09T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lamp_config_basic.html</loc>
+  
+    <lastmod>2020-12-03T00:00:00+09:00</lastmod>
+    
+  
+    <priority>0.7</priority>
+   
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://docs.3rdeyesys.com/security/ncloud_security_onpremise_compare.html</loc>
+  
+    <lastmod>2020-12-02T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1001,30 +1204,6 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_overview.html</loc>
-  
-    <lastmod>2020-11-30T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_peering_guide.html</loc>
-  
-    <lastmod>2021-11-25T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
     <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_subnet_natgw.html</loc>
   
     <lastmod>2020-12-01T00:00:00+09:00</lastmod>
@@ -1037,9 +1216,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</loc>
+    <loc>https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_overview.html</loc>
   
-    <lastmod>2021-12-29T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-30T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1049,93 +1228,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/security/ncloud_security_onpremise_compare.html</loc>
+    <loc>https://docs.3rdeyesys.com/etc/etc_mkdocs_install.html</loc>
   
-    <lastmod>2020-12-02T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/security/ncloud_security_service_summary.html</loc>
-  
-    <lastmod>2021-04-26T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/security/ncloud_security_ssl_dcv_method.html</loc>
-  
-    <lastmod>2021-09-09T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/security/ncloud_security_ssl_vpn_classic_guide.html</loc>
-  
-    <lastmod>2021-10-27T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/security/ncloud_security_ssl_vpn_vpc_guide.html</loc>
-  
-    <lastmod>2021-11-02T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_archive_storage_api_access_token_create.html</loc>
-  
-    <lastmod>2021-11-11T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_archive_storage_api_get_container_by_php.html</loc>
-  
-    <lastmod>2021-11-17T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_archive_storage_cli_windows_guide.html</loc>
-  
-    <lastmod>2021-11-19T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-30T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1157,9 +1252,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_compare.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_storage_add_guide.html</loc>
   
-    <lastmod>2020-12-28T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-19T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1169,9 +1264,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_nas_vpc_guide.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_server_stop_price.html</loc>
   
-    <lastmod>2021-07-27T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1181,9 +1276,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_aws_cli_connect.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lamp_config_ubuntu.html</loc>
   
-    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1193,9 +1288,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_lifecycle_management.html</loc>
+    <loc>https://docs.3rdeyesys.com/compute/ncloud_compute_lamp_config_centos.html</loc>
   
-    <lastmod>2021-06-02T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-13T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1205,9 +1300,9 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_required_service.html</loc>
+    <loc>https://docs.3rdeyesys.com/aws/aws_cloud_watch_log.html</loc>
   
-    <lastmod>2021-02-16T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-05T00:00:00+09:00</lastmod>
     
   
     <priority>0.7</priority>
@@ -1217,48 +1312,10 @@
   
   
   <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html</loc>
-  
-    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
+    <loc>https://docs.3rdeyesys.com/update/update.html</loc>
     
   
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_cyberduck.html</loc>
-  
-    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_s3browser.html</loc>
-  
-    <lastmod>2021-10-08T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
-   
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html</loc>
-  
-    <lastmod>2021-04-12T00:00:00+09:00</lastmod>
-    
-  
-    <priority>0.7</priority>
+    <priority>0.5</priority>
    
   </url>
   
@@ -1378,26 +1435,8 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <url>
-    <loc>https://docs.3rdeyesys.com/update/update.html</loc>
+    <loc>https://docs.3rdeyesys.com/faq/faq.html</loc>
     
   
     <priority>0.5</priority>
@@ -1405,7 +1444,31 @@
   </url>
   
   
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   <url>

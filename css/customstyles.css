@@ -2,6 +2,26 @@ body {
     font-size:15px;
 }
 
+.container-index{
+    padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;
+}
+
+@media (min-width:768px){
+    .container-index{width:750px}
+}
+
+@media (min-width:992px){
+    .container-index{width:970px}
+}
+
+@media (min-width:1200px){
+    .container-index{width:1170px}
+}
+
+@media (min-width:1500px){
+    .container-index{width:1450px}
+}
+
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
@@ -1280,8 +1300,8 @@ h4.panel-title>a {
 	flex-direction:row;
 	justify-content:space-between;
 	align-items:stretch;
-	font-size: 0.9em;	
-    max-width: 1000px;
+	font-size: 0.9em;	    
+    max-width: 1100px;
 }
 
 .category {	
@@ -1296,10 +1316,16 @@ h4.panel-title>a {
     }
 }
 
-@media (min-width:900px) {
+@media (min-width:900px) {    
     .category {
         flex: 0 0 33%;
     }    
+}
+
+@media (min-width:1500px) {
+    .categories{
+        margin-left:50px;
+    }
 }
 
 .category h2 {
@@ -1458,14 +1484,8 @@ img.docimage{
 @media screen and (max-width: 990px)
 {
     #tg-sb-sidebar {display:none;}
-    #tg-sb-content {width: 100%;}
 }
 
-@media screen and (min-width: 991px)
-{
-    #tg-sb-sidebar {display:inline;}
-    #tg-sb-content {width: 75%;}
-}
 
 .simple_table > thead > tr > th,
 .simple_table > tbody > tr > th,

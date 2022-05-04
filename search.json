@@ -160,10 +160,32 @@
 
 
 {
+"title": "Cloud DB for PostgreSQL 생성 후 Public 도메인으로 접속하기",
+"tags": "databaseclouddbvpc",
+"keywords": "Database, Postgre",
+"url": "/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "MySQL GTID Replication 생성 상세 가이드",
 "tags": "databasebackupmysql",
 "keywords": "Database, 복제, Backup, 이중화, 고가용성, Master, Slave",
 "url": "/database/ncloud-database-mysql-gtid-replication.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SourceCommit에서 GitHub Repository 복사해오기 | Ncloud",
+"tags": "github",
+"keywords": "깃허브, Tool, Dev, 리포지토리, 깃허브",
+"url": "/dev-tools/ncloud-dev-tools-source-commit-external-repository-copy.html",
 "summary": ""
 }
 ,
@@ -395,7 +417,40 @@
 "tags": "centoslempnginxinstall",
 "keywords": "Linux, LEMP, LAMP",
 "url": "/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html",
-"summary": "Ncloud CentOS 서버에 NginX를 Package로 설치하고 기본 설정을 하는 방법입니다"
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ubuntu에서 NginX 설치, 설정하는 방법",
+"tags": "centoslempnginxinstall",
+"keywords": "Linux, LEMP, LAMP, 우분투",
+"url": "/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "CentOS에서 NginX SSL 인증서 설정하는 방법",
+"tags": "centoslempnginxssl",
+"keywords": "Linux, LEMP, LAMP",
+"url": "/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ubuntu에서 NginX SSL 인증서 설정하는 방법",
+"tags": "ubuntulempnginxssl",
+"keywords": "Linux, LEMP, LAMP",
+"url": "/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html",
+"summary": ""
 }
 ,
 
@@ -1168,6 +1223,8 @@
 "summary": "Ncloud 서비스와 관련된 새로운 소식들을 알려 드립니다."
 }
 ,
+
+
 
 
 
