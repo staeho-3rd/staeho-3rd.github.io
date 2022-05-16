@@ -5,8 +5,8 @@
         <description>써드아이시스템(3rdeyesys) 기술문서 사이트입니다 - Ncloud 프리미엄 파트너</description>
         <link>https://docs.3rdeyesys.com/</link>
         <atom:link href="https://docs.3rdeyesys.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 04 May 2022 15:25:05 +0900</pubDate>
-        <lastBuildDate>Wed, 04 May 2022 15:25:05 +0900</lastBuildDate>
+        <pubDate>Mon, 16 May 2022 10:21:59 +0900</pubDate>
+        <lastBuildDate>Mon, 16 May 2022 10:21:59 +0900</lastBuildDate>
         <generator>Jekyll v4.2.2</generator>
         
         
@@ -788,6 +788,153 @@ subid라는 서브 계정을 만들었다고 가정했을 때 아래 화면처�
         </item>
         
         <item>
+            <title>CentOS에서 NginX SSL 인증서 설정하는 방법</title>
+            <description>## 개요
+Ncloud (네이버 클라우드) CentOS 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.  
+
+
+## 서버 환경
+
+{% include callout_v2.html type=&quot;secondary&quot; level=&quot;2&quot; content=&quot;
+&amp;#8259; OS: CentOS 7.8 &lt;br /&gt;
+&amp;#8259; NginX: NginX 1.21.6 &lt;br /&gt;
+&amp;#8259; SSL 인증서: 로컬 테스트용 인증서 
+&quot; %}
+
+## NginX 설치
+CentOS에 Nginx 최신 버전을 설치하는 방법은 아래 문서에서 확인하시면 됩니다.
+- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&lt;/a&gt;
+
+
+## 테스트 사이트 접속
+설치한 서버에 IP 주소로 접속해 봅니다.
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-01.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 테스트용 SSL 인증서 생성
+SSL 인증서를 저장할 디렉토리를 생성하고 30일 기한의 테스트용 인증서 파일 (nginx-ssl.key, nginx-ssl.crt)을 생성합니다. 
+여기서는 nginx-ssl-test.com 이라는 임의의 테스트용 도메인을 사용하겠습니다.
+
+``` bash
+~# mkdir /root/ssl/
+~# openssl req -x509 -days 30 -nodes -newkey rsa:2048 \
+   -keyout /root/ssl/nginx-ssl.key -out /root/ssl/nginx-ssl.crt
+```
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-02.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+인증서 파일이 제대로 저장되었는지 확인합니다.
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-03.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## NginX SSL 환경 설정
+NginX 환경 설정 파일 (/etc/nginx/conf.d/default.conf) 을 아래와 같이 수정합니다.
+
+``` bash
+~# vi /etc/nginx/conf.d/default.conf
+```
+``` nginx
+server {
+    listen       80;
+    server_name  nginx-ssl-test.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen       443 ssl;
+    server_name  nginx-ssl-test.com;
+
+    ssl_certificate /root/ssl/nginx-ssl.crt;
+    ssl_certificate_key /root/ssl/nginx-ssl.key;
+
+    ### 이하 생략 ###
+}
+```
+
+``` bash
+~# systemctl restart nginx
+```
+
+### SSL 인증서 파일 설정
+여기서는 테스트용으로 생성한 인증서 파일의 위치를 아래와 같은 양식으로 지정합니다.  
+외부 공식 인증서 사이트에서 발급 받은 인증서도 원하는 곳에 저장하고 아래와 같이 위치를 지정해주면 됩니다.
+
+``` nginx
+    ssl_certificate /root/ssl/nginx-ssl.crt;
+    ssl_certificate_key /root/ssl/nginx-ssl.key;
+```
+
+### http 접속 시 https 리다이렉트
+NginX 웹서버에 http 접속 시에 https로 강제 리다이렉트를 하려고 할 경우에는 http로 접속하는 포트 (일반적으로 80) 설정에 아래와 같이 지정해주면 리다이렉트 됩니다.
+
+``` nginx
+    return 301 https://$host$request_uri;
+```
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-10.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## hosts 파일 수정
+테스트용으로 임의 설정한 도메인으로 접속하게 될 경우에는 hosts 파일을 수정해야 합니다.  
+`실제 도메인을 사용할 경우에는 아래 과정이 필요 없기에` [다음 단계로 바로 이동&lt;i class=&quot;fa-solid fa-turn-down&quot;&gt;&lt;/i&gt;](#https-access-test)하시면 됩니다. 
+
+윈도우 10에서 hosts 파일은 C:\Windows\System32\drivers\etc 에 존재하는데 직접 수정할 수가 없으므로 다음과 같은 단계를 거쳐야 합니다.
+
+1. C:\Windows\System32\drivers\etc\hosts 파일을 임의의 작업 폴더 (예: D:\Work)로 복사합니다.
+2. 복사한 hosts 파일을 수정해서 123.456.789.123 nginx-ssl-test.com 처럼 접속할 IP 주소와 도메인을 추가합니다.
+3. 수정한 파일을 C:\Windows\System32\drivers\etc 위치로 덮어쓰기 합니다.
+4. 덮어쓰기 할 때 관리자 권한이 필요하다는 안내 메시지가 나타나면 [계속] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-04.png&quot; width=&quot;745&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-05.png&quot; width=&quot;710&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-06.png&quot; width=&quot;710&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+## https 접속 테스트 {#https-access-test}
+모든 설정을 마친 후에 테스트로 설정한 nginx-ssl-test.com 으로 접속하면 아래와 같이 https로 접속되는 것을 확인할 수 있습니다.  
+다만 로컬 테스트용 인증서이기 때문에 [주의 요함]이라는 메시지가 나타납니다.
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-07.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+### 테스트 인증서 확인
+[주의 요함] 부분을 클릭하면 인증서 부분에 [인증서가 올바르지 않음]이라는 메시지가 보이는데 이곳을 클릭합니다.
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-08.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+### 테스트 인증서 정보
+아래와 같이 처음에 설정한 내용이 인증서 정보에 올바르게 표시되는 것을 확인할 수 있습니다.
+
+{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-09.png&quot; width=&quot;470&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 참고 URL
+1.  NginX Linux packages 설치 가이드
+	- &lt;a href=&quot;http://nginx.org/en/linux_packages.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;
+
+2.  CentOS에서 NginX 설치, 설정하는 방법
+	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&lt;/a&gt;
+
+3.  Ubuntu에서 NginX SSL 인증서 설정하는 방법
+	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html&lt;/a&gt;</description>
+            <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html</guid>
+            
+            <category>centos</category>
+            
+            <category>lemp</category>
+            
+            <category>nginx</category>
+            
+            <category>ssl</category>
+            
+            
+        </item>
+        
+        <item>
             <title>Ubuntu에서 NginX SSL 인증서 설정하는 방법</title>
             <description>## 개요
 Ncloud (네이버 클라우드) Ubuntu 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.  
@@ -938,368 +1085,6 @@ NginX 웹서버에 http 접속 시에 https로 강제 리다이렉트를 하려�
             <category>nginx</category>
             
             <category>ssl</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>CentOS에서 NginX SSL 인증서 설정하는 방법</title>
-            <description>## 개요
-Ncloud (네이버 클라우드) CentOS 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.  
-
-
-## 서버 환경
-
-{% include callout_v2.html type=&quot;secondary&quot; level=&quot;2&quot; content=&quot;
-&amp;#8259; OS: CentOS 7.8 &lt;br /&gt;
-&amp;#8259; NginX: NginX 1.21.6 &lt;br /&gt;
-&amp;#8259; SSL 인증서: 로컬 테스트용 인증서 
-&quot; %}
-
-## NginX 설치
-CentOS에 Nginx 최신 버전을 설치하는 방법은 아래 문서에서 확인하시면 됩니다.
-- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&lt;/a&gt;
-
-
-## 테스트 사이트 접속
-설치한 서버에 IP 주소로 접속해 봅니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-01.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 테스트용 SSL 인증서 생성
-SSL 인증서를 저장할 디렉토리를 생성하고 30일 기한의 테스트용 인증서 파일 (nginx-ssl.key, nginx-ssl.crt)을 생성합니다. 
-여기서는 nginx-ssl-test.com 이라는 임의의 테스트용 도메인을 사용하겠습니다.
-
-``` bash
-~# mkdir /root/ssl/
-~# openssl req -x509 -days 30 -nodes -newkey rsa:2048 \
-   -keyout /root/ssl/nginx-ssl.key -out /root/ssl/nginx-ssl.crt
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-02.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-인증서 파일이 제대로 저장되었는지 확인합니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-03.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## NginX SSL 환경 설정
-NginX 환경 설정 파일 (/etc/nginx/conf.d/default.conf) 을 아래와 같이 수정합니다.
-
-``` bash
-~# vi /etc/nginx/conf.d/default.conf
-```
-``` nginx
-server {
-    listen       80;
-    server_name  nginx-ssl-test.com;
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen       443 ssl;
-    server_name  nginx-ssl-test.com;
-
-    ssl_certificate /root/ssl/nginx-ssl.crt;
-    ssl_certificate_key /root/ssl/nginx-ssl.key;
-
-    ### 이하 생략 ###
-}
-```
-
-``` bash
-~# systemctl restart nginx
-```
-
-### SSL 인증서 파일 설정
-여기서는 테스트용으로 생성한 인증서 파일의 위치를 아래와 같은 양식으로 지정합니다.  
-외부 공식 인증서 사이트에서 발급 받은 인증서도 원하는 곳에 저장하고 아래와 같이 위치를 지정해주면 됩니다.
-
-``` nginx
-    ssl_certificate /root/ssl/nginx-ssl.crt;
-    ssl_certificate_key /root/ssl/nginx-ssl.key;
-```
-
-### http 접속 시 https 리다이렉트
-NginX 웹서버에 http 접속 시에 https로 강제 리다이렉트를 하려고 할 경우에는 http로 접속하는 포트 (일반적으로 80) 설정에 아래와 같이 지정해주면 리다이렉트 됩니다.
-
-``` nginx
-    return 301 https://$host$request_uri;
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-10.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## hosts 파일 수정
-테스트용으로 임의 설정한 도메인으로 접속하게 될 경우에는 hosts 파일을 수정해야 합니다.  
-`실제 도메인을 사용할 경우에는 아래 과정이 필요 없기에` [다음 단계로 바로 이동&lt;i class=&quot;fa-solid fa-turn-down&quot;&gt;&lt;/i&gt;](#https-access-test)하시면 됩니다. 
-
-윈도우 10에서 hosts 파일은 C:\Windows\System32\drivers\etc 에 존재하는데 직접 수정할 수가 없으므로 다음과 같은 단계를 거쳐야 합니다.
-
-1. C:\Windows\System32\drivers\etc\hosts 파일을 임의의 작업 폴더 (예: D:\Work)로 복사합니다.
-2. 복사한 hosts 파일을 수정해서 123.456.789.123 nginx-ssl-test.com 처럼 접속할 IP 주소와 도메인을 추가합니다.
-3. 수정한 파일을 C:\Windows\System32\drivers\etc 위치로 덮어쓰기 합니다.
-4. 덮어쓰기 할 때 관리자 권한이 필요하다는 안내 메시지가 나타나면 [계속] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-04.png&quot; width=&quot;745&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-05.png&quot; width=&quot;710&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-06.png&quot; width=&quot;710&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## https 접속 테스트 {#https-access-test}
-모든 설정을 마친 후에 테스트로 설정한 nginx-ssl-test.com 으로 접속하면 아래와 같이 https로 접속되는 것을 확인할 수 있습니다.  
-다만 로컬 테스트용 인증서이기 때문에 [주의 요함]이라는 메시지가 나타납니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-07.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 테스트 인증서 확인
-[주의 요함] 부분을 클릭하면 인증서 부분에 [인증서가 올바르지 않음]이라는 메시지가 보이는데 이곳을 클릭합니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-08.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 테스트 인증서 정보
-아래와 같이 처음에 설정한 내용이 인증서 정보에 올바르게 표시되는 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-09.png&quot; width=&quot;470&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1.  NginX Linux packages 설치 가이드
-	- &lt;a href=&quot;http://nginx.org/en/linux_packages.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;
-
-2.  CentOS에서 NginX 설치, 설정하는 방법
-	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&lt;/a&gt;
-
-3.  Ubuntu에서 NginX SSL 인증서 설정하는 방법
-	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html&lt;/a&gt;</description>
-            <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html</guid>
-            
-            <category>centos</category>
-            
-            <category>lemp</category>
-            
-            <category>nginx</category>
-            
-            <category>ssl</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>CentOS에서 NginX 설치, 설정하는 방법</title>
-            <description>## 개요
-Ncloud (네이버 클라우드) CentOS 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.  
-
-
-## 서버 환경
-
-{% include callout_v2.html type=&quot;secondary&quot; level=&quot;2&quot; content=&quot;
-&amp;#8259; OS: CentOS 7.8 &lt;br /&gt;
-&amp;#8259; NginX: NginX 1.21.5 
-&quot; %}
-
-## yum 유틸리티 설치
-yum으로 NginX를 설치하기 전에 yum-utils를 먼저 설치합니다. 이미 설치 되어 있을 경우에는 아래와 같이 설치되어 있다는 메시지가 출력됩니다.
-
-``` bash
-~# yum install yum-utils
-```
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_01.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## Repository 설정
-NginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. 
-Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내용을 입력합니다.
-
-``` bash
-~# vi /etc/yum.repos.d/nginx.repo
-```
-
-``` nginx
-[nginx-stable]
-name=nginx stable repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=1
-enabled=1
-gpgkey=https://nginx.org/keys/nginx_signing.key
-module_hotfixes=true
-
-[nginx-mainline]
-name=nginx mainline repo
-baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
-gpgcheck=1
-enabled=0
-gpgkey=https://nginx.org/keys/nginx_signing.key
-module_hotfixes=true
-```
-
-
-{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;NginX는 stable, mainline 두가지 버전이 있습니다. 
-NginX의 공식 설명에 따르면 버그 수정이나 보안 패치 등은 항상 mainline 버전에 먼저 적용되기 때문에 mainline을 사용하는 것을 추천한다고 합니다. &lt;br /&gt;
-stable 버전을 사용하는 주된 경우는 **third-party 모듈**을 사용하고 있어서 신규 버전에서 **호환성 문제**가 발생할 가능성이 걱정될 때라고 합니다.&quot; %}
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 버전 선택
-stable, mainline 두가지 버전 중에서 기본은 stable 버전입니다.  
-stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되고, mainline 버전을 설치하기 위해서는 아래 명령어로 설정을 변경해주어야 합니다.
-
-``` bash
-~# yum-config-manager --enable nginx-mainline
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_03.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## NginX 설치
-설정을 마쳤으면 yum으로 NginX를 설치합니다.
-``` bash
-~# yum -y install nginx
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_04.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-
-## 디렉토리 설정
-다음으로 홈으로 사용할 디렉토리를 생성하고, 해당 디렉토리의 소유권을 설정하겠습니다.  
-그리고, NginX가 정상 작동하는지 확인해보기 위해 설치시에 포함된 index.html을 홈 디렉토리로 복사합니다.
-
-``` bash
-~# mkdir -p /ncp/data/www
-~# chown -R nginx:nginx /ncp/data/www
-~# cp /usr/share/nginx/html/index.html /ncp/data/www/index.html
-~# ls -al /ncp/data/www
-```
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_05.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-
-## 환경 설정
-주로 변경할 환경 설정 파일은 /etc/nginx/conf.d/default.conf 입니다.
-
-``` bash
-~# vi /etc/nginx/conf.d/default.conf
-```
-&lt;br /&gt;
-### Port와 Server Name 설정
-80이 아닌 다른 Port를 사용할 경우나 도메인을 설정하게 될 경우 2, 3 라인에 있는 아래 항목들을 수정하면 됩니다.
-
-``` nginx
-server_name  localhost;
-server_name  nginx-test.com;
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_06.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-### 홈 디렉토리, 기본 문서 설정
-앞에서 만들었던 홈 디렉토리 경로를 설정하고 기본 문서를 지정하는 곳입니다. 
-
-``` nginx
-# 변경 전
-    location / {
-        root   /usr/share/nginx/html;
-        index  index.html index.htm;
-    }
-
-# 변경 후
-    root   /ncp/data/www;
-    index  index.html index.htm;
-
-    location / {
-        try_files $uri $uri/ = 404;
-    }
-```
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_07.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_08.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-### error 페이지 설정
-404, 500 등의 error 페이지를 설정할 경우 아래 내용들을 수정하면 됩니다.
-
-``` nginx
-# 변경 전
-    #error_page  404              /404.html;
-
-    location = /50x.html {
-        root   /usr/share/nginx/html;
-    }
-
-# 변경 후
-    error_page  404              /404.html;
-
-    location = /50x.html {
-        root   /ncp/data/www;
-    }
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_09.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_10.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-### .htaccess 파일 접근 금지 설정
-.htaccess 파일에 대한 접근 금지를 설정할 경우 아래 내용을 주석 해제하면 됩니다.
-
-``` nginx
-# 변경 전
-    #location ~ /\.ht {
-    #    deny  all;
-    #}
-
-# 변경 후
-    location ~ /\.ht {
-        deny  all;
-    }
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_11.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_12.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## NginX 실행
-설정을 모두 마쳤으면 NginX를 시작하고 상태를 확인합니다.
-
-``` bash
-~# systemctl start nginx
-~# systemctl status nginx
-```
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_13.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-### 사이트 접속
-NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_14.png&quot; width=&quot;600&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1.  NginX Linux packages 설치 가이드
-	- &lt;a href=&quot;http://nginx.org/en/linux_packages.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;
-
-2.  Ubuntu에서 NginX 설치, 설정하는 방법
-	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&lt;/a&gt;</description>
-            <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</guid>
-            
-            <category>centos</category>
-            
-            <category>lemp</category>
-            
-            <category>nginx</category>
-            
-            <category>install</category>
             
             
         </item>
@@ -1521,6 +1306,221 @@ NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 
             <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
             <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html</link>
             <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html</guid>
+            
+            <category>centos</category>
+            
+            <category>lemp</category>
+            
+            <category>nginx</category>
+            
+            <category>install</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>CentOS에서 NginX 설치, 설정하는 방법</title>
+            <description>## 개요
+Ncloud (네이버 클라우드) CentOS 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.  
+
+
+## 서버 환경
+
+{% include callout_v2.html type=&quot;secondary&quot; level=&quot;2&quot; content=&quot;
+&amp;#8259; OS: CentOS 7.8 &lt;br /&gt;
+&amp;#8259; NginX: NginX 1.21.5 
+&quot; %}
+
+## yum 유틸리티 설치
+yum으로 NginX를 설치하기 전에 yum-utils를 먼저 설치합니다. 이미 설치 되어 있을 경우에는 아래와 같이 설치되어 있다는 메시지가 출력됩니다.
+
+``` bash
+~# yum install yum-utils
+```
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_01.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## Repository 설정
+NginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. 
+Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내용을 입력합니다.
+
+``` bash
+~# vi /etc/yum.repos.d/nginx.repo
+```
+
+``` nginx
+[nginx-stable]
+name=nginx stable repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+```
+
+
+{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;NginX는 stable, mainline 두가지 버전이 있습니다. 
+NginX의 공식 설명에 따르면 버그 수정이나 보안 패치 등은 항상 mainline 버전에 먼저 적용되기 때문에 mainline을 사용하는 것을 추천한다고 합니다. &lt;br /&gt;
+stable 버전을 사용하는 주된 경우는 **third-party 모듈**을 사용하고 있어서 신규 버전에서 **호환성 문제**가 발생할 가능성이 걱정될 때라고 합니다.&quot; %}
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 버전 선택
+stable, mainline 두가지 버전 중에서 기본은 stable 버전입니다.  
+stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되고, mainline 버전을 설치하기 위해서는 아래 명령어로 설정을 변경해주어야 합니다.
+
+``` bash
+~# yum-config-manager --enable nginx-mainline
+```
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_03.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## NginX 설치
+설정을 마쳤으면 yum으로 NginX를 설치합니다.
+``` bash
+~# yum -y install nginx
+```
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_04.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+
+## 디렉토리 설정
+다음으로 홈으로 사용할 디렉토리를 생성하고, 해당 디렉토리의 소유권을 설정하겠습니다.  
+그리고, NginX가 정상 작동하는지 확인해보기 위해 설치시에 포함된 index.html을 홈 디렉토리로 복사합니다.
+
+``` bash
+~# mkdir -p /ncp/data/www
+~# chown -R nginx:nginx /ncp/data/www
+~# cp /usr/share/nginx/html/index.html /ncp/data/www/index.html
+~# ls -al /ncp/data/www
+```
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_05.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+
+## 환경 설정
+주로 변경할 환경 설정 파일은 /etc/nginx/conf.d/default.conf 입니다.
+
+``` bash
+~# vi /etc/nginx/conf.d/default.conf
+```
+&lt;br /&gt;
+### Port와 Server Name 설정
+80이 아닌 다른 Port를 사용할 경우나 도메인을 설정하게 될 경우 2, 3 라인에 있는 아래 항목들을 수정하면 됩니다.
+
+``` nginx
+server_name  localhost;
+server_name  nginx-test.com;
+```
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_06.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+### 홈 디렉토리, 기본 문서 설정
+앞에서 만들었던 홈 디렉토리 경로를 설정하고 기본 문서를 지정하는 곳입니다. 
+
+``` nginx
+# 변경 전
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+# 변경 후
+    root   /ncp/data/www;
+    index  index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ = 404;
+    }
+```
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_07.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_08.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+### error 페이지 설정
+404, 500 등의 error 페이지를 설정할 경우 아래 내용들을 수정하면 됩니다.
+
+``` nginx
+# 변경 전
+    #error_page  404              /404.html;
+
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+# 변경 후
+    error_page  404              /404.html;
+
+    location = /50x.html {
+        root   /ncp/data/www;
+    }
+```
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_09.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_10.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+### .htaccess 파일 접근 금지 설정
+.htaccess 파일에 대한 접근 금지를 설정할 경우 아래 내용을 주석 해제하면 됩니다.
+
+``` nginx
+# 변경 전
+    #location ~ /\.ht {
+    #    deny  all;
+    #}
+
+# 변경 후
+    location ~ /\.ht {
+        deny  all;
+    }
+```
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_11.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_12.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## NginX 실행
+설정을 모두 마쳤으면 NginX를 시작하고 상태를 확인합니다.
+
+``` bash
+~# systemctl start nginx
+~# systemctl status nginx
+```
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_13.png&quot; width=&quot;770&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+### 사이트 접속
+NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 수 있습니다.
+
+{% include image.html file=&quot;compute/lemp/ncloud_server_nginx_install_setting_guide_centos_14.png&quot; width=&quot;600&quot; alt=&quot;Ncloud CentOS에서 NginX 설치, 설정하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 참고 URL
+1.  NginX Linux packages 설치 가이드
+	- &lt;a href=&quot;http://nginx.org/en/linux_packages.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;
+
+2.  Ubuntu에서 NginX 설치, 설정하는 방법
+	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&lt;/a&gt;</description>
+            <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html</guid>
             
             <category>centos</category>
             

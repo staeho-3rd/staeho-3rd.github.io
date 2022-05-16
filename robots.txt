@@ -1,7 +1,52 @@
-Sitemap: https://docs.3rdeyesys.com/sitemap.xml
-
 User-agent: *
-Disallow: /tag/
-Disallow: /category/
-Disallow: /search/
 Allow: /
+
+User-agent: Baiduspider
+Disallow: /
+User-agent: R6_CommentReader
+Disallow: /
+User-agent: SISTRIX Crawler
+Disallow: /
+User-agent: Exabot
+Disallow: /
+User-agent: FlipboardProxy
+Disallow: /
+User-agent: Q_BlogBot
+Disallow: /
+User-agent: QT_BlogBot
+Disallow: /
+User-agent: YandexBot
+Disallow: /
+User-agent: NKBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: PetalBot
+Disallow: /
+User-agent: MegaIndex.ru
+Disallow: /
+User-agent: Mail.RU_Bot
+Disallow: /
+User-agent: rogerbot
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Adsbot-Google
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+
+Sitemap: {{ "sitemap.xml" | absolute_url }}
