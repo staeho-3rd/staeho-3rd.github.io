@@ -1546,15 +1546,40 @@ height: 250px;
 .carousel-title a { color:#FFF; text-decoration:none}
 
 .side-banner-right{
+    /* 
     position:fixed;
     top:100px;
     right:50px;
     width:230px;
+    */
+    position:fixed;
+    top: 100px;
+    margin-left: 1150px;
+    text-align: center;
+    width:230px;
 }
 
-@media screen and (max-width: 1650px)
+@media screen and (max-width: 1000px)
 {
     .side-banner-right{
         display:none;
     }
+}
+
+.new_dot_lv_1:after {
+    content: '\2022';
+    font-size:20px;
+    color:red;
+    vertical-align: top;
+    margin-left:3px;
+    top:-10px;
+}
+
+.new_dot_lv_2:after {
+    content: '\2022';
+    font-size:30px;
+    color:red;
+    vertical-align: top;
+    margin-left:3px;
+    top:-10px;
 }

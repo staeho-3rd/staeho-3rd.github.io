@@ -193,6 +193,17 @@
 
 
 {
+"title": "SourceCommit 리포지토리 Git 클라이언트로 로컬PC에 복제하기 | Ncloud",
+"tags": "github",
+"keywords": "깃허브, Tool, Dev, 리포지토리, 깃허브",
+"url": "/dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Proxy Protocol을 이용해 Client IP 확인하기 | CentOS",
 "tags": "vpcload_balancerproxy",
 "keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
@@ -330,6 +341,17 @@
 "keywords": "Auto Scaling, Server, Limit",
 "url": "/compute/ncloud_compute_autoscaling_limit.html",
 "summary": "Ncloud Auto Scaling 서비스를 구성할 때 제한사항에 대한 정리입니다"
+}
+,
+
+
+
+{
+"title": "VPC 환경에서 AutoScaling 설정하는 방법",
+"tags": "autoscalingvpc",
+"keywords": "Auto Scaling, 오토스케일링",
+"url": "/compute/ncloud-compute-autoscaling-vpc-guide.html",
+"summary": ""
 }
 ,
 
@@ -545,7 +567,7 @@
 
 
 {
-"title": "서버 스펙 변경",
+"title": "Ncloud 서버 스펙 변경 제한 사항",
 "tags": "classicvpc",
 "keywords": "Spec, Compace, Standard",
 "url": "/compute/ncloud_compute_server_spec_change.html",
@@ -847,6 +869,17 @@
 "keywords": "account, sub account",
 "url": "/management/ncloud_management_sub_account_guide.html",
 "summary": "Ncloud Sub Account 생성 가이드"
+}
+,
+
+
+
+{
+"title": "STS 기간 제한 임시 API AccessKey 발급하기",
+"tags": "accountapitoken",
+"keywords": "account, sub account, Secure Token Service,",
+"url": "/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html",
+"summary": ""
 }
 ,
 
@@ -1350,12 +1383,14 @@
 
 
 
+
+
 {
 "title": "Updates",
 "tags": "",
 "keywords": "news, updates, release notes, announcements",
 "url": "/update/update.html",
-"summary": "최근에 업데이트 된 기술문서 10개 리스트입니다."
+"summary": ""
 }
 
 
