@@ -5,10 +5,343 @@
         <description>써드아이시스템(3rdeyesys) 기술문서 사이트입니다 - Ncloud 프리미엄 파트너</description>
         <link>https://docs.3rdeyesys.com/</link>
         <atom:link href="https://docs.3rdeyesys.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 22 Jun 2022 10:43:02 +0900</pubDate>
-        <lastBuildDate>Wed, 22 Jun 2022 10:43:02 +0900</lastBuildDate>
+        <pubDate>Wed, 06 Jul 2022 11:57:11 +0900</pubDate>
+        <lastBuildDate>Wed, 06 Jul 2022 11:57:11 +0900</lastBuildDate>
         <generator>Jekyll v4.2.2</generator>
         
+        
+        <item>
+            <title>Ncloud 방화벽 ACG 권장설정과 Custom ACG 설정 예시</title>
+            <description>## 개요
+Ncloud (네이버 클라우드)의 IP/Port 기반 필터링 방화벽 서비스인 ACG(Access Control Group) 권장설정과 Custom ACG 설정할 때 참고할 만한 예시를 몇가지 정리해보겠습니다.
+
+
+## Inboud 기본 규칙 삭제
+
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;서버 생성 시에 기본으로 생성되는 Default ACG에는 아래처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 접근이 허용되어 있는데 보안을 위해 이 항목을 삭제하고 지정된 IP에서만 접속하도록 수정하는 것을 적극 권장합니다.&quot; %}
+
+### VPC 화면
+
+아래는 Default ACG가 생성되면서 설정된 전체 접근 허용 상태입니다. 여기서 X버튼을 클릭해서 [0.0.0.0/0] 대역의 설정 2가지를 모두 삭제합니다.
+{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+위에서 기본 설정을 삭제하고 특정 IP만 접근 허용 상태입니다.  
+일반적으로 `[myip] 버튼을 클릭해서 현재 접속한 PC의 IP를 허용`하게 됩니다.
+{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+### Classic 화면
+
+아래도 Default ACG가 생성되면서 설정된 전체 접근 허용 상태입니다. 여기서 X버튼을 클릭해서 [0.0.0.0/0] 대역의 설정 2가지를 모두 삭제합니다.
+{% include image.html file=&quot;security/ncp_security_acg_classic.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+위에서 기본 설정을 삭제하고 특정 IP만 접근 허용한 상태입니다.  
+일반적으로 `[myip] 버튼을 클릭해서 현재 접속한 PC의 IP를 허용`하게 됩니다.
+{% include image.html file=&quot;security/ncp_security_acg_classic_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+
+## 용도별 ACG 구분
+ACG는 사용하는 서버들을 용도별로 구분해서 기본 ACG외에 별도의 Custom ACG를 아래의 예시처럼 그룹별로 생성해서 적용하는 것이 좋습니다.  
+
+### VPC 환경에서 ACG 생성
+[Server] - [ACG]에서 생성할 수 있으며 이름 규칙은 최소 3자, 최대 30자, 소문자만, 숫자와 하이픈(-) 사용 가능합니다.  
+그리고, ACG를 적용할 VPC도 선택해야 합니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-01.png&quot; width=&quot;715&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### Classic 환경에서 ACG 생성
+[Server] - [ACG]에서 생성할 수 있으며 이름 규칙은 최소 6자, 최대 30자, 소문자만, 숫자와 하이픈(-) 사용 가능합니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-02.png&quot; width=&quot;715&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### 용도별 Custom ACG 생성 예시
+아래의 Custom ACG 명칭은 임의로 작성한 것이며, 어떤 규칙으로 이름을 정할 것인가는 각자 자체 기준에 따라 편하신대로 정하시면 됩니다.
+
+- DB-ACG
+- APP-ACG
+- WAS-ACG
+- WEB-ACG
+- BILL-ACG
+- Jenkins-ACG
+- Login-Server-ACG
+- Lobby-Server-ACG
+- Chat-Server-ACG
+- PVP-Server-ACG
+- Live-Streaming-ACG
+- VOD-Server-ACG
+- API-Server-ACG
+- Bill-DB-ACG
+- Bill-APP-ACG
+- Admin-Tool-ACG
+- Live-Service-ACG
+- Dev-System-ACG
+- QA-System-ACG
+- Home-Access-ACG
+- External-Developer-ACG
+- Partner-Company-ACG
+
+### 복수의 ACG 적용
+1개 서버에 허용이 필요한 설정을 모두 추가한 1개의 ACG만 무리하게 적용하려 하기 보다는 위의 예시처럼 용도별로 구분한 ACG를 여러 개 적용하는 것을 추천합니다.
+예를 들어 아래와 같이 각각의 용도별 서버들에는 이런 식으로 ACG를 구분해서 적용할 수도 있습니다.  
+
+&lt;br /&gt;예를 들어 채팅 서버에 ACG를 적용할 때의 예시는 다음과 같습니다.
+- 적용 ACG: APP-ACG, Chat-Server-ACG
+
+&lt;br /&gt;마찬가지로 QA 빌링 DB에 ACG를 적용할 때의 예시는 다음과 같습니다.
+- 적용 ACG: DB-ACG, BILL-ACG, QA-System-ACG
+
+
+
+## Custom ACG 적용 순서
+
+1. ACG 생성
+- 우선 위의 방법대로 ACG를 용도별로 구분해서 생성합니다.
+
+2. ACG 적용
+- 다음으로 생성한 ACG를 서버에 적용하는 단계입니다. 아래쪽에서 VPC, Classic 각각의 환경별로 살펴보겠습니다.
+
+### VPC 환경
+VPC 환경은 NIC에 ACG가 적용되는 구조이므로 NIC당 최대 3개까지 할당할 수 있습니다. 
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### Classic 환경
+Classic 환경에서는 서버에 적용되는 구조이고, 최대 5개까지 선택 가능합니다.
+
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;이때 **Classic 환경 ACG는 서버를 생성하는 단계에서만 적용할 수** 있습니다.&lt;br /&gt; `서버 생성이 완료된 후에는 추가로 ACG를 적용할 수 없습니다.`&quot; %}
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+
+## Custom ACG 추가 적용-제거
+Classic 환경과 달리 **VPC 환경에서는** ACG가 서버가 아닌 NIC에 적용되는 구조이며, `기존에 적용된 ACG외에 추가로 ACG를 적용하거나 제거할 수 있습니다`.
+
+아래와 같이 서버 상세정보 NIC 항목에서 [ACG 수정] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### ACG 추가 적용
+ACG 수정 화면에서 왼쪽 창에서 적용하려는 ACG를 선택하고 오른쪽 창으로 이동시키면 됩니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-10.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### ACG 제거
+ACG 수정 화면에서 오른쪽 창에서 제거하려는 ACG를 선택하고 왼쪽 창으로 이동시키면 됩니다.  
+
+{% include callout_v2.html type=&quot;primary&quot; level=&quot;2&quot; content=&quot;이때 ACG는 최소 1개가 적용되어 있어야 하므로 마지막 ACG 1개는 제거할 수 없습니다.&quot; %}
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-11.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+
+## 접근소스를 Load Balancer로 설정
+ACG를 설정할 때 접근 소스 항목은 보통 IP주소를 입력하게 됩니다. 
+하지만 특수한 경우로 Load Balancer를 지정하거나 ACG를 직접 지정하는 경우도 있습니다. 
+
+먼저 로드밸런서를 생성하고 서버와 연결한 후에 서버측 ACG에 로드밸런서의 접근을 허용하는 방법에 대해 알아보겠습니다.  
+
+### VPC 환경
+VPC 환경에서 아래와 같이 로드밸런서의 서브넷 네트워크가 [**10.0.4.0/24**] 대역이라고 가정했보겠습니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+
+서버의 ACG 규칙 설정 화면에서 아래와 같이 접근소스에 위에서 확인한 로드밸런서의 서브넷 네트워크 [**10.0.4.0/24**]를 입력하면 됩니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;
+VPC 환경에서 로드밸런서와 서버를 연결할 때에는 ACG 설정 외에도 Network ACL 등 추가로 설정해야 하는 것들이 많이 있습니다. 자세한 설정 방법은 아래 문서를 참고하시기 바랍니다. &lt;br /&gt;
+&amp;#8259; &lt;a href=&apos;/networking/ncloud_networking_load_balancer_application_lb.html&apos; target=&apos;_blank&apos; style=&apos;word-break:break-all&apos;&gt;VPC 환경에서 Application Load Balancer 생성하기&lt;/a&gt;
+&quot; %}
+
+
+### Classic 환경
+Classic 환경에서는 아래와 같이 로드밸런서의 ACG 소스 명칭이 [**ncloud-load-balancer**]로 고정되어 있습니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+ACG 규칙 설정 화면에서 접근소스에 로드밸런서의 ACG 소스 [**ncloud-load-balancer**]를 입력하면 됩니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+
+## 접근소스를 ACG로 설정
+다음으로 ACG를 접근소스로 지정하는 경우도 있습니다. 
+이 중에서 다른 ACG를 접근 소스 항목으로 지정하는 경우는 해당 ACG가 적용된 서버들이 접근할 수 있도록 규칙을 설정하는 것인데, 아래 설정 방법과 예시를 통해 자세히 알아보겠습니다.
+
+### VPC 환경
+ACG 규칙 설정에서 접근 소스 항목에 지정하려는 ACG 이름을 일부 입력하면 아래와 같이 적용 가능한 ACG 리스트가 나타는데 그 중에서 지정하려는 ACG를 선택하면 됩니다.
+
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;VPC 환경에서 ACG를 접근소스를 설정할 때는 **동일한 VPC에 생성된 ACG만 접근소스로 설정**할 수 있습니다.&quot; %}
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-13.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### Classic 환경
+Classic도 마찬가지로 ACG 규칙 설정에서 접근 소스 항목에 지정하려는 ACG 이름을 일부 입력하면 아래와 같이 적용 가능한 ACG 리스트가 나타는데 그 중에서 지정하려는 ACG를 선택하면 됩니다. Classic은 VPC와 달리 특별한 제한이 없습니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-12.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### 예시
+아래와 같이 SVR-1, SVR-2, SVR-3 서버에 각각 ACG-1, ACG-2가 적용되어 있다고 가정해보겠습니다.
+
+[**ACG-1**]
+- 적용서버 : SVR-1, SVR-2
+
+[**ACG-2**]
+- 적용서버 : SVR-3
+
+[**ACG-2 적용 규칙**]
+- 프로토콜 :  TCP
+- 접근소스 :  ACG-1
+- 허용포트 : 80
+
+{% include note.html content=&quot;위와 같은 경우 ACG-1이 적용된 SVR-1, SVR-2 서버에서 ACG-2가 적용된 SVR-3 서버로 80포트를 이용한 접근을 허용한다는 의미입니다.&quot; %}
+
+
+## ACG 삭제
+Custom ACG는 VPC, Classic 환경 모두 [Console] - [Server] - [ACG] 메뉴에서 삭제할 수 있습니다.
+
+삭제하려는 ACG를 선택하고 [ACG 삭제] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-14.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+ACG 삭제 팝업에서 [예] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-15.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### 삭제 불가
+아직 적용된 서버나 NIC가 존재하는 ACG는 삭제할 수 없습니다.
+
+#### VPC 환경
+VPC 환경에서 삭제를 시도하면 [ACG에 속해 있는 Network Interface가 존재합니다. 해당 Network Interface에서 ACG를 삭제 후 다시 시도해주세요]라는 메시지가 나타납니다.
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-16.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+#### Classic 환경
+Classic 환경에서 삭제를 시도하면 [서버가 한대라도 ACG 에 적용되어 있는 상태이면, 해당 ACG 는 삭제할 수 없습니다]라는 메시지가 나타납니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-17.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+### Default ACG 삭제 불가
+기본적으로 생성된 Default ACG는 삭제할 수 없습니다.
+
+{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-18.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+
+
+## 참고 URL
+1. VPC 환경 ACG 설정
+- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-compute-2-3-vpc&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-compute-2-3-vpc&lt;/a&gt;
+
+
+2. Classic 환경 ACG 설정
+- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-compute-2-3&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-compute-2-3&lt;/a&gt;</description>
+            <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/security/ncloud-security-acg-setting-sample.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/security/ncloud-security-acg-setting-sample.html</guid>
+            
+            <category>acg</category>
+            
+            <category>classic</category>
+            
+            <category>vpc</category>
+            
+            <category>load_balancer</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>ACG(Access Control Group) 가이드</title>
+            <description>## 개요
+ACG(Access Control Group)는 서버 간 네트워크 접근 제어 및 관리를 할 수 있는 IP/Port 기반 필터링 방화벽 서비스로 AWS에서는 비슷하게 Security Group이라는 것이 있습니다.
+
+## 제한 사항
+
+### VPC
+- VPC당 최대 **500개**까지 ACG 생성 가능
+- **NIC당 3개의 ACG**를 허용
+- Inbound / Outbound 각각 **50개의 규칙** 생성 가능
+
+### Classic
+- 계정당 최대 **100개**까지 ACG를 생성 가능
+- 각 ACG에는 최대 **100개**까지의 규칙을 설정할 수 있음
+- 서버는 **최대 5개**의 ACG에 중복 포함될 수 있음
+- 서버가 생성될 시 선택한 ACG는 변경이 불가하며, 반납 전까지 해당 ACG 규칙을 적용 받게 됨
+
+{% include callout_v2.html type=&quot;info&quot; level=&quot;1&quot; content=&quot;Classic 환경에서는 서버 자체에 할당되는 개념이었으나 VPC에는 NIC 즉, 네트워크 카드에 할당되는 개념이어서 VPC 환경에서는 **NIC 당 최대 3개**까지 ACG를 적용할 수 있습니다.&quot; %}
+
+## 기본 규칙
+
+### Default ACG
+기본적으로 추가되는 ACG
+
+- 모든 들어오는 연결(inbound traffic)을 차단함
+- 모든 나가는 연결(outbound traffic)을 허용함
+- Default ACG 내 속한 서버들끼리의 네트워크 양방향 통신(TCP, UDP, ICMP)이 허용됨
+- 원격 접속 기본 포트 (**Linux - 22, Windows - 3389**)에 대한 TCP 허용됨
+
+#### VPC 화면
+
+##### Inbound (기본 설정)
+{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;1&quot; content=&quot;기본으로 생성된 ACG에는 위처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 허용되어 있는데 보안을 위해 이 항목을 삭제하고 아래와 같이 지정된 IP에서만 접속하도록 수정하는 것이 좋습니다.&quot; %}
+
+##### Inbound (권장 설정)
+{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+##### Outbound
+{% include image.html file=&quot;security/ncp_security_acg_vpc_outbound.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+#### Classic 화면 (기본 설정)
+{% include image.html file=&quot;security/ncp_security_acg_classic.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;1&quot; content=&quot;기본으로 생성된 ACG에는 위처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 허용되어 있는데 보안을 위해 이 항목을 삭제하고 아래와 같이 지정된 IP에서만 접속하도록 수정하는 것이 좋습니다.&quot; %}
+
+#### Classic 화면 (권장 설정)
+{% include image.html file=&quot;security/ncp_security_acg_classic_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+
+### Custom ACG
+Default ACG 이외에 사용자가 추가하는 ACG
+
+- 모든 inbound traffic을 차단함(규칙으로 명시되어 있지 않음)
+- 모든 outbound traffic을 허용함(규칙으로 명시되어 있지 않음)
+
+
+## 접근소스 설정
+ACG를 설정할 때 접근 소스 항목은 보통 IP주소를 입력하게 됩니다. 
+하지만 특수한 경우로 Load Balancer를 지정하거나 ACG 이름을 지정하는 경우도 있습니다. 
+이 중에서 다른 ACG를 접근 소스 항목으로 지정하는 경우는 해당 ACG가 적용된 서버들이 접근할 수 있도록 규칙을 설정하는 것인데, 아래 예시를 이용해 정리해보겠습니다.
+
+### ACG-1
+- 적용서버 : SVR-1, SVR-2
+
+### ACG-2
+- 적용서버 : SVR-3
+
+### ACG-2 적용 규칙
+- 프로토콜 :  TCP
+- 접근소스 :  ACG-1
+- 허용포트 : 80
+
+{% include note.html content=&quot;위와 같은 경우 ACG-1이 적용된 SVR-1, SVR-2 서버에서 ACG-2가 적용된 SVR-3 서버로 80포트를 이용한 접근을 허용한다는 의미입니다.&quot; %}
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;VPC 환경에서 ACG를 접근소스를 설정할 때는 동일한 VPC에 생성된 ACG만 접근소스로 설정할 수 있습니다.&quot; %}
+
+
+
+## 참고 URL
+&lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-compute-2-3&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-compute-2-3.html&lt;/a&gt;
+</description>
+            <pubDate>Tue, 05 Jul 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</guid>
+            
+            <category>acg</category>
+            
+            <category>classic</category>
+            
+            <category>vpc</category>
+            
+            
+        </item>
         
         <item>
             <title>VPC 환경에서 AutoScaling 설정하는 방법</title>
@@ -1402,287 +1735,6 @@ pgAdmin 4를 사용할 때 아래와 같은 오류가 발생하는 경우가 있
         </item>
         
         <item>
-            <title>VPC환경에서 Cloud DB for PostgreSQL 생성하기 | CentOS</title>
-            <description>## 지원 클라우드 환경
-Ncloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.
-
-- 리전(존): 한국, 싱가포르
-- VPC만	지원
-- 언어: 한국어, 영어, 일본어, 중국어(간체)
-- DB 엔진 버전: PostgreSQL 13.3
-
-
-## 서버 사양과 요금
-
-*(2022-03-30 기준)*
-&lt;table class=&quot;simple_table&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;&lt;th rowspan=&quot;2&quot;&gt;타입&lt;/th&gt;&lt;th colspan=&quot;3&quot;&gt;제공사양&lt;/th&gt;&lt;th&gt;이용 요금&lt;/th&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;th&gt;vCPU&lt;/th&gt;&lt;th&gt;메모리&lt;/th&gt;&lt;th&gt;디스크&lt;/th&gt;&lt;th&gt;시간당/대&lt;/th&gt;&lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;High CPU&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;4GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;158원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;8GB&lt;/td&gt;&lt;td&gt;323원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td&gt;653원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;1,313원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;2,633원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;Standard&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;8GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;250원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td&gt;506원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;1,019원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;2,045원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;128GB&lt;/td&gt;&lt;td&gt;4,099원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;High Memory&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;302원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;611원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;1,227원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;128GB&lt;/td&gt;&lt;td&gt;2,462원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;256GB&lt;/td&gt;&lt;td&gt;4,927원&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-
-## 서버 사양 변경 시 제약 사항
- Cloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 `메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경`할 수 있습니다. 그 외 제약 사항은 아래와 같습니다.
-
-- 같은 타입 내에서만 변경 가능
-- 2대 이상의 서버로 구성된 경우(고가용성 사용 및 Read Replica 사용) 모두 동일한 사양으로 변경
-- 변경 완료 후 서버가 다시 시작되며 이에 따라 서비스 영향 발생 가능성 존재
-
-
-## 상세 특징
-- DB 엔진 버전: **PostgreSQL 13.3**
-- 스토리지: 기본 10GB 데이터 스토리지를 제공하며, 10GB 단위로 6000GB까지 자동으로 용량이 증가
-- Multi Zone 구성 제공
-- 자동 Fail-over 기본 지원
-- 최대 5대까지 Read Replica 확장
-- 최대 30일까지 자동 백업 및 보관
-
-## 서버 접근 방법
-Cloud DB for PostgreSQL은 현재 다음의 3가지 방법으로 접근 가능한데 여기서는 별도의 Linux 서버를 생성해서 PostgreSQL과 Private 통신을 하는 방법으로 진행하겠습니다.
-
-{% include callout_v2.html type=&quot;info&quot; level=&quot;3&quot; content=&quot;
-&amp;#8259; Public Domain으로 접근 (*2022-04-21 업데이트*) &lt;br /&gt;
-&amp;#8259; PostgreSQL DB와 Private 통신을 위한 별도의 서버를 생성해서 접근 &lt;br /&gt;
-&amp;#8259; SSL VPN을 이용해서 접근
-&quot; %}
-
-## DB 생성
-[Cloud DB for PostgreSQL] - [DB Server]에서 [DB Server 생성] 버튼을 클릭해 DB를 생성을 시작합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하는 방법&quot; caption=&quot;&quot; %}
-
-### 서버 설정
-- DB 엔진: 현재 지원되는 `DB 엔진 버전은 PostgreSQL 13.3` 입니다.  
-- 고가용성 지원은 기본 선택 사항인데, 필요하지 않을 경우 체크를 해제하면 됩니다.
-- VPC와 Subnet을 선택하고, 미리 생성된 VPC와 Subnet가 없으면 생성 버튼을 클릭합니다.
-- DB Server 타입은 위쪽에서 확인했던 서버 사양 중에서 원하는 vCPU와 메모리를 선택하면 됩니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-02.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 1&quot; caption=&quot;&quot; %}
-
-- 데이터 스토리지 타입과 암호화 적용 여부를 선택합니다.
-- 데이터 스토리지는 기본 10GB로 설정되며 최대 6000GB까지 자동으로 증가합니다.
-- DB Server 이름과 DB Service 이름을 입력합니다. DB Service 이름은 DB Server를 역할별로 구분한 그룹의 명칭입니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 2&quot; caption=&quot;&quot; %}
-
-### DB 설정
-- USER ID와 암호를 입력합니다. (ID와 암호는 잊어버리지 않도록 잘 보관해야 합니다.)
-- 접근제어는 접근을 허용할 IP 대역을 입력합니다.
-- DB 접속포트는 기본 포트가 5432 입니다.
-- 기본 DB명을 입력하고, Backup 설정을 선택합니다.
-
-{% include warning.html title=&quot;접속포트 설정&quot; content=&quot;DB 접속포트는 한번 설정하면 이후에 변경할 수 없으니 신중하게 설정하셔야 합니다.&quot; %}
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - DB 설정&quot; caption=&quot;&quot; %}
-
-### 최종 확인
-지금까지 입력한 값이 이상이 없는지 최종 확인하고, 수정할 부분이 없으면 [생성] 버튼을 클릭합니다.  
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 최종 확인&quot; caption=&quot;&quot; %}
-
-## DB 상세 정보
-DB 생성이 완료되면 아래와 같이 DB의 상세 정보를 확인할 수 있습니다.  
-이 중에서 Private 도메인과 ACG는 이후 설정에서 사용할 중요한 항목입니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL DB 상세정보&quot; caption=&quot;&quot; %}
-
-## Client Server 생성 | CentOS
-처음에 설명했 듯이 `Cloud DB for PostgreSQL DB Server는 Private 환경에서만 접속 가능`하므로 PostgreSQL Client를 설치할 Linux Server를 생성해야 하는데, 
-여기서는 **CentOS 7.8**을 설치했습니다.
-
-VPC 환경에서 Linux Server를 생성하는 방법은 다음 문서를 참고하시기 바랍니다. 
-- &lt;a href=&quot;/compute/ncloud_compute_server_vpc_create.html&quot; target=&quot;_blank&quot;&gt;VPC 환경에서 서버 생성하기&lt;/a&gt;
-
-{% include callout_v2.html type=&quot;info&quot; level=&quot;1&quot; content=&quot;
-생성된 Client Server의 정보 중에서 비공인 IP는 다음 ACG 설정에서 필요하니 기억해 둡니다.&lt;br &gt;
-마찬가지로 공인 IP는 로컬 PC에서 PostgreSQL Client에 접속할 때 필요하니 기억해 둡니다.
-&quot; %}
-
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 접속용 Sever 생성&quot; caption=&quot;&quot; %}
-
-## ACG 설정
-[Server] - [ACG]에서 Cloud DB for PostgreSQL 생성 시에 자동으로 생성된 ACG [cloud-postgresql-ooooo]를 선택하고, [ACG 설정] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 리스트&quot; caption=&quot;&quot; %}
-
-### ACG 규칙 설정
-ACG 규칙 설정 창에서 [Inbound] 탭을 선택하고 `[접근 소스]는 위에서 생성한 Client Server의 비공인 IP를 입력`하고 허용 포트는 5432를 입력하고 [추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-## pgAdmin4 설치
-Client용 Linux Server에 PostgreSQL DB의 Client 프로그램인 pgAdmin4를 설치합니다.
-
-``` bash
-~# yum -y install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-10.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### pgAdmin4-Web 설치
-로컬 PC에서 pgAdmin4에 접속하기 위해 pgAdmin4-Web을 설치합니다.
-
-``` bash
-~# yum -y install pgadmin4-web
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-11.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### pgAdmin4-Web 환경 설정
-setup-web.sh 스크립트를 실행 후 pgAdmin4-Web 접속을 위한 이메일 계정과 패스워드를 입력합니다. 
-
-``` bash
-~# /usr/pgadmin4/bin/setup-web.sh
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-12.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### 오류 상황
-간혹 위에서 진행한 pgAdmin4-Web 환경 설정에서 아래와 같은 오류가 발생하는 경우가 있습니다.
-
-{% include warning.html title=&quot;semanage 오류&quot; content=&quot;&lt;br /&gt;
-/usr/pgamin4/bin/setup-web.sh: line 87: semanage: command not found&lt;br /&gt;
-/usr/pgamin4/bin/setup-web.sh: line 89: semanage: command not found
-&quot; %}
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-13.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### 필요한 파일 확인
-semanage 실행에 필요한 파일을 확인합니다.  
-아래 명령어를 실행하면 나오면 결과에 나오는 파일명을 복사합니다.
-
-``` bash
-~# yum provides /usr/sbin/semanage
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-14.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### 추가 파일 설치
-위에서 확인한 추가 파일을 설치합니다.
-
-``` bash
-~# yum -y install policycoreutils-python-2.5-34.el7.x86_64
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-15.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-
-### pgAdmin4-Web 설정 재 확인
-필요한 파일 설치를 마쳤으면 pgAdmin4-Web 환경 설정 명령어를 다시 실행합니다. 문제가 해결되었으면 오류 메시지가 나타나지 않습니다.
-
-``` bash
-~# /usr/pgadmin4/bin/setup-web.sh
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-16.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-## pgAdmin4 접속
-pgAdmin4 접속 주소는 `http://[Client Server 공인IP 주소]/pgadmin4/` 입니다.  
-위 주소로 접속하면 아래와 같이 Email Address와 Password 입력 화면이 나오는데 pgAdmin4-Web 환경 설정에서 입력한 이메일과 패스워드를 입력하고 로그인 합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-17.png&quot; width=&quot;835&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### 서버 추가
-pgAdmin에서 [Add New Server] 버튼을 클릭해서 위에서 생성했던 DB서버를 연결합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-18.png&quot; width=&quot;837&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-#### Name 입력
-등록할 DB의 이름을 편하게 입력합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-19.png&quot; width=&quot;497&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-#### 연결 정보 입력
-- Host name/address: Cloud DB for PostgreSQL 생성 후에 확인한 **`Private 도메인 (pg-oooo-vpc-cdb-kr.ntruss.com)`**을 입력합니다.
-- Username: Cloud DB for PostgreSQL 생성 시에 입력한 **USER ID**를 입력합니다.
-- Password: Cloud DB for PostgreSQL 생성 시에 입력한 **USER 암호**를 입력합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-20.png&quot; width=&quot;497&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-## pgAdmin4 대시보드
-연결 정보에 이상이 없고 정상적으로 접속이 되면 아래와 같이 대시보드 화면을 확인할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-21.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-## DB Service 상세 보기
-DB Service 상세 보기에서는 Database 추가/삭제, Config 관리, User 추가/삭제, Backup 설정 등을 관리할 수 있습니다.  
-Cloud DB for PostgreSQL을 선택하고 [DB 관리] - [DB Service 상세보기] 메뉴를 클릭합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-22.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### Database 관리
-PostgreSQL DB의 Database를 추가/삭제 할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-23.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### DB User 관리
-Cloud DB for PostgreSQL의 DB User를 추가/삭제 할 수 있습니다.
-
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
-&amp;#8259; PostgreSQL은 `1개의 DB에 1개 계정만 owner`로 지정할 수 있습니다.&lt;br /&gt;
-&amp;#8259; 1개의 DB를 여러 계정으로 관리해야 하는 경우는 서브 계정을 만들고 &lt;br /&gt;
-&amp;nbsp;&amp;nbsp; owner 계정으로 서브 계정에 별도의 권한을 설정해야 합니다.&lt;br /&gt;&lt;br /&gt;
-&amp;#8259; 이때 `계정 생성은 Ncloud 콘솔에서만 가능`합니다. (아래 화면의 DB User 관리 기능)&lt;br /&gt;
-&amp;#8259; 그 외의 `권한 설정은 pgAdmin4 웹페이지에서` 설정해야 합니다.
-&quot; %}
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-24.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-#### 서브 계정
-subid라는 서브 계정을 만들었다고 가정했을 때 아래 화면처럼 Superuser 등의 권한 설정을 할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-25.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### DB 접근 권한 설정
-서브 계정의 특정 DB에 대한 접근 권한을 설정하고자 할 경우는 아래와 같이 DB를 선택하고, 마우스 오른쪽 클릭을 한 후 [Properties] 메뉴를 선택합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-26.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-[Properties] 설정 화면에서 [Security] 메뉴를 선택하면 계정별로 권한을 설정할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-27.png&quot; width=&quot;750&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1. Ncloud Cloud DB for PostgreSQL 기본 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&lt;/a&gt;
-
-2. pgAdmin 홈페이지
-	- &lt;a href=&quot;https://www.pgadmin.org/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://www.pgadmin.org/&lt;/a&gt;
-
-3. Cloud DB for PostgreSQL Private 도메인 접속 - Ubuntu
-	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&lt;/a&gt;
-
-4. Cloud DB for PostgreSQL Public 도메인 접속
-	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html&lt;/a&gt;</description>
-            <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</guid>
-            
-            <category>database</category>
-            
-            <category>clouddb</category>
-            
-            <category>vpc</category>
-            
-            
-        </item>
-        
-        <item>
             <title>VPC환경에서 Cloud DB for PostgreSQL 생성하기 | Ubuntu</title>
             <description>## 지원 클라우드 환경
 Ncloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.
@@ -1969,303 +2021,282 @@ subid라는 서브 계정을 만들었다고 가정했을 때 아래 화면처�
         </item>
         
         <item>
-            <title>Ubuntu에서 NginX SSL 인증서 설정하는 방법</title>
-            <description>## 개요
-Ncloud (네이버 클라우드) Ubuntu 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.  
+            <title>VPC환경에서 Cloud DB for PostgreSQL 생성하기 | CentOS</title>
+            <description>## 지원 클라우드 환경
+Ncloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.
+
+- 리전(존): 한국, 싱가포르
+- VPC만	지원
+- 언어: 한국어, 영어, 일본어, 중국어(간체)
+- DB 엔진 버전: PostgreSQL 13.3
 
 
-## 서버 환경
+## 서버 사양과 요금
 
-{% include callout_v2.html type=&quot;secondary&quot; level=&quot;2&quot; content=&quot;
-&amp;#8259; OS: Ubuntu 20.04 &lt;br /&gt;
-&amp;#8259; NginX: NginX 1.21.6 &lt;br /&gt;
-&amp;#8259; SSL 인증서: 로컬 테스트용 인증서 
+*(2022-03-30 기준)*
+&lt;table class=&quot;simple_table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th rowspan=&quot;2&quot;&gt;타입&lt;/th&gt;&lt;th colspan=&quot;3&quot;&gt;제공사양&lt;/th&gt;&lt;th&gt;이용 요금&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;th&gt;vCPU&lt;/th&gt;&lt;th&gt;메모리&lt;/th&gt;&lt;th&gt;디스크&lt;/th&gt;&lt;th&gt;시간당/대&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;High CPU&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;4GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;158원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;8GB&lt;/td&gt;&lt;td&gt;323원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td&gt;653원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;1,313원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;2,633원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;Standard&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;8GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;250원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td&gt;506원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;1,019원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;2,045원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;128GB&lt;/td&gt;&lt;td&gt;4,099원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;High Memory&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;302원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;611원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;1,227원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;128GB&lt;/td&gt;&lt;td&gt;2,462원&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;256GB&lt;/td&gt;&lt;td&gt;4,927원&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+## 서버 사양 변경 시 제약 사항
+ Cloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 `메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경`할 수 있습니다. 그 외 제약 사항은 아래와 같습니다.
+
+- 같은 타입 내에서만 변경 가능
+- 2대 이상의 서버로 구성된 경우(고가용성 사용 및 Read Replica 사용) 모두 동일한 사양으로 변경
+- 변경 완료 후 서버가 다시 시작되며 이에 따라 서비스 영향 발생 가능성 존재
+
+
+## 상세 특징
+- DB 엔진 버전: **PostgreSQL 13.3**
+- 스토리지: 기본 10GB 데이터 스토리지를 제공하며, 10GB 단위로 6000GB까지 자동으로 용량이 증가
+- Multi Zone 구성 제공
+- 자동 Fail-over 기본 지원
+- 최대 5대까지 Read Replica 확장
+- 최대 30일까지 자동 백업 및 보관
+
+## 서버 접근 방법
+Cloud DB for PostgreSQL은 현재 다음의 3가지 방법으로 접근 가능한데 여기서는 별도의 Linux 서버를 생성해서 PostgreSQL과 Private 통신을 하는 방법으로 진행하겠습니다.
+
+{% include callout_v2.html type=&quot;info&quot; level=&quot;3&quot; content=&quot;
+&amp;#8259; Public Domain으로 접근 (*2022-04-21 업데이트*) &lt;br /&gt;
+&amp;#8259; PostgreSQL DB와 Private 통신을 위한 별도의 서버를 생성해서 접근 &lt;br /&gt;
+&amp;#8259; SSL VPN을 이용해서 접근
 &quot; %}
 
-## NginX 설치
-Ubuntu에 Nginx 최신 버전을 설치하는 방법은 아래 문서에서 확인하시면 됩니다.
-- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&lt;/a&gt;
+## DB 생성
+[Cloud DB for PostgreSQL] - [DB Server]에서 [DB Server 생성] 버튼을 클릭해 DB를 생성을 시작합니다.
 
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하는 방법&quot; caption=&quot;&quot; %}
 
-## 테스트 사이트 접속
-설치한 서버에 IP 주소로 접속해 봅니다.
+### 서버 설정
+- DB 엔진: 현재 지원되는 `DB 엔진 버전은 PostgreSQL 13.3` 입니다.  
+- 고가용성 지원은 기본 선택 사항인데, 필요하지 않을 경우 체크를 해제하면 됩니다.
+- VPC와 Subnet을 선택하고, 미리 생성된 VPC와 Subnet가 없으면 생성 버튼을 클릭합니다.
+- DB Server 타입은 위쪽에서 확인했던 서버 사양 중에서 원하는 vCPU와 메모리를 선택하면 됩니다.
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-01.png&quot; width=&quot;846&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-02.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 1&quot; caption=&quot;&quot; %}
 
+- 데이터 스토리지 타입과 암호화 적용 여부를 선택합니다.
+- 데이터 스토리지는 기본 10GB로 설정되며 최대 6000GB까지 자동으로 증가합니다.
+- DB Server 이름과 DB Service 이름을 입력합니다. DB Service 이름은 DB Server를 역할별로 구분한 그룹의 명칭입니다.
 
-## 테스트용 SSL 인증서 생성
-SSL 인증서를 저장할 디렉토리를 생성하고 30일 기한의 테스트용 인증서 파일 (nginx-ssl.key, nginx-ssl.crt)을 생성합니다. 
-여기서는 nginx-ssl-test.com 이라는 임의의 테스트용 도메인을 사용하겠습니다.
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 2&quot; caption=&quot;&quot; %}
 
-``` bash
-~# mkdir /root/ssl/
-~# openssl req -x509 -days 30 -nodes -newkey rsa:2048 \
-   -keyout /root/ssl/nginx-ssl.key -out /root/ssl/nginx-ssl.crt
-```
+### DB 설정
+- USER ID와 암호를 입력합니다. (ID와 암호는 잊어버리지 않도록 잘 보관해야 합니다.)
+- 접근제어는 접근을 허용할 IP 대역을 입력합니다.
+- DB 접속포트는 기본 포트가 5432 입니다.
+- 기본 DB명을 입력하고, Backup 설정을 선택합니다.
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-02.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+{% include warning.html title=&quot;접속포트 설정&quot; content=&quot;DB 접속포트는 한번 설정하면 이후에 변경할 수 없으니 신중하게 설정하셔야 합니다.&quot; %}
 
-인증서 파일이 제대로 저장되었는지 확인합니다.
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - DB 설정&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-03.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+### 최종 확인
+지금까지 입력한 값이 이상이 없는지 최종 확인하고, 수정할 부분이 없으면 [생성] 버튼을 클릭합니다.  
 
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 최종 확인&quot; caption=&quot;&quot; %}
 
-## NginX SSL 환경 설정
-NginX 환경 설정 파일 (/etc/nginx/conf.d/default.conf) 을 아래와 같이 수정합니다.
+## DB 상세 정보
+DB 생성이 완료되면 아래와 같이 DB의 상세 정보를 확인할 수 있습니다.  
+이 중에서 Private 도메인과 ACG는 이후 설정에서 사용할 중요한 항목입니다.
 
-``` bash
-~# vi /etc/nginx/conf.d/default.conf
-```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL DB 상세정보&quot; caption=&quot;&quot; %}
 
-{% include note.html title=&quot;환경설정 파일 위치&quot; content=&quot;
-NginX 버전을 위와 같이 최신 버전을 따로 설치하지 않고 &lt;br /&gt;
-Ubuntu에 기본 설정된 리포지토리에 있는 버전(1.18.0)을 apt install nginx로 바로 설치한 경우에는 &lt;br /&gt;
-NginX 환경 설정 파일 위치가 **/etc/nginx/sites-available/default**로 설정되어 있습니다.
+## Client Server 생성 | CentOS
+처음에 설명했 듯이 `Cloud DB for PostgreSQL DB Server는 Private 환경에서만 접속 가능`하므로 PostgreSQL Client를 설치할 Linux Server를 생성해야 하는데, 
+여기서는 **CentOS 7.8**을 설치했습니다.
+
+VPC 환경에서 Linux Server를 생성하는 방법은 다음 문서를 참고하시기 바랍니다. 
+- &lt;a href=&quot;/compute/ncloud_compute_server_vpc_create.html&quot; target=&quot;_blank&quot;&gt;VPC 환경에서 서버 생성하기&lt;/a&gt;
+
+{% include callout_v2.html type=&quot;info&quot; level=&quot;1&quot; content=&quot;
+생성된 Client Server의 정보 중에서 비공인 IP는 다음 ACG 설정에서 필요하니 기억해 둡니다.&lt;br &gt;
+마찬가지로 공인 IP는 로컬 PC에서 PostgreSQL Client에 접속할 때 필요하니 기억해 둡니다.
 &quot; %}
 
 
-``` nginx
-server {
-    listen       80;
-    server_name  nginx-ssl-test.com;
-    return 301 https://$host$request_uri;
-}
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 접속용 Sever 생성&quot; caption=&quot;&quot; %}
 
-server {
-    listen       443 ssl;
-    server_name  nginx-ssl-test.com;
+## ACG 설정
+[Server] - [ACG]에서 Cloud DB for PostgreSQL 생성 시에 자동으로 생성된 ACG [cloud-postgresql-ooooo]를 선택하고, [ACG 설정] 버튼을 클릭합니다.
 
-    ssl_certificate /root/ssl/nginx-ssl.crt;
-    ssl_certificate_key /root/ssl/nginx-ssl.key;
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 리스트&quot; caption=&quot;&quot; %}
 
-    ### 이하 생략 ###
-}
-```
+### ACG 규칙 설정
+ACG 규칙 설정 창에서 [Inbound] 탭을 선택하고 `[접근 소스]는 위에서 생성한 Client Server의 비공인 IP를 입력`하고 허용 포트는 5432를 입력하고 [추가] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+## pgAdmin4 설치
+Client용 Linux Server에 PostgreSQL DB의 Client 프로그램인 pgAdmin4를 설치합니다.
 
 ``` bash
-~# systemctl restart nginx
+~# yum -y install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
 ```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-10.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-### SSL 인증서 파일 설정
-여기서는 테스트용으로 생성한 인증서 파일의 위치를 아래와 같은 양식으로 지정합니다.  
-외부 공식 인증서 사이트에서 발급 받은 인증서도 원하는 곳에 저장하고 아래와 같이 위치를 지정해주면 됩니다.
+### pgAdmin4-Web 설치
+로컬 PC에서 pgAdmin4에 접속하기 위해 pgAdmin4-Web을 설치합니다.
 
-``` nginx
-    ssl_certificate /root/ssl/nginx-ssl.crt;
-    ssl_certificate_key /root/ssl/nginx-ssl.key;
+``` bash
+~# yum -y install pgadmin4-web
 ```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-11.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-### http 접속 시 https 리다이렉트
-NginX 웹서버에 http 접속 시에 https로 강제 리다이렉트를 하려고 할 경우에는 http로 접속하는 포트 (일반적으로 80) 설정에 아래와 같이 지정해주면 리다이렉트 됩니다.
+### pgAdmin4-Web 환경 설정
+setup-web.sh 스크립트를 실행 후 pgAdmin4-Web 접속을 위한 이메일 계정과 패스워드를 입력합니다. 
 
-``` nginx
-    return 301 https://$host$request_uri;
+``` bash
+~# /usr/pgadmin4/bin/setup-web.sh
 ```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-12.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-10.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+### 오류 상황
+간혹 위에서 진행한 pgAdmin4-Web 환경 설정에서 아래와 같은 오류가 발생하는 경우가 있습니다.
+
+{% include warning.html title=&quot;semanage 오류&quot; content=&quot;&lt;br /&gt;
+/usr/pgamin4/bin/setup-web.sh: line 87: semanage: command not found&lt;br /&gt;
+/usr/pgamin4/bin/setup-web.sh: line 89: semanage: command not found
+&quot; %}
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-13.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+### 필요한 파일 확인
+semanage 실행에 필요한 파일을 확인합니다.  
+아래 명령어를 실행하면 나오면 결과에 나오는 파일명을 복사합니다.
+
+``` bash
+~# yum provides /usr/sbin/semanage
+```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-14.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+### 추가 파일 설치
+위에서 확인한 추가 파일을 설치합니다.
+
+``` bash
+~# yum -y install policycoreutils-python-2.5-34.el7.x86_64
+```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-15.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
 
-## hosts 파일 수정
-테스트용으로 임의 설정한 도메인으로 접속하게 될 경우에는 hosts 파일을 수정해야 합니다.  
-`실제 도메인을 사용할 경우에는 아래 과정이 필요 없기에` [다음 단계로 바로 이동&lt;i class=&quot;fa-solid fa-turn-down&quot;&gt;&lt;/i&gt;](#https-access-test)하시면 됩니다. 
+### pgAdmin4-Web 설정 재 확인
+필요한 파일 설치를 마쳤으면 pgAdmin4-Web 환경 설정 명령어를 다시 실행합니다. 문제가 해결되었으면 오류 메시지가 나타나지 않습니다.
 
-윈도우 10에서 hosts 파일은 C:\Windows\System32\drivers\etc 에 존재하는데 직접 수정할 수가 없으므로 다음과 같은 단계를 거쳐야 합니다.
+``` bash
+~# /usr/pgadmin4/bin/setup-web.sh
+```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-16.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-1. C:\Windows\System32\drivers\etc\hosts 파일을 임의의 작업 폴더 (예: D:\Work)로 복사합니다.
-2. 복사한 hosts 파일을 수정해서 123.456.789.123 nginx-ssl-test.com 처럼 접속할 IP 주소와 도메인을 추가합니다.
-3. 수정한 파일을 C:\Windows\System32\drivers\etc 위치로 덮어쓰기 합니다.
-4. 덮어쓰기 할 때 관리자 권한이 필요하다는 안내 메시지가 나타나면 [계속] 버튼을 클릭합니다.
+## pgAdmin4 접속
+pgAdmin4 접속 주소는 `http://[Client Server 공인IP 주소]/pgadmin4/` 입니다.  
+위 주소로 접속하면 아래와 같이 Email Address와 Password 입력 화면이 나오는데 pgAdmin4-Web 환경 설정에서 입력한 이메일과 패스워드를 입력하고 로그인 합니다.
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-04.png&quot; width=&quot;745&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-17.png&quot; width=&quot;835&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-05.png&quot; width=&quot;710&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+### 서버 추가
+pgAdmin에서 [Add New Server] 버튼을 클릭해서 위에서 생성했던 DB서버를 연결합니다.
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-06.png&quot; width=&quot;710&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-18.png&quot; width=&quot;837&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-## https 접속 테스트 {#https-access-test}
-모든 설정을 마친 후에 테스트로 설정한 nginx-ssl-test.com 으로 접속하면 아래와 같이 https로 접속되는 것을 확인할 수 있습니다.  
-다만 로컬 테스트용 인증서이기 때문에 [주의 요함]이라는 메시지가 나타납니다.
+#### Name 입력
+등록할 DB의 이름을 편하게 입력합니다.
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-07.png&quot; width=&quot;846&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-19.png&quot; width=&quot;497&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-### 테스트 인증서 확인
-[주의 요함] 부분을 클릭하면 인증서 부분에 [인증서가 올바르지 않음]이라는 메시지가 보이는데 이곳을 클릭합니다.
+#### 연결 정보 입력
+- Host name/address: Cloud DB for PostgreSQL 생성 후에 확인한 **`Private 도메인 (pg-oooo-vpc-cdb-kr.ntruss.com)`**을 입력합니다.
+- Username: Cloud DB for PostgreSQL 생성 시에 입력한 **USER ID**를 입력합니다.
+- Password: Cloud DB for PostgreSQL 생성 시에 입력한 **USER 암호**를 입력합니다.
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-08.png&quot; width=&quot;846&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-20.png&quot; width=&quot;497&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-### 테스트 인증서 정보
-아래와 같이 처음에 설정한 내용이 인증서 정보에 올바르게 표시되는 것을 확인할 수 있습니다.
+## pgAdmin4 대시보드
+연결 정보에 이상이 없고 정상적으로 접속이 되면 아래와 같이 대시보드 화면을 확인할 수 있습니다.
 
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-ubuntu-09.png&quot; width=&quot;470&quot; alt=&quot;Ncloud Ubuntu 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-21.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+## DB Service 상세 보기
+DB Service 상세 보기에서는 Database 추가/삭제, Config 관리, User 추가/삭제, Backup 설정 등을 관리할 수 있습니다.  
+Cloud DB for PostgreSQL을 선택하고 [DB 관리] - [DB Service 상세보기] 메뉴를 클릭합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-22.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+### Database 관리
+PostgreSQL DB의 Database를 추가/삭제 할 수 있습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-23.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+### DB User 관리
+Cloud DB for PostgreSQL의 DB User를 추가/삭제 할 수 있습니다.
+
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
+&amp;#8259; PostgreSQL은 `1개의 DB에 1개 계정만 owner`로 지정할 수 있습니다.&lt;br /&gt;
+&amp;#8259; 1개의 DB를 여러 계정으로 관리해야 하는 경우는 서브 계정을 만들고 &lt;br /&gt;
+&amp;nbsp;&amp;nbsp; owner 계정으로 서브 계정에 별도의 권한을 설정해야 합니다.&lt;br /&gt;&lt;br /&gt;
+&amp;#8259; 이때 `계정 생성은 Ncloud 콘솔에서만 가능`합니다. (아래 화면의 DB User 관리 기능)&lt;br /&gt;
+&amp;#8259; 그 외의 `권한 설정은 pgAdmin4 웹페이지에서` 설정해야 합니다.
+&quot; %}
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-24.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+#### 서브 계정
+subid라는 서브 계정을 만들었다고 가정했을 때 아래 화면처럼 Superuser 등의 권한 설정을 할 수 있습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-25.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+### DB 접근 권한 설정
+서브 계정의 특정 DB에 대한 접근 권한을 설정하고자 할 경우는 아래와 같이 DB를 선택하고, 마우스 오른쪽 클릭을 한 후 [Properties] 메뉴를 선택합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-26.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+
+[Properties] 설정 화면에서 [Security] 메뉴를 선택하면 계정별로 권한을 설정할 수 있습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-27.png&quot; width=&quot;750&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
 
 ## 참고 URL
-1.  NginX Linux packages 설치 가이드
-	- &lt;a href=&quot;http://nginx.org/en/linux_packages.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;
+1. Ncloud Cloud DB for PostgreSQL 기본 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&lt;/a&gt;
 
-2.  Ubuntu에서 NginX 설치, 설정하는 방법
-	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html&lt;/a&gt;
+2. pgAdmin 홈페이지
+	- &lt;a href=&quot;https://www.pgadmin.org/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://www.pgadmin.org/&lt;/a&gt;
 
-3.  CentOS에서 NginX SSL 인증서 설정하는 방법
-	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html&lt;/a&gt;</description>
-            <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html</guid>
+3. Cloud DB for PostgreSQL Private 도메인 접속 - Ubuntu
+	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&lt;/a&gt;
+
+4. Cloud DB for PostgreSQL Public 도메인 접속
+	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html&lt;/a&gt;</description>
+            <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</guid>
             
-            <category>ubuntu</category>
+            <category>database</category>
             
-            <category>lemp</category>
+            <category>clouddb</category>
             
-            <category>nginx</category>
-            
-            <category>ssl</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>CentOS에서 NginX SSL 인증서 설정하는 방법</title>
-            <description>## 개요
-Ncloud (네이버 클라우드) CentOS 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.  
-
-
-## 서버 환경
-
-{% include callout_v2.html type=&quot;secondary&quot; level=&quot;2&quot; content=&quot;
-&amp;#8259; OS: CentOS 7.8 &lt;br /&gt;
-&amp;#8259; NginX: NginX 1.21.6 &lt;br /&gt;
-&amp;#8259; SSL 인증서: 로컬 테스트용 인증서 
-&quot; %}
-
-## NginX 설치
-CentOS에 Nginx 최신 버전을 설치하는 방법은 아래 문서에서 확인하시면 됩니다.
-- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&lt;/a&gt;
-
-
-## 테스트 사이트 접속
-설치한 서버에 IP 주소로 접속해 봅니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-01.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 테스트용 SSL 인증서 생성
-SSL 인증서를 저장할 디렉토리를 생성하고 30일 기한의 테스트용 인증서 파일 (nginx-ssl.key, nginx-ssl.crt)을 생성합니다. 
-여기서는 nginx-ssl-test.com 이라는 임의의 테스트용 도메인을 사용하겠습니다.
-
-``` bash
-~# mkdir /root/ssl/
-~# openssl req -x509 -days 30 -nodes -newkey rsa:2048 \
-   -keyout /root/ssl/nginx-ssl.key -out /root/ssl/nginx-ssl.crt
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-02.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-인증서 파일이 제대로 저장되었는지 확인합니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-03.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## NginX SSL 환경 설정
-NginX 환경 설정 파일 (/etc/nginx/conf.d/default.conf) 을 아래와 같이 수정합니다.
-
-``` bash
-~# vi /etc/nginx/conf.d/default.conf
-```
-``` nginx
-server {
-    listen       80;
-    server_name  nginx-ssl-test.com;
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen       443 ssl;
-    server_name  nginx-ssl-test.com;
-
-    ssl_certificate /root/ssl/nginx-ssl.crt;
-    ssl_certificate_key /root/ssl/nginx-ssl.key;
-
-    ### 이하 생략 ###
-}
-```
-
-``` bash
-~# systemctl restart nginx
-```
-
-### SSL 인증서 파일 설정
-여기서는 테스트용으로 생성한 인증서 파일의 위치를 아래와 같은 양식으로 지정합니다.  
-외부 공식 인증서 사이트에서 발급 받은 인증서도 원하는 곳에 저장하고 아래와 같이 위치를 지정해주면 됩니다.
-
-``` nginx
-    ssl_certificate /root/ssl/nginx-ssl.crt;
-    ssl_certificate_key /root/ssl/nginx-ssl.key;
-```
-
-### http 접속 시 https 리다이렉트
-NginX 웹서버에 http 접속 시에 https로 강제 리다이렉트를 하려고 할 경우에는 http로 접속하는 포트 (일반적으로 80) 설정에 아래와 같이 지정해주면 리다이렉트 됩니다.
-
-``` nginx
-    return 301 https://$host$request_uri;
-```
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-10.png&quot; width=&quot;840&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## hosts 파일 수정
-테스트용으로 임의 설정한 도메인으로 접속하게 될 경우에는 hosts 파일을 수정해야 합니다.  
-`실제 도메인을 사용할 경우에는 아래 과정이 필요 없기에` [다음 단계로 바로 이동&lt;i class=&quot;fa-solid fa-turn-down&quot;&gt;&lt;/i&gt;](#https-access-test)하시면 됩니다. 
-
-윈도우 10에서 hosts 파일은 C:\Windows\System32\drivers\etc 에 존재하는데 직접 수정할 수가 없으므로 다음과 같은 단계를 거쳐야 합니다.
-
-1. C:\Windows\System32\drivers\etc\hosts 파일을 임의의 작업 폴더 (예: D:\Work)로 복사합니다.
-2. 복사한 hosts 파일을 수정해서 123.456.789.123 nginx-ssl-test.com 처럼 접속할 IP 주소와 도메인을 추가합니다.
-3. 수정한 파일을 C:\Windows\System32\drivers\etc 위치로 덮어쓰기 합니다.
-4. 덮어쓰기 할 때 관리자 권한이 필요하다는 안내 메시지가 나타나면 [계속] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-04.png&quot; width=&quot;745&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-05.png&quot; width=&quot;710&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-06.png&quot; width=&quot;710&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## https 접속 테스트 {#https-access-test}
-모든 설정을 마친 후에 테스트로 설정한 nginx-ssl-test.com 으로 접속하면 아래와 같이 https로 접속되는 것을 확인할 수 있습니다.  
-다만 로컬 테스트용 인증서이기 때문에 [주의 요함]이라는 메시지가 나타납니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-07.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 테스트 인증서 확인
-[주의 요함] 부분을 클릭하면 인증서 부분에 [인증서가 올바르지 않음]이라는 메시지가 보이는데 이곳을 클릭합니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-08.png&quot; width=&quot;846&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 테스트 인증서 정보
-아래와 같이 처음에 설정한 내용이 인증서 정보에 올바르게 표시되는 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/lemp/ncloud-server-nginx-ssl-setting-guide-centos-09.png&quot; width=&quot;470&quot; alt=&quot;Ncloud CentOS 서버에 NginX SSL 인증서를 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1.  NginX Linux packages 설치 가이드
-	- &lt;a href=&quot;http://nginx.org/en/linux_packages.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;
-
-2.  CentOS에서 NginX 설치, 설정하는 방법
-	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html&lt;/a&gt;
-
-3.  Ubuntu에서 NginX SSL 인증서 설정하는 방법
-	- &lt;a href=&quot;/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html&lt;/a&gt;</description>
-            <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html</guid>
-            
-            <category>centos</category>
-            
-            <category>lemp</category>
-            
-            <category>nginx</category>
-            
-            <category>ssl</category>
+            <category>vpc</category>
             
             
         </item>

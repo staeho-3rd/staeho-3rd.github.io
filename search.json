@@ -85,7 +85,7 @@
 "tags": "php",
 "keywords": "PDF, PHP",
 "url": "/etc/etc_pdf_merge_php_sample.html",
-"summary": "Pdf 문서 합치기 PHP로 구현하는 방법"
+"summary": ""
 }
 ,
 
@@ -219,6 +219,17 @@
 "tags": "vpcload_balancerproxy",
 "keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
 "url": "/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 방화벽 ACG 권장설정과 Custom ACG 설정 예시",
+"tags": "acgclassicvpcload_balancer",
+"keywords": "방화벽, Firewall",
+"url": "/security/ncloud-security-acg-setting-sample.html",
 "summary": ""
 }
 ,
@@ -1044,7 +1055,7 @@
 "tags": "acgclassicvpc",
 "keywords": "방화벽, Firewall",
 "url": "/security/ncloud_security_acg_guide.html",
-"summary": "Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드입니다"
+"summary": ""
 }
 ,
 
@@ -1066,7 +1077,7 @@
 "tags": "security",
 "keywords": "Security",
 "url": "/security/ncloud_security_service_summary.html",
-"summary": "Ncloud Security 서비스 요약"
+"summary": ""
 }
 ,
 
