@@ -855,7 +855,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="ACG 설정 가이드" href="/security/ncloud_security_acg_guide.html" >ACG 설정 가이드</a></li>          
+          <li><a title="ACG 설정 기본 가이드" href="/security/ncloud_security_acg_guide.html" >ACG 설정 기본 가이드</a></li>          
                     
           
           
@@ -1116,14 +1116,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Pdf 문서 합치기 PHP로 구현" href="/etc/etc_pdf_merge_php_sample.html" >Pdf 문서 합치기 PHP로 구현</a></li>          
+          <li><a title="PHP로 텔레그램 메시지 전송하기" href="/etc/etc_php_to_telegram_message_send.html" >PHP로 텔레그램 메시지 전송하기</a></li>          
                     
           
           
           
           
           
-          <li><a title="PHP로 텔레그램 메시지 전송하기" href="/etc/etc_php_to_telegram_message_send.html" >PHP로 텔레그램 메시지 전송하기</a></li>          
+          <li><a title="내 공인 IP 주소 확인하기" href="/etc/etc-find-my-ip-address.html" >내 공인 IP 주소 확인하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Pdf 문서 합치기 PHP로 구현" href="/etc/etc_pdf_merge_php_sample.html" >Pdf 문서 합치기 PHP로 구현</a></li>          
                     
           
           
@@ -1728,7 +1735,7 @@ $("#toc_onoff").click(function() {
 <p>먼저 로드밸런서를 생성하고 서버와 연결한 후에 서버측 ACG에 로드밸런서의 접근을 허용하는 방법에 대해 알아보겠습니다.</p>
 
 <h3 id="vpc-환경-1">VPC 환경</h3>
-<p>VPC 환경에서 아래와 같이 로드밸런서의 서브넷 네트워크가 [<strong>10.0.4.0/24</strong>] 대역이라고 가정했보겠습니다.</p>
+<p>VPC 환경에서 아래와 같이 로드밸런서의 서브넷 네트워크가 [<strong>10.0.4.0/24</strong>] 대역이라고 가정해보겠습니다.</p>
 
 <figure><img class="docimage" src="/images/security/ncloud-security-acg-setting-sample-05.png" alt="Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시" style="width: 845px; " /><figcaption></figcaption></figure>
 
@@ -1751,8 +1758,7 @@ VPC 환경에서 로드밸런서와 서버를 연결할 때에는 ACG 설정 외
 <figure><img class="docimage" src="/images/security/ncloud-security-acg-setting-sample-08.png" alt="Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시" style="width: 845px; " /><figcaption></figcaption></figure>
 
 <h2 id="접근소스를-acg로-설정">접근소스를 ACG로 설정</h2>
-<p>다음으로 ACG를 접근소스로 지정하는 경우도 있습니다. 
-이 중에서 다른 ACG를 접근 소스 항목으로 지정하는 경우는 해당 ACG가 적용된 서버들이 접근할 수 있도록 규칙을 설정하는 것인데, 아래 설정 방법과 예시를 통해 자세히 알아보겠습니다.</p>
+<p>다음으로 다른 ACG를 접근소스로 지정하는 경우도 있습니다. 이것은 해당 ACG가 적용된 서버들이 접근할 수 있도록 규칙을 설정하는 것인데, 아래 설정 방법과 예시를 통해 자세히 알아보겠습니다.</p>
 
 <h3 id="vpc-환경-2">VPC 환경</h3>
 <p>ACG 규칙 설정에서 접근 소스 항목에 지정하려는 ACG 이름을 일부 입력하면 아래와 같이 적용 가능한 ACG 리스트가 나타는데 그 중에서 지정하려는 ACG를 선택하면 됩니다.</p>
@@ -1886,7 +1892,7 @@ VPC 환경에서 로드밸런서와 서버를 연결할 때에는 ACG 설정 외
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2022-07-06<br/> Site last generated: 2022-07-06 <br />        
+        <span>Page last updated:</span> 2022-07-06<br/> Site last generated: 2022-07-07 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>

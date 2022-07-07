@@ -26,6 +26,17 @@
 
 
 {
+"title": "내 IP 주소 확인하기",
+"tags": "ip",
+"keywords": "IP, IP Address",
+"url": "/etc/etc-find-my-ip-address.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "jekyll base-theme 커스터마이징",
 "tags": "markdownjekyllwindows",
 "keywords": "Markdown, Windows, Hugo",
@@ -1051,7 +1062,7 @@
 
 
 {
-"title": "ACG(Access Control Group) 가이드",
+"title": "Ncloud 방화벽 ACG 설정 기본 가이드",
 "tags": "acgclassicvpc",
 "keywords": "방화벽, Firewall",
 "url": "/security/ncloud_security_acg_guide.html",

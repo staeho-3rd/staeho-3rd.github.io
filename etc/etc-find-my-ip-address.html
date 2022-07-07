@@ -11,25 +11,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Ncloud VPC 환경의 ACG와 NACL 비교입니다">
-<meta name="keywords" content="vpc, acg,  VPC, Networking">
+<meta name="description" content="현재 접속한 기기의 공인(Public) IP 주소는 다음과 같습니다.">
+<meta name="keywords" content="ip,  IP, IP Address">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="ACG와 NACL 비교" />
+<meta property="og:title" content="내 IP 주소 확인하기" />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:description" content="Ncloud VPC 환경의 ACG와 NACL 비교입니다" />
-<link rel="canonical" href="https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_acg_nacl.html" />
-<meta property="og:url" content="https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_acg_nacl.html" />
+<meta property="og:description" content="현재 접속한 기기의 공인(Public) IP 주소는 다음과 같습니다." />
+<link rel="canonical" href="https://docs.3rdeyesys.com/etc/etc-find-my-ip-address.html" />
+<meta property="og:url" content="https://docs.3rdeyesys.com/etc/etc-find-my-ip-address.html" />
 <meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-12-01T00:00:00+09:00" />
+<meta property="article:published_time" content="2022-07-07T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="ACG와 NACL 비교" />
+<meta property="twitter:title" content="내 IP 주소 확인하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud VPC 환경의 ACG와 NACL 비교입니다","headline":"ACG와 NACL 비교","url":"https://docs.3rdeyesys.com/networking/ncloud_networking_vpc_acg_nacl.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"현재 접속한 기기의 공인(Public) IP 주소는 다음과 같습니다.","headline":"내 IP 주소 확인하기","url":"https://docs.3rdeyesys.com/etc/etc-find-my-ip-address.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-<title>ACG와 NACL 비교 | 써드아이시스템 기술문서</title>
+<title>내 IP 주소 확인하기 | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
@@ -527,7 +527,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li class="active"><a title="ACG와 NACL 비교" href="/networking/ncloud_networking_vpc_acg_nacl.html" >ACG와 NACL 비교</a></li>
+          <li><a title="ACG와 NACL 비교" href="/networking/ncloud_networking_vpc_acg_nacl.html" >ACG와 NACL 비교</a></li>          
                     
           
           
@@ -1123,7 +1123,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="내 공인 IP 주소 확인하기" href="/etc/etc-find-my-ip-address.html" >내 공인 IP 주소 확인하기</a></li>          
+          <li class="active"><a title="내 공인 IP 주소 확인하기" href="/etc/etc-find-my-ip-address.html" >내 공인 IP 주소 확인하기</a></li>
                     
           
           
@@ -1551,7 +1551,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
 
-   <h1 class="post-title-main">ACG와 NACL 비교</h1>
+   <h1 class="post-title-main">내 IP 주소 확인하기</h1>
 
 </div>
 
@@ -1562,91 +1562,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
    
    
-    <div class="summary">Ncloud VPC 환경의 ACG와 NACL 비교입니다</div>
+    <div class="summary">현재 접속한 기기의 공인(Public) IP 주소는 다음과 같습니다.</div>
    
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
 
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+   <iframe src="https://3rdeyesys.com/ip/" style="width:100%;height:150px;border:1px solid gray;background-color:#a6e1ec" scrolling="no"></iframe>
 
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
+<h2 id="ipv4">IPv4</h2>
+<p>111.222.333.444처럼 우리가 일반적으로 알고 있는 IPv4는 32비트로 구성된 IP 주소 체계로 이론적으로는 <strong>2^32</strong> 즉, 4,294,967,296개의 IP주소를 부여할 수 있습니다.<br />
+2011년 전세계 IP주소를 관리하고 있는 IANA(Internet Assigned Numbers Authority)에서 인터넷에 연결되는 기기가 급속도로 증가하면서 할당할 수 있는 IP주소가 고갈되어 감에 따라 IPv4의 신규 할당을 공식 종료했고, 그로 인해 신규 IP주소 체계인 IPv6에 대한 관심이 높아졌습니다.</p>
 
-  $(window).scrollTop(scroll_target - 10);
-  return false
-});
+<h2 id="ipv6">IPv6</h2>
+<p>IPv6는 ae06:2610:122a:2002:1849:2874:27c1:18f6 처럼 128비트로 구성된 신규 IP 주소 체계로 이론적으로는 <strong>2^128</strong> 개의 IP 주소를 부여할 수 있어 IP 주소의 부족은 없을 것이라고 이야기 되고 있습니다.</p>
 
-$("#toc_onoff").click(function() {  
-        $("#toc").toggle();
-        $("#tg-toc-icon").toggleClass('fa-toggle-on');
-        $("#tg-toc-icon").toggleClass('fa-toggle-off');
+<h2 id="private-ip-사설-아이피-대역">Private IP (사설 아이피) 대역</h2>
+<p>국제 인터넷 표준화 기구(IETF)에서 정한 RFC 1918 표준에 따라  IP 주소, 최상위 도메인 등을 관리하는 단체인 IANA(Internet Assigned Numbers Authority)가 아래의 주소를 사설 IP 대역으로 지정해두고 있습니다.</p>
 
-});
+<ul>
+  <li>A Class: 10.0.0.0 - 10.255.255.255 (10.0.0.0/8)</li>
+  <li>B Class: 172.16.0.0 - 172.31.255.255 (172.16.0.0/12)</li>
+  <li>C Class: 192.168.0.0 - 192.168.255.255 (192.168.0.0/16)</li>
+</ul>
 
-});
-</script>
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">
+Ncloud (네이버 클라우드)의 VPC(Virtual Private Cloud)는 퍼블릭 클라우드 상에 논리적으로 완전하게 분리된 고객전용 네트워크를 제공하는 서비스로, 위에서 설명한 RFC 1918 표준에 따른 최대 /16의 IP 네트워크 공간을 제공하고 있습니다.
+</div>
 
-<p><span class="label label-warning" style="cursor:pointer" id="toc_onoff"><i id="tg-toc-icon" class="fas fa-toggle-on"></i> ToC</span></p>
-<div id="toc"></div>
-
-
-
-    
-
-   <h2 id="개요">개요</h2>
-<p>네이버 클라우드에서는 VPC의 보안을 강화하기 위해 ACG와 NACL의 두 가지 보안 정책을 제공하고 있습니다.</p>
-
-<ol>
-  <li>ACG : Access Control Group은 서버의 NIC별 Inbound 및 Outbound 트래픽을 제어</li>
-  <li>NACL : Network Access Control List는 Subnet의 Inbound 및 Outbound 트래픽을 제어</li>
-</ol>
-
-<h2 id="acg-vs-nacl">ACG vs NACL</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">구분</th>
-      <th style="text-align: center">ACG</th>
-      <th style="text-align: center">NACL</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">적용 대상</td>
-      <td style="text-align: center">서버의 접근 제어</td>
-      <td style="text-align: center">Subnet의 접근 제어</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">지원 규칙</td>
-      <td style="text-align: center">허용 (Allow)</td>
-      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">허용 및 거부 (Allow / Deny)</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: center">상태 저장 여부</td>
-      <td style="text-align: center">상태 저장(Stateful)<br />(규칙에 관계없이 반환 트래픽이<br />자동으로 허용됨)</td>
-      <td style="text-align: center">상태 비저장(Stateless)<br />(반환 트래픽이 규칙에 의해<br />명시적으로 허용되어야 함)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">적용 방법</td>
-      <td style="text-align: center">서버의 NIC에 ACG 정책 적용</td>
-      <td style="text-align: center">Subnet 단위로 적용<br />(Subnet 별 1개만 허용)</td>
-    </tr>
-  </tbody>
-</table>
-
-<figure><img class="docimage" src="/images/networking/ncp_vpc_acg_nacl.png" alt="Ncloud VPC 환경의 ACG와 NACL 비교" style="width: 850px; max-width: 100%" /><figcaption></figcaption></figure>
-
-<h2 id="참고-url">참고 URL</h2>
-<p><a href="https://guide.ncloud-docs.com/docs/networking-vpc-vpcdetailedsubnet" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/networking-vpc-vpcdetailedsubnet.html</a></p>
 
    
     <div class="tags">
@@ -1654,12 +1597,6 @@ $("#toc_onoff").click(function() {
         <b>Tags: </b>
         
         
-        
-        <a href="/tag/tag_vpc.html" class="btn btn-default navbar-btn cursorNorm" role="button">vpc</a>
-        
-        
-        
-        <a href="/tag/tag_acg.html" class="btn btn-default navbar-btn cursorNorm" role="button">acg</a>
         
         
         
@@ -1696,7 +1633,7 @@ $("#toc_onoff").click(function() {
         </div>
         &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2020-12-01<br/> Site last generated: 2022-07-07 <br />        
+        <span>Page last updated:</span> 2022-07-07<br/> Site last generated: 2022-07-07 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
       </div>
     </div>
