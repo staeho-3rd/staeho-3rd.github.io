@@ -5,1415 +5,558 @@
         <description>써드아이시스템(3rdeyesys) 기술문서 사이트입니다 - Ncloud 프리미엄 파트너</description>
         <link>https://docs.3rdeyesys.com/</link>
         <atom:link href="https://docs.3rdeyesys.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 07 Jul 2022 16:17:28 +0900</pubDate>
-        <lastBuildDate>Thu, 07 Jul 2022 16:17:28 +0900</lastBuildDate>
+        <pubDate>Wed, 28 Sep 2022 17:16:06 +0900</pubDate>
+        <lastBuildDate>Wed, 28 Sep 2022 17:16:06 +0900</lastBuildDate>
         <generator>Jekyll v4.2.2</generator>
         
         
         <item>
-            <title>내 IP 주소 확인하기</title>
-            <description>&lt;iframe src=&quot;https://3rdeyesys.com/ip/&quot; style=&quot;width:100%;height:150px;border:1px solid gray;background-color:#a6e1ec&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&quot;ipv4&quot;&gt;IPv4&lt;/h2&gt;
-&lt;p&gt;111.222.333.444처럼 우리가 일반적으로 알고 있는 IPv4는 32비트로 구성된 IP 주소 체계로 이론적으로는 &lt;strong&gt;2^32&lt;/strong&gt; 즉, 4,294,967,296개의 IP주소를 부여할 수 있습니다.&lt;br /&gt;
-2011년 전세계 IP주소를 관리하고 있는 IANA(Internet Assigned Numbers Authority)에서 인터넷에 연결되는 기기가 급속도로 증가하면서 할당할 수 있는 IP주소가 고갈되어 감에 따라 IPv4의 신규 할당을 공식 종료했고, 그로 인해 신규 IP주소 체계인 IPv6에 대한 관심이 높아졌습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;ipv6&quot;&gt;IPv6&lt;/h2&gt;
-&lt;p&gt;IPv6는 ae06:2610:122a:2002:1849:2874:27c1:18f6 처럼 128비트로 구성된 신규 IP 주소 체계로 이론적으로는 &lt;strong&gt;2^128&lt;/strong&gt; 개의 IP 주소를 부여할 수 있어 IP 주소의 부족은 없을 것이라고 이야기 되고 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;private-ip-사설-아이피-대역&quot;&gt;Private IP (사설 아이피) 대역&lt;/h2&gt;
-&lt;p&gt;국제 인터넷 표준화 기구(IETF)에서 정한 RFC 1918 표준에 따라  IP 주소, 최상위 도메인 등을 관리하는 단체인 IANA(Internet Assigned Numbers Authority)가 아래의 주소를 사설 IP 대역으로 지정해두고 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A Class: 10.0.0.0 - 10.255.255.255 (10.0.0.0/8)&lt;/li&gt;
-  &lt;li&gt;B Class: 172.16.0.0 - 172.31.255.255 (172.16.0.0/12)&lt;/li&gt;
-  &lt;li&gt;C Class: 192.168.0.0 - 192.168.255.255 (192.168.0.0/16)&lt;/li&gt;
-&lt;/ul&gt;
+            <title>Ncloud VPC환경 IPsecVPN과 FortiGate 장비 연동 가이드</title>
+            <description>## 구성 환경
 
-&lt;div class=&quot;bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2&quot;&gt;
-Ncloud (네이버 클라우드)의 VPC(Virtual Private Cloud)는 퍼블릭 클라우드 상에 논리적으로 완전하게 분리된 고객전용 네트워크를 제공하는 서비스로, 위에서 설명한 RFC 1918 표준에 따른 최대 /16의 IP 네트워크 공간을 제공하고 있습니다.
-&lt;/div&gt;
+- Platform : VPC
+- 서버 OS : CentOS 7.8
+- 클라이언트 OS : Windows 11 Pro
+- 온프레미스 VPN 장비 : FortiGate 30E
 
-</description>
-            <pubDate>Thu, 07 Jul 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/etc/etc-find-my-ip-address.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/etc/etc-find-my-ip-address.html</guid>
-            
-            <category>ip</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Ncloud 방화벽 ACG 권장설정과 Custom ACG 설정 예시</title>
-            <description>## 개요
-Ncloud (네이버 클라우드)의 IP/Port 기반 필터링 방화벽 서비스인 ACG(Access Control Group) 권장설정과 Custom ACG 설정할 때 참고할 만한 예시를 몇가지 정리해보겠습니다.
+## VPC - IPsecVPN 네이버 클라우드 설정
 
+### 1. 서버생성
 
-## Inboud 기본 규칙 삭제
+Platform에서 VPC를 선택 후 서버를 생성합니다. 서버 생성에 대한 자세한 사항은 해당 문서에서 다루지 않습니다. 서버 생성 가이드 참고 부탁드립니다.
 
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;서버 생성 시에 기본으로 생성되는 Default ACG에는 아래처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 접근이 허용되어 있는데 보안을 위해 이 항목을 삭제하고 지정된 IP에서만 접속하도록 수정하는 것을 적극 권장합니다.&quot; %}
+(※실습은 VPC, Subnet, 서버 생성이 완료된상태로 진행됩니다.)
 
-### VPC 화면
+### 2. Virtual Private Gateway 생성
 
-아래는 Default ACG가 생성되면서 설정된 전체 접근 허용 상태입니다. 여기서 X버튼을 클릭해서 [0.0.0.0/0] 대역의 설정 2가지를 모두 삭제합니다.
-{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+콘솔 → VPC → Virtual Private Gateway
 
-위에서 기본 설정을 삭제하고 특정 IP만 접근 허용 상태입니다.  
-일반적으로 `[myip] 버튼을 클릭해서 현재 접속한 PC의 IP를 허용`하게 됩니다.
-{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-01.png&quot; width=&quot;562&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %}
 
-### Classic 화면
 
-아래도 Default ACG가 생성되면서 설정된 전체 접근 허용 상태입니다. 여기서 X버튼을 클릭해서 [0.0.0.0/0] 대역의 설정 2가지를 모두 삭제합니다.
-{% include image.html file=&quot;security/ncp_security_acg_classic.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+이름입력 및 VPC를 선택하고 생성합니다.
 
-위에서 기본 설정을 삭제하고 특정 IP만 접근 허용한 상태입니다.  
-일반적으로 `[myip] 버튼을 클릭해서 현재 접속한 PC의 IP를 허용`하게 됩니다.
-{% include image.html file=&quot;security/ncp_security_acg_classic_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-02.png&quot; width=&quot;692&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
+생성 후 현재 상태는 미사용중이 맞습니다. 다음으로 넘어갑니다.
 
-## 용도별 ACG 구분
-ACG는 사용하는 서버들을 용도별로 구분해서 기본 ACG외에 별도의 Custom ACG를 아래의 예시처럼 그룹별로 생성해서 적용하는 것이 좋습니다.  
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### VPC 환경에서 ACG 생성
-[Server] - [ACG]에서 생성할 수 있으며 이름 규칙은 최소 3자, 최대 30자, 소문자만, 숫자와 하이픈(-) 사용 가능합니다.  
-그리고, ACG를 적용할 VPC도 선택해야 합니다.
+### 3. Virtual Private Gateway Group 생성
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-01.png&quot; width=&quot;715&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+콘솔 → VPC → Virtual Private Gateway → Virtual Private Gateway Group
 
-### Classic 환경에서 ACG 생성
-[Server] - [ACG]에서 생성할 수 있으며 이름 규칙은 최소 6자, 최대 30자, 소문자만, 숫자와 하이픈(-) 사용 가능합니다.
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-04.png&quot; width=&quot;639&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-02.png&quot; width=&quot;715&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+이름설정 및 VPC, Default 여부 선택하여 추가하고 생성합니다.
 
-### 용도별 Custom ACG 생성 예시
-아래의 Custom ACG 명칭은 임의로 작성한 것이며, 어떤 규칙으로 이름을 정할 것인가는 각자 자체 기준에 따라 편하신대로 정하시면 됩니다.
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-- DB-ACG
-- APP-ACG
-- WAS-ACG
-- WEB-ACG
-- BILL-ACG
-- Jenkins-ACG
-- Login-Server-ACG
-- Lobby-Server-ACG
-- Chat-Server-ACG
-- PVP-Server-ACG
-- Live-Streaming-ACG
-- VOD-Server-ACG
-- API-Server-ACG
-- Bill-DB-ACG
-- Bill-APP-ACG
-- Admin-Tool-ACG
-- Live-Service-ACG
-- Dev-System-ACG
-- QA-System-ACG
-- Home-Access-ACG
-- External-Developer-ACG
-- Partner-Company-ACG
+Group생성이 완료되면 2번항목에서 생성한 Virtual Private Gateway도 운영중으로 변경됩니다.
 
-### 복수의 ACG 적용
-1개 서버에 허용이 필요한 설정을 모두 추가한 1개의 ACG만 무리하게 적용하려 하기 보다는 위의 예시처럼 용도별로 구분한 ACG를 여러 개 적용하는 것을 추천합니다.
-예를 들어 아래와 같이 각각의 용도별 서버들에는 이런 식으로 ACG를 구분해서 적용할 수도 있습니다.  
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-&lt;br /&gt;예를 들어 채팅 서버에 ACG를 적용할 때의 예시는 다음과 같습니다.
-- 적용 ACG: APP-ACG, Chat-Server-ACG
+### 4. Route Table 설정
 
-&lt;br /&gt;마찬가지로 QA 빌링 DB에 ACG를 적용할 때의 예시는 다음과 같습니다.
-- 적용 ACG: DB-ACG, BILL-ACG, QA-System-ACG
+콘솔 → VPC → Route Table
 
+VPC를 생성하면 아래와같이 default로 해당 VPC의 Public, Private Table이 기본으로 생성되어있습니다.
 
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-07.png&quot; width=&quot;538&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-## Custom ACG 적용 순서
+IPsecVPN 연결을위해 생성한 서버가 소속된 default-table에 목적지인 사무실대역을 추가하여 경로를 지정합니다.
 
-1. ACG 생성
-- 우선 위의 방법대로 ACG를 용도별로 구분해서 생성합니다.
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-2. ACG 적용
-- 다음으로 생성한 ACG를 서버에 적용하는 단계입니다. 아래쪽에서 VPC, Classic 각각의 환경별로 살펴보겠습니다.
+### 5. **IPsec VPN Gateway 생성**
 
-### VPC 환경
-VPC 환경은 NIC에 ACG가 적용되는 구조이므로 NIC당 최대 3개까지 할당할 수 있습니다. 
+콘솔 → IPsec VPN → IPsec VPN Gateway
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-09.png&quot; width=&quot;537&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### Classic 환경
-Classic 환경에서는 서버에 적용되는 구조이고, 최대 5개까지 선택 가능합니다.
+이름 및 Group를 선택하고 생성합니다.
 
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;이때 **Classic 환경 ACG는 서버를 생성하는 단계에서만 적용할 수** 있습니다.&lt;br /&gt; `서버 생성이 완료된 후에는 추가로 ACG를 적용할 수 없습니다.`&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-10.png&quot; width=&quot;685&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+생성완료되어 상태가 운영중이면 다음으로 넘어갑니다.
 
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-11.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-## Custom ACG 추가 적용-제거
-Classic 환경과 달리 **VPC 환경에서는** ACG가 서버가 아닌 NIC에 적용되는 구조이며, `기존에 적용된 ACG외에 추가로 ACG를 적용하거나 제거할 수 있습니다`.
+### 6. IPsecVPN Tunnel 생성
 
-아래와 같이 서버 상세정보 NIC 항목에서 [ACG 수정] 버튼을 클릭합니다.
+콘솔 → IPsecVPN → IPsecVPN Tunnel 
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-12.png&quot; width=&quot;526&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### ACG 추가 적용
-ACG 수정 화면에서 왼쪽 창에서 적용하려는 ACG를 선택하고 오른쪽 창으로 이동시키면 됩니다.
+VPN 연결 정보 입력 후 다음으로 넘어갑니다. 
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-10.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+(※ 아래 입력한 정보는 임의 설정값입니다.)
 
-### ACG 제거
-ACG 수정 화면에서 오른쪽 창에서 제거하려는 ACG를 선택하고 왼쪽 창으로 이동시키면 됩니다.  
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-13.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-{% include callout_v2.html type=&quot;primary&quot; level=&quot;2&quot; content=&quot;이때 ACG는 최소 1개가 적용되어 있어야 하므로 마지막 ACG 1개는 제거할 수 없습니다.&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-14.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-11.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+최종 입력 정보를 확인 후 생성합니다.
 
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-15.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-## 접근소스를 Load Balancer로 설정
-ACG를 설정할 때 접근 소스 항목은 보통 IP주소를 입력하게 됩니다. 
-하지만 특수한 경우로 Load Balancer를 지정하거나 ACG를 직접 지정하는 경우도 있습니다. 
+생성된 정보를 확인하여 상태가 운영중이면 다음으로 넘어갑니다.
 
-먼저 로드밸런서를 생성하고 서버와 연결한 후에 서버측 ACG에 로드밸런서의 접근을 허용하는 방법에 대해 알아보겠습니다.  
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-16.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### VPC 환경
-VPC 환경에서 아래와 같이 로드밸런서의 서브넷 네트워크가 [**10.0.4.0/24**] 대역이라고 가정해보겠습니다.
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+## FortiGate IPsec VPN 장비설정
 
+### 1. 가상사설망 생성
 
-서버의 ACG 규칙 설정 화면에서 아래와 같이 접근소스에 위에서 확인한 로드밸런서의 서브넷 네트워크 [**10.0.4.0/24**]를 입력하면 됩니다.
+FortiGate → 가상사설망 IPsec Wizard → Custom
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+Template Type은 Custom으로 진행합니다. 
 
-{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;
-VPC 환경에서 로드밸런서와 서버를 연결할 때에는 ACG 설정 외에도 Network ACL 등 추가로 설정해야 하는 것들이 많이 있습니다. 자세한 설정 방법은 아래 문서를 참고하시기 바랍니다. &lt;br /&gt;
-&amp;#8259; &lt;a href=&apos;/networking/ncloud_networking_load_balancer_application_lb.html&apos; target=&apos;_blank&apos; style=&apos;word-break:break-all&apos;&gt;VPC 환경에서 Application Load Balancer 생성하기&lt;/a&gt;
-&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-17.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
+네이버 클라우드에서 생성한 IPsecVPN Tunnel 정보와 동일하게 설정합니다. 서로의 정보가 하나라도 다를경우 연결에 실패할 수 있습니다.
 
-### Classic 환경
-Classic 환경에서는 아래와 같이 로드밸런서의 ACG 소스 명칭이 [**ncloud-load-balancer**]로 고정되어 있습니다.
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-18.png&quot; width=&quot;651&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+네이버 클라우드 IPseVPN Gateway 공인 IP 확인
 
-ACG 규칙 설정 화면에서 접근소스에 로드밸런서의 ACG 소스 [**ncloud-load-balancer**]를 입력하면 됩니다.
+콘솔 → IPsec VPN → IPsec VPN Gateway
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-19.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
+계속하여 FortiGate VPN 장비 정보 입력하겠습니다.
 
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-20.png&quot; width=&quot;628&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-## 접근소스를 ACG로 설정
-다음으로 다른 ACG를 접근소스로 지정하는 경우도 있습니다. 이것은 해당 ACG가 적용된 서버들이 접근할 수 있도록 규칙을 설정하는 것인데, 아래 설정 방법과 예시를 통해 자세히 알아보겠습니다.
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-21.png&quot; width=&quot;628&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### VPC 환경
-ACG 규칙 설정에서 접근 소스 항목에 지정하려는 ACG 이름을 일부 입력하면 아래와 같이 적용 가능한 ACG 리스트가 나타는데 그 중에서 지정하려는 ACG를 선택하면 됩니다.
+### 2. 라우팅 설정
 
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;VPC 환경에서 ACG를 접근소스를 설정할 때는 **동일한 VPC에 생성된 ACG만 접근소스로 설정**할 수 있습니다.&quot; %}
+FortiGate → 네트워크 → 정적 경로 → 새로 생성
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-13.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-22.png&quot; width=&quot;599&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### Classic 환경
-Classic도 마찬가지로 ACG 규칙 설정에서 접근 소스 항목에 지정하려는 ACG 이름을 일부 입력하면 아래와 같이 적용 가능한 ACG 리스트가 나타는데 그 중에서 지정하려는 ACG를 선택하면 됩니다. Classic은 VPC와 달리 특별한 제한이 없습니다.
+Interface 부분부터 위에서 생성한 test-vpn을 선택합니다.
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-12.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-23.png&quot; width=&quot;825&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### 예시
-아래와 같이 SVR-1, SVR-2, SVR-3 서버에 각각 ACG-1, ACG-2가 적용되어 있다고 가정해보겠습니다.
+목적지로 가기위한 정보 입력 후 생성합니다.
 
-[**ACG-1**]
-- 적용서버 : SVR-1, SVR-2
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-24.png&quot; width=&quot;757&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-[**ACG-2**]
-- 적용서버 : SVR-3
+### 3. 정책설정
 
-[**ACG-2 적용 규칙**]
-- 프로토콜 :  TCP
-- 접근소스 :  ACG-1
-- 허용포트 : 80
+Local&gt;VPN, VPN&gt;Local의 접근을 제어하기위한 설정을 합니다.
 
-{% include note.html content=&quot;위와 같은 경우 ACG-1이 적용된 SVR-1, SVR-2 서버에서 ACG-2가 적용된 SVR-3 서버로 80포트를 이용한 접근을 허용한다는 의미입니다.&quot; %}
+(가이드에서는 all로 설정하고 진행하겠습니다)
 
+FortiGate → Policy &amp; Objects → IPv4 Policy → 새로 생성
 
-## ACG 삭제
-Custom ACG는 VPC, Classic 환경 모두 [Console] - [Server] - [ACG] 메뉴에서 삭제할 수 있습니다.
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-25.png&quot; width=&quot;512&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-삭제하려는 ACG를 선택하고 [ACG 삭제] 버튼을 클릭합니다.
+Loca l&gt; VPN 정보 입력 후 생성
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-14.png&quot; width=&quot;845&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-26.png&quot; width=&quot;689&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-ACG 삭제 팝업에서 [예] 버튼을 클릭합니다.
+VPN &gt; Local 정보 입력 후 생성
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-15.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-27.png&quot; width=&quot;689&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### 삭제 불가
-아직 적용된 서버나 NIC가 존재하는 ACG는 삭제할 수 없습니다.
+### 4. VPN 모니터링
 
-#### VPC 환경
-VPC 환경에서 삭제를 시도하면 [ACG에 속해 있는 Network Interface가 존재합니다. 해당 Network Interface에서 ACG를 삭제 후 다시 시도해주세요]라는 메시지가 나타납니다.
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-16.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+FortiGate → 모니터 → IPsec 모니터 → Bring UP
 
-#### Classic 환경
-Classic 환경에서 삭제를 시도하면 [서버가 한대라도 ACG 에 적용되어 있는 상태이면, 해당 ACG 는 삭제할 수 없습니다]라는 메시지가 나타납니다.
+Bring UP하여 상태가 Down에서 UP 으로 변경되면 정상적으로 연결이 완료되었습니다.
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-17.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-28.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-### Default ACG 삭제 불가
-기본적으로 생성된 Default ACG는 삭제할 수 없습니다.
+### ACG 설정
 
-{% include image.html file=&quot;security/ncloud-security-acg-setting-sample-18.png&quot; width=&quot;480&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 설정 예시&quot; caption=&quot;&quot; %}
+VPN연결이 되어도 아래와같이 Ping테스트에 실패하게됩니다. 이유는 네이버클라우드 서버는 ACG 정책에 따라 접근이 통제되므로 추가 설정이 필요합니다.
 
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-29.png&quot; width=&quot;466&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
 
-## 참고 URL
-1. VPC 환경 ACG 설정
-- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-compute-2-3-vpc&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-compute-2-3-vpc&lt;/a&gt;
+콘솔 → Server → ACG → ACG 선택 → ACG 설정
 
+사무실PC에서 네이버클라우드 서버로 ping 테스트를 위해 서버에 매핑된 ACG에 아래와 같이 사무실의 사설대역을 입력하고 추가합니다.
 
-2. Classic 환경 ACG 설정
-- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-compute-2-3&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-compute-2-3&lt;/a&gt;</description>
-            <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/security/ncloud-security-acg-setting-sample.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/security/ncloud-security-acg-setting-sample.html</guid>
-            
-            <category>acg</category>
-            
-            <category>classic</category>
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-30.png&quot; width=&quot;525&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
+
+접근소스에 프로토콜 - ICMP, 접근소스 - 사무실의 사설대역으로 추가합니다.
+
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-31.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
+
+이후 핑테스트결과 아래와같이 정상적으로 통신이가능합니다.
+
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-32.png&quot; width=&quot;400&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} 
+
+※ 추가로 프로토콜 - TCP, 접근소스 - 사무실 사설대역, 허용포트 22를추가하면 아래와같이 서버에 접근이 가능합니다.
+
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-33.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %}
+
+{% include image.html file=&quot;networking/ncloud-networking-ipsecvpn-fortigate-setting-guide-34.png&quot; width=&quot;334&quot; alt=&quot;Ncloud VPC 환경의 IPsecVPN 상품을 이용하여 온프레미스 FortiGate 장비와 연동하여 IPsec VPN 환경을 구성하는 방법&quot; caption=&quot;&quot; %} </description>
+            <pubDate>Wed, 28 Sep 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html</guid>
             
             <category>vpc</category>
             
-            <category>load_balancer</category>
+            <category>ipsecvpn</category>
+            
+            <category>fortigate</category>
             
             
         </item>
         
         <item>
-            <title>Ncloud 방화벽 ACG 설정 기본 가이드</title>
+            <title>설치형 PostgreSQL DB 설치, 접속 가이드 | CentOS</title>
             <description>## 개요
-ACG(Access Control Group)는 서버 간 네트워크 접근 제어 및 관리를 할 수 있는 IP/Port 기반 필터링 방화벽 서비스로 AWS에서는 비슷하게 Security Group이라는 것이 있습니다.
 
-## 제한 사항
+
+## 테스트 환경
+- CentOS 7.8
+- PostgreSQL 13.8
+
+
+## 설치
+여기서는 PostgreSQL 13을 설치해보겠습니다.
+
+### 리포지토리 설치
+
+``` bash
+~# yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+```
+
+### PostgreSQL 설치
+
+``` bash
+~# yum install -y postgresql13-server
+```
+
+
+``` bash
+~# cd /usr/pgsql-13/bin/
+~# postgresql-13-setup initdb
+~# systemctl enable postgresql-13
+~# systemctl start postgresql-13
+```
+
+``` bash
+~# su postgres
+bash$ psql
+```
+
+``` sql
+postgres=# create user testuser password &apos;test123$&apos; superuser;
+postgres=# \du 
+```
+
+``` sql
+postgres=# create database testdb owner testuser;
+postgres=# \l
+```
+
+``` sql
+postgres=# \q
+bash$ exit;
+```
+``` bash
+~# psql --u testuser -d testdb
+psql: error: FATAl: Peer authentication failed for user &quot;testuser&quot;
+```
+
+``` bash
+~# vi /var/lib/pgsql/13/data/pg_hba.conf
+```
+
+``` bash
+~# systemctl restart postgresql-13
+```
+
+``` bash
+~# psql --u testuser -d testdb
+Password for user testuser:
+```
+
+
+
+
+psql: FATAL:  role &quot;root&quot; does not exist
+
+psql: FATAL:  Peer authentication failed for user &quot;testuser&quot;
+
+
+
+## 기본 배포 버전 설치
+
+``` bash
+~# yum install postgresql-server
+~# cd /usr/bin/
+~# postgresql-setup --initdb
+~# systemctl enable postgresql
+~# systemctl start postgresql
+~# systemctl status postgresql
+```
+
+
+
+
+trust
+무조건 접속을 허용합니다. 이 방법을 사용하면 PostgreSQL 데이터베이스 서버에 연결할 수 있는 모든 사람이 암호나 다른 인증 없이 원하는 PostgreSQL 사용자로 로그인할 수 있습니다. 
+
+reject
+무조건 연결을 거부합니다. 이것은 그룹에서 특정 호스트 를 &quot; 필터링 &quot;reject 하는 데 유용합니다. 예를 들어 한 라인은 특정 호스트의 연결을 차단할 수 있고 나중 라인은 특정 네트워크의 나머지 호스트가 연결할 수 있도록 합니다.
+
+scram-sha-256
+SCRAM-SHA-256 인증을 수행하여 사용자의 암호를 확인합니다. 
+
+md5
+SCRAM-SHA-256 또는 MD5 인증을 수행하여 사용자의 암호를 확인합니다. 
+
+password
+클라이언트가 인증을 위해 암호화되지 않은 암호를 제공하도록 요구합니다. 암호는 네트워크를 통해 일반 텍스트로 전송되기 때문에 신뢰할 수 없는 네트워크에서는 사용해서는 안 됩니다. 
+
+gss
+GSSAPI를 사용하여 사용자를 인증합니다. 이것은 TCP/IP 연결에만 사용할 수 있습니다. GSSAPI 암호화와 함께 사용할 수 있습니다.
+
+sspi
+SSPI를 사용하여 사용자를 인증합니다. 이것은 Windows에서만 사용할 수 있습니다. 
+
+ident
+클라이언트의 ident 서버에 연결하여 클라이언트의 운영 체제 사용자 이름을 얻고 요청한 데이터베이스 사용자 이름과 일치하는지 확인합니다. ID 인증은 TCP/IP 연결에서만 사용할 수 있습니다. 로컬 연결에 대해 지정된 경우 피어 인증이 대신 사용됩니다. 
+
+peer
+운영 체제에서 클라이언트의 운영 체제 사용자 이름을 가져와서 요청한 데이터베이스 사용자 이름과 일치하는지 확인합니다. 이것은 로컬 연결에만 사용할 수 있습니다. 
+
+ldap
+LDAP 서버 를 사용하여 인증 합니다. 
+
+radius
+RADIUS 서버를 사용하여 인증합니다. 
+
+cert
+SSL 클라이언트 인증서를 사용하여 인증합니다. 
+
+pam
+운영 체제에서 제공하는 PAM(Pluggable Authentication Modules) 서비스를 사용하여 인증합니다. 
+
+bsd
+운영 체제에서 제공하는 BSD 인증 서비스를 사용하여 인증합니다. 
+
+
+
+
+
+https://www.postgresql.org/docs/current/auth-pg-hba-conf.html
+
+https://www.postgresql.org/download/linux/</description>
+            <pubDate>Tue, 27 Sep 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/database/ncloud-database-postgresql-install-connect-guide-centos.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud-database-postgresql-install-connect-guide-centos.html</guid>
+            
+            <category>database</category>
+            
+            <category>vpc</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>모니터링 서비스 Cloud Insight 설정 가이드</title>
+            <description>## 개요
+네이버 클라우드와 사용자 애플리케이션의 성능/운영 지표를 통합 관리하고, 장애나 이벤트가 발생했을 때 SMS 및 Email로 알람 통보를 해주는 서비스인 Cloud Insight 서비스를 설정하는 방법에 대해 정리해보겠습니다.
+
+
+### Monitoring 서비스 vs Cloud Insight 서비스
+Classic 환경에 있는 Monitoring 서비스와 Cloud Insight 서비스의 차이점을 정리하면 다음과 같습니다.
+
+{% include callout_v2.html type=&quot;success&quot; level=&quot;1&quot; content=&quot;- Monitoring 서비스는 Classic 환경에서만 사용할 수 있다.
+&lt;br /&gt;- Cloud Insight 서비스는 Classic, VPC 양쪽에서 모두 사용할 수 있고, 두가지 환경을 통합해서 보여준다.
+&lt;br /&gt;- Monitoring 서비스는 Server 제품 (AutoScaling 포함)만 모니터링 한다.
+&lt;br /&gt;- Cloud Insight 서비스는 Server 뿐만 아니라 Object Storage, Load Balancer 등 10여개의 서비스를 모니터링 한다.&quot; %}
+
+
+
+## 적용 서비스 리스트
+위 비교에서도 설명했듯이 Cloud Insight는 Server 뿐만 아니라 네이버 클라우드의 다양한 서비스의 모니터링 정보를 확인할 수 있는데 해당 리스트는 다음과 같습니다.
+
+### Classic 
+- Server
+- Load Balancer
 
 ### VPC
-- VPC당 최대 **500개**까지 ACG 생성 가능
-- **NIC당 3개의 ACG**를 허용
-- Inbound / Outbound 각각 **50개의 규칙** 생성 가능
+- Server(VPC)
+- Load Balancer(VPC)
+- Cloud DB for MySQL(VPC)
+- Cloud DB for MSSQL(VPC)
+- Cloud DB for Redis(VPC)
+- Cloud DB for MongoDB(VPC)
+- Cloud Hadoop(VPC)
+- Auto Scaling Group(VPC)
+- Kubernetes Service(VPC)
+- Search Engine Service(VPC)
+- Cloud Data Streaming Service(VPC)
 
-### Classic
-- 계정당 최대 **100개**까지 ACG를 생성 가능
-- 각 ACG에는 최대 **100개**까지의 규칙을 설정할 수 있음
-- 서버는 **최대 5개**의 ACG에 중복 포함될 수 있음
-- 서버가 생성될 시 선택한 ACG는 변경이 불가하며, 반납 전까지 해당 ACG 규칙을 적용 받게 됨
-
-{% include callout_v2.html type=&quot;info&quot; level=&quot;1&quot; content=&quot;Classic 환경에서는 서버 자체에 할당되는 개념이었으나 VPC에는 NIC 즉, 네트워크 카드에 할당되는 개념이어서 VPC 환경에서는 **NIC 당 최대 3개**까지 ACG를 적용할 수 있습니다.&quot; %}
-
-## 기본 규칙
-
-### Default ACG
-기본적으로 추가되는 ACG
-
-- 모든 들어오는 연결(inbound traffic)을 차단함
-- 모든 나가는 연결(outbound traffic)을 허용함
-- Default ACG 내 속한 서버들끼리의 네트워크 양방향 통신(TCP, UDP, ICMP)이 허용됨
-- 원격 접속 기본 포트 (**Linux - 22, Windows - 3389**)에 대한 TCP 허용됨
-
-#### VPC 화면
-
-##### Inbound (기본 설정)
-{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
-
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;1&quot; content=&quot;기본으로 생성된 ACG에는 위처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 허용되어 있는데 보안을 위해 이 항목을 삭제하고 아래와 같이 지정된 IP에서만 접속하도록 수정하는 것을 적극 권장합니다.&quot; %}
-
-##### Inbound (권장 설정)
-{% include image.html file=&quot;security/ncp_security_acg_vpc_inbound_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
-
-##### Outbound
-{% include image.html file=&quot;security/ncp_security_acg_vpc_outbound.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
-
-#### Classic 화면 (기본 설정)
-{% include image.html file=&quot;security/ncp_security_acg_classic.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
-
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;1&quot; content=&quot;기본으로 생성된 ACG에는 위처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 허용되어 있는데 보안을 위해 이 항목을 삭제하고 아래와 같이 지정된 IP에서만 접속하도록 수정하는 것을 적극 권장합니다.&quot; %}
-
-#### Classic 화면 (권장 설정)
-{% include image.html file=&quot;security/ncp_security_acg_classic_02.png&quot; width=&quot;770&quot; alt=&quot;Ncloud의 IP/Port 기반 필터링 방화벽 서비스 ACG(Access Control Group) 가이드&quot; caption=&quot;&quot; %}
-
-### Custom ACG
-Default ACG 이외에 사용자가 추가하는 ACG
-
-- 모든 inbound traffic을 차단함(규칙으로 명시되어 있지 않음)
-- 모든 outbound traffic을 허용함(규칙으로 명시되어 있지 않음)
+### 통합
+- Cloud Search
+- Object Storage
 
 
-## 접근소스 설정
-ACG를 설정할 때 접근 소스 항목은 보통 IP주소를 입력하게 됩니다. 
-하지만 특수한 경우로 Load Balancer를 지정하거나 ACG 이름을 지정하는 경우도 있습니다. 
-이 중에서 다른 ACG를 접근 소스 항목으로 지정하는 경우는 해당 ACG가 적용된 서버들이 접근할 수 있도록 규칙을 설정하는 것인데, 아래 예시를 이용해 정리해보겠습니다.
+## Cloud Insight 서비스
+[**Cloud Insight**] 서비스는 [**콘솔**] - [**Services**] - [**Management &amp; Governance**] - [**Cloud Insight(Monitoring)**]에 위치하고 있습니다.
 
-### ACG-1
-- 적용서버 : SVR-1, SVR-2
+{% include image.html file=&quot;management/ncloud-management-cloud-insight-guide-28.png&quot; width=&quot;845&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
 
-### ACG-2
-- 적용서버 : SVR-3
+좀 더 쉽게 찾는 방법은 [**콘솔**] - [**Services**]에서 [**검색**] 기능을 이용하면 됩니다.
 
-### ACG-2 적용 규칙
-- 프로토콜 :  TCP
-- 접근소스 :  ACG-1
-- 허용포트 : 80
+{% include image.html file=&quot;management/ncloud-management-cloud-insight-guide-29.png&quot; width=&quot;845&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
 
-{% include note.html content=&quot;위와 같은 경우 ACG-1이 적용된 SVR-1, SVR-2 서버에서 ACG-2가 적용된 SVR-3 서버로 80포트를 이용한 접근을 허용한다는 의미입니다.&quot; %}
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;VPC 환경에서 ACG를 접근소스를 설정할 때는 동일한 VPC에 생성된 ACG만 접근소스로 설정할 수 있습니다.&quot; %}
 
+## 이용 신청
+Cloud Insight 서비스는 이용 신청을 해야 사용할 수 있습니다. Classic, VPC 어떤 환경에서든 [Cloud Insight(Monitoring)] - [Subscription]에서 [상품 이용 신청] 버튼을 클릭해서 이용 신청을 합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_01.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+## 대시보드
+이용 신청을 한 후에 [Dashboard] 메뉴에 가면 아래와 같이 현재 사용 중인 서비스 중에서 모니터링 가능한 서비스 리스트를 확인할 수 있습니다.  
+또한 기본으로 제공되는 대시보드에서 확인할 수 있는 모니터링 항목을 각 서비스별로 고정되어 있습니다. 
+추가적인 항목을 확인하려면 별도로 대시보드를 생성해야 하는데 이에 대해서는 아래쪽에서 확인해보겠습니다.
+
+{% include callout_v2.html type=&quot;info&quot; level=&quot;1&quot; content=&quot;일부 서비스의 경우 리스트에 나타날 때까지 시간이 걸릴 수도 있습니다. 여유있게 1시간 정도 후에 확인해보시면 됩니다.&quot; %}
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_02.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+### Load Balancer 모니터링
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_08.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+### Object Storage 모니터링
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_09.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+### Server 모니터링
+위에서 설명했듯이 Server 제품도 GPU 관련 항목을 제외하면 5가지 정도의 기본 모니터링 항목을 확인할 수 있습니다. 
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_03.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+## 커스텀 대시보드
+좀 더 상세한 모니터링 데이터를 확인하려면 커스텀 대시보드가 필요하고 그전에 [상세 모니터링]을 설정해야 합니다. 서버 설정에서 [상세 모니터링 설정 변경] 메뉴를 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_04.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+[상세 모니터링 신청] 팝업에서 [예] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_05.jpg&quot; width=&quot;500&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+### 대시보드 생성
+[Dashboard] 화면에서 [대시보드 생성] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_06.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+생성 팝업에서 대시보드 이름과 설명을 입력합니다.
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_07.jpg&quot; width=&quot;500&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+
+생성된 대시보드에서 [위젯 추가] 버튼을 클릭해서 위젯을 추가합니다.
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_10.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+위젯 이름을 입력하고, 종류는 [Time Series], [Pie Chart], [Table], [Index], [Markdown] 중에서 하나를 선택합니다.  여기서는 [CPU Usage]와 [Time Series]를 선택했습니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_11.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+다음으로 데이터 설정에서 CPU 사용율에 해당하는 CPU/used_rto 등 필요한 항목을 선택하고 [선택 항목 추가] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_12.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+항목을 추가하면 아래쪽 화면에 다음과 같이 리스트를 확인할 수 있습니다. 설정이 완료되었으면 [다음] 버튼을 클릭해 마지막 확인을 하고 생성을 완료합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_13.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+위에서 추가한 [CPU Usage] 위젯과 함께 추가로 [Server - Load Average], [File System], [Memory Usage], [Net Work (Max In/Out bps)] 데이터를 확인할 수 있는 위젯을 추가하면 다음과 같은 대시보드를 확인할 수 있습니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_14.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+## 통보 대상자 등록
+이제 이벤트를 등록하고 알람을 통보 받을 대상자를 등록해보겠습니다.  
+먼저 통보 대상자 그룹을 생성합니다.  [Cloud Insight(Monitoring)] - [Notification Recipient] 메뉴에서 [전체 대상자] 옆에 있는 [ + ] 버튼을 클릭하고 아래 입력칸에 그룹명을 입력합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_15.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+네이버 클라우드 계정 생성을 할 때 기본으로 1명의 대상자가 등록됩니다. 해당 대상자를 위에서 생성한 그룹에 할당하기 위해 선택하고 [할당] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_20.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+그룹 할당 팝업에서 [할당] 버튼을 클릭합니다.
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_21.jpg&quot; width=&quot;500&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+대상자 리스트에서 해당 대상자에 그룹이 할당된 것을 확인할 수 있습니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_22.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+## 이벤트 규칙 등록
+이제 이벤트를 등록해보겠습니다. [Cloud Insight(Monitoring)] - [Configuration] - [Event Rue]에서 [Event Rule 생성] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_16.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+이벤트 규칙을 생성해서 감시가 필요한 상품을 선택합니다. 여기서는 [Sever(VPC)]를 선택하겠습니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_17.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+[감시 대상 설정]에서 [전체 보기]를 선택하고, 감시 대상에 체크한 후 [다음] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_18.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+감시 항목 및 조건 설정에서 [전체 보기]를 선택하고, CPU, Memory 등의 항목 중에서 원하는 항목을 선택합니다.  
+여기서는 [CPU]에서 CPU 사용율에 해당하는 [CPU/used_rto]를 선택하고, 90% 이상인 상태가 5분 이상 지속되면 경고 알림을 보내도록 설정했습니다. 
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_19.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+다음으로 감시 대상에서 설정한 이벤트가 발생했을 때 어떤 액션을 취할 것인가를 설정해보겠습니다.  
+설정 가능한 액션은 [알림 메시지 발송], [Integration], [Cloud Functions], [Auto Scaling 정책] 중에서 선택할 수 있는데, 여기서는 [알림 메시지 발송]을 선택하겠습니다.  
+통보 대상자 그룹을 선택하고, [Email]과 [SMS]중에서 원하는 것을 선택하고, [다음] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_23.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+마지막으로 이벤트 규칙 이름을 입력하고, 앞에서 설정한 내용들을 확인한 후에 [생성] 버튼을 클릭합니다.
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_24.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+## 유지보수 계획 설정
+앞에서 설정한 이벤트 규칙이 업데이트나 점검 등의 유지보수가 진행되는 동안에도 작동되면 유지보수 시간 동안 쉼없이 통보 알람이 울리게 됩니다.  
+이런 불편함이 없도록 Cloud Insight에서는 유지보수 계획 일정을 등록해두면 등록된 기간 동안에는 이벤트 규칙에 따른 통보알람이 울리지 않습니다.
+
+유지보수 일정은 아래와 같이 달력 행태나 리스트 형태로 확인 가능하며 [유지보수 계획 설정하기] 버튼으로 일정을 등록할 수 있습니다.
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_25.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+제목을 입력하고, 작업 기간, 작업 대상, 디멘션을 선택하면 아래와 같이 선택한 대상과 디멘션이 리스트로 나타납니다.  보통 위에서 설정했던 이벤트 규칙에 해당하는 항목들을 선택하면 됩니다. 
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_26.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
+
+유지보수 계획을 설정하면 아래와 같이 일정에서 확인할 수 있으며 해당 기간 동안에는 이벤트 통보가 진행되지 않습니다. 
+
+{% include image.html file=&quot;management/ncp_management_cloud_insight_guide_27.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud 모니터링 서비스 Cloud Insight 설정 가이드&quot; caption=&quot;&quot; %}
 
 
 ## 참고 URL
-&lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-compute-2-3&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-compute-2-3.html&lt;/a&gt;
+1.  Cloud Insight 소개
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/cloudinsight-cloudinsightoverview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/cloudinsight-cloudinsightoverview&lt;/a&gt;
+
+2.  Cloud Insight 사용 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/cloudinsight-cloudinsightconsole&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/cloudinsight-cloudinsightconsole&lt;/a&gt;
 </description>
-            <pubDate>Tue, 05 Jul 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/security/ncloud_security_acg_guide.html</guid>
+            <pubDate>Thu, 22 Sep 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/management/ncloud_management_cloud_insight_guide.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/management/ncloud_management_cloud_insight_guide.html</guid>
             
-            <category>acg</category>
+            <category>monitoring</category>
             
-            <category>classic</category>
-            
-            <category>vpc</category>
+            <category>log</category>
             
             
         </item>
         
         <item>
-            <title>VPC 환경에서 AutoScaling 설정하는 방법</title>
+            <title>Kubernetes Service 클러스터 생성 및 제어 가이드 | Windows</title>
             <description>## 개요
-Ncloud (네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.  
-
-AutoScaling 서비스는 미리 등록한 설정에 따라 서버 수를 자동으로 증가 또는 감소시켜 안정적인 서비스를 유지하면서 비용을 절감할 수 있도록 해주는 서비스입니다. 
-
-그런데, 언제 서버 수를 증가, 감소 시킬 것인 가에 대한 이벤트 설정이 **Classic 환경의 경우 오토스케일 그룹에 속한 서버들의 평균값을 기준**으로 하지만, 
-**VPC 환경의 경우 이 방법 말고도 특정 서버를 지정해서 해당 서버를 기준으로 이벤트 설정을 할 수도** 있습니다.
-
-그래서 여기서는 사전에 준비된 서버를 기준으로 AutoScaling이 작동되는 것을 살펴보겠습니다.
-
-## 기준 서버 생성
-AutoScaling 이벤트 설정의 기준이 되는 서버 1대를 아래와 같이 미리 생성하겠습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_16.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## 설정 순서
-Auto Scaling 설정 순서를 요약하면 다음과 같습니다.
-
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
-1. Auto Scaling Launch Configuration 설정 &lt;br /&gt;
-2. Auto Scaling Group 설정 &lt;br /&gt;
-3. Cloud Insight Monitoring Event Rule 설정 &lt;br /&gt;
-&quot; %}
-
-## Launch Configuration 설정
-Auto Scaling 설정은 우선 [Auto Scaling] - [Launch Configuration]에서 [Launch Configuration 생성] 버튼을 클릭하는 것으로 시작합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 서버 이미지 선택
-서버 이미지는 Ncloud (네이버 클라우드)에서 제공하는 기본 이미지를 선택할 수도 있고, 기존에 사용하던 서버로 만들어 둔 [내 서버 이미지]를 사용할 수도 있습니다. 여기서는 기본 이미지를 사용하는 것으로 하겠습니다.
-
-{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;현재 AutoScaling에서 지원하는 Linux 서버 이미지 버전은 다음과 같습니다. &lt;br /&gt;
-&amp;#8259; CentOS 7.3, 7.8 &lt;br /&gt;
-&amp;#8259; Ubuntu 16.04, 18.04, 20.04
-&quot; %}
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_02.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### Windows 서버 이미지 버전
-
-{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;현재 AutoScaling에서 지원하는 Windows 서버 이미지 버전은 다음과 같습니다. &lt;br /&gt;
-&amp;#8259; Windows Server 2016 64bit English Edition &lt;br /&gt;
-&amp;#8259; Windows Server 2019 64bit English Edition
-&quot; %}
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 서버 설정
-스토리지 종류와 서버 타입 등을 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 이름 설정
-Launch Configuration의 이름을 입력합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 인증키 설정
-인증키는 기존에 보유하고 있던 인증키를 이용해도 되고, 새로운 인증키를 설정해도 됩니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 최종 확인
-지금까지 설정한 내용이 이상 없는지 최종 확인을 하고 이상 없으면 [Launch Configuration 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## Auto Scaling Group 설정
-다음으로 Auto Scaling Group을 생성합니다. [Auto Scaling] - [Auto Scaling Group]에서 [Auto Scaling Group 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### Launch Configuration 선택
-위에서 생성했던 Launch Configuration을 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 그룹 설정
-여기서는 VPC와 Subnet 등의 네트워크 환경을 선택하고,  생성될 서버들의 이름과 최소, 최대 개수 등을 설정합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_10.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-- **서버이름 Prefix** : 최대7자까지 지정할 수 있고, 나머지 이름의 뒷부분은 영문,숫자의 조합으로 무작위로 자동 생성됩니다.
-- **서버 용량** : 최소, 최대, 기대 용량은 서버 대수를 의미하며 각각 **0~30까지 입력 가능**합니다.
-- **쿨다운 기본값** : 새로운 서버가 생성되었다고 해도, init script 실행이나 업데이트 설치 등의 이유로 실제 서비스를 수행할 수 있을 정도로 준비되기까지는 시간이 소요될 수 있습니다. 
-  즉, 쿨다운(Cooldown) 시간이란 실제 Scaling이 수행 중이거나 수행 완료된 이후에 모니터링 이벤트 알람이 발생하더라도 반응하지 않고 무시하도록 설정한 기간입니다.  
-  **값을 입력하지 않으면 기본값인 300초가 적용됩니다**.
-
-- **헬스체크 보류기간** : 서버 인스턴스가 생성되어 상태가 ‘운영 중’으로 바뀌었더라도, 서버의 업데이트 설치 등 작업에 의해서 헬스 체크에 정상 응답하지 못하는 경우가 생길 수 있습니다. 
-  이런 경우 헬스 체크 보류 기간을 지정하면 해당 기간 동안에는 헬스 체크에 실패하더라도 서버에 이상이 있다고 판단하지 않습니다.  
-  **값을 입력하지 않으면 기본값인 300초가 적용됩니다**.
-
-&lt;br /&gt;
-
-### 네트워크 접근 설정
-네트워크 접근에 필요한 ACG를 설정하고 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_11.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 정책/일정 설정
-정책과 일정을 여기서 바로 설정할 수도 있고 나중에 설정할 수도 있는데, 
-우선은 [정책 설정]에서 [서버 수 증가 정책]과 [서버 수 감소 정책]을 설정합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_12.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 통보 설정
-서버가 생성될 때 또는 서버가 반납될 때 언제 통보를 받을 것인지 선택하고, 누가 언제 통보 받을 것인지 설정합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_13.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 통보 대상 설정 
-먼저 [통보대상 관리 그룹]을 선택하고, 다음으로 관리자와 통보 방법을 선택합니다.  
-[통보대상 관리 그룹]이 설정되지 않았을 경우에는 [통보대상관리] 버튼을 클릭해 통보를 받을 대상의 그룹을 설정합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_14.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 최종 확인
-지금까지 설정한 Auto Scaling Group 내역을 확인하고 이상이 없으면 [Auto Scaling Group 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_15.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## Event Rule 설정
-지정한 서버를 모니터링 하다가 설정한 조건에 해당되면 즉, 지정한 Event가 발생하면 Auto Scaling 설정을 적용해 서버를 증가시키거나 감소시키기 위한 감시 규칙인 [Event Rule]을 설정합니다.  
-
-### 서버 증가 Event Rule 생성
-VPC에서는 [Cloud Insight]로 모니터링을 하게 되므로 Event Rule 설정도 [Cloud Insight(Monitoring)] - [Configuration] - [Event Rule]에서 [Event Rules 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_17.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 감시 상품 선택
-Cloud Insight는 Server 뿐만 아니라 Load Balancer, Object Storage도 감시할 수 있는데 여기서는 처음에 생성했던 서버를 감시할 것이니 [Server(VPC)]를 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_18.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 감시 대상 설정
-맨 처음에 생성했던 서버를 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_19.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 감시 항목 및 조건 설정
-감시 항목 설정에서 [전체 보기]를 선택하고, [SERVER] 탭에서 [Metric ID]를 [cpu]로 검색한 후 평균 CPU 사용률 항목인 [SERVER/avg_cpu_used_rto]에서 [Level]과 [Condition], [Method], [Duration]을 선택합니다.
-
-먼저 서버를 증가시키는 경우에 해당하는 감시 항목을 설정하겠습니다.  
-아래의 설정 내용은 &quot;**평균 CPU 사용률이 1분간 50% 이상일 경우 경고 수준으로 이벤트 통보를 한다**&quot;라는 설정입니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_22.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 액션 설정
-앞에서 설정한 이벤트가 발생했을 경우 어떤 액션을 취할 것인지 설정하게 되는데 앞에서 [Auto Scaling Group] 설정에서 생성했던 정책을 선택하면 됩니다.  
-여기서는 [CPU 사용률 50% 이상]인 경우이므로 서버를 증가시키는 정책을 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_23.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 최종 확인
-설정한 내용이 이상 없는지 최종 확인하고, 규칙 이름을 입력한 후에 [생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_24.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 서버 감소 Event Rule 생성
-앞에서 생성한 [서버 증가 Event Rule]과 같은 방식으로 [서버 감소 Event Rule]을 생성합니다.  
-
-아래의 설정 내용은 &quot;**평균 CPU 사용률이 1분간 10% 이하일 경우 정보 알림 수준으로 이벤트 통보를 한다**&quot;라는 설정입니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_25.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 액션 설정
-여기서는 [CPU 사용률 10% 이하]인 경우이므로 서버를 감소시키는 정책을 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_26.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 최종 확인
-설정한 내용이 이상 없는지 최종 확인하고, 규칙 이름을 입력한 후에 [생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_27.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### Event Rule 생성 완료
-서버 증가과 감소에 대한 Event Rule 2가지가 모두 생성된 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_28.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## Stress Tool 설정
-CPU 사용률에 따른 Auto Scaling 작동 여부를 테스트 하기 위해 서버에 Stress Tool을 설치해보겠습니다.
-
-### EPEL 리포지토리 설정
-Stress Tool을 설치하기 위해서는 다음 명령어로 [EPEL 리포지토리]를 설정해야 합니다.
-
-``` bash
-~# yum -y install epel-release
-```
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_29.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### Stress Tool 설치
-
-``` bash
-~# yum -y install stress
-```
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_30.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## Stress Tool 실행
-
-### CPU 코어 개수 확인
-CPU에 강제로 부하를 발생 시키기 위해서는 서버의 CPU 코어 개수를 확인해서 모든 코어에 부하를 발생시키는 것이 좋습니다.  
-CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩니다.
-
-``` bash
-~# grep -c processor /proc/cpuinfo
-```
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_31.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 명령어 테스트
-CPU에 부하를 주는 명령어를 테스트 해보겠습니다.
-
-``` bash
-~# stress --cpu 2 --timeout 60 --verbose
-```
-
-위 옵션의 내용은 다음과 같습니다.
-
-- cpu: 몇 개의 코어에 부하를 발생 시킬 것인가
-- timeout: 몇 초 동안 부하를 발생 시킬 것인가
-- verbose: 상세 로그를 표시
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_32.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### CPU 부하 발생
-부하 발생 테스트를 마쳤으니 실제 Auto Scaling 테스트를 위해 300초 즉, 5분 동안 부하를 발생 시켜보겠습니다.
-
-``` bash
-~# stress --cpu 2 --timeout 300 --verbose
-```
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_33.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## 서버 증가 확인
-Stress Tool로 부하를 발생 시키고 서버 리스트를 확인해보면 아래와 같이 Auto Scaling 설정에서 지정한 대로 서버가 생성되고 있는 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_34.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## CPU 사용률 확인
-[Cloud Insight]에서 서버 사용률을 확인해 보면 아래와 같이 5분간 CPU 사용률이 100%까지 올라간 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_35.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## 서버 반납 확인
-Stress Tool로 부하를 발생 시키도록 설정한 5분이 지난 후에 서버 리스트를 보면 Auto Scaling으로 생성되었던 서버가 반납되고 있는 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_36.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## 이벤트 발생 확인
-[Cloud Insight] - [Event]에서 서버 증가, 감소 관련 이벤트가 제대로 발생했는지 아래와 같이 그래프와 리스트로 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_37.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## 이벤트 통보 확인
-이벤트 통보에서 설정한 대로 아래와 같이 Email로 Auto Scaling 이벤트 발생과 완료에 대한 통보 메일이 도착한 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_38.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-
-## 서비스 제한사항
-Auto Scaling 설정과 서버 스펙 등에 대한 제한 사항을 정리해보겠습니다.
-
-### 스펙 및 서비스 환경 제한 사항
-- 총 디스크 사이즈 150GB 이하 서버만 가능
-- Windows OS는 Windows 2016. 2019만 지원
-- 내 서버 이미지의 경우, 원본 서버의 부팅 디스크 크기가 50GB인 경우만 지원(100GB 디스크에 대해서는 추후 지원 예정)
-
-### 설정 제한 사항
-- 고객별 생성 가능한 Auto Scaling Group 최대 수: 10
-- 고객별 생성 가능한 Launch Configuration 최대 수: 100
-- Auto Scaling Group당 생성 가능한 스케줄(Scheduled Action) 최대 수: 100
-- Auto Scaling Group당 생성 가능한 Scaling Policy 최대 수: 10
-- Auto Scaling Group당 생성 가능한 최대 서버 수: 30대
-- Auto Scaling Group당 연결 가능한 Load Balancer 최대 수 : 10
-
-
-## 상세 모니터링
-Ncloud (네이버 클라우드)에서는 기본 모니터링 외에 [상세 모니터링]도 지원하는데, [상세 모니터링]에서는 좀 더 자세하고 다양한 모니터링 항목 (Extended Metric)을 지원합니다.  
-
-예를 들어 CPU 사용과 관련한 모니터링 항목에서도 아래와 같이 [CPU idle ratio average] 항목들도 확인할 수 있습니다.
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_39.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-또한, 위와 같이 [Server] 탭에서는 CPU들의 평균 값을 모니터링할 수 있는 것에 비해, 상세 모니터링을 적용하면 아래와 같이 [CPU] 탭에서 CPU 코어별로 각각 모니터링을 할 수도 있습니다.
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_40.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-### 상세 모니터링 설정
-상세 모니터링을 적용하는 방법은 서버를 선택하고 [서버 관리 및 설정 변경] 메뉴에서 [상세 모니터링 설정 변경] 메뉴를 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_20.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-#### 상세 모니터링 신청
-상세 모니터링 신청 팝업에서 [예] 버튼을 클릭하면 상세 모니터링이 적용됩니다. 상세 모니터링 신청 후 실제 데이터가 수집되기까지는 약간의 시간이 소요되므로 잠시 기다렸다 확인해보면 됩니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncloud_server_autoscaling_guide_vpc_21.png&quot; width=&quot;480&quot; alt=&quot;Ncloud VPC 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 용어 정리
-Auto Scaling에서 사용되는 주요 용어들을 정리해보겠습니다.
-
-| 용어 | | 설명|
-| :----: | :----: | :---- |
-| Scale-in / Scale-out | | Auto Scaling Group을 생성하여 고객이 설정한 Policy에 따라 사용하고 있는 가상 서버의 자동 확장(Scale-out) 및 자동 축소(Scale-in)하도록 제공합니다. |
-| Auto Scaling Group | | 여러 개의 서버 인스턴스들을 Auto Scaling Group 이라는 하나의 그룹으로 묶어 놓게 됩니다. |
-| Launch Configuration | | Auto Scaling Group에서 가상 서버를 시작 구성하는 데 사용하는 템플릿입니다. Auto Scaling Group을 생성할 때는 Launch Configuration을 지정해야 합니다. |
-| Auto Scaling Group의 최소 용량/최대 용량 | | Auto Scaling Group의 최소/최대 서버 수를 말합니다. 최소 서버 수의 경우, 항상 이 값과 같거나 이 값보다 더 큰 서버 수가 유지됩니다. 서버를 한 대도 보유하지 않을 수 있게 하려면 0으로 설정합니다. |
-| 기대 용량 (Desired Capacity) | | 서버의 수는 기대 용량값에 따라서 조정됩니다. 이 값은 최소 용량 이상, 최대 용량 이하여야 합니다. 이 값이 지정되어 있지 않으면 초기에 최소 용량만큼 서버를 생성합니다. |
-| 쿨다운 기본값(초) (Default Cooldown) | | Default Cooldown(초) 새로운 서버가 생성되었다고 해도, Init-Script 실행이나 업데이트 설치 등의 이유로 실제 서비스를 수행할 수 있을 정도로 준비되기까지는 시간이 소요될 수 있습니다. 쿨다운(Cooldown) 시간이란 실제 Scaling이 수행 중이거나 수행 완료된 이후에 모니터링 이벤트 알람이 발생하더라도 무시하도록 설정한 기간입니다. |
-| 헬스체크 | | Auto Scaling Group의 가상 서버에 주기적인 상태 확인을 수행하여 상태가 비정상인 가상 서버를 식별하도록 Health Check를 합니다. |
-| 헬스체크 보류 기간 | |	서버가 생성되어 ‘운영중’으로 변경되었더라도 서버의 업데이트 설치 등 작업에 의해서 헬스 체크에 정상 응답하지 못하는 경우가 생길 수 있습니다. 이런 경우 헬스 체크 보류기간을 지정하면 해당 기간 동안에는 헬스 체크에 실패하더라도 서버 헬스에 이상이 있다고 판단하지 않습니다. |
-| 헬스체크 유형 | | 서버와 Load Balancer 둘 중에 선택할 수 있습니다. Auto Scaling Group 설정에서 Load Balancer 이름을 지정한 경우에는 헬스 체크 유형 역시 Load Balancer로 설정합니다. 이런 경우 Auto Scaling은 Load Balancer 헬스 체크 방식과 기준에 따라 서버의 상태를 판단합니다. |
-| 반납 정책 | | Auto Scaling 과정에서 추가된 서버에 대한 Scale-in 작업에 대해, 고객이 API 질의 형식으로먼저 반납할 서버를 지정할 수 있습니다. 기본 설정은 먼저 생성된 서버부터 반납합니다. |
-| Policy | | Auto Scaling이 일어나는 방식을 정의하고 있는데, 이를 ‘Policy’로 정의하고 있습니다. Auto Scale-out 이 발생할 때, 몇 대의 가상 서버를 늘릴 것인지, 반대로 Scale-in이 발생할 때 몇 대의 가상서버를 줄일 것인지를 정의합니다. 대수로 정의할 수 도 있고, %로 정의할 수도 있습니다. |
-| Basic Metric | | 기본적으로 제공되는 모니터링 항목 |
-| Extended Metric | | 상세모니터링을 신청하면 제공되는 모니터링 항목 |
-
-## 참고 URL
-1.  Ncloud Auto Scaling 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview&lt;/a&gt;
-
-2. Classic 환경에서 Auto Scaling 설정하기
-    - &lt;a href=&quot;/compute/ncloud_compute_autoscaling_classic_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_classic_guide.html&lt;/a&gt;
-
-2. Cloud Insight Basic/Extended Metric 정리
-    - &lt;a href=&quot;https://api.ncloud-docs.com/docs/management-cloudinsight-productinfo&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://api.ncloud-docs.com/docs/management-cloudinsight-productinfo&lt;/a&gt;    
-</description>
-            <pubDate>Mon, 20 Jun 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud-compute-autoscaling-vpc-guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud-compute-autoscaling-vpc-guide.html</guid>
-            
-            <category>autoscaling</category>
-            
-            <category>vpc</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Classic 환경에서 AutoScaling 설정하는 방법</title>
-            <description>## 개요
-AutoScaling 서비스는 미리 등록한 설정에 따라 서버 수를 자동으로 증가 또는 감소시켜 안정적인 서비스를 유지하면서 비용을 절감할 수 있도록 해주는 서비스입니다.  
-여기서는 네이버 클라우드 Classic 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.
-
-## 기본 설정
-Auto Scaling 설정은 우선 [Auto Scaling] - [Launch Configuration]에서  
-[Launch Configuration 생성] 버튼을 클릭하는 것으로 시작합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_01.jpg&quot; width=&quot;700&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 서버 이미지 선택
-서버 이미지는 네이버 클라우드에서 제공하는 기본 이미지를 선택할 수도 있고, 기존 서버로 만들어 둔 [내 서버 이미지]를 사용할 수도 있습니다. 여기서는 기본 이미지를 사용하는 것으로 하겠습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_02.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 서버 설정
-스토리지 종류와 서버 타입 등을 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_03.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 이름 설정
-Launch Configuration의 이름을 입력합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_04.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 인증키 설정
-인증키는 기존에 보유하고 있던 인증키를 이용해도 되고, 새로운 인증키를 설정해도 됩니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_05.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 네트워크 접근 설정 (ACG)
-ACG 설정도 기존에 보유하고 있던 ACG 중에서 선택해도 되고, 새로운 ACG를 생성해도 됩니다. 여기서는 새로운 ACG를 생성하는 방법으로 진행하겠습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_06.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-ACG 이름을 입력하고, [myIp]를 클릭, 허용할 포트를 입력한 후 [추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_07.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 최종 확인
-지금까지 설정한 정보를 마지막으로 확인 한 후에 이상이 없으면 [Launch Configuration 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_08.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-
-## Group 생성
-다음으로 Auto Scaling Group을 생성합니다. [Auto Scaling] - [Auto Scaling Group]에서 [Auto Scaling Group 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_09.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### Launch Configuration 선택
-위에서 생성했던 Launch Configuration을 선택합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_10.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 그룹 설정
-여기서는 생성될 서버들의 이름과 최소, 최대 개수 등을 설정합니다.  
-Auto Scaling Group당 최대 30대의 서버를 생성할 수 있고, Zone, NAT Gateway 설정은 생성 후 변경할 수 없으며, 변경이 필요하면 새로 생성하여 사용해야 합니다.  
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_11.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-- **서버이름 Prefix** : 최대7자까지 지정할 수 있고, 나머지 이름의 뒷부분은 영문,숫자의 조합으로 무작위로 자동 생성됩니다.
-- **서버 용량** : 최소, 최대, 기대 용량은 서버 대수를 의미하며 각각 **0~30까지 입력 가능**합니다.
-- **쿨다운 기본값** : 새로운 서버가 생성되었다고 해도, init script 실행이나 업데이트 설치 등의 이유로 실제 서비스를 수행할 수 있을 정도로 준비되기까지는 시간이 소요될 수 있습니다. 
-  즉, 쿨다운(Cooldown) 시간이란 실제 Scaling이 수행 중이거나 수행 완료된 이후에 모니터링 이벤트 알람이 발생하더라도 반응하지 않고 무시하도록 설정한 기간입니다.  
-  **값을 입력하지 않으면 기본값인 300초가 적용됩니다**.
-
-- **헬스체크 보류기간** : 서버 인스턴스가 생성되어 상태가 ‘운영 중’으로 바뀌었더라도, 서버의 업데이트 설치 등 작업에 의해서 헬스 체크에 정상 응답하지 못하는 경우가 생길 수 있습니다. 
-  이런 경우 헬스 체크 보류 기간을 지정하면 해당 기간 동안에는 헬스 체크에 실패하더라도 서버에 이상이 있다고 판단하지 않습니다.  
-  **값을 입력하지 않으면 기본값인 300초가 적용됩니다**.
-
-&lt;br /&gt;
-
-### 정책/일정 설정
-정책과 일정을 여기서 바로 설정할 수도 있고 나중에 설정할 수도 있습니다. 여기서는 [나중에 설정]으로 선택하고 아래쪽에서 다시 살펴보겠습니다. 
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_12.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 통보 설정
-통보 설정을 여기서 바로 설정할 수도 있고 나중에 설정할 수도 있습니다. 여기서는 [나중에 설정]으로 선택하고 아래쪽에서 다시 살펴보겠습니다. 
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_13.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 최종확인
-생성된 Group 설정값들을 마지막으로 확인하고 [Auto Scaling Group 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_14.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-## 서버 생성 확인
-위에서 Auto Scaling Group을 생성하면 아래와 같이 즉시 서버가 생성되는 것을 확인할 수 있습니다. 처음에는 [기대용량]에 입력한 개수만큼 서버가 생성됩니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_15.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-
-## 설정 관리 - 정책
-위에서 나중에 설정하기로 하고 넘어갔던 Auto Scaling Group의 정책, 일정, 이력, 통보 설정 등을 확인해보겠습니다.  
-[Auto Scaling Group]에서 해당 그룹을 선택하고, [설정 및 관리] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_16.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-### 정책 설정
-먼저 [정책] 탭을 선택하고, [생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_17.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-우선 서버를 증가시킬 정책으로 increase라는 이름을 입력하고, 증가시킬 서버 개수를 입력 후 [추가] 옵션을 선택하고 [생성] 버튼을 클릭합니다. 
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_18.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-다음으로 서버를 감소시킬 정책으로 decrease라는 이름을 입력하고, 감소시킬 서버 개수를 입력 후 [반납] 옵션을 선택하고 [생성] 버튼을 클릭합니다. 
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_19.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-서버 증가, 감소를 위한 정책 2가지가 생성된 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_20.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-## 그룹 이벤트 설정
-위에서 설정한 정책이 언제 실행되게할 것인가 즉, 서버에 어떤 이벤트가 발생했을 때 정책을 실행할 것인가를 결정하는 그룹 이벤트를 설정합니다.  
-그룹 이벤트 설정은 [Classic] - [Monitoring] - [Group Event Setting]에서 할 수 있으며, 위에서 만든 Auto Scaling 그룹을 선택하고 [그룹 이벤트 설정] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_21.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-그룹 이벤트 설정 화면에 들어가면 위에서 만든 increase, decrease 2가지 정책이 리스트에 나타나는 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_22.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-정책이 발동되게 하는 이벤트는 여러가지가 있는데, 가장 많이 선택하는 것이 CPU 사용률입니다.  
-여기서는 **CPU 사용률(used)이 60% 이상일 때 increase 정책**, **CPU 사용률(used)이 30% 이하일 때 decrease 정책**이 실행되도록 이벤트를 추가했습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_23.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-## 설정 관리 - 일정
-위에서는 서버에 설정한 이벤트가 발생했을 때 정책이 발동되도록 했지만, 그 외에도 특정한 시간대에 사용자가 몰리는 피크 타임이 일정하다면 해당 시간 전후로 서버를 늘리거나 감소시키는 방법도 가능합니다.  
-여기 [일정] 탭에서 해당 내용을 설정해두면 피크 타임에 미리 서버를 증가시켜서 좀 더 안정적인 서비스가 가능하게 설정할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_24.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-## 설정 관리 - 이력
-[이력] 탭에서는 서버가 생성되고 반납된 기록을 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_25.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-## 설정 관리 - 통보
-[통보] 탭에서는 서버가 생성되거나 반납될 때 지정한 담당자에게 SMS나 Email로 통보하도록 설정할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_26.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-## 설정 관리 - 서버
-[서버] 탭은 현재 작동중인 서버 리스트를 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_27.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-## 중지 - 서버삭제
-마지막으로, Auto Scaling을 중지하고, 작동중인 서버를 한번에 모두 삭제하는 방법을 확인해보겠습니다.  
-
-[Auto Scaling] - [Auto Scaling Group]에서 해당 그룹을 선택하고 상단에 있는 [수정] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_28.jpg&quot; width=&quot;770&quot; alt=&quot;Auto Scaling 서비스 제한사항&quot; caption=&quot;&quot; %}
-
-
-여기서 **[최소 용량], [최대 용량], [기대 용량] 항목의 값을 모두 0으로 설정**하면, 현재 작동중인 서버가 모두 반납되고, 더 이상 서버가 추가로 생성되지 않아서 Auto Scaling이 중지되게 됩니다.  
-사실 [최소 용량], [기대 용량] 2가지 항목만 0으로 설정해도 되지만, 혹시나 모르는 상황을 위해서 깔끔하게 3가지 항목 모두 0으로 설정합니다.
-
-{% include image.html file=&quot;compute/autoscaling/ncp_server_autoscaling_guide_classic_29.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Classic 환경에서 AutoScaling 설정하는 방법&quot; caption=&quot;&quot; %}
-
-## 서비스 제한사항
-Auto Scaling 설정과 서버 스펙 등에 대한 제한 사항을 정리해보겠습니다.
-
-### 스펙 및 서비스 환경 제한 사항
-- 총 디스크 사이즈 150GB 이하 서버만 가능
-- Windows OS는 Windows 2016. 2019만 지원
-- 내 서버 이미지의 경우, 원본 서버의 부팅 디스크 크기가 50GB인 경우만 지원(100GB 디스크에 대해서는 추후 지원 예정)
-
-### 설정 제한 사항
-- 고객별 생성 가능한 Auto Scaling Group 최대 수: 10
-- 고객별 생성 가능한 Launch Configuration 최대 수: 100
-- Auto Scaling Group당 생성 가능한 스케줄(Scheduled Action) 최대 수: 100
-- Auto Scaling Group당 생성 가능한 Scaling Policy 최대 수: 10
-- Auto Scaling Group당 생성 가능한 최대 서버 수: 30대
-- Auto Scaling Group당 연결 가능한 Load Balancer 최대 수 : 10
-
-
-## 용어 정리
-Auto Scaling에서 사용되는 주요 용어들을 정리해보겠습니다.
-
-| 용어 | | 설명|
-| :----: | :----: | :---- |
-| Scale-in / Scale-out | | Auto Scaling Group을 생성하여 고객이 설정한 Policy에 따라 사용하고 있는 가상 서버의 자동 확장(Scale-out) 및 자동 축소(Scale-in)하도록 제공합니다. |
-| Auto Scaling Group | | 여러 개의 서버 인스턴스들을 Auto Scaling Group 이라는 하나의 그룹으로 묶어 놓게 됩니다. |
-| Launch Configuration | | Auto Scaling Group에서 가상 서버를 시작 구성하는 데 사용하는 템플릿입니다. Auto Scaling Group을 생성할 때는 Launch Configuration을 지정해야 합니다. |
-| Auto Scaling Group의 최소 용량/최대 용량 | | Auto Scaling Group의 최소/최대 서버 수를 말합니다. 최소 서버 수의 경우, 항상 이 값과 같거나 이 값보다 더 큰 서버 수가 유지됩니다. 서버를 한 대도 보유하지 않을 수 있게 하려면 0으로 설정합니다. |
-| 기대 용량 (Desired Capacity) | | 서버의 수는 기대 용량값에 따라서 조정됩니다. 이 값은 최소 용량 이상, 최대 용량 이하여야 합니다. 이 값이 지정되어 있지 않으면 초기에 최소 용량만큼 서버를 생성합니다. |
-| 쿨다운 기본값(초) (Default Cooldown) | | Default Cooldown(초) 새로운 서버가 생성되었다고 해도, Init-Script 실행이나 업데이트 설치 등의 이유로 실제 서비스를 수행할 수 있을 정도로 준비되기까지는 시간이 소요될 수 있습니다. 쿨다운(Cooldown) 시간이란 실제 Scaling이 수행 중이거나 수행 완료된 이후에 모니터링 이벤트 알람이 발생하더라도 무시하도록 설정한 기간입니다. |
-| 헬스체크 | | Auto Scaling Group의 가상 서버에 주기적인 상태 확인을 수행하여 상태가 비정상인 가상 서버를 식별하도록 Health Check를 합니다. |
-| 헬스체크 보류 기간 | |	서버가 생성되어 ‘운영중’으로 변경되었더라도 서버의 업데이트 설치 등 작업에 의해서 헬스 체크에 정상 응답하지 못하는 경우가 생길 수 있습니다. 이런 경우 헬스 체크 보류기간을 지정하면 해당 기간 동안에는 헬스 체크에 실패하더라도 서버 헬스에 이상이 있다고 판단하지 않습니다. |
-| 헬스체크 유형 | | 서버와 Load Balancer 둘 중에 선택할 수 있습니다. Auto Scaling Group 설정에서 Load Balancer 이름을 지정한 경우에는 헬스 체크 유형 역시 Load Balancer로 설정합니다. 이런 경우 Auto Scaling은 Load Balancer 헬스 체크 방식과 기준에 따라 서버의 상태를 판단합니다. |
-| 반납 정책 | | Auto Scaling 과정에서 추가된 서버에 대한 Scale-in 작업에 대해, 고객이 API 질의 형식으로먼저 반납할 서버를 지정할 수 있습니다. 기본 설정은 먼저 생성된 서버부터 반납합니다. |
-| Policy | | Auto Scaling이 일어나는 방식을 정의하고 있는데, 이를 ‘Policy’로 정의하고 있습니다. Auto Scale-out 이 발생할 때, 몇 대의 가상 서버를 늘릴 것인지, 반대로 Scale-in이 발생할 때 몇 대의 가상서버를 줄일 것인지를 정의합니다. 대수로 정의할 수 도 있고, %로 정의할 수도 있습니다. |
-
-## 참고 URL
-1.  Ncloud Auto Scaling 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview&lt;/a&gt;
-
-2. VPC 환경에서 Auto Scaling 설정하기
-    - &lt;a href=&quot;/compute/ncloud-compute-autoscaling-vpc-guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud-compute-autoscaling-vpc-guide.html&lt;/a&gt;
-</description>
-            <pubDate>Fri, 17 Jun 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_classic_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_autoscaling_classic_guide.html</guid>
-            
-            <category>autoscaling</category>
-            
-            <category>classic</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>STS 기간 제한 임시 API AccessKey 발급하기</title>
-            <description>## 개요
-클라우드 환경에서 서비스를 하다 보면 회사 내부의 다른 팀이나 외부 고객사에 서버나 오브젝트 스토리지 등 특정 서비스에 접근할 수 있는 API를 제공해야 하는 하는 경우가 생길 수 있습니다.  
-그런데 **Ncloud(네이버 클라우드)에서 제공되는 기본 API Access Key는 기간 제한이 없는 Access Key**이기 때문에 외부에 제공하게 되면 보안측면에서 위험한 상황이 생길 수 있습니다. 이때 STS를 이용하면 `Access Key를 제한된 기간 동안 일회성으로 제공하거나 유효 기간이 매우 짧은 Access Key를 반복적으로 제공하게 되면 훨씬 안전`한 서비스를 유지할 수 있습니다.
-
-## STS란
-[**STS (Secure Token Service)**]는 Sub Account에 연관되어 제공되는 서비스로 Ncloud (네이버 클라우드) 내 리소스에 대한 액세스를 제어할 수 있는 기간 제한이 있는 임시 Access Key를 생성하는 서비스입니다.  
-임시 Access Key는 기간 제한이 없는 서브 계정의 Access Key와 달리 제한된 기간 동안만 유효하며 MFA 등 추가 인증 수단을 적용할 수도 있습니다.  
-
-다른 클라우드 서비스에서는 [Security Token Service(STS)], [임시 보안 자격 증명], [Security Token], [API One Day Token] 등으로 찾아볼 수 있습니다.
-
-### STS 임시 Access Key 특징
-- **임시 Access Key는 서브계정만 생성할 수 있습니다.** &lt;br /&gt;메인 계정으로 생성하려고 할 때 발생하는 오류 메시지는 [메인 계정 Access Key를 사용했을 때 &lt;i class=&quot;fa-solid fa-turn-down&quot;&gt;&lt;/i&gt;](#main_account_use_error)에서 확인 가능합니다.
-- 임시 Access Key는 만료 기한이 존재합니다. 
-- Access Key는 몇 분에서 몇 시간까지 지속되도록 생성할 수 있습니다. 
-- Access Key가 만료된 후 Ncloud는 더는 그 Access Key를 인식하지 못하거나 그 Access Key를 사용한 API 요청으로부터 이루어지는 어떤 종류의 액세스도 허용하지 않습니다.
-- 임시 Access Key를 생성할 때, MFA 인증을 포함할 수 있습니다. Ncloud는 MFA 수단으로 OTP 인증을 제공합니다.
-- 임시 Access Key가 만료된 후에는 해당 Access Key는 다시 사용할 수 없습니다.
-- `임시 Access Key는 STS API를 호출해서 생성`합니다.
-
-
-## Sub Account 생성
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
-STS로 생성하는 임시 Access Key의 권한은 **Sub Account의 권한을 그대로 상속** 받기 때문에 해당 Access Key를 발급하기 위한 전용 Sub Account를 생성해야 합니다.
-&quot;%}
-
-Sub Account를 생성하는 방법은 아래 가이드 문서를 참고하시면 됩니다.
-- Sub Account 생성 가이드: &lt;a href=&quot;/management/ncloud_management_sub_account_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all&quot;&gt;https://docs.3rdeyesys.com/management/ncloud_management_sub_account_guide.html&lt;/a&gt;  
-
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-## 사용자 정의 정책 생성
-Sub Account에 적용할 정책을 기본으로 제공되는 관리형 정책이 아니라 **STS 생성만 허가 하기 위한 사용자 정의 정책을 생성**합니다.  
-[Sub Account] - [Policies]에서 [사용자 정의 정책] 탭을 선택하고 [정책 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-02.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### 정책 정보 설정
-정책 이름과 설명을 입력합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### 적용 대상 설정
-STS는 VPC, Classic 관계없이 적용되므로 플랫폼 항목은 그대로 두고 나머지 항목은 다음과 같이 설정합니다.
-- Product: Sub Account 선택
-- Actions: View 항목에서 STS 탭 선택하고, [**getStsSessionToken**]을 선택
-
-선택을 마친 후 [적용 대상 추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### 적용 대상 목록
-선택한 내용을 마지막으로 확인하고 이상이 없으면 [생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### 생성된 정책 확인
-정책이 생성되면 [사용자 정의 정책] 탭에 아래와 같이 정책이 나타납니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-## Sub Account에 정책 적용
-[Sub Account] - [Sub Accounts]에서 해당 Sub Account를 선택하고 [정책] 탭에서 [추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### 정책 추가
-정책 추가 팝업에서 위에서 만들었던 정책을 선택하고 [추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### 적용된 정책 확인
-Sub Account 상세 정보에서 정책 탭에 추가된 정책을 확인할 수 있습니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-## 기간 제한 없는 Access Key 발급
-여기서는 우선 기간 제한이 없는 Access Key를 발급하고 이 Access Key를 이용해서 나중에 기간 제한이 있는 임시 Access Key를 발급하겠습니다.  
-[Sub Account] - [Sub Accounts] - [Access Key] 탭에서 [추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-10.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### Access Key 추가
-팝업에서 [추가] 버튼을 클릭해 새로운 Access Key를 추가합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-11.png&quot; width=&quot;490&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### Access Key 확인
-[Access Key] 탭에서 추가된 Access Key와 Secret Key를 확인할 수 있습니다. 
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-12.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-## 기간 제한 임시 Access Key 발급 {#create_no_limit_api_key}
-임시 Access Key를 발급 받기 위해서는 STS API를 호출해야 합니다.  
-STS API를 이용해 기간 제한이 있는 임시 Access Key를 발급 받으면 아래와 같은 정보를 얻을 수 있습니다.
-- Access Key
-- Secret key
-- Create Time: Key 생성 날짜
-- Expire Time: Key 만료 날짜
-- Use MFA: MFA (MultiFactorAuthentication) 사용 여부
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-13.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### API 호출 방법
-Ncloud API 호출 방법에 대한 기본 가이드는 아래 문서를 확인하시면 됩니다.
-- PHP로 Ncloud API 호출 방법: &lt;a href=&quot;/api/ncloud_api_call_php_sample.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all&quot;&gt;https://docs.3rdeyesys.com/api/ncloud_api_call_php_sample.html&lt;/a&gt;
-- C#으로 Ncloud API 호출 방법: &lt;a href=&quot;/api/ncloud_api_call_csharp_sample.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all&quot;&gt;https://docs.3rdeyesys.com/api/ncloud_api_call_csharp_sample.html&lt;/a&gt;
-- Python으로 Ncloud API 호출 방법: &lt;a href=&quot;/api/ncloud_api_call_python_sample.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all&quot;&gt;https://docs.3rdeyesys.com/api/ncloud_api_call_python_sample.html&lt;/a&gt;
-
-### 임시 Access Key 발급 PHP 샘플 예제
-``` php
-&lt;?php	
-  $unixtimestamp =  round(microtime(true) * 1000);
-  $ncloud_sub_account_accesskey = &quot;{기간 제한 없는 Sub Account API Access Key}&quot;;
-  $ncloud_sub_account_secretkey = &quot;{기간 제한 없는 Sub Account API Secret Key}&quot;;	
-  $apicall_method = &quot;POST&quot;;
-  $api_server = &quot;https://sts.apigw.ntruss.com&quot;;
-  $api_url = &quot;/api/v1/credentials&quot;;
-  $msg_signature = &quot;&quot;;
-
-  $array_postvars = Array (			
-    &quot;durationSec&quot; =&gt; 900
-  );
-  $postvars = json_encode($array_postvars);
-
-  $space = &quot; &quot;;
-  $new_line = &quot;\n&quot;;
-  $message = 
-    $apicall_method
-    .$space
-    .$api_url
-    .$new_line
-    .$unixtimestamp
-    .$new_line
-    .$ncloud_sub_account_accesskey;	
-  $msg_signature = base64_encode(hash_hmac(&apos;sha256&apos;, $message, $ncloud_sub_account_secretkey, true));
-
-  $http_header = array();    
-  $http_header[0] = &quot;Content-Type:application/json; charset=utf-8&quot;;
-  $http_header[1] = &quot;x-ncp-apigw-timestamp:&quot;.$unixtimestamp.&quot;&quot;;
-  $http_header[2] = &quot;x-ncp-iam-access-key:&quot;.$ncloud_sub_account_accesskey.&quot;&quot;;
-  $http_header[3] = &quot;x-ncp-apigw-signature-v2:&quot;.$msg_signature.&quot;&quot;;
-
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $api_server.$api_url);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $http_header);
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);		
-  curl_setopt($ch, CURLOPT_POST, TRUE);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-  $json_response = curl_exec($ch);
-  curl_close($ch);
-
-  if ($json_response)
-  {
-    $obj_array = json_decode($json_response, 1);
-
-    $sts_accesskey= $obj_array[&quot;accessKey&quot;];
-    $sts_secretkey= $obj_array[&quot;keySecret&quot;];
-    $sts_createtime= $obj_array[&quot;createTime&quot;];
-    $sts_expiretime= $obj_array[&quot;expireTime&quot;];
-    $sts_use_mfa= $obj_array[&quot;useMfa&quot;];	
-  }
-?&gt;
-```
-
-
-### PHP 예제 코드 상세 설명
-위 전체 소소코드 중에서 중요한 부분만 다시 살펴보겠습니다.
-
-#### 기간 제한 없는 API Key
-아래 2가지 변수에는 위쪽 [기간 제한 없는 Access Key 발급 &lt;i class=&quot;fa-solid fa-arrow-up-from-bracket&quot;&gt;&lt;/i&gt;](#create_no_limit_api_key)에서 생성했던 기간 제한 없는 Sub Account API Access Key와 Secret Key를 입력하시면 됩니다.
-
-``` php
-&lt;?php	  
-  $ncloud_sub_account_accesskey = &quot;{기간 제한 없는 Sub Account API Access Key}&quot;;
-  $ncloud_sub_account_secretkey = &quot;{기간 제한 없는 Sub Account API Secret Key}&quot;;
-?&gt;
-```
-
-#### STS API 호출 서버와 URL
-
-STS API 서버와 URL은 아래와 같습니다.  
-그리고 `API 호출 방식은 POST 방식`입니다.
-``` php
-&lt;?php
-  $apicall_method = &quot;POST&quot;;
-  $api_server = &quot;https://sts.apigw.ntruss.com&quot;;
-  $api_url = &quot;/api/v1/credentials&quot;;
-?&gt;
-```
-
-#### Request 파라미터
-STS 생성을 위한 Request 파라미터는 총 3가지입니다.  
-여기서는 만료시간을 나타내는 durationSec 값만 설정해보았습니다.
-
-| 파라미터 | 필수여부 | 타입 | 설명 |
-| :---- | :---- | :----- | :----- |
-| durationSec | N | Integer | accessKey 지속 시간(초) &lt;br /&gt;&lt;br /&gt;default: 43,200 (12시간) &lt;br /&gt;min: 900 (15분) &lt;br /&gt;max: 129,600 (36시간)|
-| serialNumber | N | String | OTP 디바이스 nrn 또는 시리얼 번호 |
-| tokenCode | N | Integer | OTP 인증 번호 |
-
-
-``` php
-&lt;?php
-  $array_postvars = Array (			
-    &quot;durationSec&quot; =&gt; 900
-  );
-?&gt;
-```
-
-
-#### API Header 설정
-Header를 설정할 때 다른 값들은 보통의 API 호출할 때와 동일한데  
-`STS로 임시 Access Key를 생성할 때에는 Content-Type과 charset을 포함해야` 합니다.
-
-``` php
-&lt;?php
-  $http_header = array();    
-  $http_header[0] = &quot;Content-Type:application/json; charset=utf-8&quot;;
-  $http_header[1] = &quot;x-ncp-apigw-timestamp:&quot;.$unixtimestamp.&quot;&quot;;
-  $http_header[2] = &quot;x-ncp-iam-access-key:&quot;.$ncloud_sub_account_accesskey.&quot;&quot;;
-  $http_header[3] = &quot;x-ncp-apigw-signature-v2:&quot;.$msg_signature.&quot;&quot;;
-?&gt;
-```
-
-#### API 호출
-{% include callout_v2.html type=&quot;info&quot; level=&quot;3&quot; content=&quot;STS API를 호출할 때에는 **반드시 POST 방식으로 호출**해야 합니다.&quot; %}
-
-``` php
-&lt;?php 
-  curl_setopt($ch, CURLOPT_POST, TRUE);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-?&gt;
-```
-
-
-## API 호출 테스트
-STS로 생성한 기간 제한 임시 Access Key로 Ncloud API를 호출하는 테스트를 진행해보겠습니다.
-
-테스트로 호출할 API 정보는 다음과 같습니다.
-- getServerInstanceList: 사용 중인 서버 인스턴스(VM) 리스트를 조회
-
-### 권한 없이 호출
-우선 Sub Account에 아무 권한도 주지 않은 상태에서 호출해보면 다음과 같은 결과 메시지를 확인할 수 있습니다.
-
-{% include warning.html title=&quot;returnMessage:&quot; content=&quot;You do not have authority about action: [VPCSever:View/GetServerInstanceList].&quot; %}
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-14.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-
-### 권한 정책 추가
-이제는 권한을 추가해서 테스트 해보겠습니다.  
-[Sub Account] - [Sub Accounts]에서 Sub Account를 선택하고 [정책] 탭에서 [추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-15.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-#### 정책 추가
-정책 추가 팝업에서 연관 상품에서 [Server (VPC)]를 선택하면 나타나는 정책 리스트에서 [NCP_VPC_SERVER_VIEWER] 정책을 선택하고 [추가] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-16.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-#### 추가된 정책 확인
-정책 추가 후에 Sub Account 상세 정보 화면에서 추가된 정책을 확인할 수 있습니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-17.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-### 권한 추가 후 호출
-권한 정책을 추가 후에 호출해보면 아래와 같이 호출이 성공하고 Success 메시지가 리턴되는 것을 확인할 수 있습니다.
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-18.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-## Access Key 기한 만료
-STS로 기간 제한 있는 임시 Access Key를 만들때 설정했던 만료기한이 지난 후에 해당 Access Key를 사용해 API를 호출하면 아래와 같이 인증 실패 메시지가 리턴됩니다.
-
-{% include warning.html title=&quot;Error:&quot; content=&quot;errorCode: 200, message:Authentication Failed, details: This account is not allowed.&quot; %}
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-19.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 메인 계정 Access Key를 사용했을 때 {#main_account_use_error}
-처음에 설명한 것처럼 STS 임시 Access Key는 Sub Account로만 생성할 수 있습니다.  
-혹시나 메인 계정으로 생성하려고 하면 아래와 같이 오류 메시지가 리턴됩니다.
-
-{% include warning.html title=&quot;Error:&quot; content=&quot;errorCode: 401, message:접근 권한 없음&quot; %}
-
-{% include image.html file=&quot;management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide-20.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account의 STS (Secure Token Service) 기능을 이용해 기간 제한 임시 API AccessKey 발급하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1.  Sub Account 사용 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/management-management-4-1&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/management-management-4-1&lt;/a&gt;
-
-2.  STS API 사용 가이드
-	- &lt;a href=&quot;https://api.ncloud-docs.com/docs/management-sts&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://api.ncloud-docs.com/docs/management-sts&lt;/a&gt;
-</description>
-            <pubDate>Tue, 07 Jun 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html</guid>
-            
-            <category>account</category>
-            
-            <category>api</category>
-            
-            <category>token</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>SourceCommit 리포지토리 Git 클라이언트로 로컬PC에 복제하기 | Ncloud</title>
-            <description>## 개요
-Ncloud (네이버 클라우드) SourceCommit 리포지토리를 로컬 PC에서 Git 클라이언트를 이용해 복제(Clone)하는 방법을 정리해보겠습니다. 
-이때 `Git 클라이언트로 접속하는 방법에는 HTTPS와 SSH 2가지 방식`이 있는데 **여기서는 HTTPS로 접속하는 방법을 사용**하겠습니다.
-
-## Sub Account 생성
-Git 클라이언트로 SourceCommit 리포지토리에 접속하기 위해서는 서브 어카운트를 생성해야 합니다.  
-Sub Account가 아닌 메인 계정으로 Git 클라이언트 접속에 필요한 계정을 설정하려고 하면 아래와 같은 경고 메시지가 나타납니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-02.png&quot; width=&quot;680&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
-**Sub Account로 로그인 후 Git 계정을 설정하세요.**&lt;br /&gt;&lt;br /&gt;
-
-고객 계정은 Git 계정을 설정할 수 없습니다. &lt;br /&gt;
-Git Client를 사용하여 소스코드 다운로드 및 수정을 하기 위해서는 &lt;br /&gt;
-Sub Account로 로그인 후 Git 계정 설정을 하셔야 합니다.
-&quot; %}
-
-### Sub Account 생성 가이드
-Sub Account 생성방법은 아래 문서에서 확인할 수 있습니다.
-
-- Sub Account 생성 가이드: &lt;a href=&quot;/management/ncloud_management_sub_account_guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all&quot;&gt;https://docs.3rdeyesys.com/management/ncloud_management_sub_account_guide.html&lt;/a&gt;
-
-
-## Sub Account 권한 설정
-Sub Account를 생성했으면 정책 권한을 부여해야 합니다.  
-생성한 Sub Account에 SourceCommit 접속 권한을 부여하려면 여러 가지 정책 권한이 있지만 일반적으로 [**NCP_SOURCECOMMIT_MANAGER**] 정책을 부여하면 됩니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-## Sub Account 로그인
-Sub Account를 생성하고 정책 권한을 부여했으면 해당 Sub Account로 로그인합니다.
-
-{% include image.html file=&quot;management/ncp_manage_sub_account_18.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
-
-## 리포지토리 생성
-Sub Account로 로그인 후에 콘솔에 접속한 후 [SourceCommit]에서 [리포지토리 생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-### 기본 설정
-리포지토리 이름과 설명을 입력하고 초기화 설정을 선택합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-### 보안상품 연동
-리포지토리와 악성코드  필터링 시스템인 File Safer 상품을 연동하면 보다 안전하게 리포지토리를 사용할 수 있습니다.  
-File Safer 상품은 별도로 상품 신청을 해야 하는데, 필요할 경우에는 링크를 클릭해 File Safer 이용 신청을 하시기 바랍니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-### 최종 확인
-입력한 정보들에 수정할 부분이 없는지 최종 확인을 한 후에 [생성] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-## Git 계정 설정
-리포지토리가 생성되었으면 [**Git 계정/Git SSH 설정**] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-### 계정 패스워드 입력
-Git 클라이언트에서 사용할 계정 즉 **User Name은 Sub Account로 자동 설정** 되므로 여기서는 패스워드만 입력합니다.
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-08.png&quot; width=&quot;680&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;
-여기서 설정한 비밀번호는 Git Client를 통한 리포지토리 접근 시 사용되며, &lt;br /&gt;
-해당 비밀번호를 사용하여 포털, 콘솔 등 웹을 통한 로그인은 불가능합니다. &lt;br /&gt;&lt;br /&gt;
-
-**비밀번호 규칙은 영문, 숫자, 특수문자 !@#$%^&amp;*+=-_~\`() 가 포함된 8~16 길이입니다.**
-&quot; %}
-
-## 리포지토리 Clone URL 확인
-리포지토리 Clone URL은 리포지토리를 선택하고 [코드로 이동] 버튼을 클릭해서 확인할 수 있습니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-상단에 있는 [**CLONE URL**] 메뉴를 클릭하면 HTTPS와 SSH 두가지 용도의 URL을 확인할 수 있는데 여기서는 **HTTPS URL을 복사**합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-10.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-
-## Git 클라이언트 다운로드
-SourceCommit 리포지토리에 접속하기 위한 윈도우용 클라이언트는 아래 경로에서 다운 받을 수 있습니다.
-
-- Git for Windows downloads: &lt;a href=&quot;https://git-scm.com/download/win&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all&quot;&gt;https://git-scm.com/download/win&lt;/a&gt;
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-11.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-## 디렉토리 생성
-설치한 Git 클라이언트에서 [**Git Bash**]를 실행해 리포지토리를 복제할 디렉토리를 생성합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-12.png&quot; width=&quot;839&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-## 리포지토리 복제
-위에서 복사한 HTTS용 리포지토리 URL를 입력하여 복제를 시도하면 아래와 같이 패스워드 입력 창이 나타납니다. 
-리포지토리 URL을 아래 명령어에 입력할 때는 [https://]와 [도메인(devtools.ncloud.com)] 사이에 [**Git계정@**]를 입력하면 편하게 패스워드만 입력하면 됩니다.
-
-``` bash
-# git clone 예시
-$ git clone https://{Git 계정}@devtools.ncloud.com/123456789/source-commit-test.git
-```
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-13.png&quot; width=&quot;839&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-## 복제 완료
-패스워드를 입력하고 나면 아래와 같이 리포지토리가 복제됩니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-14.png&quot; width=&quot;839&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-## GitHub Desktop 사용
-평소에 깃허브를 이용하고 있는 경우에는 GitHub Desktop을 사용해도 됩니다. 
-아래와 같이 [Clone a repository] 메뉴를 선택하고 URL 탭에서 리포지토리 URL를 입력합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-15.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-GitHub Desktop에서는 아래와 같이 Username과 Password를 모두 입력해야 합니다.
-
-{% include image.html file=&quot;dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide-16.png&quot; width=&quot;845&quot; alt=&quot;Ncloud SourceCommit의 리포지토리를 Git 클라이언트로 접속해 로컬PC에 복제(Clone)하는 방법&quot; caption=&quot;&quot; %}
-
-
-## 참고 URL
-1. Ncloud SourceCommit 기본 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/sourcecommit-overview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/sourcecommit-overview&lt;/a&gt;
-
-2. Ncloud SourceCommit Git Client 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/sourcecommit-use-client&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/sourcecommit-use-client&lt;/a&gt;
-</description>
-            <pubDate>Thu, 02 Jun 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide.html</guid>
-            
-            <category>github</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Kubernetes Service 클러스터 생성 및 제어 가이드</title>
-            <description>## 개요
-Ncloud (네이버 클라우드) VPC 환경에서 Kubernetes(쿠버네티스) 서비스를 생성하고 제어하는 방법에 대해 소개합니다.
+Ncloud (네이버 클라우드) VPC 환경에서 Kubernetes(쿠버네티스) 서비스를 생성하고 **Windows 환경에서 제어하는 방법**에 대해 소개합니다.
 
 ## 쿠버네티스란?
 쿠버네티스(Kubernetes, K8S)는 배포, 스케일링, 그리고 컨테이너화된 애플리케이션의 관리를 자동화 해주는 오픈 소스 컨테이너 오케스트레이션 엔진으로 
@@ -1437,7 +580,7 @@ Ncloud (네이버 클라우드) VPC 환경에서 Kubernetes(쿠버네티스) 서
 
 {% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_07.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;IP 대역(10.0.0.0/8,172.16.0.0/12,192.168.0.0/16) 내에서 /17~/26 범위의 Private 또는 Public Subnet, 로드밸런서 전용 Subnet이 필요합니다.&lt;br/&gt;&lt;br/&gt;
+{% include callout-v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;IP 대역(10.0.0.0/8,172.16.0.0/12,192.168.0.0/16) 내에서 /17~/26 범위의 Private 또는 Public Subnet, 로드밸런서 전용 Subnet이 필요합니다.&lt;br/&gt;&lt;br/&gt;
 Docker Bridge 대역의 충돌을 방지하기 위해 172.17.0.0/16 범위 내의 Private Subnet, 로드밸런서 전용Subnet은 선택할 수 없습니다.&quot; %}
 
 
@@ -1448,12 +591,14 @@ VPC와 Subnet이 준비되었다면, 다음으로 [Kubernetes Sevice] - [Cluster
 {% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_09.jpg&quot; width=&quot;500&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
 ## 클러스터 설정
-생성할 클러스터의 정보를 설정해줍니다. (ACG는 자동으로 생성 됩니다.)  
+생성할 클러스터의 정보를 설정해줍니다. 
 **네트워크 타입은 Private과 Public 중에서 선택**할 수 있습니다.
 
-{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_01.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+{% include callout-v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;Kubernetes Service를 위한 ACG는 자동으로 생성됩니다.&quot; %}
+{% include callout-v2.html type=&quot;primary&quot; level=&quot;2&quot; content=&quot;현재 지원되고 있는 Kubernetes 버전은 [**1.22.9**], [**1.23.9**] 입니다.&quot;%}
 
-{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;현재 지원되고 있는 Kubenetes 버전은 [**1.21.9**], [**1.22.9**] 입니다.&quot;%}
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-01.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
 
 ### NAT Gateway 생성
 `Private Subnet을 선택했을 경우`에는 아래와 같이 NAT Gateway 생성 안내 팝업이 나타나는데,  
@@ -1468,9 +613,10 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
 ## 노드풀 설정
 노드풀 이름을 입력하고, 서버 이미지와 서버 타입을 선택하고 [추가] 버튼을 클릭합니다.
 
-{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_02.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+{% include callout-v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;현재 지원되고 있는 OS는 [**ubuntu 16.04**], [**ubuntu 18.04**], [**ubuntu 20.04**] 입니다.&quot;%}
 
-{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;현재 지원되고 있는 OS는 [**ubuntu16.04**], [**ubuntu18.04**] 입니다.&quot;%}
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-02.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
 
 ## 로그인키 설정
 다음으로 워커노드의 로그인키를 설정 합니다.
@@ -1480,75 +626,152 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
 ## 최종 확인
 설정 정보를 최종적으로 확인한 후 생성버튼을 클릭하여 클러스터를 생성합니다.
 
+{% include callout-v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;쿠버네티스 클러스터 생성은 20분 정도 소요되므로 여유를 갖고 기다리시면 됩니다.&quot;%}
+
 {% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_04.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;쿠버네티스 클러스터 생성은 20분 정도 소요되므로 여유를 갖고 기다리시면 됩니다.&quot;%}
+
+## 생성 완료
+생성이 완료되면 아래와 같이 클러스터와 노드풀의 정보를 확인할 수 있습니다.  
+클러스터 정보 중에서 클러스터 **UUID는 아래쪽에서 IAM 인증 Kubeconifg 파일을 생성할 때 필요**하니 확인해두시기 바랍니다.
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-12.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+[Server] 메뉴에 가면 노드풀 설정에 따라 생성된 서버를 확인할 수 있습니다.  
+(서버 이름은 노드풀 이름으로 입력한 문자열 기준으로 생성되는데, 여기서는 test123-O-OOO 이런 식으로 생성되었습니다.)
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-13.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+## IAM 인증 설정
+클러스터를 제어하기 위해서는 네이버 클라우드 쿠버네티스 서비스에서 제공하는 IAM 인증을 설정해야 합니다.
+
+### ncp-iam-authenticator 설치
+Ncloud에서 제공하는 ncp-iam-authenticator 바이너리를 통해 iam 인증 config 파일을 생성 할 수 있습니다.
+
+- ncp-iam-authenticator 바이너리를 다운로드 합니다.
+
+``` powershell
+&gt; curl -o ncp-iam-authenticator.exe https://kr.object.ncloudstorage.com/nks-download/ncp-iam-authenticator/v1.0.5/windows/amd64/ncp-iam-authenticator.exe
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-25.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+- ncp-iam-authenticator가 정상 작동 하는지 테스트 합니다. 
+
+``` powershell
+&gt; ncp-iam-authenticator help
+```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-26.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+## API 인증키 생성
+네이버 클라우드 포탈 -&gt; 마이페이지 -&gt; 계정관리 -&gt; 인증키 관리 - API 인증키 관리 메뉴에서 Access Key ID와 Secret Key를 가져오셔야 하며, 아직 만들어진 Key가 없다면 새로 만드셔야 합니다.
+
+{% include image.html file=&quot;api/ncloud_api_auth_key_create.png&quot; width=&quot;770&quot; alt=&quot;Ncloud API 인증키 생성 방법&quot; caption=&quot;&quot; %}
+
+## Kubeconfig 파일 생성
+API 인증키를 2가지 방법 중 하나를 이용해 환경변수에 등록합니다.
+
+**1. OS 환경 변수 설정**
+
+``` powershell
+&gt; SET NCLOUD_ACCESS_KEY={Ncloud API AccessKey}
+&gt; SET NCLOUD_SECRET_KEY={Ncloud API SecretKey}
+&gt; SET NCLOUD_API_GW=https://ncloud.apigw.ntruss.com
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-27.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+**2. 사용자 계정 홈 폴더에 configure 설정**  
+Windows 사용자 계정 폴더에 .ncloud 폴더를 만들고 아래와 같은 내용으로 configure 파일을 생성합니다.
+
+``` powershell
+&gt; mkdir C:\Users\{User Account}\.ncloud
+&gt; copy con C:\Users\{User Account}\.ncloud\configure
+[DEFAULT]
+ncloud_access_key_id = {Ncloud API AccessKey}
+ncloud_secret_access_key = {Ncloud API SecretKey}
+ncloud_api_url = https://ncloud.apigw.ntruss.com
+^Z
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-28.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+**3. Kubeconifg 파일 생성**  
+환경변수에 등록이 되었다면 파일을 생성 할 차례입니다.  
+아래 명령어로 클러스터에 대한 IAM 인증 Kubeconifg 파일을 생성합니다.
+
+{% include callout-v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;클러러스터 UUID 값은 클러스터 상세보기의 [클러스터 이름 (UUID)] 에서  확인 할수 있습니다.&quot; %}
+
+``` powershell
+&gt; ncp-iam-authenticator create-kubeconfig --region &lt;region-code&gt; --clusterUuid &lt;cluster-uuid&gt; --output &lt;FileName&gt;.yaml
+
+## 예시
+&gt; ncp-iam-authenticator create-kubeconfig --region KR --clusterUuid 12345678-1234-1234-1234-1234567890 --output kubeconfig.yaml
+```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-29.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
 
 ## kubectl 설치
+쿠버네티스 클러스터를 제어할 kubectl을 설치하기 위해 필요한 파일을 다운로드 받고, 버전 정보를 확인합니다.
 
-사용자 로컬PC에서 클러스터를 제어하기 위해 kubectl을 설치합니다.  
-kubctl의 최신 릴리즈 버전은 아래  링크에서 다운받을 수 있습니다.
+아래 두가지 방법 중에 하나를 선택해 다운로드 받으시면 됩니다.
 
-- kubctl v1.21.0 :  &lt;a href=&quot;https://dl.k8s.io/release/v1.21.0/bin/windows/amd64/kubectl.exe&quot; target=&quot;_self&quot; style=&quot;word-break:break-all;&quot;&gt;https://dl.k8s.io/release/v1.21.0/bin/windows/amd64/kubectl.exe&lt;/a&gt;
-
-또는 windows에서 cmd 창에서 curl 을 이용하해 다운로드 받을 수도 있습니다.
-``` bash
-&gt; curl -LO https://dl.k8s.io/release/v1.21.0/bin/windows/amd64/kubectl.exe
-```
-&lt;br /&gt;
-kubectl의 버전 확인이 필요한 경우 다음 명령어를 사용하시면 됩니다.
-``` bash
-&gt; kubectl version --client
-```
-
-&lt;br /&gt;
-다른 OS 환경에서 설치하는 방법은 아래 링크에서 확인할 수 있습니다.
-
-- Linux kubectl 설치 : &lt;a href=&quot;https://kubernetes.io/ko/docs/tasks/tools/install-kubectl-linux/&quot; target=&quot;_self&quot; style=&quot;word-break:break-all;&quot;&gt;https://kubernetes.io/ko/docs/tasks/tools/install-kubectl-linux/&lt;/a&gt;
-- macOS kubectl 설치 : &lt;a href=&quot;https://kubernetes.io/ko/docs/tasks/tools/install-kubectl-macos/&quot; target=&quot;_self&quot; style=&quot;word-break:break-all;&quot;&gt;https://kubernetes.io/ko/docs/tasks/tools/install-kubectl-macos/&lt;/a&gt;
-
-
-
-## 접속-제어
-
-클러스터를 제어하기 위해서는 네이버 클라우드 쿠버네티스 서비스에서 제공해주는 접속을 위한 인증정보가 있는 설정파일이 필요합니다.   
-[설정파일] - [다운로드] 버튼을 클릭해 설정 파일을 다운로드 받습니다.
-
-{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_05.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
-
-kubectl을 실행해 Kubernetes에 접속하고 제어하는 방법은 [가이드 보기] 버튼 클릭하면  
-아래와 같이 [설치 가이드 바로가기]와 [IAM 인증 가이드] 링크에서 자세히 확인할 수 있습니다.
-
-{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_06.jpg&quot; width=&quot;690&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
-
-
-다운로드한 설정 파일경로를 %KUBE_CONFIG% 환경변수에 지정합니다.
+&lt;a href=&quot;https://dl.k8s.io/release/v1.24.0/bin/windows/amd64/kubectl.exe&quot; target=&quot;_self&quot; style=&quot;word-break:break-all;&quot;&gt;Download the latest release v1.24.0&lt;/a&gt;
 
 ``` bash
-&gt; SET KUBE_CONFIG=%USERPROFILE%\Downloads\kubeconfig-7349***-8***-4***-a***-99e***.yaml
+&gt; curl -LO https://dl.k8s.io/release/v1.24.0/bin/windows/amd64/kubectl.exe
 ```
-&lt;br /&gt;
-이제 --kubeconfig 옵션을 사용하여 쿠버네티스의 클러스터를 제어할수 있습니다.
 
-``` bash
-&gt; kubectl --kubeconfig %KUBE_CONFIG% get nodes
-NAME                 STATUS   ROLES   AGE    VERSION
-nks-pool-1865-w2zy   Ready    node    4d5h   v1.16.6
-nks-pool-1865-w2zz   Ready    node    4d5h   v1.16.6
+``` powershell
+&gt; kubectl version --client --output=yaml
 ```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-30.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+## kubectl 실행
+생성한 IAM 인증 kubeconfig 파일을 이용하여 kubectl 명령어를 테스트하여 정상 동작 하는지 확인 합니다.  
+실행하면 아래와 같이 현재 동작 중인 노드 서버 리스트를 확인할 수 있습니다.
+
+``` powershell
+&gt; kubectl get node --kubeconfig kubeconfig.yaml
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-31.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+### 실행 명령어 단축
+위와 같은 kubectl 명령은 뒤쪽에 kubeconfig 환경 설정 파일까지 입력해야 해서 다소 불편한데, 간단하게 줄일 수 있는 방법이 있습니다.  
+
+우선 만들어진 kubeconfig.yaml 파일을 .kube/ 디렉토리 아래에 config로 이름을 바꾸어 이동 혹은 복사 합니다.
+
+``` powershell
+&gt; copy kubeconfig.yaml .kube\config
+```
+
+이렇게 하면 Kubectl을 사용 시 아래와 같이 --kuebeconfig 명령어 없이 사용 할 수 있습니다.
+
+``` powershell
+&gt; kubectl get node
+```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-32.png&quot; width=&quot;843&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
 
 ## 참고 URL
 1. 쿠버네티스 사용 가이드
 	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/k8s-k8soverview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/k8s-k8soverview&lt;/a&gt;
+
 2. 클러스터 이용 가이드
 	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/k8s-k8suse-cluster&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/k8s-k8suse-cluster&lt;/a&gt;
+
 3. kubectl 설치 가이드
 	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/k8s-k8sstart#Kubectl%EC%84%A4%EC%B9%98&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/k8s-k8sstart#Kubectl&lt;/a&gt;
+
+4. Linux 환경에서 쿠버네티스 제어하기
+	- &lt;a href=&quot;/containers/ncloud-containers-kubernetes-service-start-guide-linux.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/containers/ncloud-containers-kubernetes-service-start-guide-linux.html&lt;/a&gt;    
 </description>
-            <pubDate>Fri, 27 May 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/compute/ncloud_compute_kubernetes_service_start_guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud_compute_kubernetes_service_start_guide.html</guid>
+            <pubDate>Mon, 22 Aug 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/containers/ncloud-containers-kubernetes-service-start-guide-windows.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/containers/ncloud-containers-kubernetes-service-start-guide-windows.html</guid>
             
             <category>kubernetes</category>
             
@@ -1558,209 +781,252 @@ nks-pool-1865-w2zz   Ready    node    4d5h   v1.16.6
         </item>
         
         <item>
-            <title>Cloud DB for PostgreSQL 생성 후 Public 도메인으로 접속하기</title>
-            <description>## 지원 클라우드 환경
-Ncloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.
+            <title>Kubernetes Service 클러스터 생성 및 제어 가이드 | Linux</title>
+            <description>## 개요
+Ncloud (네이버 클라우드) VPC 환경에서 Kubernetes(쿠버네티스) 서비스를 생성하고 **Linux 환경에서 제어하는 방법**에 대해 소개합니다.
 
-- 리전(존): 한국, 싱가포르
-- VPC만	지원
-- 언어: 한국어, 영어, 일본어, 중국어(간체)
-- DB 엔진 버전: PostgreSQL 13.3
+## 쿠버네티스란?
+쿠버네티스(Kubernetes, K8S)는 배포, 스케일링, 그리고 컨테이너화된 애플리케이션의 관리를 자동화 해주는 오픈 소스 컨테이너 오케스트레이션 엔진으로 
+구글에서 처음 개발하기 시작했으나 현재는 구글이 오픈소스 프로젝트로 공개한 상태입니다.
 
-## DB 생성
-[Cloud DB for PostgreSQL] - [DB Server]에서 [DB Server 생성] 버튼을 클릭해 DB를 생성을 시작합니다.
+## 특징
+쿠버네티스는 다음과 같은 특징이 있으며, 자세한 내용은 쿠버네티스 공식 페이지를 참고하시기 바랍니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Ncloud Cloud DB for PostgreSQL 생성 후 Public 도메인으로 접속하는 방법&quot; caption=&quot;&quot; %}
+&lt;a href=&quot;https://kubernetes.io/ko/docs/home/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://kubernetes.io/ko/docs/home/&lt;/a&gt;
 
-### 서버 설정
-- DB 엔진: 현재 지원되는 `DB 엔진 버전은 PostgreSQL 13.3` 입니다.  
-- 고가용성 지원은 기본 선택 사항인데, 필요하지 않을 경우 체크를 해제하면 됩니다.
-- VPC와 Subnet을 선택하고, 미리 생성된 VPC와 Subnet가 없으면 생성 버튼을 클릭합니다.
-- `Subnet은 반드시 Public Subnet으로 선택`합니다.
-- DB Server 타입은 위쪽에서 확인했던 서버 사양 중에서 원하는 vCPU와 메모리를 선택하면 됩니다.
-
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
-&amp;#8259; Public 도메인은 Public Subnet에 생성된 DB 서버에서만 이용 신청이 가능합니다. &lt;br /&gt;
-&amp;#8259; DB 서버 생성 이후에 Subnet 이전은 불가능합니다.
-&quot; %}
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-02.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 1&quot; caption=&quot;&quot; %}
+- 서비스 디스커버리와 로드 밸런싱
+- 스토리지 오케스트레이션
+- 자동화된 롤아웃과 롤백
+- 자동화된 빈 패킹(bin packing)
+- 자동화된 복구(self-healing)
+- 시크릿과 구성 관리
 
 
-- 데이터 스토리지 타입과 암호화 적용 여부를 선택합니다.
-- 데이터 스토리지는 기본 10GB로 설정되며 최대 6000GB까지 자동으로 증가합니다.
-- DB Server 이름과 DB Service 이름을 입력합니다. DB Service 이름은 DB Server를 역할별로 구분한 그룹의 명칭입니다.
+## 사전 준비
+먼저 쿠버네티스 클러스터에 사용할 **전용 VPC와 Private 또는 Public Subnet 그리고, Load Balancer용 Subnet**이 필요합니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 2&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_07.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
-### DB 설정
-- USER ID와 암호를 입력합니다. (ID와 암호는 잊어버리지 않도록 잘 보관해야 합니다.)
-- 접근제어는 접근을 허용할 IP 대역을 입력합니다.
-- DB 접속포트는 기본 포트가 5432 입니다.
-- 기본 DB명을 입력하고, Backup 설정을 선택합니다.
-
-{% include warning.html title=&quot;접속포트 설정&quot; content=&quot;DB 접속포트는 한번 설정하면 이후에 변경할 수 없으니 신중하게 설정하셔야 합니다.&quot; %}
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - DB 설정&quot; caption=&quot;&quot; %}
-
-### 최종 확인
-지금까지 입력한 값이 이상이 없는지 특히 Public Subnet으로 설정했는지 최종 확인하고, 수정할 부분이 없으면 [생성] 버튼을 클릭합니다.  
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 최종 확인&quot; caption=&quot;&quot; %}
-
-## Public 도메인 설정
-DB 생성이 완료되면 아래와 같이 DB의 상세 정보를 확인할 수 있습니다. 
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL Public 도메인으로 접속하기&quot; caption=&quot;&quot; %}
-
-[DB 관리] - [Public 도메인 관리] 메뉴를 클릭합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL Public 도메인 생성하기&quot; caption=&quot;&quot; %}
-
-[Public 도메인 신청] 팝업에서 [예] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL Public 도메인 신청&quot; caption=&quot;&quot; %}
-
-이제 [Public 도메인]이 생성되었습니다. 생성된 Public 도메인과 ACG 이름이 중요하니 기억해 둡니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL Public 도메인 설정 완료&quot; caption=&quot;&quot; %}
-
-## ACG 설정
-[Server] - [ACG]에서 Cloud DB for PostgreSQL 생성 시에 자동으로 생성된 ACG [cloud-postgresql-ooooo]를 선택하고, [ACG 설정] 버튼을 클릭합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-10.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include callout-v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;IP 대역(10.0.0.0/8,172.16.0.0/12,192.168.0.0/16) 내에서 /17~/26 범위의 Private 또는 Public Subnet, 로드밸런서 전용 Subnet이 필요합니다.&lt;br/&gt;&lt;br/&gt;
+Docker Bridge 대역의 충돌을 방지하기 위해 172.17.0.0/16 범위 내의 Private Subnet, 로드밸런서 전용Subnet은 선택할 수 없습니다.&quot; %}
 
 
-### ACG 규칙 설정
-ACG 규칙 설정 창에서 [Inbound] 탭을 선택하고 `[접근 소스]는 [myIp]를 클릭`하고 허용 포트는 5432를 입력하고 [추가] 버튼을 클릭합니다.
+## 클러스터 생성 
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-11.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 규칙 설정&quot; caption=&quot;&quot; %}
+VPC와 Subnet이 준비되었다면, 다음으로 [Kubernetes Sevice] - [Cluster]에서 생성하기를 클릭합니다.
 
-## pgAdmin 4 다운로드
-PostgreSQL에 접속하기 위한 클라이언트 pgAdmin 4를 다운로드 합니다.  
+{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_09.jpg&quot; width=&quot;500&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
-- pgAdmin 다운로드 페이지: &lt;a href=&quot;https://www.pgadmin.org/download/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://www.pgadmin.org/download/&lt;/a&gt;
+## 클러스터 설정
+생성할 클러스터의 정보를 설정해줍니다. 
+**네트워크 타입은 Private과 Public 중에서 선택**할 수 있습니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-12.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 다운로드 페이지&quot; caption=&quot;&quot; %}
+{% include callout-v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;Kubernetes Service를 위한 ACG는 자동으로 생성됩니다.&quot; %}
+{% include callout-v2.html type=&quot;primary&quot; level=&quot;2&quot; content=&quot;현재 지원되고 있는 Kubernetes 버전은 [**1.22.9**], [**1.23.9**] 입니다.&quot;%}
 
-다운로드 할 버전은 `pgAdmin 4 v6.7 (released March 14, 2022)` 입니다.
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-25.png&quot; width=&quot;770&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 다운로드 버전 선택&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-01.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
-## pgAdmin 4 설치
-pgAdmin 4 클라이언트가 설치되는 기본 경로는 다음과 같습니다.
+### NAT Gateway 생성
+`Private Subnet을 선택했을 경우`에는 아래와 같이 NAT Gateway 생성 안내 팝업이 나타나는데,  
+NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기 때문입니다.
 
-``` powershell
-C:\Users\{Windows User Account}\AppData\Local\Programs\pgAdmin 4\v6
+{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_10.jpg&quot; width=&quot;490&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+팝업에서 링크를 클릭해서 NAT Gateway 화면으로 이동해 NAT Gateway를 생성합니다.
+
+{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_11.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+## 노드풀 설정
+노드풀 이름을 입력하고, 서버 이미지와 서버 타입을 선택하고 [추가] 버튼을 클릭합니다.
+
+{% include callout-v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;현재 지원되고 있는 OS는 [**ubuntu 16.04**], [**ubuntu 18.04**], [**ubuntu 20.04**] 입니다.&quot;%}
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-02.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 로그인키 설정
+다음으로 워커노드의 로그인키를 설정 합니다.
+
+{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_03.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+## 최종 확인
+설정 정보를 최종적으로 확인한 후 생성버튼을 클릭하여 클러스터를 생성합니다.
+
+{% include callout-v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;쿠버네티스 클러스터 생성은 20분 정도 소요되므로 여유를 갖고 기다리시면 됩니다.&quot;%}
+
+{% include image.html file=&quot;compute/kubernetes/ncp_server_kubernetes_start_guide_04.jpg&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 생성 완료
+생성이 완료되면 아래와 같이 클러스터와 노드풀의 정보를 확인할 수 있습니다.  
+클러스터 정보 중에서 클러스터 **UUID는 아래쪽에서 IAM 인증 Kubeconifg 파일을 생성할 때 필요**하니 확인해두시기 바랍니다.
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-12.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+[Server] 메뉴에 가면 노드풀 설정에 따라 생성된 서버를 확인할 수 있습니다.  
+(서버 이름은 노드풀 이름으로 입력한 문자열 기준으로 생성되는데, 여기서는 test123-O-OOO 이런 식으로 생성되었습니다.)
+
+그리고, 추가로 테스트를 위한 CentOS 서버(k8s-test)를 생성했습니다.
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-13.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+## IAM 인증 설정
+클러스터를 제어하기 위해서는 네이버 클라우드 쿠버네티스 서비스에서 제공하는 IAM 인증을 설정해야 합니다.
+
+### ncp-iam-authenticator 설치
+Ncloud에서 제공하는 ncp-iam-authenticator 바이너리를 통해 iam 인증 config 파일을 생성 할 수 있습니다.
+
+- ncp-iam-authenticator 바이너리를 다운로드 합니다.
+
+```bash
+~# curl -o ncp-iam-authenticator https://kr.object.ncloudstorage.com/nks-download/ncp-iam-authenticator/v1.0.5/linux/amd64/ncp-iam-authenticator
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-14.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+- 다운받은 바이너리에 실행 권한을 추가 합니다.
+
+```bash
+~# chmod +x ./ncp-iam-authenticator
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-15.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+- bin/ncp-iam-authenticator 파일을 생성하고  $PATH에 추가합니다.
+- bash Profile에 추가 합니다.
+
+```bash
+~# mkdir -p $HOME/bin &amp;&amp; cp ./ncp-iam-authenticator $HOME/bin/ncp-iam-authenticator &amp;&amp; export PATH=$PATH:$HOME/bin
+```
+```bash
+~# echo &apos;export PATH=$PATH:$HOME/bin&apos; &gt;&gt; ~/.bash_profile
 ```
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-13.png&quot; width=&quot;500&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 설치하기&quot; caption=&quot;&quot; %}
-
-## pgAdmin 4  실행
-
-### pgAdmin Master Password 입력
-pgAdmin 4 접속/관리를 위한 Master Password를 입력합니다. DB와는 관계없고 단지 pgAdmin 클라이언트를 위한 패스워드입니다.
-
-{% include callout_v2.html type=&quot;danger&quot; level=&quot;3&quot; content=&quot;
-Master Password는 반드시 입력해야 합니다. 여기서 설정하지 않으면 `internal server error: crypt key is missing` 에러가 발생하면서 서버 관리를 할 수 없게 됩니다.
-&quot; %}
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-14.png&quot; width=&quot;834&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 실행 - Master Password 입력&quot; caption=&quot;&quot; %}
-
-### pgAdmin Master Password 재설정
-이후에 혹시 Master Password를 잊어버렸을 경우에는 아래와 같이 [**Reset Master Password**] 기능을 이용해 재설정 할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-27.png&quot; width=&quot;834&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 실행 - Master Password 재설정&quot; caption=&quot;&quot; %}
-
-### 서버 추가
-pgAdmin에서 [Add New Server] 버튼을 클릭해서 위에서 생성했던 DB서버를 연결합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-15.png&quot; width=&quot;837&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 실행 서버 추가&quot; caption=&quot;&quot; %}
-
-### Name 입력
-등록할 DB의 이름을 편하게 입력합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-16.png&quot; width=&quot;837&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 실행 - Name 입력&quot; caption=&quot;&quot; %}
-
-### 연결 정보 입력
-- Host name/address: Cloud DB for PostgreSQL 생성 후에 확인한 **`Public 도메인 (pg-oooo-vpc-pub-cdb-kr.ntruss.com)`**을 입력합니다.
-- Username: Cloud DB for PostgreSQL 생성 시에 입력한 **USER ID**를 입력합니다.
-- Password: Cloud DB for PostgreSQL 생성 시에 입력한 **USER 암호**를 입력합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-17.png&quot; width=&quot;837&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 실행 - 연결 정보 입력&quot; caption=&quot;&quot; %}
-
-## pgAdmin 4 대시보드
-연결 정보에 이상이 없고 정상적으로 접속이 되면 아래와 같이 대시보드 화면을 확인할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-18.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 대시보드&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-16.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
 
-## DB Service 상세 보기
-DB Service 상세 보기에서는 Database 추가/삭제, Config 관리, User 추가/삭제, Backup 설정 등을 관리할 수 있습니다.  
-Cloud DB for PostgreSQL을 선택하고 [DB 관리] - [DB Service 상세보기] 메뉴를 클릭합니다.
+- ncp-iam-authenticator가 정상 작동 하는지 테스트 합니다. 
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-19.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL DB Service 상세 보기&quot; caption=&quot;&quot; %}
+```bash
+~# ncp-iam-authenticator help
+```
 
-### Database 관리
-PostgreSQL DB의 Database를 추가/삭제 할 수 있습니다.
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-17.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-20.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL Database 관리&quot; caption=&quot;&quot; %}
+## API 인증키 생성
+네이버 클라우드 포탈 -&gt; 마이페이지 -&gt; 계정관리 -&gt; 인증키 관리 - API 인증키 관리 메뉴에서 Access Key ID와 Secret Key를 가져오셔야 하며, 아직 만들어진 Key가 없다면 새로 만드셔야 합니다.
 
-### DB User 관리
-Cloud DB for PostgreSQL의 DB User를 추가/삭제 할 수 있습니다.
+{% include image.html file=&quot;api/ncloud_api_auth_key_create.png&quot; width=&quot;770&quot; alt=&quot;Ncloud API 인증키 생성 방법&quot; caption=&quot;&quot; %}
 
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
-&amp;#8259; PostgreSQL은 `1개의 DB에 1개 계정만 owner`로 지정할 수 있습니다.&lt;br /&gt;
-&amp;#8259; 1개의 DB를 여러 계정으로 관리해야 하는 경우는 서브 계정을 만들고 &lt;br /&gt;
-&amp;nbsp;&amp;nbsp; owner 계정으로 서브 계정에 별도의 권한을 설정해야 합니다.&lt;br /&gt;&lt;br /&gt;
-&amp;#8259; 이때 `계정 생성은 Ncloud 콘솔에서만 가능`합니다. (아래 화면의 DB User 관리 기능)&lt;br /&gt;
-&amp;#8259; 그 외의 `권한 설정은 pgAdmin4 웹페이지에서` 설정해야 합니다.
-&quot; %}
+## Kubeconfig 파일 생성
+API 인증키를 2가지 방법 중 하나를 이용해 환경변수에 등록합니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-21.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL DB User 관리&quot; caption=&quot;&quot; %}
+**1. OS 환경 변수 설정**
 
-#### 서브 계정
-subid라는 서브 계정을 만들었다고 가정했을 때 아래 화면처럼 Superuser 등의 권한 설정을 할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-22.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 서브 계정&quot; caption=&quot;&quot; %}
-
-### DB 접근 권한 설정
-서브 계정의 특정 DB에 대한 접근 권한을 설정하고자 할 경우는 아래와 같이 DB를 선택하고, 마우스 오른쪽 클릭을 한 후 [Properties] 메뉴를 선택합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-23.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL DB 접근 권한 설정&quot; caption=&quot;&quot; %}
-
-[Properties] 설정 화면에서 [Security] 메뉴를 선택하면 계정별로 권한을 설정할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-24.png&quot; width=&quot;750&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 계정 권한 설정&quot; caption=&quot;&quot; %}
+```bash
+~# export NCLOUD_ACCESS_KEY={Ncloud API AccessKey}
+~# export NCLOUD_SECRET_KEY={Ncloud API SecretKey}
+~# export NCLOUD_API_GW=https://ncloud.apigw.ntruss.com
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-18.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
 
-## 오류 상황
-pgAdmin 4를 사용할 때 아래와 같은 오류가 발생하는 경우가 있습니다.  
-이는 `pgAdmin 4 최신 버전인 6.8을 사용할 때 발생하는 것`으로 위에서 안내했 듯이 `6.7 버전을 사용하면 문제가 없습니다`.
+**2. 사용자 환경 홈 디렉리에 configure 설정**
 
-{% include warning.html title=&quot;Failed to retrieve data from server.&quot; content=&quot;Request failed with status code 500&quot; %}
+```bash
+~# mkdir .ncloud 
+~# cat &lt;&lt; EOF &gt; configure
+[DEFAULT]
+ncloud_access_key_id = {Ncloud API AccessKey}
+ncloud_secret_access_key = {Ncloud API SecretKey}
+ncloud_api_url = https://ncloud.apigw.ntruss.com
+EOF
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-19.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-public-domain-26.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL pgAdmin 4 오류 상황&quot; caption=&quot;&quot; %}
+**3. Kubeconifg 파일 생성**  
+환경변수에 등록이 되었다면 파일을 생성 할 차례입니다.  
+아래 명령어로 클러스터에 대한 IAM 인증 Kubeconifg 파일을 생성합니다.
+
+{% include callout-v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;클러러스터 UUID 값은 클러스터 상세보기의 [클러스터 이름 (UUID)] 에서  확인 할수 있습니다.&quot; %}
+
+``` bash
+~# ncp-iam-authenticator create-kubeconfig --region &lt;region-code&gt; --clusterUuid &lt;cluster-uuid&gt; --output &lt;FileName&gt;.yaml
+
+## 예시
+~# ncp-iam-authenticator create-kubeconfig --region KR --clusterUuid 12345678-1234-1234-1234-1234567890 --output kubeconfig.yaml
+```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-20.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+## kubectl 설치
+쿠버네티스 클러스터를 제어할 kubectl을 설치하기 위해 필요한 파일을 다운로드 받습니다.
+
+``` bash
+~# curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;
+```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-21.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+다운 받은 파일을 설치합니다.
+
+``` bash
+~# sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# 버전 확인
+~# kubectl version --client --output=yaml
+```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-22.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+
+
+## kubectl 실행
+생성한 IAM 인증 kubeconfig 파일을 이용하여 kubectl 명령어를 테스트하여 정상 동작 하는지 확인 합니다.  
+실행하면 아래와 같이 현재 동작 중인 노드 서버 리스트를 확인할 수 있습니다.
+
+```bash
+~# kubectl get node --kubeconfig kubeconfig.yaml
+```
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-23.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
+
+### 실행 명령어 단축
+위와 같은 kubectl 명령은 뒤쪽에 kubeconfig 환경 설정 파일까지 입력해야 해서 다소 불편한데, 간단하게 줄일 수 있는 방법이 있습니다.  
+
+우선 만들어진 kubeconfig.yaml 파일을 .kube/ 디렉토리 아래에 config로 이름을 바꾸어 이동 혹은 복사 합니다.
+
+```bash
+~# cp kubeconfig.yaml .kube/config
+```
+
+이렇게 하면 Kubectl을 사용 시 아래와 같이 --kuebeconfig 명령어 없이 사용 할 수 있습니다.
+
+```bash
+~# kubectl get node
+```
+
+{% include image.html file=&quot;containers/ncloud-containers-kubernetes-start-guide-24.png&quot; width=&quot;840&quot; alt=&quot;Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법&quot; caption=&quot;&quot; %}
 
 
 ## 참고 URL
-1. Ncloud Cloud DB for PostgreSQL 기본 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&lt;/a&gt;
+1. 쿠버네티스 사용 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/k8s-k8soverview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/k8s-k8soverview&lt;/a&gt;
 
-2. pgAdmin 홈페이지
-	- &lt;a href=&quot;https://www.pgadmin.org/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;hhttps://www.pgadmin.org/&lt;/a&gt;
+2. 클러스터 이용 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/k8s-k8suse-cluster&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/k8s-k8suse-cluster&lt;/a&gt;
 
-3. Cloud DB for PostgreSQL Private 도메인 접속 - CentOS
-	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html&lt;/a&gt;
+3. kubectl 설치 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/k8s-k8sstart#Kubectl%EC%84%A4%EC%B9%98&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/k8s-k8sstart#Kubectl&lt;/a&gt;
 
-4. Cloud DB for PostgreSQL Private 도메인 접속 - Ubuntu
-	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&lt;/a&gt;</description>
-            <pubDate>Tue, 03 May 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html</guid>
+4. Windows 환경에서 쿠버네티스 제어하기
+	- &lt;a href=&quot;/containers/ncloud-containers-kubernetes-service-start-guide-windows.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/containers/ncloud-containers-kubernetes-service-start-guide-windows.html&lt;/a&gt;  	
+</description>
+            <pubDate>Mon, 22 Aug 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/containers/ncloud-containers-kubernetes-service-start-guide-linux.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/containers/ncloud-containers-kubernetes-service-start-guide-linux.html</guid>
             
-            <category>database</category>
-            
-            <category>clouddb</category>
+            <category>kubernetes</category>
             
             <category>vpc</category>
             
@@ -1768,282 +1034,608 @@ pgAdmin 4를 사용할 때 아래와 같은 오류가 발생하는 경우가 있
         </item>
         
         <item>
-            <title>VPC환경에서 Cloud DB for PostgreSQL 생성하기 | CentOS</title>
-            <description>## 지원 클라우드 환경
-Ncloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.
-
-- 리전(존): 한국, 싱가포르
-- VPC만	지원
-- 언어: 한국어, 영어, 일본어, 중국어(간체)
-- DB 엔진 버전: PostgreSQL 13.3
-
-
-## 서버 사양과 요금
-
-*(2022-03-30 기준)*
-&lt;table class=&quot;simple_table&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;&lt;th rowspan=&quot;2&quot;&gt;타입&lt;/th&gt;&lt;th colspan=&quot;3&quot;&gt;제공사양&lt;/th&gt;&lt;th&gt;이용 요금&lt;/th&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;th&gt;vCPU&lt;/th&gt;&lt;th&gt;메모리&lt;/th&gt;&lt;th&gt;디스크&lt;/th&gt;&lt;th&gt;시간당/대&lt;/th&gt;&lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;High CPU&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;4GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;158원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;8GB&lt;/td&gt;&lt;td&gt;323원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td&gt;653원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;1,313원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;2,633원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;Standard&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;8GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;250원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td&gt;506원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;1,019원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;2,045원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;128GB&lt;/td&gt;&lt;td&gt;4,099원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;High Memory&lt;/td&gt;&lt;td&gt;2개&lt;/td&gt;&lt;td&gt;16GB&lt;/td&gt;&lt;td rowspan=&quot;5&quot;&gt;50GB&lt;/td&gt;&lt;td&gt;302원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;4개&lt;/td&gt;&lt;td&gt;32GB&lt;/td&gt;&lt;td&gt;611원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;8개&lt;/td&gt;&lt;td&gt;64GB&lt;/td&gt;&lt;td&gt;1,227원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;16개&lt;/td&gt;&lt;td&gt;128GB&lt;/td&gt;&lt;td&gt;2,462원&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;32개&lt;/td&gt;&lt;td&gt;256GB&lt;/td&gt;&lt;td&gt;4,927원&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+            <title>Ncloud Sub Account 생성 가이드</title>
+            <description>## 개요
+Sub Account(서브 계정)는 네이버 클라우드의 서비스 자원을 여러 사용자가 동시에 이용, 관리해야 할 때 필요한 만큼만 권한을 부여해서 사용할 수 있게 해주는 서비스입니다.  
+Sub Account를 사용하면 사내 담당부서나 담당자별로 지정된 자원에만 접근하도록 하거나, 협력사에게 일부 접근권한을 부여해야 할 때 효과적입니다.
 
+## 특징
+네이버 클라우드의 Sub Account는 다음과 같은 특징이 있습니다.
 
-## 서버 사양 변경 시 제약 사항
- Cloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 `메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경`할 수 있습니다. 그 외 제약 사항은 아래와 같습니다.
+- 별도의 로그인 페이지를 이용하여 접속
+- 대시보드에서 서브 계정 수, 그룹 수, 정책 수, 접속 페이지 설정을 확인할 수 있음
+- 그룹, 정책, 역할을 생성해 상세한 권한 설정을 할 수 있음
+- Access Key를 별도로 생성해서 사용할 수 있음
 
-- 같은 타입 내에서만 변경 가능
-- 2대 이상의 서버로 구성된 경우(고가용성 사용 및 Read Replica 사용) 모두 동일한 사양으로 변경
-- 변경 완료 후 서버가 다시 시작되며 이에 따라 서비스 영향 발생 가능성 존재
 
+## 주요 권한
 
-## 상세 특징
-- DB 엔진 버전: **PostgreSQL 13.3**
-- 스토리지: 기본 10GB 데이터 스토리지를 제공하며, 10GB 단위로 6000GB까지 자동으로 용량이 증가
-- Multi Zone 구성 제공
-- 자동 Fail-over 기본 지원
-- 최대 5대까지 Read Replica 확장
-- 최대 30일까지 자동 백업 및 보관
+- 네이버 클라우드 메인 계정과 동일한 접근 권한  
+	**NCP_ADMINISTRATOR** 정책을 부여하시면 메인 계정과 동일하게 네이버클라우드플랫폼 내 포털, 콘솔을 접근할 수 있습니다
 
-## 서버 접근 방법
-Cloud DB for PostgreSQL은 현재 다음의 3가지 방법으로 접근 가능한데 여기서는 별도의 Linux 서버를 생성해서 PostgreSQL과 Private 통신을 하는 방법으로 진행하겠습니다.
+- 네이버 클라우드 콘솔 내 모든 상품/서비스 접근 권한  
+	**NCP_INFRA_MANAGER** 정책을 부여하시면 메인 계정과 동일하게 콘솔 내 모든 상품/서비스에 접근할 수 있습니다.
 
-{% include callout_v2.html type=&quot;info&quot; level=&quot;3&quot; content=&quot;
-&amp;#8259; Public Domain으로 접근 (*2022-04-21 업데이트*) &lt;br /&gt;
-&amp;#8259; PostgreSQL DB와 Private 통신을 위한 별도의 서버를 생성해서 접근 &lt;br /&gt;
-&amp;#8259; SSL VPN을 이용해서 접근
-&quot; %}
+- 네이버 클라우드 콘솔 내 각 상품/서비스별 접근 권한  
+	**NCP_상품/서비스명_MANAGER/VIEWER** 정책을 부여하시면 해당 상품/서비스에 접근할 수 있습니다.
 
-## DB 생성
-[Cloud DB for PostgreSQL] - [DB Server]에서 [DB Server 생성] 버튼을 클릭해 DB를 생성을 시작합니다.
+- 네이버 클라우드 포털 내 마이페이지 &quot;이용관리&quot; 메뉴 접근 권한  
+	**NCP_FINANCE_MANAGER** 정책을 부여하시면 포털 마이페이지 내 &quot;서비스 이용내역/현황, 프로모션 내역, 청구 내역 추세&quot; 메뉴에 접근할 수 있습니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하는 방법&quot; caption=&quot;&quot; %}
 
-### 서버 설정
-- DB 엔진: 현재 지원되는 `DB 엔진 버전은 PostgreSQL 13.3` 입니다.  
-- 고가용성 지원은 기본 선택 사항인데, 필요하지 않을 경우 체크를 해제하면 됩니다.
-- VPC와 Subnet을 선택하고, 미리 생성된 VPC와 Subnet가 없으면 생성 버튼을 클릭합니다.
-- DB Server 타입은 위쪽에서 확인했던 서버 사양 중에서 원하는 vCPU와 메모리를 선택하면 됩니다.
+## Sub Account 서비스
+[**Sub Account**] 서비스는 [**콘솔**] - [**Services**] - [**Management &amp; Governance**] - [**Sub Account**]에 위치하고 있습니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-02.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 1&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncloud-management-sub-account-26.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-- 데이터 스토리지 타입과 암호화 적용 여부를 선택합니다.
-- 데이터 스토리지는 기본 10GB로 설정되며 최대 6000GB까지 자동으로 증가합니다.
-- DB Server 이름과 DB Service 이름을 입력합니다. DB Service 이름은 DB Server를 역할별로 구분한 그룹의 명칭입니다.
+좀 더 쉽게 찾는 방법은 [**콘솔**] - [**Services**]에서 [**검색**] 기능을 이용하면 됩니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 서버 설정 2&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncloud-management-sub-account-27.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### DB 설정
-- USER ID와 암호를 입력합니다. (ID와 암호는 잊어버리지 않도록 잘 보관해야 합니다.)
-- 접근제어는 접근을 허용할 IP 대역을 입력합니다.
-- DB 접속포트는 기본 포트가 5432 입니다.
-- 기본 DB명을 입력하고, Backup 설정을 선택합니다.
+## 서브 계정 생성
+[**Sub Account**] - [**Sub Accounts**]에서 [**서브 계정 생성**] 버튼을 클릭합니다.
 
-{% include warning.html title=&quot;접속포트 설정&quot; content=&quot;DB 접속포트는 한번 설정하면 이후에 변경할 수 없으니 신중하게 설정하셔야 합니다.&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_01.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - DB 설정&quot; caption=&quot;&quot; %}
+서브 계정 생성 화면에서는 로그인 아이디, 이름, 이메일 주소를 우선 입력합니다.  
 
-### 최종 확인
-지금까지 입력한 값이 이상이 없는지 최종 확인하고, 수정할 부분이 없으면 [생성] 버튼을 클릭합니다.  
+다음으로 접근 유형으로 [Console 접근]과 [API 접근]을 모두 허용할 것인지, 하나만 허용할 것인지 선택하고, 
+Conosole 접근의 경우에 지정한 IP대역에서만 접근하게 할 것인지, 모두 허용할 것인지도 선택합니다.  
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-05.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 생성하기 - 최종 확인&quot; caption=&quot;&quot; %}
+휴대폰 문자인증 또는 이메일 인증 등의 2차 인증을 적용할 것인지도 선택합니다.
 
-## DB 상세 정보
-DB 생성이 완료되면 아래와 같이 DB의 상세 정보를 확인할 수 있습니다.  
-이 중에서 Private 도메인과 ACG는 이후 설정에서 사용할 중요한 항목입니다.
+{% include image.html file=&quot;management/ncp_manage_sub_account_02.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL DB 상세정보&quot; caption=&quot;&quot; %}
 
-## Client Server 생성 | CentOS
-처음에 설명했 듯이 `Cloud DB for PostgreSQL DB Server는 Private 환경에서만 접속 가능`하므로 PostgreSQL Client를 설치할 Linux Server를 생성해야 하는데, 
-여기서는 **CentOS 7.8**을 설치했습니다.
+마지막으로 로그인 비밀번호를 입력하고, 해당 서브 계정으로 로그인 시에 비밀번호를 변경하도록 할 것인지 선택할 수 있습니다.
 
-VPC 환경에서 Linux Server를 생성하는 방법은 다음 문서를 참고하시기 바랍니다. 
-- &lt;a href=&quot;/compute/ncloud_compute_server_vpc_create.html&quot; target=&quot;_blank&quot;&gt;VPC 환경에서 서버 생성하기&lt;/a&gt;
+{% include image.html file=&quot;management/ncp_manage_sub_account_03.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-{% include callout_v2.html type=&quot;info&quot; level=&quot;1&quot; content=&quot;
-생성된 Client Server의 정보 중에서 비공인 IP는 다음 ACG 설정에서 필요하니 기억해 둡니다.&lt;br &gt;
-마찬가지로 공인 IP는 로컬 PC에서 PostgreSQL Client에 접속할 때 필요하니 기억해 둡니다.
-&quot; %}
 
+## 계정 정책 추가
+생성된 서브 계정을 클릭하면 서브 계정 상세 설정 화면으로 이동합니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-07.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL 접속용 Sever 생성&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_04.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-## ACG 설정
-[Server] - [ACG]에서 Cloud DB for PostgreSQL 생성 시에 자동으로 생성된 ACG [cloud-postgresql-ooooo]를 선택하고, [ACG 설정] 버튼을 클릭합니다.
+서브 계정 상세 화면에서는 정책, 그룹, Access Key를 추가하고 관리할 수 있습니다.  우선 정책 탭에서 [추가] 버튼을 클릭합니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-08.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 리스트&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_05.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### ACG 규칙 설정
-ACG 규칙 설정 창에서 [Inbound] 탭을 선택하고 `[접근 소스]는 위에서 생성한 Client Server의 비공인 IP를 입력`하고 허용 포트는 5432를 입력하고 [추가] 버튼을 클릭합니다.
+정책 추가 화면에서는 네이버 클라우드에서 기본으로 제공하는 [관리형 정책]과 사용자가 직접 정의하는 [사용자 정의 정책]이 있습니다.  
+우선 [관리형 정책]에서 필요한 정책을 선택하고 [추가] 버튼을 클릭합니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-09.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncloud-management-sub-account-24.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-## pgAdmin4 설치
-Client용 Linux Server에 PostgreSQL DB의 Client 프로그램인 pgAdmin4를 설치합니다.
+정책이 워낙 많기 때문에 가능하면 위쪽의 검색 기능을 이용해서 정책을 찾는 것을 추천합니다.
 
-``` bash
-~# yum -y install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-10.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncloud-management-sub-account-25.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### pgAdmin4-Web 설치
-로컬 PC에서 pgAdmin4에 접속하기 위해 pgAdmin4-Web을 설치합니다.
+여기서는 네이버 클라우드의 플랫폼 내 모든 상품을 이용할 수 있는 권한인 [**NCP_INFRA_MANAGER**] 선택했고, 아래와 같이 추가된 것을 확인할 수 있습니다. 
 
-``` bash
-~# yum -y install pgadmin4-web
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-11.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_07.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### pgAdmin4-Web 환경 설정
-setup-web.sh 스크립트를 실행 후 pgAdmin4-Web 접속을 위한 이메일 계정과 패스워드를 입력합니다. 
+## 접속 환경 설정
+네이버 클라우드 서브 계정은 별도의 로그인 페이지가 존재하는데, 
+[**Sub Account**] - [**Dashboard**]에서 서브 계정으로 접속하기 위한 페이지 주소를 입력할 수 있습니다.  
 
-``` bash
-~# /usr/pgadmin4/bin/setup-web.sh
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-12.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+우선 서브 계정 로그인 페이지 접속 접속키를 입력합니다. 입력한 접속키를 바탕으로 로그인 페이지 URL이 결정됩니다.  
 
-### 오류 상황
-간혹 위에서 진행한 pgAdmin4-Web 환경 설정에서 아래와 같은 오류가 발생하는 경우가 있습니다.
+추천되는 접속키의 형태는 다음과 같습니다.
+- 회사명 + &amp;alpha; (ex: mycompany, samplecomsub)
+- 서비스명 + &amp;alpha; (ex: mygame, testservicesub)
+- 회사명 + 서비스명 + &amp;alpha; (ex: mycompanygame, mycomsamplegamesub)
 
-{% include warning.html title=&quot;semanage 오류&quot; content=&quot;&lt;br /&gt;
-/usr/pgamin4/bin/setup-web.sh: line 87: semanage: command not found&lt;br /&gt;
-/usr/pgamin4/bin/setup-web.sh: line 89: semanage: command not found
-&quot; %}
+{% include callout-v2.html type=&quot;warning&quot; level=&quot;2&quot; content=&quot;접속키는 영어 소문자와 숫자를 이용해서 3~20자로 구성해야 합니다.&quot; %}
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-13.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncloud-management-sub-account-20.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### 필요한 파일 확인
-semanage 실행에 필요한 파일을 확인합니다.  
-아래 명령어를 실행하면 나오면 결과에 나오는 파일명을 복사합니다.
+서브 계정 로그인 페이지 URL은 [**주소 복사**] 버튼을 클릭하면 복사할 수 있습니다.
 
-``` bash
-~# yum provides /usr/sbin/semanage
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-14.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncloud-management-sub-account-21.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### 추가 파일 설치
-위에서 확인한 추가 파일을 설치합니다.
+다음으로 [**미사용 세션 만료 설정**]에서 [**변경**] 버튼을 클릭하면 로그인된 서브 계정이 아무 활동없이 미사용일 경우 지정한 시간 기준으로 자동 로그아웃이 되도록 설정할 수 있습니다.
 
-``` bash
-~# yum -y install policycoreutils-python-2.5-34.el7.x86_64
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-15.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncloud-management-sub-account-22.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
+[**비밀번호 만료 설정**]에서 [**변경**] 버튼을 클릭해서 비밀번호 만료를 활성화할 경우 지정된 만료일을 초과했을 때 비밀번호를 변경해야만 접속 할 수 있습니다. 
+활성화 하지 않았을 경우에는 90일이 지난 후에 비밀번호 변경 안내 팝업만 나타납니다.
 
-### pgAdmin4-Web 설정 재 확인
-필요한 파일 설치를 마쳤으면 pgAdmin4-Web 환경 설정 명령어를 다시 실행합니다. 문제가 해결되었으면 오류 메시지가 나타나지 않습니다.
+{% include image.html file=&quot;management/ncloud-management-sub-account-23.png&quot; width=&quot;845&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-``` bash
-~# /usr/pgadmin4/bin/setup-web.sh
-```
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-16.png&quot; width=&quot;840&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+## 접속 - 로그인
+위에서 설정한 접속 페이지 [ **https://www.ncloud.com/nsa/\*\*\*\*\*\***] 에 접속하면 아래와 같이 서브 계정 로그인 화면을 확인할 수 있습니다.  
+바꿔말하면 서브 계정(Sub Account)은 반드시 위에서 설정한 접속 페이지로 접속해야 합니다.
 
-## pgAdmin4 접속
-pgAdmin4 접속 주소는 `http://[Client Server 공인IP 주소]/pgadmin4/` 입니다.  
-위 주소로 접속하면 아래와 같이 Email Address와 Password 입력 화면이 나오는데 pgAdmin4-Web 환경 설정에서 입력한 이메일과 패스워드를 입력하고 로그인 합니다.
+{% include image.html file=&quot;management/ncp_manage_sub_account_18.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-17.png&quot; width=&quot;835&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
 
-### 서버 추가
-pgAdmin에서 [Add New Server] 버튼을 클릭해서 위에서 생성했던 DB서버를 연결합니다.
+## Access Key 설정
+서브 계정에서 Access Key를 사용해야 할 경우 서브 계정 상세 화면 [Access Key]탭에서 [추가] 버튼을 클릭해 생성할 수 있습니다. 
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-18.png&quot; width=&quot;837&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_08.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-#### Name 입력
-등록할 DB의 이름을 편하게 입력합니다.
+## 계정 그룹 설정
+여러 개의 서브 계정을 묶어서 하나의 그룹으로 구성하면 해당 그룹의 서브 계정에 동일한 정책을 동시에 적용할 수 있습니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-19.png&quot; width=&quot;497&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_12.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-#### 연결 정보 입력
-- Host name/address: Cloud DB for PostgreSQL 생성 후에 확인한 **`Private 도메인 (pg-oooo-vpc-cdb-kr.ntruss.com)`**을 입력합니다.
-- Username: Cloud DB for PostgreSQL 생성 시에 입력한 **USER ID**를 입력합니다.
-- Password: Cloud DB for PostgreSQL 생성 시에 입력한 **USER 암호**를 입력합니다.
+## 사용자 정의 정책 생성
+서브 계정 정책에는 네이버 클라우드에서 기본으로 제공하는 [관리형 정책] 외에도 사용자가 직접 설정하는 [사용자 정의 정책]도 사용할 수 있습니다. 
+[Sub Account] - [Plicies]에서 [정책 생성] 버튼을 클릭합니다. 
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-20.png&quot; width=&quot;497&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_13.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-## pgAdmin4 대시보드
-연결 정보에 이상이 없고 정상적으로 접속이 되면 아래와 같이 대시보드 화면을 확인할 수 있습니다.
+### VPC 환경에서 정책 생성
+정책 이름을 입력하고, VPC를 선택 후, 어떤 서비스 상품에 적용할 것인지 선택합니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-21.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_14.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-## DB Service 상세 보기
-DB Service 상세 보기에서는 Database 추가/삭제, Config 관리, User 추가/삭제, Backup 설정 등을 관리할 수 있습니다.  
-Cloud DB for PostgreSQL을 선택하고 [DB 관리] - [DB Service 상세보기] 메뉴를 클릭합니다.
+다음으로 Actions 항목에서는 읽기 권한인 View 또는 수정 권한인 Change를 선택하면 아래쪽에 리소스별로 상세한 권한 설정을 할 수 있는 화면이 나타납니다. 
+모든 설정을 마치고, 아래쪽 [적용대상 추가] 버튼을 클릭하면 됩니다. 
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-22.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_17.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### Database 관리
-PostgreSQL DB의 Database를 추가/삭제 할 수 있습니다.
+### Classic 환경에서 정책 생성
+Classic 환경에서는 리소스별 상세 권한은 설정할 수 없고, View 또는 Change를 선택한 후에 [적용대상 추가] 버튼을 클릭하면 모든 권한이 추가됩니다.
 
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-23.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_15.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
-### DB User 관리
-Cloud DB for PostgreSQL의 DB User를 추가/삭제 할 수 있습니다.
+아래와 같이 선택한 서비스 상품에 대해 모든 리전, 모든 리소스에 선택한 권한이 지정됩니다.
 
-{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
-&amp;#8259; PostgreSQL은 `1개의 DB에 1개 계정만 owner`로 지정할 수 있습니다.&lt;br /&gt;
-&amp;#8259; 1개의 DB를 여러 계정으로 관리해야 하는 경우는 서브 계정을 만들고 &lt;br /&gt;
-&amp;nbsp;&amp;nbsp; owner 계정으로 서브 계정에 별도의 권한을 설정해야 합니다.&lt;br /&gt;&lt;br /&gt;
-&amp;#8259; 이때 `계정 생성은 Ncloud 콘솔에서만 가능`합니다. (아래 화면의 DB User 관리 기능)&lt;br /&gt;
-&amp;#8259; 그 외의 `권한 설정은 pgAdmin4 웹페이지에서` 설정해야 합니다.
-&quot; %}
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-24.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-#### 서브 계정
-subid라는 서브 계정을 만들었다고 가정했을 때 아래 화면처럼 Superuser 등의 권한 설정을 할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-25.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-### DB 접근 권한 설정
-서브 계정의 특정 DB에 대한 접근 권한을 설정하고자 할 경우는 아래와 같이 DB를 선택하고, 마우스 오른쪽 클릭을 한 후 [Properties] 메뉴를 선택합니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-26.png&quot; width=&quot;845&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
-
-[Properties] 설정 화면에서 [Security] 메뉴를 선택하면 계정별로 권한을 설정할 수 있습니다.
-
-{% include image.html file=&quot;database/ncloud-database-cloud-db-for-postgresql-27.png&quot; width=&quot;750&quot; alt=&quot;Ncloud VPC환경에서 Cloud DB for PostgreSQL ACG 설정하기&quot; caption=&quot;&quot; %}
+{% include image.html file=&quot;management/ncp_manage_sub_account_16.jpg&quot; width=&quot;770&quot; alt=&quot;Ncloud Sub Account 생성 가이드&quot; caption=&quot;&quot; %}
 
 
 ## 참고 URL
-1. Ncloud Cloud DB for PostgreSQL 기본 가이드
-	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/clouddbforpostgresql-overview&lt;/a&gt;
+1.  Sub Account 사용 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/ko/subaccount-overview&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/ko/subaccount-overview&lt;/a&gt;</description>
+            <pubDate>Fri, 19 Aug 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/management/ncloud_management_sub_account_guide.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/management/ncloud_management_sub_account_guide.html</guid>
+            
+            <category>account</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Ncloud 서버 인증키 변경하는 방법</title>
+            <description>## 개요
+Ncloud (네이버 클라우드) 서버의 인증키는 서버의 [**관리자 비밀번호 확인**], [**비밀번호 초기화**] 등에 꼭 필요한 *.pem 형태의 파일입니다. 
+그런데 만약 인증키를 분실했을 경우에는 다른 인증키로 변경해야 하는데, 어떻게 변경하는지 정리해보겠습니다.
 
-2. pgAdmin 홈페이지
-	- &lt;a href=&quot;https://www.pgadmin.org/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://www.pgadmin.org/&lt;/a&gt;
+## 인증키 변경
+인증키를 변경하려면 먼저 서버를 정지시키고, 서버를 선택한 후에 [**서버 관리 및 설정 변경**] - [**서버 인증키 변경**] 메뉴를 선택하면 됩니다.
 
-3. Cloud DB for PostgreSQL Private 도메인 접속 - Ubuntu
-	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html&lt;/a&gt;
+{% include callout-v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;[**서버 인증키 변경**] 기능은 **마스터 계정에서만 가능**합니다. 서브 어카운트에서는 메뉴가 활성화 되지 않습니다.&quot; %}
 
-4. Cloud DB for PostgreSQL Public 도메인 접속
-	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html&lt;/a&gt;</description>
-            <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
-            <link>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</link>
-            <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html</guid>
+{% include callout-v2.html type=&quot;info&quot; level=&quot;3&quot; content=&quot;[**서버 인증키 변경**] 기능은 서버를 [**정지**] 시킨 상태에서만 가능합니다.&quot; %}
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 사용자 확인
+인증키를 변경하려면 먼저 사용자 확인을 해야 하므로, [**인증 메일 발송**] 버튼을 클릭하면 등록된 메일주소로 **인증 메일이 발송**됩니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-02.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-03.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 인증 메일 확인
+메일을 열어보면 아래와 같이 **인증 메시지**를 확인할 수 있습니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-04.png&quot; width=&quot;845&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 인증 메시지 입력
+메일에서 확인한 인증 메시지를 입력하면 인증이 완료됩니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-05.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+## 인증키 선택
+변경할 인증키는 기존에 있는 다른 인증키를 선택할 수도 있고, 새로운 인증키를 생성할 수도 있습니다.  
+여기서는 [**새로운 인증키**]를 생성해보겠습니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-06.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 인증키 생성 및 저장
+새로운 인증키 이름을 입력하고 [**인증키 생성 및 저장**] 버튼을 클릭하면 인증키가 다운로드 됩니다.  
+인증키 다운로드 완료 후에 [**변경**] 버튼을 클릭하면 인증키가 변경됩니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-07.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+## 인증키 변경 완료
+서버 인증키가 변경되고 나면 정지 상태인 서버를 [**지금 시작**]할 것인지, [**나중에 시작**]할 것인지 묻는 창이 나타납니다.  
+여기서는 [**지금 시작**] 버튼을 선택하겠습니다.
+
+### Linux
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-08.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### Windows
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-11.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+## 비밀번호 확인
+변경된 인증키로 서버 관리자 비밀번호를 확인해보겠습니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-09.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### Linux
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-10.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### Windows
+{% include image.html file=&quot;compute/ncloud-compute-server-change-authentication-key-12.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 참고 URL
+1.  Ncloud 서버 정보 확인 및 서버 관리 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-server-manage-vpc&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-server-manage-vpc&lt;/a&gt;
+
+2.  Ncloud 서버 관리자 비밀번호 초기화하는 방법
+	- &lt;a href=&quot;/compute/ncloud-compute-server-admin-password-reset.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud-compute-server-admin-password-reset.html&lt;/a&gt;</description>
+            <pubDate>Thu, 18 Aug 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/compute/ncloud-compute-server-change-authentication-key.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud-compute-server-change-authentication-key.html</guid>
+            
+            <category>linux</category>
+            
+            <category>password</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법</title>
+            <description>## 개요
+Ncloud (네이버 클라우드) 서버의 [관리자 비밀번호] 즉, [어드민 패스워드]를 초기화하는 방법을 정리해보겠습니다.  
+
+어드민 패스워드를 초기화하게 되는 경우는 다음과 같은 경우가 있습니다.
+- 보안을 위해 주기적으로 비밀번호를 변경하는 경우
+- 해킹이나 패스워드 유출 등이 의심되어 비밀번호를 변경해야 하는 경우
+- 담당자 퇴사 등으로 비밀번호 변경이 필요한 경우
+
+
+## 비밀번호 확인
+비밀번호를 초기화 하기 전에 먼저 비밀번호를 확인하는 방법부터 알아보겠습니다.  
+(Linux, Windows 서버 모두 동일합니다.)
+
+어드민 패스워드(관리자 비밀번호) 확인은 서버를 선택하고, [서버 관리 및 설정 변경] - [관리자 비밀번호 확인] 메뉴를 선택하면 됩니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-01.png&quot; width=&quot;845&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+[관리자 비밀번호]를 확인하려면 서버를 생성할 때 사용한 *.pem 형태의 인증키를 사용해야 합니다. 
+
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-04.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+pem 인증키를 사용하면 아래와 같이 비밀번호를 확인할 수 있습니다.
+
+### Linux
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-02.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### Windows
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-09.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+## 비밀번호 초기화
+위에서 확인해본 어드민 패스워드(관리자 비밀번호)를 초기화 하려면, 먼저 **서버를 정지**시키고 [**서버 관리 및 설정 변경**] - [**관리자 비밀번호 초기화**] 메뉴를 선택하면 됩니다.
+
+{% include callout-v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;[**관리자 비밀번호 초기화**] 기능은 **마스터 계정에서만 가능**합니다. 서브 어카운트에서는 메뉴가 활성화 되지 않습니다.&quot; %}
+
+{% include callout-v2.html type=&quot;info&quot; level=&quot;3&quot; content=&quot;[**관리자 비밀번호 초기화**] 기능은 서버를 [**정지**] 시킨 상태에서만 가능합니다.&quot; %}
+
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-03.png&quot; width=&quot;845&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 사용자 확인
+[관리자 비밀번호 초기화]를 하려면 먼저 아래와 같이 **접속 계정의 비밀번호를 입력**해서 사용자 확인을 먼저 해야 합니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-08.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 인증키 확인
+비밀번호를 초기화 할 때에도 확인할 때와 마찬가지로 **pem 인증키를 사용**해야 합니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-04.png&quot; width=&quot;685&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 초기화
+인증키를 확인하고 나면 아래와 같이 비밀번호가 초기화 되고, 정지 상태인 서버를 [**지금 시작**]할 것인지, [**나중에 시작**]할 것인지 묻는 창이 나타납니다. 
+여기서는 [**지금 시작**] 버튼을 선택하겠습니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-05.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### 서버 시작
+[지금 시작] 버튼을 클릭하면 아래와 같이 정지되어 있던 서버가 다시 시작됩니다.
+
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-06.png&quot; width=&quot;845&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+## 초기화된 비밀번호 확인
+서버가 시작된 후에 다시 [**관리자 비밀번호 확인**]을 해보면 아래와 같이 비밀번호가 초기화 되고 새로운 비밀번호가 할당된 것을 확인할 수 있습니다.
+
+### Linux
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-07.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+### Windows
+{% include image.html file=&quot;compute/ncloud-compute-server-admin-password-reset-10.png&quot; width=&quot;485&quot; alt=&quot;Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법&quot; caption=&quot;&quot; %}
+
+
+## 참고 URL
+1.  Ncloud 서버 정보 확인 및 서버 관리 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/compute-server-manage-vpc&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/compute-server-manage-vpc&lt;/a&gt;
+
+2.  Ncloud 서버 인증키 변경하는 방법
+	- &lt;a href=&quot;/compute/ncloud-compute-server-change-authentication-key.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/compute/ncloud-compute-server-change-authentication-key.html&lt;/a&gt;
+</description>
+            <pubDate>Wed, 17 Aug 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/compute/ncloud-compute-server-admin-password-reset.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/compute/ncloud-compute-server-admin-password-reset.html</guid>
+            
+            <category>linux</category>
+            
+            <category>windows</category>
+            
+            <category>password</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Object Storage 접속용 Windows Client Tool - S3 Browser</title>
+            <description>## 개요
+네이버 클라우드의 Object Storage에 접속, 관리하는 방법은 aws cli 등 여러가지 있지만 Windows PC에서 간편하게 접속해서 관리할 수 있는 클라이언트 툴이 몇개 있습니다.  
+그 중에서 이번에는 S3 Browser의 사용법에 대해 간단히 정리해보겠습니다.
+
+## S3 Browser
+S3 Browser는 Amazon S3 and Amazon CloudFront를 위한 클라이언트입니다
+이 버전은 무료버전이기는 하지만, 정확히는 **personal use only**, **non-commecial use only**라고 명시되어 있습니다.  
+그래서 라이선스와 관계없이 사용 가능하고, 더 많은 기능이 포함된 유료 버전도 있습니다. 
+
+상세한 정보와 다운로드는 아래 링크에서 확인하시면 됩니다.
+
+&lt;a href=&quot;https://s3browser.com/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://s3browser.com/&lt;/a&gt;
+
+
+## 사용법
+
+프로그램을 다운 받아서 설치하고, 실행을 하면 여러 종류의 스토리지 중에서 원하는 것을 선택하게 됩니다.  
+이 클라이언트는 AWS S3를 위한 것으로 CloudBerry Explorer와는 다르게 AWS의 다양한 S3 서비스들만 접속이 가능한데, 이용 가능한 스토리지 리스트는 마지막에서 정리해보겠습니다. 
+
+{% include image.html file=&quot;storage/ncp_storage_object_storage_s3_client_s3browser_01.jpg&quot; width=&quot;850&quot; alt=&quot;Ncloud Object Storage 접속용 Windows Client Tool - S3 Browser 사용 방법&quot; caption=&quot;&quot; %}
+
+
+Account Type은  **S3 Compatible Storage**를 선택하면 됩니다.  
+- Account name: 여기는 알아보기 쉬운 이름을 적으면 됩니다. 예를 들어 Naver Cloud
+- REST Endpoint: 여기는 네이버 클라우드의 endpoint-url을 적습니다. **kr.object.ncloudstorage.com**
+- Access Key ID: 여기는 Access Key ID
+- Secret Access Key: 여기는 Secret Key
+
+{% include image.html file=&quot;storage/ncp_storage_object_storage_s3_client_s3browser_02.jpg&quot; width=&quot;718&quot; alt=&quot;Ncloud Object Storage 접속용 Windows Client Tool - S3 Browser 사용 방법&quot; caption=&quot;&quot; %}
+
+{% include callout_v2.html type=&quot;success&quot; level=&quot;1&quot; content=&quot;네이버 클라우드 포탈 -&gt; 마이페이지 -&gt; 계정관리 -&gt; 인증키 관리 - API 인증키 관리 메뉴에서 Access Key ID와 Secret Key를 가져오셔야 하며, 아직 만들어진 Key가 없다면 새로 만드셔야 합니다.&quot; %}
+
+
+계정 정보를 입력하고 접속을 하면 버킷 리스트가 나타나고 원하는 버킷을 선택해서 들어가면 다음처럼 파일들을 확인할 수 있습니다.
+
+{% include image.html file=&quot;storage/ncp_storage_object_storage_s3_client_s3browser_03.jpg&quot; width=&quot;850&quot; alt=&quot;Ncloud Object Storage 접속용 Windows Client Tool - S3 Browser 사용 방법&quot; caption=&quot;&quot; %}
+
+
+Object Storage에 있는 파일을 로컬PC로 가져오려면 원하는 파일을 선택하고 마우스 오른쪽 버튼을 눌러서 **Download** 명령을 선택하면 됩니다.
+
+{% include image.html file=&quot;storage/ncp_storage_object_storage_s3_client_s3browser_04.jpg&quot; width=&quot;850&quot; alt=&quot;Ncloud Object Storage 접속용 Windows Client Tool - S3 Browser 사용 방법&quot; caption=&quot;&quot; %}
+
+
+그 외 여러 가지 기능들이 있는데 그리 어려운 기능은 아니므로 직접 사용해보시면 금방 알 수 있습니다.
+
+마지막으로 S3 Browser로 접속 가능한 S3 리스트를 확인해보겠습니다.
+
+{% include image.html file=&quot;storage/ncp_storage_object_storage_s3_client_s3browser_05.jpg&quot; width=&quot;717&quot; alt=&quot;Ncloud Object Storage 접속용 Windows Client Tool - S3 Browser 사용 방법&quot; caption=&quot;&quot; %}
+
+- Amazon S3 Storage
+- S3 Compatible Storage
+- Amazon S3 in China
+- Amazon S3 GovCloud Storage
+- Amazon S3 GovCloud Storage (FIPS 140-2)
+- Amazon S3 via EC2 IAM Role
+- Amazon S3 via AssumeRole
+- Amazon S3 (Credentials from Environment Variables)
+- Amazon S3 (Credentials from AWS Config or Credential file)
+
+
+## CloudBerry Explorer
+또 다른 클라이언트인 CloudBerry Explorer입니다. 자세한  내용은 아래 링크에서 확인 가능합니다.
+
+&lt;a href=&quot;/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;Object Storage 접속용 Windows Client Tool - CloudBerry Explorer&lt;/a&gt;
+
+
+## 참고 URL
+1.  S3 Browser 홈페이지
+	- &lt;a href=&quot;https://s3browser.com/&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://s3browser.com/&lt;/a&gt;
+
+2.  S3 Browser S3-Compatible Storages 설정 가이드
+	- &lt;a href=&quot;https://s3browser.com/s3-compatible-storage.aspx&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://s3browser.com/s3-compatible-storage.aspx&lt;/a&gt;</description>
+            <pubDate>Tue, 16 Aug 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_s3browser.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/storage/ncloud_storage_object_storage_s3_client_s3browser.html</guid>
+            
+            <category>object_storage</category>
+            
+            <category>backup</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>VPC 환경 Cloud DB for MySQL 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법</title>
+            <description>## 개요
+MySQL DB서버의 부하를 줄이기 위해 보통 읽기 전용 DB서버를 생성하게 되는데, 읽기 전용 서버를 여러대 생성해서 로드밸런서(Load Balancer)로 연결하면 읽기 부하를 분산 시키고 좀 더 안정적인 서비스가 가능해집니다.  
+
+여기서는 Ncloud (네이버 클라우드) VPC 환경에서 관리형 DB인 Cloud DB for MySQL의 **읽기 전용 Slave DB를 네트워크 프록시 로드밸런서(Network Proxy Load Balancer)에 연결**하고 제대로 부하가 분산되는지 확인해보겠습니다.
+
+## 사전 준비
+DB 접속과 부하 분산을 테스트할 서버가 필요합니다. 여기서는 CentOS 7.8 서버를 준비했습니다.
+
+## DB 서버 생성
+우선 [Cloud DB for MySQL] - [DB Server]에서 DB를 생성합니다.
+
+### 서버 설정
+DB엔진 버전과 VPC, 그리고 Subnet을 선택합니다.  
+
+[**고가용성 지원**]을 선택하면 [Standby DB]도 추가로 생성되고, [**Multi Zone**]을 선택하면 Master와 Standby Master DB를 각각 [**서로 다른 Zone에 생성**]해서 안정성을 높일 수 있습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-01.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+DB 서버 타입, 스토리지 타입, 스토리지 용량, DB 서버 이름, DB 서비스 이름 등을 입력합니다.  
+Private Sub 도메인을 선택하고 입력하면 [**\*.{Private Sub Domain}.vpc-cdb.ntruss.com**] 같은 형식으로 도메인이 생성됩니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-02.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+
+### DB 설정
+USER ID, DB 접근 HOST(IP), USER 암호, 접속 포트, DB명 등을 입력합니다.  
+고가용성을 선택한 경우 [Backup]은 기본으로 무조건 사용하게 됩니다.
+
+{% include warning.html title=&quot;접속포트 설정&quot; content=&quot;DB 접속포트는 한번 설정하면 이후에 변경할 수 없으니 신중하게 설정하셔야 합니다.&quot; %}
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-03.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+## Slave DB Server 추가
+DB가 생성되었으면 [Master] DB를 선택하고, [DB 관리]에서 [Slave 추가] 메뉴를 선택합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-04.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+Slave DB Server를 추가할 때 설정할 수 있는 것은 Subnet 입니다. 부하 분산을 위해서는 2대 이상을 추가해야 하는데, 여기서는 테스트를 위해 2대를 추가하겠습니다.  
+우선 첫번째 Slave DB Server는 KR-2 존에 추가했습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-05.png&quot; width=&quot;686&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+다음으로 두번째 Slave DB Server는 KR-1 존에 추가해보겠습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-06.png&quot; width=&quot;686&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+이렇게 Slave DB Server 2대를 추가해서 [Master], [Standy Master] 포함 총 4대의 서버가 생성되었습니다.  
+
+{% include callout_v2.html type=&quot;info&quot; level=&quot;2&quot; content=&quot;[Master] DB 서버와 첫번째 [Slave] DB 서버는 KR-2 존에, &lt;br /&gt;[Standy Master] DB 서버와 두번째 [Slave] DB 서버는 KR-1 존에 생성해서 안정성을 높이는 구조를 선택했습니다.&quot; %}
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-07.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+## Target Group 설정
+다음으로 Load Balancer와 Cloud DB for Mysql을 연결할 Target Group을 설정해보겠습니다.
+
+### Target Group 생성
+여기서 중요한 항목은 프로토콜입니다. [Network Proxy Load Balancer]에 사용할 Target Group이므로 [PROXY_TCP]를 선택합니다.  
+포트는 Cloud DB for Mysql 생성 시에 사용했던 포트를 입력해야 하는데 여기서는 3306을 사용하겠습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-08.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### Health Check 설정
+Health Check 설정에서는 TCP 프로토콜을 선택합니다. 포트는 마찬가지로 3306을 입력합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-09.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### Target 추가
+Target 추가 화면에 가면 앞에서 생성했던 Slave DB Server 2대를 확인할 수 있는데, 선택 후에 오른쪽으로 이동시킵니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-10.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+## Load Balancer 생성
+여기서는 [네트워크 프록시 로드밸런서 (Network Proxy Load Balancer)]를 선택합니다.
+
+{% include callout_v2.html type=&quot;warning&quot; level=&quot;3&quot; content=&quot;
+**애플리케이션 로드밸런서(Application Load Balancer)**는 Cloud DB for MySQL의 부하분산에 **사용할 수 없습니다**.
+&quot; %}
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-11.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### 로드밸런서 생성
+안정성을 높이려면 로드밸런서도 멀티존으로 구성할 수 있습니다. KR-1, KR-2 두 곳의 서브넷을 모두 선택하겠습니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-12.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### 리스너 설정
+리스너 프로토콜은 TCP, 포트는 3306으로 설정합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-13.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### Target Group 선택
+위에서 생성했던 Target Group을 선택합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-14.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+## ACG 설정
+[Cloud DB for MySQL]에 접근하는 로드밸런서들의 Subnet 대역을 ACG에 추가해야 합니다.
+
+### Load Balancer 서브넷 확인
+ACG에 추가할 멀티존으로 구성된 로드밸런서의 서브넷 2가지를 확인합니다.  
+그리고, 테스트 시에 접속할 로드밸런서의 접속 정보를 메모해 둡니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-16.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### ACG 확인
+[Cloud DB for MySQL]의 [Master] DB를 선택하고 [ACG] 항목 옆의 버튼을 클릭합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-17.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+[ACG] 리스트에서 해당 ACG를 선택하고 [ACG 설정] 버튼을 클릭합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-18.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### ACG 규칙 추가
+필요한 ACG 규칙을 추가합니다. 
+- Load Balancer (KR-1) -&gt; Cloud DB for MySQL 접근 규칙
+- Load Balancer (KR-2) -&gt; Cloud DB for MySQL 접근 규칙
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-19.png&quot; width=&quot;845&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+## 테스트 서버 설정
+DB 부하 분산 테스트에 사용할 서버에 MySQL Client를 설치합니다.
+
+{% include note.html content=&quot;CentOS 7부터는 yum으로 설치하는 MySQL의 기본 데이터베이스가 MariaDB로 변경되었습니다.&quot; %}
+
+``` bash
+~# yum -y install mysql
+```
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-20.png&quot; width=&quot;840&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+## 부하 분산 테스트
+설치된 MySQL Client를 이용해서 Load Balancer 도메인으로 접속한 후에 접속한 DB 서버의 호스트명을 확인하는 쿼리를 실행합니다.  
+
+여러 차례 반복해보면 아래와 같이 위에서 추가했던 Slave DB [test-003-OOO], [test-004-OOO]에 각각 접속되는 것을 확인할 수 있습니다.
+
+``` bash
+~# mysql -h {Load Balancer 접속 도메인} -u {계정} -p
+```
+
+``` sql
+MySQL [(none)]&gt; SELECT @@hostname;
+```
+
+### [test-003-OOO]에 접속된 상태
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-21.png&quot; width=&quot;840&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+### [test-004-OOO]에 접속된 상태
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb-22.png&quot; width=&quot;840&quot; alt=&quot;cloud VPC 환경에서 Cloud DB for MySQL 서버의 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+
+## DB 삭제
+테스트를 끝낸 DB를 삭제하려고 할 때 [Slave나 Recovery DB 서버가 있는 경우 Master DB를 삭제할 수 없습니다.]라는 메시지가 나타나는 것을 확인할 수 있습니다.  
+
+그래서 DB를 삭제할 때는 [Slave DB]부터 삭제해야 하고, [Slave DB]를 삭제할 때에도 동시에 삭제할 수 없고 1대씩 차례로 삭제해야 합니다.
+
+{% include image.html file=&quot;database/ncloud-database-cloud-db-for-mysql-read-load-balancing-15.png&quot; width=&quot;490&quot; alt=&quot;Ncloud Classic 환경에서 Cloud DB for MySQL 디비의 읽기 부하를 로드밸런서로 분산시키는 방법&quot; caption=&quot;&quot; %}
+
+
+## 참고 URL
+1. Ncloud Cloud DB for MySQL 읽기 부하 분산 설정 가이드
+	- &lt;a href=&quot;https://guide.ncloud-docs.com/docs/database-database-5-2#%EC%9D%BD%EA%B8%B0-%EB%B6%80%ED%95%98-%EB%B6%84%EC%82%B0-%EC%84%A4%EC%A0%95&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://guide.ncloud-docs.com/docs/database-database-5-2&lt;/a&gt;
+
+2. VPC 환경 Cloud DB for MySQL 읽기 부하를 네트워크 로드밸런서로 분산시키는 방법
+	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-lb.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-lb.html&lt;/a&gt;    
+
+3. Classic 환경 Cloud DB for MySQL 읽기 부하 로드밸런서로 분산시키는 방법
+	- &lt;a href=&quot;/database/ncloud-database-cloud-db-for-mysql-read-load-balancing.html&quot; target=&quot;_blank&quot; style=&quot;word-break:break-all;&quot;&gt;https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-mysql-read-load-balancing.html&lt;/a&gt;    	</description>
+            <pubDate>Mon, 08 Aug 2022 00:00:00 +0900</pubDate>
+            <link>https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html</link>
+            <guid isPermaLink="true">https://docs.3rdeyesys.com/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html</guid>
             
             <category>database</category>
             
-            <category>clouddb</category>
+            <category>mysql</category>
             
-            <category>vpc</category>
+            <category>mariadb</category>
+            
+            <category>load-balancer</category>
             
             
         </item>

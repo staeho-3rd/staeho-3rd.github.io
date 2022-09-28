@@ -26,17 +26,6 @@
 
 
 {
-"title": "내 IP 주소 확인하기",
-"tags": "ip",
-"keywords": "IP, IP Address",
-"url": "/etc/etc-find-my-ip-address.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "jekyll base-theme 커스터마이징",
 "tags": "markdownjekyllwindows",
 "keywords": "Markdown, Windows, Hugo",
@@ -149,6 +138,83 @@
 
 
 {
+"title": "Kubernetes Service 클러스터 생성 및 제어 가이드 | Linux",
+"tags": "kubernetesvpc",
+"keywords": "k8s, K8S, 쿠버네티스",
+"url": "/containers/ncloud-containers-kubernetes-service-start-guide-linux.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Kubernetes Service 클러스터 생성 및 제어 가이드 | Windows",
+"tags": "kubernetesvpc",
+"keywords": "k8s, K8S, 쿠버네티스",
+"url": "/containers/ncloud-containers-kubernetes-service-start-guide-windows.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법",
+"tags": "linuxwindowspassword",
+"keywords": "Linux, Password, Windows, Admin",
+"url": "/compute/ncloud-compute-server-admin-password-reset.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 서버 인증키 변경하는 방법",
+"tags": "linuxpassword",
+"keywords": "Linux, Password, Authentication Key",
+"url": "/compute/ncloud-compute-server-change-authentication-key.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "VPC 환경 Cloud DB for MySQL 읽기 부하를 네트워크 로드밸런서로 분산시키는 방법",
+"tags": "databasemysqlmariadbload-balancer",
+"keywords": "Database, 이중화, 고가용성, Master, Slave, Stand By, Read Load",
+"url": "/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-lb.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "VPC 환경 Cloud DB for MySQL 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법",
+"tags": "databasemysqlmariadbload-balancer",
+"keywords": "Database, 이중화, 고가용성, Master, Slave, Stand By, Read Load",
+"url": "/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Classic 환경 Cloud DB for MySQL 읽기 부하 로드밸런서로 분산시키는 방법",
+"tags": "databasemysqlmariadbload-balancer",
+"keywords": "Database, 이중화, 고가용성, Master, Slave, Stand By, Read Load",
+"url": "/database/ncloud-database-cloud-db-for-mysql-read-load-balancing.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "VPC환경에서 Cloud DB for PostgreSQL 생성하기 | CentOS",
 "tags": "databaseclouddbvpc",
 "keywords": "Database, Postgre",
@@ -193,6 +259,39 @@
 
 
 {
+"title": "설치형 PostgreSQL DB 설치, 접속 가이드 | CentOS",
+"tags": "databasevpc",
+"keywords": "Database, Postgre",
+"url": "/database/ncloud-database-postgresql-install-connect-guide-centos.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Jenkins 서버 설치 가이드 | CentOS",
+"tags": "github",
+"keywords": "깃허브, Tool, Dev, 리포지토리, 젠킨스",
+"url": "/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Jenkins 서버 설치 가이드 | Ubuntu",
+"tags": "github",
+"keywords": "깃허브, Tool, Dev, 리포지토리, 젠킨스",
+"url": "/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "SourceCommit에서 GitHub Repository 복사해오기 | Ncloud",
 "tags": "github",
 "keywords": "깃허브, Tool, Dev, 리포지토리, 깃허브",
@@ -208,6 +307,28 @@
 "tags": "github",
 "keywords": "깃허브, Tool, Dev, 리포지토리, 깃허브",
 "url": "/dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "내 IP 주소 확인하기",
+"tags": "ipvpcacg",
+"keywords": "IP, IP Address",
+"url": "/networking/ncloud-networking-find-my-ip-address.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud VPC환경 IPsecVPN과 FortiGate 장비 연동 가이드",
+"tags": "vpcipsecvpnfortigate",
+"keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
+"url": "/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html",
 "summary": ""
 }
 ,
@@ -417,7 +538,7 @@
 "tags": "kubernetesvpc",
 "keywords": "k8s, K8S, 쿠버네티스",
 "url": "/compute/ncloud_compute_kubernetes_service_start_guide.html",
-"summary": "Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법에 대한 소개입니다"
+"summary": ""
 }
 ,
 
@@ -501,22 +622,22 @@
 
 
 {
-"title": "서버 접속 가이드(Linux) - 공인IP 있을 때",
+"title": "Classic 환경 서버 접속 가이드(Linux) - 공인IP 있을 때",
 "tags": "linux",
 "keywords": "Public IP",
 "url": "/compute/ncloud_compute_server_connect_by_public_ip.html",
-"summary": "공인IP를 사용해 Ncloud 서버(Linux)에 접속하는 방법입니다"
+"summary": ""
 }
 ,
 
 
 
 {
-"title": "서버 접속 가이드(Linux) - 공인IP 없을 때",
-"tags": "linux",
+"title": "Classic 환경 서버 접속 가이드(Linux) - 공인IP 없을 때",
+"tags": "linuxClassic",
 "keywords": "Public IP",
 "url": "/compute/ncloud_compute_server_connect_no_public_ip.html",
-"summary": "공인IP 없이 Ncloud 서버(Linux)에 접속하는 방법입니다"
+"summary": ""
 }
 ,
 
@@ -868,7 +989,7 @@
 "tags": "monitoringlog",
 "keywords": "Monitoring, 모니터링, Log",
 "url": "/management/ncloud_management_cloud_insight_guide.html",
-"summary": "Ncloud 성능/운영 지표를 통합 관리해주고 모니터링 해주는 서비스 Cloud Insight 설정 가이드입니다"
+"summary": ""
 }
 ,
 
@@ -886,11 +1007,11 @@
 
 
 {
-"title": "Sub Account 생성 가이드",
+"title": "Ncloud Sub Account 생성 가이드",
 "tags": "account",
 "keywords": "account, sub account",
 "url": "/management/ncloud_management_sub_account_guide.html",
-"summary": "Ncloud Sub Account 생성 가이드"
+"summary": ""
 }
 ,
 
@@ -967,7 +1088,7 @@
 "tags": "vpcload_balancer",
 "keywords": "로드밸런서",
 "url": "/networking/ncloud_networking_load_balancer_application_lb.html",
-"summary": "Ncloud VPC 환경에서 Application Load Balancer 생성하기 가이드입니다"
+"summary": ""
 }
 ,
 
