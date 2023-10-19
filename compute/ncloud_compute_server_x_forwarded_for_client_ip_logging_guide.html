@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
+  <head>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,38 +11,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기">
+<meta name="description" content="Ncloud(네이버 클라우드)에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법">
 <meta name="keywords" content="proxy, load_balancer, log,  프록시, 로드밸런서, 클라이언트IP">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기" />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:description" content="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기" />
+<meta property="og:description" content="Ncloud(네이버 클라우드)에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html" />
 <meta property="og:url" content="https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html" />
 <meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
+<meta property="og:image" content="https://docs.3rdeyesys.com/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-10.png" />
+<meta property="og:image:alt" content="Ncloud(네이버 클라우드)에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-12-29T00:00:00+09:00" />
-<meta name="twitter:card" content="summary" />
+<meta property="article:published_time" content="2023-08-21T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-10.png" />
+<meta name="twitter:image:alt" content="Ncloud(네이버 클라우드)에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" />
 <meta property="twitter:title" content="X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기","headline":"X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기","url":"https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드)에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법","headline":"X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기","image":{"alt":"Ncloud(네이버 클라우드)에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법","url":"https://docs.3rdeyesys.com/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-10.png","@type":"imageObject"},"url":"https://docs.3rdeyesys.com/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기 | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
-<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
-<link rel="stylesheet" href="/css/modern-business.css">
-<!-- Latest compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css" />
+<link rel="stylesheet" href="/css/modern-business.css"> <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
-<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"-->
-<link rel="stylesheet" href="/css/customstyles.css">
-<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"--> <link rel="stylesheet" href="/css/customstyles.css"> <link rel="stylesheet" href="/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
 <link rel="stylesheet" href="/css/theme-ncloud.css">
+
 
 <script src="/js/jquery.341.min.js"></script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
@@ -56,86 +61,94 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="/js/bootstrap.341.min.js"></script>
 <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
 <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script-->
-<!-- Anchor.js -->
-<script src="/js/anchor.420.min.js"></script>
+<!-- Anchor.js --><script src="/js/anchor.420.min.js"> </script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
 
 
+
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
-
+<link rel="alternate"
+  type="application/rss+xml"
+  title="3RDEYESYSTEM Technical Documentations"
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
-        $(document).ready(function() {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
-            
-            window_width = $(window).width();
-            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
-            {
-                $("#mysidebar").navgoco('toggle', false);
-            }
+      $(document).ready(function() {
 
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
+// Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '',
+          accordion: true,
+          openClass: 'active', // open
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: 'navgoco',
+            expires: false,
+            path: '/'
+          },
+          slide: {
+            duration: 400,
+            easing: 'swing'
+          }
         });
 
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#tg-sb-link").click(function() {                
-                if (!$("#tg-sb-link").attr("hide_sidebar"))
-                {
-                    $("#tg-sb-sidebar").toggle();
-                    $("#tg-sb-content").toggleClass('col-md-9');
-                    $("#tg-sb-content").toggleClass('col-md-12');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
-                }
-            });
+        window_width = $(window).width();
+        if (window_width <= 990) { // 모바일 환경에서는 사이드바 접기
+          $("#mysidebar").navgoco('toggle', false);
+        }
+
+        $("#collapseAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', false);
         });
+
+        $("#expandAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', true);
+        });
+
+      });
+    </script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <script>
+      $(document).ready(function() {
+        $("#tg-sb-link").click(function() {
+          if (!$("#tg-sb-link").attr("hide_sidebar")) {
+            $("#tg-sb-sidebar").toggle();
+            $("#tg-sb-content").toggleClass('col-md-9');
+            $("#tg-sb-content").toggleClass('col-md-12');
+            $("#tg-sb-icon").toggleClass('fa-toggle-on');
+            $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          }
+        });
+      });
     </script>
     
 
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
+    
+      <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6933218466698885"
+  crossorigin="anonymous"></script>
+    
+
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XRCSF3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header>
-<!-- Navigation -->
+    <header>
+      <!-- Navigation -->
 <nav class="navbar2 navbar-inverse navbar-static-top">
     <div class="container topnavlinks">
         <div class="navbar-header">
@@ -225,19 +238,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-</header>
-<!-- Page Content -->
-
-<div class="container">
-
-  <div id="main">
-    <!-- Content Row -->
-    <div class="row">
+      
+    </header>
+    <!-- Page Content -->
+    
+        <div class="container">
         
-        
-            <!-- Sidebar Column -->
-            <div class="col-md-3" id="tg-sb-sidebar">
+        <div id="main">
+          <!-- Content Row -->
+          <div class="row">
+            
+              
+              <!-- Sidebar Column -->
+              <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <ul id="mysidebar" class="nav">
@@ -251,63 +264,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html" >서버 접속 방법(Linux) - 공인IP 없을 때</a></li>          
+          <li><a title="VPC 환경에서 서버 생성하는 방법" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성하는 방법</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Classic 환경 Linux 서버 접속 방법" href="#">Classic 환경 Linux 서버 접속 방법</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html">공인IP 없을 때</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html">공인IP 있을 때</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="서버 스펙 변경 제한 사항" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경 제한 사항</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="디스크(스토리지) 설정" href="#">디스크(스토리지) 설정</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html">스토리지 추가 생성 기본 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html">Linux 디스크 추가 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html">Linux 서버 디스크 LVM 구성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html">Windows 디스크 추가 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-linux.html">Linux 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-windows.html">Windows 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Micro 서버 제한 사항" href="/compute/ncloud_compute_server_micro_type_limit.html" >Classic 환경 Micro 서버 제한 사항</a></li>          
                     
           
           
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html" >서버 접속 방법(Linux) - 공인IP 있을 때</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="VPC 환경에서 서버 생성" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html" >스토리지 추가 생성 기본 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html" >Linux 서버 디스크 추가 상세 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html" >Linux 서버 디스크 LVM 구성하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Windows 서버 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html" >Windows 서버 디스크 추가 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Micro 타입 서버에서 제한되는 서비스" href="/compute/ncloud_compute_server_micro_type_limit.html" >Micro 타입 서버에서 제한되는 서비스</a></li>          
+          <li><a title="VPC 환경에서 Micro 서버 생성하기" href="/compute/ncloud-compute-micro-type-server-create-vpc.html" >VPC 환경에서 Micro 서버 생성하기</a></li>          
                     
           
           
@@ -342,6 +386,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="Linux 서버 SSH Key로 접속하는 방법" href="/compute/ncloud-compute-server-connect-by-ssh-key.html" >Linux 서버 SSH Key로 접속하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li class="active"><a title="X-Forwarded-For로 Client IP 기록하기" href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html" >X-Forwarded-For로 Client IP 기록하기</a></li>
                     
           
@@ -349,14 +400,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https로 리다이렉트 - Apache/CentOS</a></li>          
+          <li><a title="https 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https 리다이렉트 - Apache/CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https로 리다이렉트 - Apache/Ubuntu</a></li>          
+          <li><a title="https 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https 리다이렉트 - Apache/Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https 리다이렉트-Apache/Rocky Linux" href="/compute/ncloud-compute-server-http-to-https-rocky-linux.html" >https 리다이렉트-Apache/Rocky Linux</a></li>          
                     
           
           
@@ -364,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Repository 변경해 리눅스 패키지 설치" href="/compute/ncloud_compute_server_repository_change_on_private_network.html" >Repository 변경해 리눅스 패키지 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 서버 소개" href="/compute/ncloud-compute-server-rocky-linux-guide.html" >Rocky Linux 서버 소개</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 미러 사이트 문제 해결" href="/compute/ncloud-compute-server-rocky-linux-repository-mirror-site-error-troubleshooting.html" >Rocky Linux 미러 사이트 문제 해결</a></li>          
                     
           
           
@@ -449,6 +521,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
+                  
+                  
+                  <li><a title="Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법" href="/compute/ncloud-compute-lamp-apache-ssl-setting-rocky-linux-guide.html">Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법</a></li>
+                  
+                  
+                  
               </ul>
           </li>
           
@@ -460,13 +538,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
-                  <li><a title="CentOS에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에서 NginX 설치, 설정</a></li>
+                  <li><a title="CentOS에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에 NginX 설치, 설정</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Ubuntu에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에서 NginX 설치, 설정</a></li>
+                  <li><a title="Ubuntu에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux에 NginX 설치, 설정" href="/compute/ncloud-compute-lemp-nginx-install-setting-rocky-linux-guide.html">Rocky Linux에 NginX 설치, 설정</a></li>
                   
                   
                   
@@ -479,6 +563,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   <li><a title="Ubuntu NginX SSL 인증서 설정" href="/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html">Ubuntu NginX SSL 인증서 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="로드밸런서 환경 Client IP 확인" href="/compute/ncloud-compute-nginx-client-ip-logging-guide.html">로드밸런서 환경 Client IP 확인</a></li>
                   
                   
                   
@@ -592,15 +682,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | CentOS" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html" >Proxy Protocol을 이용해 Client IP 확인하기 | CentOS</a></li>          
+          <li><a title="로드밸런서 접속 로그 확인하는 방법" href="/networking/ncloud-networking-load-balancer-application-lb-access-log.html" >로드밸런서 접속 로그 확인하는 방법</a></li>          
                     
           
           
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html" >Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu</a></li>          
+          <li><a title="Load Balancer 인증서 교체하는 방법" href="/networking/ncloud-networking-load-balancer-certificate-change.html" >Load Balancer 인증서 교체하는 방법</a></li>          
                     
+          
+          
+          <li class="subfolders">
+              <a title="Proxy Protocol로 Client IP 확인" href="#">Proxy Protocol로 Client IP 확인</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CentOS 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html">CentOS 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html">Ubuntu 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-rocky-linux.html">Rocky Linux 서버에서 확인</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -628,6 +745,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="VPC Peering 생성 가이드" href="/networking/ncloud_networking_vpc_peering_guide.html" >VPC Peering 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="IPsecVPN과 FortiGate 장비 연동" href="/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html" >IPsecVPN과 FortiGate 장비 연동</a></li>          
                     
           
           
@@ -734,7 +858,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="백업 서비스 가이드와 신청 절차" href="/storage/ncloud_storage_backup_guide.html" >백업 서비스 가이드와 신청 절차</a></li>          
+          <li><a title="백업 서비스 기본 가이드" href="/storage/ncloud-storage-backup-service-basic-guide.html" >백업 서비스 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - Linux Data" href="/storage/ncloud-storage-backup-service-linux-data-guide.html" >백업 서비스 상세 가이드 - Linux Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - 윈도 Data" href="/storage/ncloud-storage-backup-service-windows-data-guide.html" >백업 서비스 상세 가이드 - 윈도 Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Content-Type 변경" href="/storage/ncloud-storage-object-storage-mimetype-contenttype-change-guide.html" >Object Storage Content-Type 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L Content-Type 일괄 적용, 변경" href="/storage/ncloud-storage-object-storage-contenttype-bulk-change-guide.html" >&nbsp;&nbsp; L Content-Type 일괄 적용, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket에 CORS 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-guide.html" >Object Storage Bucket에 CORS 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-api-sdk-guide.html" >&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket 접근 로그 설정" href="/storage/ncloud-storage-object-storage-log-management-guide.html" >Object Storage Bucket 접근 로그 설정</a></li>          
                     
           
           
@@ -764,28 +937,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="MySQL, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, mariadb my.cnf 위치</a></li>          
+          <li><a title="MySQL, MariaDB my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, MariaDB my.cnf 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, mariadb bind-address 위치</a></li>          
+          <li><a title="MySQL, MariaDB bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, MariaDB bind-address 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="CentOS에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="CentOS에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 MariaDB 외부접속 허용</a></li>          
                     
           
           
           
           
           
-          <li><a title="Ubuntu에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="Ubuntu에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 MariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 5.7 설치 방법" href="/database/ncloud-database-mysql-57-install-on-rocky-linux.html" >Rocky Linux에 MySQL 5.7 설치 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 8.0 최신 버전" href="/database/ncloud-database-mysql-8-latest-version-install-on-rocky-linux.html" >Rocky Linux에 MySQL 8.0 최신 버전</a></li>          
                     
           
           
@@ -813,22 +1000,122 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Cloud DB MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >Cloud DB MySQL Public 도메인 접속</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html" >MySQL(MARIADB) Replication 생성</a></li>          
+          <li><a title="VPC 환경 Cloud DB for MSSQL 생성" href="/database/ncloud-database-cloud-db-for-mssql-guide.html" >VPC 환경 Cloud DB for MSSQL 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html" >MySQL GTID Replication 상세 가이드</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속" href="/database/ncloud-database-cloud-db-for-mssql-public-domain-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속</a></li>          
                     
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개" href="/database/ncloud-database-cloud-db-for-mssql-setting-manage-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Replication - MySQL, MariaDB" href="#">Replication - MySQL, MariaDB</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL Multi Source Replication 생성" href="/database/ncloud-database-mysql-multi-source-replication.html">MySQL Multi Source Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB Multi Source Replication" href="/database/ncloud-database-mariadb-multi-source-replication.html">MariaDB Multi Source Replication</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Database Migration 서비스" href="#">Database Migration 서비스</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="From MySQL 5.7 To MysQL 5.7" href="/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html">From MySQL 5.7 To MysQL 5.7</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="PostgreSQL" href="#">PostgreSQL</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">CDB PostgreSQL 생성 | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">CDB PostgreSQL 생성 | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html">CDB PostgreSQL Public 도메인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | CentOS" href="/database/ncloud-database-postgresql-install-connect-guide-centos.html">설치형 PostgreSQL | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Ubuntu" href="/database/ncloud-database-postgresql-install-connect-guide-ubuntu.html">설치형 PostgreSQL | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Rocky Linux" href="/database/ncloud-database-postgresql-install-connect-guide-rocky-linux.html">설치형 PostgreSQL | Rocky Linux</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -863,27 +1150,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경" href="/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html" >Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html" >Cloud DB PostgreSQL 생성 | CentOS</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html" >Cloud DB PostgreSQL 생성 | Ubuntu</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html" >Cloud DB PostgreSQL Public 도메인</a></li>          
                     
           
           
@@ -927,6 +1193,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="WAF 서비스 요금 정보" href="/security/ncloud-security-security-monitoring-waf-price-info.html" >WAF 서비스 요금 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Certificate Manager 인증서 등록 방법" href="/security/ncloud-security-certificate-manager-register-ssl-certificate-guide.html" >Certificate Manager 인증서 등록 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="Classic 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_classic_guide.html" >Classic 환경에서 SSL VPN 설정, 접속</a></li>          
                     
           
@@ -935,13 +1222,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="VPC 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_vpc_guide.html" >VPC 환경에서 SSL VPN 설정, 접속</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
                     
           
           
@@ -971,6 +1251,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="API Key 접근 제한 설정하는 방법" href="/management/ncloud-management-sub-account-api-gateway-access-control-guide.html" >API Key 접근 제한 설정하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="STS 기간 제한 API AccessKey 발급" href="/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html" >STS 기간 제한 API AccessKey 발급</a></li>          
                     
           
@@ -993,6 +1280,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud Insight 설정 가이드" href="/management/ncloud_management_cloud_insight_guide.html" >Cloud Insight 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드" href="/management/ncloud-management-cloud-insight-rule-template-guide.html" >&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드</a></li>          
                     
           
           
@@ -1064,6 +1358,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          
+          
+          <li><a title="PowerShell에서 Ncloud API 호출 샘플" href="/api/ncloud-api-call-powershell-sample.html" >PowerShell에서 Ncloud API 호출 샘플</a></li>          
+                    
+          
+          
+          
       </ul>
    </li>
      
@@ -1105,7 +1406,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Video Player 구현하기 샘플" href="/media/ncloud_media_video_player_sample.html" >Video Player 구현하기 샘플</a></li>          
+          <li><a title="VOD Station 생성 가이드" href="/media/ncloud-media-vod-station-guide.html" >VOD Station 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Video Player Enhancement 가이드" href="/media/ncloud-media-video-player-enhancement-guide.html" >Video Player Enhancement 가이드</a></li>          
                     
           
           
@@ -1135,14 +1443,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 서버 설치 가이드 | CentOS</a></li>          
+          <li><a title="Jenkins 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 설치 가이드 | CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 서버 설치 가이드 | Ubuntu</a></li>          
+          <li><a title="Jenkins 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 설치 가이드 | Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jenkins 설치 가이드 | Rocky Linux" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-rocky-linux.html" >Jenkins 설치 가이드 | Rocky Linux</a></li>          
                     
           
           
@@ -1608,16 +1923,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-            </div>
+              </div>
+              
             
-        
 
-        <!-- Content Column -->
-        <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-
-   <h1 class="post-title-main">X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기</h1>
-
+            <!-- Content Column -->
+            <div class="col-md-9" id="tg-sb-content">
+              <div class="post-header">
+  
+    <h1 class="post-title-main">X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기</h1>
+  
 </div>
 
 
@@ -1625,13 +1940,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="post-content" >
 
-   
-   
-    <div class="summary">Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기</div>
-   
-   
-
+  
     
+      <div class="summary">Ncloud(네이버 클라우드)에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법</div>
+    
+  
+
+  
     
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
@@ -1664,99 +1979,163 @@ $("#toc_onoff").click(function() {
 
 
 
-    
+  
 
-   <h2 id="개요">개요</h2>
+  <h2 id="개요">개요</h2>
 <p>X-Forwarded-For (XFF) 는 HTTP Header 중 하나로 Load Balancer(로드밸런서)나 Proxy Server를 통해 웹서버에 접속하는 Client의 IP 주소를 식별하는 표준 헤더입니다.<br />
 웹서버나 WAS 앞쪽에 Load Balancer 혹은 Proxy Server 등이 위치하게 된다면 서버 접근 로그에는 Client IP가 아닌 Load Balancer 혹은 Proxy Server의 IP 주소가 기록됩니다. 
 이때 웹 어플리케이션에서 X-Forwarded-For 헤더를 이용하면 Client IP를 서버 접근 로그에 남길 수 있습니다.</p>
 
-<p>여기서는 Load Balancer와 연동된 CentOS 와 Ubuntu의 Apache 웹서버 환경에서 X-Forwarded-For 를 이용하여 Apache access_log에 Clinet의 IP를 저장하는 과정을 살펴보겠습니다.</p>
+<p>여기서는 Load Balancer와 연동된 CentOS와 Ubuntu, 그리고 Rocky Linux의 Apache 웹서버 환경에서 X-Forwarded-For 를 이용하여 Apache access_log에 Clinet의 IP를 저장하는 과정을 살펴보겠습니다.</p>
 
 <h2 id="테스트-환경">테스트 환경</h2>
-<p>테스트는 CentOS, Ubuntu OS가 각각 설치된 2대의 서버를 Load Balancer와 연동한 후 Cloud Log Analytics에서 Apache access_log를  수집해 IP 주소를 확인하는 방식으로 진행하겠습니다.</p>
+<p>테스트는 CentOS, Ubuntu,  Rocky Linux OS가 각각 설치된 서버를 Load Balancer와 연동한 후 Cloud Log Analytics에서 Apache access_log를  수집해 IP 주소를 확인하는 방식으로 진행하겠습니다.</p>
 
 <h3 id="network-환경">Network 환경</h3>
 <ul>
-  <li>VPC 대역 : 172.16.0.0/16</li>
-  <li>Subnet 대역 (Server) : 172.16.<strong>10</strong>.0/24</li>
-  <li>Subnet 대역 (Load Balancer) : 172.16.<strong>20</strong>.0/24</li>
+  <li>VPC 대역 : 10.0.0.0/16</li>
+  <li>Subnet 대역 (Server) : 10.0.<strong>0</strong>.0/24</li>
+  <li>Subnet 대역 (Load Balancer) : 10.0.<strong>4</strong>.0/24</li>
 </ul>
 
 <h3 id="server-환경">Server 환경</h3>
 <ul>
-  <li>xff-test-1 : CentOS 7.8</li>
-  <li>xff-test-2 : Ubuntu 18.04</li>
+  <li>xff-test-centos : CentOS 7.8</li>
+  <li>xff-test-ubuntu : Ubuntu 20.04</li>
+  <li>xff-test-rocky : Rocky Linux 8.6</li>
 </ul>
 
 <h3 id="테스트-서버">테스트 서버</h3>
-<p>위 서버 환경에서 정리한 대로 CentOS, Ubuntu 2대의 서버를 준비했습니다.</p>
+<p>위 서버 환경에서 정리한 대로 CentOS, Ubuntu, Rocky Linux 이렇게 3대의 서버를 준비했습니다. VPC 환경에서 서버 생성하는 방법은 아래 문서를 참고하시면 됩니다.</p>
+
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">
+⁃ <a href="/compute/ncloud_compute_server_vpc_create.html" target="_blank" style="word-break:break-all;">VPC 환경에서 서버 생성하는 방법</a>
+</div>
+
+<figure>
+  <img class="docimage" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-01.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>로드밸런서도 마찬가지로 준비하고, 서버와 연동까지 완료했습니다. VPC 환경에서 로드밸런서를 생성하는 방법은 아래 문서를 참고하시면 됩니다.</p>
+
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">
+⁃ <a href="/networking/ncloud_networking_load_balancer_application_lb.html" target="_blank" style="word-break:break-all;">VPC 환경에서 Application Load Balancer 생성하는 방법</a>
+</div>
 
 <ul>
-  <li>VPC 환경에서 서버 생성하는 방법 : <a href="/compute/ncloud_compute_server_vpc_create.html" target="_blank" style="word-break:break-all;">https://docs.3rdeyesys.com/compute/ncloud_compute_server_vpc_create.html</a></li>
+  <li>로드밸런서 상세 정보에서 [<strong>10.0.4.0/24</strong>]로 표시되는 서브넷 정보를 기억했다가 아래쪽에서 테스트할 때 확인해보겠습니다.</li>
 </ul>
-
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_01.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
-
-<p>로드밸런서도 마찬가지로 준비하고, 서버와 연동까지 완료했습니다.</p>
-
-<ul>
-  <li>VPC 환경에서 Application Load Balancer 생성하는 방법 : <a href="/networking/ncloud_networking_load_balancer_application_lb.html" target="_blank" style="word-break:break-all;">https://docs.3rdeyesys.com/networking/ncloud_networking_load_balancer_application_lb.html</a></li>
-</ul>
-
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_02.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-02.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="설정-전-테스트">설정 전 테스트</h2>
 <p>우선, <strong>X-Forwarded-For (XFF)</strong> 설정을 하기 전에 어떻게 기록이 남는지 확인해보겠습니다.<br />
-아래와 같이 Load Balancer 주소로 접속해서 2대의 서버에 각각 접근하도록 합니다.<br />
+아래와 같이 Load Balancer 주소로 접속해서 3대의 서버에 각각 접근하도록 합니다.<br />
 위에서 소개한 Application Load Balancer 생성하는 방법을 그대로 따라하면 아래와 같은 메시지를 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-1.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 560px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-03.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_11-2.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 560px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-04.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-05.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="apache-접속-로그-확인">Apache 접속 로그 확인</h3>
 <p>Apache 접속 로그 파일은 아래의 위치에 존재하지만, 저희는 네이버 클라우드 (Ncloud)의 상품 중 하나인 <strong>Cloud Log Analytics</strong>에서 로그를 수집해서 확인해보겠습니다.</p>
 <ul>
   <li>CentOS : /var/log/httpd/access_log</li>
-  <li>
-    <p>Ubuntu : /var/log/apache2/access.log</p>
-  </li>
-  <li>Cloud Log Analytics 설정 가이드 : <a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html" target="_blank" style="word-break:break-all;">https://docs.3rdeyesys.com/analytics/ncloud_analytics_cloud_log_analytics_guide.html</a></li>
+  <li>Ubuntu : /var/log/apache2/access.log</li>
+  <li>Rocky Linux : /var/log/httpd/access_log</li>
 </ul>
 
-<p>Cloud Log Analytics에서 수집한 로그를 확인해보면 위에서 설정했던 <strong>Load Balancer의 IP 대역 (172.16.20.xx)</strong>이 기록된 것을 확인할 수 있습니다.</p>
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">
+⁃ <a href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html" target="_blank" style="word-break:break-all;">Cloud Log Analytics 설정 가이드</a>
+</div>
 
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_03.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<p>Cloud Log Analytics에서 수집한 로그를 확인해보면 위에서 설정했던 <strong>Load Balancer의 IP 대역 (10.0.4.xx)</strong>이 기록된 것을 확인할 수 있습니다.</p>
+
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-06.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<ul>
+  <li>Rocky Linux는 아직 Cloud Log Analytics Agent를 지원하지 않아 서버에서 직접 로그를 확인해보았습니다.</li>
+</ul>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-07.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="centos-설정">CentOS 설정</h2>
 <p>이제 실제 Client IP가 기록 되도록 설정을 변경해보겠습니다.<br />
 우선 CentOS에서는 <strong>httpd.conf</strong> 파일만 수정하면 됩니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/httpd/conf/httpd.conf
-
-<span class="c"># vi Line Number 표시하기</span>
-:set number
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vim /etc/httpd/conf/httpd.conf
 </code></pre></div></div>
 
-<p>httpd.conf 파일 196번째 라인의 LogFormat 항목에서 <strong>%h</strong> 를 <strong>%{X-Forwarded-For}i</strong> 로 수정합니다.</p>
-<div class="alert alert-success" role="alert"><i class="far fa-check-square"></i> <b>Line 번호:</b> 196번째 라인 등으로 표시한 해당 항목의 라인은 Ncloud 서버에 Apache를 설치했을 때의 기본 라인으로 환경설정 파일을 수정하거나 했을 경우에는 조금 달라질 수도 있습니다.</div>
+<p>httpd.conf 파일 [<strong>log_config_module</strong>] 설정에 있는 LogFormat 항목에서 <strong>%h</strong> 를 <strong>%{X-Forwarded-For}i</strong> 로 수정합니다.</p>
 
 <h3 id="httpdconf-수정-전">httpd.conf 수정 전</h3>
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   <span class="ss">LogFormat</span> "%h %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LogFormat</span> "%h %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_04.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-08.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="httpdconf-수정-후">httpd.conf 수정 후</h3>
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>196   <span class="ss">LogFormat</span> "%{X-Forwarded-For}i %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LogFormat</span> "%{X-Forwarded-For}i %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_05.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-09.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="apache-재시작">Apache 재시작</h3>
 <p>httpd.conf 파일 수정 후에 Apache를 재시작합니다. 로그 테스트는 Ubuntu까지 설정을 마친 후에 진행하겠습니다.</p>
 
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">~</span><span class="c"># systemctl restart httpd</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl restart httpd
 </code></pre></div></div>
+
+<h2 id="rocky-linux-설정">Rocky Linux 설정</h2>
+<p>Rocky Linux는 CentOS와 마찬가지로 <strong>/etc/httpd/conf/httpd.conf</strong> 파일에 있는 로그 관련 설정을 변경해주면 완료됩니다.</p>
+
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-10.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="ubuntu-설정">Ubuntu 설정</h2>
 <p>Ubuntu에서는 apache2.conf 파일을 수정하기 전에 <strong>remoteip 모듈</strong>을 사용하도록 설정해줘야 합니다.</p>
@@ -1766,54 +2145,97 @@ $("#toc_onoff").click(function() {
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# a2enmod remoteip
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_06.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-11.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="remoteipload-수정">remoteip.load 수정</h3>
 <p>다음으로 remoteip.load 파일을 수정해서 아래쪽에 [<strong>RemoteIPHeader X-FORWARDED-FOR</strong>]을 추가 합니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/apache2/mods-enabled/remoteip.load
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vim /etc/apache2/mods-enabled/remoteip.load
 </code></pre></div></div>
 
-<h3 id="remoteipload-수정-전">remoteip.load 수정 전</h3>
+<ul>
+  <li>remoteip.load 수정 전</li>
+</ul>
+
 <div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LoadModule</span> remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
 </code></pre></div></div>
-<h3 id="remoteipload-수정-후">remoteip.load 수정 후</h3>
+<ul>
+  <li>remoteip.load 수정 후</li>
+</ul>
+
 <div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LoadModule</span> remoteip_module /usr/lib/apache2/modules/mod_remoteip.so
 <span class="nc">RemoteIPHeader</span> <span class="ss">X-FORWARDED-FOR</span>
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_07.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-12.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="apache2conf-수정">apache2.conf 수정</h3>
 <p>다음으로 <strong>apache2.conf</strong> 파일을 수정합니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/apache2/apache2.conf
-
-<span class="c"># vi Line Number 표시하기</span>
-:set number
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vim /etc/apache2/apache2.conf
 </code></pre></div></div>
 
-<p>apache2.conf 213번째 라인의 LogFormat 부분에서 <strong>%h</strong> 를 <strong>%a</strong> 로 변경합니다.</p>
-<div class="alert alert-success" role="alert"><i class="far fa-check-square"></i> <b>Line 번호:</b> 213번째 라인 등으로 표시한 해당 항목의 라인은 Ncloud 서버에 Apache를 설치했을 때의 기본 라인으로 환경설정 파일을 수정하거나 했을 경우에는 조금 달라질 수도 있습니다.</div>
+<p>apache2.conf LogFormat 부분에서 <strong>%h</strong> 를 <strong>%a</strong> 로 변경합니다.</p>
 
-<h3 id="apache2conf-수정-전">apache2.conf 수정 전</h3>
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 <span class="ss">LogFormat</span> "%h %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined  
-</code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_08.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<ul>
+  <li>apache2.conf 수정 전</li>
+</ul>
 
-<h3 id="apache2conf-수정-후">apache2.conf 수정 후</h3>
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code>213 <span class="ss">LogFormat</span> "%a %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined  
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LogFormat</span> "%h %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined  
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_09.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-13.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<ul>
+  <li>apache2.conf 수정 후</li>
+</ul>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LogFormat</span> "%a %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined  
+</code></pre></div></div>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-14.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="apache-재시작-1">Apache 재시작</h3>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl restart apache2
 </code></pre></div></div>
 
 <h2 id="설정-후-테스트">설정 후 테스트</h2>
-<p>위와 같이  CentOS, Ubuntu 2대 서버에서 설정을 모두 마친 후에 로드 밸런서 URL로 접속합니다.<br />
+<p>위와 같이  CentOS, Ubuntu, Rocky Linux 3대 서버에서 설정을 모두 마친 후에 로드 밸런서 URL로 접속합니다.<br />
 이후에 Cloud Log Analytics에서 로그를 확인해보면 아래와 같이 로드밸런서 IP가 아닌 실제 접속한 Client의 IP가 기록된 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/ncloud_server_x_forwarded_for_client_ip_logging_guide_10.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-15.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<ul>
+  <li>Rocky Linux는 아직 Cloud Log Analytics Agent를 지원하지 않아 서버에서 직접 로그를 확인해보았습니다.</li>
+</ul>
+<figure>
+  <img class="docimage docimage-no-top-bottom" src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-16.png" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -1824,31 +2246,71 @@ $("#toc_onoff").click(function() {
   </li>
 </ol>
 
-   
+<h2 id="문서-업데이트-내역">문서 업데이트 내역</h2>
+<div>
+  <table class="simple_table small_font" style="width:50%">
+    <thead>
+      <tr>
+        <th>날짜</th>
+        <th>내용</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      
+      
+        <tr>
+          <td>2021-12-29</td>
+          <td>문서 최초 생성</td>
+        </tr>
+      
+        <tr>
+          <td>2023-08-21</td>
+          <td>Rocky Linux 추가, 최신 OS 반영, 스크린샷 업데이트</td>
+        </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+  
     <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        <a href="/tag/tag_proxy.html" class="btn btn-default navbar-btn cursorNorm" role="button">proxy</a>
+      
+        <b>Tags:
+        </b>
         
         
+          
+            <a
+              href="/tag/tag_proxy.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">proxy</a>
+          
         
-        <a href="/tag/tag_load_balancer.html" class="btn btn-default navbar-btn cursorNorm" role="button">load_balancer</a>
+          
+            <a
+              href="/tag/tag_load_balancer.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">load_balancer</a>
+          
         
+          
+            <a
+              href="/tag/tag_log.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">log</a>
+          
         
-        
-        <a href="/tag/tag_log.html" class="btn btn-default navbar-btn cursorNorm" role="button">log</a>
-        
-        
-        
+      
     </div>
-   
+  
 
 </div>
 
 <hr class="shaded"/>
+
+
 
 <footer>
     <div class="row">
@@ -1874,9 +2336,9 @@ $("#toc_onoff").click(function() {
           </a>
         		
         </div>
-        &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+        &copy;2023 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2021-12-29<br/> Site last generated: 2022-09-28 <br />        
+        <span>Page last updated:</span> 2023-08-21<br/> Site last generated: 2023-10-19 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -1887,57 +2349,33 @@ $("#toc_onoff").click(function() {
 
 
 
-
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
         </div>
-    <!-- /.row -->
+        
+          
+          <div class="side-banner-right">
+  <a
+    href="https://hyphen.im/benefit/navercloud-event"
+    id="side-banner-right-01"
+    target="_blank"
+    class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
 </div>
-<!-- /.container -->
-</div>
-
-    <div class="side-banner-right">    
-    <a href="https://hyphen.im/benefit/navercloud-event" id="side-banner-right-01" target="_blank" class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
-</div>  
-
-<!-- /#main -->
-    </div>
-<script>
-    $(function() {
-        $('svg').click(function() {
+        
+        <!-- /#main -->
+      </div>
+      <script>
+        $(function() {
+          $('svg').click(function() {
             $(this).parent('form').submit();
+          });
         });
-    });
-</script>
+      </script>
 
-
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4Q6RVEFJ3S');
-</script>
-
-  
-
-  
-  <!-- NCloud Real User Analytics -->
-<script>
-  (function() {
-    var s = document.getElementsByTagName('script')[0]
-      , p = document.createElement('script');
-    p.async = 'async';
-    p.src = 'https://rua-api.ncloud.com/api/v1/beacon/boomerang/collect/'+
-      'e4c80491-1665-457b-9cec-550a5f554dde';
-    s.parentNode.insertBefore(p, s);
-  })();
-</script>
-
-  
-
-</body>
+      
+    </body>
+  </body>
 </html>
-
 

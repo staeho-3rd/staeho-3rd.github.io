@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
+  <head>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -31,17 +31,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>FAQ | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
-<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
-<link rel="stylesheet" href="/css/modern-business.css">
-<!-- Latest compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css" />
+<link rel="stylesheet" href="/css/modern-business.css"> <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
-<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"-->
-<link rel="stylesheet" href="/css/customstyles.css">
-<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"--> <link rel="stylesheet" href="/css/customstyles.css"> <link rel="stylesheet" href="/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
 <link rel="stylesheet" href="/css/theme-ncloud.css">
+
 
 <script src="/js/jquery.341.min.js"></script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
@@ -55,86 +56,94 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="/js/bootstrap.341.min.js"></script>
 <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
 <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script-->
-<!-- Anchor.js -->
-<script src="/js/anchor.420.min.js"></script>
+<!-- Anchor.js --><script src="/js/anchor.420.min.js"> </script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
 
 
+
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
-
+<link rel="alternate"
+  type="application/rss+xml"
+  title="3RDEYESYSTEM Technical Documentations"
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
-        $(document).ready(function() {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
-            
-            window_width = $(window).width();
-            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
-            {
-                $("#mysidebar").navgoco('toggle', false);
-            }
+      $(document).ready(function() {
 
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
+// Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '',
+          accordion: true,
+          openClass: 'active', // open
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: 'navgoco',
+            expires: false,
+            path: '/'
+          },
+          slide: {
+            duration: 400,
+            easing: 'swing'
+          }
         });
 
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#tg-sb-link").click(function() {                
-                if (!$("#tg-sb-link").attr("hide_sidebar"))
-                {
-                    $("#tg-sb-sidebar").toggle();
-                    $("#tg-sb-content").toggleClass('col-md-9');
-                    $("#tg-sb-content").toggleClass('col-md-12');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
-                }
-            });
+        window_width = $(window).width();
+        if (window_width <= 990) { // 모바일 환경에서는 사이드바 접기
+          $("#mysidebar").navgoco('toggle', false);
+        }
+
+        $("#collapseAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', false);
         });
+
+        $("#expandAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', true);
+        });
+
+      });
+    </script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <script>
+      $(document).ready(function() {
+        $("#tg-sb-link").click(function() {
+          if (!$("#tg-sb-link").attr("hide_sidebar")) {
+            $("#tg-sb-sidebar").toggle();
+            $("#tg-sb-content").toggleClass('col-md-9');
+            $("#tg-sb-content").toggleClass('col-md-12');
+            $("#tg-sb-icon").toggleClass('fa-toggle-on');
+            $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          }
+        });
+      });
     </script>
     
 
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
+    
+      <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6933218466698885"
+  crossorigin="anonymous"></script>
+    
+
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XRCSF3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header>
-<!-- Navigation -->
+    <header>
+      <!-- Navigation -->
 <nav class="navbar2 navbar-inverse navbar-static-top">
     <div class="container topnavlinks">
         <div class="navbar-header">
@@ -224,19 +233,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-</header>
-<!-- Page Content -->
-
-<div class="container">
-
-  <div id="main">
-    <!-- Content Row -->
-    <div class="row">
+      
+    </header>
+    <!-- Page Content -->
+    
+        <div class="container">
         
-        
-            <!-- Sidebar Column -->
-            <div class="col-md-3" id="tg-sb-sidebar">
+        <div id="main">
+          <!-- Content Row -->
+          <div class="row">
+            
+              
+              <!-- Sidebar Column -->
+              <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <ul id="mysidebar" class="nav">
@@ -286,16 +295,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-            </div>
+              </div>
+              
             
-        
 
-        <!-- Content Column -->
-        <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-
-   <h1 class="post-title-main">FAQ</h1>
-
+            <!-- Content Column -->
+            <div class="col-md-9" id="tg-sb-content">
+              <div class="post-header">
+  
+    <h1 class="post-title-main">FAQ</h1>
+  
 </div>
 
 
@@ -303,18 +312,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="post-content" >
 
-   
-   
-    <div class="summary">Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다</div>
-   
-   
-
+  
     
+      <div class="summary">Ncloud 서비스와 관련된 자주 묻는 질문들을 정리했습니다</div>
+    
+  
 
-   <div class="panel-group" id="accordion">
+  
+
+  <div class="panel-group" id="accordion">
     
 	   
          
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse24">Cloud Log Analytics에서 로그 수집 설정을 하려고 할 때 Rocky Linux 서버를 선택할 수 없습니다</a>
+            </h4>
+        </div>
+        <div id="collapse24" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                Ncloud(네이버 클라우드) Cloud Log Analytics는 아직까지 Rocky Linux 서버를 지원하지 않습니다. 차후에 업데이트 될 예정입니다.
+                
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
+        
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse23">Cloud Outbound Mailer의 Template에 등록한 이미지가 보이지 않습니다</a>
+            </h4>
+        </div>
+        <div id="collapse23" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                Ncloud(네이버 클라우드) Cloud Outbound Mailer Template에 등록한 이미지의 유효기간은 3개월이며, 해당 이미지를 사용하여 메일을 발송한 기록이 없는 경우에는 3개월 이전에 삭제될 수도 있습니다. 해당 이미지를 재사용해야 한다면 다시 등록하고 사용하시면 됩니다.
+                
+            </div>
+        </div>
+    </div>                    
+    <!-- /.panel -->
+    
         
     <!-- /.panel -->
     <div class="panel panel-default">
@@ -692,15 +735,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
 </div>
 
-   
+  
     <div class="tags">
-        
+      
     </div>
-   
+  
 
 </div>
 
 <hr class="shaded"/>
+
+
 
 <footer>
     <div class="row">
@@ -726,9 +771,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         		
         </div>
-        &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+        &copy;2023 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-         Site last generated: 2022-09-28 <br />        
+         Site last generated: 2023-10-19 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -739,57 +784,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
         </div>
-    <!-- /.row -->
+        
+          
+          <div class="side-banner-right">
+  <a
+    href="https://hyphen.im/benefit/navercloud-event"
+    id="side-banner-right-01"
+    target="_blank"
+    class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
 </div>
-<!-- /.container -->
-</div>
-
-    <div class="side-banner-right">    
-    <a href="https://hyphen.im/benefit/navercloud-event" id="side-banner-right-01" target="_blank" class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
-</div>  
-
-<!-- /#main -->
-    </div>
-<script>
-    $(function() {
-        $('svg').click(function() {
+        
+        <!-- /#main -->
+      </div>
+      <script>
+        $(function() {
+          $('svg').click(function() {
             $(this).parent('form').submit();
+          });
         });
-    });
-</script>
+      </script>
 
-
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4Q6RVEFJ3S');
-</script>
-
-  
-
-  
-  <!-- NCloud Real User Analytics -->
-<script>
-  (function() {
-    var s = document.getElementsByTagName('script')[0]
-      , p = document.createElement('script');
-    p.async = 'async';
-    p.src = 'https://rua-api.ncloud.com/api/v1/beacon/boomerang/collect/'+
-      'e4c80491-1665-457b-9cec-550a5f554dde';
-    s.parentNode.insertBefore(p, s);
-  })();
-</script>
-
-  
-
-</body>
+      
+    </body>
+  </body>
 </html>
-
 

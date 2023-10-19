@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
+  <head>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:url" content="https://docs.3rdeyesys.com/security/ncloud_security_ssl_vpn_vpc_guide.html" />
 <meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-11-02T00:00:00+09:00" />
+<meta property="article:published_time" content="2023-07-26T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="VPC 환경에서 SSL VPN 설정하고 접속하는 방법" />
 <script type="application/ld+json">
@@ -32,17 +32,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>VPC 환경에서 SSL VPN 설정하고 접속하는 방법 | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
-<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
-<link rel="stylesheet" href="/css/modern-business.css">
-<!-- Latest compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css" />
+<link rel="stylesheet" href="/css/modern-business.css"> <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
-<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"-->
-<link rel="stylesheet" href="/css/customstyles.css">
-<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"--> <link rel="stylesheet" href="/css/customstyles.css"> <link rel="stylesheet" href="/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
 <link rel="stylesheet" href="/css/theme-ncloud.css">
+
 
 <script src="/js/jquery.341.min.js"></script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
@@ -56,86 +57,94 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="/js/bootstrap.341.min.js"></script>
 <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
 <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script-->
-<!-- Anchor.js -->
-<script src="/js/anchor.420.min.js"></script>
+<!-- Anchor.js --><script src="/js/anchor.420.min.js"> </script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
 
 
+
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
-
+<link rel="alternate"
+  type="application/rss+xml"
+  title="3RDEYESYSTEM Technical Documentations"
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
-        $(document).ready(function() {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
-            
-            window_width = $(window).width();
-            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
-            {
-                $("#mysidebar").navgoco('toggle', false);
-            }
+      $(document).ready(function() {
 
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
+// Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '',
+          accordion: true,
+          openClass: 'active', // open
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: 'navgoco',
+            expires: false,
+            path: '/'
+          },
+          slide: {
+            duration: 400,
+            easing: 'swing'
+          }
         });
 
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#tg-sb-link").click(function() {                
-                if (!$("#tg-sb-link").attr("hide_sidebar"))
-                {
-                    $("#tg-sb-sidebar").toggle();
-                    $("#tg-sb-content").toggleClass('col-md-9');
-                    $("#tg-sb-content").toggleClass('col-md-12');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
-                }
-            });
+        window_width = $(window).width();
+        if (window_width <= 990) { // 모바일 환경에서는 사이드바 접기
+          $("#mysidebar").navgoco('toggle', false);
+        }
+
+        $("#collapseAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', false);
         });
+
+        $("#expandAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', true);
+        });
+
+      });
+    </script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <script>
+      $(document).ready(function() {
+        $("#tg-sb-link").click(function() {
+          if (!$("#tg-sb-link").attr("hide_sidebar")) {
+            $("#tg-sb-sidebar").toggle();
+            $("#tg-sb-content").toggleClass('col-md-9');
+            $("#tg-sb-content").toggleClass('col-md-12');
+            $("#tg-sb-icon").toggleClass('fa-toggle-on');
+            $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          }
+        });
+      });
     </script>
     
 
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
+    
+      <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6933218466698885"
+  crossorigin="anonymous"></script>
+    
+
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XRCSF3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header>
-<!-- Navigation -->
+    <header>
+      <!-- Navigation -->
 <nav class="navbar2 navbar-inverse navbar-static-top">
     <div class="container topnavlinks">
         <div class="navbar-header">
@@ -225,19 +234,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-</header>
-<!-- Page Content -->
-
-<div class="container">
-
-  <div id="main">
-    <!-- Content Row -->
-    <div class="row">
+      
+    </header>
+    <!-- Page Content -->
+    
+        <div class="container">
         
-        
-            <!-- Sidebar Column -->
-            <div class="col-md-3" id="tg-sb-sidebar">
+        <div id="main">
+          <!-- Content Row -->
+          <div class="row">
+            
+              
+              <!-- Sidebar Column -->
+              <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <ul id="mysidebar" class="nav">
@@ -251,63 +260,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html" >서버 접속 방법(Linux) - 공인IP 없을 때</a></li>          
+          <li><a title="VPC 환경에서 서버 생성하는 방법" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성하는 방법</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Classic 환경 Linux 서버 접속 방법" href="#">Classic 환경 Linux 서버 접속 방법</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html">공인IP 없을 때</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html">공인IP 있을 때</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="서버 스펙 변경 제한 사항" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경 제한 사항</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="디스크(스토리지) 설정" href="#">디스크(스토리지) 설정</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html">스토리지 추가 생성 기본 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html">Linux 디스크 추가 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html">Linux 서버 디스크 LVM 구성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html">Windows 디스크 추가 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-linux.html">Linux 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-windows.html">Windows 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Micro 서버 제한 사항" href="/compute/ncloud_compute_server_micro_type_limit.html" >Classic 환경 Micro 서버 제한 사항</a></li>          
                     
           
           
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html" >서버 접속 방법(Linux) - 공인IP 있을 때</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="VPC 환경에서 서버 생성" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html" >스토리지 추가 생성 기본 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html" >Linux 서버 디스크 추가 상세 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html" >Linux 서버 디스크 LVM 구성하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Windows 서버 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html" >Windows 서버 디스크 추가 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Micro 타입 서버에서 제한되는 서비스" href="/compute/ncloud_compute_server_micro_type_limit.html" >Micro 타입 서버에서 제한되는 서비스</a></li>          
+          <li><a title="VPC 환경에서 Micro 서버 생성하기" href="/compute/ncloud-compute-micro-type-server-create-vpc.html" >VPC 환경에서 Micro 서버 생성하기</a></li>          
                     
           
           
@@ -342,6 +382,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="Linux 서버 SSH Key로 접속하는 방법" href="/compute/ncloud-compute-server-connect-by-ssh-key.html" >Linux 서버 SSH Key로 접속하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="X-Forwarded-For로 Client IP 기록하기" href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html" >X-Forwarded-For로 Client IP 기록하기</a></li>          
                     
           
@@ -349,14 +396,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https로 리다이렉트 - Apache/CentOS</a></li>          
+          <li><a title="https 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https 리다이렉트 - Apache/CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https로 리다이렉트 - Apache/Ubuntu</a></li>          
+          <li><a title="https 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https 리다이렉트 - Apache/Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https 리다이렉트-Apache/Rocky Linux" href="/compute/ncloud-compute-server-http-to-https-rocky-linux.html" >https 리다이렉트-Apache/Rocky Linux</a></li>          
                     
           
           
@@ -364,6 +418,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Repository 변경해 리눅스 패키지 설치" href="/compute/ncloud_compute_server_repository_change_on_private_network.html" >Repository 변경해 리눅스 패키지 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 서버 소개" href="/compute/ncloud-compute-server-rocky-linux-guide.html" >Rocky Linux 서버 소개</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 미러 사이트 문제 해결" href="/compute/ncloud-compute-server-rocky-linux-repository-mirror-site-error-troubleshooting.html" >Rocky Linux 미러 사이트 문제 해결</a></li>          
                     
           
           
@@ -449,6 +517,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
+                  
+                  
+                  <li><a title="Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법" href="/compute/ncloud-compute-lamp-apache-ssl-setting-rocky-linux-guide.html">Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법</a></li>
+                  
+                  
+                  
               </ul>
           </li>
           
@@ -460,13 +534,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
-                  <li><a title="CentOS에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에서 NginX 설치, 설정</a></li>
+                  <li><a title="CentOS에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에 NginX 설치, 설정</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Ubuntu에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에서 NginX 설치, 설정</a></li>
+                  <li><a title="Ubuntu에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux에 NginX 설치, 설정" href="/compute/ncloud-compute-lemp-nginx-install-setting-rocky-linux-guide.html">Rocky Linux에 NginX 설치, 설정</a></li>
                   
                   
                   
@@ -479,6 +559,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   <li><a title="Ubuntu NginX SSL 인증서 설정" href="/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html">Ubuntu NginX SSL 인증서 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="로드밸런서 환경 Client IP 확인" href="/compute/ncloud-compute-nginx-client-ip-logging-guide.html">로드밸런서 환경 Client IP 확인</a></li>
                   
                   
                   
@@ -592,15 +678,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | CentOS" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html" >Proxy Protocol을 이용해 Client IP 확인하기 | CentOS</a></li>          
+          <li><a title="로드밸런서 접속 로그 확인하는 방법" href="/networking/ncloud-networking-load-balancer-application-lb-access-log.html" >로드밸런서 접속 로그 확인하는 방법</a></li>          
                     
           
           
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html" >Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu</a></li>          
+          <li><a title="Load Balancer 인증서 교체하는 방법" href="/networking/ncloud-networking-load-balancer-certificate-change.html" >Load Balancer 인증서 교체하는 방법</a></li>          
                     
+          
+          
+          <li class="subfolders">
+              <a title="Proxy Protocol로 Client IP 확인" href="#">Proxy Protocol로 Client IP 확인</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CentOS 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html">CentOS 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html">Ubuntu 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-rocky-linux.html">Rocky Linux 서버에서 확인</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -628,6 +741,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="VPC Peering 생성 가이드" href="/networking/ncloud_networking_vpc_peering_guide.html" >VPC Peering 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="IPsecVPN과 FortiGate 장비 연동" href="/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html" >IPsecVPN과 FortiGate 장비 연동</a></li>          
                     
           
           
@@ -734,7 +854,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="백업 서비스 가이드와 신청 절차" href="/storage/ncloud_storage_backup_guide.html" >백업 서비스 가이드와 신청 절차</a></li>          
+          <li><a title="백업 서비스 기본 가이드" href="/storage/ncloud-storage-backup-service-basic-guide.html" >백업 서비스 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - Linux Data" href="/storage/ncloud-storage-backup-service-linux-data-guide.html" >백업 서비스 상세 가이드 - Linux Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - 윈도 Data" href="/storage/ncloud-storage-backup-service-windows-data-guide.html" >백업 서비스 상세 가이드 - 윈도 Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Content-Type 변경" href="/storage/ncloud-storage-object-storage-mimetype-contenttype-change-guide.html" >Object Storage Content-Type 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L Content-Type 일괄 적용, 변경" href="/storage/ncloud-storage-object-storage-contenttype-bulk-change-guide.html" >&nbsp;&nbsp; L Content-Type 일괄 적용, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket에 CORS 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-guide.html" >Object Storage Bucket에 CORS 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-api-sdk-guide.html" >&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket 접근 로그 설정" href="/storage/ncloud-storage-object-storage-log-management-guide.html" >Object Storage Bucket 접근 로그 설정</a></li>          
                     
           
           
@@ -764,28 +933,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="MySQL, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, mariadb my.cnf 위치</a></li>          
+          <li><a title="MySQL, MariaDB my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, MariaDB my.cnf 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, mariadb bind-address 위치</a></li>          
+          <li><a title="MySQL, MariaDB bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, MariaDB bind-address 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="CentOS에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="CentOS에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 MariaDB 외부접속 허용</a></li>          
                     
           
           
           
           
           
-          <li><a title="Ubuntu에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="Ubuntu에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 MariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 5.7 설치 방법" href="/database/ncloud-database-mysql-57-install-on-rocky-linux.html" >Rocky Linux에 MySQL 5.7 설치 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 8.0 최신 버전" href="/database/ncloud-database-mysql-8-latest-version-install-on-rocky-linux.html" >Rocky Linux에 MySQL 8.0 최신 버전</a></li>          
                     
           
           
@@ -813,22 +996,122 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Cloud DB MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >Cloud DB MySQL Public 도메인 접속</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html" >MySQL(MARIADB) Replication 생성</a></li>          
+          <li><a title="VPC 환경 Cloud DB for MSSQL 생성" href="/database/ncloud-database-cloud-db-for-mssql-guide.html" >VPC 환경 Cloud DB for MSSQL 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html" >MySQL GTID Replication 상세 가이드</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속" href="/database/ncloud-database-cloud-db-for-mssql-public-domain-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속</a></li>          
                     
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개" href="/database/ncloud-database-cloud-db-for-mssql-setting-manage-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Replication - MySQL, MariaDB" href="#">Replication - MySQL, MariaDB</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL Multi Source Replication 생성" href="/database/ncloud-database-mysql-multi-source-replication.html">MySQL Multi Source Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB Multi Source Replication" href="/database/ncloud-database-mariadb-multi-source-replication.html">MariaDB Multi Source Replication</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Database Migration 서비스" href="#">Database Migration 서비스</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="From MySQL 5.7 To MysQL 5.7" href="/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html">From MySQL 5.7 To MysQL 5.7</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="PostgreSQL" href="#">PostgreSQL</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">CDB PostgreSQL 생성 | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">CDB PostgreSQL 생성 | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html">CDB PostgreSQL Public 도메인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | CentOS" href="/database/ncloud-database-postgresql-install-connect-guide-centos.html">설치형 PostgreSQL | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Ubuntu" href="/database/ncloud-database-postgresql-install-connect-guide-ubuntu.html">설치형 PostgreSQL | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Rocky Linux" href="/database/ncloud-database-postgresql-install-connect-guide-rocky-linux.html">설치형 PostgreSQL | Rocky Linux</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -863,27 +1146,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경" href="/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html" >Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html" >Cloud DB PostgreSQL 생성 | CentOS</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html" >Cloud DB PostgreSQL 생성 | Ubuntu</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html" >Cloud DB PostgreSQL Public 도메인</a></li>          
                     
           
           
@@ -927,6 +1189,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="WAF 서비스 요금 정보" href="/security/ncloud-security-security-monitoring-waf-price-info.html" >WAF 서비스 요금 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Certificate Manager 인증서 등록 방법" href="/security/ncloud-security-certificate-manager-register-ssl-certificate-guide.html" >Certificate Manager 인증서 등록 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="Classic 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_classic_guide.html" >Classic 환경에서 SSL VPN 설정, 접속</a></li>          
                     
           
@@ -935,13 +1218,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li class="active"><a title="VPC 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_vpc_guide.html" >VPC 환경에서 SSL VPN 설정, 접속</a></li>
-                    
-          
-          
-          
-          
-          
-          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
                     
           
           
@@ -971,6 +1247,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="API Key 접근 제한 설정하는 방법" href="/management/ncloud-management-sub-account-api-gateway-access-control-guide.html" >API Key 접근 제한 설정하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="STS 기간 제한 API AccessKey 발급" href="/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html" >STS 기간 제한 API AccessKey 발급</a></li>          
                     
           
@@ -993,6 +1276,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud Insight 설정 가이드" href="/management/ncloud_management_cloud_insight_guide.html" >Cloud Insight 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드" href="/management/ncloud-management-cloud-insight-rule-template-guide.html" >&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드</a></li>          
                     
           
           
@@ -1064,6 +1354,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          
+          
+          <li><a title="PowerShell에서 Ncloud API 호출 샘플" href="/api/ncloud-api-call-powershell-sample.html" >PowerShell에서 Ncloud API 호출 샘플</a></li>          
+                    
+          
+          
+          
       </ul>
    </li>
      
@@ -1105,7 +1402,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Video Player 구현하기 샘플" href="/media/ncloud_media_video_player_sample.html" >Video Player 구현하기 샘플</a></li>          
+          <li><a title="VOD Station 생성 가이드" href="/media/ncloud-media-vod-station-guide.html" >VOD Station 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Video Player Enhancement 가이드" href="/media/ncloud-media-video-player-enhancement-guide.html" >Video Player Enhancement 가이드</a></li>          
                     
           
           
@@ -1135,14 +1439,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 서버 설치 가이드 | CentOS</a></li>          
+          <li><a title="Jenkins 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 설치 가이드 | CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 서버 설치 가이드 | Ubuntu</a></li>          
+          <li><a title="Jenkins 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 설치 가이드 | Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jenkins 설치 가이드 | Rocky Linux" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-rocky-linux.html" >Jenkins 설치 가이드 | Rocky Linux</a></li>          
                     
           
           
@@ -1608,16 +1919,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-            </div>
+              </div>
+              
             
-        
 
-        <!-- Content Column -->
-        <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-
-   <h1 class="post-title-main">VPC 환경에서 SSL VPN 설정하고 접속하는 방법</h1>
-
+            <!-- Content Column -->
+            <div class="col-md-9" id="tg-sb-content">
+              <div class="post-header">
+  
+    <h1 class="post-title-main">VPC 환경에서 SSL VPN 설정하고 접속하는 방법</h1>
+  
 </div>
 
 
@@ -1625,13 +1936,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="post-content" >
 
-   
-   
-    <div class="summary">Ncloud VPC 환경에서 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 설정하고 접속하는 방법입니다</div>
-   
-   
-
+  
     
+      <div class="summary">Ncloud VPC 환경에서 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 설정하고 접속하는 방법입니다</div>
+    
+  
+
+  
     
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
@@ -1664,9 +1975,9 @@ $("#toc_onoff").click(function() {
 
 
 
-    
+  
 
-   <h2 id="개요">개요</h2>
+  <h2 id="개요">개요</h2>
 <p>Ncloud(네이버 클라우드) 외부에서 내부에 구성된 네트워크로 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 VPC 환경에서 설정하고, 서버에 접속하는 방법에 대해 정리해보겠습니다.</p>
 
 <h2 id="ssl-vpn이란">SSL VPN이란?</h2>
@@ -1676,123 +1987,236 @@ $("#toc_onoff").click(function() {
   <li>가상 터널을 통해 사설망과 연결된 사용자 PC는 사설망의 라우팅 및 ACL 정책에 따라 내부 서버에 접근할 수 있습니다.</li>
 </ul>
 
-<h2 id="ssl-vpn-생성-요청">SSL VPN 생성 요청</h2>
-<p>[SSL VPN 생성] 버튼을 클릭합니다.</p>
+<h2 id="ssl-vpn-서비스-위치">SSL VPN 서비스 위치</h2>
+<p>Ncloud 콘솔에서 SSL VPN의 위치는 [<strong>Services</strong>] - [<strong>Security</strong>] - [<strong>SSL VPN</strong>]에 있습니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_01.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-01.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="ssl-vpn-생성">SSL VPN 생성</h2>
+<p>[<strong>SSL VPN 생성</strong>] 버튼을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-02.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>우선 접근할 서버가 속해 있는 VPC를 선택하고, 등록 가능한 접속 ID 개수에 따른 상품을 선택합니다.<br />
 VPC 환경에서는 3, 5, 10, 20, 30, 50, 100, 200, 300, 400, 500개 상품 중에서 선택 가능합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_07.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 700px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-03.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 685px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>VPC 환경의 SSL VPN은 콘솔에서 자동으로 생성하는 것이 아니라 <code class="language-plaintext highlighter-rouge">생성 요청을 하면 Ncloud 담당자가 직접 생성하고 결과를 안내 받는 구조</code>로 되어 있습니다. 
-생성 완료까지 걸리는 기간은 <strong>업무일 기준 2~3일</strong> 정도이며, 생성이 완료되면 SSL VPN 상태가 [운영중]으로 변경되고, 안내 메일이 도착합니다.</p>
+생성 완료까지 걸리는 시간은 <strong>약 10~20분 이내</strong> 이며, 생성이 완료되면 SSL VPN 상태가 [운영중]으로 변경되고, 안내 메일이 도착합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_03.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 500px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-04.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 485px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<p>아래와 같이 생성 요청을 하고 나면 상태가 [생성중] 상태로 표시 됩니다. 2~3일 후 생성 완료 안내 메일이 도착할때까지 기다리시면 됩니다.</p>
+<h2 id="connection-url-check">SSL VPN 생성 완료</h2>
+<p>SSL VPN 생성이 완료되면 아래와 같이 [<strong>IP POOL</strong>]과 [<strong>접속 URL</strong>] 정보를 확인할 수 있는데 SSL VPN Agent 접속 시에 중요한 정보이니 잘 확인해야 합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_04.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
-
-<h2 id="ssl-vpn-생성-완료">SSL VPN 생성 완료</h2>
-<p>SSL VPN 생성이 완료되면 아래와 같은 메일을 받을 수 있습니다. <br />
-메일 내용에는 [<strong>SSL VPN IP POOL</strong>] 정보와 접속 경로 정보가 포함되어 있으니 잘 확인해야 합니다.</p>
-
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b>IP POOL:</b> 특히 [<strong>SSL VPN IP POOL</strong>] 정보는 Ncloud 콘솔에서 확인할 수 없고, 오로지 생성 완료 메일에서만 확인 가능하니 잘 보관해야 합니다.</div>
-
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_05.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 700px; " /><figcaption></figcaption></figure>
-
-<p>생성 완료 메일 확인 후에 콘솔에 접속하면 아래와 같이 [운영중] 으로 상태 메시지가 바뀐 것을 확인할 수 있습니다.</p>
-
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_06.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-05.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="사용자-설정">사용자 설정</h2>
 <p>SSL VPN에 접속할 사용자 정보를 설정합니다.  리스트에서 SSL VPN을 선택하고 [사용자 설정] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_08.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-06.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<p>사용자 정보는 ID, Passowrd, Email, SMS 등을 입력하고 [추가] 버튼을 클릭합니다.<br />
-VPC 환경은 Classic 환경과 달리 이차인증이 필수이므로  SMS와 Email 정보를 함께 입력합니다.</p>
+<p>사용자 정보는 ID, Passowrd, Email, SMS 등을 입력하고 [<strong>추가</strong>] 버튼을 클릭합니다.<br />
+VPC 환경은 이차인증이 필수이므로  SMS와 Email 정보를 함께 입력합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_09.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-07.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>사용자가 추가되면 SSL VPN 정보에 사용자 계정 수(등록된 ID 수)에 숫자가 표시되는 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_10.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-08.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="route-table-설정">Route Table 설정</h2>
-<p>네트워크 설정에서는 우선 접속할 서버가 속해 있는 VPC Subnet의 Route Table에 SSL VPN으로 접근할 수 있게 [<strong>SSL VPN IP POOL</strong>]을 등록해야 합니다.<br />
-아래와 같이 접속할 서버의 상세정보에서 VPC와 Subnet을 확인합니다. 여기서는 Private Subnet에 생성한 서버에 접속할 예정입니다.</p>
+<p>네트워크 설정에서는 우선 접속할 서버가 속해 있는 VPC Subnet의 Route Table에 SSL VPN으로 접근할 수 있게 SSL VPN의 [<strong>IP POOL</strong>]을 등록해야 합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_11.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<ul>
+  <li><strong>접속할 서버 정보 확인</strong><br />
+아래와 같이 접속할 서버의 정보에서 VPC와 Subnet을 확인합니다. 여기서는 Private Subnet에 생성한 서버에 접속할 예정입니다.</li>
+</ul>
 
-<p>[VPC] - [Route Table]에서 해당 VPC의 Private Subnet을 선택하고 [Routes 설정] 버튼을 클릭합니다.<br />
-Public Subnet에 생성한 서버에 접근해야 할 경우에는 public-table을 선택하고 설정하시면 됩니다.</p>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-09.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_12.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<h3 id="vpc-서비스-위치">VPC 서비스 위치</h3>
+<p>[<strong>VPC</strong>] 서비스는 [<strong>Console</strong>] - [<strong>Services</strong>] - [<strong>Networking</strong>]에 위치해 있습니다.<br />
+그리고, 아래와 같이 [<strong>VPC Management</strong>], [<strong>Subnet Management</strong>], [<strong>Route Table</strong>] 메뉴를 확인할 수 있습니다.</p>
 
-<p>[Destination]에 SSL VPN 생성 완료 메일에서 확인한 [<strong>SSL VPN IP POOL</strong>] 정보를 등록하고, [Target Type]은 SSLVPN을 선택, [Target Name]은 위에서 생성한 SSL VPN 이름을 선택하고 [생성] 버튼을 클릭합니다.</p>
+<figure>
+  <img class="docimage" src="/images/networking/ncloud-networking-vpc-subnet-create-01.png" alt="Ncloud VPC 환경에서 VPC, Subnet 생성" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_13.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<p>[<strong>VPC</strong>] - [<strong>Route Table</strong>]에서 해당 VPC의 Private Subnet을 선택하고 [<strong>Routes 설정</strong>] 버튼을 클릭합니다.<br />
+(Public Subnet에 생성한 서버에 접근해야 할 경우에는 public-table을 선택하고 설정하시면 됩니다.)</p>
+
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-10.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>[<strong>Destination</strong>]에 생성된 SSL VPN 정보에서 확인한 [<strong>IP POOL</strong>] 정보를 등록하고, [<strong>Target Type</strong>]은 SSLVPN을 선택, [<strong>Target Name</strong>]은 위에서 생성한 SSL VPN 이름을 선택하고 [생성] 버튼을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-11.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="acg-설정">ACG 설정</h2>
-<p>다음으로 서버에 적용된 ACG에 [<strong>SSL VPN IP POOL</strong>]을 등록해야 합니다.<br />
-우선 SSL VPN을 통해서 접속할 서버를 선택하고 [ACG 수정] 버튼을 클릭해서 적용된 ACG를 확인합니다.</p>
+<p>다음으로 서버에 적용된 ACG에 SSL VPN의 [<strong>IP POOL</strong>]을 등록해야 합니다.<br />
+우선 SSL VPN을 통해서 접속할 서버를 선택하고 [<strong>ACG 수정</strong>] 버튼을 클릭해서 적용된 ACG를 확인합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_14.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-12.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>ACG 수정 화면에서 현재 적용된 ACG 이름을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_15.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-13.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<p>[Server] - [ACG]에서 위에서 확인한 ACG를 선택하고 [ACG 설정]을 클릭합니다.</p>
+<p>[<strong>Server</strong>] - [<strong>ACG</strong>]에서 위에서 확인한 ACG를 선택하고 [ACG 설정]을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_16.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-14.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<p>ACG 규칙 설정 화면에서 위에서 확인했던 [<strong>SSL VPN IP POOL</strong>]을 접근 소스에 입력하고, 필요한 포트들을 등록합니다. 
+<p>ACG 규칙 설정 화면에서 위에서 확인했던 [<strong>IP POOL</strong>]을 접근 소스에 입력하고, 필요한 포트들을 등록합니다. 
 기본이 되는 프로토콜과 포트는 리눅스 서버 접속용 TCP 22, 윈도우 서버 접속용 TCP 3389, Ping 확인용 ICMP 등입니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_17.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-15.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="agent-다운로드">Agent 다운로드</h2>
 <p>SSL VPN 접속을 위한 Agent를 다운로드 합니다.</p>
 
 <ul>
-  <li><a href="https://guide.ncloud-docs.com/docs/security-5-1-windowsdownload" target="_blank" style="word-break:break-all;">윈도우 용 다운로드</a></li>
-  <li><a href="https://guide.ncloud-docs.com/docs/security-5-1-macdownload" target="_blank" style="word-break:break-all;">맥 용 다운로드</a></li>
+  <li><a href="https://guide.ncloud-docs.com/docs/sslvpn-download" target="_blank" style="word-break:break-all;">SSL VPN Agent 다운로드</a></li>
 </ul>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_classic_guide_11.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-16.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="agent-접속">Agent 접속</h2>
-<p>Agent 프로그램, BIG-IP Edge Client를 설치하고 실행하면 다음과 같은 화면을 볼 수 있습니다.<br />
-Agent에는 Classic 환경 SSL VPN 서버(Ncloud-kr-01)가 기본으로 설정되어 있는데, VPC 환경 SSL VPN 서버 주소로 바꾸기 위해 [연결끊기] 클릭해서 연결을 끊고, [서버 변경] 버튼을 클릭합니다.</p>
+<p>Agent 프로그램, BIG-IP Edge Client를 설치하고 실행하면 다음과 같은 화면을 볼 수 있습니다. 
+서버 선택 창에 위에서 생성했던 SSL VPN 정보에서 확인했던 [<strong>접속 URL</strong>] 주소를 입력하고, [다음] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_18.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 557px; " /><figcaption></figcaption></figure>
+<div class="alert alert-success" role="alert"><i class="far fa-check-square"></i> <b>Tip:</b> 
+<a href="#connection-url-check">접속 URL 확인하는 방법 <i class="fa-solid fa-arrow-up-from-bracket"></i></a><br />
+</div>
 
-<p>서버 선택 창에 <strong>https://sslvpn-kr-vpc-01.ncloud.com</strong> 주소를 입력하고, [다음] 버튼을 클릭합니다.</p>
-
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_19.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 557px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-17.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 557px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>주소 변경 후에 [연결] 버튼을 클릭하면 로그인 화면이 나타나는데 위에서 설정했던 VPN 접속용 아이디와 Password를 입력하고 [로그온] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_20.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 650px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_20.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 650px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>그리고 도착한 OTP 인증 번호를 입력합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_21.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-18.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 710px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<p>SSL VPN에 제대로 연결이 되었는지 확인하기 위해서 cmd 창을 띄워서 ipconfig 명령어를 입력하면 아래 화면처럼 SSL VPN 주소로 설정된 어탭터에  [<strong>SSL VPN IP POOL</strong>]에 해당하는 IP가 할당된 것을 확인할 수 있습니다.</p>
+<p>SSL VPN에 제대로 연결이 되었는지 확인하기 위해서 cmd 창을 띄워서 ipconfig 명령어를 입력하면 아래 화면처럼 SSL VPN 주소로 설정된 어탭터에  [<strong>IP POOL</strong>]에 해당하는 IP가 할당된 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_22.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-19.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="서버-접속">서버 접속</h2>
 <p>이제 SSL VPN이 연결된 상태에서 서버에 접속해보겠습니다.<br />
 PuTTY 를 실행하고 접속할 서버의 IP를 입력합니다.<br />
 이때 서버 IP는 콘솔에 있는 서버 정보에서 <strong>비공인 IP</strong>에 표시되는 IP를 입력하면 됩니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_23.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-20.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="agent-기타-설정">Agent 기타 설정</h2>
 <p>SSL VPN Agent에는 몇가지 추가 기능이 있는데 아래에서 확인해보겠습니다.</p>
@@ -1800,83 +2224,170 @@ PuTTY 를 실행하고 접속할 서버의 IP를 입력합니다.<br />
 <h3 id="트래픽-그래프">트래픽 그래프</h3>
 <p>Agent 창에서 [그래프 보기] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_24.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 557px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-21.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 557px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>여기서는 SSL VPN이 연결된 상태의 트래픽을 그래프로 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_25.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 557px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-22.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 557px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>다음으로 [상세 보기] 버튼을 클릭하면 접속 세부 정보, 로그, 통계, 알림, 라우팅 테이블, IP설정 등의 정보를 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_26.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-23.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 777px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<h2 id="스펙-변경">스펙 변경</h2>
-<p>처음에 설정한 접속 가능 ID 개수를 변경하고 싶을 경우 SSL VPN을 선택하고 [스펙 변경] 버튼을 클릭합니다.</p>
+<h2 id="설정-변경">설정 변경</h2>
+<p>처음에 설정한 접속 가능 ID 개수를 변경하고 싶을 경우 SSL VPN을 선택하고 [SSL VPN 설정 변경] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_27.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-24.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
+<h3 id="id-개수-변경">ID 개수 변경</h3>
 <p>3, 5, 10, 20, 30, 50, 100, 200, 300, 400, 500개 상품 중에서 원하는 개수로 변경할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_28.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 700px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-25.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 685px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h3 id="인증-로그-수집">인증 로그 수집</h3>
+<p>Ncloud SSN VPN은 이용자가 SSN VPN에 접속 인증한 로그를 수집할 수 있습니다. [<strong>설정</strong>] 버튼을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-26.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 685px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>인증 로그 수집을 활성화 하면 [<strong>Cloud Log Analytics</strong>]에 로그를 전달하여 저장합니다. 해당 상품을 미사용중이면 Cloud Log Analytics 상품 이용 신청을 한 후에 사용하시면 됩니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-27.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 685px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<ul>
+  <li>Cloud Log Analytics에서 인증 로그 확인</li>
+</ul>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-30.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="주의사항">주의사항</h2>
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b>접속 오류:</b> SSL VPN이 연결된 상태에서 새로운 서버를 생성하고 접속을 시도하면 아래와 같은 오류 메시지가 뜨면서 서버 접속이 되지 않습니다.  이때는 SSL VPN의 연결을 끊었다가 다시 연결해야 새로 생성한 서버에 접속할 수 있습니다.</div>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_classic_guide_23.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 700px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncp_security_ssl_vpn_classic_guide_23.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 700px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="삭제">삭제</h2>
 <p>삭제를 원할 경우 SSL VPN을 선택하고 상단의 [삭제] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_29.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-28.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>하지만, 바로 삭제가 되지 않고 다음과 같이 “Route Table에서 Target으로 지정된 Route 정보를 모두 삭제해야 삭제가 가능합니다”라는 메시지가 뜹니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_30.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 500px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_30.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 500px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>[VPC] - [Route Table]에서 해당 VPC의 Private Subnet을 선택하고 [Routes 설정] 버튼을 클릭해서 등록된 설정을 확인하고 [X] 버튼을 클릭해서 설정을 삭제합니다. 
 Route Table 정보를 삭제한 후에 SSL VPN을 삭제하시면 됩니다.</p>
 
-<figure><img class="docimage" src="/images/security/ncp_security_ssl_vpn_vpc_guide_31.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/security/ncloud-security-ssl-vpn-vpc-guide-29.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 SSL VPN 설정하고 접속하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
-  <li>SSL VPN 사용 가이드(VPC)
+  <li>Ncloud SSL VPN 개요
     <ul>
-      <li><a href="https://guide.ncloud-docs.com/docs/security-security-5-2" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/security-security-5-2</a></li>
+      <li><a href="https://guide.ncloud-docs.com/docs/sslvpn-overview" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/sslvpn-overview</a></li>
     </ul>
   </li>
-  <li>SSL VPN 요금
+  <li>Ncloud SSL VPN 사용 가이드 - VPC
     <ul>
-      <li><a href="https://www.ncloud.com/product/security/sslVpn" target="_blank" style="word-break:break-all;">https://www.ncloud.com/product/security/sslVpn</a></li>
+      <li><a href="https://guide.ncloud-docs.com/docs/sslvpn-start-vpc" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/sslvpn-start-vpc</a></li>
     </ul>
   </li>
 </ol>
 
-   
+  
     <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        <a href="/tag/tag_vpc.html" class="btn btn-default navbar-btn cursorNorm" role="button">vpc</a>
+      
+        <b>Tags:
+        </b>
         
         
+          
+            <a
+              href="/tag/tag_vpc.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">vpc</a>
+          
         
-        <a href="/tag/tag_ssl.html" class="btn btn-default navbar-btn cursorNorm" role="button">ssl</a>
+          
+            <a
+              href="/tag/tag_ssl.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">ssl</a>
+          
         
+          
+            <a
+              href="/tag/tag_vpn.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">vpn</a>
+          
         
-        
-        <a href="/tag/tag_vpn.html" class="btn btn-default navbar-btn cursorNorm" role="button">vpn</a>
-        
-        
-        
+      
     </div>
-   
+  
 
 </div>
 
 <hr class="shaded"/>
+
+
 
 <footer>
     <div class="row">
@@ -1902,9 +2413,9 @@ Route Table 정보를 삭제한 후에 SSL VPN을 삭제하시면 됩니다.</p>
           </a>
         		
         </div>
-        &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+        &copy;2023 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2021-11-02<br/> Site last generated: 2022-09-28 <br />        
+        <span>Page last updated:</span> 2023-07-26<br/> Site last generated: 2023-10-19 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -1915,57 +2426,33 @@ Route Table 정보를 삭제한 후에 SSL VPN을 삭제하시면 됩니다.</p>
 
 
 
-
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
         </div>
-    <!-- /.row -->
+        
+          
+          <div class="side-banner-right">
+  <a
+    href="https://hyphen.im/benefit/navercloud-event"
+    id="side-banner-right-01"
+    target="_blank"
+    class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
 </div>
-<!-- /.container -->
-</div>
-
-    <div class="side-banner-right">    
-    <a href="https://hyphen.im/benefit/navercloud-event" id="side-banner-right-01" target="_blank" class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
-</div>  
-
-<!-- /#main -->
-    </div>
-<script>
-    $(function() {
-        $('svg').click(function() {
+        
+        <!-- /#main -->
+      </div>
+      <script>
+        $(function() {
+          $('svg').click(function() {
             $(this).parent('form').submit();
+          });
         });
-    });
-</script>
+      </script>
 
-
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4Q6RVEFJ3S');
-</script>
-
-  
-
-  
-  <!-- NCloud Real User Analytics -->
-<script>
-  (function() {
-    var s = document.getElementsByTagName('script')[0]
-      , p = document.createElement('script');
-    p.async = 'async';
-    p.src = 'https://rua-api.ncloud.com/api/v1/beacon/boomerang/collect/'+
-      'e4c80491-1665-457b-9cec-550a5f554dde';
-    s.parentNode.insertBefore(p, s);
-  })();
-</script>
-
-  
-
-</body>
+      
+    </body>
+  </body>
 </html>
-
 

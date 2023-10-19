@@ -1,0 +1,2453 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5XRCSF3');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 윈도우 데이터 영역을 백업하는 방법입니다">
+<meta name="keywords" content="backup, windows,  BackUp, Storage, Windows, 윈도우">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Ncloud 백업 서비스 사용 가이드 - Windows Data" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:description" content="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 윈도우 데이터 영역을 백업하는 방법입니다" />
+<link rel="canonical" href="https://docs.3rdeyesys.com/storage/ncloud-storage-backup-service-windows-data-guide.html" />
+<meta property="og:url" content="https://docs.3rdeyesys.com/storage/ncloud-storage-backup-service-windows-data-guide.html" />
+<meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-06T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ncloud 백업 서비스 사용 가이드 - Windows Data" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 윈도우 데이터 영역을 백업하는 방법입니다","headline":"Ncloud 백업 서비스 사용 가이드 - Windows Data","url":"https://docs.3rdeyesys.com/storage/ncloud-storage-backup-service-windows-data-guide.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+<title>Ncloud 백업 서비스 사용 가이드 - Windows Data | 써드아이시스템 기술문서</title>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css" />
+<link rel="stylesheet" href="/css/modern-business.css"> <!-- Latest compiled and minified CSS -->
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"--> <link rel="stylesheet" href="/css/customstyles.css"> <link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-ncloud.css">
+
+
+<script src="/js/jquery.341.min.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
+
+<script src="/js/jquery.cookie.141.min.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script-->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="/js/bootstrap.341.min.js"></script>
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+<!--script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script-->
+<!-- Anchor.js --><script src="/js/anchor.420.min.js"> </script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<link rel="alternate"
+  type="application/rss+xml"
+  title="3RDEYESYSTEM Technical Documentations"
+  href="https://docs.3rdeyesys.com/feed.xml">
+
+
+    <script>
+      $(document).ready(function() {
+
+// Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '',
+          accordion: true,
+          openClass: 'active', // open
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: 'navgoco',
+            expires: false,
+            path: '/'
+          },
+          slide: {
+            duration: 400,
+            easing: 'swing'
+          }
+        });
+
+        window_width = $(window).width();
+        if (window_width <= 990) { // 모바일 환경에서는 사이드바 접기
+          $("#mysidebar").navgoco('toggle', false);
+        }
+
+        $("#collapseAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', false);
+        });
+
+        $("#expandAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', true);
+        });
+
+      });
+    </script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <script>
+      $(document).ready(function() {
+        $("#tg-sb-link").click(function() {
+          if (!$("#tg-sb-link").attr("hide_sidebar")) {
+            $("#tg-sb-sidebar").toggle();
+            $("#tg-sb-content").toggleClass('col-md-9');
+            $("#tg-sb-content").toggleClass('col-md-12');
+            $("#tg-sb-icon").toggleClass('fa-toggle-on');
+            $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          }
+        });
+      });
+    </script>
+    
+
+    
+      <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6933218466698885"
+  crossorigin="anonymous"></script>
+    
+
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XRCSF3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <header>
+      <!-- Navigation -->
+<nav class="navbar2 navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fas fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> 3RDEYESYS Tech Docs</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center">
+                <!-- toggle sidebar button -->                
+                <li><a id="tg-sb-link" hide_sidebar="" href="#"><i id="tg-sb-icon" class="fas fa-toggle-on"></i> Nav</a></li>                
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                                
+                <li><a href="/update/update.html" class="new_dot_lv_2">Update</a></li>
+                
+                
+                                
+                <li><a href="/news/news.html" class="new_dot_lv_2">News</a></li>
+                
+                
+                                
+                <li><a href="/faq/faq.html" class="new_dot_lv_2">FAQ</a></li>
+                
+                
+                                
+                <li><a href="/tag/tag_archives_overview.html" >Tag</a></li>
+                
+                
+                
+                
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="https://3rdeyesys.com/" target="_blank" rel="noopener">Company</a></li>                                
+                
+                
+                
+                <li><a href="https://www.3rdeyesys.com/question/" target="_blank" rel="noopener">1:1 문의하기</a></li>                                
+                
+                 
+                               
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">                        
+                            <div style="width:223px"><form action="/search/search.html" method="get">
+	<input type="search" name="q" id="search-input-nav" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" placeholder="Search">
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+	<input type="submit" value="Search" style="display: none;">
+</form></div>                                               
+                    </div>                    
+                    <!--end search-->
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+      
+    </header>
+    <!-- Page Content -->
+    
+        <div class="container">
+        
+        <div id="main">
+          <!-- Content Row -->
+          <div class="row">
+            
+              
+              <!-- Sidebar Column -->
+              <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Technical Documentation </li>
+  
+  
+  
+  <li>
+      <a title="Compute" href="#" ><i class="fa-solid fa-server fa-xs"></i> Compute</a>
+      <ul>
+          
+          
+          
+          <li><a title="VPC 환경에서 서버 생성하는 방법" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성하는 방법</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Classic 환경 Linux 서버 접속 방법" href="#">Classic 환경 Linux 서버 접속 방법</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html">공인IP 없을 때</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html">공인IP 있을 때</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="서버 스펙 변경 제한 사항" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경 제한 사항</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="디스크(스토리지) 설정" href="#">디스크(스토리지) 설정</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html">스토리지 추가 생성 기본 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html">Linux 디스크 추가 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html">Linux 서버 디스크 LVM 구성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html">Windows 디스크 추가 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-linux.html">Linux 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-windows.html">Windows 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Micro 서버 제한 사항" href="/compute/ncloud_compute_server_micro_type_limit.html" >Classic 환경 Micro 서버 제한 사항</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 Micro 서버 생성하기" href="/compute/ncloud-compute-micro-type-server-create-vpc.html" >VPC 환경에서 Micro 서버 생성하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 정지 시 요금할인" href="/compute/ncloud_compute_server_stop_price.html" >서버 정지 시 요금할인</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 SSH 접속 보안 설정하기" href="/compute/ncloud_compute_server_ssh_security_setting.html" >Linux 서버 SSH 접속 보안 설정하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 관리자 비밀번호 초기화하기" href="/compute/ncloud-compute-server-admin-password-reset.html" >서버 관리자 비밀번호 초기화하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="서버 인증키 변경하는 방법" href="/compute/ncloud-compute-server-change-authentication-key.html" >서버 인증키 변경하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Linux 서버 SSH Key로 접속하는 방법" href="/compute/ncloud-compute-server-connect-by-ssh-key.html" >Linux 서버 SSH Key로 접속하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="X-Forwarded-For로 Client IP 기록하기" href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html" >X-Forwarded-For로 Client IP 기록하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https 리다이렉트 - Apache/CentOS</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https 리다이렉트 - Apache/Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https 리다이렉트-Apache/Rocky Linux" href="/compute/ncloud-compute-server-http-to-https-rocky-linux.html" >https 리다이렉트-Apache/Rocky Linux</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Repository 변경해 리눅스 패키지 설치" href="/compute/ncloud_compute_server_repository_change_on_private_network.html" >Repository 변경해 리눅스 패키지 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 서버 소개" href="/compute/ncloud-compute-server-rocky-linux-guide.html" >Rocky Linux 서버 소개</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 미러 사이트 문제 해결" href="/compute/ncloud-compute-server-rocky-linux-repository-mirror-site-error-troubleshooting.html" >Rocky Linux 미러 사이트 문제 해결</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="AutoScaling" href="#">AutoScaling</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="Classic 환경 AutoScaling 설정" href="/compute/ncloud_compute_autoscaling_classic_guide.html">Classic 환경 AutoScaling 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPC 환경 AutoScaling 설정" href="/compute/ncloud-compute-autoscaling-vpc-guide.html">VPC 환경 AutoScaling 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Auto Scaling 서비스 제한사항" href="/compute/ncloud_compute_autoscaling_limit.html">Auto Scaling 서비스 제한사항</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="AutoScaling 이벤트 설정 방법" href="/compute/ncloud_compute_autoscaling_event_setting.html">AutoScaling 이벤트 설정 방법</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Cloud Functions" href="#">Cloud Functions</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 cmd에서 C#으로 작성하기" href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_cmd.html">Cloud Functions Action을 cmd에서 C#으로 작성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions Action을 Visual Studio에서 C#으로 작성하기" href="/compute/ncloud_compute_cloud_functions_dotnet_csharp_vs.html">Cloud Functions Action을 Visual Studio에서 C#으로 작성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions에서 gmail을 통해 SMTP로 메일 발송" href="/compute/ncloud_compute_cloud_functions_php_smtp_via_gmail_with_phpmailer.html">Cloud Functions에서 gmail을 통해 SMTP로 메일 발송</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="LAMP" href="#">LAMP</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="LAMP 기본 환경 설정 정보" href="/compute/ncloud_compute_lamp_config_basic.html">LAMP 기본 환경 설정 정보</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LAMP(CentOS) 기본 명령어와 환경설정 파일 위치" href="/compute/ncloud_compute_lamp_config_centos.html">LAMP(CentOS) 기본 명령어와 환경설정 파일 위치</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LAMP(Ubuntu) 기본 명령어와 환경설정 파일 위치" href="/compute/ncloud_compute_lamp_config_ubuntu.html">LAMP(Ubuntu) 기본 명령어와 환경설정 파일 위치</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법" href="/compute/ncloud-compute-lamp-apache-ssl-setting-rocky-linux-guide.html">Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="NginX" href="#">NginX</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CentOS에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux에 NginX 설치, 설정" href="/compute/ncloud-compute-lemp-nginx-install-setting-rocky-linux-guide.html">Rocky Linux에 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CentOS NginX SSL 인증서 설정" href="/compute/ncloud_compute_lemp_nginx_ssl_setting_centos_guide.html">CentOS NginX SSL 인증서 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu NginX SSL 인증서 설정" href="/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html">Ubuntu NginX SSL 인증서 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="로드밸런서 환경 Client IP 확인" href="/compute/ncloud-compute-nginx-client-ip-logging-guide.html">로드밸런서 환경 Client IP 확인</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CentOS 6에서 pip - Python 설치하기" href="/compute/ncloud_compute_server_pip_python_install_centos6.html" >CentOS 6에서 pip - Python 설치하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic환경 서버이미지 타 계정 공유" href="/compute/ncloud_compute_server_image_share_classic.html" >Classic환경 서버이미지 타 계정 공유</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Windows 서버이미지 VPC 환경으로 복제" href="/compute/ncloud_compute_server_windows_server_image_copy_classic_to_vpc.html" >Classic 환경 Windows 서버이미지 VPC 환경으로 복제</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Containers" href="#" ><i class="fa-solid fa-dharmachakra fa-xs"></i> Containers</a>
+      <ul>
+          
+          
+          
+          <li><a title="Kubernetes 생성 및 제어 | Linux" href="/containers/ncloud-containers-kubernetes-service-start-guide-linux.html" >Kubernetes 생성 및 제어 | Linux</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Kubernetes 생성 및 제어 | Windows" href="/containers/ncloud-containers-kubernetes-service-start-guide-windows.html" >Kubernetes 생성 및 제어 | Windows</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Networking" href="#" ><i class="fa-solid fa-network-wired fa-xs"></i> Networking</a>
+      <ul>
+          
+          
+          
+          <li><a title="주요 서비스 포트(Port) 정보" href="/networking/ncloud_networking_service_port_info.html" >주요 서비스 포트(Port) 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 구성요소" href="/networking/ncloud_networking_vpc_overview.html" >VPC 구성요소</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="ACG와 NACL 비교" href="/networking/ncloud_networking_vpc_acg_nacl.html" >ACG와 NACL 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic Load Balancer ACG 설정" href="/networking/ncloud_networking_load_balancer_acg.html" >Classic Load Balancer ACG 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC Load Balancer 상품군의 변화" href="/networking/ncloud_networking_vpc_load_balancer.html" >VPC Load Balancer 상품군의 변화</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Application Load Balancer 생성하기" href="/networking/ncloud_networking_load_balancer_application_lb.html" >Application Load Balancer 생성하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Load Balancer에서 http to https" href="/networking/ncloud_networking_load_balancer_http_to_https.html" >Load Balancer에서 http to https</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="로드밸런서 접속 로그 확인하는 방법" href="/networking/ncloud-networking-load-balancer-application-lb-access-log.html" >로드밸런서 접속 로그 확인하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Load Balancer 인증서 교체하는 방법" href="/networking/ncloud-networking-load-balancer-certificate-change.html" >Load Balancer 인증서 교체하는 방법</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Proxy Protocol로 Client IP 확인" href="#">Proxy Protocol로 Client IP 확인</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CentOS 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html">CentOS 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html">Ubuntu 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-rocky-linux.html">Rocky Linux 서버에서 확인</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Subnet 과 NAT Gateway 비교" href="/networking/ncloud_networking_vpc_subnet_natgw.html" >Subnet 과 NAT Gateway 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 NAT Gateway 설정하기" href="/networking/ncloud_networking_natgw_routetb.html" >VPC 환경에서 NAT Gateway 설정하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Global DNS 사용 가이드 - 도메인 추가" href="/networking/ncloud_networking_global_dns_guide.html" >Global DNS 사용 가이드 - 도메인 추가</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC Peering 생성 가이드" href="/networking/ncloud_networking_vpc_peering_guide.html" >VPC Peering 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="IPsecVPN과 FortiGate 장비 연동" href="/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html" >IPsecVPN과 FortiGate 장비 연동</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="내 공인 IP 주소 확인하기" href="/networking/ncloud-networking-find-my-ip-address.html" >내 공인 IP 주소 확인하기</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Storage" href="#" ><i class="fa-solid fa-hdd fa-xs"></i> Storage</a>
+      <ul>
+          
+          
+          
+          <li><a title="네이버 클라우드 스토리지 비교" href="/storage/ncloud_storage_compare.html" >네이버 클라우드 스토리지 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AWS CLI를 이용 Object Storage 접속" href="/storage/ncloud_storage_object_storage_aws_cli_connect.html" >AWS CLI를 이용 Object Storage 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Lifecycle 정책 설정" href="/storage/ncloud_storage_object_storage_lifecycle_management.html" >Object Storage Lifecycle 정책 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법" href="/storage/ncloud_storage_object_storage_transfer_to_archive_storage.html" >Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage 연동이 필수인 서비스" href="/storage/ncloud_storage_object_storage_required_service.html" >Object Storage 연동이 필수인 서비스</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CloudBerry Explorer 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_cloudberry_explorer.html" >CloudBerry Explorer 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="S3 Browser 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_s3browser.html" >S3 Browser 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cyberduck 사용방법" href="/storage/ncloud_storage_object_storage_s3_client_cyberduck.html" >Cyberduck 사용방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage CLI 활용 - Windows" href="/storage/ncloud_storage_archive_storage_cli_windows_guide.html" >Archive Storage CLI 활용 - Windows</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage API 인증 토큰 생성" href="/storage/ncloud_storage_archive_storage_api_access_token_create.html" >Archive Storage API 인증 토큰 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Archive Storage API - 오브젝트 조회" href="/storage/ncloud_storage_archive_storage_api_get_container_by_php.html" >Archive Storage API - 오브젝트 조회</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="NAS 볼륨 Linux 서버에 마운트하기" href="/storage/ncloud_storage_nas_vpc_guide.html" >NAS 볼륨 Linux 서버에 마운트하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 기본 가이드" href="/storage/ncloud-storage-backup-service-basic-guide.html" >백업 서비스 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - Linux Data" href="/storage/ncloud-storage-backup-service-linux-data-guide.html" >백업 서비스 상세 가이드 - Linux Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li class="active"><a title="백업 서비스 상세 가이드 - 윈도 Data" href="/storage/ncloud-storage-backup-service-windows-data-guide.html" >백업 서비스 상세 가이드 - 윈도 Data</a></li>
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Content-Type 변경" href="/storage/ncloud-storage-object-storage-mimetype-contenttype-change-guide.html" >Object Storage Content-Type 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L Content-Type 일괄 적용, 변경" href="/storage/ncloud-storage-object-storage-contenttype-bulk-change-guide.html" >&nbsp;&nbsp; L Content-Type 일괄 적용, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket에 CORS 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-guide.html" >Object Storage Bucket에 CORS 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-api-sdk-guide.html" >&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket 접근 로그 설정" href="/storage/ncloud-storage-object-storage-log-management-guide.html" >Object Storage Bucket 접근 로그 설정</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Database" href="#" ><i class="fa-solid fa-database fa-xs"></i> Database</a>
+      <ul>
+          
+          
+          
+          <li><a title="설치형 DB와 관리형 Cloud DB 비교" href="/database/ncloud_database_compare.html" >설치형 DB와 관리형 Cloud DB 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="MySQL DB 자동백업 방법" href="/database/ncloud_database_mysql_auto_backup.html" >MySQL DB 자동백업 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="MySQL, MariaDB my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, MariaDB my.cnf 위치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="MySQL, MariaDB bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, MariaDB bind-address 위치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 MariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ubuntu에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 MariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 5.7 설치 방법" href="/database/ncloud-database-mysql-57-install-on-rocky-linux.html" >Rocky Linux에 MySQL 5.7 설치 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 8.0 최신 버전" href="/database/ncloud-database-mysql-8-latest-version-install-on-rocky-linux.html" >Rocky Linux에 MySQL 8.0 최신 버전</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="CentOS MySQL Object Storage 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html" >CentOS MySQL Object Storage 백업</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ubuntu MySQL Object Storage 백업" href="/database/ncloud_database_mysql_object_storage_auto_backup_ubuntu.html" >Ubuntu MySQL Object Storage 백업</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경 Cloud DB for MySQL 생성" href="/database/ncloud_database_cloud_db_for_mysql_guide.html" >VPC 환경 Cloud DB for MySQL 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경 Cloud DB for MSSQL 생성" href="/database/ncloud-database-cloud-db-for-mssql-guide.html" >VPC 환경 Cloud DB for MSSQL 생성</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속" href="/database/ncloud-database-cloud-db-for-mssql-public-domain-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개" href="/database/ncloud-database-cloud-db-for-mssql-setting-manage-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Replication - MySQL, MariaDB" href="#">Replication - MySQL, MariaDB</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL Multi Source Replication 생성" href="/database/ncloud-database-mysql-multi-source-replication.html">MySQL Multi Source Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB Multi Source Replication" href="/database/ncloud-database-mariadb-multi-source-replication.html">MariaDB Multi Source Replication</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Database Migration 서비스" href="#">Database Migration 서비스</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="From MySQL 5.7 To MysQL 5.7" href="/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html">From MySQL 5.7 To MysQL 5.7</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="PostgreSQL" href="#">PostgreSQL</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">CDB PostgreSQL 생성 | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">CDB PostgreSQL 생성 | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html">CDB PostgreSQL Public 도메인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | CentOS" href="/database/ncloud-database-postgresql-install-connect-guide-centos.html">설치형 PostgreSQL | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Ubuntu" href="/database/ncloud-database-postgresql-install-connect-guide-ubuntu.html">설치형 PostgreSQL | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Rocky Linux" href="/database/ncloud-database-postgresql-install-connect-guide-rocky-linux.html">설치형 PostgreSQL | Rocky Linux</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="MySQL DB root Password 설정, 변경" href="/database/ncloud_database_mysql_root_password_set_update_guide.html" >MySQL DB root Password 설정, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="MySQL 복구 시 ERROR 1227 해결" href="/database/ncloud_database_cdb_mysql_restore_error_1227_troubleshooting.html" >MySQL 복구 시 ERROR 1227 해결</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB MySQL 읽기 부하 분산 | Classic 환경" href="/database/ncloud-database-cloud-db-for-mysql-read-load-balancing.html" >Cloud DB MySQL 읽기 부하 분산 | Classic 환경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB MySQL 읽기 부하 분산 | Network LB | VPC 환경" href="/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-lb.html" >Cloud DB MySQL 읽기 부하 분산 | Network LB | VPC 환경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경" href="/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html" >Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Security" href="#" ><i class="fa-solid fa-shield fa-xs"></i> Security</a>
+      <ul>
+          
+          
+          
+          <li><a title="Security 서비스 요약" href="/security/ncloud_security_service_summary.html" >Security 서비스 요약</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Ncloud vs On-Premise Security 비교" href="/security/ncloud_security_onpremise_compare.html" >Ncloud vs On-Premise Security 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="ACG 설정 기본 가이드" href="/security/ncloud_security_acg_guide.html" >ACG 설정 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Custom ACG 설정 예시" href="/security/ncloud-security-acg-setting-sample.html" >Custom ACG 설정 예시</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="WAF 서비스 요금 정보" href="/security/ncloud-security-security-monitoring-waf-price-info.html" >WAF 서비스 요금 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Certificate Manager 인증서 등록 방법" href="/security/ncloud-security-certificate-manager-register-ssl-certificate-guide.html" >Certificate Manager 인증서 등록 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_classic_guide.html" >Classic 환경에서 SSL VPN 설정, 접속</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="VPC 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_vpc_guide.html" >VPC 환경에서 SSL VPN 설정, 접속</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Management" href="#" ><i class="fa-solid fa-chart-line fa-xs"></i> Management</a>
+      <ul>
+          
+          
+          
+          <li><a title="Classic 환경 vs VPC 환경 비교" href="/management/ncloud_management_classic_vs_vpc_guide.html" >Classic 환경 vs VPC 환경 비교</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Sub Account 생성 가이드" href="/management/ncloud_management_sub_account_guide.html" >Sub Account 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="API Key 접근 제한 설정하는 방법" href="/management/ncloud-management-sub-account-api-gateway-access-control-guide.html" >API Key 접근 제한 설정하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="STS 기간 제한 API AccessKey 발급" href="/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html" >STS 기간 제한 API AccessKey 발급</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Monitoring 서비스 설정" href="/management/ncloud_management_classic_monitoring_guide.html" >Classic 환경 Monitoring 서비스 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Windows 서버 모니터링 성능 정보 수집 오류 해결 방법" href="/management/ncloud_management_monitoring_win_perf_data_error_troubleshoot.html" >Windows 서버 모니터링 성능 정보 수집 오류 해결 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Insight 설정 가이드" href="/management/ncloud_management_cloud_insight_guide.html" >Cloud Insight 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드" href="/management/ncloud-management-cloud-insight-rule-template-guide.html" >&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Webservice Monitoring System 가이드" href="/management/ncloud_management_webservice_monitoring_system_guide.html" >Webservice Monitoring System 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Webservice Monitoring System 스텝" href="/management/ncloud_management_webservice_monitoring_system_step_guide.html" >Webservice Monitoring System 스텝</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Analytics" href="#" ><i class="fa-solid fa-chart-bar fa-xs"></i> Analytics</a>
+      <ul>
+          
+          
+          
+          <li><a title="Cloud Log Analytics 수집 로그 유형" href="/analytics/ncloud_analytics_cloud_log_analytics_info.html" >Cloud Log Analytics 수집 로그 유형</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Log Analytics 설정 가이드" href="/analytics/ncloud_analytics_cloud_log_analytics_guide.html" >Cloud Log Analytics 설정 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="API" href="#" ><i class="fa-solid fa-code-branch fa-xs"></i> API</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_php_sample.html" >PHP로 Ncloud API 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="C#으로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_csharp_sample.html" >C#으로 Ncloud API 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Python으로 Ncloud API 호출하기 샘플" href="/api/ncloud_api_call_python_sample.html" >Python으로 Ncloud API 호출하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="PowerShell에서 Ncloud API 호출 샘플" href="/api/ncloud-api-call-powershell-sample.html" >PowerShell에서 Ncloud API 호출 샘플</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Application Service" href="#" ><i class="fa-solid fa-laptop-code fa-xs"></i> Application Service</a>
+      <ul>
+          
+          
+          
+          <li><a title="PHP로 nShortURL 이용하기 샘플" href="/application-service/ncloud_application_service_nshorturl_php_sample.html" >PHP로 nShortURL 이용하기 샘플</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Cloud Outbound Mailer 대량 메일" href="/application-service/ncloud_application_service_cloud_outbound_mailer_bulk_mail_send.html" >Cloud Outbound Mailer 대량 메일</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Papago Korean Name Romanizer" href="/application-service/ncloud_application_service_papago_korean_name_romanizer_php_sample.html" >Papago Korean Name Romanizer</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Media" href="#" ><i class="fa-solid fa-play-circle fa-xs"></i> Media</a>
+      <ul>
+          
+          
+          
+          <li><a title="VOD Station 생성 가이드" href="/media/ncloud-media-vod-station-guide.html" >VOD Station 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Video Player Enhancement 가이드" href="/media/ncloud-media-video-player-enhancement-guide.html" >Video Player Enhancement 가이드</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Dev Tools" href="#" ><i class="fa-solid fa-gear fa-xs"></i> Dev Tools</a>
+      <ul>
+          
+          
+          
+          <li><a title="SourceCommit에서 GitHub Repository 복사해오기" href="/dev-tools/ncloud-dev-tools-source-commit-external-repository-copy.html" >SourceCommit에서 GitHub Repository 복사해오기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SourceCommit 리포지토리 Git 클라이언트로 로컬PC에 복제하기" href="/dev-tools/ncloud-dev-tools-source-commit-git-client-clone-guide.html" >SourceCommit 리포지토리 Git 클라이언트로 로컬PC에 복제하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jenkins 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 설치 가이드 | CentOS</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jenkins 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 설치 가이드 | Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jenkins 설치 가이드 | Rocky Linux" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-rocky-linux.html" >Jenkins 설치 가이드 | Rocky Linux</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="AWS" href="#" ><i class="fab fa-aws fa-xs"></i> AWS</a>
+      <ul>
+          
+          
+          
+          <li><a title="AWS S3 수명주기 (LifeCycle) 설정" href="/aws/aws_s3_lifecycle_management.html" >AWS S3 수명주기 (LifeCycle) 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="AWS CLOUDWATCH LOG 수집" href="/aws/aws_cloud_watch_log.html" >AWS CLOUDWATCH LOG 수집</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ETC" href="#" ><i class="fab fa-markdown fa-xs"></i> ETC</a>
+      <ul>
+          
+          
+          
+          <li><a title="Gmail smtp 메일발송 인증오류 해결" href="/etc/etc_smtp_auth_to_google_gmail_account.html" >Gmail smtp 메일발송 인증오류 해결</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="PHP로 텔레그램 메시지 전송하기" href="/etc/etc_php_to_telegram_message_send.html" >PHP로 텔레그램 메시지 전송하기</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Pdf 문서 합치기 PHP로 구현" href="/etc/etc_pdf_merge_php_sample.html" >Pdf 문서 합치기 PHP로 구현</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="PhpSpreadsheet 설정 샘플 코드" href="/etc/etc_phpspreadsheet_sample_code.html" >PhpSpreadsheet 설정 샘플 코드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jekyll Documentation Theme 설치" href="/etc/etc_jekyll_documentation_theme_install.html" >Jekyll Documentation Theme 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jekyll Doc Theme 문서 작성 가이드" href="/etc/etc_jekyll_documentation_theme_page_create_guide.html" >Jekyll Doc Theme 문서 작성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="jekyll 설치(윈도 10) with base-theme" href="/etc/etc_jekyll_install.html" >jekyll 설치(윈도 10) with base-theme</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="jekyll base-theme 커스터마이징" href="/etc/etc_jekyll_base_theme_customizing.html" >jekyll base-theme 커스터마이징</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="mkdocs 설치 (윈도 10)" href="/etc/etc_mkdocs_install.html" >mkdocs 설치 (윈도 10)</a></li>          
+                    
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tag archives" href="#" ><i class="fa-solid fa-file-archive fa-xs"></i> Tag archives</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tag archives overview" href="/tag/tag_archives_overview.html" >Tag archives overview</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Tag archive pages" href="#">Tag archive pages</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="Classic pages" href="/tag/tag_classic.html">Classic pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPC pages" href="/tag/tag_vpc.html">VPC pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Apache pages" href="/tag/tag_apache.html">Apache pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux pages" href="/tag/tag_linux.html">Linux pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CentOS pages" href="/tag/tag_centos.html">CentOS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu pages" href="/tag/tag_ubuntu.html">Ubuntu pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SSH pages" href="/tag/tag_ssh.html">SSH pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DATABASE pages" href="/tag/tag_database.html">DATABASE pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySql pages" href="/tag/tag_mysql.html">MySql pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB pages" href="/tag/tag_mariadb.html">MariaDB pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud DB pages" href="/tag/tag_clouddb.html">Cloud DB pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Load Balancer pages" href="/tag/tag_load_balancer.html">Load Balancer pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage pages" href="/tag/tag_storage.html">Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="ACG pages" href="/tag/tag_acg.html">ACG pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Subnet pages" href="/tag/tag_subnet.html">Subnet pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DNS pages" href="/tag/tag_dns.html">DNS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Price pages" href="/tag/tag_price.html">Price pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Cloud Functions pages" href="/tag/tag_cloud_functions.html">Cloud Functions pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title=".Net (C#) pages" href="/tag/tag_csharp.html">.Net (C#) pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account pages" href="/tag/tag_account.html">Account pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Log pages" href="/tag/tag_log.html">Log pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Monitoring pages" href="/tag/tag_monitoring.html">Monitoring pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analytics pages" href="/tag/tag_analytics.html">Analytics pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="API pages" href="/tag/tag_api.html">API pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="PHP pages" href="/tag/tag_php.html">PHP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Media pages" href="/tag/tag_media.html">Media pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Object Storage pages" href="/tag/tag_object_storage.html">Object Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Archive Storage pages" href="/tag/tag_archive_storage.html">Archive Storage pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="BackUp pages" href="/tag/tag_backup.html">BackUp pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NAS pages" href="/tag/tag_nas.html">NAS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="AWS pages" href="/tag/tag_aws.html">AWS pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="S3 pages" href="/tag/tag_s3.html">S3 pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Auto Scaling pages" href="/tag/tag_autoscaling.html">Auto Scaling pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Limit pages" href="/tag/tag_limit.html">Limit pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Proxy pages" href="/tag/tag_proxy.html">Proxy pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SSL pages" href="/tag/tag_ssl.html">SSL pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPN pages" href="/tag/tag_vpn.html">VPN pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Python pages" href="/tag/tag_python.html">Python pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Install pages" href="/tag/tag_install.html">Install pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="LEMP pages" href="/tag/tag_lemp.html">LEMP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NginX pages" href="/tag/tag_nginx.html">NginX pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows pages" href="/tag/tag_windows.html">Windows pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="SMTP pages" href="/tag/tag_smtp.html">SMTP pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Gmail pages" href="/tag/tag_gmail.html">Gmail pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="NAT Gateway pages" href="/tag/tag_natgateway.html">NAT Gateway pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Route Table pages" href="/tag/tag_route_table.html">Route Table pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="VPC Peering pages" href="/tag/tag_vpc_peering.html">VPC Peering pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Authentication pages" href="/tag/tag_auth.html">Authentication pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Password pages" href="/tag/tag_password.html">Password pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Mail pages" href="/tag/tag_mail.html">Mail pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Excel pages" href="/tag/tag_excel.html">Excel pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Markdown pages" href="/tag/tag_markdown.html">Markdown pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Jekyll pages" href="/tag/tag_jekyll.html">Jekyll pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GitHub pages" href="/tag/tag_github.html">GitHub pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+
+              </div>
+              
+            
+
+            <!-- Content Column -->
+            <div class="col-md-9" id="tg-sb-content">
+              <div class="post-header">
+  
+    <h1 class="post-title-main">Ncloud 백업 서비스 사용 가이드 - Windows Data</h1>
+  
+</div>
+
+
+
+
+<div class="post-content" >
+
+  
+    
+      <div class="summary">Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 윈도우 데이터 영역을 백업하는 방법입니다</div>
+    
+  
+
+  
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+});
+
+$("#toc_onoff").click(function() {  
+        $("#toc").toggle();
+        $("#tg-toc-icon").toggleClass('fa-toggle-on');
+        $("#tg-toc-icon").toggleClass('fa-toggle-off');
+
+});
+
+});
+</script>
+
+<p><span class="label label-warning" style="cursor:pointer" id="toc_onoff"><i id="tg-toc-icon" class="fas fa-toggle-on"></i> ToC</span></p>
+<div id="toc"></div>
+
+
+
+  
+
+  <h2 id="개요">개요</h2>
+<p>Ncloud(네이버 클라우드)의 Backup 상품은 기존에 별도의 신청서를 작성해서 사용하던 [<strong>Managed Backup</strong>]의 대체 상품으로 출시된, 콘솔에서 바로 이용할 수 있는 상품으로 이 백업 상품을 이용해 Windows 파일 데이터를 백업하는 방법을 알아보도록 하겠습니다.</p>
+
+<h2 id="상품위치">상품위치</h2>
+<p>Backup 상품은 [<strong>Console</strong>] - [<strong>Services</strong>] - [<strong>Storage</strong>]에 있습니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-01.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="테스트-서버">테스트 서버</h2>
+<p>백업을 테스트할 리눅스 서버를 아래와 같이 미리 준비했습니다.</p>
+
+<p>그리고, 백업과 복원에 필요한 디렉토리를 다음과 같이 생성했습니다.</p>
+<ul>
+  <li>백업할 디렉토리: C:\Backup-Data</li>
+  <li>복원할 디렉토리: C:\Restore</li>
+</ul>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-01.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="리소스-생성">리소스 생성</h2>
+<p>먼저 백업 혹은 복구를 수행할 대상 서버를 설정합니다.<br />
+Backup 탭에서 [<strong>Backup</strong>] - [<strong>Resource</strong>]로 이동해서 [리소스 생성] 버튼을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-02.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h3 id="리소스-생성-방법">리소스 생성 방법</h3>
+
+<ol>
+  <li>리소스 이름을 입력합니다.</li>
+  <li>백업 서버가 소속된 존(zone)을 선택합니다.</li>
+  <li>백업 대상이 되는 서버를 리소스에 선택합니다.</li>
+  <li>호스트 이름에는 백업 대상 서버의 이름을 입력합니다.</li>
+  <li>서버가 위치한 zone 선택 및 대상 서버를 선택하며 파일백업 및 데이터베이스 백업 여부에 따라 체크박스를 선택합니다.</li>
+  <li>에이전트 설치에 사용될 아이디 및 비밀번호를 입력합니다.</li>
+</ol>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b><strong>주의</strong>:</b> 아이디는 백업 대상 서버의 <strong>Administrator 계정</strong> 또는 백업 및 리스토어 수행 시 <strong>해당 디렉터리와  파일에 대한 접근 권한을 가지고 있는 user 계정</strong>을 입력해야합니다.</div>
+
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">아이디와 비밀번호는 에이전트 설치를 위해 <strong>백업 대상 서버 접속 시 일회성으로 사용</strong>하며, 별도로 저장되지 않습니다.</div>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-02.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>내용 최종 확인 후 리소스 생성을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-03.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h3 id="백업-에이전트-설치-확인">백업 에이전트 설치 확인</h3>
+<p>리소스가 생성 되면서 백업 에이전트가 설치되는데 정상적으로 설치가 완료되면 [생성 완료]라는 메시지가 나타납니다.<br />
+(에이전트 설치는 대략 5분 정도의 시간이 걸리며, 상단의 [새로 고침] 버튼을 클릭하면 확인할 수 있습니다.)</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-04.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p><strong>에이전트 설치 실패</strong><br />
+아이디/비번을 잘못 입력했거나 기타의 이유로 에이전트 설치가 실패했을 경우에는 [추가] 버튼을 클릭해서 다시 설치하면 됩니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-05.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="저장소-생성">저장소 생성</h2>
+<p>다음으로 백업 데이터를 저장할 저장소를 만들고 관리합니다.<br />
+Backup 탭에서 [<strong>Backup</strong>] - [<strong>Storage</strong>]로 이동하여 저장소 생성을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-03.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>저장소 이름과 백업 저장소가 위치할 존(zone)을 지정 후 다음을 클릭해서 저장소를 생성합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-04.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h3 id="소산-백업용-스토리지-추가-생성">소산 백업용 스토리지 추가 생성</h3>
+<p>추후 Remote Backup 메뉴에서 소산 백업(이중화 백업)에 사용할 스토리지를 미리 추가로 생성하도록 하겠습니다.<br />
+현재 KR-2존에 생성한 스토리지는 그대로 두고 KR-1존에 test2-backup-storage라는 이름으로 추가 생성했습니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-05.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="정책-생성">정책 생성</h2>
+<p>다음은 저장소에 대한 정책을 설정 및 관리합니다.<br />
+Backup 탭에서 [<strong>Backup</strong>] - [<strong>Policy</strong>]로 이동하여 정책 생성을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-06.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p><strong>정책 생성</strong><br />
+정책 이름, 보관 주기, 생성한 저장소가 위치한 존을 선택한 후 [연결 저장소]가 맞는지 확인 후 정책을 생성합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-07.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">
+<strong>보관 기간은 백업 주기의 최소 2배 이상</strong>으로 설정해야 합니다. <br />
+⁃ 일간 백업 : 최소 7일 이상<br />
+⁃ 주간 백업 : 최소 14일 이상<br />
+⁃ 월간 백업 : 최소 60일 이상
+</div>
+
+<h2 id="작업-생성">작업 생성</h2>
+<p>다음으로 에이전트가 설치된 리소스와 사전에 설정한 저장소 및 정책 등을 활용하여 실제 백업을 수행하는 작업을 생성하고 관리합니다.</p>
+
+<p>Backup 탭에서 [<strong>Backup</strong>] - [<strong>Job</strong>]으로 이동하여 작업 생성을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-08.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>작업 이름과 대상 리소스(서버) 백업 유형 및 백업 대상 디렉터리 지정을 한 후  Policy 메뉴에서 생성한 백업 정책을 선택합니다.</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b><strong>주의</strong>:</b> Job과 Policy는 1:1 매핑만 가능합니다.</div>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-07.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="일정-생성">일정 생성</h2>
+<p>마지막으로 작업을 수행하는 일정에 대해 계획하고 관리합니다.<br />
+Backup 탭에서 [<strong>Backup</strong>] - [<strong>Schedule</strong>]로 이동하여 일정 생성을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-09.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>일정 이름과 job에서 등록한 서버 백업 작업을 선택 후 백업 방식, 주기, 시작 요일과 시간을 구성한 후 일정을 생성합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-10.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="소산-백업-이중화-백업">소산 백업 (이중화 백업)</h2>
+<p>백업 상품의 소산 백업을 이용해 기존에 수행한 백업 데이터를 지리적으로 떨어진 다른 존으로 이중화할 수 있습니다.</p>
+
+<p>Backup 탭에서 [<strong>Backup</strong>] - [<strong>Remote Backup</strong>] 으로 이동하여 소산 설정을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-11.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>소산 이름, job에서 등록한 작업 선택, 소산 저장소가 위치한 존 선택, 보관 주기, 소산 백업 주기를 설정 후 소산 백업 일정을 등록합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-12.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">소산 일정에 백업 작업이 완료되어 있지 않은 경우, 다음 소산 일정에 소산이 수행됩니다.</div>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-13.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 500px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="백업-완료-확인">백업 완료 확인</h2>
+<p>기본 백업과 소산 백업까지 모두 완료되면 아래와 같이 [<strong>Report</strong>] 메뉴에서 결과를 확인할 수 있습니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-18.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="복원">복원</h2>
+<p>복원 기능을 이용하면 위에서 백업한 데이터를 Restore 메뉴에서 원하는 시점의 특정 데이터를 선택해서 원하는 리소스에 복원할 수 있습니다.</p>
+
+<p>[<strong>Job</strong>]에서 설정한 C:\Backup-Data 디렉터리에 저장되어 있는 파일들을 C:\Restore 디렉터리로 복원을 진행해 보겠습니다. 현재 /Restore 디렉터리는 비어있는 상태입니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-08.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 600px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>Backup 탭에서 [<strong>Restore</strong>]로 이동하여 복원 설정을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-14.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>복원 설정에서는 백업된 데이터 중 어떤 데이터로 복원할 것인지에 대한 세부항목을 선택합니다.<br />
+<strong>복원 시점</strong>은 [<strong>가장 최근 백업 시점</strong>] 또는 백업된 데이터들 중에서 [<strong>직접 지정</strong>]도 가능합니다.<br />
+<strong>복원 대상</strong>은 Job에서 설정한 디렉터리를 선택하고 [다음]을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-09.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>타깃 설정에서는 백업한 데이터를 복원할 서버와 디렉터리를 지정하고 다음을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-10.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>최종 내용을 확인 후 복원 시작을 클릭합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-11.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>복원 시작 후 복원 상태 확인이 가능합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-12.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>작업이 종료되면 /restore 경로에 데이터가 정상적으로 복원된 것을 확인할 수 있습니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-14.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 600px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="report">Report</h2>
+
+<p>백업 혹은 복구에 대한 작업 결과를 일간/월간 단위의 보고서로 확인할 수 있습니다.</p>
+
+<p>Backup 탭에서 [<strong>Report</strong>] 로 이동하여 확인합니다.</p>
+
+<p>Backup Report에서 발생하는 이벤트는 이메일 수신 신청으로 메일로 알림을 받도록 설정이 가능합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-15.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>항목에서 담당자 이름 및 메일 주소를 확인하고 [<strong>추가</strong>] 버튼을 클릭한 후 저장합니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-15.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>등록이 완료되면 아래와 같이 메일로 리포트를 받아보실 수 있으며 <strong>매일 오전 10시 일간 리포트</strong>와 <strong>매월 1일 월간 리포트</strong>가 전송됩니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-16.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="백업-리소스-삭제">백업 리소스 삭제</h2>
+<p>더 이상 백업 서비스를 이용하지 않게 되어 백업 리소스를 삭제하려면 위에서 생성했던 순서의 반대로 삭제를 진행해야 합니다.</p>
+
+<p>우선, [Backup] - [Resource]에서 해당 리소스를 선택하고 [리소스 삭제] 버튼을 클릭해보겠습니다.</p>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-windows-data-17.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<p>그러면 다음과 같이 리소스와 함께 설치-생성되었던 [Agent], [Job], [Schedule], [Remote Backup]를 먼저 삭제해야 한다는 안내 메시지가 나타납니다.</p>
+
+<div class="bs-callout-v2 bs-callout-v2-warning bs-callout-v2-level-3">
+⁃ 백업 리소스 삭제는 아래와 같이 생성 순서와 반대로 삭제해야 합니다. <br />
+⁃ 
+[Remote Backup] <i class="fa-solid fa-arrow-right-long"></i>
+[Schedule] <i class="fa-solid fa-arrow-right-long"></i>
+[Job] <i class="fa-solid fa-arrow-right-long"></i>
+[Agent] <i class="fa-solid fa-arrow-right-long"></i>
+[Resource]
+</div>
+
+<figure>
+  <img class="docimage" src="/images/storage/ncloud-storage-backup-service-guide-common-16.png" alt="Ncloud(네이버 클라우드)의 백업 서비스 상품을 이용해 리눅스 데이터 영역을 백업하는 방법" style="width: 480px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h2 id="참고-url">참고 URL</h2>
+<ol>
+  <li>Ncloud 백업 상품 가이드
+    <ul>
+      <li><a href="https://guide.ncloud-docs.com/docs/backup-overview" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/backup-overview</a></li>
+    </ul>
+  </li>
+</ol>
+
+
+  
+    <div class="tags">
+      
+        <b>Tags:
+        </b>
+        
+        
+          
+            <a
+              href="/tag/tag_backup.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">backup</a>
+          
+        
+          
+            <a
+              href="/tag/tag_windows.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">windows</a>
+          
+        
+      
+    </div>
+  
+
+</div>
+
+<hr class="shaded"/>
+
+
+
+<footer>
+    <div class="row">
+      <div class="col-lg-12 footer"> 
+        <div>               
+                        
+          <a target="_blank" href="https://www.facebook.com/3rdeyesys" class="Facebook-icon no_icon">
+          
+            
+		<svg class="facebook" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19,4V7H17A1,1 0 0,0 16,8V10H19V13H16V20H13V13H11V10H13V7.5C13,5.56 14.57,4 16.5,4M20,2H4A2,2 0 0,0 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" /></svg>
+	
+
+          
+          </a>
+                        
+          <a target="_blank" href="mailto:biz@3rdeyesys.com" class="Email-icon no_icon">
+          
+            
+			<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+		
+
+          
+          </a>
+        		
+        </div>
+        &copy;2023 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+        Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
+        <span>Page last updated:</span> 2023-01-06<br/> Site last generated: 2023-10-19 <br />        
+        <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
+        <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
+      </div>
+    </div>
+</footer>
+
+
+
+
+
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
+        </div>
+        
+          
+          <div class="side-banner-right">
+  <a
+    href="https://hyphen.im/benefit/navercloud-event"
+    id="side-banner-right-01"
+    target="_blank"
+    class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
+</div>
+        
+        <!-- /#main -->
+      </div>
+      <script>
+        $(function() {
+          $('svg').click(function() {
+            $(this).parent('form').submit();
+          });
+        });
+      </script>
+
+      
+    </body>
+  </body>
+</html>
+

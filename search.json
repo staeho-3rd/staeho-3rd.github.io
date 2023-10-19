@@ -138,6 +138,17 @@
 
 
 {
+"title": "Windows PowerShell에서 Ncloud API를 호출하는 샘플 예제",
+"tags": "apiwindows",
+"keywords": "API, 파워쉘",
+"url": "/api/ncloud-api-call-powershell-sample.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Kubernetes Service 클러스터 생성 및 제어 가이드 | Linux",
 "tags": "kubernetesvpc",
 "keywords": "k8s, K8S, 쿠버네티스",
@@ -160,6 +171,50 @@
 
 
 {
+"title": "Rocky Linux에서 Apache SSL 인증서 설정하는 방법",
+"tags": "rocky_linuxlampapacheinstall",
+"keywords": "Linux, LEMP, LAMP, 록키 리눅스, 아파치, HTTPS",
+"url": "/compute/ncloud-compute-lamp-apache-ssl-setting-rocky-linux-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Rocky Linux에서 NginX 설치, 설정하는 방법",
+"tags": "rocky_linuxlempnginxinstall",
+"keywords": "Linux, LEMP, LAMP, 록키 리눅스",
+"url": "/compute/ncloud-compute-lemp-nginx-install-setting-rocky-linux-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud VPC 환경에서 무료 서버(Micro Type) 이용하는 방법",
+"tags": "linuxvpc",
+"keywords": "Linux, Free, VPC",
+"url": "/compute/ncloud-compute-micro-type-server-create-vpc.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Load Balancer에 연동된 NginX에서 Client IP 기록하고 확인하는 방법",
+"tags": "lempnginxlog",
+"keywords": "Linux, LEMP, LAMP, X-Forwarded-For, CentOS, Ubuntu",
+"url": "/compute/ncloud-compute-nginx-client-ip-logging-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법",
 "tags": "linuxwindowspassword",
 "keywords": "Linux, Password, Windows, Admin",
@@ -175,6 +230,105 @@
 "tags": "linuxpassword",
 "keywords": "Linux, Password, Authentication Key",
 "url": "/compute/ncloud-compute-server-change-authentication-key.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 서버에 SSH Key를 이용해 접속하는 방법",
+"tags": "linuxpassword",
+"keywords": "Linux, Password",
+"url": "/compute/ncloud-compute-server-connect-by-ssh-key.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Rocky Linux",
+"tags": "rocky_linuxlampapacheinstall",
+"keywords": "Linux, LEMP, LAMP, 록키 리눅스, 아파치, HTTPS",
+"url": "/compute/ncloud-compute-server-http-to-https-rocky-linux.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개",
+"tags": "linuxapachephpnginxmysqlmariadbrocky_linux",
+"keywords": "Linux, Rocky Linux",
+"url": "/compute/ncloud-compute-server-rocky-linux-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud Rocky Linux 서버 Repository 미러 사이트 오류 문제 해결 방법",
+"tags": "linuxrocky_linux",
+"keywords": "Linux, 록키 리눅스, 록키, Repository, Mirror",
+"url": "/compute/ncloud-compute-server-rocky-linux-repository-mirror-site-error-troubleshooting.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 블록 스토리지 (디스크) 크기 확장하는 방법 - 리눅스",
+"tags": "linuxstorage",
+"keywords": "Storage, Block Disk, Linux",
+"url": "/compute/ncloud-compute-server-storage-extend-guide-linux.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 블록 스토리지 (디스크) 크기 확장하는 방법 - 윈도우",
+"tags": "windowsstorage",
+"keywords": "Storage, Block Disk, windows",
+"url": "/compute/ncloud-compute-server-storage-extend-guide-windows.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "VPC환경에서 Cloud DB for MSSQL 생성하기",
+"tags": "databasemssqlclouddbvpc",
+"keywords": "Database, Domain, MicroSoft, SQL Server",
+"url": "/database/ncloud-database-cloud-db-for-mssql-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Cloud DB for MSSQL 생성후 Public 도메인으로 접속하기",
+"tags": "databasemssqlclouddbvpc",
+"keywords": "Database, Domain, MicroSoft, SQL Server",
+"url": "/database/ncloud-database-cloud-db-for-mssql-public-domain-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Cloud DB for MSSQL의 메뉴와 주요 기능에 대한 소개",
+"tags": "databasemssqlclouddbvpc",
+"keywords": "Database, Domain, MicroSoft, SQL Server",
+"url": "/database/ncloud-database-cloud-db-for-mssql-setting-manage-guide.html",
 "summary": ""
 }
 ,
@@ -227,7 +381,7 @@
 
 {
 "title": "VPC환경에서 Cloud DB for PostgreSQL 생성하기 | Ubuntu",
-"tags": "databaseclouddbvpc",
+"tags": "databaseclouddbvpcpostgresql",
 "keywords": "Database, Postgre",
 "url": "/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html",
 "summary": ""
@@ -238,9 +392,53 @@
 
 {
 "title": "Cloud DB for PostgreSQL 생성 후 Public 도메인으로 접속하기",
-"tags": "databaseclouddbvpc",
+"tags": "databaseclouddbvpcpostgresql",
 "keywords": "Database, Postgre",
 "url": "/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 데이터베이스 마이그레이션 | From MySQL 5.7 To MysQL 5.7",
+"tags": "databasevpcMySQL",
+"keywords": "Database, MySQL, Migration",
+"url": "/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "MariaDB Multi Source Replication 구성 가이드",
+"tags": "databasebackupmariadb",
+"keywords": "Database, 복제, Backup, 이중화, 고가용성, Master, Slave",
+"url": "/database/ncloud-database-mariadb-multi-source-replication.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Rocky Linux 서버에 MySQL 5.7 설치하는 방법",
+"tags": "databasemysqlinstallrocky_linux",
+"keywords": "Database, 록키 리눅스, 디비, install",
+"url": "/database/ncloud-database-mysql-57-install-on-rocky-linux.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Rocky Linux 서버에 MySQL 8.0 최신 버전 설치하는 방법",
+"tags": "databasemysqlinstallrocky_linux",
+"keywords": "Database, 록키 리눅스, 디비, install",
+"url": "/database/ncloud-database-mysql-8-latest-version-install-on-rocky-linux.html",
 "summary": ""
 }
 ,
@@ -259,10 +457,43 @@
 
 
 {
+"title": "MySQL Multi Source Replication 구성 가이드",
+"tags": "databasebackupmysql",
+"keywords": "Database, 복제, Backup, 이중화, 고가용성, Master, Slave",
+"url": "/database/ncloud-database-mysql-multi-source-replication.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "설치형 PostgreSQL DB 설치, 접속 가이드 | CentOS",
-"tags": "databasevpc",
+"tags": "databasevpcpostgresql",
 "keywords": "Database, Postgre",
 "url": "/database/ncloud-database-postgresql-install-connect-guide-centos.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "설치형 PostgreSQL DB 설치, 접속 가이드 | Rocky Linux",
+"tags": "databasevpcpostgresql",
+"keywords": "Database, Postgre",
+"url": "/database/ncloud-database-postgresql-install-connect-guide-rocky-linux.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "설치형 PostgreSQL DB 설치, 접속 가이드 | Ubuntu",
+"tags": "databasevpcpostgresql",
+"keywords": "Database, Postgre",
+"url": "/database/ncloud-database-postgresql-install-connect-guide-ubuntu.html",
 "summary": ""
 }
 ,
@@ -274,6 +505,17 @@
 "tags": "github",
 "keywords": "깃허브, Tool, Dev, 리포지토리, 젠킨스",
 "url": "/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Jenkins 서버 설치 가이드 | Rocky Linux",
+"tags": "github",
+"keywords": "깃허브, Tool, Dev, 리포지토리, 젠킨스, 록키 리눅스",
+"url": "/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-rocky-linux.html",
 "summary": ""
 }
 ,
@@ -314,6 +556,50 @@
 
 
 {
+"title": "모니터링 서비스 Cloud Insight Rule Template 설정 가이드",
+"tags": "monitoringlog",
+"keywords": "Monitoring, 모니터링, Log",
+"url": "/management/ncloud-management-cloud-insight-rule-template-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud API Key 접근 제한 설정하는 방법",
+"tags": "accountapisecurity",
+"keywords": "Account, Sub Account, API Key",
+"url": "/management/ncloud-management-sub-account-api-gateway-access-control-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud Video Player Enhancement 사용 가이드",
+"tags": "mediaobject_storagecdn",
+"keywords": "streaming, video, play",
+"url": "/media/ncloud-media-video-player-enhancement-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud VOD Station 생성 가이드",
+"tags": "mediaobject_storagecdn",
+"keywords": "streaming, video",
+"url": "/media/ncloud-media-vod-station-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "내 IP 주소 확인하기",
 "tags": "ipvpcacg",
 "keywords": "IP, IP Address",
@@ -336,10 +622,43 @@
 
 
 {
+"title": "로드밸런서(Application Load Balancer) 접속 로그 확인하는 방법",
+"tags": "vpcload_balancer",
+"keywords": "LoadBalancer, Log, Cloud Log Analytics, CLA",
+"url": "/networking/ncloud-networking-load-balancer-application-lb-access-log.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "로드밸런서(Load Balancer) 인증서 교체하는 방법",
+"tags": "vpcclassicload_balancer",
+"keywords": "LoadBalancer, Certificate, VPC, Classic",
+"url": "/networking/ncloud-networking-load-balancer-certificate-change.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Proxy Protocol을 이용해 Client IP 확인하기 | CentOS",
 "tags": "vpcload_balancerproxy",
 "keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
 "url": "/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Proxy Protocol을 이용해 Client IP 확인하기 | Rocky Linux",
+"tags": "vpcload_balancerproxyrocky_linux",
+"keywords": "LoadBalancer, 로드밸런스, 프록시, 프록시 프로토콜",
+"url": "/networking/ncloud-networking-proxy-protocol-client-ip-logging-rocky-linux.html",
 "summary": ""
 }
 ,
@@ -359,9 +678,121 @@
 
 {
 "title": "Ncloud 방화벽 ACG 권장설정과 Custom ACG 설정 예시",
-"tags": "acgclassicvpcload_balancer",
+"tags": "acgclassicvpcload_balancersecurity",
 "keywords": "방화벽, Firewall",
 "url": "/security/ncloud-security-acg-setting-sample.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud Certificate Manager SSL 인증서 등록 가이드",
+"tags": "sslload_balancer",
+"keywords": "SSL, Secure Socket Layer, HTTPS",
+"url": "/security/ncloud-security-certificate-manager-register-ssl-certificate-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud Security Monitoring WAF 서비스 요금 정보",
+"tags": "securitymonitoring",
+"keywords": "보안, Security, IDS, IPS, Anti-DDos, Anti-Virus",
+"url": "/security/ncloud-security-security-monitoring-waf-price-info.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 백업 서비스 기본 가이드",
+"tags": "backuplinux",
+"keywords": "BackUp, Storage, Linux",
+"url": "/storage/ncloud-storage-backup-service-basic-guide.html",
+"summary": ""
+}
+,
+
+
+
+
+
+{
+"title": "Ncloud 백업 서비스 사용 가이드 - Linux Data",
+"tags": "backuplinux",
+"keywords": "BackUp, Storage, Linux",
+"url": "/storage/ncloud-storage-backup-service-linux-data-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 백업 서비스 사용 가이드 - Windows Data",
+"tags": "backupwindows",
+"keywords": "BackUp, Storage, Windows, 윈도우",
+"url": "/storage/ncloud-storage-backup-service-windows-data-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Object Storage에서 CORS를 SDK for S3 API로 설정하기",
+"tags": "storage",
+"keywords": "BackUp, Storage, Cross-Origin, Resource, Sharing",
+"url": "/storage/ncloud-storage-object-storage-bucket-cors-setting-api-sdk-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Object Storage Bucket에 CORS 설정하기",
+"tags": "storage",
+"keywords": "BackUp, Storage, Cross-Origin, Resource, Sharing",
+"url": "/storage/ncloud-storage-object-storage-bucket-cors-setting-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Object Storage 파일의 Content-Type 일괄 적용, 변경하는 방법",
+"tags": "storage",
+"keywords": "BackUp, Storage, MIME Type, Media Type, Content-Type",
+"url": "/storage/ncloud-storage-object-storage-contenttype-bulk-change-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Object Storage 버킷 접근 로그 확인하는 방법",
+"tags": "storagelog",
+"keywords": "BackUp, Storage, Log, Access",
+"url": "/storage/ncloud-storage-object-storage-log-management-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Object Storage에서 html, 이미지 파일이 다운로드되는 문제 해결 방법",
+"tags": "storage",
+"keywords": "BackUp, Storage, MIME Type, Media Type, Content-Type",
+"url": "/storage/ncloud-storage-object-storage-mimetype-contenttype-change-guide.html",
 "summary": ""
 }
 ,
@@ -461,7 +892,7 @@
 "tags": "autoscalingclassic",
 "keywords": "Auto Scaling, 오토스케일링",
 "url": "/compute/ncloud_compute_autoscaling_classic_guide.html",
-"summary": "Ncloud Classic 환경에서 AutoScaling 설정하는 방법입니다"
+"summary": ""
 }
 ,
 
@@ -646,9 +1077,9 @@
 {
 "title": "http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/CentOS",
 "tags": "apachecentos",
-"keywords": "redirect, 아파치",
+"keywords": "redirect, 아파치, SSL",
 "url": "/compute/ncloud_compute_server_http_to_https_centos.html",
-"summary": "Ncloud에서 http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/CentOS입니다"
+"summary": ""
 }
 ,
 
@@ -657,9 +1088,9 @@
 {
 "title": "http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Ubuntu",
 "tags": "apacheubuntu",
-"keywords": "redirect, 아파치",
+"keywords": "redirect, 아파치, SSL",
 "url": "/compute/ncloud_compute_server_http_to_https_ubuntu.html",
-"summary": "Ncloud에서 http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Ubuntu입니다"
+"summary": ""
 }
 ,
 
@@ -677,11 +1108,11 @@
 
 
 {
-"title": "Micro 타입 서버에서 사용할 수 없는 서비스",
+"title": "Classic 환경 Micro 타입 서버에서 사용할 수 없는 서비스",
 "tags": "limit",
 "keywords": "limit",
 "url": "/compute/ncloud_compute_server_micro_type_limit.html",
-"summary": "Ncloud Micro 타입 서버에서 사용할 수 없는 서비스입니다"
+"summary": ""
 }
 ,
 
@@ -754,11 +1185,11 @@
 
 
 {
-"title": "스토리지 추가 생성 기본 가이드",
+"title": "Linux 스토리지 추가 생성 기본 가이드",
 "tags": "linuxstorage",
 "keywords": "Storage, Linux",
 "url": "/compute/ncloud_compute_server_storage_add_guide.html",
-"summary": "Ncloud Linux서버 스토리지 추가 생성 기본 가이드입니다"
+"summary": ""
 }
 ,
 
@@ -776,11 +1207,11 @@
 
 
 {
-"title": "VPC 환경에서 서버 생성",
+"title": "Ncloud VPC 환경에서 서버 생성하는 방법",
 "tags": "vpc",
-"keywords": "VPC, Server",
+"keywords": "VPC, Server, XEN, KVM",
 "url": "/compute/ncloud_compute_server_vpc_create.html",
-"summary": "Ncloud VPC 환경에서 서버를 생성하는 방법을 간단하게 정리했습니다"
+"summary": ""
 }
 ,
 
@@ -802,7 +1233,7 @@
 "tags": "windowsstorage",
 "keywords": "Storage, Disk",
 "url": "/compute/ncloud_compute_server_windows_storage_add_detail_process.html",
-"summary": "Ncloud Windows 서버 스토리지(디스크) 추가 상세 가이드입니다"
+"summary": ""
 }
 ,
 
@@ -813,7 +1244,7 @@
 "tags": "proxyload_balancerlog",
 "keywords": "프록시, 로드밸런서, 클라이언트IP",
 "url": "/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html",
-"summary": "Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기"
+"summary": ""
 }
 ,
 
@@ -833,9 +1264,9 @@
 {
 "title": "VPC환경에서 Cloud DB for MySQL 생성하기",
 "tags": "databasemysqlclouddbvpc",
-"keywords": "Database, Domain",
+"keywords": "Database, Domain, 관리형 DB",
 "url": "/database/ncloud_database_cloud_db_for_mysql_guide.html",
-"summary": "Ncloud VPC환경에서 Cloud DB for MySQL 생성하는 방법입니다"
+"summary": ""
 }
 ,
 
@@ -908,11 +1339,11 @@
 
 
 {
-"title": "Mysql, mariadb 환경설정 파일 my.cnf 위치",
-"tags": "databasemysqlmariadb",
+"title": "Mysql, MariaDB 환경설정 파일 my.cnf 위치",
+"tags": "databasemysqlmariadbcentosubunturocky_linux",
 "keywords": "Database, Config",
 "url": "/database/ncloud_database_mysql_mariadb_config_my_cnf.html",
-"summary": "Ncloud Mysql, mariadb 환경설정 파일 my.cnf 위치 안내입니다"
+"summary": ""
 }
 ,
 
@@ -1007,9 +1438,9 @@
 
 
 {
-"title": "Ncloud Sub Account 생성 가이드",
-"tags": "account",
-"keywords": "account, sub account",
+"title": "Ncloud 서브 계정 (Sub Account) 생성 가이드",
+"tags": "accountapisecurity",
+"keywords": "Account, Sub Account, API Key",
 "url": "/management/ncloud_management_sub_account_guide.html",
 "summary": ""
 }
@@ -1019,7 +1450,7 @@
 
 {
 "title": "STS 기간 제한 임시 API AccessKey 발급하기",
-"tags": "accountapitoken",
+"tags": "accountapitokensecurity",
 "keywords": "account, sub account, Secure Token Service,",
 "url": "/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html",
 "summary": ""
@@ -1055,7 +1486,7 @@
 "tags": "mediaobject_storage",
 "keywords": "streaming",
 "url": "/media/ncloud_media_video_player_sample.html",
-"summary": "Ncloud Video Player 구현하기 샘플 예제"
+"summary": ""
 }
 ,
 
@@ -1110,7 +1541,7 @@
 "tags": "vpcnatgatewayroutetable",
 "keywords": "NATGW, RouteTable",
 "url": "/networking/ncloud_networking_natgw_routetb.html",
-"summary": "Ncloud VPC 환경에서 NAT Gateway 설정하기 가이드입니다"
+"summary": ""
 }
 ,
 
@@ -1122,6 +1553,28 @@
 "keywords": "Network, Port",
 "url": "/networking/ncloud_networking_service_port_info.html",
 "summary": "네이버 클라우드 주요 서비스 포트(Port) 정보"
+}
+,
+
+
+
+{
+"title": "Classic 환경에서 SSL VPN 설정하고 접속하는 방법",
+"tags": "classicsslvpn",
+"keywords": "암호화 통신, 보안접속",
+"url": "/networking/ncloud_networking_ssl_vpn_classic_guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "VPC 환경에서 SSL VPN 설정하고 접속하는 방법",
+"tags": "vpcsslvpn",
+"keywords": "암호화 통신, 보안접속",
+"url": "/networking/ncloud_networking_ssl_vpn_vpc_guide.html",
+"summary": ""
 }
 ,
 
@@ -1184,7 +1637,7 @@
 
 {
 "title": "Ncloud 방화벽 ACG 설정 기본 가이드",
-"tags": "acgclassicvpc",
+"tags": "acgclassicvpcsecurity",
 "keywords": "방화벽, Firewall",
 "url": "/security/ncloud_security_acg_guide.html",
 "summary": ""
@@ -1231,7 +1684,7 @@
 "tags": "classicsslvpn",
 "keywords": "암호화 통신, 보안접속",
 "url": "/security/ncloud_security_ssl_vpn_classic_guide.html",
-"summary": "Ncloud Classic 환경에서 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 설정하고 접속하는 방법입니다"
+"summary": ""
 }
 ,
 
@@ -1242,7 +1695,7 @@
 "tags": "vpcsslvpn",
 "keywords": "암호화 통신, 보안접속",
 "url": "/security/ncloud_security_ssl_vpn_vpc_guide.html",
-"summary": "Ncloud VPC 환경에서 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 설정하고 접속하는 방법입니다"
+"summary": ""
 }
 ,
 
@@ -1281,15 +1734,6 @@
 
 
 
-{
-"title": "백업 서비스 가이드와 신청 절차",
-"tags": "backupdatabase",
-"keywords": "BackUp, Storage, DataBase",
-"url": "/storage/ncloud_storage_backup_guide.html",
-"summary": "Ncloud 서버 파일과 데이터베이스 등의 백업 서비스 가이드와 신청 절차입니다"
-}
-,
-
 
 
 {
@@ -1315,11 +1759,11 @@
 
 
 {
-"title": "AWS CLI를 이용한 Object Storage 접속 방법",
+"title": "AWS CLI 버전 2를 이용한 Object Storage 접속 방법",
 "tags": "awss3object_storagecliapiauth",
 "keywords": "오브젝트 스토리지, 아마존, API",
 "url": "/storage/ncloud_storage_object_storage_aws_cli_connect.html",
-"summary": "AWS CLI를 이용해 Ncloud Object Storage에 접속하는 방법입니다"
+"summary": ""
 }
 ,
 
@@ -1399,6 +1843,14 @@
 "summary": "Ncloud 서비스와 관련된 새로운 소식들을 알려 드립니다."
 }
 ,
+
+
+
+
+
+
+
+
 
 
 

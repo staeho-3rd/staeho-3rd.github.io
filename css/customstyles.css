@@ -993,7 +993,7 @@ span.soft {
 @media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
     .col-md-9 img {
         max-width: 850px;
-        max-height: 700px;
+        max-height: 850px;
     }
 }
 
@@ -1481,6 +1481,22 @@ img.docimage{
     margin-bottom: 20px;
 }
 
+img.docimage-no-top{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+img.docimage-no-bottom{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+img.docimage-no-top-bottom{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
 @media screen and (max-width: 990px)
 {
     #tg-sb-sidebar {display:none;}
@@ -1496,6 +1512,16 @@ img.docimage{
     border: 1px solid #ddd;
     text-align: center;
     vertical-align: middle;
+    word-break:break-all;
+}
+
+.simple_table.small_font > thead > tr > th,
+.simple_table.small_font > tbody > tr > th,
+.simple_table.small_font > tfoot > tr > th,
+.simple_table.small_font > thead > tr > td,
+.simple_table.small_font > tbody > tr > td,
+.simple_table.small_font > tfoot > tr > td {    
+    font-size: 0.75em;
 }
 
 
@@ -1545,13 +1571,15 @@ height: 250px;
 }
 .carousel-title a { color:#FFF; text-decoration:none}
 
-.side-banner-right{
-    /* 
+.side-banner-left{   
     position:fixed;
-    top:100px;
-    right:50px;
+    top: 100px;
+    margin-left: -300px;
+    text-align: center;
     width:230px;
-    */
+}
+
+.side-banner-right{   
     position:fixed;
     top: 100px;
     margin-left: 1150px;

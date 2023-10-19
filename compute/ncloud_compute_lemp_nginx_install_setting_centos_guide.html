@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
+  <head>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -36,17 +36,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>CentOS에서 NginX 설치, 설정하는 방법 | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
-<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
-<link rel="stylesheet" href="/css/modern-business.css">
-<!-- Latest compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css" />
+<link rel="stylesheet" href="/css/modern-business.css"> <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
-<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"-->
-<link rel="stylesheet" href="/css/customstyles.css">
-<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"--> <link rel="stylesheet" href="/css/customstyles.css"> <link rel="stylesheet" href="/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
 <link rel="stylesheet" href="/css/theme-ncloud.css">
+
 
 <script src="/js/jquery.341.min.js"></script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
@@ -60,86 +61,94 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="/js/bootstrap.341.min.js"></script>
 <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
 <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script-->
-<!-- Anchor.js -->
-<script src="/js/anchor.420.min.js"></script>
+<!-- Anchor.js --><script src="/js/anchor.420.min.js"> </script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
 
 
+
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
-
+<link rel="alternate"
+  type="application/rss+xml"
+  title="3RDEYESYSTEM Technical Documentations"
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
-        $(document).ready(function() {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
-            
-            window_width = $(window).width();
-            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
-            {
-                $("#mysidebar").navgoco('toggle', false);
-            }
+      $(document).ready(function() {
 
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
+// Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '',
+          accordion: true,
+          openClass: 'active', // open
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: 'navgoco',
+            expires: false,
+            path: '/'
+          },
+          slide: {
+            duration: 400,
+            easing: 'swing'
+          }
         });
 
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#tg-sb-link").click(function() {                
-                if (!$("#tg-sb-link").attr("hide_sidebar"))
-                {
-                    $("#tg-sb-sidebar").toggle();
-                    $("#tg-sb-content").toggleClass('col-md-9');
-                    $("#tg-sb-content").toggleClass('col-md-12');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
-                }
-            });
+        window_width = $(window).width();
+        if (window_width <= 990) { // 모바일 환경에서는 사이드바 접기
+          $("#mysidebar").navgoco('toggle', false);
+        }
+
+        $("#collapseAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', false);
         });
+
+        $("#expandAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', true);
+        });
+
+      });
+    </script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <script>
+      $(document).ready(function() {
+        $("#tg-sb-link").click(function() {
+          if (!$("#tg-sb-link").attr("hide_sidebar")) {
+            $("#tg-sb-sidebar").toggle();
+            $("#tg-sb-content").toggleClass('col-md-9');
+            $("#tg-sb-content").toggleClass('col-md-12');
+            $("#tg-sb-icon").toggleClass('fa-toggle-on');
+            $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          }
+        });
+      });
     </script>
     
 
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
+    
+      <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6933218466698885"
+  crossorigin="anonymous"></script>
+    
+
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XRCSF3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header>
-<!-- Navigation -->
+    <header>
+      <!-- Navigation -->
 <nav class="navbar2 navbar-inverse navbar-static-top">
     <div class="container topnavlinks">
         <div class="navbar-header">
@@ -229,19 +238,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-</header>
-<!-- Page Content -->
-
-<div class="container">
-
-  <div id="main">
-    <!-- Content Row -->
-    <div class="row">
+      
+    </header>
+    <!-- Page Content -->
+    
+        <div class="container">
         
-        
-            <!-- Sidebar Column -->
-            <div class="col-md-3" id="tg-sb-sidebar">
+        <div id="main">
+          <!-- Content Row -->
+          <div class="row">
+            
+              
+              <!-- Sidebar Column -->
+              <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <ul id="mysidebar" class="nav">
@@ -255,63 +264,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html" >서버 접속 방법(Linux) - 공인IP 없을 때</a></li>          
+          <li><a title="VPC 환경에서 서버 생성하는 방법" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성하는 방법</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Classic 환경 Linux 서버 접속 방법" href="#">Classic 환경 Linux 서버 접속 방법</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html">공인IP 없을 때</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html">공인IP 있을 때</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="서버 스펙 변경 제한 사항" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경 제한 사항</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="디스크(스토리지) 설정" href="#">디스크(스토리지) 설정</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html">스토리지 추가 생성 기본 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html">Linux 디스크 추가 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html">Linux 서버 디스크 LVM 구성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html">Windows 디스크 추가 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-linux.html">Linux 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-windows.html">Windows 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Micro 서버 제한 사항" href="/compute/ncloud_compute_server_micro_type_limit.html" >Classic 환경 Micro 서버 제한 사항</a></li>          
                     
           
           
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html" >서버 접속 방법(Linux) - 공인IP 있을 때</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="VPC 환경에서 서버 생성" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html" >스토리지 추가 생성 기본 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html" >Linux 서버 디스크 추가 상세 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html" >Linux 서버 디스크 LVM 구성하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Windows 서버 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html" >Windows 서버 디스크 추가 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Micro 타입 서버에서 제한되는 서비스" href="/compute/ncloud_compute_server_micro_type_limit.html" >Micro 타입 서버에서 제한되는 서비스</a></li>          
+          <li><a title="VPC 환경에서 Micro 서버 생성하기" href="/compute/ncloud-compute-micro-type-server-create-vpc.html" >VPC 환경에서 Micro 서버 생성하기</a></li>          
                     
           
           
@@ -346,6 +386,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="Linux 서버 SSH Key로 접속하는 방법" href="/compute/ncloud-compute-server-connect-by-ssh-key.html" >Linux 서버 SSH Key로 접속하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="X-Forwarded-For로 Client IP 기록하기" href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html" >X-Forwarded-For로 Client IP 기록하기</a></li>          
                     
           
@@ -353,14 +400,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https로 리다이렉트 - Apache/CentOS</a></li>          
+          <li><a title="https 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https 리다이렉트 - Apache/CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https로 리다이렉트 - Apache/Ubuntu</a></li>          
+          <li><a title="https 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https 리다이렉트 - Apache/Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https 리다이렉트-Apache/Rocky Linux" href="/compute/ncloud-compute-server-http-to-https-rocky-linux.html" >https 리다이렉트-Apache/Rocky Linux</a></li>          
                     
           
           
@@ -368,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Repository 변경해 리눅스 패키지 설치" href="/compute/ncloud_compute_server_repository_change_on_private_network.html" >Repository 변경해 리눅스 패키지 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 서버 소개" href="/compute/ncloud-compute-server-rocky-linux-guide.html" >Rocky Linux 서버 소개</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 미러 사이트 문제 해결" href="/compute/ncloud-compute-server-rocky-linux-repository-mirror-site-error-troubleshooting.html" >Rocky Linux 미러 사이트 문제 해결</a></li>          
                     
           
           
@@ -453,6 +521,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
+                  
+                  
+                  <li><a title="Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법" href="/compute/ncloud-compute-lamp-apache-ssl-setting-rocky-linux-guide.html">Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법</a></li>
+                  
+                  
+                  
               </ul>
           </li>
           
@@ -464,13 +538,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
-                  <li class="active"><a title="CentOS에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에서 NginX 설치, 설정</a></li>
+                  <li class="active"><a title="CentOS에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에 NginX 설치, 설정</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Ubuntu에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에서 NginX 설치, 설정</a></li>
+                  <li><a title="Ubuntu에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux에 NginX 설치, 설정" href="/compute/ncloud-compute-lemp-nginx-install-setting-rocky-linux-guide.html">Rocky Linux에 NginX 설치, 설정</a></li>
                   
                   
                   
@@ -483,6 +563,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   <li><a title="Ubuntu NginX SSL 인증서 설정" href="/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html">Ubuntu NginX SSL 인증서 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="로드밸런서 환경 Client IP 확인" href="/compute/ncloud-compute-nginx-client-ip-logging-guide.html">로드밸런서 환경 Client IP 확인</a></li>
                   
                   
                   
@@ -596,15 +682,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | CentOS" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html" >Proxy Protocol을 이용해 Client IP 확인하기 | CentOS</a></li>          
+          <li><a title="로드밸런서 접속 로그 확인하는 방법" href="/networking/ncloud-networking-load-balancer-application-lb-access-log.html" >로드밸런서 접속 로그 확인하는 방법</a></li>          
                     
           
           
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html" >Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu</a></li>          
+          <li><a title="Load Balancer 인증서 교체하는 방법" href="/networking/ncloud-networking-load-balancer-certificate-change.html" >Load Balancer 인증서 교체하는 방법</a></li>          
                     
+          
+          
+          <li class="subfolders">
+              <a title="Proxy Protocol로 Client IP 확인" href="#">Proxy Protocol로 Client IP 확인</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CentOS 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html">CentOS 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html">Ubuntu 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-rocky-linux.html">Rocky Linux 서버에서 확인</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -632,6 +745,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="VPC Peering 생성 가이드" href="/networking/ncloud_networking_vpc_peering_guide.html" >VPC Peering 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="IPsecVPN과 FortiGate 장비 연동" href="/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html" >IPsecVPN과 FortiGate 장비 연동</a></li>          
                     
           
           
@@ -738,7 +858,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="백업 서비스 가이드와 신청 절차" href="/storage/ncloud_storage_backup_guide.html" >백업 서비스 가이드와 신청 절차</a></li>          
+          <li><a title="백업 서비스 기본 가이드" href="/storage/ncloud-storage-backup-service-basic-guide.html" >백업 서비스 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - Linux Data" href="/storage/ncloud-storage-backup-service-linux-data-guide.html" >백업 서비스 상세 가이드 - Linux Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - 윈도 Data" href="/storage/ncloud-storage-backup-service-windows-data-guide.html" >백업 서비스 상세 가이드 - 윈도 Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Content-Type 변경" href="/storage/ncloud-storage-object-storage-mimetype-contenttype-change-guide.html" >Object Storage Content-Type 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L Content-Type 일괄 적용, 변경" href="/storage/ncloud-storage-object-storage-contenttype-bulk-change-guide.html" >&nbsp;&nbsp; L Content-Type 일괄 적용, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket에 CORS 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-guide.html" >Object Storage Bucket에 CORS 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-api-sdk-guide.html" >&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket 접근 로그 설정" href="/storage/ncloud-storage-object-storage-log-management-guide.html" >Object Storage Bucket 접근 로그 설정</a></li>          
                     
           
           
@@ -768,28 +937,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="MySQL, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, mariadb my.cnf 위치</a></li>          
+          <li><a title="MySQL, MariaDB my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, MariaDB my.cnf 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, mariadb bind-address 위치</a></li>          
+          <li><a title="MySQL, MariaDB bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, MariaDB bind-address 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="CentOS에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="CentOS에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 MariaDB 외부접속 허용</a></li>          
                     
           
           
           
           
           
-          <li><a title="Ubuntu에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="Ubuntu에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 MariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 5.7 설치 방법" href="/database/ncloud-database-mysql-57-install-on-rocky-linux.html" >Rocky Linux에 MySQL 5.7 설치 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 8.0 최신 버전" href="/database/ncloud-database-mysql-8-latest-version-install-on-rocky-linux.html" >Rocky Linux에 MySQL 8.0 최신 버전</a></li>          
                     
           
           
@@ -817,22 +1000,122 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Cloud DB MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >Cloud DB MySQL Public 도메인 접속</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html" >MySQL(MARIADB) Replication 생성</a></li>          
+          <li><a title="VPC 환경 Cloud DB for MSSQL 생성" href="/database/ncloud-database-cloud-db-for-mssql-guide.html" >VPC 환경 Cloud DB for MSSQL 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html" >MySQL GTID Replication 상세 가이드</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속" href="/database/ncloud-database-cloud-db-for-mssql-public-domain-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속</a></li>          
                     
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개" href="/database/ncloud-database-cloud-db-for-mssql-setting-manage-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Replication - MySQL, MariaDB" href="#">Replication - MySQL, MariaDB</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL Multi Source Replication 생성" href="/database/ncloud-database-mysql-multi-source-replication.html">MySQL Multi Source Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB Multi Source Replication" href="/database/ncloud-database-mariadb-multi-source-replication.html">MariaDB Multi Source Replication</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Database Migration 서비스" href="#">Database Migration 서비스</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="From MySQL 5.7 To MysQL 5.7" href="/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html">From MySQL 5.7 To MysQL 5.7</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="PostgreSQL" href="#">PostgreSQL</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">CDB PostgreSQL 생성 | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">CDB PostgreSQL 생성 | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html">CDB PostgreSQL Public 도메인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | CentOS" href="/database/ncloud-database-postgresql-install-connect-guide-centos.html">설치형 PostgreSQL | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Ubuntu" href="/database/ncloud-database-postgresql-install-connect-guide-ubuntu.html">설치형 PostgreSQL | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Rocky Linux" href="/database/ncloud-database-postgresql-install-connect-guide-rocky-linux.html">설치형 PostgreSQL | Rocky Linux</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -867,27 +1150,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경" href="/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html" >Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html" >Cloud DB PostgreSQL 생성 | CentOS</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html" >Cloud DB PostgreSQL 생성 | Ubuntu</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html" >Cloud DB PostgreSQL Public 도메인</a></li>          
                     
           
           
@@ -931,6 +1193,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="WAF 서비스 요금 정보" href="/security/ncloud-security-security-monitoring-waf-price-info.html" >WAF 서비스 요금 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Certificate Manager 인증서 등록 방법" href="/security/ncloud-security-certificate-manager-register-ssl-certificate-guide.html" >Certificate Manager 인증서 등록 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="Classic 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_classic_guide.html" >Classic 환경에서 SSL VPN 설정, 접속</a></li>          
                     
           
@@ -939,13 +1222,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="VPC 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_vpc_guide.html" >VPC 환경에서 SSL VPN 설정, 접속</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
                     
           
           
@@ -975,6 +1251,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="API Key 접근 제한 설정하는 방법" href="/management/ncloud-management-sub-account-api-gateway-access-control-guide.html" >API Key 접근 제한 설정하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="STS 기간 제한 API AccessKey 발급" href="/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html" >STS 기간 제한 API AccessKey 발급</a></li>          
                     
           
@@ -997,6 +1280,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud Insight 설정 가이드" href="/management/ncloud_management_cloud_insight_guide.html" >Cloud Insight 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드" href="/management/ncloud-management-cloud-insight-rule-template-guide.html" >&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드</a></li>          
                     
           
           
@@ -1068,6 +1358,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          
+          
+          <li><a title="PowerShell에서 Ncloud API 호출 샘플" href="/api/ncloud-api-call-powershell-sample.html" >PowerShell에서 Ncloud API 호출 샘플</a></li>          
+                    
+          
+          
+          
       </ul>
    </li>
      
@@ -1109,7 +1406,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Video Player 구현하기 샘플" href="/media/ncloud_media_video_player_sample.html" >Video Player 구현하기 샘플</a></li>          
+          <li><a title="VOD Station 생성 가이드" href="/media/ncloud-media-vod-station-guide.html" >VOD Station 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Video Player Enhancement 가이드" href="/media/ncloud-media-video-player-enhancement-guide.html" >Video Player Enhancement 가이드</a></li>          
                     
           
           
@@ -1139,14 +1443,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 서버 설치 가이드 | CentOS</a></li>          
+          <li><a title="Jenkins 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 설치 가이드 | CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 서버 설치 가이드 | Ubuntu</a></li>          
+          <li><a title="Jenkins 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 설치 가이드 | Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jenkins 설치 가이드 | Rocky Linux" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-rocky-linux.html" >Jenkins 설치 가이드 | Rocky Linux</a></li>          
                     
           
           
@@ -1612,16 +1923,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-            </div>
+              </div>
+              
             
-        
 
-        <!-- Content Column -->
-        <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-
-   <h1 class="post-title-main">CentOS에서 NginX 설치, 설정하는 방법</h1>
-
+            <!-- Content Column -->
+            <div class="col-md-9" id="tg-sb-content">
+              <div class="post-header">
+  
+    <h1 class="post-title-main">CentOS에서 NginX 설치, 설정하는 방법</h1>
+  
 </div>
 
 
@@ -1629,13 +1940,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="post-content" >
 
-   
-   
-    <div class="summary">Ncloud CentOS 서버에 NginX를 Package로 설치하고 기본 설정을 하는 방법입니다</div>
-   
-   
-
+  
     
+      <div class="summary">Ncloud CentOS 서버에 NginX를 Package로 설치하고 기본 설정을 하는 방법입니다</div>
+    
+  
+
+  
     
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
@@ -1668,9 +1979,9 @@ $("#toc_onoff").click(function() {
 
 
 
-    
+  
 
-   <h2 id="개요">개요</h2>
+  <h2 id="개요">개요</h2>
 <p>Ncloud (네이버 클라우드) CentOS 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.</p>
 
 <h2 id="서버-환경">서버 환경</h2>
@@ -1685,7 +1996,12 @@ $("#toc_onoff").click(function() {
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nb">install </span>yum-utils
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_01.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_01.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="repository-설정">Repository 설정</h2>
 <p>NginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. 
@@ -1715,7 +2031,12 @@ Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내�
 NginX의 공식 설명에 따르면 버그 수정이나 보안 패치 등은 항상 mainline 버전에 먼저 적용되기 때문에 mainline을 사용하는 것을 추천한다고 합니다. <br />
 stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</strong>을 사용하고 있어서 신규 버전에서 <strong>호환성 문제</strong>가 발생할 가능성이 걱정될 때라고 합니다.</div>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_02.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_02.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="버전-선택">버전 선택</h2>
 <p>stable, mainline 두가지 버전 중에서 기본은 stable 버전입니다.<br />
@@ -1724,14 +2045,24 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum-config-manager <span class="nt">--enable</span> nginx-mainline
 </code></pre></div></div>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_03.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_03.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="nginx-설치">NginX 설치</h2>
 <p>설정을 마쳤으면 yum으로 NginX를 설치합니다.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nt">-y</span> <span class="nb">install </span>nginx
 </code></pre></div></div>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_04.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_04.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="디렉토리-설정">디렉토리 설정</h2>
 <p>다음으로 홈으로 사용할 디렉토리를 생성하고, 해당 디렉토리의 소유권을 설정하겠습니다.<br />
@@ -1742,7 +2073,12 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 ~# <span class="nb">cp</span> /usr/share/nginx/html/index.html /ncp/data/www/index.html
 ~# <span class="nb">ls</span> <span class="nt">-al</span> /ncp/data/www
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_05.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_05.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="환경-설정">환경 설정</h2>
 <p>주로 변경할 환경 설정 파일은 /etc/nginx/conf.d/default.conf 입니다.</p>
@@ -1757,7 +2093,12 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 <span class="k">server_name</span>  <span class="s">nginx-test.com</span><span class="p">;</span>
 </code></pre></div></div>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_06.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_06.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="홈-디렉토리-기본-문서-설정">홈 디렉토리, 기본 문서 설정</h3>
 <p>앞에서 만들었던 홈 디렉토리 경로를 설정하고 기본 문서를 지정하는 곳입니다.</p>
@@ -1776,9 +2117,19 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
         <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri</span><span class="n">/</span> <span class="p">=</span> <span class="mi">404</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_07.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_07.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_08.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_08.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="error-페이지-설정">error 페이지 설정</h3>
 <p>404, 500 등의 error 페이지를 설정할 경우 아래 내용들을 수정하면 됩니다.</p>
@@ -1798,9 +2149,19 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
     <span class="p">}</span>
 </code></pre></div></div>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_09.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_09.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_10.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_10.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="htaccess-파일-접근-금지-설정">.htaccess 파일 접근 금지 설정</h3>
 <p>.htaccess 파일에 대한 접근 금지를 설정할 경우 아래 내용을 주석 해제하면 됩니다.</p>
@@ -1816,9 +2177,19 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
     <span class="p">}</span>
 </code></pre></div></div>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_11.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_11.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_12.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_12.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="nginx-실행">NginX 실행</h2>
 <p>설정을 모두 마쳤으면 NginX를 시작하고 상태를 확인합니다.</p>
@@ -1826,12 +2197,22 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# systemctl start nginx
 ~# systemctl status nginx
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_13.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_13.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 770px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="사이트-접속">사이트 접속</h3>
 <p>NginX가 정상 작동하면 아래와 같이 서버 접속 화면을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_14.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 600px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/lemp/ncloud_server_nginx_install_setting_guide_centos_14.png" alt="Ncloud CentOS에서 NginX 설치, 설정하는 방법" style="width: 600px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
@@ -1847,35 +2228,50 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
   </li>
 </ol>
 
-   
+  
     <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        <a href="/tag/tag_centos.html" class="btn btn-default navbar-btn cursorNorm" role="button">centos</a>
+      
+        <b>Tags:
+        </b>
         
         
+          
+            <a
+              href="/tag/tag_centos.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">centos</a>
+          
         
-        <a href="/tag/tag_lemp.html" class="btn btn-default navbar-btn cursorNorm" role="button">lemp</a>
+          
+            <a
+              href="/tag/tag_lemp.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">lemp</a>
+          
         
+          
+            <a
+              href="/tag/tag_nginx.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">nginx</a>
+          
         
+          
+            <a
+              href="/tag/tag_install.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">install</a>
+          
         
-        <a href="/tag/tag_nginx.html" class="btn btn-default navbar-btn cursorNorm" role="button">nginx</a>
-        
-        
-        
-        <a href="/tag/tag_install.html" class="btn btn-default navbar-btn cursorNorm" role="button">install</a>
-        
-        
-        
+      
     </div>
-   
+  
 
 </div>
 
 <hr class="shaded"/>
+
+
 
 <footer>
     <div class="row">
@@ -1901,9 +2297,9 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
           </a>
         		
         </div>
-        &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+        &copy;2023 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2022-04-25<br/> Site last generated: 2022-09-28 <br />        
+        <span>Page last updated:</span> 2022-04-25<br/> Site last generated: 2023-10-19 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -1914,57 +2310,33 @@ stable 버전을 설치할 경우에는 다음 명령어는 건너띄어도 되�
 
 
 
-
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
         </div>
-    <!-- /.row -->
+        
+          
+          <div class="side-banner-right">
+  <a
+    href="https://hyphen.im/benefit/navercloud-event"
+    id="side-banner-right-01"
+    target="_blank"
+    class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
 </div>
-<!-- /.container -->
-</div>
-
-    <div class="side-banner-right">    
-    <a href="https://hyphen.im/benefit/navercloud-event" id="side-banner-right-01" target="_blank" class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
-</div>  
-
-<!-- /#main -->
-    </div>
-<script>
-    $(function() {
-        $('svg').click(function() {
+        
+        <!-- /#main -->
+      </div>
+      <script>
+        $(function() {
+          $('svg').click(function() {
             $(this).parent('form').submit();
+          });
         });
-    });
-</script>
+      </script>
 
-
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4Q6RVEFJ3S');
-</script>
-
-  
-
-  
-  <!-- NCloud Real User Analytics -->
-<script>
-  (function() {
-    var s = document.getElementsByTagName('script')[0]
-      , p = document.createElement('script');
-    p.async = 'async';
-    p.src = 'https://rua-api.ncloud.com/api/v1/beacon/boomerang/collect/'+
-      'e4c80491-1665-457b-9cec-550a5f554dde';
-    s.parentNode.insertBefore(p, s);
-  })();
-</script>
-
-  
-
-</body>
+      
+    </body>
+  </body>
 </html>
-
 

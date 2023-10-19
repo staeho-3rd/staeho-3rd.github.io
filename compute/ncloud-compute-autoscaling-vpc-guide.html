@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
+  <head>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,38 +11,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Ncloud VPC 환경에서 AutoScaling 설정하는 방법입니다">
+<meta name="description" content="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법입니다">
 <meta name="keywords" content="autoscaling, vpc,  Auto Scaling, 오토스케일링">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="VPC 환경에서 AutoScaling 설정하는 방법" />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:description" content="Ncloud VPC 환경에서 AutoScaling 설정하는 방법입니다" />
+<meta property="og:description" content="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법입니다" />
 <link rel="canonical" href="https://docs.3rdeyesys.com/compute/ncloud-compute-autoscaling-vpc-guide.html" />
 <meta property="og:url" content="https://docs.3rdeyesys.com/compute/ncloud-compute-autoscaling-vpc-guide.html" />
 <meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
+<meta property="og:image" content="https://docs.3rdeyesys.com/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_42.png" />
+<meta property="og:image:alt" content="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-06-20T00:00:00+09:00" />
-<meta name="twitter:card" content="summary" />
+<meta property="article:published_time" content="2023-09-05T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_42.png" />
+<meta name="twitter:image:alt" content="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" />
 <meta property="twitter:title" content="VPC 환경에서 AutoScaling 설정하는 방법" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud VPC 환경에서 AutoScaling 설정하는 방법입니다","headline":"VPC 환경에서 AutoScaling 설정하는 방법","url":"https://docs.3rdeyesys.com/compute/ncloud-compute-autoscaling-vpc-guide.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법입니다","headline":"VPC 환경에서 AutoScaling 설정하는 방법","image":{"alt":"Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법","url":"https://docs.3rdeyesys.com/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_42.png","@type":"imageObject"},"url":"https://docs.3rdeyesys.com/compute/ncloud-compute-autoscaling-vpc-guide.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>VPC 환경에서 AutoScaling 설정하는 방법 | 써드아이시스템 기술문서</title>
 <link rel="stylesheet" href="/css/syntax.css">
 
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
-<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css"/>
-<link rel="stylesheet" href="/css/modern-business.css">
-<!-- Latest compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/v4.7.0.css" />
+<link rel="stylesheet" href="/css/modern-business.css"> <!-- Latest compiled and minified CSS -->
 <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
-<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"-->
-<link rel="stylesheet" href="/css/customstyles.css">
-<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"--> <link rel="stylesheet" href="/css/customstyles.css"> <link rel="stylesheet" href="/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
 <link rel="stylesheet" href="/css/theme-ncloud.css">
+
 
 <script src="/js/jquery.341.min.js"></script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
@@ -56,86 +61,94 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="/js/bootstrap.341.min.js"></script>
 <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
 <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script-->
-<!-- Anchor.js -->
-<script src="/js/anchor.420.min.js"></script>
+<!-- Anchor.js --><script src="/js/anchor.420.min.js"> </script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script-->
 <script src="/js/toc.js"></script>
 <script src="/js/customscripts.js"></script>
 
 
+
 <link rel="shortcut icon" href="/images/favicon.ico">
 
-<link rel="alternate" type="application/rss+xml" title="3RDEYESYSTEM Technical Documentations" href="https://docs.3rdeyesys.com/feed.xml">
-
+<link rel="alternate"
+  type="application/rss+xml"
+  title="3RDEYESYSTEM Technical Documentations"
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
-        $(document).ready(function() {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
-            
-            window_width = $(window).width();
-            if (window_width <= 990) //모바일 환경에서는 사이드바 접기
-            {
-                $("#mysidebar").navgoco('toggle', false);
-            }
+      $(document).ready(function() {
 
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
+// Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '',
+          accordion: true,
+          openClass: 'active', // open
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: 'navgoco',
+            expires: false,
+            path: '/'
+          },
+          slide: {
+            duration: 400,
+            easing: 'swing'
+          }
         });
 
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#tg-sb-link").click(function() {                
-                if (!$("#tg-sb-link").attr("hide_sidebar"))
-                {
-                    $("#tg-sb-sidebar").toggle();
-                    $("#tg-sb-content").toggleClass('col-md-9');
-                    $("#tg-sb-content").toggleClass('col-md-12');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                    $("#tg-sb-icon").toggleClass('fa-toggle-off');
-                }
-            });
+        window_width = $(window).width();
+        if (window_width <= 990) { // 모바일 환경에서는 사이드바 접기
+          $("#mysidebar").navgoco('toggle', false);
+        }
+
+        $("#collapseAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', false);
         });
+
+        $("#expandAll").click(function(e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco('toggle', true);
+        });
+
+      });
+    </script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <script>
+      $(document).ready(function() {
+        $("#tg-sb-link").click(function() {
+          if (!$("#tg-sb-link").attr("hide_sidebar")) {
+            $("#tg-sb-sidebar").toggle();
+            $("#tg-sb-content").toggleClass('col-md-9');
+            $("#tg-sb-content").toggleClass('col-md-12');
+            $("#tg-sb-icon").toggleClass('fa-toggle-on');
+            $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          }
+        });
+      });
     </script>
     
 
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
+    
+      <script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6933218466698885"
+  crossorigin="anonymous"></script>
+    
+
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XRCSF3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header>
-<!-- Navigation -->
+    <header>
+      <!-- Navigation -->
 <nav class="navbar2 navbar-inverse navbar-static-top">
     <div class="container topnavlinks">
         <div class="navbar-header">
@@ -225,19 +238,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-</header>
-<!-- Page Content -->
-
-<div class="container">
-
-  <div id="main">
-    <!-- Content Row -->
-    <div class="row">
+      
+    </header>
+    <!-- Page Content -->
+    
+        <div class="container">
         
-        
-            <!-- Sidebar Column -->
-            <div class="col-md-3" id="tg-sb-sidebar">
+        <div id="main">
+          <!-- Content Row -->
+          <div class="row">
+            
+              
+              <!-- Sidebar Column -->
+              <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <ul id="mysidebar" class="nav">
@@ -251,63 +264,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html" >서버 접속 방법(Linux) - 공인IP 없을 때</a></li>          
+          <li><a title="VPC 환경에서 서버 생성하는 방법" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성하는 방법</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Classic 환경 Linux 서버 접속 방법" href="#">Classic 환경 Linux 서버 접속 방법</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="공인IP 없을 때" href="/compute/ncloud_compute_server_connect_no_public_ip.html">공인IP 없을 때</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html">공인IP 있을 때</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="서버 스펙 변경 제한 사항" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경 제한 사항</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="디스크(스토리지) 설정" href="#">디스크(스토리지) 설정</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html">스토리지 추가 생성 기본 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html">Linux 디스크 추가 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html">Linux 서버 디스크 LVM 구성하기</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html">Windows 디스크 추가 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Linux 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-linux.html">Linux 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Windows 서버 디스크 크기 확장" href="/compute/ncloud-compute-server-storage-extend-guide-windows.html">Windows 서버 디스크 크기 확장</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Classic 환경 Micro 서버 제한 사항" href="/compute/ncloud_compute_server_micro_type_limit.html" >Classic 환경 Micro 서버 제한 사항</a></li>          
                     
           
           
           
           
           
-          <li><a title="서버 접속 방법(Linux) - 공인IP 있을 때" href="/compute/ncloud_compute_server_connect_by_public_ip.html" >서버 접속 방법(Linux) - 공인IP 있을 때</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="VPC 환경에서 서버 생성" href="/compute/ncloud_compute_server_vpc_create.html" >VPC 환경에서 서버 생성</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="스토리지 추가 생성 기본 가이드" href="/compute/ncloud_compute_server_storage_add_guide.html" >스토리지 추가 생성 기본 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 추가 상세 가이드" href="/compute/ncloud_compute_server_storage_add_detail_process.html" >Linux 서버 디스크 추가 상세 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Linux 서버 디스크 LVM 구성하기" href="/compute/ncloud_compute_server_storage_lvm_create.html" >Linux 서버 디스크 LVM 구성하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Windows 서버 디스크 추가 가이드" href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html" >Windows 서버 디스크 추가 가이드</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="서버 스펙 변경하기" href="/compute/ncloud_compute_server_spec_change.html" >서버 스펙 변경하기</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Micro 타입 서버에서 제한되는 서비스" href="/compute/ncloud_compute_server_micro_type_limit.html" >Micro 타입 서버에서 제한되는 서비스</a></li>          
+          <li><a title="VPC 환경에서 Micro 서버 생성하기" href="/compute/ncloud-compute-micro-type-server-create-vpc.html" >VPC 환경에서 Micro 서버 생성하기</a></li>          
                     
           
           
@@ -342,6 +386,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="Linux 서버 SSH Key로 접속하는 방법" href="/compute/ncloud-compute-server-connect-by-ssh-key.html" >Linux 서버 SSH Key로 접속하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="X-Forwarded-For로 Client IP 기록하기" href="/compute/ncloud_compute_server_x_forwarded_for_client_ip_logging_guide.html" >X-Forwarded-For로 Client IP 기록하기</a></li>          
                     
           
@@ -349,14 +400,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https로 리다이렉트 - Apache/CentOS</a></li>          
+          <li><a title="https 리다이렉트 - Apache/CentOS" href="/compute/ncloud_compute_server_http_to_https_centos.html" >https 리다이렉트 - Apache/CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="https로 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https로 리다이렉트 - Apache/Ubuntu</a></li>          
+          <li><a title="https 리다이렉트 - Apache/Ubuntu" href="/compute/ncloud_compute_server_http_to_https_ubuntu.html" >https 리다이렉트 - Apache/Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="https 리다이렉트-Apache/Rocky Linux" href="/compute/ncloud-compute-server-http-to-https-rocky-linux.html" >https 리다이렉트-Apache/Rocky Linux</a></li>          
                     
           
           
@@ -364,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Repository 변경해 리눅스 패키지 설치" href="/compute/ncloud_compute_server_repository_change_on_private_network.html" >Repository 변경해 리눅스 패키지 설치</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 서버 소개" href="/compute/ncloud-compute-server-rocky-linux-guide.html" >Rocky Linux 서버 소개</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux 미러 사이트 문제 해결" href="/compute/ncloud-compute-server-rocky-linux-repository-mirror-site-error-troubleshooting.html" >Rocky Linux 미러 사이트 문제 해결</a></li>          
                     
           
           
@@ -449,6 +521,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
+                  
+                  
+                  <li><a title="Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법" href="/compute/ncloud-compute-lamp-apache-ssl-setting-rocky-linux-guide.html">Rocky Linux Apache 웹서버에 SSL 인증서 설정하는 방법</a></li>
+                  
+                  
+                  
               </ul>
           </li>
           
@@ -460,13 +538,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
-                  <li><a title="CentOS에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에서 NginX 설치, 설정</a></li>
+                  <li><a title="CentOS에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_centos_guide.html">CentOS에 NginX 설치, 설정</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Ubuntu에서 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에서 NginX 설치, 설정</a></li>
+                  <li><a title="Ubuntu에 NginX 설치, 설정" href="/compute/ncloud_compute_lemp_nginx_install_setting_ubuntu_guide.html">Ubuntu에 NginX 설치, 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux에 NginX 설치, 설정" href="/compute/ncloud-compute-lemp-nginx-install-setting-rocky-linux-guide.html">Rocky Linux에 NginX 설치, 설정</a></li>
                   
                   
                   
@@ -479,6 +563,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   <li><a title="Ubuntu NginX SSL 인증서 설정" href="/compute/ncloud_compute_lemp_nginx_ssl_setting_ubuntu_guide.html">Ubuntu NginX SSL 인증서 설정</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="로드밸런서 환경 Client IP 확인" href="/compute/ncloud-compute-nginx-client-ip-logging-guide.html">로드밸런서 환경 Client IP 확인</a></li>
                   
                   
                   
@@ -592,15 +682,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | CentOS" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html" >Proxy Protocol을 이용해 Client IP 확인하기 | CentOS</a></li>          
+          <li><a title="로드밸런서 접속 로그 확인하는 방법" href="/networking/ncloud-networking-load-balancer-application-lb-access-log.html" >로드밸런서 접속 로그 확인하는 방법</a></li>          
                     
           
           
           
           
           
-          <li><a title="Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html" >Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu</a></li>          
+          <li><a title="Load Balancer 인증서 교체하는 방법" href="/networking/ncloud-networking-load-balancer-certificate-change.html" >Load Balancer 인증서 교체하는 방법</a></li>          
                     
+          
+          
+          <li class="subfolders">
+              <a title="Proxy Protocol로 Client IP 확인" href="#">Proxy Protocol로 Client IP 확인</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CentOS 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-centos.html">CentOS 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ubuntu 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-ubuntu.html">Ubuntu 서버에서 확인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Rocky Linux 서버에서 확인" href="/networking/ncloud-networking-proxy-protocol-client-ip-logging-rocky-linux.html">Rocky Linux 서버에서 확인</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -628,6 +745,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="VPC Peering 생성 가이드" href="/networking/ncloud_networking_vpc_peering_guide.html" >VPC Peering 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="IPsecVPN과 FortiGate 장비 연동" href="/networking/ncloud-networking-ipsecvpn-fortigate-setting-guide.html" >IPsecVPN과 FortiGate 장비 연동</a></li>          
                     
           
           
@@ -734,7 +858,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="백업 서비스 가이드와 신청 절차" href="/storage/ncloud_storage_backup_guide.html" >백업 서비스 가이드와 신청 절차</a></li>          
+          <li><a title="백업 서비스 기본 가이드" href="/storage/ncloud-storage-backup-service-basic-guide.html" >백업 서비스 기본 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - Linux Data" href="/storage/ncloud-storage-backup-service-linux-data-guide.html" >백업 서비스 상세 가이드 - Linux Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="백업 서비스 상세 가이드 - 윈도 Data" href="/storage/ncloud-storage-backup-service-windows-data-guide.html" >백업 서비스 상세 가이드 - 윈도 Data</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Content-Type 변경" href="/storage/ncloud-storage-object-storage-mimetype-contenttype-change-guide.html" >Object Storage Content-Type 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L Content-Type 일괄 적용, 변경" href="/storage/ncloud-storage-object-storage-contenttype-bulk-change-guide.html" >&nbsp;&nbsp; L Content-Type 일괄 적용, 변경</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket에 CORS 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-guide.html" >Object Storage Bucket에 CORS 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정" href="/storage/ncloud-storage-object-storage-bucket-cors-setting-api-sdk-guide.html" >&nbsp;&nbsp; L &nbsp; CORS를 SDK for S3 API로 설정</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Object Storage Bucket 접근 로그 설정" href="/storage/ncloud-storage-object-storage-log-management-guide.html" >Object Storage Bucket 접근 로그 설정</a></li>          
                     
           
           
@@ -764,28 +937,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="MySQL, mariadb my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, mariadb my.cnf 위치</a></li>          
+          <li><a title="MySQL, MariaDB my.cnf 위치" href="/database/ncloud_database_mysql_mariadb_config_my_cnf.html" >MySQL, MariaDB my.cnf 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL, mariadb bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, mariadb bind-address 위치</a></li>          
+          <li><a title="MySQL, MariaDB bind-address 위치" href="/database/ncloud_database_mysql_mariadb_config_bind_address.html" >MySQL, MariaDB bind-address 위치</a></li>          
                     
           
           
           
           
           
-          <li><a title="CentOS에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="CentOS에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_centos.html" >CentOS에서 MariaDB 외부접속 허용</a></li>          
                     
           
           
           
           
           
-          <li><a title="Ubuntu에서 mariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 mariaDB 외부접속 허용</a></li>          
+          <li><a title="Ubuntu에서 MariaDB 외부접속 허용" href="/database/ncloud_database_mariadb_access_from_remote_ubuntu.html" >Ubuntu에서 MariaDB 외부접속 허용</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 5.7 설치 방법" href="/database/ncloud-database-mysql-57-install-on-rocky-linux.html" >Rocky Linux에 MySQL 5.7 설치 방법</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Rocky Linux에 MySQL 8.0 최신 버전" href="/database/ncloud-database-mysql-8-latest-version-install-on-rocky-linux.html" >Rocky Linux에 MySQL 8.0 최신 버전</a></li>          
                     
           
           
@@ -813,22 +1000,122 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Cloud DB MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >Cloud DB MySQL Public 도메인 접속</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속" href="/database/ncloud_database_cloud_db_for_mysql_public_domain_guide.html" >&nbsp;&nbsp; L &nbsp; MySQL Public 도메인 접속</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html" >MySQL(MARIADB) Replication 생성</a></li>          
+          <li><a title="VPC 환경 Cloud DB for MSSQL 생성" href="/database/ncloud-database-cloud-db-for-mssql-guide.html" >VPC 환경 Cloud DB for MSSQL 생성</a></li>          
                     
           
           
           
           
           
-          <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html" >MySQL GTID Replication 상세 가이드</a></li>          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속" href="/database/ncloud-database-cloud-db-for-mssql-public-domain-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL Public 도메인 접속</a></li>          
                     
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개" href="/database/ncloud-database-cloud-db-for-mssql-setting-manage-guide.html" >&nbsp;&nbsp; L &nbsp; MSSQL 메뉴와 기능 소개</a></li>          
+                    
+          
+          
+          <li class="subfolders">
+              <a title="Replication - MySQL, MariaDB" href="#">Replication - MySQL, MariaDB</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="MySQL(MARIADB) Replication 생성" href="/database/ncloud_database_mysql_mariadb_replication.html">MySQL(MARIADB) Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL GTID Replication 상세 가이드" href="/database/ncloud-database-mysql-gtid-replication.html">MySQL GTID Replication 상세 가이드</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MySQL Multi Source Replication 생성" href="/database/ncloud-database-mysql-multi-source-replication.html">MySQL Multi Source Replication 생성</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="MariaDB Multi Source Replication" href="/database/ncloud-database-mariadb-multi-source-replication.html">MariaDB Multi Source Replication</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Database Migration 서비스" href="#">Database Migration 서비스</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="From MySQL 5.7 To MysQL 5.7" href="/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html">From MySQL 5.7 To MysQL 5.7</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="PostgreSQL" href="#">PostgreSQL</a>
+              <ul>                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html">CDB PostgreSQL 생성 | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html">CDB PostgreSQL 생성 | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="CDB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html">CDB PostgreSQL Public 도메인</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | CentOS" href="/database/ncloud-database-postgresql-install-connect-guide-centos.html">설치형 PostgreSQL | CentOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Ubuntu" href="/database/ncloud-database-postgresql-install-connect-guide-ubuntu.html">설치형 PostgreSQL | Ubuntu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="설치형 PostgreSQL | Rocky Linux" href="/database/ncloud-database-postgresql-install-connect-guide-rocky-linux.html">설치형 PostgreSQL | Rocky Linux</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
           
           
           
@@ -863,27 +1150,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경" href="/database/ncloud-database-cloud-db-for-mysql-read-load-balancing-network-proxy-lb.html" >Cloud DB MySQL 읽기 부하 분산 | Network Proxy LB | VPC 환경</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | CentOS" href="/database/ncloud-database-cloud-db-for-postgresql-guide-centos.html" >Cloud DB PostgreSQL 생성 | CentOS</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL 생성 | Ubuntu" href="/database/ncloud-database-cloud-db-for-postgresql-guide-ubuntu.html" >Cloud DB PostgreSQL 생성 | Ubuntu</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="Cloud DB PostgreSQL Public 도메인" href="/database/ncloud-database-cloud-db-for-postgresql-public-domain-guide.html" >Cloud DB PostgreSQL Public 도메인</a></li>          
                     
           
           
@@ -927,6 +1193,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="WAF 서비스 요금 정보" href="/security/ncloud-security-security-monitoring-waf-price-info.html" >WAF 서비스 요금 정보</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Certificate Manager 인증서 등록 방법" href="/security/ncloud-security-certificate-manager-register-ssl-certificate-guide.html" >Certificate Manager 인증서 등록 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="Classic 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_classic_guide.html" >Classic 환경에서 SSL VPN 설정, 접속</a></li>          
                     
           
@@ -935,13 +1222,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="VPC 환경에서 SSL VPN 설정, 접속" href="/security/ncloud_security_ssl_vpn_vpc_guide.html" >VPC 환경에서 SSL VPN 설정, 접속</a></li>          
-                    
-          
-          
-          
-          
-          
-          <li><a title="SSL인증서 DCV 인증 방법 정리" href="/security/ncloud_security_ssl_dcv_method.html" >SSL인증서 DCV 인증 방법 정리</a></li>          
                     
           
           
@@ -971,6 +1251,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          <li><a title="API Key 접근 제한 설정하는 방법" href="/management/ncloud-management-sub-account-api-gateway-access-control-guide.html" >API Key 접근 제한 설정하는 방법</a></li>          
+                    
+          
+          
+          
+          
+          
           <li><a title="STS 기간 제한 API AccessKey 발급" href="/management/ncloud-management-sub-account-sts-temporary-accesskey-create-guide.html" >STS 기간 제한 API AccessKey 발급</a></li>          
                     
           
@@ -993,6 +1280,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <li><a title="Cloud Insight 설정 가이드" href="/management/ncloud_management_cloud_insight_guide.html" >Cloud Insight 설정 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드" href="/management/ncloud-management-cloud-insight-rule-template-guide.html" >&nbsp;&nbsp; L &nbsp; Rule Template 설정 가이드</a></li>          
                     
           
           
@@ -1064,6 +1358,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
+          
+          
+          <li><a title="PowerShell에서 Ncloud API 호출 샘플" href="/api/ncloud-api-call-powershell-sample.html" >PowerShell에서 Ncloud API 호출 샘플</a></li>          
+                    
+          
+          
+          
       </ul>
    </li>
      
@@ -1105,7 +1406,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Video Player 구현하기 샘플" href="/media/ncloud_media_video_player_sample.html" >Video Player 구현하기 샘플</a></li>          
+          <li><a title="VOD Station 생성 가이드" href="/media/ncloud-media-vod-station-guide.html" >VOD Station 생성 가이드</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Video Player Enhancement 가이드" href="/media/ncloud-media-video-player-enhancement-guide.html" >Video Player Enhancement 가이드</a></li>          
                     
           
           
@@ -1135,14 +1443,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 서버 설치 가이드 | CentOS</a></li>          
+          <li><a title="Jenkins 설치 가이드 | CentOS" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-centos.html" >Jenkins 설치 가이드 | CentOS</a></li>          
                     
           
           
           
           
           
-          <li><a title="Jenkins 서버 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 서버 설치 가이드 | Ubuntu</a></li>          
+          <li><a title="Jenkins 설치 가이드 | Ubuntu" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-ubuntu.html" >Jenkins 설치 가이드 | Ubuntu</a></li>          
+                    
+          
+          
+          
+          
+          
+          <li><a title="Jenkins 설치 가이드 | Rocky Linux" href="/dev-tools/ncloud-dev-tools-jenkins-server-install-guide-rocky-linux.html" >Jenkins 설치 가이드 | Rocky Linux</a></li>          
                     
           
           
@@ -1608,16 +1923,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-            </div>
+              </div>
+              
             
-        
 
-        <!-- Content Column -->
-        <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-
-   <h1 class="post-title-main">VPC 환경에서 AutoScaling 설정하는 방법</h1>
-
+            <!-- Content Column -->
+            <div class="col-md-9" id="tg-sb-content">
+              <div class="post-header">
+  
+    <h1 class="post-title-main">VPC 환경에서 AutoScaling 설정하는 방법</h1>
+  
 </div>
 
 
@@ -1625,13 +1940,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="post-content" >
 
-   
-   
-    <div class="summary">Ncloud VPC 환경에서 AutoScaling 설정하는 방법입니다</div>
-   
-   
-
+  
     
+      <div class="summary">Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법입니다</div>
+    
+  
+
+  
     
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
@@ -1664,10 +1979,10 @@ $("#toc_onoff").click(function() {
 
 
 
-    
+  
 
-   <h2 id="개요">개요</h2>
-<p>Ncloud (네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.</p>
+  <h2 id="개요">개요</h2>
+<p>Ncloud(네이버 클라우드)  VPC 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.</p>
 
 <p>AutoScaling 서비스는 미리 등록한 설정에 따라 서버 수를 자동으로 증가 또는 감소시켜 안정적인 서비스를 유지하면서 비용을 절감할 수 있도록 해주는 서비스입니다.</p>
 
@@ -1676,10 +1991,22 @@ $("#toc_onoff").click(function() {
 
 <p>그래서 여기서는 사전에 준비된 서버를 기준으로 AutoScaling이 작동되는 것을 살펴보겠습니다.</p>
 
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_42.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
 <h2 id="기준-서버-생성">기준 서버 생성</h2>
 <p>AutoScaling 이벤트 설정의 기준이 되는 서버 1대를 아래와 같이 미리 생성하겠습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_16.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_16.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="설정-순서">설정 순서</h2>
 <p>Auto Scaling 설정 순서를 요약하면 다음과 같습니다.</p>
@@ -1693,17 +2020,28 @@ $("#toc_onoff").click(function() {
 <h2 id="launch-configuration-설정">Launch Configuration 설정</h2>
 <p>Auto Scaling 설정은 우선 [Auto Scaling] - [Launch Configuration]에서 [Launch Configuration 생성] 버튼을 클릭하는 것으로 시작합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_01.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_01.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="서버-이미지-선택">서버 이미지 선택</h3>
-<p>서버 이미지는 Ncloud (네이버 클라우드)에서 제공하는 기본 이미지를 선택할 수도 있고, 기존에 사용하던 서버로 만들어 둔 [내 서버 이미지]를 사용할 수도 있습니다. 여기서는 기본 이미지를 사용하는 것으로 하겠습니다.</p>
+<p>서버 이미지는 Ncloud(네이버 클라우드) 에서 제공하는 기본 이미지를 선택할 수도 있고, 기존에 사용하던 서버로 만들어 둔 [내 서버 이미지]를 사용할 수도 있습니다. 여기서는 기본 이미지를 사용하는 것으로 하겠습니다.</p>
 
-<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">현재 AutoScaling에서 지원하는 Linux 서버 이미지 버전은 다음과 같습니다. <br />
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">현재 VPC 환경 AutoScaling에서 지원하는 Linux 서버 이미지 버전은 다음과 같습니다. <br />
 ⁃ CentOS 7.3, 7.8 <br />
+⁃ Rocky Linux 8.6, 8.8 <br />
 ⁃ Ubuntu 16.04, 18.04, 20.04
 </div>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_02.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_02.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="windows-서버-이미지-버전">Windows 서버 이미지 버전</h4>
 
@@ -1712,42 +2050,82 @@ $("#toc_onoff").click(function() {
 ⁃ Windows Server 2019 64bit English Edition
 </div>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_03.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_03.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="서버-설정">서버 설정</h3>
 <p>스토리지 종류와 서버 타입 등을 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_04.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_04.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="이름-설정">이름 설정</h3>
 <p>Launch Configuration의 이름을 입력합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_05.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_05.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="인증키-설정">인증키 설정</h3>
 <p>인증키는 기존에 보유하고 있던 인증키를 이용해도 되고, 새로운 인증키를 설정해도 됩니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_06.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_06.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="최종-확인">최종 확인</h3>
 <p>지금까지 설정한 내용이 이상 없는지 최종 확인을 하고 이상 없으면 [Launch Configuration 생성] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_07.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_07.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="auto-scaling-group-설정">Auto Scaling Group 설정</h2>
 <p>다음으로 Auto Scaling Group을 생성합니다. [Auto Scaling] - [Auto Scaling Group]에서 [Auto Scaling Group 생성] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_08.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_08.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="launch-configuration-선택">Launch Configuration 선택</h3>
 <p>위에서 생성했던 Launch Configuration을 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_09.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_09.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="그룹-설정">그룹 설정</h3>
 <p>여기서는 VPC와 Subnet 등의 네트워크 환경을 선택하고,  생성될 서버들의 이름과 최소, 최대 개수 등을 설정합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_10.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_10.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <ul>
   <li><strong>서버이름 Prefix</strong> : 최대7자까지 지정할 수 있고, 나머지 이름의 뒷부분은 영문,숫자의 조합으로 무작위로 자동 생성됩니다.</li>
@@ -1760,36 +2138,81 @@ $("#toc_onoff").click(function() {
   <li><strong>헬스체크 보류기간</strong> : 서버 인스턴스가 생성되어 상태가 ‘운영 중’으로 바뀌었더라도, 서버의 업데이트 설치 등 작업에 의해서 헬스 체크에 정상 응답하지 못하는 경우가 생길 수 있습니다. 
 이런 경우 헬스 체크 보류 기간을 지정하면 해당 기간 동안에는 헬스 체크에 실패하더라도 서버에 이상이 있다고 판단하지 않습니다.<br />
 <strong>값을 입력하지 않으면 기본값인 300초가 적용됩니다</strong>.</li>
+  <li><strong>헬스체크 유형</strong> : 헬스체크 유형은 [<strong>서버</strong>]와 [<strong>로드밸런서</strong>] 중에서 선택할 수 있습니다.</li>
 </ul>
 
-<p><br /></p>
+<h3 id="로드밸런서-연결">로드밸런서 연결</h3>
+
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-3">
+Auto Scaling으로 생성된 서버가 로드밸런서에 자동으로 연결되도록 하려면 [<strong>헬스 체크 유형</strong>]을 [<strong>로드밸런서</strong>]로 선택하고 [<strong>Target Group</strong>] 항목에서 원하는 로드밸런서의 Target Group을 선택하면 됩니다.
+</div>
+
+<figure>
+  <img class="docimage docimage-no-bottom" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_41.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<ul>
+  <li>VPC 환경에서 로드밸런서를 생성하는 방법은 아래 문서를 참고하시면 됩니다.</li>
+</ul>
+
+<div class="bs-callout-v2 bs-callout-v2-info bs-callout-v2-level-2">
+⁃ <a href="/networking/ncloud_networking_load_balancer_application_lb.html" target="_blank" style="word-break:break-all;">VPC 환경에서 Application Load Balancer 생성하는 방법</a>
+</div>
 
 <h3 id="네트워크-접근-설정">네트워크 접근 설정</h3>
 <p>네트워크 접근에 필요한 ACG를 설정하고 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_11.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_11.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="정책일정-설정">정책/일정 설정</h3>
 <p>정책과 일정을 여기서 바로 설정할 수도 있고 나중에 설정할 수도 있는데, 
 우선은 [정책 설정]에서 [서버 수 증가 정책]과 [서버 수 감소 정책]을 설정합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_12.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_12.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="통보-설정">통보 설정</h3>
 <p>서버가 생성될 때 또는 서버가 반납될 때 언제 통보를 받을 것인지 선택하고, 누가 언제 통보 받을 것인지 설정합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_13.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_13.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="통보-대상-설정">통보 대상 설정</h4>
 <p>먼저 [통보대상 관리 그룹]을 선택하고, 다음으로 관리자와 통보 방법을 선택합니다.<br />
 [통보대상 관리 그룹]이 설정되지 않았을 경우에는 [통보대상관리] 버튼을 클릭해 통보를 받을 대상의 그룹을 설정합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_14.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_14.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="최종-확인-1">최종 확인</h3>
 <p>지금까지 설정한 Auto Scaling Group 내역을 확인하고 이상이 없으면 [Auto Scaling Group 생성] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_15.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_15.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="event-rule-설정">Event Rule 설정</h2>
 <p>지정한 서버를 모니터링 하다가 설정한 조건에 해당되면 즉, 지정한 Event가 발생하면 Auto Scaling 설정을 적용해 서버를 증가시키거나 감소시키기 위한 감시 규칙인 [Event Rule]을 설정합니다.</p>
@@ -1797,17 +2220,32 @@ $("#toc_onoff").click(function() {
 <h3 id="서버-증가-event-rule-생성">서버 증가 Event Rule 생성</h3>
 <p>VPC에서는 [Cloud Insight]로 모니터링을 하게 되므로 Event Rule 설정도 [Cloud Insight(Monitoring)] - [Configuration] - [Event Rule]에서 [Event Rules 생성] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_17.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_17.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="감시-상품-선택">감시 상품 선택</h4>
 <p>Cloud Insight는 Server 뿐만 아니라 Load Balancer, Object Storage도 감시할 수 있는데 여기서는 처음에 생성했던 서버를 감시할 것이니 [Server(VPC)]를 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_18.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_18.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="감시-대상-설정">감시 대상 설정</h4>
 <p>맨 처음에 생성했던 서버를 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_19.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_19.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="감시-항목-및-조건-설정">감시 항목 및 조건 설정</h4>
 <p>감시 항목 설정에서 [전체 보기]를 선택하고, [SERVER] 탭에서 [Metric ID]를 [cpu]로 검색한 후 평균 CPU 사용률 항목인 [SERVER/avg_cpu_used_rto]에서 [Level]과 [Condition], [Method], [Duration]을 선택합니다.</p>
@@ -1815,40 +2253,75 @@ $("#toc_onoff").click(function() {
 <p>먼저 서버를 증가시키는 경우에 해당하는 감시 항목을 설정하겠습니다.<br />
 아래의 설정 내용은 “<strong>평균 CPU 사용률이 1분간 50% 이상일 경우 경고 수준으로 이벤트 통보를 한다</strong>“라는 설정입니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_22.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_22.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="액션-설정">액션 설정</h4>
 <p>앞에서 설정한 이벤트가 발생했을 경우 어떤 액션을 취할 것인지 설정하게 되는데 앞에서 [Auto Scaling Group] 설정에서 생성했던 정책을 선택하면 됩니다.<br />
 여기서는 [CPU 사용률 50% 이상]인 경우이므로 서버를 증가시키는 정책을 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_23.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_23.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="최종-확인-2">최종 확인</h4>
 <p>설정한 내용이 이상 없는지 최종 확인하고, 규칙 이름을 입력한 후에 [생성] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_24.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_24.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="서버-감소-event-rule-생성">서버 감소 Event Rule 생성</h3>
 <p>앞에서 생성한 [서버 증가 Event Rule]과 같은 방식으로 [서버 감소 Event Rule]을 생성합니다.</p>
 
 <p>아래의 설정 내용은 “<strong>평균 CPU 사용률이 1분간 10% 이하일 경우 정보 알림 수준으로 이벤트 통보를 한다</strong>“라는 설정입니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_25.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_25.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="액션-설정-1">액션 설정</h4>
 <p>여기서는 [CPU 사용률 10% 이하]인 경우이므로 서버를 감소시키는 정책을 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_26.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_26.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="최종-확인-3">최종 확인</h4>
 <p>설정한 내용이 이상 없는지 최종 확인하고, 규칙 이름을 입력한 후에 [생성] 버튼을 클릭합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_27.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_27.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="event-rule-생성-완료">Event Rule 생성 완료</h3>
 <p>서버 증가과 감소에 대한 Event Rule 2가지가 모두 생성된 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_28.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_28.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="stress-tool-설정">Stress Tool 설정</h2>
 <p>CPU 사용률에 따른 Auto Scaling 작동 여부를 테스트 하기 위해 서버에 Stress Tool을 설치해보겠습니다.</p>
@@ -1858,13 +2331,23 @@ $("#toc_onoff").click(function() {
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nt">-y</span> <span class="nb">install </span>epel-release
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_29.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_29.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="stress-tool-설치">Stress Tool 설치</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# yum <span class="nt">-y</span> <span class="nb">install </span>stress
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_30.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_30.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="stress-tool-실행">Stress Tool 실행</h2>
 
@@ -1874,7 +2357,12 @@ CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# <span class="nb">grep</span> <span class="nt">-c</span> processor /proc/cpuinfo
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_31.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_31.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="명령어-테스트">명령어 테스트</h3>
 <p>CPU에 부하를 주는 명령어를 테스트 해보겠습니다.</p>
@@ -1890,39 +2378,74 @@ CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩
   <li>verbose: 상세 로그를 표시</li>
 </ul>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_32.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_32.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="cpu-부하-발생">CPU 부하 발생</h3>
 <p>부하 발생 테스트를 마쳤으니 실제 Auto Scaling 테스트를 위해 300초 즉, 5분 동안 부하를 발생 시켜보겠습니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# stress <span class="nt">--cpu</span> 2 <span class="nt">--timeout</span> 300 <span class="nt">--verbose</span>
 </code></pre></div></div>
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_33.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_33.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 840px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="서버-증가-확인">서버 증가 확인</h2>
 <p>Stress Tool로 부하를 발생 시키고 서버 리스트를 확인해보면 아래와 같이 Auto Scaling 설정에서 지정한 대로 서버가 생성되고 있는 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_34.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_34.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="cpu-사용률-확인">CPU 사용률 확인</h2>
 <p>[Cloud Insight]에서 서버 사용률을 확인해 보면 아래와 같이 5분간 CPU 사용률이 100%까지 올라간 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_35.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_35.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="서버-반납-확인">서버 반납 확인</h2>
 <p>Stress Tool로 부하를 발생 시키도록 설정한 5분이 지난 후에 서버 리스트를 보면 Auto Scaling으로 생성되었던 서버가 반납되고 있는 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_36.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_36.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="이벤트-발생-확인">이벤트 발생 확인</h2>
 <p>[Cloud Insight] - [Event]에서 서버 증가, 감소 관련 이벤트가 제대로 발생했는지 아래와 같이 그래프와 리스트로 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_37.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_37.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="이벤트-통보-확인">이벤트 통보 확인</h2>
 <p>이벤트 통보에서 설정한 대로 아래와 같이 Email로 Auto Scaling 이벤트 발생과 완료에 대한 통보 메일이 도착한 것을 확인할 수 있습니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_38.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_38.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="서비스-제한사항">서비스 제한사항</h2>
 <p>Auto Scaling 설정과 서버 스펙 등에 대한 제한 사항을 정리해보겠습니다.</p>
@@ -1945,23 +2468,43 @@ CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩
 </ul>
 
 <h2 id="상세-모니터링">상세 모니터링</h2>
-<p>Ncloud (네이버 클라우드)에서는 기본 모니터링 외에 [상세 모니터링]도 지원하는데, [상세 모니터링]에서는 좀 더 자세하고 다양한 모니터링 항목 (Extended Metric)을 지원합니다.</p>
+<p>Ncloud(네이버 클라우드) 에서는 기본 모니터링 외에 [상세 모니터링]도 지원하는데, [상세 모니터링]에서는 좀 더 자세하고 다양한 모니터링 항목 (Extended Metric)을 지원합니다.</p>
 
 <p>예를 들어 CPU 사용과 관련한 모니터링 항목에서도 아래와 같이 [CPU idle ratio average] 항목들도 확인할 수 있습니다.</p>
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_39.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_39.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <p>또한, 위와 같이 [Server] 탭에서는 CPU들의 평균 값을 모니터링할 수 있는 것에 비해, 상세 모니터링을 적용하면 아래와 같이 [CPU] 탭에서 CPU 코어별로 각각 모니터링을 할 수도 있습니다.</p>
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_40.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_40.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h3 id="상세-모니터링-설정">상세 모니터링 설정</h3>
 <p>상세 모니터링을 적용하는 방법은 서버를 선택하고 [서버 관리 및 설정 변경] 메뉴에서 [상세 모니터링 설정 변경] 메뉴를 선택합니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_20.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_20.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h4 id="상세-모니터링-신청">상세 모니터링 신청</h4>
 <p>상세 모니터링 신청 팝업에서 [예] 버튼을 클릭하면 상세 모니터링이 적용됩니다. 상세 모니터링 신청 후 실제 데이터가 수집되기까지는 약간의 시간이 소요되므로 잠시 기다렸다 확인해보면 됩니다.</p>
 
-<figure><img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_21.png" alt="Ncloud VPC 환경에서 AutoScaling 설정하는 방법" style="width: 480px; " /><figcaption></figcaption></figure>
+<figure>
+  <img class="docimage" src="/images/compute/autoscaling/ncloud_server_autoscaling_guide_vpc_21.png" alt="Ncloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법" style="width: 480px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
 
 <h2 id="용어-정리">용어 정리</h2>
 <p>Auto Scaling에서 사용되는 주요 용어들을 정리해보겠습니다.</p>
@@ -2045,7 +2588,7 @@ CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩
 
 <h2 id="참고-url">참고 URL</h2>
 <ol>
-  <li>Ncloud Auto Scaling 가이드
+  <li>Ncloud(네이버 클라우드) Auto Scaling 가이드
     <ul>
       <li><a href="https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview" target="_blank" style="word-break:break-all;">https://guide.ncloud-docs.com/docs/compute-autoscaling-autoscalingoverview</a></li>
     </ul>
@@ -2062,27 +2605,64 @@ CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩
   </li>
 </ol>
 
-   
+<h2 id="문서-업데이트-내역">문서 업데이트 내역</h2>
+<div>
+  <table class="simple_table small_font" style="width:60%">
+    <thead>
+      <tr>
+        <th>날짜</th>
+        <th>내용</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      
+      
+        <tr>
+          <td>2022-06-20</td>
+          <td>문서 최초 생성</td>
+        </tr>
+      
+        <tr>
+          <td>2023-09-05</td>
+          <td>로드밸런서 연결하는 방법 안내 추가, 지원하는 서버 이미지 정보 업데이트</td>
+        </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+  
     <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        <a href="/tag/tag_autoscaling.html" class="btn btn-default navbar-btn cursorNorm" role="button">autoscaling</a>
+      
+        <b>Tags:
+        </b>
         
         
+          
+            <a
+              href="/tag/tag_autoscaling.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">autoscaling</a>
+          
         
-        <a href="/tag/tag_vpc.html" class="btn btn-default navbar-btn cursorNorm" role="button">vpc</a>
+          
+            <a
+              href="/tag/tag_vpc.html"
+              class="btn btn-default navbar-btn cursorNorm"
+              role="button">vpc</a>
+          
         
-        
-        
+      
     </div>
-   
+  
 
 </div>
 
 <hr class="shaded"/>
+
+
 
 <footer>
     <div class="row">
@@ -2108,9 +2688,9 @@ CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩
           </a>
         		
         </div>
-        &copy;2022 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
+        &copy;2023 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2022-06-20<br/> Site last generated: 2022-09-28 <br />        
+        <span>Page last updated:</span> 2023-09-05<br/> Site last generated: 2023-10-19 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -2121,57 +2701,33 @@ CPU 코어 개수를 확인하는 방법은 아래 명령어를 입력하면 됩
 
 
 
-
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container -->
         </div>
-    <!-- /.row -->
+        
+          
+          <div class="side-banner-right">
+  <a
+    href="https://hyphen.im/benefit/navercloud-event"
+    id="side-banner-right-01"
+    target="_blank"
+    class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
 </div>
-<!-- /.container -->
-</div>
-
-    <div class="side-banner-right">    
-    <a href="https://hyphen.im/benefit/navercloud-event" id="side-banner-right-01" target="_blank" class="no_icon"><img src="/images/slider/banner-hyphen-ncloud-credit-event-02.png" alt="hyphen ncloude event side banner"></a>
-</div>  
-
-<!-- /#main -->
-    </div>
-<script>
-    $(function() {
-        $('svg').click(function() {
+        
+        <!-- /#main -->
+      </div>
+      <script>
+        $(function() {
+          $('svg').click(function() {
             $(this).parent('form').submit();
+          });
         });
-    });
-</script>
+      </script>
 
-
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4Q6RVEFJ3S');
-</script>
-
-  
-
-  
-  <!-- NCloud Real User Analytics -->
-<script>
-  (function() {
-    var s = document.getElementsByTagName('script')[0]
-      , p = document.createElement('script');
-    p.async = 'async';
-    p.src = 'https://rua-api.ncloud.com/api/v1/beacon/boomerang/collect/'+
-      'e4c80491-1665-457b-9cec-550a5f554dde';
-    s.parentNode.insertBefore(p, s);
-  })();
-</script>
-
-  
-
-</body>
+      
+    </body>
+  </body>
 </html>
-
 
