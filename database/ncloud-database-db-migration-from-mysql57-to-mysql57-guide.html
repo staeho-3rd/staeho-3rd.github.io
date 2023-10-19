@@ -1064,7 +1064,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
                   
                   
-                  <li class="active"><a title="From MySQL 5.7 To MysQL 5.7" href="/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html">From MySQL 5.7 To MysQL 5.7</a></li>
+                  <li class="active"><a title="MySQL 5.7 ㅡ> MysQL 5.7" href="/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html">MySQL 5.7 ㅡ> MysQL 5.7</a></li>
                   
                   
                   
@@ -2042,11 +2042,27 @@ $("#toc_onoff").click(function() {
   <li>Target DB: Cloud DB for MySQL 5.7.40</li>
 </ul>
 
+<h4 id="source-db">Source DB</h4>
+<figure>
+  <img class="docimage docimage-no-bottom" src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-00.png" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
+<h4 id="target-db">Target DB</h4>
+<figure>
+  <img class="docimage docimage-no-top" src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-06.png" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법" style="width: 845px; " />
+  
+    <figcaption></figcaption>
+  
+</figure>
+
 <h3 id="source-db-정보-확인">Source DB 정보 확인</h3>
 <p>테스트에 사용할 Source DB의 버전, Database, DB User 등의 정보를 확인해보겠습니다.</p>
 
 <ul>
-  <li>MySQL 버전<br />
+  <li><strong>MySQL 버전</strong><br />
 테스트에 사용할 DB는 아래에서 확인할 수 있듯이 MySQL 5.7.43입니다.</li>
 </ul>
 
@@ -2058,7 +2074,7 @@ $("#toc_onoff").click(function() {
 </figure>
 
 <ul>
-  <li>Database<br />
+  <li><strong>Database</strong><br />
 테스트를 위해 testdb1, testdb2 이렇게 2개의 DB를 생성했습니다.</li>
 </ul>
 
@@ -2070,7 +2086,7 @@ $("#toc_onoff").click(function() {
 </figure>
 
 <ul>
-  <li>계정<br />
+  <li><strong>계정</strong><br />
 테스트를 위한 abcd1, abcd2 이렇게 2개의 DB User를 생성했습니다.</li>
 </ul>
 
@@ -2082,7 +2098,7 @@ $("#toc_onoff").click(function() {
 </figure>
 
 <ul>
-  <li>Table<br />
+  <li><strong>Table</strong><br />
 테스트용 Database에 sampletable1, sampletable2 이렇게 각각 테이블을 1개씩 생성했습니다.</li>
 </ul>
 
@@ -2094,7 +2110,7 @@ $("#toc_onoff").click(function() {
 </figure>
 
 <ul>
-  <li>프로시져
+  <li><strong>Procedure</strong>
 테스트용 Database testdb2에 new_procedure2라는 이름의 Procedure를 생성했습니다.</li>
 </ul>
 
@@ -2292,6 +2308,7 @@ log_bin <span class="o">=</span> binlog
 </div>
 
 <h3 id="route-table-설정">Route Table 설정</h3>
+<p>다음으로 [<strong>VPC</strong>] - [<strong>Route Table</strong>]에서 [<strong>Target DB</strong>]의 Subnet에 연관된 [<strong>Route Table</strong>]을 선택하고, [<strong>Routes 설정</strong>] 버튼을 클릭합니다.</p>
 
 <figure>
   <img class="docimage docimage-no-bottom" src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-16.png" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법" style="width: 845px; " />
@@ -2299,6 +2316,10 @@ log_bin <span class="o">=</span> binlog
     <figcaption></figcaption>
   
 </figure>
+
+<ul>
+  <li><strong>Route Table 설정</strong> 화면에서 [<strong>Destination</strong>]에는 [<strong>Source DB</strong>]의 공인 IP를 입력하고, [<strong>Target Type</strong>]은 [<strong>NATGW</strong>], [<strong>Target Name</strong>]은 위에서 생성했던 <strong>NAT Gateway</strong>를 선택하고 [<strong>생성</strong>] 버튼을 클릭합니다.</li>
+</ul>
 
 <figure>
   <img class="docimage docimage-no-bottom" src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-17.png" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법" style="width: 845px; " />

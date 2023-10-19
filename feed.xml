@@ -5,8 +5,8 @@
         <description>써드아이시스템(3rdeyesys) 기술문서 사이트입니다 - Ncloud 프리미엄 파트너</description>
         <link>https://docs.3rdeyesys.com/</link>
         <atom:link href="https://docs.3rdeyesys.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 19 Oct 2023 17:10:19 +0900</pubDate>
-        <lastBuildDate>Thu, 19 Oct 2023 17:10:19 +0900</lastBuildDate>
+        <pubDate>Thu, 19 Oct 2023 18:11:52 +0900</pubDate>
+        <lastBuildDate>Thu, 19 Oct 2023 18:11:52 +0900</lastBuildDate>
         <generator>Jekyll v4.2.2</generator>
         
         
@@ -56,30 +56,36 @@ Source DB는 Ncloud(네이버 클라우드) 외부에 위치한 경우가 많을
 - Source DB: CentOS 7.8, MySQL 5.7.43
 - Target DB: Cloud DB for MySQL 5.7.40
 
+#### Source DB
+{% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-00.png&quot; width=&quot;845&quot; sub-class=&quot;docimage-no-bottom&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
+
+#### Target DB
+{% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-06.png&quot; width=&quot;845&quot; sub-class=&quot;docimage-no-top&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
+
 ### Source DB 정보 확인
 테스트에 사용할 Source DB의 버전, Database, DB User 등의 정보를 확인해보겠습니다.
 
-- MySQL 버전  
+- **MySQL 버전**  
 테스트에 사용할 DB는 아래에서 확인할 수 있듯이 MySQL 5.7.43입니다.
 
 {% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-01.png&quot; width=&quot;840&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
 
-- Database  
+- **Database**  
 테스트를 위해 testdb1, testdb2 이렇게 2개의 DB를 생성했습니다.
 
 {% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-02.png&quot; width=&quot;840&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
 
-- 계정  
+- **계정**  
 테스트를 위한 abcd1, abcd2 이렇게 2개의 DB User를 생성했습니다.
 
 {% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-03.png&quot; width=&quot;840&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
 
-- Table  
+- **Table**  
 테스트용 Database에 sampletable1, sampletable2 이렇게 각각 테이블을 1개씩 생성했습니다.
 
 {% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-04.png&quot; width=&quot;840&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
 
-- 프로시져
+- **Procedure**
 테스트용 Database testdb2에 new_procedure2라는 이름의 Procedure를 생성했습니다.
 
 {% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-05.png&quot; width=&quot;840&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
@@ -216,8 +222,11 @@ VPC 환경에서 [**NAT Gateway**]를 생성하는 상세한 방법은 아래 �
 &quot; %}
 
 ### Route Table 설정
+다음으로 [**VPC**] - [**Route Table**]에서 [**Target DB**]의 Subnet에 연관된 [**Route Table**]을 선택하고, [**Routes 설정**] 버튼을 클릭합니다.
 
 {% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-16.png&quot; width=&quot;845&quot; sub-class=&quot;docimage-no-bottom&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
+
+- **Route Table 설정** 화면에서 [**Destination**]에는 [**Source DB**]의 공인 IP를 입력하고, [**Target Type**]은 [**NATGW**], [**Target Name**]은 위에서 생성했던 **NAT Gateway**를 선택하고 [**생성**] 버튼을 클릭합니다.
 
 {% include image.html file=&quot;database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-17.png&quot; width=&quot;845&quot; sub-class=&quot;docimage-no-bottom&quot; alt=&quot;Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 MySQL 5.7로 마이그레이션하는 방법&quot; caption=&quot;&quot; %}
 
