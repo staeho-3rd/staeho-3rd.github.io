@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Password on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/tags/password/</link>
+    <description>Recent content in Password on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 17 Aug 2022 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/tags/password/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법</title>
+      <link>http://example.org/docs/compute/auth-security/server-admin-password-reset/</link>
+      <pubDate>Wed, 17 Aug 2022 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/auth-security/server-admin-password-reset/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) 서버의 [관리자 비밀번호] 즉, [어드민 패스워드]를 초기화하는 방법을 정리해보겠습니다.&#xA;어드민 패스워드를 초기화하게 되는 경우는 다음과 같은 경우가 있습니다.&#xA;보안을 위해 주기적으로 비밀번호를 변경하는 경우 해킹이나 패스워드 유출 등이 의심되어 비밀번호를 변경해야 하는 경우 담당자 퇴사 등으로 비밀번호 변경이 필요한 경우 비밀번호 확인 link비밀번호를 초기화 하기 전에 먼저 비밀번호를 확인하는 방법부터 알아보겠습니다.&#xA;(Linux, Windows 서버 모두 동일합니다.)&#xA;어드민 패스워드(관리자 비밀번호) 확인은 서버를 선택하고, [서버 관리 및 설정 변경] - [관리자 비밀번호 확인] 메뉴를 선택하면 됩니다.</description>
+    </item>
+    <item>
+      <title>Classic 환경 설치형 MySQL DB에서 root Password 설정, 변경하는 방법</title>
+      <link>http://example.org/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</guid>
+      <description>개요 link네이버 클라우드에서는 MySQL Password 정책에 따라 처음 MySQL DB를 설치할 때 root의 초기 패스워드가 설정되지 않습니다. 그러므로 보안 침해 방지를 위해 설치 후에 root Password를 설정한 후에 DB를 사용하는 것이 안전합니다.&#xA;여기서는 Classic환경에서 MySQL 5.6과 5.7 버전의 root Password를 설정, 변경하는 방법에 대해 정리해보겠습니다.&#xA;MySQL 버전 link네이버 클라우드 Classic환경에서 지원하는 설치형 MySQL 버전은 5.6과 5.7 입니다.&#xA;{% include callout_v2.html type=&amp;ldquo;success&amp;rdquo; level=&amp;ldquo;2&amp;rdquo; content=&amp;ldquo;Ncloud는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다.</description>
+    </item>
+    <item>
+      <title>Gmail을 이용해 smtp 메일 발송할 때 인증오류 해결 방법</title>
+      <link>http://example.org/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</guid>
+      <description>개요 link웹서버나 애플리케이션 등에서 gmail 계정을 이용해서 smtp로 메일을 발송하는 경우가 있습니다.&#xA;관리자의 안내 메일이나 소수회원을 위한 다량메일 발송등을 하는 것이 그런 경우인데&#xA;예전에는 보안 수준이 낮은 앱의 액세스 허용 옵션으로 가능했었지만, 최근에는 이 설정으로도 해결되지 않는 경우가 많습니다.&#xA;이럴 때 확실하게 인증할 수 있는 방법이 구글계정 2단계 인증 사용과 앱 비밀번호 설정입니다.&#xA;인증 오류 메시지 link위에서 이야기한 2단계 인증과 앱 비밀번호를 사용하지 않고 smtp로 구글계정&#xA;report&#xD;인증 오류 메시지: The SMTP server requires a secure connection or the client was not authenticated.</description>
+    </item>
+  </channel>
+</rss>

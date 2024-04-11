@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engine on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/tags/engine/</link>
+    <description>Recent content in Engine on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 06 Dec 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/tags/engine/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ncloud Cloud DB for MySQL - DB Engine 업그레이드 가이드</title>
+      <link>http://example.org/docs/database/cloud-db-mysql/db-engine-upgrade-guide/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/cloud-db-mysql/db-engine-upgrade-guide/</guid>
+      <description>개요 linkNcloud(네이버 클라우드)의 Cloud DB for MySQL에서는 DB Engine을 업그레이드할 수 있는데, Minor 버전 업그레이드(예: 5.7.32 -&amp;gt; 5.7.40)와 Major 버전 업그레이드(예: 5.7.x -&amp;gt; 8.0.x)가 있습니다. 각각에 대해 업그레이드 하는 방법에 대해 아래쪽에서 살펴보겠습니다.&#xA;업그레이드 진행 방식 link&#xD;⁃ 리스트에 있는 전체 서버의 버전이 변경되고, 버전 업그레이드 중인 서버는 접근이 차단 됩니다.&#xA;⁃ Master DB 는 Standby Master DB 로 전환하여 서비스 접근 차단은 최소한으로 유지합니다.&#xA;(Master DB Failover 기능으로 변경되는 시간과 동일합니다.</description>
+    </item>
+  </channel>
+</rss>

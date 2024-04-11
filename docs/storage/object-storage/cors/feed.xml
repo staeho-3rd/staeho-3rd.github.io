@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Object Storage CORS 설정 on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/docs/storage/object-storage/cors/</link>
+    <description>Recent content in Object Storage CORS 설정 on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/docs/storage/object-storage/cors/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Object Storage Bucket에 CORS 설정하기</title>
+      <link>http://example.org/docs/storage/object-storage/cors/setting-cors-on-bucket/</link>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/storage/object-storage/cors/setting-cors-on-bucket/</guid>
+      <description>개요 linkObject Storage를 이용해 서비스 개발을 하다 보면 CORS 와 관련된 오류와 종종 마주치게 되는데, 테스트 버킷과 사이트를 생성해서 해결 방법을 알아보겠습니다. 그리고, Ncloud(네이버 클라우드) Object Storage의 CORS 설정은 콘솔이 아닌, CLI와 외부 Client Tool 등을 사용해야 하는데 각각의 방법을 차례로 소개합니다.&#xA;info&#xD;CORS(Cross-Origin Resource Sharing)는 웹 애플리케션이 서비스되는 도메인에서 다른 도메인에 있는 리소스를 접근해야 할 때 리소스에 대한 접근 허용, 제한 등에 대한 방법을 정의합니다.&#xA;테스트 방법 link Object Storage에 cors-test 라는 이름의 버킷 생성 http://cors-test.</description>
+    </item>
+    <item>
+      <title>Object Storage에서 CORS를 SDK for S3 API로 설정하기</title>
+      <link>http://example.org/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</guid>
+      <description>개요 linkNcloud(네이버 클라우드)의 Object Storage Bucket CORS를 AWS S3에서 제공하는 [SDK for S3 API]로 설정하는 방법을 소개합니다. 여기서 소개할 SDK는 [Python용 SDK for S3 API]와 [PHP용 SDK for S3 API] 두가지입니다.&#xA;CORS 설정 기본 방법 linkObject Storage Bucket에 CORS를 설정하는 기본 방법인 CLI와 외부 Client Tool에 대한 것은 아래 문서에서 확인 가능합니다.&#xA;⁃ Object Storage Bucket에 CORS 설정하기 - CLI &amp;amp; Client Tool&#xD;Python용 SDK for S3 API linkSDK 설치 linkPython용 SDK를 설치하는 방법은 기본 설치방법과 특정 버전을 설치하는 방법이 있습니다.</description>
+    </item>
+  </channel>
+</rss>

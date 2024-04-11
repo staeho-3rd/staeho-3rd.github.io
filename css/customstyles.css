@@ -1580,11 +1580,21 @@ height: 250px;
 }
 
 .side-banner-right{   
-    position:fixed;
+    position:absolute;
     top: 100px;
     margin-left: 1150px;
     text-align: center;
     width:230px;
+}
+
+.side-right-toc{   
+    position:fixed;
+    top: 100px;
+    margin-left: 1150px;
+    text-align: left;
+    width:250px;
+    height: 800px;
+    overflow-y:auto;
 }
 
 @media screen and (max-width: 1000px)

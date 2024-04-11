@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/tags/</link>
+    <description>Recent content in Tags on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/tags/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ai</title>
+      <link>http://example.org/tags/ai/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Api</title>
+      <link>http://example.org/tags/api/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Clova</title>
+      <link>http://example.org/tags/clova/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/clova/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Firewall</title>
+      <link>http://example.org/tags/firewall/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/firewall/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitoring</title>
+      <link>http://example.org/tags/monitoring/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ocr</title>
+      <link>http://example.org/tags/ocr/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/ocr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Php</title>
+      <link>http://example.org/tags/php/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/php/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://example.org/tags/security/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://example.org/tags/web/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Analytic</title>
+      <link>http://example.org/tags/analytic/</link>
+      <pubDate>Fri, 16 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>http://example.org/tags/analytic/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

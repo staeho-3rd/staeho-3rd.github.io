@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smtp on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/tags/smtp/</link>
+    <description>Recent content in Smtp on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/tags/smtp/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gmail을 이용해 smtp 메일 발송할 때 인증오류 해결 방법</title>
+      <link>http://example.org/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</guid>
+      <description>개요 link웹서버나 애플리케이션 등에서 gmail 계정을 이용해서 smtp로 메일을 발송하는 경우가 있습니다.&#xA;관리자의 안내 메일이나 소수회원을 위한 다량메일 발송등을 하는 것이 그런 경우인데&#xA;예전에는 보안 수준이 낮은 앱의 액세스 허용 옵션으로 가능했었지만, 최근에는 이 설정으로도 해결되지 않는 경우가 많습니다.&#xA;이럴 때 확실하게 인증할 수 있는 방법이 구글계정 2단계 인증 사용과 앱 비밀번호 설정입니다.&#xA;인증 오류 메시지 link위에서 이야기한 2단계 인증과 앱 비밀번호를 사용하지 않고 smtp로 구글계정&#xA;report&#xD;인증 오류 메시지: The SMTP server requires a secure connection or the client was not authenticated.</description>
+    </item>
+  </channel>
+</rss>

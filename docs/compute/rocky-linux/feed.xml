@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rocky Linux on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/docs/compute/rocky-linux/</link>
+    <description>Recent content in Rocky Linux on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 28 Dec 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/docs/compute/rocky-linux/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개</title>
+      <link>http://example.org/docs/compute/rocky-linux/basic-guide/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/rocky-linux/basic-guide/</guid>
+      <description>개요 linkRocky Linux (록키 리눅스)는 CentOS의 서비스 지원 종료로 대안으로 떠오른 CentOS 기반의 리눅스 OS입니다.&#xA;Ncloud (네이버 클라우드)는 이 록키 리눅스의 핵심 파트너로 선정되어 국내에서 록키 리눅스 인프라와 기술지원을 위해 협력해왔고, 드디어 Ncloud 콘솔에서 록키 리눅스를 제공하기 시작했기에 간단하게 소개해보려고 합니다.&#xA;제공 버전 linkNcloud에서는 현재 Rocky Linux 8.6 버전을 VPC 환경에서 제공하고 있습니다.&#xA;설치할 소프트웨어 link록키 리눅스 서버를 실행하고 보통 자주 사용하게 되는 아래의 소프트웨어들을 설치하고 확인해보겠습니다.&#xA;Apache PHP NGINX MariaDB (MySQL) 접속 화면 link서버를 생성하고 접속하면 아래와 같이 Ncloud 로고가 크게 표시된 화면을 볼 수 있습니다.</description>
+    </item>
+    <item>
+      <title>Ncloud KVM Hypervisor 타입의 Rocky Linux 서버 Repository 미러 사이트 오류 문제 해결 방법</title>
+      <link>http://example.org/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</link>
+      <pubDate>Thu, 28 Dec 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
+      <description>개요 linkNcloud (네이버 클라우드)에서 KVM Hypervisor 타입의 록키 리눅스(Rocky Linux) 8.8 서버를 제공하고 있는데, 서버를 생성하고 나서 Apache, PHP 등의 패키지를 설치할 때 패키지 다운로드 사이트 또는 미러 사이트에서 8.8 버전에 대한 패키지 정보를 찾을 수 없다는 메시지가 나타나면서 패키지를 설치할 수 없는 경우가 있습니다.&#xA;XEN Hypervisor 타입의 서버에서는 문제가 없는데 왜 KVM Hypervisor 타입 서버에서만 이런 문제가 생기는지와 어떻게 하면 해결할 수 있는지를 정리해보겠습니다.&#xA;오류 상황 link콘솔에서 서버를 생성한 후에 아무 것도 하지 않고 테스트로 Apache를 설치해보려고 했는데, 오류 메시지가 나타나면서 설치를 할 수 없었습니다.</description>
+    </item>
+    <item>
+      <title>Ncloud XEN Hypervisor 타입의 Rocky Linux 8.6 서버 Repository 미러 사이트 오류 문제 해결 방법</title>
+      <link>http://example.org/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
+      <description>개요 linkNcloud (네이버 클라우드)에서 XEN Hypervisor 타입의 록키 리눅스(Rocky Linux) 8.6 서버를 제공하고 있는데, 패키지를 설치할 때 간혹 패키지 다운로드 사이트 또는 미러 사이트에서 8.6 버전에 대한 패키지 정보를 찾을 수 없다는 메시지가 나타나면서 패키지를 설치할 수 없는 경우가 있습니다.&#xA;그렇다면 왜 이런 문제가 생기는지와 어떻게 하면 해결할 수 있는지를 정리해보겠습니다.&#xA;오류 상황 link테스트로 아파치를 설치해보려고 했는데, 오류 메시지가 나타나면서 설치를 할 수 없었습니다. 또한 리포지토리 미러 사이트도 Ncloud 내부 서버가 아닌 록키 리눅스 공식 미러 사이트로 연결하려고 시도한 것을 확인할 수 있습니다.</description>
+    </item>
+    <item>
+      <title>Rocky Linux에서 Apache SSL 인증서 설정하는 방법</title>
+      <link>http://example.org/docs/compute/rocky-linux/apache-https-ssl-setting/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/rocky-linux/apache-https-ssl-setting/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버에 Apache 웹서버를 설치하고, HTTPS 접속을 위한 SSL 인증서 설정하고, HTTP로 접속 시에 HTTPS로 리다이렉트하는 방법까지 정리해보겠습니다.&#xA;테스트 환경 link테스트에 사용할 서버 환경은 다음과 같습니다.&#xA;⁃ OS: Rocky Linux 8.6 ⁃ 웹서버: Apache 2.4 ⁃ 테스트 사이트: rocky-https-test.com&#xD;패키지 업데이트 link우선 패키지 관련한 보안-버그 수정 사항만 최소한으로 업데이트를 해보겠습니다.&#xA;~# dnf -y upgrade-minimal&#xD;[dnf upgrade-minimal]과 [dnf update-minimal]의 차이점에 대해 [man dnf] 명령어로 매뉴얼을 살펴보면 Rocky Linux에서 패키지 업데이트를 위한 기본 명령어는 [dnf upgrade-minimal]이며, [dnf update-minimal]는 더 이상 사용되지 않는 별칭이라고 합니다.</description>
+    </item>
+  </channel>
+</rss>

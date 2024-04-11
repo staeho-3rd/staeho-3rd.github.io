@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ETC on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/docs/etc/</link>
+    <description>Recent content in ETC on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 10 Nov 2021 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/docs/etc/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gmail을 이용해 smtp 메일 발송할 때 인증오류 해결 방법</title>
+      <link>http://example.org/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</guid>
+      <description>개요 link웹서버나 애플리케이션 등에서 gmail 계정을 이용해서 smtp로 메일을 발송하는 경우가 있습니다.&#xA;관리자의 안내 메일이나 소수회원을 위한 다량메일 발송등을 하는 것이 그런 경우인데&#xA;예전에는 보안 수준이 낮은 앱의 액세스 허용 옵션으로 가능했었지만, 최근에는 이 설정으로도 해결되지 않는 경우가 많습니다.&#xA;이럴 때 확실하게 인증할 수 있는 방법이 구글계정 2단계 인증 사용과 앱 비밀번호 설정입니다.&#xA;인증 오류 메시지 link위에서 이야기한 2단계 인증과 앱 비밀번호를 사용하지 않고 smtp로 구글계정&#xA;report&#xD;인증 오류 메시지: The SMTP server requires a secure connection or the client was not authenticated.</description>
+    </item>
+    <item>
+      <title>PHP로 텔레그램 비공개 채널에 메시지 전송하기</title>
+      <link>http://example.org/docs/etc/php-to-telegram-message-send/</link>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/etc/php-to-telegram-message-send/</guid>
+      <description>개요 link업무를 진행하다보면 서버나 서비스에 장애가 발생했을 때 즉시 알림을 받거나 서버 상태 모니터링이나 매출 등의 서비스 이용 지표 등을 매일 자동으로 통보 받는 경우가 있습니다. 예전에는 이메일이나 SMS 메시지로 받는 경우가 대부분이었는데, 요즘은 관련된 사람들이 함께 들어와 있는 메신저 채팅방으로 알림을 동시에 받는 경우도 많아지고 있습니다.&#xA;그럴 때 사용하는 방법 중에서 여기서는 텔레그램(Telegram)의 대화방인 비공개 채널에 메시지를 전송하는 것을 PHP로 구현해보겠습니다.&#xA;구현 순서 link 텔레그램 채팅 봇을 생성 텔레그램 채널을 비공개로 생성 비공개 채널에 위에서 생성한 채팅 봇을 관리자로 등록 PHP로 채팅 봇을 이용해 비공개 채널에 메시지를 전송 채팅 봇 생성 link텔레그램(Telegram) 메신저에서 채팅 봇을 생성하고 관리해주는 봇인 [BotFather]를 검색합니다.</description>
+    </item>
+    <item>
+      <title>Pdf 문서 합치기 PHP로 구현하는 방법</title>
+      <link>http://example.org/docs/etc/pdf-merge-php-sample/</link>
+      <pubDate>Mon, 03 May 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/etc/pdf-merge-php-sample/</guid>
+      <description>개요 link요즘은 회사 업무에서 파일을 전달할 때 PDF 문서를 활용하는 경우가 매우 많습니다.&#xA;그런데 이때 보내야 하는 PDF 문서가 여러개 일 경우 받는 쪽에서 각각의 파일을 일일이 열어봐야 해서 불편한 경우가 있습니다.&#xA;이럴때 여러 PDF 문서를 합쳐서 하나의 문서로 만들어 보내면 편리한 경우에 사용할 수 있는 PDF 문서 합치기 - merge 기능을 PHP로 구현하는 방법입니다.&#xA;라이브러리 설치 linkPDF 문서를 합쳐 주는 기능을 가진 라이브러리는 [ php pdf merger ]라고 검색해보면 여러가지 버전이 존재하는데 여기서는 Jurosh 라는 사람이 만든 것을 사용하겠습니다.</description>
+    </item>
+    <item>
+      <title>PhpSpreadsheet 설정 샘플 코드</title>
+      <link>http://example.org/docs/etc/phpspreadsheet-sample-code/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/etc/phpspreadsheet-sample-code/</guid>
+      <description>개요 linkPHP에서 Excel 문서를 읽거나 Excel 형태로 문서를 저장해야 할 때 주로 PhpSpreadsheet를 사용하게 됩니다. 이전에는 PHPExcel이라는 이름이었으나 현재는 해당 버전의 개발-유지보수가 중단되고 새로운 프로젝트로 PhpSpreasheet라는 이름으로 업그레이드 되었습니다.&#xA;또한 PhpSpreadsheet는 Excel 뿐만 아니라 PDF 형식으로도 파일을 저장할 수 있어서 많이 사용되고 있습니다.&#xA;이번에는 이 PhpSpreadsheet로 문서를 저장할 때 사용하는 주요 소스 코드의 샘플을 정리해보겠습니다.&#xA;클래스 로드 link&#xD;&amp;lt;?php&#xD;require &amp;#39;vendor/autoload.php&amp;#39;;&#xD;use PhpOffice\PhpSpreadsheet\IOFactory;&#xD;use PhpOffice\PhpSpreadsheet\Spreadsheet;&#xD;$spreadsheet = new Spreadsheet();&#xD;?&amp;gt;&#xD;기본 설정 link&#xD;&amp;lt;?</description>
+    </item>
+  </channel>
+</rss>

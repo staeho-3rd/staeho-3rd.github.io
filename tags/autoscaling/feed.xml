@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autoscaling on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/tags/autoscaling/</link>
+    <description>Recent content in Autoscaling on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 06 Sep 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/tags/autoscaling/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto Scaling 서비스 제한사항</title>
+      <link>http://example.org/docs/compute/autoscaling/service-limit/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/autoscaling/service-limit/</guid>
+      <description>개요 link모든 클라우드 서비스의 핵심 중의 하나가 Auto Scaling이라고 할 수 있습니다. 네이버 클라우드도 예외가 아닌데, Auto Scaling을 설정할 때 몇가지 제한사항이 있어서 정리해보았습니다.&#xA;스펙 및 서비스 환경 제한 사항 link서버 스펙이나 서비스 환경과 관련한 제한 사항은 다음과 같습니다.&#xA;총 디스크 사이즈 150GB 이하 서버만 가능 Micro 서버는 불가 GPU 서버는 불가 베어메탈 서버는 불가 따라서 서버타입 기준으로 Auto Scaling 설정이 가능한 서버타입은 다음과 같습니다.&#xA;Classic : Compact, Standard VPC : High CPU, Standard, High Memory 현재 [Auto Scaling] - [Launch Configuration] 화면과 가이드에 나오는 [High Memory 타입은 지원되지 않습니다]는 예전 메시지로 조만간 삭제될 예정이라고 합니다.</description>
+    </item>
+    <item>
+      <title>VPC 환경에서 Auto Scaling 설정하는 방법</title>
+      <link>http://example.org/docs/compute/autoscaling/basic-guide-vpc/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/autoscaling/basic-guide-vpc/</guid>
+      <description>개요 linkNcloud(네이버 클라우드) VPC 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.&#xA;AutoScaling 서비스는 미리 등록한 설정에 따라 서버 수를 자동으로 증가 또는 감소시켜 안정적인 서비스를 유지하면서 비용을 절감할 수 있도록 해주는 서비스입니다.&#xA;그런데, 언제 서버 수를 증가, 감소 시킬 것인 가에 대한 이벤트 설정이 Classic 환경의 경우 오토스케일 그룹에 속한 서버들의 평균값을 기준으로 하지만, VPC 환경의 경우 이 방법 말고도 특정 서버를 지정해서 해당 서버를 기준으로 이벤트 설정을 할 수도 있습니다.&#xA;그래서 여기서는 사전에 준비된 서버를 기준으로 AutoScaling이 작동되는 것을 살펴보겠습니다.</description>
+    </item>
+    <item>
+      <title>Classic 환경에서 Auto Scaling 설정하는 방법</title>
+      <link>http://example.org/docs/compute/autoscaling/basic-guide-classic/</link>
+      <pubDate>Wed, 06 Sep 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/autoscaling/basic-guide-classic/</guid>
+      <description>개요 linkAutoScaling 서비스는 미리 등록한 설정에 따라 서버 수를 자동으로 증가 또는 감소시켜 안정적인 서비스를 유지하면서 비용을 절감할 수 있도록 해주는 서비스입니다.&#xA;여기서는 네이버 클라우드 Classic 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.&#xA;기본 설정 linkAuto Scaling 설정은 우선 [Auto Scaling] - [Launch Configuration]에서&#xA;[Launch Configuration 생성] 버튼을 클릭하는 것으로 시작합니다.&#xA;서버 이미지 선택 link서버 이미지는 네이버 클라우드에서 제공하는 기본 이미지를 선택할 수도 있고, 기존 서버로 만들어 둔 [내 서버 이미지]를 사용할 수도 있습니다.</description>
+    </item>
+    <item>
+      <title>Auto Scaling Group 이벤트 설정하는 방법</title>
+      <link>http://example.org/docs/compute/autoscaling/event-setting-guide/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/compute/autoscaling/event-setting-guide/</guid>
+      <description>개요 link네이버 클라우드에서 AutoScaling을 설정할 때 중요한 것이 이벤트 설정입니다.&#xA;예를 들어 CPU 사용률이 70%가 넘는 상태가 1분 이상 지속되면 서버를 늘리는 작업이 진행되도록 설정한다고 할 때, CPU가 70% 이상인 상태가 1분 이상 지속되는 이벤트가 발생하는지 체크하는 것을 말합니다.&#xA;현재 네이버 클라우드 Console에서는 AutoScaling 그룹을 생성한 후에 바로 이 이벤트 설정을 하는 방법에 대한 메뉴나 링크가 없어서 그에 대한 내용을 정리해보겠습니다.&#xA;AutoScaling Group 생성 linkAutoScaling 이벤트를 설정하려면 우선 AutoScaling Group을 생성해야 합니다.</description>
+    </item>
+  </channel>
+</rss>

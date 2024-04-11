@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DB 설치(Install) on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/docs/database/mysql-mariadb/install/</link>
+    <description>Recent content in DB 설치(Install) on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/docs/database/mysql-mariadb/install/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL 5.7 설치하는 방법 | Rocky Linux</title>
+      <link>http://example.org/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</guid>
+      <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 5.7 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
+    </item>
+    <item>
+      <title>MySQL 8.0 최신 버전 설치하는 방법 | Rocky Linux</title>
+      <link>http://example.org/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</guid>
+      <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 8.0 최신 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
+    </item>
+    <item>
+      <title>MySQL 데이터 저장 디렉토리(datadir) 위치를 변경해서 설치하는 방법</title>
+      <link>http://example.org/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</link>
+      <pubDate>Thu, 21 Dec 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</guid>
+      <description>개요 linkNcloud(네이버 클라우드) 서버에 MySQL을 설치할 때 MySQL 데이터 저장 디렉토리(datadir) 위치를 변경해서 설치하는 방법을 정리해보겠습니다.&#xA;테스트 환경 link 서버: Rocky Linux 8.8 DB: MySQL 8.0 MySQL 설치 link아래와 같은 순서대로 MySQL 8.0 최신 버전을 설치합니다.&#xA;dnf -y upgrade-minimal&#xD;dnf -y install https://dev.mysql.com/get/mysql80-community-release-el8-9.noarch.rpm&#xD;dnf module reset mysql&#xD;dnf module disable mysql&#xD;dnf -y install mysql-community-server&#xD;데이터 저장 디렉토리 생성 linkDB 데이터를 저장할 임의의 디렉토리를 생성합니다. /database/mysql 과 같이 생성하고 실제 저장되는 디렉토리는 mysql로 하겠습니다.</description>
+    </item>
+  </channel>
+</rss>

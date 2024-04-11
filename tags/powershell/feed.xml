@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powershell on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/tags/powershell/</link>
+    <description>Recent content in Powershell on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 29 Dec 2022 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/tags/powershell/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows PowerShell에서 Ncloud API를 호출하는 샘플 예제</title>
+      <link>http://example.org/docs/api/ncloud-api-call-powershell-sample/</link>
+      <pubDate>Thu, 29 Dec 2022 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/api/ncloud-api-call-powershell-sample/</guid>
+      <description>개요 link네이버 클라우드 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 Windows PowerShell에서 호출하는 샘플 예제를 정리해봅니다.&#xA;네이버 클라우드 API는 RESTful API 방식으로 제공되며, XML와 JSON 형식으로 응답합니다 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 호출 샘플 코드 link&#xD;function Sign-Request(&#xD;[string] $api_server,&#xD;[string] $api_url, [string] $apicall_method, [string] $ncloud_accesskey, [string] $ncloud_secretkey )&#xD;{ $unixtimestamp = [DateTimeOffset]::Now.ToUnixTimeSeconds() * 1000&#xD;$space = &amp;#34; &amp;#34;&#xD;$new_line = &amp;#34;`n&amp;#34;&#xD;$message = $apicall_method &amp;#43; $space &amp;#43;&#xD;$api_url &amp;#43; $new_line &amp;#43;&#xD;$unixtimestamp &amp;#43; $new_line &amp;#43;&#xD;$ncloud_accesskey $signature = Compute-HMACSHA256Hash $ncloud_secretkey $message&#xD;# Return request headers&#xD;return @{&#xD;&amp;#34;x-ncp-apigw-timestamp&amp;#34; = $unixtimestamp;&#xD;&amp;#34;x-ncp-iam-access-key&amp;#34; = $ncloud_accesskey;&#xD;&amp;#34;x-ncp-apigw-signature-v2&amp;#34; = $signature&#xD;}&#xD;}&#xD;function Compute-HMACSHA256Hash(&#xD;[string] $secret, # base64 encoded&#xD;[string] $content&#xD;)&#xD;{&#xD;$hmacsha = New-Object System.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud DB for MySQL on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/docs/database/cloud-db-mysql/</link>
+    <description>Recent content in Cloud DB for MySQL on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 06 Dec 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/docs/database/cloud-db-mysql/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VPC환경에서 Cloud DB for MySQL 생성하기</title>
+      <link>http://example.org/docs/database/cloud-db-mysql/cdb-create-basic-guide/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/cloud-db-mysql/cdb-create-basic-guide/</guid>
+      <description>개요 linkNcloud(네이버 클라우드)의 Cloud DB for MySQL 서비스는 MySQL 데이터베이스를 쉽고 간편하게 구축하고 관리할 수 있고 자동 Fail-Over, 자동백업, 네이버 서비스에서 검증된 최적화된 설정 등을 제공해주는 완전 관리형 클라우드 데이터베이스 서비스입니다.&#xA;여기서는 VPC환경에서 Cloud DB for MySQL 서비스를 생성하는 과정을 정리해보겠습니다.&#xA;특징 link 기본 10GB 데이터 스토리지를 제공하며, 10GB 단위로 6,000GB까지 자동으로 용량이 증가합니다. 하나의 마스터 DB마다 최대 10대의 슬레이브 DB를 생성할 수 있습니다. Load Balancer 상품을 통해 슬레이브 DB 서버들을 읽기 전용 복제본으로 사용함으로써 데이터베이스의 읽기 부하를 분산 시킬 수 있습니다.</description>
+    </item>
+    <item>
+      <title>Cloud DB for MySQL 생성후 Public 도메인으로 접속하기</title>
+      <link>http://example.org/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</guid>
+      <description>개요 link네이버 클라우드의 Cloud DB for MySQL 서비스는 MySQL 데이터베이스를 쉽고 간편하게 구축하고 관리할 수 있고 자동 Fail-Over, 자동백업, 네이버 서비스에서 검증된 최적화된 설정 등을 제공해주는 완전 관리형 클라우드 데이터베이스 서비스입니다.&#xA;여기서는 VPC환경에서 Cloud DB for MySQL 서비스를 생성하고, Public 도메인으로 접속하는 과정을 정리해보겠습니다.&#xA;네이버 클라우드는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다. 그러므로 VPC 환경에서 DB서버를 사용하려면 OS에 사용자가 직접 DB를 설치해서 사용하는 방법과 Cloud DB를 사용하는 방법 중에서 선택해야 합니다.</description>
+    </item>
+    <item>
+      <title>Ncloud Cloud DB for MySQL - DB Engine 업그레이드 가이드</title>
+      <link>http://example.org/docs/database/cloud-db-mysql/db-engine-upgrade-guide/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/cloud-db-mysql/db-engine-upgrade-guide/</guid>
+      <description>개요 linkNcloud(네이버 클라우드)의 Cloud DB for MySQL에서는 DB Engine을 업그레이드할 수 있는데, Minor 버전 업그레이드(예: 5.7.32 -&amp;gt; 5.7.40)와 Major 버전 업그레이드(예: 5.7.x -&amp;gt; 8.0.x)가 있습니다. 각각에 대해 업그레이드 하는 방법에 대해 아래쪽에서 살펴보겠습니다.&#xA;업그레이드 진행 방식 link&#xD;⁃ 리스트에 있는 전체 서버의 버전이 변경되고, 버전 업그레이드 중인 서버는 접근이 차단 됩니다.&#xA;⁃ Master DB 는 Standby Master DB 로 전환하여 서비스 접근 차단은 최소한으로 유지합니다.&#xA;(Master DB Failover 기능으로 변경되는 시간과 동일합니다.</description>
+    </item>
+    <item>
+      <title>MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법</title>
+      <link>http://example.org/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</guid>
+      <description>개요 link네이버 클라우드(Ncloud) Cloud DB for MySQL을 사용하면서 백업 데이터를 복구 하려고 할 때 ERROR 1227 (42000) 오류가 발생하는 경우가 있습니다. 오류 메시지로만 보면 계정 권한에 문제가 있는 것처럼 보이는데 정확하게 문제 원인이 무엇인지, 그리고 해결방법은 어떤 것이 있는지 정리해보겠습니다.&#xA;오류 메시지 link전체 오류 메시지는 아래와 같습니다.&#xA;이 오류 메시지의 원인은 크게 2가지로 구분할 수 있는데, 상황에 따라 각각의 원인 1가지에 해당하는 경우도 있고, 2가지 원인이 모두 해당되는 경우도 있습니다.</description>
+    </item>
+  </channel>
+</rss>

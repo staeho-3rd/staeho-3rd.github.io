@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on 3RDEYESYS Tech Docs</title>
+    <link>http://example.org/tags/excel/</link>
+    <description>Recent content in Excel on 3RDEYESYS Tech Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0900</lastBuildDate>
+    <atom:link href="http://example.org/tags/excel/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PhpSpreadsheet 설정 샘플 코드</title>
+      <link>http://example.org/docs/etc/phpspreadsheet-sample-code/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0900</pubDate>
+      <guid>http://example.org/docs/etc/phpspreadsheet-sample-code/</guid>
+      <description>개요 linkPHP에서 Excel 문서를 읽거나 Excel 형태로 문서를 저장해야 할 때 주로 PhpSpreadsheet를 사용하게 됩니다. 이전에는 PHPExcel이라는 이름이었으나 현재는 해당 버전의 개발-유지보수가 중단되고 새로운 프로젝트로 PhpSpreasheet라는 이름으로 업그레이드 되었습니다.&#xA;또한 PhpSpreadsheet는 Excel 뿐만 아니라 PDF 형식으로도 파일을 저장할 수 있어서 많이 사용되고 있습니다.&#xA;이번에는 이 PhpSpreadsheet로 문서를 저장할 때 사용하는 주요 소스 코드의 샘플을 정리해보겠습니다.&#xA;클래스 로드 link&#xD;&amp;lt;?php&#xD;require &amp;#39;vendor/autoload.php&amp;#39;;&#xD;use PhpOffice\PhpSpreadsheet\IOFactory;&#xD;use PhpOffice\PhpSpreadsheet\Spreadsheet;&#xD;$spreadsheet = new Spreadsheet();&#xD;?&amp;gt;&#xD;기본 설정 link&#xD;&amp;lt;?</description>
+    </item>
+  </channel>
+</rss>

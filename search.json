@@ -138,10 +138,43 @@
 
 
 {
+"title": "Ncloud Clova OCR - Template OCR API 연동 PHP 샘플 예제",
+"tags": "aiapi",
+"keywords": "AI, OCR, 문서인식",
+"url": "/ai-services/ncloud-ai-services-clova-ocr-template-ocr-api-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud Clova OCR 서비스 중에서 Template OCR 사용 방법 안내",
+"tags": "ai",
+"keywords": "AI, OCR, 문서인식",
+"url": "/ai-services/ncloud-ai-services-clova-ocr-template-ocr-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Windows PowerShell에서 Ncloud API를 호출하는 샘플 예제",
 "tags": "apiwindows",
 "keywords": "API, 파워쉘",
 "url": "/api/ncloud-api-call-powershell-sample.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud Cloud Outbound Mailer 도메인 인증 방법 3가지(SPF, DKIM, DMARC) 안내",
+"tags": "mailauth",
+"keywords": "Linux, 록키 리눅스, 록키, Repository, Mirror, 하이퍼바이저, XEN",
+"url": "/application-service/ncloud-application-service-cloud-outbound-mailer-domain-authentication.html",
 "summary": ""
 }
 ,
@@ -270,7 +303,18 @@
 
 
 {
-"title": "Ncloud Rocky Linux 서버 Repository 미러 사이트 오류 문제 해결 방법",
+"title": "Ncloud KVM Hypervisor 타입의 Rocky Linux 서버 Repository 미러 사이트 오류 문제 해결 방법",
+"tags": "linuxrocky_linux",
+"keywords": "Linux, 록키 리눅스, 록키, Repository, Mirror, 하이퍼바이저, XEN",
+"url": "/compute/ncloud-compute-server-rocky-linux-kvm-hypervisor-repository-mirror-site-error-troubleshooting.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud XEN Hypervisor 타입의 Rocky Linux 8.6 서버 Repository 미러 사이트 오류 문제 해결 방법",
 "tags": "linuxrocky_linux",
 "keywords": "Linux, 록키 리눅스, 록키, Repository, Mirror",
 "url": "/compute/ncloud-compute-server-rocky-linux-repository-mirror-site-error-troubleshooting.html",
@@ -296,6 +340,17 @@
 "tags": "windowsstorage",
 "keywords": "Storage, Block Disk, windows",
 "url": "/compute/ncloud-compute-server-storage-extend-guide-windows.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "IIS에서 X-Forwarded-For를 이용해 Client IP 기록하기",
+"tags": "proxyload_balancerlogwindows",
+"keywords": "프록시, 로드밸런서, 클라이언트IP",
+"url": "/compute/ncloud-compute-server-x-forwarded-for-client-ip-logging-iis-guide.html",
 "summary": ""
 }
 ,
@@ -329,6 +384,17 @@
 "tags": "databasemssqlclouddbvpc",
 "keywords": "Database, Domain, MicroSoft, SQL Server",
 "url": "/database/ncloud-database-cloud-db-for-mssql-setting-manage-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud Cloud DB for MySQL - DB Engine 업그레이드 가이드",
+"tags": "databasevpcMySQL",
+"keywords": "Database, MySQL, Migration",
+"url": "/database/ncloud-database-cloud-db-for-mysql-db-engine-upgrade-guide.html",
 "summary": ""
 }
 ,
@@ -402,10 +468,43 @@
 
 
 {
-"title": "Ncloud 데이터베이스 마이그레이션 | From MySQL 5.7 To MysQL 5.7",
+"title": "Ncloud 데이터베이스 마이그레이션 서비스 | From MariaDB To MySQL 8.0",
+"tags": "databasevpcMariaDB",
+"keywords": "Database, MariaDB, MySQL, Migration",
+"url": "/database/ncloud-database-db-migration-from-mariadb-to-mysql80-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 5.7 To MySQL 5.7",
 "tags": "databasevpcMySQL",
 "keywords": "Database, MySQL, Migration",
 "url": "/database/ncloud-database-db-migration-from-mysql57-to-mysql57-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 5.7 To MySQL 8.0",
+"tags": "databasevpcMySQL",
+"keywords": "Database, MySQL, Migration",
+"url": "/database/ncloud-database-db-migration-from-mysql57-to-mysql80-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 8.0 To MySQL 8.0",
+"tags": "databasevpcMySQL",
+"keywords": "Database, MySQL, Migration",
+"url": "/database/ncloud-database-db-migration-from-mysql80-to-mysql80-guide.html",
 "summary": ""
 }
 ,
@@ -439,6 +538,17 @@
 "tags": "databasemysqlinstallrocky_linux",
 "keywords": "Database, 록키 리눅스, 디비, install",
 "url": "/database/ncloud-database-mysql-8-latest-version-install-on-rocky-linux.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "MySQL 데이터 저장 디렉토리(datadir) 위치를 변경해서 설치하는 방법",
+"tags": "databasemysqlinstallrocky_linux",
+"keywords": "Database, 록키 리눅스, 디비, install, Rocky Linux",
+"url": "/database/ncloud-database-mysql-datadir-change-install-guide.html",
 "summary": ""
 }
 ,
@@ -567,6 +677,39 @@
 
 
 {
+"title": "Cloud Log Analytics 설정 가이드",
+"tags": "loganalytics",
+"keywords": "분석, 로그",
+"url": "/management/ncloud-management-cloud-log-analytics-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Cloud Log Analytics에서 수집하는 로그 유형",
+"tags": "loganalytics",
+"keywords": "분석, 로그",
+"url": "/management/ncloud-management-cloud-log-analytics-template-info.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Cloud Log Analytics에서 Windows IIS Log 수집하는 방법",
+"tags": "Loganalyticswindows",
+"keywords": "분석, 로그, 윈도우",
+"url": "/management/ncloud-management-cloud-log-analytics-windows-iis-log-collect-guide.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Ncloud API Key 접근 제한 설정하는 방법",
 "tags": "accountapisecurity",
 "keywords": "Account, Sub Account, API Key",
@@ -604,6 +747,17 @@
 "tags": "ipvpcacg",
 "keywords": "IP, IP Address",
 "url": "/networking/ncloud-networking-find-my-ip-address.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "DNS 설정에서 255자 이상의 TXT 레코드(SPF, DKIM, DMARC 등) 등록하는 방법",
+"tags": "dns",
+"keywords": "도메인, 메일 인증, Record",
+"url": "/networking/ncloud-networking-global-dns-configure-long-txt-record.html",
 "summary": ""
 }
 ,
@@ -1178,7 +1332,7 @@
 "tags": "linuxstorage",
 "keywords": "Storage, Disk",
 "url": "/compute/ncloud_compute_server_storage_add_detail_process.html",
-"summary": "Ncloud Linux 서버 스토리지(디스크) 추가 상세 가이드입니다"
+"summary": ""
 }
 ,
 
@@ -1616,7 +1770,7 @@
 {
 "title": "VPC Peering 생성 가이드",
 "tags": "vpc",
-"keywords": "Virtual Private Cloud",
+"keywords": "Virtual, Private Cloud",
 "url": "/networking/ncloud_networking_vpc_peering_guide.html",
 "summary": ""
 }
@@ -1818,7 +1972,7 @@
 "tags": "object_storagebackup",
 "keywords": "오브젝트 스토리지, 백업, backup",
 "url": "/storage/ncloud_storage_object_storage_s3_client_s3browser.html",
-"summary": "Ncloud Object Storage 접속용 Windows Client Tool - S3 Browser 사용 방법입니다"
+"summary": ""
 }
 ,
 
@@ -1843,6 +1997,8 @@
 "summary": "Ncloud 서비스와 관련된 새로운 소식들을 알려 드립니다."
 }
 ,
+
+
 
 
 
