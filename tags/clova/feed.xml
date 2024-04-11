@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clova on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/tags/clova/</link>
+    <link>https://docs.3rdeyesys.com/tags/clova/</link>
     <description>Recent content in Clova on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/tags/clova/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/clova/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud Clova OCR 서비스 중에서 Template OCR 사용 방법 안내</title>
-      <link>http://example.org/docs/ai-services/clova-ocr/template-ocr-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-guide/</link>
       <pubDate>Wed, 14 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/ai-services/clova-ocr/template-ocr-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드) [Clova OCR]은 전송한 문서나 이미지를 인식하여 사용자가 지정한 영역의 텍스트와 데이터를 정확하게 추출하는 서비스입니다. 여기서는 [Clova OCR]에서 제공하는 OCR 서비스 종류 중에서 [Template OCR]의 사용 방법을 [사업자등록증]을 예시로 정리해보겠습니다.&#xA;서비스 이용 시 주의 사항 link[Clova OCR] 이용 시 주의 사항은 다음과 같습니다.&#xA;서비스 계정당 권장되는 호출 성능은 최대 1 tps입니다. 더 높은 호출 성능을 원하는 경우 고객 지원으로 문의하셔야 합니다. 인식 요청 시 45도 이상 회전된 문서는 인식률이 저하될 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud Clova OCR - Template OCR API 연동 PHP 샘플 예제</title>
-      <link>http://example.org/docs/ai-services/clova-ocr/template-ocr-api-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-api-guide/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/ai-services/clova-ocr/template-ocr-api-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-api-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드) [Clova OCR]은 전송한 문서나 이미지를 인식하여 사용자가 지정한 영역의 텍스트와 데이터를 정확하게 추출하는 서비스입니다. 여기서는 API를 이용해서 Template OCR로 [사업자등록증]을 인식하는 예제를 PHP 코드로 정리해보겠습니다.&#xA;서비스 배포 link테스트는 Template을 미리 생성한 상태에서 진행해보겠습니다. Template 생성 방법은 아래 링크의 문서에서 확인하시면 됩니다.&#xA;⁃ Ncloud Clova OCR 서비스 중에서 Template OCR 사용 방법&#xD;[배포 관리]에서 [서비스 배포] 버튼을 클릭해서 해당 템플릿을 서비스 배포합니다. 서비스 배포 확인 팝업창에서 [확인] 버튼을 클릭합니다.</description>
     </item>
   </channel>

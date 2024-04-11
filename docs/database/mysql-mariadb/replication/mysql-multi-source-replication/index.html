@@ -38,19 +38,19 @@
 <meta property="og:title" content="MySQL Multi Source Replication 구성 가이드" />
 <meta property="og:description" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/" />
-<meta property="og:image" content="http://example.org/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
+<meta property="og:url" content="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/" />
+<meta property="og:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
 <meta property="og:image:alt" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드" />
 <meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-04-05T00:00:00+09:00" />
 <meta property="article:modified_time" content="2023-04-05T00:00:00+09:00" />
 <meta property="og:locale" content="ko-kr" />
-<meta property="twitter:image" content="http://example.org/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
+<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
 <meta property="twitter:image:alt" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드" />
 <meta name="twitter:title" content="MySQL Multi Source Replication 구성 가이드"/>
 <meta name="twitter:description" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MySQL Multi Source Replication 구성 가이드","url":"http:\/\/example.org\/docs\/database\/mysql-mariadb\/replication\/mysql-multi-source-replication\/"}
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MySQL Multi Source Replication 구성 가이드","url":"https:\/\/docs.3rdeyesys.com\/docs\/database\/mysql-mariadb\/replication\/mysql-multi-source-replication\/"}
 </script>
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -58,7 +58,7 @@
     
             
                 
-                <script type="text/javascript" src="http://example.org/docs/js/flexsearch.bundle.min.d3bc6e35474ae14c230e078397a02e1773352cc62ec8abcb7dbe2043093f2a413fe25f3ec858b8920ea92d0ff2dc67a5.js" integrity="sha384-07xuNUdK4UwjDgeDl6AuF3M1LMYuyKvLfb4gQwk/KkE/4l8&#43;yFi4kg6pLQ/y3Gel" crossorigin="anonymous" charset="utf-8"></script>
+                <script type="text/javascript" src="https://docs.3rdeyesys.com/docs/js/flexsearch.bundle.min.d3bc6e35474ae14c230e078397a02e1773352cc62ec8abcb7dbe2043093f2a413fe25f3ec858b8920ea92d0ff2dc67a5.js" integrity="sha384-07xuNUdK4UwjDgeDl6AuF3M1LMYuyKvLfb4gQwk/KkE/4l8&#43;yFi4kg6pLQ/y3Gel" crossorigin="anonymous" charset="utf-8"></script>
                 
         
     
@@ -2907,14 +2907,14 @@ MySQL 8.0 버전 부터는 replicate-do-db 설정에 채널 정보도 추가할 
 		
 
 		<a class="nav-link  active"
-		   id="dfcbaeTab" data-bs-toggle="tab" data-bs-target="#dfcbae"
-		   type="button" role="tab" aria-controls="dfcbae" aria-selected="true">MySQL 5.7</a>
+		   id="dfbeacTab" data-bs-toggle="tab" data-bs-target="#dfbeac"
+		   type="button" role="tab" aria-controls="dfbeac" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="defbacTab" data-bs-toggle="tab" data-bs-target="#defbac"
-		   type="button" role="tab" aria-controls="defbac" aria-selected="true">MySQL 8.0</a>
+		   id="ebafcdTab" data-bs-toggle="tab" data-bs-target="#ebafcd"
+		   type="button" role="tab" aria-controls="ebafcd" aria-selected="true">MySQL 8.0</a>
 
 		
 
@@ -2930,7 +2930,7 @@ MySQL 8.0 버전 부터는 replicate-do-db 설정에 채널 정보도 추가할 
 
 
 
-<div class="tab-pane fade show active" id="dfcbae" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dfbeac" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -2981,7 +2981,7 @@ systemctl restart mysqld</code>
 
 
 
-<div class="tab-pane fade" id="defbac" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ebafcd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3076,20 +3076,20 @@ mysql -u root -p testdb2 &lt; /data/test2.sql</code>
 		
 
 		<a class="nav-link  active"
-		   id="edbcfaTab" data-bs-toggle="tab" data-bs-target="#edbcfa"
-		   type="button" role="tab" aria-controls="edbcfa" aria-selected="true">MySQL 5.7</a>
+		   id="bacdfeTab" data-bs-toggle="tab" data-bs-target="#bacdfe"
+		   type="button" role="tab" aria-controls="bacdfe" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="cbedafTab" data-bs-toggle="tab" data-bs-target="#cbedaf"
-		   type="button" role="tab" aria-controls="cbedaf" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
+		   id="ceadbfTab" data-bs-toggle="tab" data-bs-target="#ceadbf"
+		   type="button" role="tab" aria-controls="ceadbf" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
 
 		
 
 		<a class="nav-link "
-		   id="fbcdeaTab" data-bs-toggle="tab" data-bs-target="#fbcdea"
-		   type="button" role="tab" aria-controls="fbcdea" aria-selected="true">MySQL 8.0.23~</a>
+		   id="fcadbeTab" data-bs-toggle="tab" data-bs-target="#fcadbe"
+		   type="button" role="tab" aria-controls="fcadbe" aria-selected="true">MySQL 8.0.23~</a>
 
 		
 
@@ -3105,7 +3105,7 @@ mysql -u root -p testdb2 &lt; /data/test2.sql</code>
 
 
 
-<div class="tab-pane fade show active" id="edbcfa" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="bacdfe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3136,7 +3136,7 @@ mysql&gt; CHANGE MASTER TO MASTER_HOST=&#39;마스터IP&#39;, MASTER_PORT=포트
 
 
 
-<div class="tab-pane fade" id="cbedaf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ceadbf" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3167,7 +3167,7 @@ mysql&gt; CHANGE MASTER TO MASTER_HOST=&#39;마스터IP&#39;, MASTER_PORT=포트
 
 
 
-<div class="tab-pane fade" id="fbcdea" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fcadbe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3226,20 +3226,20 @@ mysql&gt; CHANGE REPLICATION SOURCE TO SOURCE_HOST=&#39;마스터IP&#39;, SOURCE
 		
 
 		<a class="nav-link  active"
-		   id="dcabfeTab" data-bs-toggle="tab" data-bs-target="#dcabfe"
-		   type="button" role="tab" aria-controls="dcabfe" aria-selected="true">MySQL 5.7</a>
+		   id="dbcfaeTab" data-bs-toggle="tab" data-bs-target="#dbcfae"
+		   type="button" role="tab" aria-controls="dbcfae" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="ebacdfTab" data-bs-toggle="tab" data-bs-target="#ebacdf"
-		   type="button" role="tab" aria-controls="ebacdf" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
+		   id="afdecbTab" data-bs-toggle="tab" data-bs-target="#afdecb"
+		   type="button" role="tab" aria-controls="afdecb" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
 
 		
 
 		<a class="nav-link "
-		   id="fbaedcTab" data-bs-toggle="tab" data-bs-target="#fbaedc"
-		   type="button" role="tab" aria-controls="fbaedc" aria-selected="true">MySQL 8.0.23~</a>
+		   id="fdbeacTab" data-bs-toggle="tab" data-bs-target="#fdbeac"
+		   type="button" role="tab" aria-controls="fdbeac" aria-selected="true">MySQL 8.0.23~</a>
 
 		
 
@@ -3255,7 +3255,7 @@ mysql&gt; CHANGE REPLICATION SOURCE TO SOURCE_HOST=&#39;마스터IP&#39;, SOURCE
 
 
 
-<div class="tab-pane fade show active" id="dcabfe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dbcfae" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3291,7 +3291,7 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 
 
 
-<div class="tab-pane fade" id="ebacdf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="afdecb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3327,7 +3327,7 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 
 
 
-<div class="tab-pane fade" id="fbaedc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fdbeac" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3374,14 +3374,14 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 		
 
 		<a class="nav-link  active"
-		   id="cafebdTab" data-bs-toggle="tab" data-bs-target="#cafebd"
-		   type="button" role="tab" aria-controls="cafebd" aria-selected="true">MySQL 5.7</a>
+		   id="efbadcTab" data-bs-toggle="tab" data-bs-target="#efbadc"
+		   type="button" role="tab" aria-controls="efbadc" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="cbeafdTab" data-bs-toggle="tab" data-bs-target="#cbeafd"
-		   type="button" role="tab" aria-controls="cbeafd" aria-selected="true">MySQL 8.0</a>
+		   id="fcbdaeTab" data-bs-toggle="tab" data-bs-target="#fcbdae"
+		   type="button" role="tab" aria-controls="fcbdae" aria-selected="true">MySQL 8.0</a>
 
 		
 
@@ -3397,7 +3397,7 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 
 
 
-<div class="tab-pane fade show active" id="cafebd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="efbadc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3432,7 +3432,7 @@ mysql&gt; show slave status for channel &#39;ch_testdb2&#39;\G</code>
 
 
 
-<div class="tab-pane fade" id="cbeafd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fcbdae" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3507,20 +3507,20 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 		
 
 		<a class="nav-link  active"
-		   id="cbfeadTab" data-bs-toggle="tab" data-bs-target="#cbfead"
-		   type="button" role="tab" aria-controls="cbfead" aria-selected="true">MySQL 5.7</a>
+		   id="eabcdfTab" data-bs-toggle="tab" data-bs-target="#eabcdf"
+		   type="button" role="tab" aria-controls="eabcdf" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="dfbceaTab" data-bs-toggle="tab" data-bs-target="#dfbcea"
-		   type="button" role="tab" aria-controls="dfbcea" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
+		   id="febadcTab" data-bs-toggle="tab" data-bs-target="#febadc"
+		   type="button" role="tab" aria-controls="febadc" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
 
 		
 
 		<a class="nav-link "
-		   id="acefdbTab" data-bs-toggle="tab" data-bs-target="#acefdb"
-		   type="button" role="tab" aria-controls="acefdb" aria-selected="true">MySQL 8.0.23~</a>
+		   id="fbecadTab" data-bs-toggle="tab" data-bs-target="#fbecad"
+		   type="button" role="tab" aria-controls="fbecad" aria-selected="true">MySQL 8.0.23~</a>
 
 		
 
@@ -3536,7 +3536,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 
 
 
-<div class="tab-pane fade show active" id="cbfead" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="eabcdf" role="tabpanel" aria-labelledby="nav-1">
 
 	<table class="simple_table">
   <thead>
@@ -3565,7 +3565,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 
 
 
-<div class="tab-pane fade" id="dfbcea" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="febadc" role="tabpanel" aria-labelledby="nav-1">
 
 	<table class="simple_table">
   <thead>
@@ -3594,7 +3594,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 
 
 
-<div class="tab-pane fade" id="acefdb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fbecad" role="tabpanel" aria-labelledby="nav-1">
 
 	<table class="simple_table">
   <thead>
@@ -3764,7 +3764,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
     <script src="/docs/js/bootstrap.eac7ee3f6fa791c684e7a51fc2fd50b6f724271b9e39562e4fe8c3942412df3acbfc4045f043d03399dac70091207507.js" integrity="sha384-6sfuP2&#43;nkcaE56Ufwv1QtvckJxueOVYuT&#43;jDlCQS3zrL/EBF8EPQM5naxwCRIHUH"defer></script>
 
 
-    <script type="text/javascript" src="http://example.org/docs/js/bundle.min.c4afb43dddd895b6285611c0d410a47b27a856b15c067bb3dbced921c4acd06bf390dd77e1cca927c71796dba4006b80.js" integrity="sha384-xK&#43;0Pd3YlbYoVhHA1BCkeyeoVrFcBnuz287ZIcSs0GvzkN134cypJ8cXltukAGuA" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="https://docs.3rdeyesys.com/docs/js/bundle.min.ee154403a9df249115acfd86b0edde4c167426fcac746995612a08385ed4e1c6441cd78dfc6e52400c72297f7c1f48f9.js" integrity="sha384-7hVEA6nfJJEVrP2GsO3eTBZ0JvysdGmVYSoIOF7U4cZEHNeN/G5SQAxyKX98H0j5" crossorigin="anonymous" defer></script>
         
 
         

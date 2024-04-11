@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Telegram on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/tags/telegram/</link>
+    <link>https://docs.3rdeyesys.com/tags/telegram/</link>
     <description>Recent content in Telegram on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 10 Nov 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/tags/telegram/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/telegram/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP로 텔레그램 비공개 채널에 메시지 전송하기</title>
-      <link>http://example.org/docs/etc/php-to-telegram-message-send/</link>
+      <link>https://docs.3rdeyesys.com/docs/etc/php-to-telegram-message-send/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/etc/php-to-telegram-message-send/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/etc/php-to-telegram-message-send/</guid>
       <description>개요 link업무를 진행하다보면 서버나 서비스에 장애가 발생했을 때 즉시 알림을 받거나 서버 상태 모니터링이나 매출 등의 서비스 이용 지표 등을 매일 자동으로 통보 받는 경우가 있습니다. 예전에는 이메일이나 SMS 메시지로 받는 경우가 대부분이었는데, 요즘은 관련된 사람들이 함께 들어와 있는 메신저 채팅방으로 알림을 동시에 받는 경우도 많아지고 있습니다.&#xA;그럴 때 사용하는 방법 중에서 여기서는 텔레그램(Telegram)의 대화방인 비공개 채널에 메시지를 전송하는 것을 PHP로 구현해보겠습니다.&#xA;구현 순서 link 텔레그램 채팅 봇을 생성 텔레그램 채널을 비공개로 생성 비공개 채널에 위에서 생성한 채팅 봇을 관리자로 등록 PHP로 채팅 봇을 이용해 비공개 채널에 메시지를 전송 채팅 봇 생성 link텔레그램(Telegram) 메신저에서 채팅 봇을 생성하고 관리해주는 봇인 [BotFather]를 검색합니다.</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Global DNS on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/docs/networking/dns/</link>
+    <link>https://docs.3rdeyesys.com/docs/networking/dns/</link>
     <description>Recent content in Global DNS on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 10 Jan 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/docs/networking/dns/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/networking/dns/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Global DNS 사용 가이드 - 도메인 추가</title>
-      <link>http://example.org/docs/networking/dns/global-dns-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-guide/</link>
       <pubDate>Thu, 27 May 2021 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/networking/dns/global-dns-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-guide/</guid>
       <description>개요 linkDNS 서버는 개인이 직접 운영하기 어려운데, 네이버 클라우드 Global DNS를 이용하면 도메인 설정 등을 쉽고 편하게 사용할 수 있습니다.&#xA;도메인 추가 link네이버 클라우드는 도메인 구매/등록을 지원 하지 않습니다. 그러므로 가비아, 아이네임즈, 닷네임코리아 등 전문 도메인 등록 기관에서 도메인을 구입 하셔야 합니다.&#xA;새로 구입한 도메인 혹은 기존 도메인을 [네이버 클라우드 콘솔] - [Networking] - [Global DNS] 메뉴에서 [도메인 추가] 버튼을 클릭해 도메인주소를 입력합니다.&#xA;다음과 같이 생성된 도메인 정보에서 네임서버의 주소를 확인합니다.</description>
     </item>
     <item>
       <title>DNS 설정에서 255자 이상의 TXT 레코드(SPF, DKIM, DMARC 등) 등록하는 방법</title>
-      <link>http://example.org/docs/networking/dns/global-dns-configure-long-txt-record/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-configure-long-txt-record/</link>
       <pubDate>Wed, 10 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/networking/dns/global-dns-configure-long-txt-record/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-configure-long-txt-record/</guid>
       <description>개요 linkDNS 설정할 때 TXT 레코드의 설정 값은 일반적으로 255자로 제한되어 있습니다. 하지만 메일 발신 도메인 인증을 위한 SPF, DKIM 레코드의 설정 값은 255자를 넘는 경우가 많은데 이때 이런 255자 이상의 문자열을 등록할 수 있는 방법에 대해 대표적인 DNS 서비스 업체별로 확인해보겠습니다.&#xA;Ncloud Global DNS link우선 Ncloud(네이버 클라우드)의 DNS 서비스인 [Global DNS]는 다른 DNS 제공 업체와 다르게 255자가 넘는 경우에도 자동으로 문자열을 분리해서 등록해줍니다.&#xA;그러므로 Ncloud(네이버 클라우드)에서는 TXT 레코드 값의 길이를 신경쓰지 않고 편하게 등록하시면 됩니다.</description>
     </item>
   </channel>

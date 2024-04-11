@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Route-Table on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/tags/route-table/</link>
+    <link>https://docs.3rdeyesys.com/tags/route-table/</link>
     <description>Recent content in Route-Table on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/tags/route-table/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/route-table/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud VPC 구성요소</title>
-      <link>http://example.org/docs/networking/vpc/ncloud-vpc-overview/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/vpc/ncloud-vpc-overview/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/networking/vpc/ncloud-vpc-overview/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/vpc/ncloud-vpc-overview/</guid>
       <description>개요 link이 문서는 VPC를 구성하는 요소들에 대한 설명으로 네이버 클라우드 파트너 테크데이에서 발표된 내용을 정리한 것입니다.&#xA;VPC linkVPC(Virtual Private Cloud)는 퍼블릭 클라우드 상에 논리적으로 완전하게 분리된 고객전용 네트워크를 제공하는 서비스. 최대 /16의 IP 네트워크 공간을 제공 (IP 대역: RFC 1918).&#xA;@ RFC 1918 IP대역&#xD;10.0.0.0/8 (10.0.0.0 - 10.255.255.255) 172.16.0.0/12 (172.16.0.0 - 172.31.255.255) 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)&#xD;Subnet (Internet Gateway) link할당된 VPC를 용도에 맞게 네트워크 공간을 세분화 하여 사용.&#xA;/16 ~ /28의 네트워크 주소 할당이 가능.</description>
     </item>
   </channel>

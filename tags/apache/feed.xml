@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/tags/apache/</link>
+    <link>https://docs.3rdeyesys.com/tags/apache/</link>
     <description>Recent content in Apache on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/tags/apache/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/apache/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개</title>
-      <link>http://example.org/docs/compute/rocky-linux/basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/rocky-linux/basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</guid>
       <description>개요 linkRocky Linux (록키 리눅스)는 CentOS의 서비스 지원 종료로 대안으로 떠오른 CentOS 기반의 리눅스 OS입니다.&#xA;Ncloud (네이버 클라우드)는 이 록키 리눅스의 핵심 파트너로 선정되어 국내에서 록키 리눅스 인프라와 기술지원을 위해 협력해왔고, 드디어 Ncloud 콘솔에서 록키 리눅스를 제공하기 시작했기에 간단하게 소개해보려고 합니다.&#xA;제공 버전 linkNcloud에서는 현재 Rocky Linux 8.6 버전을 VPC 환경에서 제공하고 있습니다.&#xA;설치할 소프트웨어 link록키 리눅스 서버를 실행하고 보통 자주 사용하게 되는 아래의 소프트웨어들을 설치하고 확인해보겠습니다.&#xA;Apache PHP NGINX MariaDB (MySQL) 접속 화면 link서버를 생성하고 접속하면 아래와 같이 Ncloud 로고가 크게 표시된 화면을 볼 수 있습니다.</description>
     </item>
     <item>
       <title>http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Rocky Linux</title>
-      <link>http://example.org/docs/compute/redirect-http-to-https/apache-rocky-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-rocky-linux/</link>
       <pubDate>Tue, 11 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/redirect-http-to-https/apache-rocky-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-rocky-linux/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버 Apache 웹서버에서 http 접속 시에 https로 강제 리다이렉트 시키는 방법은 크게 2가지가 있는데 각각에 대해 정리해보겠습니다.&#xA;테스트 환경 link테스트에 사용한 서버 환경은 다음과 같습니다.&#xA;⁃ OS: Rocky Linux 8.6 ⁃ 웹서버: Apache 2.4 ⁃ 테스트 사이트: rocky-https-test.com&#xD;방법1 : Redirect 옵션 link첫번째 방법은 [Redirect] 옵션을 이용하는 방법입니다.&#xA;HTTP 환경 설정에서 [ServerName]을 제외한 다른 항목들은 모두 삭제하거나 주석처리한 후에 리다이렉트 설정을 추가합니다.</description>
     </item>
     <item>
       <title>http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Ubuntu</title>
-      <link>http://example.org/docs/compute/redirect-http-to-https/apache-ubuntu/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-ubuntu/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/redirect-http-to-https/apache-ubuntu/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-ubuntu/</guid>
       <description>개요 link웹사이트 SSL 인증서를 설치하고 https 접속을 유도할 때 http로 접속하면 https로 강제로 리다이렉트 시키는 방법을 사용하는 경우가 많습니다.&#xA;웹페이지 소스에서 http 접속 여부를 판단해서 redirect 시키는 방법 등 여러가지 있을 수 있는데 여기서는 Apache 설정으로 쉽게 할 수 있는 방법을 소개합니다.&#xA;SSL 인증서가 설치되어 있다는 가정하에 우선 Linux Ubuntu에서 설정하는 방법을 확인해보겠습니다.&#xA;테스트 환경 link테스트에 사용한 서버 환경은 다음과 같습니다.&#xA;⁃ OS: Ubuntu 20.04 ⁃ 웹서버: Apache 2.4&#xD;SSL 엔진 모듈 활성화 link먼저, SSL 엔진 모듈을 활성화 해야 HTTPS 접속을 할 수 있습니다.</description>
     </item>
     <item>
       <title>http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/CentOS</title>
-      <link>http://example.org/docs/compute/redirect-http-to-https/apache-centos/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-centos/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/redirect-http-to-https/apache-centos/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-centos/</guid>
       <description>개요 link웹사이트 SSL 인증서를 설치하고 https 접속을 유도할 때 http로 접속하면 https로 강제로 리다이렉트 시키는 방법을 사용하는 경우가 많습니다. 웹페이지 소스에서 http 접속 여부를 판단해서 redirect 시키는 방법 등 여러가지 있을 수 있는데 여기서는 Apache 설정으로 쉽게 할 수 있는 방법을 소개합니다.&#xA;SSL 인증서가 설치되어 있다는 가정하에 우선 Linux CentOS에서 설정하는 방법을 확인해보겠습니다.&#xA;테스트 환경 link테스트에 사용한 서버 환경은 다음과 같습니다.&#xA;⁃ OS: CentOS 7.8 ⁃ 웹서버: Apache 2.4&#xD;Apache conf 파일 수정 link/etc/httpd/conf/httpd.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 환경 설정 정보</title>
-      <link>http://example.org/docs/compute/lamp/config-basic/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/lamp/config-basic/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</guid>
       <description>LAMP 기본설정 linkNcloud(네이버 클라우드 플랫폼, 이하 네이버 클라우드)에서 제공하는 Application중에서 가장 대표적인 LAMP(Linux + Apache, Mysql|MariaDB, PHP)의 기본설정입니다.&#xA;LAMP Application이미지는 Classic 환경에서만 이용 가능합니다.&#xD;LAMP 홈디렉토리 link네이버 클라우드에서 Linux 서버를 세팅하게 되면 기본적으로 root 계정으로 접속이 됩니다. 그래서 LAMP 서비스의 홈디렉토리도 /root/lamp로 설정됩니다.&#xA;LAMP 서비스 홈디렉토리 : /root/lamp&#xD;LAMP 서비스 전체 재시작 link네이버 클라우드에서는 LAMP 전체 서비스를 빠르게 재시작할 수 있는 기능을 제공하고 있습니다.&#xA;LAMP 서비스 전체 재시작 명령 : /root/lamp/lamp_restart.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | Ubuntu</title>
-      <link>http://example.org/docs/compute/lamp/config-ubuntu/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/lamp/config-ubuntu/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 OS별로 조금씩 다른데 Ubuntu의 경우에는 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop apache2&#xD;- 시작 : systemctl start apache2&#xD;- 재시작 : systemctl restart apache2&#xD;mysql 시작, 중지, 재시작 linkmysql 시작, 중지, 재시작 명령어도 Apache와 마찬가지로 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop mysql&#xD;- 시작 : systemctl start mysql&#xD;- 재시작 : systemctl restart mysql&#xD;Apache 환경 설정 파일 linkApache의 기본 환경설정 파일은 CentOS의 경우 httpd.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | CentOS</title>
-      <link>http://example.org/docs/compute/lamp/config-centos/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/lamp/config-centos/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 CentOS 6에서 사용하던 것이 CentOS 7이 되면서 변경되었습니다. CentOS 6.x 이하에서는 service {서비스명} [stop|start|restart] 순서였다면 CentOS 7.X 에서는 systemctl [stop|start|restart] {서비스명} 의 순서로 바뀌었습니다. 내용을 정리하면 다음과 같습니다.&#xA;CentOS 6.x 이하 link&#xD;- 중지 : service httpd stop&#xD;- 시작 : service httpd start&#xD;- 재시작 : service httpd restart&#xD;CentOS 7.x link&#xD;- 중지 : systemctl stop httpd&#xD;- 시작 : systemctl start httpd&#xD;- 재시작 : systemctl restart httpd&#xD;mysql 시작, 중지, 재시작 linkmysql도 Apache와 마찬가지 방식으로 CentOS 6 이하와 CentOS 7에서 사용하는 명령어가 변경되었습니다.</description>
     </item>
     <item>
       <title>X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP 기록하기</title>
-      <link>http://example.org/docs/compute/x-forwarded-for/client-ip-logging-in-linux-apache-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/x-forwarded-for/client-ip-logging-in-linux-apache-guide/</link>
       <pubDate>Mon, 21 Aug 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/x-forwarded-for/client-ip-logging-in-linux-apache-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/x-forwarded-for/client-ip-logging-in-linux-apache-guide/</guid>
       <description>개요 linkX-Forwarded-For (XFF) 는 HTTP Header 중 하나로 Load Balancer(로드밸런서)나 Proxy Server를 통해 웹서버에 접속하는 Client의 IP 주소를 식별하는 표준 헤더입니다.&#xA;웹서버나 WAS 앞쪽에 Load Balancer 혹은 Proxy Server 등이 위치하게 된다면 서버 접근 로그에는 Client IP가 아닌 Load Balancer 혹은 Proxy Server의 IP 주소가 기록됩니다. 이때 웹 어플리케이션에서 X-Forwarded-For 헤더를 이용하면 Client IP를 서버 접근 로그에 남길 수 있습니다.&#xA;여기서는 Load Balancer와 연동된 CentOS와 Ubuntu, 그리고 Rocky Linux의 Apache 웹서버 환경에서 X-Forwarded-For 를 이용하여 Apache access_log에 Clinet의 IP를 저장하는 과정을 살펴보겠습니다.</description>
     </item>
   </channel>

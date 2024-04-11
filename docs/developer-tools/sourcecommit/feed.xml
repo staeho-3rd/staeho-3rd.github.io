@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SourceCommit on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/docs/developer-tools/sourcecommit/</link>
+    <link>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/</link>
     <description>Recent content in SourceCommit on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/docs/developer-tools/sourcecommit/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud SourceCommit에서 GitHub Repository 복사해오기</title>
-      <link>http://example.org/docs/developer-tools/sourcecommit/external-repository-copy-get/</link>
+      <link>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/external-repository-copy-get/</link>
       <pubDate>Wed, 20 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/developer-tools/sourcecommit/external-repository-copy-get/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/external-repository-copy-get/</guid>
       <description>개요 linkNcloud SourceCommit에서 GitHub Repository를 복사해서 가져오기 위해서는 [외부 리포지토리 복사] 기능을 이용해야 하는데, Public Repository는 간단하게 가져올 수 있지만, Private Repository는 GitHub에서 생성한 별도의 Personal access token을 사용해야 가져올 수 있어서 그 내용을 정리해보겠습니다.&#xA;외부 리포지토리 복사 linkSourceCommit에서 [외부 리포지토리 복사] 버튼을 클릭합니다.&#xA;Public Repository link퍼블릭 리포지토리는 아래와 같이 [복사할 Git URL] 정보를 입력한 후에 [Git 연결 확인] 버튼을 클릭해서 올바른 리포지토리인지 확인 후 [다음] 버튼을 클릭해 이후 과정을 진행하면 완료됩니다.</description>
     </item>
     <item>
       <title>Ncloud SourceCommit 리포지토리 Git 클라이언트로 로컬PC에 복제하기</title>
-      <link>http://example.org/docs/developer-tools/sourcecommit/git-client-clone-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/git-client-clone-guide/</link>
       <pubDate>Thu, 02 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/developer-tools/sourcecommit/git-client-clone-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/git-client-clone-guide/</guid>
       <description>개요 linkNcloud SourceCommit에서 GitHub Repository를 복사해서 가져오기 위해서는 [외부 리포지토리 복사] 기능을 이용해야 하는데, Public Repository는 간단하게 가져올 수 있지만, Private Repository는 GitHub에서 생성한 별도의 Personal access token을 사용해야 가져올 수 있어서 그 내용을 정리해보겠습니다.&#xA;외부 리포지토리 복사 linkSourceCommit에서 [외부 리포지토리 복사] 버튼을 클릭합니다.&#xA;Public Repository link퍼블릭 리포지토리는 아래와 같이 [복사할 Git URL] 정보를 입력한 후에 [Git 연결 확인] 버튼을 클릭해서 올바른 리포지토리인지 확인 후 [다음] 버튼을 클릭해 이후 과정을 진행하면 완료됩니다.</description>
     </item>
   </channel>

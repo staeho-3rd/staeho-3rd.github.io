@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>설치형 PostgreSQL DB on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/docs/database/postgresql/</link>
+    <link>https://docs.3rdeyesys.com/docs/database/postgresql/</link>
     <description>Recent content in 설치형 PostgreSQL DB on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/docs/database/postgresql/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/database/postgresql/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>설치형 PostgreSQL DB 설치, 접속 가이드 | Rocky Linux</title>
-      <link>http://example.org/docs/database/postgresql/db-install-access-guide-rocky-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-rocky-linux/</link>
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/database/postgresql/db-install-access-guide-rocky-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-rocky-linux/</guid>
       <description>개요 linkPostgreSQL은 설치 후에 DB에 접속할 때 MySQL등 다른 DB와 달리 [OS와 PostgreSQL 양쪽에 동일한 계정을 생성]하거나 [인증관련 환경설정 파일을 수정]해야 접속할 수 있는데 이 두가지 방법을 [Rocky Linux]에서 적용하는 과정을 정리해보겠습니다.&#xA;테스트 환경 link Rocky Linux 8.8 PostgreSQL 13.12 설치 link기본 배포 버전으로 테스트할 수도 있지만, 여기서는 PostgreSQL 13 최신 버전을 설치해보겠습니다.&#xA;리포지토리 버전 확인 link우선 Rocky Linux에서 지원하는 기본 버전들을 확인해보면 아래와 같이 PostgreSQL [9.6], [10], [12], [13], [15] 인 것을 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>설치형 PostgreSQL DB 설치, 접속 가이드 | Ubuntu</title>
-      <link>http://example.org/docs/database/postgresql/db-install-access-guide-ubuntu/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-ubuntu/</link>
       <pubDate>Fri, 07 Oct 2022 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/database/postgresql/db-install-access-guide-ubuntu/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-ubuntu/</guid>
       <description>개요 linkPostgreSQL은 설치 후에 DB에 접속할 때 MySQL등 다른 DB와 달리 [OS와 PostgreSQL 양쪽에 동일한 계정을 생성]하거나 [인증관련 환경설정 파일을 수정]해야 접속할 수 있는데 이 두가지 방법을 Ubuntu에서 적용하는 과정을 정리해보겠습니다.&#xA;테스트 환경 link Ubuntu 20.04 PostgreSQL 13.8 설치 link기본 배포 버전으로 테스트할 수도 있지만, 여기서는 PostgreSQL 13을 설치해보겠습니다.&#xA;리포지토리 설정 파일 생성 link[PostgreSQL 13] 설치 정보가 담겨 있는 리포지토리 설정 파일을 생성합니다.&#xA;sh -c &amp;#39;echo &amp;#34;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;#34; &amp;gt; /etc/apt/sources.</description>
     </item>
     <item>
       <title>설치형 PostgreSQL DB 설치, 접속 가이드 | CentOS</title>
-      <link>http://example.org/docs/database/postgresql/db-install-access-guide-centos/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-centos/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/database/postgresql/db-install-access-guide-centos/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-centos/</guid>
       <description>개요 linkPostgreSQL은 설치 후에 DB에 접속할 때 MySQL등 다른 DB와 달리 [OS와 PostgreSQL 양쪽에 동일한 계정을 생성]하거나 [인증관련 환경설정 파일을 수정]해야 접속할 수 있는데 이 두가지 방법을 CentOS에서 적용하는 과정을 정리해보겠습니다.&#xA;테스트 환경 link CentOS 7.8 PostgreSQL 13.8 설치 link기본 배포 버전으로 테스트할 수도 있지만, 여기서는 PostgreSQL 13을 설치해보겠습니다.&#xA;리포지토리 설치 link[PostgreSQL 13] 설치 정보가 담겨 있는 리포지토리 RPM을 설치합니다.&#xA;yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm&#xD;PostgreSQL 설치 link[PostgreSQL 13]을 설치합니다.&#xA;yum install -y postgresql13-server&#xD;기본 DB 생성 link[initdb] 명령으로 기본 DB를 생성하고 올바르게 생성되었는지 로그를 확인해보겠습니다.</description>
     </item>
   </channel>

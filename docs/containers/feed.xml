@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Containers on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/docs/containers/</link>
+    <link>https://docs.3rdeyesys.com/docs/containers/</link>
     <description>Recent content in Containers on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/docs/containers/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/containers/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes Service 클러스터 생성 및 제어 가이드 | Linux</title>
-      <link>http://example.org/docs/containers/kubernetes-service-start-guide-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-linux/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/containers/kubernetes-service-start-guide-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-linux/</guid>
       <description>개요 linkNcloud (네이버 클라우드) VPC 환경에서 Kubernetes(쿠버네티스) 서비스를 생성하고 Linux 환경에서 제어하는 방법에 대해 소개합니다.&#xA;쿠버네티스란? link쿠버네티스(Kubernetes, K8S)는 배포, 스케일링, 그리고 컨테이너화된 애플리케이션의 관리를 자동화 해주는 오픈 소스 컨테이너 오케스트레이션 엔진으로 구글에서 처음 개발하기 시작했으나 현재는 구글이 오픈소스 프로젝트로 공개한 상태입니다.&#xA;특징 link쿠버네티스는 다음과 같은 특징이 있으며, 자세한 내용은 쿠버네티스 공식 페이지를 참고하시기 바랍니다.&#xA;쿠버네티스 공식 페이지: https://kubernetes.io/ko/docs/home/&#xA;서비스 디스커버리와 로드 밸런싱 스토리지 오케스트레이션 자동화된 롤아웃과 롤백 자동화된 빈 패킹(bin packing) 자동화된 복구(self-healing) 시크릿과 구성 관리 사전 준비 link먼저 쿠버네티스 클러스터에 사용할 전용 VPC와 Private 또는 Public Subnet 그리고, Load Balancer용 Subnet이 필요합니다.</description>
     </item>
     <item>
       <title>Kubernetes Service 클러스터 생성 및 제어 가이드 | Windows</title>
-      <link>http://example.org/docs/containers/kubernetes-service-start-guide-windows/</link>
+      <link>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-windows/</link>
       <pubDate>Mon, 15 May 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/containers/kubernetes-service-start-guide-windows/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-windows/</guid>
       <description>개요 linkNcloud (네이버 클라우드) VPC 환경에서 Kubernetes(쿠버네티스) 서비스를 생성하고 Windows 환경에서 제어하는 방법에 대해 소개합니다.&#xA;쿠버네티스란? link쿠버네티스(Kubernetes, K8S)는 배포, 스케일링, 그리고 컨테이너화된 애플리케이션의 관리를 자동화 해주는 오픈 소스 컨테이너 오케스트레이션 엔진으로 구글에서 처음 개발하기 시작했으나 현재는 구글이 오픈소스 프로젝트로 공개한 상태입니다.&#xA;특징 link쿠버네티스는 다음과 같은 특징이 있으며, 자세한 내용은 쿠버네티스 공식 페이지를 참고하시기 바랍니다.&#xA;쿠버네티스 공식 페이지: https://kubernetes.io/ko/docs/home/&#xA;서비스 디스커버리와 로드 밸런싱 스토리지 오케스트레이션 자동화된 롤아웃과 롤백 자동화된 빈 패킹(bin packing) 자동화된 복구(self-healing) 시크릿과 구성 관리 사전 준비 link먼저 쿠버네티스 클러스터에 사용할 전용 VPC와 Private 또는 Public Subnet 그리고, Load Balancer용 Subnet이 필요합니다.</description>
     </item>
   </channel>

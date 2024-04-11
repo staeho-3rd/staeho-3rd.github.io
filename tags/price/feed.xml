@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Price on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/tags/price/</link>
+    <link>https://docs.3rdeyesys.com/tags/price/</link>
     <description>Recent content in Price on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/tags/price/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/price/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 서버 정지 시 요금할인</title>
-      <link>http://example.org/docs/compute/server-operation-stop-price/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/server-operation-stop-price/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/server-operation-stop-price/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/server-operation-stop-price/</guid>
       <description>개요 link네이버 클라우드에서는 서버를 정지할 경우 일부 타입을 제외한 대부분의 서버에 대해 운영체제 설치를 위해 제공된 기본 디스크 요금만 청구가 되어 요금 할인이 됩니다.&#xA;추가 요금이 청구되는 서비스 link공인 IP, 로드밸런서, 추가 디스크, Security Monitoring, 추가 Network Interface 등 서버에 연결된 다른 유료 서비스의 경우 서버가 정지되어도 정상 청구됩니다.&#xA;요금 할인 횟수와 서버 정지 기한 link 요금이 할인되는 서버의 경우 1회 최대 90일, 12개월 누적 최대 180일까지만 서버를 정지할 수 있습니다.</description>
     </item>
   </channel>

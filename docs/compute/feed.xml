@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compute on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/docs/compute/</link>
+    <link>https://docs.3rdeyesys.com/docs/compute/</link>
     <description>Recent content in Compute on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/docs/compute/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/compute/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 서버 스펙 변경 제한 사항</title>
-      <link>http://example.org/docs/compute/server-spec-change-limit/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/server-spec-change-limit/</link>
       <pubDate>Fri, 02 Jul 2021 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/server-spec-change-limit/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/server-spec-change-limit/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서는 기본적으로 서버 타입 간의 스펙 변경을 지원하지 않고, 동일한 타입 내에서의 스펙 변경만 지원합니다.&#xA;다른 타입의 스펙으로 변경하려면 [내 서버 이미지] 기능을 이용해서 서버 이미지를 생성한 다음, 다른 타입으로 서버를 새로 만들어야 합니다. 이때 IP 주소는 변경됩니다.&#xD;타입 간 스펙 변경이 가능한 경우 : 타입간 스펙 변경은 대부분은 불가능하나 Compact 타입과 Standard 타입 간에는 스펙 변경을 할 수 있습니다.&#xD;VPC 환경의 경우 Standard, High Cpu, High Memory 서버들간에 스펙 변경이 되는 경우도 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 서버 정지 시 요금할인</title>
-      <link>http://example.org/docs/compute/server-operation-stop-price/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/server-operation-stop-price/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/server-operation-stop-price/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/server-operation-stop-price/</guid>
       <description>개요 link네이버 클라우드에서는 서버를 정지할 경우 일부 타입을 제외한 대부분의 서버에 대해 운영체제 설치를 위해 제공된 기본 디스크 요금만 청구가 되어 요금 할인이 됩니다.&#xA;추가 요금이 청구되는 서비스 link공인 IP, 로드밸런서, 추가 디스크, Security Monitoring, 추가 Network Interface 등 서버에 연결된 다른 유료 서비스의 경우 서버가 정지되어도 정상 청구됩니다.&#xA;요금 할인 횟수와 서버 정지 기한 link 요금이 할인되는 서버의 경우 1회 최대 90일, 12개월 누적 최대 180일까지만 서버를 정지할 수 있습니다.</description>
     </item>
     <item>
       <title>CentOS 6에서 pip - Python 설치하기</title>
-      <link>http://example.org/docs/compute/pip-python-install-on-centos6/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/pip-python-install-on-centos6/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/pip-python-install-on-centos6/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/pip-python-install-on-centos6/</guid>
       <description>개요 link2020년 12월 01일부로 CentOS6의 기술지원이 공식 종료되었습니다.&#xA;yum을 이용한 패키지 설치, 업데이트 등을 할 수 없는 상황이기에 pip, Python등의 설치가 원활하지 않습니다. 그래서 pip설치에 필요한 CentOS6.x의 yum 명령을 수행하려면 먼저 아래의 가이드대로 Repository mirror를 변경하는 Script를 다운받아 설치해야 그 다음 단계를 진행할 수 있습니다.&#xA;목적 link지원이 종료된 CentOS6에서 굳이 pip를 설치하려고 하는 이유는 DB 백업 파일을 aws cli를 이용해서 Object Storage에 저장하기 위해서 입니다.&#xA;매 일정 시간에 DB나 소스 파일을 백업하고 백업된 파일을 Object Storage에 백업-동기화 하는 작업을 aws cli를 이용해서 처리하게 됩니다.</description>
     </item>
     <item>
       <title>외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기</title>
-      <link>http://example.org/docs/compute/install-package-by-change-repository-in-private-network/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/compute/install-package-by-change-repository-in-private-network/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Secure Zone이나 VPC 환경의 Private Network처럼 외부와 통신이 단절된 환경에서 리눅스 패키지를 설치해야 할 때 repository 경로를 네이버 클라우드 내부 repository로 바꾸면 문제없이 패키지 설치를 할 수 있습니다. 여기서는 OS별로, Classic/VPC 환경별로 변경하는 방법을 정리해보겠습니다.&#xA;CentOS linkCentOS는 /etc/yum.repos.d/CentOS-Base.repo 를 열어보면 아래 repository주소를 확인할 수 있습니다.&#xA;~# vi /etc/yum.repos.d/CentOS-Base.repo&#xD;### Classic 환경 - CentOS&#xD;네이버 클라우드 Classic 환경 CentOS에서 repository 주소는 미러 사이트가 기본으로 설정 되어 있는 것을 확인할 수 있습니다.</description>
     </item>
   </channel>

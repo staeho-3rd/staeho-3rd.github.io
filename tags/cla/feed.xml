@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cla on 3RDEYESYS Tech Docs</title>
-    <link>http://example.org/tags/cla/</link>
+    <link>https://docs.3rdeyesys.com/tags/cla/</link>
     <description>Recent content in Cla on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 19 May 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://example.org/tags/cla/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/cla/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>로드밸런서(Application Load Balancer) 접속 로그 확인하는 방법</title>
-      <link>http://example.org/docs/networking/loadbalancer/application-loadbalancer-access-log/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/loadbalancer/application-loadbalancer-access-log/</link>
       <pubDate>Fri, 19 May 2023 00:00:00 +0900</pubDate>
-      <guid>http://example.org/docs/networking/loadbalancer/application-loadbalancer-access-log/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/loadbalancer/application-loadbalancer-access-log/</guid>
       <description>개요 linkNcloud (네이버 클라우드) VPC 환경의 대표적인 로드밸런서(Load Balancer)인 애플리케이션 로드밸런서(Application Load Balancer)의 접속 로그를 확인하는 방법에 대해 정리해보겠습니다.&#xA;테스트 준비 link 서버 생성: 록키 리눅스 (Rocky Linux 8.6) 로드밸런서 생성: 애플리케이션 로드밸런서(Application Load Balancer) 서버와 로드밸런서 연결 서버 생성 link테스트용 서버는 Rocky Linux 8.6 서버로 생성했습니다.&#xA;로드밸런서 생성 linkApplication Load Balancer를 생성하고 테스트용 서버와 연결까지 마쳤습니다.&#xA;Application Load Blancer 의 생성 가이드는 아래 문서를 참고하시기 바랍니다. VPC 환경에서 Application Load Balancer 생성하기 접속 로그 수집 활성화 link로드밸런서의 접속 로그를 수집하려면 접속 로그 수집 기능을 활성화 해야 합니다.</description>
     </item>
   </channel>
