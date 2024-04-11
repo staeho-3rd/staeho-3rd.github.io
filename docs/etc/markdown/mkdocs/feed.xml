@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MkDocs on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/docs/etc/markdown/mkdocs/</link>
+    <link>https://staeho-3rd.github.io/docs/etc/markdown/mkdocs/</link>
     <description>Recent content in MkDocs on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/etc/markdown/mkdocs/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/etc/markdown/mkdocs/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MkDocs 설치 가이드 (윈도 10)</title>
-      <link>https://docs.3rdeyesys.com/docs/etc/markdown/mkdocs/basic-install-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/etc/markdown/mkdocs/basic-install-guide/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/etc/markdown/mkdocs/basic-install-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/etc/markdown/mkdocs/basic-install-guide/</guid>
       <description>설치 전체과정 요약 link Python 다운로드&#xA;Python 설치&#xA;2-1. Add Python 3.9 to PATH 옵션 선택&#xA;2-2. Disable path length limit 선택&#xA;mkdocs 설치&#xA;3-1. pip install mkdocs-material&#xA;3-2. python.exe -m pip install &amp;ndash;upgrade pip&#xA;3-3. pip install mkdocs-awesome-pages-plugin&#xA;3-4. mkdocs new {폴더명}&#xA;3-5. cd blog-mkdocs 이동 후 mkdocs serve&#xA;Python 다운로드 linkmkdocs를 사용하려면 먼저 Python을 설치해야 합니다.&#xA;https://www.python.org/downloads/&#xA;2020-11-27일 현재 최신버전은 3.9.0입니다.&#xA;Python 설치하기 linkPATH 추가 linkPython 설치 시작화면에 PATH에 python을 추가하는 옵션이 있습니다.</description>
     </item>
   </channel>

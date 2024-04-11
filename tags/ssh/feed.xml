@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/tags/ssh/</link>
+    <link>https://staeho-3rd.github.io/tags/ssh/</link>
     <description>Recent content in Ssh on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 19 Jun 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/ssh/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/ssh/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 서버에 SSH Key를 이용해 접속하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/auth-security/server-access-by-ssh-key/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/auth-security/server-access-by-ssh-key/</link>
       <pubDate>Mon, 19 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/auth-security/server-access-by-ssh-key/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/auth-security/server-access-by-ssh-key/</guid>
       <description>개요 link리눅스 서버에 접속하는 방법은 [아이디-패스워드]로 접속하는 방법과 [SSH Key]를 이용해 접속하는 방법이 있습니다.&#xA;Ncloud (네이버 클라우드)에서는 기본으로 [아이디-패스워드]로 접속하는 방법을 제공하고 있으므로 여기서는 다른 방법인 [SSH Key]를 이용해 서버에 접속하는 방법을 정리해보게겠습니다.&#xA;테스트 서버 준비 link테스트로 사용할 서버는 [Rocky Linux 8.6] 서버로 생성했습니다.&#xA;SSH Key 생성 link우선 Ncloud 제공하는 [아이디-패스워드] 방식으로 서버에 접속한 후, 아래의 명령으로 SSH key를 생성합니다.&#xA;~# ssh-keygen -t rsa -m pem&#xD;상세 설명 link위의 SSH Key 생성 화면에서 몇가지를 좀 더 자세히 살펴보겠습니다.</description>
     </item>
     <item>
       <title>리눅스서버 SSH 접속 보안 설정하기</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/auth-security/ssh-access-security-setting/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/auth-security/ssh-access-security-setting/</link>
       <pubDate>Thu, 27 May 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/auth-security/ssh-access-security-setting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/auth-security/ssh-access-security-setting/</guid>
       <description>개요 link리눅스 서버들은 서버에 접속할 때 SSH를 이용하게 되는데, 이때 root 계정에 대한 무작위 패스워드 입력 등의 해킹시도가 있을 수 있습니다.&#xA;여기서는 이러한 해킹시도를 차단하기 위한 보안설정 중에서 root 계정과 관련한 보안설정 2가지를 정리해보겠습니다.&#xA;설정 파일 위치 linkroot 계정에 대한 보안 설정은 /etc/ssh/sshd_config 파일에 있습니다.&#xA;~# vi /etc/ssh/sshd_config&#xD;CentOS link&#xD;Ubuntu link&#xD;root 로그인 차단 link로그인 차단은 위 설정에서 PermitRootLogin 항목을 바꾸시면 됩니다.&#xA;CentOS는 주석처리 되어 있으므로 주석을 해제하고 설정을 변경하시면 되고, Ubuntu는 주석이 해제된 상태이므로 설정값만 변경하시면 됩니다.</description>
     </item>
   </channel>

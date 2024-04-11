@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Repository on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/tags/repository/</link>
+    <link>https://staeho-3rd.github.io/tags/repository/</link>
     <description>Recent content in Repository on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/repository/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/repository/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 6에서 pip - Python 설치하기</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/pip-python-install-on-centos6/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/pip-python-install-on-centos6/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/pip-python-install-on-centos6/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/pip-python-install-on-centos6/</guid>
       <description>개요 link2020년 12월 01일부로 CentOS6의 기술지원이 공식 종료되었습니다.&#xA;yum을 이용한 패키지 설치, 업데이트 등을 할 수 없는 상황이기에 pip, Python등의 설치가 원활하지 않습니다. 그래서 pip설치에 필요한 CentOS6.x의 yum 명령을 수행하려면 먼저 아래의 가이드대로 Repository mirror를 변경하는 Script를 다운받아 설치해야 그 다음 단계를 진행할 수 있습니다.&#xA;목적 link지원이 종료된 CentOS6에서 굳이 pip를 설치하려고 하는 이유는 DB 백업 파일을 aws cli를 이용해서 Object Storage에 저장하기 위해서 입니다.&#xA;매 일정 시간에 DB나 소스 파일을 백업하고 백업된 파일을 Object Storage에 백업-동기화 하는 작업을 aws cli를 이용해서 처리하게 됩니다.</description>
     </item>
     <item>
       <title>Ncloud SourceCommit에서 GitHub Repository 복사해오기</title>
-      <link>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/external-repository-copy-get/</link>
+      <link>https://staeho-3rd.github.io/docs/developer-tools/sourcecommit/external-repository-copy-get/</link>
       <pubDate>Wed, 20 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/external-repository-copy-get/</guid>
+      <guid>https://staeho-3rd.github.io/docs/developer-tools/sourcecommit/external-repository-copy-get/</guid>
       <description>개요 linkNcloud SourceCommit에서 GitHub Repository를 복사해서 가져오기 위해서는 [외부 리포지토리 복사] 기능을 이용해야 하는데, Public Repository는 간단하게 가져올 수 있지만, Private Repository는 GitHub에서 생성한 별도의 Personal access token을 사용해야 가져올 수 있어서 그 내용을 정리해보겠습니다.&#xA;외부 리포지토리 복사 linkSourceCommit에서 [외부 리포지토리 복사] 버튼을 클릭합니다.&#xA;Public Repository link퍼블릭 리포지토리는 아래와 같이 [복사할 Git URL] 정보를 입력한 후에 [Git 연결 확인] 버튼을 클릭해서 올바른 리포지토리인지 확인 후 [다음] 버튼을 클릭해 이후 과정을 진행하면 완료됩니다.</description>
     </item>
     <item>
       <title>Ncloud SourceCommit 리포지토리 Git 클라이언트로 로컬PC에 복제하기</title>
-      <link>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/git-client-clone-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/developer-tools/sourcecommit/git-client-clone-guide/</link>
       <pubDate>Thu, 02 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/git-client-clone-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/developer-tools/sourcecommit/git-client-clone-guide/</guid>
       <description>개요 linkNcloud SourceCommit에서 GitHub Repository를 복사해서 가져오기 위해서는 [외부 리포지토리 복사] 기능을 이용해야 하는데, Public Repository는 간단하게 가져올 수 있지만, Private Repository는 GitHub에서 생성한 별도의 Personal access token을 사용해야 가져올 수 있어서 그 내용을 정리해보겠습니다.&#xA;외부 리포지토리 복사 linkSourceCommit에서 [외부 리포지토리 복사] 버튼을 클릭합니다.&#xA;Public Repository link퍼블릭 리포지토리는 아래와 같이 [복사할 Git URL] 정보를 입력한 후에 [Git 연결 확인] 버튼을 클릭해서 올바른 리포지토리인지 확인 후 [다음] 버튼을 클릭해 이후 과정을 진행하면 완료됩니다.</description>
     </item>
   </channel>

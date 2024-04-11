@@ -38,19 +38,19 @@
 <meta property="og:title" content="Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 8.0 To MySQL 8.0" />
 <meta property="og:description" content="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 8.0에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/" />
-<meta property="og:image" content="https://docs.3rdeyesys.com/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
+<meta property="og:url" content="https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/" />
+<meta property="og:image" content="https://staeho-3rd.github.io/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
 <meta property="og:image:alt" content="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 8.0에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" />
 <meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-10-26T00:00:00+09:00" />
 <meta property="article:modified_time" content="2023-10-26T00:00:00+09:00" />
 <meta property="og:locale" content="ko-kr" />
-<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
+<meta property="twitter:image" content="https://staeho-3rd.github.io/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
 <meta property="twitter:image:alt" content="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 8.0에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" />
 <meta name="twitter:title" content="Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 8.0 To MySQL 8.0"/>
 <meta name="twitter:description" content="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 8.0에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 8.0에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다","headline":"Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 8.0 To MySQL 8.0","url":"https:\/\/docs.3rdeyesys.com\/docs\/database\/cloud-db-mysql\/db-migration\/from-mysql80-to-mysql80-guide\/"}
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 8.0에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다","headline":"Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 8.0 To MySQL 8.0","url":"https:\/\/staeho-3rd.github.io\/docs\/database\/cloud-db-mysql\/db-migration\/from-mysql80-to-mysql80-guide\/"}
 </script>
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -2745,14 +2745,14 @@
 		
 
 		<a class="nav-link  active"
-		   id="caedbfTab" data-bs-toggle="tab" data-bs-target="#caedbf"
-		   type="button" role="tab" aria-controls="caedbf" aria-selected="true">Source DB</a>
+		   id="acfdbeTab" data-bs-toggle="tab" data-bs-target="#acfdbe"
+		   type="button" role="tab" aria-controls="acfdbe" aria-selected="true">Source DB</a>
 
 		
 
 		<a class="nav-link "
-		   id="acedfbTab" data-bs-toggle="tab" data-bs-target="#acedfb"
-		   type="button" role="tab" aria-controls="acedfb" aria-selected="true">Target DB</a>
+		   id="aebdfcTab" data-bs-toggle="tab" data-bs-target="#aebdfc"
+		   type="button" role="tab" aria-controls="aebdfc" aria-selected="true">Target DB</a>
 
 		
 
@@ -2768,7 +2768,7 @@
 
 
 
-<div class="tab-pane fade show active" id="caedbf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="acfdbe" role="tabpanel" aria-labelledby="nav-1">
 
 	<img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-00.png" width="845" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
 
@@ -2780,7 +2780,7 @@
 
 
 
-<div class="tab-pane fade" id="acedfb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="aebdfc" role="tabpanel" aria-labelledby="nav-1">
 
 	<img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-06.png" width="845" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
 
@@ -2802,32 +2802,32 @@
 		
 
 		<a class="nav-link  active"
-		   id="adbcefTab" data-bs-toggle="tab" data-bs-target="#adbcef"
-		   type="button" role="tab" aria-controls="adbcef" aria-selected="true">MySQL 버전</a>
+		   id="becfdaTab" data-bs-toggle="tab" data-bs-target="#becfda"
+		   type="button" role="tab" aria-controls="becfda" aria-selected="true">MySQL 버전</a>
 
 		
 
 		<a class="nav-link "
-		   id="afcebdTab" data-bs-toggle="tab" data-bs-target="#afcebd"
-		   type="button" role="tab" aria-controls="afcebd" aria-selected="true">Database</a>
+		   id="fdbecaTab" data-bs-toggle="tab" data-bs-target="#fdbeca"
+		   type="button" role="tab" aria-controls="fdbeca" aria-selected="true">Database</a>
 
 		
 
 		<a class="nav-link "
-		   id="dfcaebTab" data-bs-toggle="tab" data-bs-target="#dfcaeb"
-		   type="button" role="tab" aria-controls="dfcaeb" aria-selected="true">계정</a>
+		   id="bacefdTab" data-bs-toggle="tab" data-bs-target="#bacefd"
+		   type="button" role="tab" aria-controls="bacefd" aria-selected="true">계정</a>
 
 		
 
 		<a class="nav-link "
-		   id="fecbdaTab" data-bs-toggle="tab" data-bs-target="#fecbda"
-		   type="button" role="tab" aria-controls="fecbda" aria-selected="true">Table</a>
+		   id="ecadfbTab" data-bs-toggle="tab" data-bs-target="#ecadfb"
+		   type="button" role="tab" aria-controls="ecadfb" aria-selected="true">Table</a>
 
 		
 
 		<a class="nav-link "
-		   id="fdcabeTab" data-bs-toggle="tab" data-bs-target="#fdcabe"
-		   type="button" role="tab" aria-controls="fdcabe" aria-selected="true">Procedure</a>
+		   id="ceadbfTab" data-bs-toggle="tab" data-bs-target="#ceadbf"
+		   type="button" role="tab" aria-controls="ceadbf" aria-selected="true">Procedure</a>
 
 		
 
@@ -2843,7 +2843,7 @@
 
 
 
-<div class="tab-pane fade show active" id="adbcef" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="becfda" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>테스트에 사용할 DB는 아래에서 확인할 수 있듯이 MySQL 8.0.35입니다.</p>
 <img src="/images/database/migration/ncloud-database-db-migration-from-mysql80-to-mysql80-guide-01.png" width="840" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 8.0에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
@@ -2856,7 +2856,7 @@
 
 
 
-<div class="tab-pane fade" id="afcebd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fdbeca" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>테스트를 위해 testdb1, testdb2 이렇게 2개의 DB를 생성했습니다.</p>
 <img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-02.png" width="840" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
@@ -2869,7 +2869,7 @@
 
 
 
-<div class="tab-pane fade" id="dfcaeb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bacefd" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>테스트를 위한 abcd1, abcd2 이렇게 2개의 DB User를 생성했습니다.</p>
 <img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-03.png" width="840" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
@@ -2882,7 +2882,7 @@
 
 
 
-<div class="tab-pane fade" id="fecbda" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ecadfb" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>테스트용 Database에 sampletable1, sampletable2 이렇게 각각 테이블을 1개씩 생성했습니다.</p>
 <img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-04.png" width="840" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
@@ -2895,7 +2895,7 @@
 
 
 
-<div class="tab-pane fade" id="fdcabe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ceadbf" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>테스트용 Database testdb2에 new_procedure2라는 이름의 Procedure를 생성했습니다.</p>
 <img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-05.png" width="840" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
@@ -2926,14 +2926,14 @@
 		
 
 		<a class="nav-link  active"
-		   id="adcefbTab" data-bs-toggle="tab" data-bs-target="#adcefb"
-		   type="button" role="tab" aria-controls="adcefb" aria-selected="true">8.0.20 이상</a>
+		   id="ceabdfTab" data-bs-toggle="tab" data-bs-target="#ceabdf"
+		   type="button" role="tab" aria-controls="ceabdf" aria-selected="true">8.0.20 이상</a>
 
 		
 
 		<a class="nav-link "
-		   id="dfbceaTab" data-bs-toggle="tab" data-bs-target="#dfbcea"
-		   type="button" role="tab" aria-controls="dfbcea" aria-selected="true">8.0.19 이하</a>
+		   id="cedbfaTab" data-bs-toggle="tab" data-bs-target="#cedbfa"
+		   type="button" role="tab" aria-controls="cedbfa" aria-selected="true">8.0.19 이하</a>
 
 		
 
@@ -2949,7 +2949,7 @@
 
 
 
-<div class="tab-pane fade show active" id="adcefb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="ceabdf" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>⁃ 위쪽에서 Source DB에 테스용으로 [<strong>testdb1</strong>], [<strong>testdb2</strong>] 이렇게 2개를 데이터베이스가 존재하므로 두 개의 데이터베이스 각각에 대해 권한을 부여했습니다.</p>
 
@@ -2985,7 +2985,7 @@ FLUSH PRIVILEGES;</code>
 
 
 
-<div class="tab-pane fade" id="dfbcea" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cedbfa" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>⁃ 위쪽에서 Source DB에 테스용으로 [<strong>testdb1</strong>], [<strong>testdb2</strong>] 이렇게 2개를 데이터베이스가 존재하므로 두 개의 데이터베이스 각각에 대해 권한을 부여했습니다.</p>
 
@@ -3222,20 +3222,20 @@ WHERE table_schema NOT IN ( &#39;information_schema&#39;, &#39;mysql&#39;, &#39;
 		
 
 		<a class="nav-link  active"
-		   id="caefdbTab" data-bs-toggle="tab" data-bs-target="#caefdb"
-		   type="button" role="tab" aria-controls="caefdb" aria-selected="true">Export Completed</a>
+		   id="fbedacTab" data-bs-toggle="tab" data-bs-target="#fbedac"
+		   type="button" role="tab" aria-controls="fbedac" aria-selected="true">Export Completed</a>
 
 		
 
 		<a class="nav-link "
-		   id="feacdbTab" data-bs-toggle="tab" data-bs-target="#feacdb"
-		   type="button" role="tab" aria-controls="feacdb" aria-selected="true">Import Completed</a>
+		   id="bacfdeTab" data-bs-toggle="tab" data-bs-target="#bacfde"
+		   type="button" role="tab" aria-controls="bacfde" aria-selected="true">Import Completed</a>
 
 		
 
 		<a class="nav-link "
-		   id="eabdfcTab" data-bs-toggle="tab" data-bs-target="#eabdfc"
-		   type="button" role="tab" aria-controls="eabdfc" aria-selected="true">Migration Completed</a>
+		   id="bedfacTab" data-bs-toggle="tab" data-bs-target="#bedfac"
+		   type="button" role="tab" aria-controls="bedfac" aria-selected="true">Migration Completed</a>
 
 		
 
@@ -3251,7 +3251,7 @@ WHERE table_schema NOT IN ( &#39;information_schema&#39;, &#39;mysql&#39;, &#39;
 
 
 
-<div class="tab-pane fade show active" id="caefdb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fbedac" role="tabpanel" aria-labelledby="nav-1">
 
 	<img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-30.png" width="845" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
 
@@ -3263,7 +3263,7 @@ WHERE table_schema NOT IN ( &#39;information_schema&#39;, &#39;mysql&#39;, &#39;
 
 
 
-<div class="tab-pane fade" id="feacdb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bacfde" role="tabpanel" aria-labelledby="nav-1">
 
 	<img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-31.png" width="845" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
 
@@ -3275,7 +3275,7 @@ WHERE table_schema NOT IN ( &#39;information_schema&#39;, &#39;mysql&#39;, &#39;
 
 
 
-<div class="tab-pane fade" id="eabdfc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bedfac" role="tabpanel" aria-labelledby="nav-1">
 
 	<img src="/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-32.png" width="845" alt="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법" class="docimage">
 
@@ -3486,7 +3486,7 @@ WHERE table_schema NOT IN ( &#39;information_schema&#39;, &#39;mysql&#39;, &#39;
     <script src="/docs/js/bootstrap.eac7ee3f6fa791c684e7a51fc2fd50b6f724271b9e39562e4fe8c3942412df3acbfc4045f043d03399dac70091207507.js" integrity="sha384-6sfuP2&#43;nkcaE56Ufwv1QtvckJxueOVYuT&#43;jDlCQS3zrL/EBF8EPQM5naxwCRIHUH"defer></script>
 
 
-    <script type="text/javascript" src="/docs/js/bundle.min.ee154403a9df249115acfd86b0edde4c167426fcac746995612a08385ed4e1c6441cd78dfc6e52400c72297f7c1f48f9.js" integrity="sha384-7hVEA6nfJJEVrP2GsO3eTBZ0JvysdGmVYSoIOF7U4cZEHNeN/G5SQAxyKX98H0j5" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="/docs/js/bundle.min.e1ade8d98c1c957f050eb9b2c51325c8cd894354e8a73c1583b14869dd2266204618e149eac86c898b051a828f3bdf13.js" integrity="sha384-4a3o2YwclX8FDrmyxRMlyM2JQ1TopzwVg7FIad0iZiBGGOFJ6shsiYsFGoKPO98T" crossorigin="anonymous" defer></script>
         
 
         

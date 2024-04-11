@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Logging on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/tags/logging/</link>
+    <link>https://staeho-3rd.github.io/tags/logging/</link>
     <description>Recent content in Logging on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 23 May 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/logging/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/logging/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Load Balancer에 연동된 NginX에서 Client IP 기록하고 확인하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</link>
       <pubDate>Tue, 23 May 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 Load Balancer에 연동된 NginX 웹서버를 사용할 때 Load Balancer IP가 아닌 실제 Client IP를 기록하고 확인하는 방법을 알아보겠습니다. 결론부터 이야기 하자면 NginX에서는 Apache와 달리 별도의 모듈 설치나 환경 설정 파일 수정 없이도 자동으로 실제 Client IP와 Load Balancer IP가 동시에 모두 기록됩니다. 어떻게 기록되는지 테스트 결과를 보면서 확인해보겠습니다.&#xA;테스트 환경 link&#xD;⁃ Server-1: CentOS 7.8 ⁃ Server-2: Ubuntu 20.04 ⁃ NginX: NginX 1.23.1 서버 준비 linkNcloud 콘솔에서 CentOS 7.</description>
     </item>
   </channel>

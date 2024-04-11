@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mariadb on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/tags/mariadb/</link>
+    <link>https://staeho-3rd.github.io/tags/mariadb/</link>
     <description>Recent content in Mariadb on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/mariadb/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/mariadb/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</guid>
       <description>개요 linkRocky Linux (록키 리눅스)는 CentOS의 서비스 지원 종료로 대안으로 떠오른 CentOS 기반의 리눅스 OS입니다.&#xA;Ncloud (네이버 클라우드)는 이 록키 리눅스의 핵심 파트너로 선정되어 국내에서 록키 리눅스 인프라와 기술지원을 위해 협력해왔고, 드디어 Ncloud 콘솔에서 록키 리눅스를 제공하기 시작했기에 간단하게 소개해보려고 합니다.&#xA;제공 버전 linkNcloud에서는 현재 Rocky Linux 8.6 버전을 VPC 환경에서 제공하고 있습니다.&#xA;설치할 소프트웨어 link록키 리눅스 서버를 실행하고 보통 자주 사용하게 되는 아래의 소프트웨어들을 설치하고 확인해보겠습니다.&#xA;Apache PHP NGINX MariaDB (MySQL) 접속 화면 link서버를 생성하고 접속하면 아래와 같이 Ncloud 로고가 크게 표시된 화면을 볼 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 환경 설정 정보</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</guid>
       <description>LAMP 기본설정 linkNcloud(네이버 클라우드 플랫폼, 이하 네이버 클라우드)에서 제공하는 Application중에서 가장 대표적인 LAMP(Linux + Apache, Mysql|MariaDB, PHP)의 기본설정입니다.&#xA;LAMP Application이미지는 Classic 환경에서만 이용 가능합니다.&#xD;LAMP 홈디렉토리 link네이버 클라우드에서 Linux 서버를 세팅하게 되면 기본적으로 root 계정으로 접속이 됩니다. 그래서 LAMP 서비스의 홈디렉토리도 /root/lamp로 설정됩니다.&#xA;LAMP 서비스 홈디렉토리 : /root/lamp&#xD;LAMP 서비스 전체 재시작 link네이버 클라우드에서는 LAMP 전체 서비스를 빠르게 재시작할 수 있는 기능을 제공하고 있습니다.&#xA;LAMP 서비스 전체 재시작 명령 : /root/lamp/lamp_restart.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 OS별로 조금씩 다른데 Ubuntu의 경우에는 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop apache2&#xD;- 시작 : systemctl start apache2&#xD;- 재시작 : systemctl restart apache2&#xD;mysql 시작, 중지, 재시작 linkmysql 시작, 중지, 재시작 명령어도 Apache와 마찬가지로 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop mysql&#xD;- 시작 : systemctl start mysql&#xD;- 재시작 : systemctl restart mysql&#xD;Apache 환경 설정 파일 linkApache의 기본 환경설정 파일은 CentOS의 경우 httpd.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 CentOS 6에서 사용하던 것이 CentOS 7이 되면서 변경되었습니다. CentOS 6.x 이하에서는 service {서비스명} [stop|start|restart] 순서였다면 CentOS 7.X 에서는 systemctl [stop|start|restart] {서비스명} 의 순서로 바뀌었습니다. 내용을 정리하면 다음과 같습니다.&#xA;CentOS 6.x 이하 link&#xD;- 중지 : service httpd stop&#xD;- 시작 : service httpd start&#xD;- 재시작 : service httpd restart&#xD;CentOS 7.x link&#xD;- 중지 : systemctl stop httpd&#xD;- 시작 : systemctl start httpd&#xD;- 재시작 : systemctl restart httpd&#xD;mysql 시작, 중지, 재시작 linkmysql도 Apache와 마찬가지 방식으로 CentOS 6 이하와 CentOS 7에서 사용하는 명령어가 변경되었습니다.</description>
     </item>
     <item>
       <title>Mysql, MariaDB 환경설정 파일 my.cnf 위치</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</link>
       <pubDate>Fri, 28 Apr 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 Mysql MariaDB 환경설정 파일인 my.cnf 파일이 CentOS, Ubuntu, Rocky Linux OS 별로 어떤 경로에 위치하고 있는지 정리해보겠습니다.&#xA;Rocky Linux link우선, 록키 리눅스부터 살펴보겠습니다.&#xA;MySQL linkRocky Linux에서 MySQL은 my.cnf 파일이 /etc/ 바로 밑에 위치합니다.&#xA;/etc/my.cnf&#xD;MariaDB linkRocky Linux에서는 mariadb-server.cnf 파일입니다.&#xA;/etc/my.cnf.d/mariadb-server.cnf&#xD;MariaDB에서도 my.cnf 파일이 /etc/ 바로 밑에 위치하기는 하지만, 실제로 /etc/my.cnf 파일을 열어보면 다음과 같이 my.cnf.d 디렉토리에 있는 파일을 include만 하게 되어 있습니다.&#xA;즉, my.cnf 파일에 설정을 추가해도 되지만 가능하면 하위의 각각의 설정 파일에 추가하는 것이 좋습니다.</description>
     </item>
     <item>
       <title>Mysql, mariadb 외부접속을 위한 환경설정 bind-address 위치</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-bind-address-position/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-bind-address-position/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-bind-address-position/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-bind-address-position/</guid>
       <description>개요 link네이버 클라우드 DB중에서 mysql과 mariadb를 외부에서 접속하기 위해서는 여러 설정이 필요한데 그 중에서 bind-address 설정 항목이 어느 파일에 위치하고 있는지 정리해보겠습니다.&#xA;OS중에서 CentOS는 기본 설정이 허용이지만, Ubuntu는 기본 설정이 localhost 만 접속 가능하도록 되어 있기 때문에 외부 접속을 허용해주기 위해서는 bind-address 설정을 수정해야 합니다. 그래서 여기서는 Ubuntu에 대해서만 살펴보겠습니다.&#xA;mysql 5.6 linkmysql 5.6에서는 bind-address 설정이 /etc/mysql/my.cnf 파일에 있습니다.&#xA;OS는 Ubuntu 14.04만 제공됩니다.&#xA;mysql 5.7 linkmysql 5.7에서는 bind-address 설정이 /etc/mysql/mysql.conf.d/mysqld.cnf 파일에 있습니다.</description>
     </item>
     <item>
       <title>mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</guid>
       <description>개요 link네이버 클라우드 Ubuntu에서 mariaDB 외부접속을 허용하고, mariaDB용 클라이언트 HeidiSQL을 이용해서 원격접속하는 방법을 정리해보겠습니다.&#xA;여기서 원격접속이라 함은 SSH의 Tunnels를 이용하지 않고, 외부 클라이언트 등을 이용한 직접 접속을 뜻합니다.&#xA;계정 비밀번호 생성 link여기서는 네이버 클라우드에서 서버를 생성했을 때 자동으로 설정되는 root 계정을 이용한 방법을 정리하게 됩니다.&#xA;네이버 클라우드에서는 처음 mariaDB를 설치하면 root 계정에 비밀번호가 설정되어 있지 않습니다.&#xA;# mariadb 실행&#xD;mysql&#xD;# 비밀번호 설정&#xD;MariaDB [(None)]&amp;gt; set password=password(&amp;#39;비밀번호&amp;#39;);&#xD;계정 권한 부여 link외부에서 해당 계정(여기서는 root)으로 접속할 수 있도록 계정에 권한을 부여하는 쿼리입니다.</description>
     </item>
     <item>
       <title>mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</guid>
       <description>개요 link네이버 클라우드 CentOS에서 mariaDB 외부접속을 허용하고, mariaDB용 클라이언트 HeidiSQL을 이용해서 원격접속하는 방법을 정리해보겠습니다.&#xA;여기서 원격접속이라 함은 SSH의 Tunnels를 이용하지 않고, 외부 클라이언트 등을 이용한 직접 접속을 뜻합니다.&#xA;CentOS는 Ubuntu와 달리 mariaDB 환경설정 파일 my.cnf에서 외부 IP에서 접근이 막혀 있지 않기에 환경설정 파일은 수정하지 않습니다.&#xA;계정 비밀번호 생성 link여기서는 네이버 클라우드에서 서버를 생성했을 때 자동으로 설정되는 root 계정을 이용한 방법을 정리하게 됩니다.&#xA;네이버 클라우드에서는 처음 mariaDB를 설치하면 root 계정에 비밀번호가 설정되어 있지 않습니다.</description>
     </item>
     <item>
       <title>MYSQL(MARIADB) Replication 생성하기</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/basic-guide/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/basic-guide/</guid>
       <description>선행조건 link master, slave 장비의 mysql설치가 사전에 완료된 조건 mysql 버전 5.7이상 조건에서 작성됨 mysql 리플리케이션작업을 진행시 masterdb의 데이터베이스는 쓰기작업이 없는 서비스 미진행 상태이어야함. MASTER 장비 구성 linkmy.cnf파일 내용 추가&#xA;[mysqld]&#xD;log-bin=mysql-bin&#xD;binlog_format = mixed&#xD;# 해당 ID값은 마스터장비만 1을 설정할수있음&#xD;server-id = 1 # 마스터 장비의 bin로그 특정일자(예시는10일) 이후 삭제&#xD;# (해당 내역이없을 경우 지속적으로 기록되어 디스크 사용)&#xD;expire_logs_days = 10 mysql접속 후 리플리케이션을 진행할 계정 생성&#xA;GRANT REPLICATION SLAVE ON *.</description>
     </item>
     <item>
       <title>MySQL GTID Replication 생성 상세 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</guid>
       <description>GTID 란? linkGTID는 Global Transaction Identifier의 약자로 MySQL 복제에서 서버의 각 트랜잭션을 구분하는 고유한 식별자입니다. GTID는 모든 트랜잭션과 1:1 관계이며, GTID를 활용하면 복제본으로 장애 조치, 계층적 복제, 특정 시점으로 백업 복구하는 등의 작업을 더 쉽게 구현할 수 있으며, 오류 발생 빈도도 줄일 수 있습니다.&#xA;GTID 구성 linkGTID는 source_id:transaction_id의 형태로 저장됩니다.&#xA;예시: 2070b9863-4c88-72ef-9fa053db4612:1-12 source_id link여기서 source_id는 서버의 uuid이며 다음의 방법으로 확인할 수 있습니다.&#xA;mysql&amp;gt; SELECT @@server_uuid;&#xD;테스트 환경 link&#xD;⁃ CentOS 7.</description>
     </item>
   </channel>

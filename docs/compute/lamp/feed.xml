@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LAMP (Linux, Apache, MySQL|MariaDB, PHP) on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/docs/compute/lamp/</link>
+    <link>https://staeho-3rd.github.io/docs/compute/lamp/</link>
     <description>Recent content in LAMP (Linux, Apache, MySQL|MariaDB, PHP) on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/compute/lamp/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/compute/lamp/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud LAMP 기본 환경 설정 정보</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</guid>
       <description>LAMP 기본설정 linkNcloud(네이버 클라우드 플랫폼, 이하 네이버 클라우드)에서 제공하는 Application중에서 가장 대표적인 LAMP(Linux + Apache, Mysql|MariaDB, PHP)의 기본설정입니다.&#xA;LAMP Application이미지는 Classic 환경에서만 이용 가능합니다.&#xD;LAMP 홈디렉토리 link네이버 클라우드에서 Linux 서버를 세팅하게 되면 기본적으로 root 계정으로 접속이 됩니다. 그래서 LAMP 서비스의 홈디렉토리도 /root/lamp로 설정됩니다.&#xA;LAMP 서비스 홈디렉토리 : /root/lamp&#xD;LAMP 서비스 전체 재시작 link네이버 클라우드에서는 LAMP 전체 서비스를 빠르게 재시작할 수 있는 기능을 제공하고 있습니다.&#xA;LAMP 서비스 전체 재시작 명령 : /root/lamp/lamp_restart.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 OS별로 조금씩 다른데 Ubuntu의 경우에는 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop apache2&#xD;- 시작 : systemctl start apache2&#xD;- 재시작 : systemctl restart apache2&#xD;mysql 시작, 중지, 재시작 linkmysql 시작, 중지, 재시작 명령어도 Apache와 마찬가지로 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop mysql&#xD;- 시작 : systemctl start mysql&#xD;- 재시작 : systemctl restart mysql&#xD;Apache 환경 설정 파일 linkApache의 기본 환경설정 파일은 CentOS의 경우 httpd.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 CentOS 6에서 사용하던 것이 CentOS 7이 되면서 변경되었습니다. CentOS 6.x 이하에서는 service {서비스명} [stop|start|restart] 순서였다면 CentOS 7.X 에서는 systemctl [stop|start|restart] {서비스명} 의 순서로 바뀌었습니다. 내용을 정리하면 다음과 같습니다.&#xA;CentOS 6.x 이하 link&#xD;- 중지 : service httpd stop&#xD;- 시작 : service httpd start&#xD;- 재시작 : service httpd restart&#xD;CentOS 7.x link&#xD;- 중지 : systemctl stop httpd&#xD;- 시작 : systemctl start httpd&#xD;- 재시작 : systemctl restart httpd&#xD;mysql 시작, 중지, 재시작 linkmysql도 Apache와 마찬가지 방식으로 CentOS 6 이하와 CentOS 7에서 사용하는 명령어가 변경되었습니다.</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ncloud Cloud Insight on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/docs/management/cloud-insight/</link>
+    <link>https://staeho-3rd.github.io/docs/management/cloud-insight/</link>
     <description>Recent content in Ncloud Cloud Insight on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 07 Mar 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/management/cloud-insight/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/management/cloud-insight/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 모니터링 서비스 Cloud Insight 설정 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/management/cloud-insight/basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/management/cloud-insight/basic-guide/</link>
       <pubDate>Wed, 08 Feb 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/management/cloud-insight/basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/management/cloud-insight/basic-guide/</guid>
       <description>개요 link네이버 클라우드와 사용자 애플리케이션의 성능/운영 지표를 통합 관리하고, 장애나 이벤트가 발생했을 때 SMS 및 Email로 알람 통보를 해주는 서비스인 Cloud Insight 서비스를 설정하는 방법에 대해 정리해보겠습니다.&#xA;적용 서비스 리스트 link위 비교에서도 설명했듯이 Cloud Insight는 Server 뿐만 아니라 네이버 클라우드의 다양한 서비스의 모니터링 정보를 확인할 수 있는데 해당 리스트는 다음과 같습니다.&#xA;Classic link Server Load Balancer VPC link Server(VPC) Load Balancer(VPC) Cloud DB for MySQL(VPC) Cloud DB for MSSQL(VPC) Cloud DB for Redis(VPC) Cloud DB for MongoDB(VPC) Cloud Hadoop(VPC) Auto Scaling Group(VPC) Kubernetes Service(VPC) Search Engine Service(VPC) Cloud Data Streaming Service(VPC) 통합 link Cloud Search Object Storage Cloud Insight 서비스 link[Cloud Insight] 서비스는 [콘솔] - [Services] - [Management &amp;amp; Governance] - [Cloud Insight(Monitoring)]에 위치하고 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 모니터링 서비스 Cloud Insight Rule Template 설정 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/management/cloud-insight/rule-template-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/management/cloud-insight/rule-template-guide/</link>
       <pubDate>Tue, 07 Mar 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/management/cloud-insight/rule-template-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/management/cloud-insight/rule-template-guide/</guid>
       <description>개요 linkCloud Insight를 설정할 때 매번 서버마다 일일이 설정하는 방법도 있지만 [CPU-메모리-디스크 사용률] 같은 자주 모니터링하는 항목들을 [Template]에 등록해 두면 모니터링을 설정할 때 좀 더 쉽고 정확하게 설정할 수 있는데, 그 방법을 정리해보겠습니다.&#xA;Cloud Insight 기본 설정 방법 linkCloud Insight의 기본적인 설정 방법은 아래 링크 문서에서 확인 가능합니다.&#xA;⁃ Cloud Insight Rule Template 설정 가이드&#xD;Template 설정 항목 linkTemplate 설정할 때 서비스 상황에 따라 여러가지를 설정할 수 있는데, 여기서 예시로 설정해 볼 항목은 다음과 같습니다.</description>
     </item>
   </channel>

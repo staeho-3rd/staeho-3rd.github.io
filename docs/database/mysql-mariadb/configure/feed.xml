@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DB 환경 설정 on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/</link>
+    <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/</link>
     <description>Recent content in DB 환경 설정 on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 28 Apr 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mysql, MariaDB 환경설정 파일 my.cnf 위치</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</link>
       <pubDate>Fri, 28 Apr 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 Mysql MariaDB 환경설정 파일인 my.cnf 파일이 CentOS, Ubuntu, Rocky Linux OS 별로 어떤 경로에 위치하고 있는지 정리해보겠습니다.&#xA;Rocky Linux link우선, 록키 리눅스부터 살펴보겠습니다.&#xA;MySQL linkRocky Linux에서 MySQL은 my.cnf 파일이 /etc/ 바로 밑에 위치합니다.&#xA;/etc/my.cnf&#xD;MariaDB linkRocky Linux에서는 mariadb-server.cnf 파일입니다.&#xA;/etc/my.cnf.d/mariadb-server.cnf&#xD;MariaDB에서도 my.cnf 파일이 /etc/ 바로 밑에 위치하기는 하지만, 실제로 /etc/my.cnf 파일을 열어보면 다음과 같이 my.cnf.d 디렉토리에 있는 파일을 include만 하게 되어 있습니다.&#xA;즉, my.cnf 파일에 설정을 추가해도 되지만 가능하면 하위의 각각의 설정 파일에 추가하는 것이 좋습니다.</description>
     </item>
     <item>
       <title>Mysql, mariadb 외부접속을 위한 환경설정 bind-address 위치</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-bind-address-position/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-bind-address-position/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-bind-address-position/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-bind-address-position/</guid>
       <description>개요 link네이버 클라우드 DB중에서 mysql과 mariadb를 외부에서 접속하기 위해서는 여러 설정이 필요한데 그 중에서 bind-address 설정 항목이 어느 파일에 위치하고 있는지 정리해보겠습니다.&#xA;OS중에서 CentOS는 기본 설정이 허용이지만, Ubuntu는 기본 설정이 localhost 만 접속 가능하도록 되어 있기 때문에 외부 접속을 허용해주기 위해서는 bind-address 설정을 수정해야 합니다. 그래서 여기서는 Ubuntu에 대해서만 살펴보겠습니다.&#xA;mysql 5.6 linkmysql 5.6에서는 bind-address 설정이 /etc/mysql/my.cnf 파일에 있습니다.&#xA;OS는 Ubuntu 14.04만 제공됩니다.&#xA;mysql 5.7 linkmysql 5.7에서는 bind-address 설정이 /etc/mysql/mysql.conf.d/mysqld.cnf 파일에 있습니다.</description>
     </item>
     <item>
       <title>mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</guid>
       <description>개요 link네이버 클라우드 Ubuntu에서 mariaDB 외부접속을 허용하고, mariaDB용 클라이언트 HeidiSQL을 이용해서 원격접속하는 방법을 정리해보겠습니다.&#xA;여기서 원격접속이라 함은 SSH의 Tunnels를 이용하지 않고, 외부 클라이언트 등을 이용한 직접 접속을 뜻합니다.&#xA;계정 비밀번호 생성 link여기서는 네이버 클라우드에서 서버를 생성했을 때 자동으로 설정되는 root 계정을 이용한 방법을 정리하게 됩니다.&#xA;네이버 클라우드에서는 처음 mariaDB를 설치하면 root 계정에 비밀번호가 설정되어 있지 않습니다.&#xA;# mariadb 실행&#xD;mysql&#xD;# 비밀번호 설정&#xD;MariaDB [(None)]&amp;gt; set password=password(&amp;#39;비밀번호&amp;#39;);&#xD;계정 권한 부여 link외부에서 해당 계정(여기서는 root)으로 접속할 수 있도록 계정에 권한을 부여하는 쿼리입니다.</description>
     </item>
     <item>
       <title>mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</guid>
       <description>개요 link네이버 클라우드 CentOS에서 mariaDB 외부접속을 허용하고, mariaDB용 클라이언트 HeidiSQL을 이용해서 원격접속하는 방법을 정리해보겠습니다.&#xA;여기서 원격접속이라 함은 SSH의 Tunnels를 이용하지 않고, 외부 클라이언트 등을 이용한 직접 접속을 뜻합니다.&#xA;CentOS는 Ubuntu와 달리 mariaDB 환경설정 파일 my.cnf에서 외부 IP에서 접근이 막혀 있지 않기에 환경설정 파일은 수정하지 않습니다.&#xA;계정 비밀번호 생성 link여기서는 네이버 클라우드에서 서버를 생성했을 때 자동으로 설정되는 root 계정을 이용한 방법을 정리하게 됩니다.&#xA;네이버 클라우드에서는 처음 mariaDB를 설치하면 root 계정에 비밀번호가 설정되어 있지 않습니다.</description>
     </item>
   </channel>

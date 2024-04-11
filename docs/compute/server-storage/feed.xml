@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>서버 스토리지(디스크) 설정 on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/docs/compute/server-storage/</link>
+    <link>https://staeho-3rd.github.io/docs/compute/server-storage/</link>
     <description>Recent content in 서버 스토리지(디스크) 설정 on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 07 Dec 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/compute/server-storage/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/compute/server-storage/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux 서버 스토리지 추가 생성 기본 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-basic-guide/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-basic-guide/</guid>
       <description>개요 link네이버 클라우드에서 서버 생성 후에 스토리지를 추가 생성하는 경우가 있는데 이때 사용되는 스토리지는 블록스토리지(Block Storage)라고 해서 AWS의 EBS(Elastic Block Store)와 유사합니다.&#xA;스토리지 추가 제약 사항 link XEN 하이퍼바이저 기반 서버의 경우 Bare Metal 서버와 의 Micro 타입 서버에는 스토리지를 추가할 수 없습니다. 추가 가능한 최대 사이즈와 개수 link&#xD;하이퍼바이저 스토리지 타입&#xD;미디어 타입&#xD;최소 크기&#xD;최대 크기&#xD;추가 가능 개수&#xD;XEN&#xD;HDD&#xD;HDD&#xD;10GB&#xD;2TB&#xD;15개&#xD;SSD&#xD;SSD&#xD;10GB&#xD;2TB&#xD;15개&#xD;KVM&#xD;FB1&#xD;HDD&#xD;100GB&#xD;16TB&#xD;20개&#xD;CB1&#xD;SSD&#xD;10GB&#xD;16TB&#xD;20개&#xD;리눅스 OS 서버 이미지별 포맷 명령어 link리눅스는 OS 즉, 네이버 클라우드에서 제공하는 서버 이미지별로 추가된 스토리지를 포맷하는 명령어가 다릅니다.</description>
     </item>
     <item>
       <title>Linux 서버 스토리지(디스크) 추가 상세 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-detail-process-guide/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-detail-process-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)에서 리눅스 서버에 디스크를 추가하는 것은 스토리지 즉, Block Storage를 생성해서 서버에 연결하는 작업이 필요합니다.&#xA;전체 과정 요약 link스토리지(디스크)를 추가하는 전체 과정은 아래와 같이 하이퍼바이저별로 정리할 수 있으며, 각 단계별 상세 설명은 XEN 하이퍼바이저 기반 서버를 이용해서 진행하겠습니다.&#xA;XEN 하이퍼바이저&#xD;KVM 하이퍼바이저&#xD;~# fdisk -l&#xD;~# fdisk /dev/xvdb&#xD;~# mkfs.xfs /dev/xvdb1&#xD;- CentOS 5.x: mkfs.ext3 /dev/xvdb1&#xD;- CentOS 6.x: mkfs.ext4 /dev/xvdb1&#xD;- CentOS 7.x: mkfs.xfs /dev/xvdb1&#xD;- Rocky Linux: mkfs.</description>
     </item>
     <item>
       <title>Ncloud 블록 스토리지(디스크) 크기 확장하는 방법 | Linux</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-extend-guide-linux/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/server-storage/storage-extend-guide-linux/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-extend-guide-linux/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/server-storage/storage-extend-guide-linux/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 리눅스 환경 서버의 블록스토리지 볼륨 크기를 확장하고 적용하는 방법을 정리해보겠습니다.&#xA;테스트 환경 link CentOS 7.8 Ubuntu 20.04 추가 블록스토리지 10GB OS 영역에서 사용하는 50G 블록스토리지 외에 아래와 같이 추가로 할당 된 10G의 블록스토리지의 크기를 변경하고 적용해보겠습니다.&#xA;추가 블록 스토리지 할당 방법에 대한 가이드는 아래의 링크를 참조 바랍니다.&#xA;Linux 스토리지(디스크) 추가 상세 가이드 스토리지 스냅샷 백업 link아래와 같이 [Console] - [Server] - [Storage]에서 크기를 변경할 스토리지를 선택하고 [스토리지 설정] - [스냅샷 생성] 메뉴를 선택합니다.</description>
     </item>
     <item>
       <title>Ncloud 블록 스토리지(디스크) LVM 구성하기 - Linux</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-lvm-create/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/server-storage/storage-lvm-create/</link>
       <pubDate>Tue, 06 Jul 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-lvm-create/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/server-storage/storage-lvm-create/</guid>
       <description>개요 link네이버 클라우드 서버는 하나의 서버당 로컬 디스크 즉, 블록 스토리지(Block Storage)를 OS가 설치되는 기본 스토리지 1개 이외에 15개를 추가할 수 있으며, 각 스토리지 용량은 10GB ~2,000GB 까지 가능합니다.&#xA;그리고, 2,000GB 이상을 사용해야 할 경우는 NAS 장비를 사용하거나 Object Storage를 활용하는 경우가 많지만, 상황에 따라서는 2,000GB를 초과하는 용량의 블록 스토리지를 사용해야 하는 경우도 있습니다.&#xA;이럴때 사용하는 방법이 **LVM (Logical Volume Manager)**를 사용하여 여러 개의 스토리지를 합쳐서 대용량으로 사용하거나 합쳐진 대용량을 다시 필요한 용량으로 나누어서 사용하는 방법입니다.</description>
     </item>
     <item>
       <title>Ncloud Windows 서버 스토리지(디스크) 추가 상세 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide-windows/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-detail-process-guide-windows/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide-windows/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-detail-process-guide-windows/</guid>
       <description>개요 linkNcloud (네이버 클라우드)는 스토리지 당 최대 2TB까지 확장할 수 있으며, 최대 16개의 스토리지를 이용할 수 있습니다.&#xA;이번에는 Windows 서버에 스토리지 즉, 디스크를 추가하는 방법에 대해 정리해보겠습니다.&#xA;테스트 환경 linkWindows Server 2016 (64-bit) English Edition 으로 진행 되었습니다. 추가 스토리지는 총 10G disk 총 4개 입니다.&#xA;스토리지 생성 link 서버 &amp;gt; 서버 관리 및 설정 변경 &amp;gt; 스토리지생성 스토리지 생성에 필요한 내용을 입력합니다. 크기는 스토리지 하나 당 10GB~2000GB까지 사용할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 블록 스토리지 (디스크) 크기 확장하는 방법 | Windows</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-extend-guide-windows/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/server-storage/storage-extend-guide-windows/</link>
       <pubDate>Wed, 02 Nov 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-extend-guide-windows/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/server-storage/storage-extend-guide-windows/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 윈도우 환경 서버의 블록스토리지 볼륨 크기를 확장하고 적용하는 방법을 정리해보겠습니다.&#xA;테스트 환경 link Windows Server 2019 (64-bit) English Edition 추가 블록스토리지 10GB OS 영역에서 사용하는 100G 블록스토리지 외에 아래와 같이 추가로 할당 된 10G의 블록스토리지의 크기를 변경하고 적용해보겠습니다.&#xA;추가 블록 스토리지 할당 방법에 대한 가이드는 아래의 링크를 참조 바랍니다.&#xA;Windows 스토리지(디스크) 추가 상세 가이드 스토리지 스냅샷 백업 link아래와 같이 [Console] - [Server] - [Storage]에서 크기를 변경할 스토리지를 선택하고 [스토리지 설정] - [스냅샷 생성] 메뉴를 선택합니다.</description>
     </item>
   </channel>

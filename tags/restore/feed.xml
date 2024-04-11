@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Restore on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/tags/restore/</link>
+    <link>https://staeho-3rd.github.io/tags/restore/</link>
     <description>Recent content in Restore on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/restore/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/restore/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Cloud DB for MySQL을 사용하면서 백업 데이터를 복구 하려고 할 때 ERROR 1227 (42000) 오류가 발생하는 경우가 있습니다. 오류 메시지로만 보면 계정 권한에 문제가 있는 것처럼 보이는데 정확하게 문제 원인이 무엇인지, 그리고 해결방법은 어떤 것이 있는지 정리해보겠습니다.&#xA;오류 메시지 link전체 오류 메시지는 아래와 같습니다.&#xA;이 오류 메시지의 원인은 크게 2가지로 구분할 수 있는데, 상황에 따라 각각의 원인 1가지에 해당하는 경우도 있고, 2가지 원인이 모두 해당되는 경우도 있습니다.</description>
     </item>
   </channel>

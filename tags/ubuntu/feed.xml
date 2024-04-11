@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/tags/ubuntu/</link>
+    <link>https://staeho-3rd.github.io/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 22 Aug 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/ubuntu/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/ubuntu/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/redirect-http-to-https/apache-ubuntu/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/redirect-http-to-https/apache-ubuntu/</guid>
       <description>개요 link웹사이트 SSL 인증서를 설치하고 https 접속을 유도할 때 http로 접속하면 https로 강제로 리다이렉트 시키는 방법을 사용하는 경우가 많습니다.&#xA;웹페이지 소스에서 http 접속 여부를 판단해서 redirect 시키는 방법 등 여러가지 있을 수 있는데 여기서는 Apache 설정으로 쉽게 할 수 있는 방법을 소개합니다.&#xA;SSL 인증서가 설치되어 있다는 가정하에 우선 Linux Ubuntu에서 설정하는 방법을 확인해보겠습니다.&#xA;테스트 환경 link테스트에 사용한 서버 환경은 다음과 같습니다.&#xA;⁃ OS: Ubuntu 20.04 ⁃ 웹서버: Apache 2.4&#xD;SSL 엔진 모듈 활성화 link먼저, SSL 엔진 모듈을 활성화 해야 HTTPS 접속을 할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 OS별로 조금씩 다른데 Ubuntu의 경우에는 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop apache2&#xD;- 시작 : systemctl start apache2&#xD;- 재시작 : systemctl restart apache2&#xD;mysql 시작, 중지, 재시작 linkmysql 시작, 중지, 재시작 명령어도 Apache와 마찬가지로 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop mysql&#xD;- 시작 : systemctl start mysql&#xD;- 재시작 : systemctl restart mysql&#xD;Apache 환경 설정 파일 linkApache의 기본 환경설정 파일은 CentOS의 경우 httpd.</description>
     </item>
     <item>
       <title>Ubuntu에서 NginX 설치, 설정하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-ubuntu/</link>
       <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-ubuntu/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Ubuntu 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Ubuntu 20.04 ⁃ NginX: NginX 1.21.6&#xD;NginX Signing Key 설정 linkNginX Package 설치에 필요한 Signing Key를 설정합니다.&#xA;gnupg2 등 설치 link&#xD;~# sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring&#xD;NginX Signing Key 가져오기 link&#xD;~# curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \&#xD;| sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg &amp;gt;/dev/null&#xD;NginX Signing Key 검증 link위에서 가져온 Signing Key를 아래 명령어로 검증합니다.</description>
     </item>
     <item>
       <title>Ubuntu에서 NginX SSL 인증서 설정하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</link>
       <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Ubuntu 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Ubuntu 20.04 ⁃ NginX: NginX 1.21.6 ⁃ SSL 인증서: 로컬 테스트용 인증서&#xD;NginX 설치 linkUbuntu에 Nginx 최신 버전을 설치하는 방법은 아래 문서에서 확인하시면 됩니다.&#xA;https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/ 테스트 사이트 접속 link설치한 서버에 IP 주소로 접속해 봅니다.&#xA;테스트용 SSL 인증서 생성 linkSSL 인증서를 저장할 디렉토리를 생성하고 30일 기한의 테스트용 인증서 파일 (nginx-ssl.</description>
     </item>
     <item>
       <title>외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/install-package-by-change-repository-in-private-network/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/install-package-by-change-repository-in-private-network/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Secure Zone이나 VPC 환경의 Private Network처럼 외부와 통신이 단절된 환경에서 리눅스 패키지를 설치해야 할 때 repository 경로를 네이버 클라우드 내부 repository로 바꾸면 문제없이 패키지 설치를 할 수 있습니다. 여기서는 OS별로, Classic/VPC 환경별로 변경하는 방법을 정리해보겠습니다.&#xA;CentOS linkCentOS는 /etc/yum.repos.d/CentOS-Base.repo 를 열어보면 아래 repository주소를 확인할 수 있습니다.&#xA;~# vi /etc/yum.repos.d/CentOS-Base.repo&#xD;### Classic 환경 - CentOS&#xD;네이버 클라우드 Classic 환경 CentOS에서 repository 주소는 미러 사이트가 기본으로 설정 되어 있는 것을 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>Proxy Protocol을 이용해 Client IP 확인하기 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-ubuntu/</link>
       <pubDate>Tue, 22 Aug 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-ubuntu/</guid>
       <description>개요 linkNcloud Load Balancer는 HTTP, HTTPS, TCP, SSL 이렇게 4가지의 프로토콜을 지원합니다.&#xA;그런데, Load Balancer를 사용하면서 Client IP를 확인하려고 할 때 http, https 통신의 경우 X-Forwarded-For 헤더값이 지원되기에 Client IP를 확인할 수 있지만, TCP 통신의 경우 X-Forwarded-For 헤더를 사용할 수 없기에 Client IP를 확인하기 위해서는 Proxy Protocol 옵션을 활성화 시켜야 합니다.&#xA;여기서는 Ncloud Network Proxy Load Balancer의 TCP 프로토콜을 사용하면서 Proxy Protocol 옵션을 활성화시켜 Ubuntu 서버에서 Client IP를 기록하는 방법을 소개하겠습니다.</description>
     </item>
     <item>
       <title>MySQL DB를 Object Storage로 자동 백업하기 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</guid>
       <description>개요 link네이버 클라우드 Ubuntu에서 설치형 mysql DB를 매일 일정한 시간에 Object Storage로 자동으로 백업 받는 방법에 대해 정리해보았습니다.&#xA;순서는 로컬에 백업 파일 생성 후에 Object Storage로 저장하는 단계로 진행됩니다.&#xA;백업 폴더 생성 link&#xD;mkdir /data_backup&#xD;mkdir /data_backup/db&#xD;mysql DB 로컬 백업 스크립트 작성 link우선은 mysql DB를 로컬에 백업 받는 스크립트를 작성합니다.&#xA;vi /bin/db_backup.sh&#xD;#!/bin/bash&#xD;DATE=$(date &amp;#43;%Y%m%d%H%M%S)&#xD;BACKUP_DIR=/data_backup/db/&#xD;# 전체 DB를 백업할 경우&#xD;mysqldump -u root -p디비패스워드 --all-databases &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;# 특정 DB를 백업할 경우&#xD;# mysqldump -u root -p디비패스워드 --databases DB명 &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.</description>
     </item>
     <item>
       <title>설치형 PostgreSQL DB 설치, 접속 가이드 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/database/postgresql/db-install-access-guide-ubuntu/</link>
       <pubDate>Fri, 07 Oct 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/postgresql/db-install-access-guide-ubuntu/</guid>
       <description>개요 linkPostgreSQL은 설치 후에 DB에 접속할 때 MySQL등 다른 DB와 달리 [OS와 PostgreSQL 양쪽에 동일한 계정을 생성]하거나 [인증관련 환경설정 파일을 수정]해야 접속할 수 있는데 이 두가지 방법을 Ubuntu에서 적용하는 과정을 정리해보겠습니다.&#xA;테스트 환경 link Ubuntu 20.04 PostgreSQL 13.8 설치 link기본 배포 버전으로 테스트할 수도 있지만, 여기서는 PostgreSQL 13을 설치해보겠습니다.&#xA;리포지토리 설정 파일 생성 link[PostgreSQL 13] 설치 정보가 담겨 있는 리포지토리 설정 파일을 생성합니다.&#xA;sh -c &amp;#39;echo &amp;#34;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;#34; &amp;gt; /etc/apt/sources.</description>
     </item>
     <item>
       <title> VPC환경에서 Cloud DB for PostgreSQL 생성하고 Ubuntu서버로 접속하기</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</guid>
       <description>지원 클라우드 환경 linkNcloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.&#xA;리전(존): 한국, 싱가포르 VPC만&#x9;지원 언어: 한국어, 영어, 일본어, 중국어(간체) DB 엔진 버전: PostgreSQL 13.3 서버 사양과 요금 link(2022-03-30 기준)&#xA;타입제공사양이용 요금&#xD;vCPU메모리디스크시간당/대&#xD;High CPU2개4GB50GB158원&#xD;4개8GB323원&#xD;8개16GB653원&#xD;16개32GB1,313원&#xD;32개64GB2,633원&#xD;Standard2개8GB50GB250원&#xD;4개16GB506원&#xD;8개32GB1,019원&#xD;16개64GB2,045원&#xD;32개128GB4,099원&#xD;High Memory2개16GB50GB302원&#xD;4개32GB611원&#xD;8개64GB1,227원&#xD;16개128GB2,462원&#xD;32개256GB4,927원&#xD;서버 사양 변경 시 제약 사항 linkCloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud Jenkins 서버 설치 가이드 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-ubuntu/</link>
       <pubDate>Fri, 14 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-ubuntu/</guid>
       <description>개요 linkNcloud (네이버 클라우드)의 Classic 환경에서는 Jekins 서버 이미지를 제공하고 있지만, VPC 환경에서는 제공하지 않기에 VPC 환경 Ubuntu 서버에 Jekins 서버를 설치하는 과정을 정리해보겠습니다.&#xA;Jenkins란 linkJenkins는 지속적 통합(Continuous Integration, CI)과 지속적 배포(Continuous Delivery, CD)를 위한 대표적인 도구로 빌드, 테스트, 배포 프로세스를 자동화하여 소프트웨어 품질 향상과 개발 생산성 향상에 도움을 주는 도구입니다.&#xA;Jenkins 특징 link 지속적 통합을 사용하여 빌드, 테스트, 배포 과정을 자동화하여 개발 생산성을 향상할 수 있습니다. 자동화 테스트를 통하여 소프트웨어 품질을 향상할 수 있습니다.</description>
     </item>
   </channel>

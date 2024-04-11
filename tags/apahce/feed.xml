@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apahce on 3RDEYESYS Tech Docs</title>
-    <link>https://docs.3rdeyesys.com/tags/apahce/</link>
+    <link>https://staeho-3rd.github.io/tags/apahce/</link>
     <description>Recent content in Apahce on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/apahce/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/apahce/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rocky Linux에서 Apache SSL 인증서 설정하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/apache-https-ssl-setting/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/apache-https-ssl-setting/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/apache-https-ssl-setting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/apache-https-ssl-setting/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버에 Apache 웹서버를 설치하고, HTTPS 접속을 위한 SSL 인증서 설정하고, HTTP로 접속 시에 HTTPS로 리다이렉트하는 방법까지 정리해보겠습니다.&#xA;테스트 환경 link테스트에 사용할 서버 환경은 다음과 같습니다.&#xA;⁃ OS: Rocky Linux 8.6 ⁃ 웹서버: Apache 2.4 ⁃ 테스트 사이트: rocky-https-test.com&#xD;패키지 업데이트 link우선 패키지 관련한 보안-버그 수정 사항만 최소한으로 업데이트를 해보겠습니다.&#xA;~# dnf -y upgrade-minimal&#xD;[dnf upgrade-minimal]과 [dnf update-minimal]의 차이점에 대해 [man dnf] 명령어로 매뉴얼을 살펴보면 Rocky Linux에서 패키지 업데이트를 위한 기본 명령어는 [dnf upgrade-minimal]이며, [dnf update-minimal]는 더 이상 사용되지 않는 별칭이라고 합니다.</description>
     </item>
   </channel>
