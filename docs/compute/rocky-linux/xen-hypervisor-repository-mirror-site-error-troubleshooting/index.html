@@ -56,12 +56,6 @@
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
     
-            
-                
-                <script type="text/javascript" src="/docs/js/flexsearch.bundle.min.d3bc6e35474ae14c230e078397a02e1773352cc62ec8abcb7dbe2043093f2a413fe25f3ec858b8920ea92d0ff2dc67a5.js" integrity="sha384-07xuNUdK4UwjDgeDl6AuF3M1LMYuyKvLfb4gQwk/KkE/4l8&#43;yFi4kg6pLQ/y3Gel" crossorigin="anonymous" charset="utf-8"></script>
-                
-        
-    
     
     
     
@@ -81,7 +75,7 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <link rel="stylesheet" href="/docs/scss/style.min.594d663a51a70dd1d897ea96b6c4a8849564ece90a24f22fb32c4e015f64b40469743b6e3377d8b62757deebfff1abaf.css" integrity="sha384-WU1mOlGnDdHYl&#43;qWtsSohJVk7OkKJPIvsyxOAV9ktARpdDtuM3fYtidX3uv/8auv"crossorigin="anonymous">
+    <link rel="stylesheet" href="/docs/scss/style.min.ecd972dfefa9b04048043036c44b5c7fe71fb11f8219cee1e4bba3d9b4cce27dfee5994e01144f4aa1804a57e957f674.css" integrity="sha384-7Nly3&#43;&#43;psEBIBDA2xEtcf&#43;cfsR&#43;CGc7h5Luj2bTM4n3&#43;5ZlOARRPSqGASlfpV/Z0"crossorigin="anonymous">
     
     <link href="/css/customstyles.min.465a90c53687f984e6ea6e1c85d0785052f6745d59f4f78c3fd8ed7aab9a156a.css" rel="stylesheet" integrity="sha256-RlqQxTaH&#43;YTm6m4chdB4UFL2dF1Z9PeMP9jtequaFWo=" />
     
@@ -2311,10 +2305,6 @@
                 <span class="material-icons size-20 menu-icon align-middle">menu</span>
             </button>
             
-            
-                    
-                    
-                
             </div>
         <div class="d-flex align-items-start">
             <div class="nav-lg-menu">
@@ -2397,36 +2387,6 @@
         </div>
     </div>
     
-    
-            <div class="collapse" id="FlexSearchCollapse">
-                <div class="flexsearch-container">
-                    <div class="flexsearch-keymap">
-                        <li>
-                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd>
-                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd>
-                            <span class="flexsearch-key-label">to navigate</span>
-                        </li>
-                        <li>
-                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd>
-                            <span class="flexsearch-key-label">to select</span>
-                        </li>
-                        <li>
-                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd>
-                            <span class="flexsearch-key-label">to close</span>
-                        </li>
-                    </div>
-                    <form class="flexsearch position-relative flex-grow-1 ms-2 me-2">
-                        <div class="d-flex flex-row">
-                            <input id="flexsearch" class="form-control" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
-                            <button id="hideFlexsearch" type="button" class="ms-2 btn btn-soft">
-                                cancel
-                            </button>
-                        </div>
-                        <div id="suggestions" class="shadow rounded-1 d-none"></div>
-                    </form>
-                </div>
-            </div>
-        
     
     
 </div>
@@ -2896,7 +2856,7 @@ baseurl=http://repo.ncloud.com/rocky/$releasever/extras/$basearch/os/</code>
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2021-05-24 <br />
+                        Page last modified:2023-03-17 <br />
                     </p>
                     
                     <p class="mb-0">
@@ -2946,6 +2906,7 @@ baseurl=http://repo.ncloud.com/rocky/$releasever/extras/$basearch/os/</code>
     <script src="/docs/js/bootstrap.eac7ee3f6fa791c684e7a51fc2fd50b6f724271b9e39562e4fe8c3942412df3acbfc4045f043d03399dac70091207507.js" integrity="sha384-6sfuP2&#43;nkcaE56Ufwv1QtvckJxueOVYuT&#43;jDlCQS3zrL/EBF8EPQM5naxwCRIHUH"defer></script>
 
 
+    
     <script type="text/javascript" src="/docs/js/bundle.min.e1ade8d98c1c957f050eb9b2c51325c8cd894354e8a73c1583b14869dd2266204618e149eac86c898b051a828f3bdf13.js" integrity="sha384-4a3o2YwclX8FDrmyxRMlyM2JQ1TopzwVg7FIad0iZiBGGOFJ6shsiYsFGoKPO98T" crossorigin="anonymous" defer></script>
         
 
