@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DB Replication on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/</link>
+    <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/</link>
     <description>Recent content in DB Replication on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 20 Apr 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MYSQL(MARIADB) Replication 생성하기</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/basic-guide/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/basic-guide/</guid>
       <description>선행조건 link master, slave 장비의 mysql설치가 사전에 완료된 조건 mysql 버전 5.7이상 조건에서 작성됨 mysql 리플리케이션작업을 진행시 masterdb의 데이터베이스는 쓰기작업이 없는 서비스 미진행 상태이어야함. MASTER 장비 구성 linkmy.cnf파일 내용 추가&#xA;[mysqld]&#xD;log-bin=mysql-bin&#xD;binlog_format = mixed&#xD;# 해당 ID값은 마스터장비만 1을 설정할수있음&#xD;server-id = 1 # 마스터 장비의 bin로그 특정일자(예시는10일) 이후 삭제&#xD;# (해당 내역이없을 경우 지속적으로 기록되어 디스크 사용)&#xD;expire_logs_days = 10 mysql접속 후 리플리케이션을 진행할 계정 생성&#xA;GRANT REPLICATION SLAVE ON *.</description>
     </item>
     <item>
       <title>MySQL GTID Replication 생성 상세 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</guid>
       <description>GTID 란? linkGTID는 Global Transaction Identifier의 약자로 MySQL 복제에서 서버의 각 트랜잭션을 구분하는 고유한 식별자입니다. GTID는 모든 트랜잭션과 1:1 관계이며, GTID를 활용하면 복제본으로 장애 조치, 계층적 복제, 특정 시점으로 백업 복구하는 등의 작업을 더 쉽게 구현할 수 있으며, 오류 발생 빈도도 줄일 수 있습니다.&#xA;GTID 구성 linkGTID는 source_id:transaction_id의 형태로 저장됩니다.&#xA;예시: 2070b9863-4c88-72ef-9fa053db4612:1-12 source_id link여기서 source_id는 서버의 uuid이며 다음의 방법으로 확인할 수 있습니다.&#xA;mysql&amp;gt; SELECT @@server_uuid;&#xD;테스트 환경 link&#xD;⁃ CentOS 7.</description>
     </item>
     <item>
       <title>MySQL Multi Source Replication 구성 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/</link>
       <pubDate>Wed, 05 Apr 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/</guid>
       <description>개요 linkn대의 마스터 DB와 1대의 슬레이브 DB를 연결하여 마스터 DB들의 데이터를 슬레이브 DB 한곳에 모아 조회할 수 있는 MySQL Multi-Source-Replication(MSR)을 구성하는 방법을 정리해보겠습니다.&#xA;테스트 준비 link 마스터 서버 2대, 슬레이브 서버 1대 준비 각 서버에 MySQL 5.7 이상 설치 MySQL 리플리케이션작업 진행 시 마스터 서버의 데이터베이스에 쓰기 작업 금지 ACG 설정 link서버 준비가 끝났으면 우선 마스터 서버 슬레이브 서버로 디비 백업 파일 복사과 복제 구성에 필요한 22, 3306 포트를 오픈해야 합니다.</description>
     </item>
     <item>
       <title>MariaDB Multi Source Replication 구성 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/</link>
       <pubDate>Thu, 20 Apr 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/</guid>
       <description>개요 linkn대의 마스터 DB와 1대의 슬레이브 DB를 연결하여 마스터 DB들의 데이터를 슬레이브 DB 한곳에 모아 조회할 수 있는 Multi-Source-Replication(MSR)을 MariaDB에서 구성하는 방법을 정리해보겠습니다.&#xA;테스트 준비 link 마스터 서버 2대, 슬레이브 서버 1대 준비 각 서버에 MariaDB 10.3 이상 설치 MariaDB 리플리케이션작업 진행 시 마스터 서버의 데이터베이스에 쓰기 작업 금지 ACG 설정 link서버 준비가 끝났으면 우선 마스터 서버 슬레이브 서버로 디비 백업 파일 복사과 복제 구성에 필요한 22, 3306 포트를 오픈해야 합니다.</description>
     </item>
   </channel>

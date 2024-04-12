@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Port on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/port/</link>
+    <link>https://docs.3rdeyesys.com/tags/port/</link>
     <description>Recent content in Port on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/port/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/port/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 주요 서비스 포트(Port) 정보</title>
-      <link>https://staeho-3rd.github.io/docs/networking/ncloud-service-port-info/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/ncloud-service-port-info/</link>
       <pubDate>Thu, 14 Jan 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/ncloud-service-port-info/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/ncloud-service-port-info/</guid>
       <description>포트(Port) 정보 link네이버 클라우드 주요 서비스들에서 사용하는 포트(Port) 정보를 정리해보았습니다.&#xA;네이버 클라우드에서 사용하는 포트이므로 일부 서비스의 경우 일반적으로 사용되는 포트와 조금 다른 경우도 있을 수 있습니다.&#xA;22 : SSH 80 : http 443 : https 1433 : mssql 3000 : Node.js Express 3306 : mysql 3389 : 윈도 원격데스크톱 5432 : PostgreSQL 5672 : RabbitMQ 5985 : Packer 6379 : Redis 8001 : CUBRID 8080 : Ambari 8081 : Hue 8388 : Shadowsocks 서버 9736 : Jeus WebAdmin 10090 : Pinpoint 서버 11313 : Hugo 서버 15672 : RabbitMQ Management UI 18080 : Tomcat, Jenkins 18088 : Superset 18888 : TensorFlow Jupyter Notebook 18889 : TensorBoard 27017 : MongoDB 50070 : HDFS NameNode 문서 업데이트 내역 link&#xD;날짜 내용 2021-01-14 문서 최초 생성 </description>
     </item>
     <item>
       <title>Ncloud 방화벽 ACG 설정 기본 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/security/acg/basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/acg/basic-guide/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/acg/basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/acg/basic-guide/</guid>
       <description>개요 linkACG(Access Control Group)는 서버 간 네트워크 접근 제어 및 관리를 할 수 있는 IP/Port 기반 필터링 방화벽 서비스로 AWS에서는 비슷하게 Security Group이라는 것이 있습니다.&#xA;제한 사항 linkVPC 환경 link VPC당 최대 500개까지 ACG 생성 가능 NIC당 3개의 ACG를 허용 Inbound / Outbound 각각 50개의 규칙 생성 가능 Classic 환경 link 계정당 최대 100개까지 ACG를 생성 가능 각 ACG에는 최대 100개까지의 규칙을 설정할 수 있음 서버는 최대 5개의 ACG에 중복 포함될 수 있음 서버가 생성될 시 선택한 ACG는 변경이 불가하며, 반납 전까지 해당 ACG 규칙을 적용 받게 됨 Classic 환경에서는 서버 자체에 할당되는 개념이었으나 VPC에는 NIC 즉, 네트워크 카드에 할당되는 개념이어서 VPC 환경에서는 NIC 당 최대 3개까지 ACG를 적용할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 방화벽 ACG 권장설정과 Custom ACG 설정 예시</title>
-      <link>https://staeho-3rd.github.io/docs/security/acg/custom-acg-configure-sample/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/acg/custom-acg-configure-sample/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/acg/custom-acg-configure-sample/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/acg/custom-acg-configure-sample/</guid>
       <description>개요 linkNcloud (네이버 클라우드)의 IP/Port 기반 필터링 방화벽 서비스인 ACG(Access Control Group) 권장설정과 Custom ACG 설정할 때 참고할 만한 예시를 몇가지 정리해보겠습니다.&#xA;Inboud 기본 규칙 삭제 link&#xD;서버 생성 시에 기본으로 생성되는 Default ACG에는 아래처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 접근이 허용되어 있는데 보안을 위해 이 항목을 삭제하고 지정된 IP에서만 접속하도록 수정하는 것을 적극 권장합니다.&#xD;VPC 화면 link아래는 Default ACG가 생성되면서 설정된 전체 접근 허용 상태입니다. 여기서 X버튼을 클릭해서 [0.</description>
     </item>
   </channel>

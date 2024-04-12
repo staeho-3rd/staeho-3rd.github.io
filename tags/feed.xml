@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/</link>
+    <link>https://docs.3rdeyesys.com/tags/</link>
     <description>Recent content in Tags on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
-      <link>https://staeho-3rd.github.io/tags/ai/</link>
+      <link>https://docs.3rdeyesys.com/tags/ai/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/ai/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Api</title>
-      <link>https://staeho-3rd.github.io/tags/api/</link>
+      <link>https://docs.3rdeyesys.com/tags/api/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/api/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>Clova</title>
-      <link>https://staeho-3rd.github.io/tags/clova/</link>
+      <link>https://docs.3rdeyesys.com/tags/clova/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/clova/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/clova/</guid>
       <description></description>
     </item>
     <item>
       <title>Firewall</title>
-      <link>https://staeho-3rd.github.io/tags/firewall/</link>
+      <link>https://docs.3rdeyesys.com/tags/firewall/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/firewall/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/firewall/</guid>
       <description></description>
     </item>
     <item>
       <title>Monitoring</title>
-      <link>https://staeho-3rd.github.io/tags/monitoring/</link>
+      <link>https://docs.3rdeyesys.com/tags/monitoring/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/monitoring/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/monitoring/</guid>
       <description></description>
     </item>
     <item>
       <title>Ocr</title>
-      <link>https://staeho-3rd.github.io/tags/ocr/</link>
+      <link>https://docs.3rdeyesys.com/tags/ocr/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/ocr/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/ocr/</guid>
       <description></description>
     </item>
     <item>
       <title>Php</title>
-      <link>https://staeho-3rd.github.io/tags/php/</link>
+      <link>https://docs.3rdeyesys.com/tags/php/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/php/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>https://staeho-3rd.github.io/tags/security/</link>
+      <link>https://docs.3rdeyesys.com/tags/security/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/security/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Web</title>
-      <link>https://staeho-3rd.github.io/tags/web/</link>
+      <link>https://docs.3rdeyesys.com/tags/web/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/web/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/web/</guid>
       <description></description>
     </item>
     <item>
       <title>Analytic</title>
-      <link>https://staeho-3rd.github.io/tags/analytic/</link>
+      <link>https://docs.3rdeyesys.com/tags/analytic/</link>
       <pubDate>Fri, 16 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/tags/analytic/</guid>
+      <guid>https://docs.3rdeyesys.com/tags/analytic/</guid>
       <description></description>
     </item>
   </channel>

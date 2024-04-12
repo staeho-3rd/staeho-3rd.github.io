@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/php/</link>
+    <link>https://docs.3rdeyesys.com/tags/php/</link>
     <description>Recent content in Php on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/php/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/php/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개</title>
-      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</guid>
       <description>개요 linkRocky Linux (록키 리눅스)는 CentOS의 서비스 지원 종료로 대안으로 떠오른 CentOS 기반의 리눅스 OS입니다.&#xA;Ncloud (네이버 클라우드)는 이 록키 리눅스의 핵심 파트너로 선정되어 국내에서 록키 리눅스 인프라와 기술지원을 위해 협력해왔고, 드디어 Ncloud 콘솔에서 록키 리눅스를 제공하기 시작했기에 간단하게 소개해보려고 합니다.&#xA;제공 버전 linkNcloud에서는 현재 Rocky Linux 8.6 버전을 VPC 환경에서 제공하고 있습니다.&#xA;설치할 소프트웨어 link록키 리눅스 서버를 실행하고 보통 자주 사용하게 되는 아래의 소프트웨어들을 설치하고 확인해보겠습니다.&#xA;Apache PHP NGINX MariaDB (MySQL) 접속 화면 link서버를 생성하고 접속하면 아래와 같이 Ncloud 로고가 크게 표시된 화면을 볼 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 환경 설정 정보</title>
-      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</guid>
       <description>LAMP 기본설정 linkNcloud(네이버 클라우드 플랫폼, 이하 네이버 클라우드)에서 제공하는 Application중에서 가장 대표적인 LAMP(Linux + Apache, Mysql|MariaDB, PHP)의 기본설정입니다.&#xA;LAMP Application이미지는 Classic 환경에서만 이용 가능합니다.&#xD;LAMP 홈디렉토리 link네이버 클라우드에서 Linux 서버를 세팅하게 되면 기본적으로 root 계정으로 접속이 됩니다. 그래서 LAMP 서비스의 홈디렉토리도 /root/lamp로 설정됩니다.&#xA;LAMP 서비스 홈디렉토리 : /root/lamp&#xD;LAMP 서비스 전체 재시작 link네이버 클라우드에서는 LAMP 전체 서비스를 빠르게 재시작할 수 있는 기능을 제공하고 있습니다.&#xA;LAMP 서비스 전체 재시작 명령 : /root/lamp/lamp_restart.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | Ubuntu</title>
-      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 OS별로 조금씩 다른데 Ubuntu의 경우에는 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop apache2&#xD;- 시작 : systemctl start apache2&#xD;- 재시작 : systemctl restart apache2&#xD;mysql 시작, 중지, 재시작 linkmysql 시작, 중지, 재시작 명령어도 Apache와 마찬가지로 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop mysql&#xD;- 시작 : systemctl start mysql&#xD;- 재시작 : systemctl restart mysql&#xD;Apache 환경 설정 파일 linkApache의 기본 환경설정 파일은 CentOS의 경우 httpd.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | CentOS</title>
-      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 CentOS 6에서 사용하던 것이 CentOS 7이 되면서 변경되었습니다. CentOS 6.x 이하에서는 service {서비스명} [stop|start|restart] 순서였다면 CentOS 7.X 에서는 systemctl [stop|start|restart] {서비스명} 의 순서로 바뀌었습니다. 내용을 정리하면 다음과 같습니다.&#xA;CentOS 6.x 이하 link&#xD;- 중지 : service httpd stop&#xD;- 시작 : service httpd start&#xD;- 재시작 : service httpd restart&#xD;CentOS 7.x link&#xD;- 중지 : systemctl stop httpd&#xD;- 시작 : systemctl start httpd&#xD;- 재시작 : systemctl restart httpd&#xD;mysql 시작, 중지, 재시작 linkmysql도 Apache와 마찬가지 방식으로 CentOS 6 이하와 CentOS 7에서 사용하는 명령어가 변경되었습니다.</description>
     </item>
     <item>
       <title>Cloud Functions에서 PHPMailer를 사용하여 gmail을 통해 SMTP로 메일 발송하는 방법  </title>
-      <link>https://staeho-3rd.github.io/docs/compute/cloud-functions/php-smtp-via-gmail-with-phpmailer/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/cloud-functions/php-smtp-via-gmail-with-phpmailer/</link>
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/cloud-functions/php-smtp-via-gmail-with-phpmailer/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/cloud-functions/php-smtp-via-gmail-with-phpmailer/</guid>
       <description>개요 link네이버 클라우드 Cloud Functions에서 Action을 만들 수 있는 언어중에서 PHP를 이용하여 SMTP로 메일을 발송하는 방법을 소개하려고 합니다.&#xA;메일 발송을 위한 솔루션은 PHPMailer를 이용하고, 발송 서버는 gmail을 이용하는 과정을 정리해보겠습니다.&#xA;PHPMailer 다운로드 linkPHP에서 SMTP를 이용한 메일을 발송하려고 할 때 흔히 사용하는 것이 PHPMailer입니다.&#xA;PHPMailer는 GitHub에 있는 사이트로 가서 Code를 선택하고 Download ZIP을 클릭하면 다운받을 수 있습니다.&#xA;일반적인 Linux서버에서 사용하는 경우라면 composer를 이용해서 설치하면 되겠지만 Cloud Functions에는 zip 파일로 소스코드를 업로드 해야 하기에 다운로드 받겠습니다.</description>
     </item>
     <item>
       <title>Object Storage에서 CORS를 SDK for S3 API로 설정하기</title>
-      <link>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Object Storage Bucket CORS를 AWS S3에서 제공하는 [SDK for S3 API]로 설정하는 방법을 소개합니다. 여기서 소개할 SDK는 [Python용 SDK for S3 API]와 [PHP용 SDK for S3 API] 두가지입니다.&#xA;CORS 설정 기본 방법 linkObject Storage Bucket에 CORS를 설정하는 기본 방법인 CLI와 외부 Client Tool에 대한 것은 아래 문서에서 확인 가능합니다.&#xA;⁃ Object Storage Bucket에 CORS 설정하기 - CLI &amp;amp; Client Tool&#xD;Python용 SDK for S3 API linkSDK 설치 linkPython용 SDK를 설치하는 방법은 기본 설치방법과 특정 버전을 설치하는 방법이 있습니다.</description>
     </item>
     <item>
       <title>PHP로 Archive Storage API 인증 토큰 생성하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</link>
       <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Archive Storage API를 이용하려고 할 때 먼저 인증 토큰을 생성하고 생성된 토큰을 이용해서 API로 Archive Storage에 접근해야 합니다. 여기서는 PHP로 API 인증 토큰을 생성하는 방법에 대해 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 정보 link OpenStack Swift API : 2.15.1 (Pike) OpenStack Keystone V3 API : v3.8 인증 토큰 생성 코드 link&#xD;&amp;lt;?php&#xD;// 전송해야 할 설정값&#xD;$ncloud_accesskey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;;&#xD;$ncloud_secretkey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;;&#xD;$ncloud_domain_id = &amp;#34;Archive Storage 도메인 ID&amp;#34;;&#xD;$ncloud_project_id = &amp;#34;Archive Storage 프로젝트 ID&amp;#34;;&#xD;$api_server = &amp;#34;https://kr.</description>
     </item>
     <item>
       <title>PHP로 Archive Storage API 호출하기 - 컨테이너(버킷) 오브젝트 목록 조회</title>
-      <link>https://staeho-3rd.github.io/docs/storage/archive-storage/api-get-container-list-by-php/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-get-container-list-by-php/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/archive-storage/api-get-container-list-by-php/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-get-container-list-by-php/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Archive Storage API를 이용해서 컨테이너(버킷)에 있는 오브젝트 전체 목록을 PHP로 조회하는 방법에 대해 정리해보겠습니다.&#xA;API 정보 link OpenStack Swift API : 2.15.1 (Pike) OpenStack Keystone V3 API : v3.8 인증 토큰 생성 linkArchive Storage API를 호출할 때는 먼저 인증 토큰을 생성해야 하는데, 생성 방법은 내용이 다소 긴 관계로 다른 문서에서 자세히 설명해두었습니다. 아래 문서를 참고 하시기 바랍니다.&#xA;PHP로 Archive Storage API 인증 토큰 생성하는 방법 오브젝트 목록 조회 코드 link&#xD;&amp;lt;?</description>
     </item>
     <item>
       <title>Ncloud Clova OCR - Template OCR API 연동 PHP 샘플 예제</title>
-      <link>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-api-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-api-guide/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-api-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-api-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드) [Clova OCR]은 전송한 문서나 이미지를 인식하여 사용자가 지정한 영역의 텍스트와 데이터를 정확하게 추출하는 서비스입니다. 여기서는 API를 이용해서 Template OCR로 [사업자등록증]을 인식하는 예제를 PHP 코드로 정리해보겠습니다.&#xA;서비스 배포 link테스트는 Template을 미리 생성한 상태에서 진행해보겠습니다. Template 생성 방법은 아래 링크의 문서에서 확인하시면 됩니다.&#xA;⁃ Ncloud Clova OCR 서비스 중에서 Template OCR 사용 방법&#xD;[배포 관리]에서 [서비스 배포] 버튼을 클릭해서 해당 템플릿을 서비스 배포합니다. 서비스 배포 확인 팝업창에서 [확인] 버튼을 클릭합니다.</description>
     </item>
     <item>
       <title>Ncloud Korean Name Romanizer 서비스 이용하기 PHP 샘플 예제</title>
-      <link>https://staeho-3rd.github.io/docs/ai-services/korean-name-romanizer/php-sample/</link>
+      <link>https://docs.3rdeyesys.com/docs/ai-services/korean-name-romanizer/php-sample/</link>
       <pubDate>Mon, 24 May 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/ai-services/korean-name-romanizer/php-sample/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/ai-services/korean-name-romanizer/php-sample/</guid>
       <description>개요 linkPapago Korean Name Romanizer는 한글로 된 이름을 로마자 표기로 변환해주는 서비스로, 현행 로마자 표기법을 따라 변환한 이름과 통계적으로 많이 사용되는 로마자 이름도 함께 제안 받을 수 있습니다.&#xA;Papago Korean Name Romanizer는 OpenAPI 형태로 제공되며 여기서는 PHP로 호출하는 방식을 살펴볼텐데, 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;이용 요금 linkPapago Korean Name Romanizer는 무료로 제공되는 서비스이며, 일 25,000자, 월 750,000자 내에서 사용 가능하며 상향이 필요한 경우 고객지원으로 문의하면 됩니다.</description>
     </item>
   </channel>

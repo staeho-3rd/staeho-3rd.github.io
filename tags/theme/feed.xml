@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Theme on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/theme/</link>
+    <link>https://docs.3rdeyesys.com/tags/theme/</link>
     <description>Recent content in Theme on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/theme/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/theme/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jekyll base-theme 커스터마이징</title>
-      <link>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-customizing/</link>
+      <link>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-customizing/</link>
       <pubDate>Tue, 23 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-customizing/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-customizing/</guid>
       <description>폰트 교체 linkbase-theme는 기본 폰트가 Merriweather로 되어 있습니다.&#xA;영어 표기에는 적당하지만, 한글 표기에는 좋지 않아 나눔고딕 폰트로 변경하였습니다.&#xA;그리고 폰트 파일을 별도로 추가하기 보다는 구글에서 제공하는 폰트 경로를 설정하는 방식으로 교체했습니다.&#xA;구글에서 제공하는 폰트 리스트와 적용 방법은 아래 사이트에서 확인 가능합니다.&#xA;https://fonts.google.com/ html 수정 link파일 위치 : \_layouts\default.html&#xA;&amp;lt;link rel=&amp;#34;preconnect&amp;#34; href=&amp;#34;https://fonts.gstatic.com&amp;#34;&amp;gt;&#xD;&amp;lt;link href=&amp;#34;https://fonts.googleapis.com/css2?family=Nanum&amp;#43;Gothic&amp;amp;display=swap&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt; css 수정 link파일 위치: \_sass\typography.scss&#xA;body {&#xD;height: 100%;&#xD;max-height: 100%;&#xD;font-family: &amp;#39;Nanum Gothic&amp;#39;, sans-serif;&#xD;}&#xD;한글 검색 오류 수정 linkbase-theme 기본 설정으로는 한글 등 utf-8 언어 검색이 되지 않습니다.</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nacl on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/nacl/</link>
+    <link>https://docs.3rdeyesys.com/tags/nacl/</link>
     <description>Recent content in Nacl on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/nacl/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/nacl/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud NACL과 ACG 비교</title>
-      <link>https://staeho-3rd.github.io/docs/networking/vpc/acg-nacl-compare/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/vpc/acg-nacl-compare/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/vpc/acg-nacl-compare/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/vpc/acg-nacl-compare/</guid>
       <description>개요 link네이버 클라우드에서는 VPC의 보안을 강화하기 위해 ACG와 NACL의 두 가지 보안 정책을 제공하고 있습니다.&#xA;NACL : Network Access Control List는 Subnet의 Inbound 및 Outbound 트래픽을 제어 ACG : Access Control Group은 서버의 NIC별 Inbound 및 Outbound 트래픽을 제어 NACL vs ACG link 구분 NACL ACG 적용 대상 Subnet의 접근 제어 서버의 접근 제어 지원 규칙 허용 및 거부 (Allow / Deny) 허용 (Allow) 상태 저장 여부 상태 비저장(Stateless)&#xA;(반환 트래픽이 규칙에 의해</description>
     </item>
   </channel>

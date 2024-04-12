@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Natgateway on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/natgateway/</link>
+    <link>https://docs.3rdeyesys.com/tags/natgateway/</link>
     <description>Recent content in Natgateway on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 16 May 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/natgateway/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/natgateway/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VPC 환경에서 NAT Gateway 설정하기</title>
-      <link>https://staeho-3rd.github.io/docs/networking/natgateway/vpc-natgateway-routetable/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/natgateway/vpc-natgateway-routetable/</link>
       <pubDate>Tue, 16 May 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/natgateway/vpc-natgateway-routetable/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/natgateway/vpc-natgateway-routetable/</guid>
       <description>개요 linkNAT Gateway는 비공인 IP를 가진 다수의 서버들이 대표 공인 IP를 이용해 외부와 통신을 할 수 있도록 도와주는 네트워킹 서비스입니다.&#xA;그리고, 일반적으로 서버에 직접 공인 IP를 부여하는 것과 달리 외부에서 서버로의 직접 접근은 허용하지 않기 때문에 높은 수준의 보안을 유지할 수 있는 것이 특징입니다.&#xA;여기서는 VPC 환경에서 NAT Gateway를 어떻게 구성하고, NAT Gateway를 적용하기 전과 후의 외부와 통신 상태에 대해 확인해보도록 하겠습니다.&#xA;NAT Gateway 특징 link[NAT Gateway]는 생성 시 [공인 NAT Gateway]와 [사설 NAT Gateway]를 선택할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud VPC 구성요소</title>
-      <link>https://staeho-3rd.github.io/docs/networking/vpc/ncloud-vpc-overview/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/vpc/ncloud-vpc-overview/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/vpc/ncloud-vpc-overview/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/vpc/ncloud-vpc-overview/</guid>
       <description>개요 link이 문서는 VPC를 구성하는 요소들에 대한 설명으로 네이버 클라우드 파트너 테크데이에서 발표된 내용을 정리한 것입니다.&#xA;VPC linkVPC(Virtual Private Cloud)는 퍼블릭 클라우드 상에 논리적으로 완전하게 분리된 고객전용 네트워크를 제공하는 서비스. 최대 /16의 IP 네트워크 공간을 제공 (IP 대역: RFC 1918).&#xA;@ RFC 1918 IP대역&#xD;10.0.0.0/8 (10.0.0.0 - 10.255.255.255) 172.16.0.0/12 (172.16.0.0 - 172.31.255.255) 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)&#xD;Subnet (Internet Gateway) link할당된 VPC를 용도에 맞게 네트워크 공간을 세분화 하여 사용.&#xA;/16 ~ /28의 네트워크 주소 할당이 가능.</description>
     </item>
     <item>
       <title>Subnet과 NAT Gateway 비교</title>
-      <link>https://staeho-3rd.github.io/docs/networking/vpc/subnet-natgateway-compare/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/vpc/subnet-natgateway-compare/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/vpc/subnet-natgateway-compare/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/vpc/subnet-natgateway-compare/</guid>
       <description>개요 link네이버 클라우드에서는 VPC의 보안을 강화하기 위해 두 가지 서브넷을 제공하고 있습니다.&#xA;Public Subnet : 인터넷과 자유로운 통신이 필요할 때 사용할 수 있는 서브넷으로 Interget GW를 통해 외부와 통신 Private Subnet : 보안상 외부에서 서버에 접근하는 것을 막아야 할 때 사용하는 서브넷으로 NAT GW를 통해 외부와 통신 Public vs Private Subnet link 구분 Public Subnet Private Subnet 용도 인터넷 연결이 필요할 때 외부 접속을 최소화 해야 할 때 지원 리소스 서버 서버, 로드밸런서 인터넷 연결 시</description>
     </item>
   </channel>

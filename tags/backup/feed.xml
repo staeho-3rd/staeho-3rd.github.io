@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backup on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/backup/</link>
+    <link>https://docs.3rdeyesys.com/tags/backup/</link>
     <description>Recent content in Backup on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/backup/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/backup/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud에서 제공하는 스토리지들의 요금과 특징 비교</title>
-      <link>https://staeho-3rd.github.io/docs/storage/ncloud-storage-compare/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/ncloud-storage-compare/</link>
       <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/ncloud-storage-compare/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/ncloud-storage-compare/</guid>
       <description>개요 linkNcloud에서 제공하는 스토리지들의 주요 기능과 용도를 QnA 형식으로 비교 정리해보겠습니다.&#xA;비교 대상 스토리지 link Block Storage Object Storage NAS Archive Storage 가격 비교 link 스토리지 구분 과금 단위 시간 당 요금 500G 기준 요금 기타 사항 Block Storage HDD 10G 0.8원 40원 SDD 10G 1.6원 80원 NAS 500G 50원 50원 Object Storage 1PB 이하 1G 0.039원 19.5원 트래픽, API요청수 요금 별도 1PB 초과 1G 0.036원 18원 트래픽, API요청수 요금 별도 Archive Storage 1G 0.</description>
     </item>
     <item>
       <title>Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Object Storage는 일반 디스크인 Block Storage나 NAS에 비해 가격도 1/2 ~ 1/4정도이면서도 안정적이기 때문에 데이터 저장 특히 백업 용도로 많이 사용합니다.&#xA;그럼에도 불구하고 많이 양의 데이터가 저장되면 비용에 대한 부담이 생길 수 밖에 없는데, 이럴 때 Archive Storage를 이용하면 Object Storage의 1/5정도로 비용이 줄어들기에 매우 효과적입니다.&#xA;그래서 이번에는 Object Storage에 있는 데이터를 Archive Storage로 이동시키는 즉, 이관하는 방법에 대해 정리해보겠습니다.&#xA;스토리지 가격 비교 link위 개요에서도 간단하게 설명했지만, Archive Storage는 Object Storage에 비해 비용이 1/5 정도입니다.</description>
     </item>
     <item>
       <title>Object Storage Bucket에 CORS 설정하기</title>
-      <link>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket/</link>
       <pubDate>Thu, 23 Feb 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket/</guid>
       <description>개요 linkObject Storage를 이용해 서비스 개발을 하다 보면 CORS 와 관련된 오류와 종종 마주치게 되는데, 테스트 버킷과 사이트를 생성해서 해결 방법을 알아보겠습니다. 그리고, Ncloud(네이버 클라우드) Object Storage의 CORS 설정은 콘솔이 아닌, CLI와 외부 Client Tool 등을 사용해야 하는데 각각의 방법을 차례로 소개합니다.&#xA;info&#xD;CORS(Cross-Origin Resource Sharing)는 웹 애플리케션이 서비스되는 도메인에서 다른 도메인에 있는 리소스를 접근해야 할 때 리소스에 대한 접근 허용, 제한 등에 대한 방법을 정의합니다.&#xA;테스트 방법 link Object Storage에 cors-test 라는 이름의 버킷 생성 http://cors-test.</description>
     </item>
     <item>
       <title>Object Storage에서 CORS를 SDK for S3 API로 설정하기</title>
-      <link>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Object Storage Bucket CORS를 AWS S3에서 제공하는 [SDK for S3 API]로 설정하는 방법을 소개합니다. 여기서 소개할 SDK는 [Python용 SDK for S3 API]와 [PHP용 SDK for S3 API] 두가지입니다.&#xA;CORS 설정 기본 방법 linkObject Storage Bucket에 CORS를 설정하는 기본 방법인 CLI와 외부 Client Tool에 대한 것은 아래 문서에서 확인 가능합니다.&#xA;⁃ Object Storage Bucket에 CORS 설정하기 - CLI &amp;amp; Client Tool&#xD;Python용 SDK for S3 API linkSDK 설치 linkPython용 SDK를 설치하는 방법은 기본 설치방법과 특정 버전을 설치하는 방법이 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 백업 서비스 기본 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/storage/backup/service-basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/backup/service-basic-guide/</link>
       <pubDate>Thu, 22 Dec 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/backup/service-basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/backup/service-basic-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 기존에 별도의 신청서를 작성해서 사용하던 Managed Backup의 대체 상품으로 출시된 콘솔에서 바로 이용할 수 있는 Backup 상품의 기본 가이드를 알아보도록 하겠습니다.&#xA;서비스 특징 link 다양한 플랫폼 및 데이터베이스 지원: Linux, Windows 계열 등 다양한 버전의 운영 체제를 지원하며 OS의 데이터 영역 및 서버에 설치된 데이터베이스의 온라인 백업이 가능합니다. 간편한 설치와 백업 단위 선택: 네이버 클라우드 웹 콘솔에서 간단한 설정을 통해 백업을 받고자 하는 리소스에 에이전트의 설치부터 백업 정책 구성까지 완료할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 백업 서비스 상세 가이드 - Linux Data</title>
-      <link>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-linux-data/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-linux-data/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-linux-data/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-linux-data/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Backup 상품은 기존에 별도의 신청서를 작성해서 사용하던 [Managed Backup]의 대체 상품으로 출시된, 콘솔에서 바로 이용할 수 있는 상품으로 이 백업 상품을 이용해 리눅스 파일 데이터를 백업하는 방법을 알아보도록 하겠습니다.&#xA;상품위치 linkBackup 상품은 [Console] - [Services] - [Storage]에 있습니다.&#xA;테스트 서버 link백업을 테스트할 리눅스 서버를 아래와 같이 미리 준비했습니다.&#xA;그리고, 백업과 복원에 필요한 디렉토리를 다음과 같이 생성했습니다.&#xA;백업할 디렉토리: /backup-data 복원할 디렉토리: /restore 리소스 생성 link먼저 백업 혹은 복구를 수행할 대상 서버를 설정합니다.</description>
     </item>
     <item>
       <title>Ncloud 백업 서비스 상세 가이드 - Windows Data</title>
-      <link>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-windows-data/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-windows-data/</link>
       <pubDate>Fri, 06 Jan 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-windows-data/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-windows-data/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Backup 상품은 기존에 별도의 신청서를 작성해서 사용하던 [Managed Backup]의 대체 상품으로 출시된, 콘솔에서 바로 이용할 수 있는 상품으로 이 백업 상품을 이용해 Windows 파일 데이터를 백업하는 방법을 알아보도록 하겠습니다.&#xA;상품위치 linkBackup 상품은 [Console] - [Services] - [Storage]에 있습니다.&#xA;테스트 서버 link백업을 테스트할 리눅스 서버를 아래와 같이 미리 준비했습니다.&#xA;그리고, 백업과 복원에 필요한 디렉토리를 다음과 같이 생성했습니다.&#xA;백업할 디렉토리: C:\Backup-Data 복원할 디렉토리: C:\Restore 리소스 생성 link먼저 백업 혹은 복구를 수행할 대상 서버를 설정합니다.</description>
     </item>
     <item>
       <title>MySQL DB 자동백업 방법</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup/</link>
       <pubDate>Fri, 11 Jun 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup/</guid>
       <description>개요 link매일 일정한 시간에 MySQL DB를 자동으로 백업 받는 방법에 대해 정리해보았습니다.&#xA;백업 폴더 생성 link루트에 /data_backup 폴더를 만들고 그 아래에 db 폴더를 생성합니다.&#xA;mkdir /data_backup&#xD;mkdir /data_backup/db&#xD;MySQL DB 백업 스크립트 작성 link&#xD;vi /bin/db_backup.sh&#xD;#!/bin/bash&#xD;DATE=$(date &amp;#43;%Y%m%d%H%M%S)&#xD;BACKUP_DIR=/data_backup/db/&#xD;# 전체 DB를 백업할 경우&#xD;mysqldump -u root -p디비패스워드 --all-databases &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;# 특정 DB를 백업할 경우&#xD;# mysqldump -u root -p디비패스워드 --databases DB명 &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;find $BACKUP_DIR -ctime &amp;#43;7 -exec rm -f {} \;&#xD;# DATE=$(date &amp;#43;%Y%m%d%H%M%S)는 백업할 파일명을 # 202001224505 와 같은 형식으로 저장할 수 있게 날짜를 변수로 담습니다.</description>
     </item>
     <item>
       <title>MySQL DB를 Object Storage로 자동 백업하기 | Ubuntu</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</guid>
       <description>개요 link네이버 클라우드 Ubuntu에서 설치형 mysql DB를 매일 일정한 시간에 Object Storage로 자동으로 백업 받는 방법에 대해 정리해보았습니다.&#xA;순서는 로컬에 백업 파일 생성 후에 Object Storage로 저장하는 단계로 진행됩니다.&#xA;백업 폴더 생성 link&#xD;mkdir /data_backup&#xD;mkdir /data_backup/db&#xD;mysql DB 로컬 백업 스크립트 작성 link우선은 mysql DB를 로컬에 백업 받는 스크립트를 작성합니다.&#xA;vi /bin/db_backup.sh&#xD;#!/bin/bash&#xD;DATE=$(date &amp;#43;%Y%m%d%H%M%S)&#xD;BACKUP_DIR=/data_backup/db/&#xD;# 전체 DB를 백업할 경우&#xD;mysqldump -u root -p디비패스워드 --all-databases &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;# 특정 DB를 백업할 경우&#xD;# mysqldump -u root -p디비패스워드 --databases DB명 &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.</description>
     </item>
     <item>
       <title>MySQL DB를 Object Storage로 자동 백업하기 | CentOS</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</guid>
       <description>개요 link네이버 클라우드 CentOS에서 설치형 mysql DB를 매일 일정한 시간에 Object Storage로 자동으로 백업 받는 방법에 대해 정리해보았습니다.&#xA;순서는 로컬에 백업 파일 생성 후에 Object Storage로 저장하는 단계로 진행됩니다.&#xA;백업 폴더 생성 link&#xD;mkdir /data_backup&#xD;mkdir /data_backup/db&#xD;mysql DB 로컬 백업 스크립트 작성 link우선은 mysql DB를 로컬에 백업 받는 스크립트를 작성합니다.&#xA;vi /bin/db_backup.sh&#xD;#!/bin/bash&#xD;DATE=$(date &amp;#43;%Y%m%d%H%M%S)&#xD;BACKUP_DIR=/data_backup/db/&#xD;# 전체 DB를 백업할 경우&#xD;mysqldump -u root -p디비패스워드 --all-databases &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;# 특정 DB를 백업할 경우&#xD;# mysqldump -u root -p디비패스워드 --databases DB명 &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Storage on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/docs/storage/</link>
+    <link>https://docs.3rdeyesys.com/docs/storage/</link>
     <description>Recent content in Storage on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/storage/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/storage/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud에서 제공하는 스토리지들의 요금과 특징 비교</title>
-      <link>https://staeho-3rd.github.io/docs/storage/ncloud-storage-compare/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/ncloud-storage-compare/</link>
       <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/ncloud-storage-compare/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/ncloud-storage-compare/</guid>
       <description>개요 linkNcloud에서 제공하는 스토리지들의 주요 기능과 용도를 QnA 형식으로 비교 정리해보겠습니다.&#xA;비교 대상 스토리지 link Block Storage Object Storage NAS Archive Storage 가격 비교 link 스토리지 구분 과금 단위 시간 당 요금 500G 기준 요금 기타 사항 Block Storage HDD 10G 0.8원 40원 SDD 10G 1.6원 80원 NAS 500G 50원 50원 Object Storage 1PB 이하 1G 0.039원 19.5원 트래픽, API요청수 요금 별도 1PB 초과 1G 0.036원 18원 트래픽, API요청수 요금 별도 Archive Storage 1G 0.</description>
     </item>
   </channel>

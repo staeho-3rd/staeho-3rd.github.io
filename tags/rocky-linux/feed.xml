@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rocky Linux on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/rocky-linux/</link>
+    <link>https://docs.3rdeyesys.com/tags/rocky-linux/</link>
     <description>Recent content in Rocky Linux on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 28 Dec 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/rocky-linux/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/rocky-linux/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개</title>
-      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</guid>
       <description>개요 linkRocky Linux (록키 리눅스)는 CentOS의 서비스 지원 종료로 대안으로 떠오른 CentOS 기반의 리눅스 OS입니다.&#xA;Ncloud (네이버 클라우드)는 이 록키 리눅스의 핵심 파트너로 선정되어 국내에서 록키 리눅스 인프라와 기술지원을 위해 협력해왔고, 드디어 Ncloud 콘솔에서 록키 리눅스를 제공하기 시작했기에 간단하게 소개해보려고 합니다.&#xA;제공 버전 linkNcloud에서는 현재 Rocky Linux 8.6 버전을 VPC 환경에서 제공하고 있습니다.&#xA;설치할 소프트웨어 link록키 리눅스 서버를 실행하고 보통 자주 사용하게 되는 아래의 소프트웨어들을 설치하고 확인해보겠습니다.&#xA;Apache PHP NGINX MariaDB (MySQL) 접속 화면 link서버를 생성하고 접속하면 아래와 같이 Ncloud 로고가 크게 표시된 화면을 볼 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud KVM Hypervisor 타입의 Rocky Linux 서버 Repository 미러 사이트 오류 문제 해결 방법</title>
-      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</link>
       <pubDate>Thu, 28 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 KVM Hypervisor 타입의 록키 리눅스(Rocky Linux) 8.8 서버를 제공하고 있는데, 서버를 생성하고 나서 Apache, PHP 등의 패키지를 설치할 때 패키지 다운로드 사이트 또는 미러 사이트에서 8.8 버전에 대한 패키지 정보를 찾을 수 없다는 메시지가 나타나면서 패키지를 설치할 수 없는 경우가 있습니다.&#xA;XEN Hypervisor 타입의 서버에서는 문제가 없는데 왜 KVM Hypervisor 타입 서버에서만 이런 문제가 생기는지와 어떻게 하면 해결할 수 있는지를 정리해보겠습니다.&#xA;오류 상황 link콘솔에서 서버를 생성한 후에 아무 것도 하지 않고 테스트로 Apache를 설치해보려고 했는데, 오류 메시지가 나타나면서 설치를 할 수 없었습니다.</description>
     </item>
     <item>
       <title>Ncloud XEN Hypervisor 타입의 Rocky Linux 8.6 서버 Repository 미러 사이트 오류 문제 해결 방법</title>
-      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 XEN Hypervisor 타입의 록키 리눅스(Rocky Linux) 8.6 서버를 제공하고 있는데, 패키지를 설치할 때 간혹 패키지 다운로드 사이트 또는 미러 사이트에서 8.6 버전에 대한 패키지 정보를 찾을 수 없다는 메시지가 나타나면서 패키지를 설치할 수 없는 경우가 있습니다.&#xA;그렇다면 왜 이런 문제가 생기는지와 어떻게 하면 해결할 수 있는지를 정리해보겠습니다.&#xA;오류 상황 link테스트로 아파치를 설치해보려고 했는데, 오류 메시지가 나타나면서 설치를 할 수 없었습니다. 또한 리포지토리 미러 사이트도 Ncloud 내부 서버가 아닌 록키 리눅스 공식 미러 사이트로 연결하려고 시도한 것을 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>Rocky Linux에서 Apache SSL 인증서 설정하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/apache-https-ssl-setting/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/apache-https-ssl-setting/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/apache-https-ssl-setting/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/apache-https-ssl-setting/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버에 Apache 웹서버를 설치하고, HTTPS 접속을 위한 SSL 인증서 설정하고, HTTP로 접속 시에 HTTPS로 리다이렉트하는 방법까지 정리해보겠습니다.&#xA;테스트 환경 link테스트에 사용할 서버 환경은 다음과 같습니다.&#xA;⁃ OS: Rocky Linux 8.6 ⁃ 웹서버: Apache 2.4 ⁃ 테스트 사이트: rocky-https-test.com&#xD;패키지 업데이트 link우선 패키지 관련한 보안-버그 수정 사항만 최소한으로 업데이트를 해보겠습니다.&#xA;~# dnf -y upgrade-minimal&#xD;[dnf upgrade-minimal]과 [dnf update-minimal]의 차이점에 대해 [man dnf] 명령어로 매뉴얼을 살펴보면 Rocky Linux에서 패키지 업데이트를 위한 기본 명령어는 [dnf upgrade-minimal]이며, [dnf update-minimal]는 더 이상 사용되지 않는 별칭이라고 합니다.</description>
     </item>
     <item>
       <title>http 접속 시에 https로 강제 리다이렉트 시키는 방법 - Apache/Rocky Linux</title>
-      <link>https://staeho-3rd.github.io/docs/compute/redirect-http-to-https/apache-rocky-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-rocky-linux/</link>
       <pubDate>Tue, 11 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/redirect-http-to-https/apache-rocky-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-rocky-linux/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버 Apache 웹서버에서 http 접속 시에 https로 강제 리다이렉트 시키는 방법은 크게 2가지가 있는데 각각에 대해 정리해보겠습니다.&#xA;테스트 환경 link테스트에 사용한 서버 환경은 다음과 같습니다.&#xA;⁃ OS: Rocky Linux 8.6 ⁃ 웹서버: Apache 2.4 ⁃ 테스트 사이트: rocky-https-test.com&#xD;방법1 : Redirect 옵션 link첫번째 방법은 [Redirect] 옵션을 이용하는 방법입니다.&#xA;HTTP 환경 설정에서 [ServerName]을 제외한 다른 항목들은 모두 삭제하거나 주석처리한 후에 리다이렉트 설정을 추가합니다.</description>
     </item>
     <item>
       <title>Rocky Linux에서 NginX 설치, 설정하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-rocky-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-rocky-linux/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-rocky-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-rocky-linux/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Rocky Linux 8.6 ⁃ NginX: NginX 1.23.1 ⁃ 테스트 사이트: nginx-test.com&#xD;서버 준비 linkNcloud 콘솔에서 Rocky Linux 8.6 서버를 아래와 같이 준비했습니다.&#xA;패키지 업데이트 link우선 패키지 관련한 보안-버그 수정 사항만 최소한으로 업데이트를 해보겠습니다.&#xA;~# dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
     <item>
       <title>외부 네트워크에 연결할 수 없는 환경에서 Repository를 변경해 리눅스 패키지 설치하기</title>
-      <link>https://staeho-3rd.github.io/docs/compute/install-package-by-change-repository-in-private-network/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/install-package-by-change-repository-in-private-network/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Secure Zone이나 VPC 환경의 Private Network처럼 외부와 통신이 단절된 환경에서 리눅스 패키지를 설치해야 할 때 repository 경로를 네이버 클라우드 내부 repository로 바꾸면 문제없이 패키지 설치를 할 수 있습니다. 여기서는 OS별로, Classic/VPC 환경별로 변경하는 방법을 정리해보겠습니다.&#xA;CentOS linkCentOS는 /etc/yum.repos.d/CentOS-Base.repo 를 열어보면 아래 repository주소를 확인할 수 있습니다.&#xA;~# vi /etc/yum.repos.d/CentOS-Base.repo&#xD;### Classic 환경 - CentOS&#xD;네이버 클라우드 Classic 환경 CentOS에서 repository 주소는 미러 사이트가 기본으로 설정 되어 있는 것을 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>Proxy Protocol을 이용해 Client IP 확인하기 | Rocky Linux</title>
-      <link>https://staeho-3rd.github.io/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-rocky-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-rocky-linux/</link>
       <pubDate>Wed, 23 Aug 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-rocky-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-rocky-linux/</guid>
       <description>개요 linkNcloud Load Balancer는 HTTP, HTTPS, TCP, SSL 이렇게 4가지의 프로토콜을 지원합니다.&#xA;그런데, Load Balancer를 사용하면서 Client IP를 확인하려고 할 때 http, https 통신의 경우 X-Forwarded-For 헤더값이 지원되기에 Client IP를 확인할 수 있지만, TCP 통신의 경우 X-Forwarded-For 헤더를 사용할 수 없기에 Client IP를 확인하기 위해서는 Proxy Protocol 옵션을 활성화 시켜야 합니다.&#xA;여기서는 Ncloud Network Proxy Load Balancer의 TCP 프로토콜을 사용하면서 Proxy Protocol 옵션을 활성화시켜 Rocky Linux 서버에서 Client IP를 기록하는 방법을 소개하겠습니다.</description>
     </item>
     <item>
       <title>MySQL 5.7 설치하는 방법 | Rocky Linux</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</link>
       <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</guid>
       <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 5.7 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
     <item>
       <title>MySQL 8.0 최신 버전 설치하는 방법 | Rocky Linux</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</link>
       <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</guid>
       <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 8.0 최신 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
   </channel>

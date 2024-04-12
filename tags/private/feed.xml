@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Private on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/private/</link>
+    <link>https://docs.3rdeyesys.com/tags/private/</link>
     <description>Recent content in Private on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/private/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/private/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> VPC환경에서 Cloud DB for PostgreSQL 생성하고 Ubuntu서버로 접속하기</title>
-      <link>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</guid>
       <description>지원 클라우드 환경 linkNcloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.&#xA;리전(존): 한국, 싱가포르 VPC만&#x9;지원 언어: 한국어, 영어, 일본어, 중국어(간체) DB 엔진 버전: PostgreSQL 13.3 서버 사양과 요금 link(2022-03-30 기준)&#xA;타입제공사양이용 요금&#xD;vCPU메모리디스크시간당/대&#xD;High CPU2개4GB50GB158원&#xD;4개8GB323원&#xD;8개16GB653원&#xD;16개32GB1,313원&#xD;32개64GB2,633원&#xD;Standard2개8GB50GB250원&#xD;4개16GB506원&#xD;8개32GB1,019원&#xD;16개64GB2,045원&#xD;32개128GB4,099원&#xD;High Memory2개16GB50GB302원&#xD;4개32GB611원&#xD;8개64GB1,227원&#xD;16개128GB2,462원&#xD;32개256GB4,927원&#xD;서버 사양 변경 시 제약 사항 linkCloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경할 수 있습니다.</description>
     </item>
     <item>
       <title> VPC환경에서 Cloud DB for PostgreSQL 생성하고 CentOS서버로 접속하기</title>
-      <link>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</guid>
       <description>지원 클라우드 환경 linkNcloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.&#xA;리전(존): 한국, 싱가포르 VPC만&#x9;지원 언어: 한국어, 영어, 일본어, 중국어(간체) DB 엔진 버전: PostgreSQL 13.3 서버 사양과 요금 link(2022-03-30 기준)&#xA;타입제공사양이용 요금&#xD;vCPU메모리디스크시간당/대&#xD;High CPU2개4GB50GB158원&#xD;4개8GB323원&#xD;8개16GB653원&#xD;16개32GB1,313원&#xD;32개64GB2,633원&#xD;Standard2개8GB50GB250원&#xD;4개16GB506원&#xD;8개32GB1,019원&#xD;16개64GB2,045원&#xD;32개128GB4,099원&#xD;High Memory2개16GB50GB302원&#xD;4개32GB611원&#xD;8개64GB1,227원&#xD;16개128GB2,462원&#xD;32개256GB4,927원&#xD;서버 사양 변경 시 제약 사항 linkCloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경할 수 있습니다.</description>
     </item>
     <item>
       <title>SSL VPN 설정하고 접속하는 방법 | VPC</title>
-      <link>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-vpc/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-vpc/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-vpc/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-vpc/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 외부에서 내부에 구성된 네트워크로 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 VPC 환경에서 설정하고, 서버에 접속하는 방법에 대해 정리해보겠습니다.&#xA;SSL VPN이란? link VPN은 가상 사설망(Virtual Private Network)의 약자로, 외부에서 접근할 수 없는 사설망에 내 PC나 네트워크를 연결시키는 방법을 말합니다. 사설망과의 연결은 가상 터널을 통해 이루어지며, 이 가상 터널을 SSL 암호화로 보호하는 것이 SSL VPN입니다. 가상 터널을 통해 사설망과 연결된 사용자 PC는 사설망의 라우팅 및 ACL 정책에 따라 내부 서버에 접근할 수 있습니다.</description>
     </item>
     <item>
       <title>SSL VPN 설정하고 접속하는 방법 | Classic</title>
-      <link>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-classic/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-classic/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-classic/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-classic/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 외부에서 내부에 구성된 네트워크로 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 Classic 환경에서 설정하고, 서버에 접속하는 방법에 대해 정리해보겠습니다.&#xA;SSL VPN이란? link VPN은 가상 사설망(Virtual Private Network)의 약자로, 외부에서 접근할 수 없는 사설망에 내 PC나 네트워크를 연결시키는 방법을 말합니다. 사설망과의 연결은 가상 터널을 통해 이루어지며, 이 가상 터널을 SSL 암호화로 보호하는 것이 SSL VPN입니다. 가상 터널을 통해 사설망과 연결된 사용자 PC는 사설망의 라우팅 및 ACL 정책에 따라 내부 서버에 접근할 수 있습니다.</description>
     </item>
   </channel>

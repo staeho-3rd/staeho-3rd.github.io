@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Securty on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/securty/</link>
+    <link>https://docs.3rdeyesys.com/tags/securty/</link>
     <description>Recent content in Securty on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/securty/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/securty/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud STS 기간 제한 임시 API AccessKey 발급하기</title>
-      <link>https://staeho-3rd.github.io/docs/management/sub-account/sts-temporary-accesskey-create-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/management/sub-account/sts-temporary-accesskey-create-guide/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/management/sub-account/sts-temporary-accesskey-create-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/management/sub-account/sts-temporary-accesskey-create-guide/</guid>
       <description>개요 link클라우드 환경에서 서비스를 하다 보면 회사 내부의 다른 팀이나 외부 고객사에 서버나 오브젝트 스토리지 등 특정 서비스에 접근할 수 있는 API를 제공해야 하는 하는 경우가 생길 수 있습니다.&#xA;그런데 Ncloud(네이버 클라우드)에서 제공되는 기본 API Access Key는 기간 제한이 없는 Access Key이기 때문에 외부에 제공하게 되면 보안측면에서 위험한 상황이 생길 수 있습니다. 이때 STS를 이용하면 Access Key를 제한된 기간 동안 일회성으로 제공하거나 유효 기간이 매우 짧은 Access Key를 반복적으로 제공하게 되면 훨씬 안전한 서비스를 유지할 수 있습니다.</description>
     </item>
   </channel>

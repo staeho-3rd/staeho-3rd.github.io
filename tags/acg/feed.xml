@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Acg on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/tags/acg/</link>
+    <link>https://docs.3rdeyesys.com/tags/acg/</link>
     <description>Recent content in Acg on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/acg/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/acg/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classic환경 Load Balancer 운영을 위한 ACG 설정 방법</title>
-      <link>https://staeho-3rd.github.io/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</link>
       <pubDate>Thu, 14 Jan 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</guid>
       <description>개요 linkLoad Balancer가 정상적으로 동작하기 위해서는 Load Balancer &amp;ndash;&amp;gt; Server의 지정된 포트로 접근할 수 있어야 합니다.&#xA;그러기 위해서는 Server의 ACG에 Load Balancer가 접근할 수 있도록 권한을 설정해주어야 하는데, 여기서는 네이버 클라우드의 Classic Load Balancer를 운영할 때 ACG 설정을 어떻게 하는가에 대한 내용을 정리해보겠습니다.&#xA;서버연결 실패 상황 link서버 등록하고 Load Balancer의 다른 설정들을 모두 올바르게 했는데도 아래와 같이 서버연결 상태가 실패로 나타나고 Load Balancer는 동작이 정지되는 경우가 있습니다.&#xA;이런 경우가 바로 ACG에 Load Balancer의 접근 권한을 설정하지 않았을 때 입니다.</description>
     </item>
     <item>
       <title>VPC 환경 Load Balancer 상품군의 종류와 변화</title>
-      <link>https://staeho-3rd.github.io/docs/networking/loadbalancer/vpc-loadbalancer-type/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/loadbalancer/vpc-loadbalancer-type/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/loadbalancer/vpc-loadbalancer-type/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/loadbalancer/vpc-loadbalancer-type/</guid>
       <description>개요 linkLoad Balancer는 수신 트래픽을 다수의 서버로 분산시키는 서비스로서, 수신 트래픽을 등록된 멤버 서버로 분산시켜 가용성을 높이고 시스템 가동률을 조절하는 역할을 수행합니다.&#xA;VPC 플랫폼에서는 Network Load Balancer / Application Load Balancer / Network Proxy Load Balancer 가 제공되어 서비스에 적합한 로드밸런서를 선택할 수 있습니다.&#xA;종류 link Application Load Balancer&#xA;HTTP 및 HTTPS 트래픽을 사용하는 웹 애플리케이션을 위한 유연한 기능을 제공&#xA;Network Load Balancer&#xA;DSR(Direct Server Return) 구조의 고성능, 대규모 네트워크 연결에 적합한 로드밸런서로 고정 IP를 제공</description>
     </item>
     <item>
       <title>Ncloud VPC 구성요소</title>
-      <link>https://staeho-3rd.github.io/docs/networking/vpc/ncloud-vpc-overview/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/vpc/ncloud-vpc-overview/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/vpc/ncloud-vpc-overview/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/vpc/ncloud-vpc-overview/</guid>
       <description>개요 link이 문서는 VPC를 구성하는 요소들에 대한 설명으로 네이버 클라우드 파트너 테크데이에서 발표된 내용을 정리한 것입니다.&#xA;VPC linkVPC(Virtual Private Cloud)는 퍼블릭 클라우드 상에 논리적으로 완전하게 분리된 고객전용 네트워크를 제공하는 서비스. 최대 /16의 IP 네트워크 공간을 제공 (IP 대역: RFC 1918).&#xA;@ RFC 1918 IP대역&#xD;10.0.0.0/8 (10.0.0.0 - 10.255.255.255) 172.16.0.0/12 (172.16.0.0 - 172.31.255.255) 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)&#xD;Subnet (Internet Gateway) link할당된 VPC를 용도에 맞게 네트워크 공간을 세분화 하여 사용.&#xA;/16 ~ /28의 네트워크 주소 할당이 가능.</description>
     </item>
     <item>
       <title>Ncloud NACL과 ACG 비교</title>
-      <link>https://staeho-3rd.github.io/docs/networking/vpc/acg-nacl-compare/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/vpc/acg-nacl-compare/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/vpc/acg-nacl-compare/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/vpc/acg-nacl-compare/</guid>
       <description>개요 link네이버 클라우드에서는 VPC의 보안을 강화하기 위해 ACG와 NACL의 두 가지 보안 정책을 제공하고 있습니다.&#xA;NACL : Network Access Control List는 Subnet의 Inbound 및 Outbound 트래픽을 제어 ACG : Access Control Group은 서버의 NIC별 Inbound 및 Outbound 트래픽을 제어 NACL vs ACG link 구분 NACL ACG 적용 대상 Subnet의 접근 제어 서버의 접근 제어 지원 규칙 허용 및 거부 (Allow / Deny) 허용 (Allow) 상태 저장 여부 상태 비저장(Stateless)&#xA;(반환 트래픽이 규칙에 의해</description>
     </item>
     <item>
       <title>Ncloud 방화벽 ACG 설정 기본 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/security/acg/basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/acg/basic-guide/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/acg/basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/acg/basic-guide/</guid>
       <description>개요 linkACG(Access Control Group)는 서버 간 네트워크 접근 제어 및 관리를 할 수 있는 IP/Port 기반 필터링 방화벽 서비스로 AWS에서는 비슷하게 Security Group이라는 것이 있습니다.&#xA;제한 사항 linkVPC 환경 link VPC당 최대 500개까지 ACG 생성 가능 NIC당 3개의 ACG를 허용 Inbound / Outbound 각각 50개의 규칙 생성 가능 Classic 환경 link 계정당 최대 100개까지 ACG를 생성 가능 각 ACG에는 최대 100개까지의 규칙을 설정할 수 있음 서버는 최대 5개의 ACG에 중복 포함될 수 있음 서버가 생성될 시 선택한 ACG는 변경이 불가하며, 반납 전까지 해당 ACG 규칙을 적용 받게 됨 Classic 환경에서는 서버 자체에 할당되는 개념이었으나 VPC에는 NIC 즉, 네트워크 카드에 할당되는 개념이어서 VPC 환경에서는 NIC 당 최대 3개까지 ACG를 적용할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 방화벽 ACG 권장설정과 Custom ACG 설정 예시</title>
-      <link>https://staeho-3rd.github.io/docs/security/acg/custom-acg-configure-sample/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/acg/custom-acg-configure-sample/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/acg/custom-acg-configure-sample/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/acg/custom-acg-configure-sample/</guid>
       <description>개요 linkNcloud (네이버 클라우드)의 IP/Port 기반 필터링 방화벽 서비스인 ACG(Access Control Group) 권장설정과 Custom ACG 설정할 때 참고할 만한 예시를 몇가지 정리해보겠습니다.&#xA;Inboud 기본 규칙 삭제 link&#xD;서버 생성 시에 기본으로 생성되는 Default ACG에는 아래처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 접근이 허용되어 있는데 보안을 위해 이 항목을 삭제하고 지정된 IP에서만 접속하도록 수정하는 것을 적극 권장합니다.&#xD;VPC 화면 link아래는 Default ACG가 생성되면서 설정된 전체 접근 허용 상태입니다. 여기서 X버튼을 클릭해서 [0.</description>
     </item>
   </channel>

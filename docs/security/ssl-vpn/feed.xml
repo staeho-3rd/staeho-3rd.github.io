@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SSL VPN on 3RDEYESYS Tech Docs</title>
-    <link>https://staeho-3rd.github.io/docs/security/ssl-vpn/</link>
+    <link>https://docs.3rdeyesys.com/docs/security/ssl-vpn/</link>
     <description>Recent content in SSL VPN on 3RDEYESYS Tech Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/security/ssl-vpn/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/security/ssl-vpn/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSL VPN 설정하고 접속하는 방법 | VPC</title>
-      <link>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-vpc/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-vpc/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-vpc/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-vpc/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 외부에서 내부에 구성된 네트워크로 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 VPC 환경에서 설정하고, 서버에 접속하는 방법에 대해 정리해보겠습니다.&#xA;SSL VPN이란? link VPN은 가상 사설망(Virtual Private Network)의 약자로, 외부에서 접근할 수 없는 사설망에 내 PC나 네트워크를 연결시키는 방법을 말합니다. 사설망과의 연결은 가상 터널을 통해 이루어지며, 이 가상 터널을 SSL 암호화로 보호하는 것이 SSL VPN입니다. 가상 터널을 통해 사설망과 연결된 사용자 PC는 사설망의 라우팅 및 ACL 정책에 따라 내부 서버에 접근할 수 있습니다.</description>
     </item>
     <item>
       <title>SSL VPN 설정하고 접속하는 방법 | Classic</title>
-      <link>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-classic/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-classic/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-classic/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-classic/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 외부에서 내부에 구성된 네트워크로 암호화된 보안 접속 통신을 제공하는 서비스인 SSL VPN을 Classic 환경에서 설정하고, 서버에 접속하는 방법에 대해 정리해보겠습니다.&#xA;SSL VPN이란? link VPN은 가상 사설망(Virtual Private Network)의 약자로, 외부에서 접근할 수 없는 사설망에 내 PC나 네트워크를 연결시키는 방법을 말합니다. 사설망과의 연결은 가상 터널을 통해 이루어지며, 이 가상 터널을 SSL 암호화로 보호하는 것이 SSL VPN입니다. 가상 터널을 통해 사설망과 연결된 사용자 PC는 사설망의 라우팅 및 ACL 정책에 따라 내부 서버에 접근할 수 있습니다.</description>
     </item>
   </channel>
