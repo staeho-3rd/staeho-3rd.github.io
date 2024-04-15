@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apache on 3RDEYESYS Tech Docs</title>
+    <title>Apache on 써드아이시스템 기술문서</title>
     <link>https://docs.3rdeyesys.com/tags/apache/</link>
-    <description>Recent content in Apache on 3RDEYESYS Tech Docs</description>
+    <description>Recent content in Apache on 써드아이시스템 기술문서</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0900</lastBuildDate>

@@ -18,17 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="MySQL Multi Source Replication 구성 가이드" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:description" content="Ncloud에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다" />
-<link rel="canonical" href="http://localhost:4001/database/ncloud-database-mysql-multi-source-replication.html" />
-<meta property="og:url" content="http://localhost:4001/database/ncloud-database-mysql-multi-source-replication.html" />
+<link rel="canonical" href="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/" />
+<meta property="og:url" content="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/" />
 <meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
-<meta property="og:image" content="http://localhost:4001/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
+<meta property="og:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-05T00:00:00+09:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4001/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
+<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
 <meta property="twitter:title" content="MySQL Multi Source Replication 구성 가이드" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MySQL Multi Source Replication 구성 가이드","image":"http://localhost:4001/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png","url":"http://localhost:4001/database/ncloud-database-mysql-multi-source-replication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MySQL Multi Source Replication 구성 가이드","image":"https://docs.3rdeyesys.com/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png","url":"https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>MySQL Multi Source Replication 구성 가이드 | 써드아이시스템 기술문서</title>
@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate"
   type="application/rss+xml"
   title="3RDEYESYSTEM Technical Documentations"
-  href="http://localhost:4001/feed.xml">
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
@@ -2280,7 +2280,7 @@ mysql&gt; show master status<span class="p">;</span>
 MySQL 8.0 버전 부터는 replicate-do-db 설정에 채널 정보도 추가할 수 있게 업데이트 되었습니다.</li>
 </ul>
 
-<ul class="tab" data-tab="c36ff05f-8e51-4ac8-9bfb-2a09f14b5308" data-name="slave_my_cnf">
+<ul class="tab" data-tab="b1d392a8-8e73-449e-b335-59e8b0443e9f" data-name="slave_my_cnf">
   
       <li class="active">
           <a href="#">MySQL 5.7 </a>
@@ -2291,7 +2291,7 @@ MySQL 8.0 버전 부터는 replicate-do-db 설정에 채널 정보도 추가할 
       </li>
   
 </ul>
-<ul class="tab-content" id="c36ff05f-8e51-4ac8-9bfb-2a09f14b5308" data-name="slave_my_cnf">
+<ul class="tab-content" id="b1d392a8-8e73-449e-b335-59e8b0443e9f" data-name="slave_my_cnf">
   
       <li class="active">
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/my.cnf
@@ -2399,7 +2399,7 @@ mysql&gt; quit
 <p>리플리케이션 채널을 설정하는 쿼리문은 다음과 같습니다.<br />
 채널 설정 구문은 MySQL 버전별로 다르고, 특히 8.0.23 버전부터는 완전히 달라지므로 버전에 맞게 사용하시면 됩니다.</p>
 
-<ul class="tab" data-tab="a1937af5-d8bb-4449-9707-c07a41e7727e" data-name="config_channel">
+<ul class="tab" data-tab="b78f0c7c-7f4a-4291-9497-758ac1ad5ce9" data-name="config_channel">
   
       <li class="active">
           <a href="#">MySQL 5.7 </a>
@@ -2414,7 +2414,7 @@ mysql&gt; quit
       </li>
   
 </ul>
-<ul class="tab-content" id="a1937af5-d8bb-4449-9707-c07a41e7727e" data-name="config_channel">
+<ul class="tab-content" id="b78f0c7c-7f4a-4291-9497-758ac1ad5ce9" data-name="config_channel">
   
       <li class="active">
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL 5.7</span>
@@ -2459,7 +2459,7 @@ mysql&gt; CHANGE REPLICATION SOURCE TO <span class="nv">SOURCE_HOST</span><span 
 <h3 id="master-서버-정보-입력">Master 서버 정보 입력</h3>
 <p>Slave 서버에 Master 서버 정보를 하나씩 입력합니다.</p>
 
-<ul class="tab" data-tab="46c9870a-50cb-43de-8ead-8e5e9694b331" data-name="config_channel_sample">
+<ul class="tab" data-tab="2af3024c-d4b5-4b80-afea-22ff837bf258" data-name="config_channel_sample">
   
       <li class="active">
           <a href="#">MySQL 5.7 </a>
@@ -2474,7 +2474,7 @@ mysql&gt; CHANGE REPLICATION SOURCE TO <span class="nv">SOURCE_HOST</span><span 
       </li>
   
 </ul>
-<ul class="tab-content" id="46c9870a-50cb-43de-8ead-8e5e9694b331" data-name="config_channel_sample">
+<ul class="tab-content" id="2af3024c-d4b5-4b80-afea-22ff837bf258" data-name="config_channel_sample">
   
       <li class="active">
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Master1</span>
@@ -2521,7 +2521,7 @@ mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
 <h3 id="리플리케이션-채널-시작">리플리케이션 채널 시작</h3>
 <p>리플리케이션 시작 후 에러가 없는지 확인합니다.</p>
 
-<ul class="tab" data-tab="227b57ed-cb44-46ae-a942-8ce37f1e39ce" data-name="start_channel">
+<ul class="tab" data-tab="4dde7ca1-865d-4d74-ac61-e632579bc7bf" data-name="start_channel">
   
       <li class="active">
           <a href="#">MySQL 5.7 </a>
@@ -2532,7 +2532,7 @@ mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
       </li>
   
 </ul>
-<ul class="tab-content" id="227b57ed-cb44-46ae-a942-8ce37f1e39ce" data-name="start_channel">
+<ul class="tab-content" id="4dde7ca1-865d-4d74-ac61-e632579bc7bf" data-name="start_channel">
   
       <li class="active">
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#MySQL 5.7 기준</span>
@@ -2631,7 +2631,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 
 <h2 id="버전별-명령어-비교">버전별 명령어 비교</h2>
 
-<ul class="tab" data-tab="6dba6bcb-09c2-46e5-8d19-fe7e01eca29c" data-name="replication_command">
+<ul class="tab" data-tab="0c5232d8-02ce-47d8-9b01-b36059e5da5d" data-name="replication_command">
   
       <li class="active">
           <a href="#">MySQL 5.7 </a>
@@ -2646,7 +2646,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
       </li>
   
 </ul>
-<ul class="tab-content" id="6dba6bcb-09c2-46e5-8d19-fe7e01eca29c" data-name="replication_command">
+<ul class="tab-content" id="0c5232d8-02ce-47d8-9b01-b36059e5da5d" data-name="replication_command">
   
       <li class="active">
 <div>
@@ -2770,6 +2770,18 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 <hr class="shaded"/>
 
 
+  <!-- docs-body-bottom -->
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6933218466698885"
+  data-ad-slot="6166392790"
+  data-ad-format="auto"
+  data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 <footer>
     <div class="row">
@@ -2797,7 +2809,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
         </div>
         &copy;2024 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2023-04-05<br/> Site last generated: 2024-04-11 <br />        
+        <span>Page last updated:</span> 2023-04-05<br/> Site last generated: 2024-04-15 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -2814,6 +2826,20 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
           <!-- /.container -->
         </div>
         
+          
+            <div class="side-banner-left">
+  <!-- docs-sidebar-left -->
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-6933218466698885"
+    data-ad-slot="3163156637"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
           
           
           
@@ -2863,6 +2889,21 @@ $("#toc_onoff").click(function() {
         });
       </script>
 
+      
+        
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4Q6RVEFJ3S');
+</script>
+
+        
+
+        
       
     </body>
   </body>

@@ -1482,11 +1482,11 @@
 
 
 {
-"title": "Mysql, mariadb 외부접속을 위한 환경설정 bind-address 위치",
+"title": "Mysql, MariaDB 외부접속을 위한 환경설정 bind-address 위치",
 "tags": "databasemysqlmariadb",
 "keywords": "Database, Config",
 "url": "/database/ncloud_database_mysql_mariadb_config_bind_address.html",
-"summary": "Ncloud Mysql, mariadb 외부접속을 위한 환경설정 bind-address 위치 안내입니다"
+"summary": "Ncloud Mysql, MariaDB 외부접속을 위한 환경설정 bind-address 위치 안내입니다"
 }
 ,
 

@@ -18,19 +18,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="Ncloud 데이터베이스 마이그레이션 서비스 From MySQL 5.7 To MySQL 8.0" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:description" content="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다" />
-<link rel="canonical" href="http://localhost:4001/database/ncloud-database-db-migration-from-mysql57-to-mysql80-guide.html" />
-<meta property="og:url" content="http://localhost:4001/database/ncloud-database-db-migration-from-mysql57-to-mysql80-guide.html" />
+<link rel="canonical" href="https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/" />
+<meta property="og:url" content="https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/" />
 <meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
-<meta property="og:image" content="http://localhost:4001/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
+<meta property="og:image" content="https://docs.3rdeyesys.com/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
 <meta property="og:image:alt" content="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-10-24T00:00:00+09:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4001/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
+<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png" />
 <meta name="twitter:image:alt" content="Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다" />
 <meta property="twitter:title" content="Ncloud 데이터베이스 마이그레이션 서비스 From MySQL 5.7 To MySQL 8.0" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다","headline":"Ncloud 데이터베이스 마이그레이션 서비스 From MySQL 5.7 To MySQL 8.0","image":{"alt":"Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다","url":"http://localhost:4001/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png","@type":"imageObject"},"url":"http://localhost:4001/database/ncloud-database-db-migration-from-mysql57-to-mysql80-guide.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다","headline":"Ncloud 데이터베이스 마이그레이션 서비스 From MySQL 5.7 To MySQL 8.0","image":{"alt":"Ncloud(네이버 클라우드) Database Migration 서비스를 이용해 MySQL 5.7에서 클라우드 환경 Cloud DB for MySQL 8.0으로 마이그레이션하는 방법입니다","url":"https://docs.3rdeyesys.com/images/database/migration/ncloud-database-db-migration-from-mysql57-to-mysql57-guide-25.png","@type":"imageObject"},"url":"https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 5.7 To MySQL 8.0 | 써드아이시스템 기술문서</title>
@@ -75,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate"
   type="application/rss+xml"
   title="3RDEYESYSTEM Technical Documentations"
-  href="http://localhost:4001/feed.xml">
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
@@ -2121,7 +2121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>Target DB: Cloud DB for MySQL 8.0.32</li>
 </ul>
 
-<ul class="tab" data-tab="540a0dfc-fc94-4e01-9f7e-0665b52331ee" data-name="db-verstion">
+<ul class="tab" data-tab="0b4a8f49-4ff8-4cd8-8d03-e136173a7a52" data-name="db-verstion">
   
       <li class="active">
           <a href="#">Source DB </a>
@@ -2132,7 +2132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
   
 </ul>
-<ul class="tab-content" id="540a0dfc-fc94-4e01-9f7e-0665b52331ee" data-name="db-verstion">
+<ul class="tab-content" id="0b4a8f49-4ff8-4cd8-8d03-e136173a7a52" data-name="db-verstion">
   
       <li class="active">
 <p>⁃ <strong>Source DB</strong></p>
@@ -2161,7 +2161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3 id="source-db-정보-확인">Source DB 정보 확인</h3>
 <p>테스트에 사용할 Source DB의 버전, Database, DB User 등의 정보를 확인해보겠습니다.</p>
 
-<ul class="tab" data-tab="47aa20e1-34b3-4c3e-af30-806588a1747e" data-name="sourcedb-setting">
+<ul class="tab" data-tab="21f05bb9-62e0-4a83-9bc1-73ad92758b99" data-name="sourcedb-setting">
   
       <li class="active">
           <a href="#">MariaDB 버전 </a>
@@ -2188,7 +2188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
   
 </ul>
-<ul class="tab-content" id="47aa20e1-34b3-4c3e-af30-806588a1747e" data-name="sourcedb-setting">
+<ul class="tab-content" id="21f05bb9-62e0-4a83-9bc1-73ad92758b99" data-name="sourcedb-setting">
   
       <li class="active">
 <p>⁃ <strong>MariaDB 버전</strong><br />
@@ -2712,7 +2712,7 @@ log_bin <span class="o">=</span> binlog
 <h4 id="진행-상태-확인-메일">진행 상태 확인 메일</h4>
 <p>진행 상태는 콘솔에서도 확인할 수 있지만, 작업이 오래 걸리는 경우도 대비해서 각 단계가 완료될 때마다 안내 메일이 발송됩니다.</p>
 
-<ul class="tab" data-tab="193580f0-df11-4b11-af1b-465c7cea1f8c" data-name="migration-status">
+<ul class="tab" data-tab="f3389b47-575f-4147-a72c-d9f9728445f4" data-name="migration-status">
   
       <li class="active">
           <a href="#">Export Completed </a>
@@ -2727,7 +2727,7 @@ log_bin <span class="o">=</span> binlog
       </li>
   
 </ul>
-<ul class="tab-content" id="193580f0-df11-4b11-af1b-465c7cea1f8c" data-name="migration-status">
+<ul class="tab-content" id="f3389b47-575f-4147-a72c-d9f9728445f4" data-name="migration-status">
   
       <li class="active">
 <p>⁃ <strong>Export Completed</strong></p>
@@ -2985,6 +2985,18 @@ log_bin <span class="o">=</span> binlog
 <hr class="shaded"/>
 
 
+  <!-- docs-body-bottom -->
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6933218466698885"
+  data-ad-slot="6166392790"
+  data-ad-format="auto"
+  data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 <footer>
     <div class="row">
@@ -3012,7 +3024,7 @@ log_bin <span class="o">=</span> binlog
         </div>
         &copy;2024 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2023-10-24<br/> Site last generated: 2024-04-11 <br />        
+        <span>Page last updated:</span> 2023-10-24<br/> Site last generated: 2024-04-15 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -3029,6 +3041,20 @@ log_bin <span class="o">=</span> binlog
           <!-- /.container -->
         </div>
         
+          
+            <div class="side-banner-left">
+  <!-- docs-sidebar-left -->
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-6933218466698885"
+    data-ad-slot="3163156637"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
           
           
           
@@ -3078,6 +3104,21 @@ $("#toc_onoff").click(function() {
         });
       </script>
 
+      
+        
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4Q6RVEFJ3S');
+</script>
+
+        
+
+        
       
     </body>
   </body>

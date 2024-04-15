@@ -18,17 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="MariaDB Multi Source Replication 구성 가이드" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:description" content="Ncloud에서 MariaDB Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다" />
-<link rel="canonical" href="http://localhost:4001/database/ncloud-database-mariadb-multi-source-replication.html" />
-<meta property="og:url" content="http://localhost:4001/database/ncloud-database-mariadb-multi-source-replication.html" />
+<link rel="canonical" href="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/" />
+<meta property="og:url" content="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/" />
 <meta property="og:site_name" content="3RDEYESYSTEM Technical Documentations" />
-<meta property="og:image" content="http://localhost:4001/images/database/ncloud-database-mariadb-multi-source-replication-guide-01.png" />
+<meta property="og:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mariadb-multi-source-replication-guide-01.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-20T00:00:00+09:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4001/images/database/ncloud-database-mariadb-multi-source-replication-guide-01.png" />
+<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mariadb-multi-source-replication-guide-01.png" />
 <meta property="twitter:title" content="MariaDB Multi Source Replication 구성 가이드" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud에서 MariaDB Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MariaDB Multi Source Replication 구성 가이드","image":"http://localhost:4001/images/database/ncloud-database-mariadb-multi-source-replication-guide-01.png","url":"http://localhost:4001/database/ncloud-database-mariadb-multi-source-replication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud에서 MariaDB Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MariaDB Multi Source Replication 구성 가이드","image":"https://docs.3rdeyesys.com/images/database/ncloud-database-mariadb-multi-source-replication-guide-01.png","url":"https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/"}</script>
 <!-- End Jekyll SEO tag -->
 
 <title>MariaDB Multi Source Replication 구성 가이드 | 써드아이시스템 기술문서</title>
@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate"
   type="application/rss+xml"
   title="3RDEYESYSTEM Technical Documentations"
-  href="http://localhost:4001/feed.xml">
+  href="https://docs.3rdeyesys.com/feed.xml">
 
 
     <script>
@@ -2087,7 +2087,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>MariaDB 버전에 따라서는 <strong>/etc/my.cnf.d/server.cnf</strong> 인 경우도 있습니다.</li>
 </ul>
 
-<ul class="tab" data-tab="707824e9-1528-4401-91b1-9e1bfd42bbda" data-name="master1_my_cnf">
+<ul class="tab" data-tab="e6b13d99-4c37-44ab-ab9e-b34dbda60665" data-name="master1_my_cnf">
   
       <li class="active">
           <a href="#">MySQL 호환 </a>
@@ -2098,7 +2098,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
   
 </ul>
-<ul class="tab-content" id="707824e9-1528-4401-91b1-9e1bfd42bbda" data-name="master1_my_cnf">
+<ul class="tab-content" id="e6b13d99-4c37-44ab-ab9e-b34dbda60665" data-name="master1_my_cnf">
   
       <li class="active">
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/my.cnf.d/mariadb-server.cnf
@@ -2216,7 +2216,7 @@ MariaDB <span class="o">[(</span>none<span class="o">)]&gt;</span> show master s
   <li>MariaDB 버전에 따라서는 <strong>/etc/my.cnf.d/server.cnf</strong> 인 경우도 있습니다.</li>
 </ul>
 
-<ul class="tab" data-tab="151976a4-27e6-4b65-a0f8-0e7e3b517d03" data-name="master2_my_cnf">
+<ul class="tab" data-tab="d4ce873b-ecc5-496c-af13-48409c7c35f7" data-name="master2_my_cnf">
   
       <li class="active">
           <a href="#">MySQL 호환 </a>
@@ -2227,7 +2227,7 @@ MariaDB <span class="o">[(</span>none<span class="o">)]&gt;</span> show master s
       </li>
   
 </ul>
-<ul class="tab-content" id="151976a4-27e6-4b65-a0f8-0e7e3b517d03" data-name="master2_my_cnf">
+<ul class="tab-content" id="d4ce873b-ecc5-496c-af13-48409c7c35f7" data-name="master2_my_cnf">
   
       <li class="active">
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~# vi /etc/my.cnf.d/mariadb-server.cnf
@@ -2621,6 +2621,18 @@ Slave 서버에서 testdb2 DB에 sampletable2 Table이 복제되었는지 확인
 <hr class="shaded"/>
 
 
+  <!-- docs-body-bottom -->
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6933218466698885"
+  data-ad-slot="6166392790"
+  data-ad-format="auto"
+  data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 <footer>
     <div class="row">
@@ -2648,7 +2660,7 @@ Slave 서버에서 testdb2 DB에 sampletable2 Table이 복제되었는지 확인
         </div>
         &copy;2024 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2023-04-20<br/> Site last generated: 2024-04-11 <br />        
+        <span>Page last updated:</span> 2023-04-20<br/> Site last generated: 2024-04-15 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>
@@ -2665,6 +2677,20 @@ Slave 서버에서 testdb2 DB에 sampletable2 Table이 복제되었는지 확인
           <!-- /.container -->
         </div>
         
+          
+            <div class="side-banner-left">
+  <!-- docs-sidebar-left -->
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-6933218466698885"
+    data-ad-slot="3163156637"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
           
           
           
@@ -2714,6 +2740,21 @@ $("#toc_onoff").click(function() {
         });
       </script>
 
+      
+        
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q6RVEFJ3S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4Q6RVEFJ3S');
+</script>
+
+        
+
+        
       
     </body>
   </body>
