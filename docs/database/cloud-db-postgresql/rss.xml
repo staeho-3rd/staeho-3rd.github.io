@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud DB for PostgreSQL on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/</link>
+    <description>Recent content in Cloud DB for PostgreSQL on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 03 May 2022 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud DB for PostgreSQL 생성 후 Public 도메인으로 접속하기</title>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-access-public-domain-guide/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-access-public-domain-guide/</guid>
+      <description>지원 클라우드 환경 linkNcloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.&#xA;리전(존): 한국, 싱가포르 VPC만&#x9;지원 언어: 한국어, 영어, 일본어, 중국어(간체) DB 엔진 버전: PostgreSQL 13.3 DB 생성 link[Cloud DB for PostgreSQL] - [DB Server]에서 [DB Server 생성] 버튼을 클릭해 DB를 생성을 시작합니다.&#xA;서버 설정 link DB 엔진: 현재 지원되는 DB 엔진 버전은 PostgreSQL 13.3 입니다. 고가용성 지원은 기본 선택 사항인데, 필요하지 않을 경우 체크를 해제하면 됩니다. VPC와 Subnet을 선택하고, 미리 생성된 VPC와 Subnet가 없으면 생성 버튼을 클릭합니다.</description>
+    </item>
+    <item>
+      <title> VPC환경에서 Cloud DB for PostgreSQL 생성하고 CentOS서버로 접속하기</title>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</guid>
+      <description>지원 클라우드 환경 linkNcloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.&#xA;리전(존): 한국, 싱가포르 VPC만&#x9;지원 언어: 한국어, 영어, 일본어, 중국어(간체) DB 엔진 버전: PostgreSQL 13.3 서버 사양과 요금 link(2022-03-30 기준)&#xA;타입제공사양이용 요금&#xD;vCPU메모리디스크시간당/대&#xD;High CPU2개4GB50GB158원&#xD;4개8GB323원&#xD;8개16GB653원&#xD;16개32GB1,313원&#xD;32개64GB2,633원&#xD;Standard2개8GB50GB250원&#xD;4개16GB506원&#xD;8개32GB1,019원&#xD;16개64GB2,045원&#xD;32개128GB4,099원&#xD;High Memory2개16GB50GB302원&#xD;4개32GB611원&#xD;8개64GB1,227원&#xD;16개128GB2,462원&#xD;32개256GB4,927원&#xD;서버 사양 변경 시 제약 사항 linkCloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경할 수 있습니다.</description>
+    </item>
+    <item>
+      <title> VPC환경에서 Cloud DB for PostgreSQL 생성하고 Ubuntu서버로 접속하기</title>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</guid>
+      <description>지원 클라우드 환경 linkNcloud Cloud DB for PostgreSQL이 지원하는 클라우드 환경은 다음과 같습니다.&#xA;리전(존): 한국, 싱가포르 VPC만&#x9;지원 언어: 한국어, 영어, 일본어, 중국어(간체) DB 엔진 버전: PostgreSQL 13.3 서버 사양과 요금 link(2022-03-30 기준)&#xA;타입제공사양이용 요금&#xD;vCPU메모리디스크시간당/대&#xD;High CPU2개4GB50GB158원&#xD;4개8GB323원&#xD;8개16GB653원&#xD;16개32GB1,313원&#xD;32개64GB2,633원&#xD;Standard2개8GB50GB250원&#xD;4개16GB506원&#xD;8개32GB1,019원&#xD;16개64GB2,045원&#xD;32개128GB4,099원&#xD;High Memory2개16GB50GB302원&#xD;4개32GB611원&#xD;8개64GB1,227원&#xD;16개128GB2,462원&#xD;32개256GB4,927원&#xD;서버 사양 변경 시 제약 사항 linkCloud DB for PostgreSQL 서버는 타입은 변경할 수 없지만 메모리 크기는 콘솔 PostgreSQL Server 메뉴에서 스펙 변경 기능을 사용하여 언제든지 변경할 수 있습니다.</description>
+    </item>
+  </channel>
+</rss>

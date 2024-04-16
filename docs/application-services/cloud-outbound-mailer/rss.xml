@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ncloud Cloud Outbound Mailer on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/</link>
+    <description>Recent content in Ncloud Cloud Outbound Mailer on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 02 Feb 2024 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ncloud Cloud Outbound Mailer로 대량 메일 발송하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</link>
+      <pubDate>Fri, 02 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</guid>
+      <description>개요 link네이버 클라우드 서비스 중에서 각 종 공지나 이벤트, 마케팅으로 회원들에게 대량의 메일을 발송해야 할 때 사용할 수 있는 것이 Cloud Outbound Mailer 입니다.&#xA;대량 메일을 발송하는 방법은 여러가지 있지만, 그 중에서도 가장 자주, 간편하게 사용하는 것이 Excel 등의 파일을 업로드 해서 발송하는 방법입니다.&#xA;이용 신청 linkCloud Outbound Mailer는 먼저 이용신청을 하셔야 합니다. [Console] - [Cloud Outbound Mailer] - [Mailing list] 에서 [이용 신청] 버튼을 클릭하시면 됩니다.&#xA;다음으로 서비스 이용약관에 동의하시면 됩니다.</description>
+    </item>
+    <item>
+      <title>Ncloud Cloud Outbound Mailer 도메인 인증 방법 3가지(SPF, DKIM, DMARC) 안내</title>
+      <link>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</link>
+      <pubDate>Fri, 26 Jan 2024 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) Cloud Outbound Mailer를 사용할 때 도메인을 등록하고 SPF(Sender Policy Framework), DKIM(DomainKeys Identified Mail), DMARC(Domain-based Message Authentication, Reporting, and Conformance) 인증을 받으면 발신자 자격을 입증할 수 있고 타인이 도메인을 사칭해 메일을 발송하는 것을 막을 수 있습니다.&#xA;또한, 인증된 도메인임을 증명함으로써 수신측 메일 서비스에서 차단되거나 스팸 처리될 가능성도 매우 낮아지는 이점이 있으므로 가능하면 도메인 인증을 하는 것이 좋습니다.&#xA;report&#xD;Gmail 공지: 특히 Gmail에서는 2024년 2월부터 새로운 이메일 발신자 가이드라인을 적용하면서 도메인 인증을 받지 않은 경우 메일이 스팸처리되거나 제대로 전송되지 않을 수 있다고 공지하고 있습니다.</description>
+    </item>
+  </channel>
+</rss>

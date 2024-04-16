@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iis on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/tags/iis/</link>
+    <description>Recent content in Iis on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/tags/iis/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IIS에서 X-Forwarded-For를 이용해 Client IP 기록하기</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/x-forwarded-for/client-ip-logging-in-windows-iis-guide/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/x-forwarded-for/client-ip-logging-in-windows-iis-guide/</guid>
+      <description>개요 linkX-Forwarded-For (XFF) 는 HTTP Header 중 하나로 Load Balancer(로드밸런서)나 Proxy Server를 통해 웹서버에 접속하는 Client의 IP 주소를 식별하는 표준 헤더입니다.&#xA;웹서버나 WAS 앞쪽에 Load Balancer 혹은 Proxy Server 등이 위치하게 된다면 서버 접근 로그에는 Client IP가 아닌 Load Balancer 혹은 Proxy Server의 IP 주소가 기록됩니다. 이때 웹 어플리케이션에서 X-Forwarded-For 헤더를 이용하면 Client IP를 서버 접근 로그에 남길 수 있습니다.&#xA;여기서는 Load Balancer와 연동된 Windows Server의 IIS에서 X-Forwarded-For를 이용해 IIS(Internet Information Services) Log에 Clinet의 IP를 기록하는 과정을 살펴보겠습니다.</description>
+    </item>
+    <item>
+      <title>Ncloud Cloud Log Analytics에서 Windows IIS Log 수집하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/management/cloud-log-analytics/windows-iis-log-collect-guide/</link>
+      <pubDate>Fri, 16 Feb 2024 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/management/cloud-log-analytics/windows-iis-log-collect-guide/</guid>
+      <description>개요 linkNcloud(네이버 클라우드) Cloud Log Analytics 서비스에서 Windows 웹서버인 IIS 로그를 수집하는 방법에 대해 정리해보겠습니다.&#xA;테스트 서버 link Windows Server 2019 (64-bit) English Edition 수집 설정 link [Cloud Log Analytics] - [Management]에서 서버를 선택하고 [수집 설정] 버튼을 클릭합니다. [Log 수집 설정] 화면에서 각 설정 항목을 다음과 같이 입력합니다.&#xA;Log Template: Custom Log를 선택합니다. Log Type: 임의의 값을 입력합니다. (예: iislog) Log 경로: 실제 저장되는 로그파일의 경로를 입력합니다. Log 파일 경로 확인 linkIIS Log 파일의 경로는 [IIS Manager]를 실행하고, 사이트 정보에서 [Logging] 메뉴를 선택하면 아래와 같이 [Directory] 항목을 확인할 수 있습니다.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Event on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/tags/event/</link>
+    <description>Recent content in Event on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/tags/event/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto Scaling Group 이벤트 설정하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/autoscaling/event-setting-guide/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/autoscaling/event-setting-guide/</guid>
+      <description>개요 link네이버 클라우드에서 AutoScaling을 설정할 때 중요한 것이 이벤트 설정입니다.&#xA;예를 들어 CPU 사용률이 70%가 넘는 상태가 1분 이상 지속되면 서버를 늘리는 작업이 진행되도록 설정한다고 할 때, CPU가 70% 이상인 상태가 1분 이상 지속되는 이벤트가 발생하는지 체크하는 것을 말합니다.&#xA;현재 네이버 클라우드 Console에서는 AutoScaling 그룹을 생성한 후에 바로 이 이벤트 설정을 하는 방법에 대한 메뉴나 링크가 없어서 그에 대한 내용을 정리해보겠습니다.&#xA;AutoScaling Group 생성 linkAutoScaling 이벤트를 설정하려면 우선 AutoScaling Group을 생성해야 합니다.</description>
+    </item>
+  </channel>
+</rss>

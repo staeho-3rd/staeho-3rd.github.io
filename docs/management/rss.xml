@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Management on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/docs/management/</link>
+    <description>Recent content in Management on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/docs/management/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ncloud Classic 환경 vs VPC 환경 비교</title>
+      <link>https://docs.3rdeyesys.com/docs/management/ncloud-vpc-vs-classic-guide/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/management/ncloud-vpc-vs-classic-guide/</guid>
+      <description>개요 link네이버 클라우드 (Ncloud)에는 Classic과 VPC 이렇게 2가지의 환경이 있습니다. 각각의 특징을 장점을 중심으로 비교해보도록 하겠습니다.&#xA;Classic 환경 장점 요약 link 서로 다른 계정의 서버들 간에 사설 통신 가능 리전간 서버들의 사설 통신 가능 (한국, 미국, 싱가포르, 홍콩, 일본, 독일) 다양한 설치형 서버 이미지 이용 가능 VPC 환경 장점 요약 link 논리적으로 분리된 Network 사용자가 직접 Network 설계 가능 기존 고객의 데이터센터 네트워크와 유사하게 구현 가능 좀 더 상세하고, 높은 수준의 보안 설정 가능 Classic 환경 장점 상세 link위에서 요약한 장점들을 좀 더 상세하게 살펴보겠습니다.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/docs/networking/</link>
+    <description>Recent content in Networking on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 07 Jul 2022 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/docs/networking/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>내 IP 주소 확인하기</title>
+      <link>https://docs.3rdeyesys.com/docs/networking/find-my-ip-address/</link>
+      <pubDate>Thu, 07 Jul 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/networking/find-my-ip-address/</guid>
+      <description>IPv4 link111.222.333.444처럼 우리가 일반적으로 알고 있는 IPv4는 32비트로 구성된 IP 주소 체계로 이론적으로는 2^32 즉, 4,294,967,296개의 IP주소를 부여할 수 있습니다.&#xA;2011년 전세계 IP주소를 관리하고 있는 IANA(Internet Assigned Numbers Authority)에서 인터넷에 연결되는 기기가 급속도로 증가하면서 할당할 수 있는 IP주소가 고갈되어 감에 따라 IPv4의 신규 할당을 공식 종료했고, 그로 인해 신규 IP주소 체계인 IPv6에 대한 관심이 높아졌습니다.&#xA;IPv6 linkIPv6는 ae06:2610:122a:2002:1849:2874:27c1:18f6 처럼 128비트로 구성된 신규 IP 주소 체계로 이론적으로는 2^128 개의 IP 주소를 부여할 수 있어 IP 주소의 부족은 없을 것이라고 이야기 되고 있습니다.</description>
+    </item>
+    <item>
+      <title>Ncloud 주요 서비스 포트(Port) 정보</title>
+      <link>https://docs.3rdeyesys.com/docs/networking/ncloud-service-port-info/</link>
+      <pubDate>Thu, 14 Jan 2021 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/networking/ncloud-service-port-info/</guid>
+      <description>포트(Port) 정보 link네이버 클라우드 주요 서비스들에서 사용하는 포트(Port) 정보를 정리해보았습니다.&#xA;네이버 클라우드에서 사용하는 포트이므로 일부 서비스의 경우 일반적으로 사용되는 포트와 조금 다른 경우도 있을 수 있습니다.&#xA;22 : SSH 80 : http 443 : https 1433 : mssql 3000 : Node.js Express 3306 : mysql 3389 : 윈도 원격데스크톱 5432 : PostgreSQL 5672 : RabbitMQ 5985 : Packer 6379 : Redis 8001 : CUBRID 8080 : Ambari 8081 : Hue 8388 : Shadowsocks 서버 9736 : Jeus WebAdmin 10090 : Pinpoint 서버 11313 : Hugo 서버 15672 : RabbitMQ Management UI 18080 : Tomcat, Jenkins 18088 : Superset 18888 : TensorFlow Jupyter Notebook 18889 : TensorBoard 27017 : MongoDB 50070 : HDFS NameNode 문서 업데이트 내역 link&#xD;날짜 내용 2021-01-14 문서 최초 생성 </description>
+    </item>
+  </channel>
+</rss>

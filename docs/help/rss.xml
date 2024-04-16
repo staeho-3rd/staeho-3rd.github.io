@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Help on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/docs/help/</link>
+    <description>Recent content in Help on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 03 May 2023 22:37:22 +0100</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/docs/help/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Updates</title>
+      <link>https://docs.3rdeyesys.com/docs/help/update/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/help/update/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NEWS</title>
+      <link>https://docs.3rdeyesys.com/docs/help/news/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/help/news/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FAQ</title>
+      <link>https://docs.3rdeyesys.com/docs/help/faq/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/help/faq/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

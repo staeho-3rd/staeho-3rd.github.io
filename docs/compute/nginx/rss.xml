@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NginX 설치, 설정 on 써드아이시스템 기술문서</title>
+    <link>https://docs.3rdeyesys.com/docs/compute/nginx/</link>
+    <description>Recent content in NginX 설치, 설정 on 써드아이시스템 기술문서</description>
+    <generator>Hugo 0.124.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://docs.3rdeyesys.com/docs/compute/nginx/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rocky Linux에서 NginX 설치, 설정하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-rocky-linux/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-rocky-linux/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Rocky Linux 8.6 ⁃ NginX: NginX 1.23.1 ⁃ 테스트 사이트: nginx-test.com&#xD;서버 준비 linkNcloud 콘솔에서 Rocky Linux 8.6 서버를 아래와 같이 준비했습니다.&#xA;패키지 업데이트 link우선 패키지 관련한 보안-버그 수정 사항만 최소한으로 업데이트를 해보겠습니다.&#xA;~# dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
+    </item>
+    <item>
+      <title>Load Balancer에 연동된 NginX에서 Client IP 기록하고 확인하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</guid>
+      <description>개요 linkNcloud (네이버 클라우드)에서 Load Balancer에 연동된 NginX 웹서버를 사용할 때 Load Balancer IP가 아닌 실제 Client IP를 기록하고 확인하는 방법을 알아보겠습니다. 결론부터 이야기 하자면 NginX에서는 Apache와 달리 별도의 모듈 설치나 환경 설정 파일 수정 없이도 자동으로 실제 Client IP와 Load Balancer IP가 동시에 모두 기록됩니다. 어떻게 기록되는지 테스트 결과를 보면서 확인해보겠습니다.&#xA;테스트 환경 link&#xD;⁃ Server-1: CentOS 7.8 ⁃ Server-2: Ubuntu 20.04 ⁃ NginX: NginX 1.23.1 서버 준비 linkNcloud 콘솔에서 CentOS 7.</description>
+    </item>
+    <item>
+      <title>CentOS에서 NginX SSL 인증서 설정하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-centos/</link>
+      <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-centos/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) CentOS 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: CentOS 7.8 ⁃ NginX: NginX 1.21.6 ⁃ SSL 인증서: 로컬 테스트용 인증서&#xD;NginX 설치 linkCentOS에 Nginx 최신 버전을 설치하는 방법은 아래 문서에서 확인하시면 됩니다.&#xA;https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-centos/ 테스트 사이트 접속 link설치한 서버에 IP 주소로 접속해 봅니다.&#xA;테스트용 SSL 인증서 생성 linkSSL 인증서를 저장할 디렉토리를 생성하고 30일 기한의 테스트용 인증서 파일 (nginx-ssl.</description>
+    </item>
+    <item>
+      <title>Ubuntu에서 NginX SSL 인증서 설정하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</link>
+      <pubDate>Tue, 26 Apr 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) Ubuntu 서버에서 NginX 최신 버전에 SSL 인증서를 설정하고, http로 접속 시에 https로 리다이렉트하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Ubuntu 20.04 ⁃ NginX: NginX 1.21.6 ⁃ SSL 인증서: 로컬 테스트용 인증서&#xD;NginX 설치 linkUbuntu에 Nginx 최신 버전을 설치하는 방법은 아래 문서에서 확인하시면 됩니다.&#xA;https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/ 테스트 사이트 접속 link설치한 서버에 IP 주소로 접속해 봅니다.&#xA;테스트용 SSL 인증서 생성 linkSSL 인증서를 저장할 디렉토리를 생성하고 30일 기한의 테스트용 인증서 파일 (nginx-ssl.</description>
+    </item>
+    <item>
+      <title>CentOS에서 NginX 설치, 설정하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-centos/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-centos/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) CentOS 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: CentOS 7.8 ⁃ NginX: NginX 1.21.5&#xD;yum 유틸리티 설치 linkyum으로 NginX를 설치하기 전에 yum-utils를 먼저 설치합니다. 이미 설치 되어 있을 경우에는 아래와 같이 설치되어 있다는 메시지가 출력됩니다.&#xA;~# yum install yum-utils&#xD;Repository 설정 linkNginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내용을 입력합니다.</description>
+    </item>
+    <item>
+      <title>Ubuntu에서 NginX 설치, 설정하는 방법</title>
+      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
+      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) Ubuntu 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Ubuntu 20.04 ⁃ NginX: NginX 1.21.6&#xD;NginX Signing Key 설정 linkNginX Package 설치에 필요한 Signing Key를 설정합니다.&#xA;gnupg2 등 설치 link&#xD;~# sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring&#xD;NginX Signing Key 가져오기 link&#xD;~# curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \&#xD;| sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg &amp;gt;/dev/null&#xD;NginX Signing Key 검증 link위에서 가져온 Signing Key를 아래 명령어로 검증합니다.</description>
+    </item>
+  </channel>
+</rss>
