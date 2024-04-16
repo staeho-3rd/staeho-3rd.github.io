@@ -13,7 +13,7 @@
       <link>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0900</pubDate>
       <guid>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</guid>
-      <description>개요 linkNcloud(네이버 클라우드) Secure Zone이나 VPC 환경의 Private Network처럼 외부와 통신이 단절된 환경에서 리눅스 패키지를 설치해야 할 때 repository 경로를 네이버 클라우드 내부 repository로 바꾸면 문제없이 패키지 설치를 할 수 있습니다. 여기서는 OS별로, Classic/VPC 환경별로 변경하는 방법을 정리해보겠습니다.&#xA;CentOS linkCentOS는 /etc/yum.repos.d/CentOS-Base.repo 를 열어보면 아래 repository주소를 확인할 수 있습니다.&#xA;~# vi /etc/yum.repos.d/CentOS-Base.repo&#xD;### Classic 환경 - CentOS&#xD;네이버 클라우드 Classic 환경 CentOS에서 repository 주소는 미러 사이트가 기본으로 설정 되어 있는 것을 확인할 수 있습니다.</description>
+      <description>개요 linkNcloud(네이버 클라우드) Secure Zone이나 VPC 환경의 Private Network처럼 외부와 통신이 단절된 환경에서 리눅스 패키지를 설치해야 할 때 repository 경로를 네이버 클라우드 내부 repository로 바꾸면 문제없이 패키지 설치를 할 수 있습니다. 여기서는 OS별로, Classic/VPC 환경별로 변경하는 방법을 정리해보겠습니다.&#xA;CentOS linkCentOS는 /etc/yum.repos.d/CentOS-Base.repo 를 열어보면 아래 repository주소를 확인할 수 있습니다.&#xA;vi /etc/yum.repos.d/CentOS-Base.repo&#xD;### Classic 환경 - CentOS&#xD;네이버 클라우드 Classic 환경 CentOS에서 repository 주소는 미러 사이트가 기본으로 설정 되어 있는 것을 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 서버 스펙 변경 제한 사항</title>

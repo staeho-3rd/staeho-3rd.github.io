@@ -2573,9 +2573,9 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="ed9fc3c" class="language-bash ">
-  <code>~# umount /dev/xvdb1
-~# df -hT</code>
+  <pre id="b1efc82" class="language-bash ">
+  <code> umount /dev/xvdb1
+ df -hT</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-18.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2596,8 +2596,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="7a65c08" class="language-bash ">
-  <code>~# yum -y install cloud-utils-growpart</code>
+  <pre id="64b3826" class="language-bash ">
+  <code> yum -y install cloud-utils-growpart</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-10.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2618,8 +2618,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="5e4a916" class="language-bash ">
-  <code>~# apt-get install cloud-guest-utils </code>
+  <pre id="a9a3f19" class="language-bash ">
+  <code> apt-get install cloud-guest-utils </code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-17.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2639,9 +2639,9 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="542e38f" class="language-bash ">
+  <pre id="bf1a4e1" class="language-bash ">
   <code># growpart {장치명} {파티션 번호}
-~# growpart /dev/xvdb 1</code>
+ growpart /dev/xvdb 1</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-11.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2661,9 +2661,9 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="7041e13" class="language-bash ">
-  <code>~# mount /dev/xvdb1 /mnt/data
-~# xfs_growfs /dev/xvdb1</code>
+  <pre id="bc669f2" class="language-bash ">
+  <code> mount /dev/xvdb1 /mnt/data
+ xfs_growfs /dev/xvdb1</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-12.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2683,8 +2683,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="16dc726" class="language-bash ">
-  <code>~# df -hT</code>
+  <pre id="4520aac" class="language-bash ">
+  <code> df -hT</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-13.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2704,10 +2704,10 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="9712949" class="language-bash ">
-  <code>~# e2fsck -f /dev/xvdb1
-~# resize2fs /dev/xvdb1
-~# mount /dev/xvdb1 /mnt/data</code>
+  <pre id="120e6a4" class="language-bash ">
+  <code> e2fsck -f /dev/xvdb1
+ resize2fs /dev/xvdb1
+ mount /dev/xvdb1 /mnt/data</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-14.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2727,8 +2727,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="34cd05e" class="language-bash ">
-  <code>~# df -hT</code>
+  <pre id="1fd8a1e" class="language-bash ">
+  <code> df -hT</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-16.png" width="840" alt="Ncloud Linux 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2816,7 +2816,7 @@
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

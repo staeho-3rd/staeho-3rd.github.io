@@ -2518,8 +2518,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="c1ef225" class="language-bash ">
-  <code>~# parted /dev/xvdb
+  <pre id="903c19a" class="language-bash ">
+  <code> parted /dev/xvdb
 
 # (parted)
 mklabel gpt
@@ -2546,8 +2546,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="1a3b395" class="language-bash ">
-  <code>~# parted /dev/xvdc
+  <pre id="919c0c5" class="language-bash ">
+  <code> parted /dev/xvdc
 
 # (parted)
 mklabel gpt
@@ -2575,8 +2575,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="465409e" class="language-bash ">
-  <code>~# fdisk -l</code>
+  <pre id="c9ac8ad" class="language-bash ">
+  <code> fdisk -l</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_05.jpg" width="600" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2596,10 +2596,10 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="4acf950" class="language-bash ">
-  <code>~# pvcreate /dev/xvdb1
+  <pre id="2d48d14" class="language-bash ">
+  <code> pvcreate /dev/xvdb1
 
-~# pvcreate /dev/xvdc1</code>
+ pvcreate /dev/xvdc1</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_06.jpg" width="500" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2619,8 +2619,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="6568142" class="language-bash ">
-  <code>~# pvdisplay</code>
+  <pre id="4bf2604" class="language-bash ">
+  <code> pvdisplay</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_07.jpg" width="600" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2640,8 +2640,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="19084b6" class="language-bash ">
-  <code>~# vgcreate VG01 /dev/xvdb1 /dev/xvdc1</code>
+  <pre id="4b79e7e" class="language-bash ">
+  <code> vgcreate VG01 /dev/xvdb1 /dev/xvdc1</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_08.jpg" width="500" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2661,8 +2661,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="1ec6316" class="language-bash ">
-  <code>~# vgdisplay</code>
+  <pre id="3e9d3ae" class="language-bash ">
+  <code> vgdisplay</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_09.jpg" width="550" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2682,8 +2682,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="84f7a29" class="language-bash ">
-  <code>~# lvcreate --extents 100%FREE -n LV01 VG01</code>
+  <pre id="5df890e" class="language-bash ">
+  <code> lvcreate --extents 100%FREE -n LV01 VG01</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_10.jpg" width="550" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2703,8 +2703,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="57ec4dc" class="language-bash ">
-  <code>~# lvdisplay</code>
+  <pre id="33a8441" class="language-bash ">
+  <code> lvdisplay</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_11.jpg" width="550" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2725,9 +2725,9 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="e7c5d4a" class="language-bash ">
+  <pre id="23c8324" class="language-bash ">
   <code>
-~# mkfs.ext4 /dev/VG01/LV01
+ mkfs.ext4 /dev/VG01/LV01
 
 - CentOS 5.x: mkfs.ext3 /dev/VG01/LV01
 - CentOS 6.x: mkfs.ext4 /dev/VG01/LV01
@@ -2752,8 +2752,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="f294b9e" class="language-bash ">
-  <code>~# fdisk -l</code>
+  <pre id="a316a37" class="language-bash ">
+  <code> fdisk -l</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_13.jpg" width="600" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2774,10 +2774,10 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="3daf322" class="language-bash ">
+  <pre id="898fbc2" class="language-bash ">
   <code>
-~# mkdir /mnt/data
-~# mount /dev/mapper/VG01-LV01 /mnt/data</code>
+ mkdir /mnt/data
+ mount /dev/mapper/VG01-LV01 /mnt/data</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_14.jpg" width="600" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2797,8 +2797,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="5465232" class="language-bash ">
-  <code>~# blkid |grep /dev/mapper/VG01-LV01</code>
+  <pre id="5037e73" class="language-bash ">
+  <code> blkid |grep /dev/mapper/VG01-LV01</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_15.jpg" width="650" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2817,8 +2817,8 @@ quit</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="5099ca5" class="language-bash ">
-  <code>~# vi /etc/fstab</code>
+  <pre id="ed4fa2c" class="language-bash ">
+  <code> vi /etc/fstab</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_storage_lvm_create_16.jpg" width="770" alt="Ncloud 리눅스서버 스토리지(디스크) LVM 구성하기" class="docimage">
@@ -2953,7 +2953,7 @@ quit</code>
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

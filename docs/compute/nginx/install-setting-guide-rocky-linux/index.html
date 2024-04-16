@@ -2563,8 +2563,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="03457ee" class="language-bash ">
-  <code>~# dnf -y upgrade-minimal</code>
+  <pre id="afd4b43" class="language-bash ">
+  <code> dnf -y upgrade-minimal</code>
   </pre>
   </div>
 <div class="alert alert-info d-flex" role="alert">
@@ -2595,8 +2595,8 @@ Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가�
   
 
   <div class="prism-codeblock ">
-  <pre id="7e91100" class="language-bash ">
-  <code>~# vi /etc/yum.repos.d/Rocky-Extras.repo</code>
+  <pre id="529447c" class="language-bash ">
+  <code> vi /etc/yum.repos.d/Rocky-Extras.repo</code>
   </pre>
   </div>
 
@@ -2644,8 +2644,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="3ccad9e" class="language-bash ">
-  <code>~# dnf -y install epel-release</code>
+  <pre id="1f5df9c" class="language-bash ">
+  <code> dnf -y install epel-release</code>
   </pre>
   </div>
 <img src="/images/compute/lemp/ncloud-server-nginx-install-setting-guide-rocky-linux-03.png" width="840" alt="Ncloud Rocky Linux 서버에 NginX를 Package로 치하고 기본 설정을 하는 방법" class="docimage">
@@ -2667,8 +2667,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="354f7c0" class="language-bash ">
-  <code>~# dnf module list nginx</code>
+  <pre id="5fc6961" class="language-bash ">
+  <code> dnf module list nginx</code>
   </pre>
   </div>
 <ul>
@@ -2695,8 +2695,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="930222b" class="language-bash ">
-  <code>~# dnf module reset nginx</code>
+  <pre id="c7043fe" class="language-bash ">
+  <code> dnf module reset nginx</code>
   </pre>
   </div>
 <ul>
@@ -2723,8 +2723,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="503b4dd" class="language-bash ">
-  <code>~# dnf module enable nginx:mainline</code>
+  <pre id="f25ac2c" class="language-bash ">
+  <code> dnf module enable nginx:mainline</code>
   </pre>
   </div>
 
@@ -2752,9 +2752,9 @@ stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</stron
   
 
   <div class="prism-codeblock ">
-  <pre id="7d07157" class="language-bash ">
-  <code>~# dnf -y install nginx
-~# nginx -v</code>
+  <pre id="1d479bc" class="language-bash ">
+  <code> dnf -y install nginx
+ nginx -v</code>
   </pre>
   </div>
 <ul>
@@ -2778,18 +2778,18 @@ stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</stron
   
 
   <div class="prism-codeblock ">
-  <pre id="90d0dd7" class="language-bash ">
+  <pre id="d38e03c" class="language-bash ">
   <code># 테스트 사이트 홈 디렉토리 생성
-~# mkdir -p /ncloud/data/www/nginx-test/
+ mkdir -p /ncloud/data/www/nginx-test/
 
 # 해당 디렉토리에 nginx에 권한 부여
-~# chown -R nginx:nginx /ncloud/data/www/nginx-test
+ chown -R nginx:nginx /ncloud/data/www/nginx-test
 
 # nginx 샘플 페이지를 사이트 디렉토리로 복사
-~# cp /usr/share/nginx/html/*.* /ncloud/data/www/nginx-test/
+ cp /usr/share/nginx/html/*.* /ncloud/data/www/nginx-test/
 
 # 복사된 파일들 확인
-~# ls -al /ncloud/data/www/nginx-test/</code>
+ ls -al /ncloud/data/www/nginx-test/</code>
   </pre>
   </div>
 <img src="/images/compute/lemp/ncloud-server-nginx-install-setting-guide-rocky-linux-08.png" width="840" alt="Ncloud Rocky Linux 서버에 NginX를 Package로 치하고 기본 설정을 하는 방법" class="docimage">
@@ -2809,8 +2809,8 @@ stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</stron
   
 
   <div class="prism-codeblock ">
-  <pre id="4c67bd9" class="language-bash ">
-  <code>~# tree -P *conf* /etc/nginx/</code>
+  <pre id="1816e82" class="language-bash ">
+  <code> tree -P *conf* /etc/nginx/</code>
   </pre>
   </div>
 <img src="/images/compute/lemp/ncloud-server-nginx-install-setting-guide-rocky-linux-16.png" width="840" alt="Ncloud Rocky Linux 서버에 NginX를 Package로 치하고 기본 설정을 하는 방법" class="docimage">
@@ -2833,8 +2833,8 @@ stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</stron
   
 
   <div class="prism-codeblock ">
-  <pre id="cfc6571" class="language-bash ">
-  <code>~# vi /etc/nginx/nginx.conf</code>
+  <pre id="5f7c76a" class="language-bash ">
+  <code> vi /etc/nginx/nginx.conf</code>
   </pre>
   </div>
 <img src="/images/compute/lemp/ncloud-server-nginx-install-setting-guide-rocky-linux-09.png" width="840" alt="Ncloud Rocky Linux 서버에 NginX를 Package로 치하고 기본 설정을 하는 방법" class="docimage">
@@ -2856,8 +2856,8 @@ stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</stron
   
 
   <div class="prism-codeblock ">
-  <pre id="2c6cb7c" class="language-bash ">
-  <code>~# vi /etc/nginx/conf.d/nginx-test.conf</code>
+  <pre id="77f0f83" class="language-bash ">
+  <code> vi /etc/nginx/conf.d/nginx-test.conf</code>
   </pre>
   </div>
 
@@ -2922,10 +2922,10 @@ stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</stron
   
 
   <div class="prism-codeblock ">
-  <pre id="54e534d" class="language-bash ">
-  <code>~# systemctl enable nginx
-~# systemctl start nginx
-~# systemctl status nginx</code>
+  <pre id="ab234c0" class="language-bash ">
+  <code> systemctl enable nginx
+ systemctl start nginx
+ systemctl status nginx</code>
   </pre>
   </div>
 <img src="/images/compute/lemp/ncloud-server-nginx-install-setting-guide-rocky-linux-12.png" width="840" alt="Ncloud Rocky Linux 서버에 NginX를 Package로 치하고 기본 설정을 하는 방법" class="docimage">
@@ -3037,7 +3037,7 @@ stable 버전을 사용하는 주된 경우는 <strong>third-party 모듈</stron
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

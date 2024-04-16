@@ -2613,8 +2613,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="57ca0e8" class="language-bash ">
-  <code>~# vim /etc/httpd/conf/httpd.conf</code>
+  <pre id="a438001" class="language-bash ">
+  <code> vim /etc/httpd/conf/httpd.conf</code>
   </pre>
   </div>
 <p>httpd.conf 파일 [<strong>log_config_module</strong>] 설정에 있는 LogFormat 항목에서 <strong>%h</strong> 를 <strong>%{X-Forwarded-For}i</strong> 로 수정합니다.</p>
@@ -2674,8 +2674,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="28c8da2" class="language-bash ">
-  <code>~# systemctl restart httpd</code>
+  <pre id="ee7c3de" class="language-bash ">
+  <code> systemctl restart httpd</code>
   </pre>
   </div>
 <h2 id="rocky-linux-설정">Rocky Linux 설정 <a href="#rocky-linux-%ec%84%a4%ec%a0%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>Rocky Linux는 CentOS와 마찬가지로 <strong>/etc/httpd/conf/httpd.conf</strong> 파일에 있는 로그 관련 설정을 변경해주면 완료됩니다.</p>
@@ -2697,8 +2697,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="dafabee" class="language-bash ">
-  <code>~# a2enmod remoteip</code>
+  <pre id="5cd3719" class="language-bash ">
+  <code> a2enmod remoteip</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-server-x-forwarded-for-client-ip-logging-guide-11.png" width="840" alt="Ncloud에서 X-Forwarded-For를 이용해 Proxy, Load Balancer 환경에서 Client IP를 Apache access_log에 기록하는 방법" class="docimage">
@@ -2718,8 +2718,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="65a8bf0" class="language-bash ">
-  <code>~# vim /etc/apache2/mods-enabled/remoteip.load</code>
+  <pre id="b7acc5c" class="language-bash ">
+  <code> vim /etc/apache2/mods-enabled/remoteip.load</code>
   </pre>
   </div>
 <ul>
@@ -2784,8 +2784,8 @@ RemoteIPHeader X-FORWARDED-FOR</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="d437780" class="language-bash ">
-  <code>~# vim /etc/apache2/apache2.conf</code>
+  <pre id="cf3ffad" class="language-bash ">
+  <code> vim /etc/apache2/apache2.conf</code>
   </pre>
   </div>
 <p>apache2.conf LogFormat 부분에서 <strong>%h</strong> 를 <strong>%a</strong> 로 변경합니다.</p>
@@ -2850,8 +2850,8 @@ RemoteIPHeader X-FORWARDED-FOR</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="73f5ac0" class="language-bash ">
-  <code>~# systemctl restart apache2</code>
+  <pre id="b4ba279" class="language-bash ">
+  <code> systemctl restart apache2</code>
   </pre>
   </div>
 <h2 id="설정-후-테스트">설정 후 테스트 <a href="#%ec%84%a4%ec%a0%95-%ed%9b%84-%ed%85%8c%ec%8a%a4%ed%8a%b8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>위와 같이  CentOS, Ubuntu, Rocky Linux 3대 서버에서 설정을 모두 마친 후에 로드 밸런서 URL로 접속합니다.<br>
@@ -2957,7 +2957,7 @@ RemoteIPHeader X-FORWARDED-FOR</code>
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

@@ -2622,14 +2622,14 @@ VPC는 고객의 계정마다 <strong>최대 3개</strong>를 생성할 수 있�
 		
 
 		<a class="nav-link  active"
-		   id="daebcfTab" data-bs-toggle="tab" data-bs-target="#daebcf"
-		   type="button" role="tab" aria-controls="daebcf" aria-selected="true">최신 서버 이미지</a>
+		   id="fdaebcTab" data-bs-toggle="tab" data-bs-target="#fdaebc"
+		   type="button" role="tab" aria-controls="fdaebc" aria-selected="true">최신 서버 이미지</a>
 
 		
 
 		<a class="nav-link "
-		   id="fcbedaTab" data-bs-toggle="tab" data-bs-target="#fcbeda"
-		   type="button" role="tab" aria-controls="fcbeda" aria-selected="true">NCP 서버 이미지</a>
+		   id="decfabTab" data-bs-toggle="tab" data-bs-target="#decfab"
+		   type="button" role="tab" aria-controls="decfab" aria-selected="true">NCP 서버 이미지</a>
 
 		
 
@@ -2645,7 +2645,7 @@ VPC는 고객의 계정마다 <strong>최대 3개</strong>를 생성할 수 있�
 
 
 
-<div class="tab-pane fade show active" id="daebcf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fdaebc" role="tabpanel" aria-labelledby="nav-1">
 
 	<img src="/images/compute/ncloud-compute-vpc-server-create-guide-04.png" width="845" alt="Ncloud(네이버 클라우드) VPC 환경에서 서버를 생성하는 방법" class="docimage">
 
@@ -2657,7 +2657,7 @@ VPC는 고객의 계정마다 <strong>최대 3개</strong>를 생성할 수 있�
 
 
 
-<div class="tab-pane fade" id="fcbeda" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="decfab" role="tabpanel" aria-labelledby="nav-1">
 
 	<img src="/images/compute/ncloud-compute-vpc-server-create-guide-23.png" width="845" alt="Ncloud(네이버 클라우드) VPC 환경에서 서버를 생성하는 방법" class="docimage">
 
@@ -2700,14 +2700,14 @@ VPC는 고객의 계정마다 <strong>최대 3개</strong>를 생성할 수 있�
 		
 
 		<a class="nav-link  active"
-		   id="debcfaTab" data-bs-toggle="tab" data-bs-target="#debcfa"
-		   type="button" role="tab" aria-controls="debcfa" aria-selected="true">사설 IP 자동 할당</a>
+		   id="dfacebTab" data-bs-toggle="tab" data-bs-target="#dfaceb"
+		   type="button" role="tab" aria-controls="dfaceb" aria-selected="true">사설 IP 자동 할당</a>
 
 		
 
 		<a class="nav-link "
-		   id="deacbfTab" data-bs-toggle="tab" data-bs-target="#deacbf"
-		   type="button" role="tab" aria-controls="deacbf" aria-selected="true">사설 IP 수동 할당</a>
+		   id="abfdceTab" data-bs-toggle="tab" data-bs-target="#abfdce"
+		   type="button" role="tab" aria-controls="abfdce" aria-selected="true">사설 IP 수동 할당</a>
 
 		
 
@@ -2723,7 +2723,7 @@ VPC는 고객의 계정마다 <strong>최대 3개</strong>를 생성할 수 있�
 
 
 
-<div class="tab-pane fade show active" id="debcfa" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dfaceb" role="tabpanel" aria-labelledby="nav-1">
 
 	<br />
 [**Network Interface**]에 할당되는 사설 IP는 아래와 같이 IP 입력 칸에 아무것도 입력하지 않으면 자동할당 됩니다.
@@ -2738,7 +2738,7 @@ VPC는 고객의 계정마다 <strong>최대 3개</strong>를 생성할 수 있�
 
 
 
-<div class="tab-pane fade" id="deacbf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="abfdce" role="tabpanel" aria-labelledby="nav-1">
 
 	<br />
 IP 입력 칸에 선택된 [**Subnet**] 범위 내의 원하는 IP를 입력해서 수동으로 할당할 수도 있습니다.
@@ -2770,7 +2770,12 @@ Public Subnet을 선택했고 서버에 공인 IP가 필요할 경우에는 [<st
 <ul>
 <li>[<strong>물리 배치 그룹</strong>]을 사용하게 되면 배치 그룹명과 배치 종류를 선택할 수 있습니다.</li>
 </ul>
-<p>{% include callout-v2.html type=&ldquo;info&rdquo; level=&ldquo;1&rdquo; content=&quot;[<strong>Anti-Affinity (분산 배치)</strong>]의 경우 같은 배치 그룹에 소속된 서버들은 가급적 서로 다른 클러스터에 배치됩니다. 다만 그 결과가 엄격히 보장되지 않는 Best effort 방식입니다.&quot; %}</p>
+
+
+
+<div markdown="span" class="bs-callout-v2 bs-callout-v2-primary bs-callout-v2-level-1">
+    [<strong>Anti-Affinity (분산 배치)</strong>]의 경우 같은 배치 그룹에 소속된 서버들은 가급적 서로 다른 클러스터에 배치됩니다. 다만 그 결과가 엄격히 보장되지 않는 Best effort 방식입니다.
+</div>  
 <img src="/images/compute/ncloud-compute-vpc-server-create-guide-15.png" width="845" alt="Ncloud(네이버 클라우드) VPC 환경에서 서버를 생성하는 방법" class="docimage">
 <ul>
 <li>[<strong>반납 보호</strong>]<br>
@@ -2786,7 +2791,15 @@ Public Subnet을 선택했고 서버에 공인 IP가 필요할 경우에는 [<st
 <h2 id="스토리지-설정">스토리지 설정 <a href="#%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%84%a4%ec%a0%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>하이퍼바이저 [<strong>XEN</strong>] 타입의 서버는 서버 생성이 완료된 이후에 추가 스토리지를 설정할 수 있으므로 이번 단계는 그냥 넘어가겠습니다.</p>
 <img src="/images/compute/ncloud-compute-vpc-server-create-guide-19.png" width="845" alt="Ncloud(네이버 클라우드) VPC 환경에서 서버를 생성하는 방법" class="docimage">
 <h2 id="인증키-설정">인증키 설정 <a href="#%ec%9d%b8%ec%a6%9d%ed%82%a4-%ec%84%a4%ec%a0%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>인증키 이름을 입력하고, [<strong>인증키 생성 및 저장</strong>] 버튼을 클릭해서 인증키를 로컬 PC에 다운로드 받아서 안전한 곳에 보관해야 합니다. 기존에 사용하고 있던 인증키가 있을 경우에는 [<strong>보유하고 있는 인증키 이용</strong>]을 선택하면 됩니다.</p>
-<p>{% include warning.html title=&ldquo;인증키&rdquo; content=&ldquo;인증키는 해당 서버의 <strong>관리자 비밀번호</strong>를 확인하는데 사용되므로 <strong>안전한 곳에 잘 보관</strong>해야 합니다.&rdquo; %}</p>
+<div class="alert alert-danger d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  <span class="material-icons size-20 me-2">
+  report
+  </span></div>
+  <div class="w-100">
+<p>인증키: 인증키는 해당 서버의 <strong>관리자 비밀번호</strong>를 확인하는데 사용되므로 <strong>안전한 곳에 잘 보관</strong>해야 합니다.</p>
+  </div>
+  </div>
 <img src="/images/compute/ncloud-compute-vpc-server-create-guide-20.png" width="845" alt="Ncloud(네이버 클라우드) VPC 환경에서 서버를 생성하는 방법" class="docimage">
 <ul>
 <li>아래와 같이 로컬 PC에 인증키 (PEM) 파일을 저장합니다.</li>
@@ -3005,7 +3018,7 @@ Public Subnet을 선택했고 서버에 공인 IP가 필요할 경우에는 [<st
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

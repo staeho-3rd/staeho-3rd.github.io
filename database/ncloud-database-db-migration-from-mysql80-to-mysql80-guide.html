@@ -2036,6 +2036,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
   
+    
+      <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
+			기술문서 사이트가 리뉴얼 되었습니다. <a href="/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/" id="link_to_v2_content" style="float: right;"><button type="button" class="btn btn-primary">새로운 페이지로 이동 &#8663;</button></a>
+			</div>
+    
+  
+  
 
   <h2 id="개요">개요</h2>
 <p>Ncloud(네이버 클라우드)의 Database Migration Service는 다양한 환경의 데이터베이스를 클라우드 환경으로 손쉽게 마이그레이션하도록 도와주는 서비스로 여기서는 <strong>Public</strong> 환경의 MySQL 8.0을 <strong>Private</strong> 환경의 [<strong>Cloud DB for MySQL 8.0</strong>]으로 마이그레이션하는 방법에 대해 정리해보겠습니다.</p>
@@ -2121,7 +2128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>Target DB: Cloud DB for MySQL 8.0.32</li>
 </ul>
 
-<ul class="tab" data-tab="e4fbcab7-434c-4db7-bd8d-b476e1e4d4b4" data-name="db-verstion">
+<ul class="tab" data-tab="431ff831-aab1-426f-92dc-d1c32b1de9f2" data-name="db-verstion">
   
       <li class="active">
           <a href="#">Source DB </a>
@@ -2132,7 +2139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
   
 </ul>
-<ul class="tab-content" id="e4fbcab7-434c-4db7-bd8d-b476e1e4d4b4" data-name="db-verstion">
+<ul class="tab-content" id="431ff831-aab1-426f-92dc-d1c32b1de9f2" data-name="db-verstion">
   
       <li class="active">
 <p>⁃ <strong>Source DB</strong></p>
@@ -2161,7 +2168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3 id="source-db-정보-확인">Source DB 정보 확인</h3>
 <p>테스트에 사용할 Source DB의 버전, Database, DB User 등의 정보를 확인해보겠습니다.</p>
 
-<ul class="tab" data-tab="f44413d1-2e13-4fb5-9a84-cfcb7a45ea77" data-name="sourcedb-setting">
+<ul class="tab" data-tab="3b2b9c38-54a6-420b-874a-4790112cc028" data-name="sourcedb-setting">
   
       <li class="active">
           <a href="#">MariaDB 버전 </a>
@@ -2188,7 +2195,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
   
 </ul>
-<ul class="tab-content" id="f44413d1-2e13-4fb5-9a84-cfcb7a45ea77" data-name="sourcedb-setting">
+<ul class="tab-content" id="3b2b9c38-54a6-420b-874a-4790112cc028" data-name="sourcedb-setting">
   
       <li class="active">
 <p>⁃ <strong>MariaDB 버전</strong><br />
@@ -2284,7 +2291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>MySQL <strong>8.0.20 이상</strong>은 8.0.19 이하 버전과 다르게 ROUTINE Dump를 위한 <strong>SHOW_ROUTINE</strong> 권한이 필수이니 버전에 맞게 쿼리를 사용해야 합니다.</li>
 </ul>
 
-<ul class="tab" data-tab="165713ad-8647-4876-a7aa-08418dd7bce5" data-name="sourcedb-mig-user">
+<ul class="tab" data-tab="af256f14-7c35-4659-b447-3acb0b2abb48" data-name="sourcedb-mig-user">
   
       <li class="active">
           <a href="#">8.0.20 이상 </a>
@@ -2295,7 +2302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
   
 </ul>
-<ul class="tab-content" id="165713ad-8647-4876-a7aa-08418dd7bce5" data-name="sourcedb-mig-user">
+<ul class="tab-content" id="af256f14-7c35-4659-b447-3acb0b2abb48" data-name="sourcedb-mig-user">
   
       <li class="active">
 <p>⁃ 위쪽에서 Source DB에 테스용으로 [<strong>testdb1</strong>], [<strong>testdb2</strong>] 이렇게 2개를 데이터베이스가 존재하므로 두 개의 데이터베이스 각각에 대해 권한을 부여했습니다.</p>
@@ -2623,7 +2630,7 @@ Source DB에 이 외의 설정으로 되어 있다면 Character Set을 변경 �
 <h4 id="진행-상태-확인-메일">진행 상태 확인 메일</h4>
 <p>진행 상태는 콘솔에서도 확인할 수 있지만, 작업이 오래 걸리는 경우도 대비해서 각 단계가 완료될 때마다 안내 메일이 발송됩니다.</p>
 
-<ul class="tab" data-tab="0cfb8975-3aa2-4183-b342-05479c8fb841" data-name="migration-status">
+<ul class="tab" data-tab="f22f85b4-f9d2-4699-8796-ddc02be2fd3a" data-name="migration-status">
   
       <li class="active">
           <a href="#">Export Completed </a>
@@ -2638,7 +2645,7 @@ Source DB에 이 외의 설정으로 되어 있다면 Character Set을 변경 �
       </li>
   
 </ul>
-<ul class="tab-content" id="0cfb8975-3aa2-4183-b342-05479c8fb841" data-name="migration-status">
+<ul class="tab-content" id="f22f85b4-f9d2-4699-8796-ddc02be2fd3a" data-name="migration-status">
   
       <li class="active">
 <p>⁃ <strong>Export Completed</strong></p>
@@ -2905,7 +2912,7 @@ Source DB에 이 외의 설정으로 되어 있다면 Character Set을 변경 �
         </div>
         &copy;2024 Copyright 3RDEYESYSTEM Corp. All rights reserved. <br />
         Built with <a href="https://jekyllrb-ko.github.io/" target="_blank" class="no_icon">Jekyll</a> & <a href="https://idratherbewriting.com/documentation-theme-jekyll/" target="_blank" class="no_icon">Documentation Theme</a> <br />
-        <span>Page last updated:</span> 2023-10-26<br/> Site last generated: 2024-04-15 <br />        
+        <span>Page last updated:</span> 2023-10-26<br/> Site last generated: 2024-04-16 <br />        
         <p><img src="/images/3rdeyesys_logo_white.png" alt="Company logo" style="filter: brightness(0.1);"/></p>
         <p><img src="/images/ncloud/ncloud-premium-partner-logo-gray-160px.png" alt="ncloud premium partner logo" /></p>
       </div>

@@ -2526,14 +2526,14 @@
 		
 
 		<a class="nav-link  active"
-		   id="cbfaedTab" data-bs-toggle="tab" data-bs-target="#cbfaed"
-		   type="button" role="tab" aria-controls="cbfaed" aria-selected="true">XEN 하이퍼바이저</a>
+		   id="dfeabcTab" data-bs-toggle="tab" data-bs-target="#dfeabc"
+		   type="button" role="tab" aria-controls="dfeabc" aria-selected="true">XEN 하이퍼바이저</a>
 
 		
 
 		<a class="nav-link "
-		   id="ecafbdTab" data-bs-toggle="tab" data-bs-target="#ecafbd"
-		   type="button" role="tab" aria-controls="ecafbd" aria-selected="true">KVM 하이퍼바이저</a>
+		   id="cdfbeaTab" data-bs-toggle="tab" data-bs-target="#cdfbea"
+		   type="button" role="tab" aria-controls="cdfbea" aria-selected="true">KVM 하이퍼바이저</a>
 
 		
 
@@ -2549,7 +2549,7 @@
 
 
 
-<div class="tab-pane fade show active" id="cbfaed" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dfeabc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -2566,12 +2566,12 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="78811fe" class="language-bash ">
-  <code>~# fdisk -l
+  <pre id="699cea8" class="language-bash ">
+  <code> fdisk -l
 
-~# fdisk /dev/xvdb
+ fdisk /dev/xvdb
 
-~# mkfs.xfs /dev/xvdb1
+ mkfs.xfs /dev/xvdb1
 
   - CentOS 5.x: mkfs.ext3 /dev/xvdb1
   - CentOS 6.x: mkfs.ext4 /dev/xvdb1
@@ -2579,13 +2579,13 @@
   - Rocky Linux: mkfs.xfs /dev/xvdb1
   - Ubuntu : mkfs.ext4 /dev/xvdb1
 
-~# mkdir /mnt/data
+ mkdir /mnt/data
 
-~# mount /dev/xvdb1 /mnt/data
+ mount /dev/xvdb1 /mnt/data
 
-~# df -hT
+ df -hT
 
-~# vim /etc/fstab
+ vim /etc/fstab
 ### =============================
 UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
 
@@ -2603,7 +2603,7 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
 
 
 
-<div class="tab-pane fade" id="ecafbd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cdfbea" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -2620,12 +2620,12 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="d0f6880" class="language-bash ">
-  <code>~# fdisk -l
+  <pre id="9fabd84" class="language-bash ">
+  <code> fdisk -l
 
-~# fdisk /dev/vdb
+ fdisk /dev/vdb
 
-~# mkfs.xfs /dev/vdb1
+ mkfs.xfs /dev/vdb1
 
   - CentOS 5.x: mkfs.ext3 /dev/vdb1
   - CentOS 6.x: mkfs.ext4 /dev/vdb1
@@ -2633,13 +2633,13 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   - Rocky Linux: mkfs.xfs /dev/vdb1
   - Ubuntu : mkfs.ext4 /dev/vdb1
 
-~# mkdir /mnt/data
+ mkdir /mnt/data
 
-~# mount /dev/vdb1 /mnt/data
+ mount /dev/vdb1 /mnt/data
 
-~# df -hT
+ df -hT
 
-~# vim /etc/fstab
+ vim /etc/fstab
 ### =============================
 UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
 
@@ -2681,8 +2681,8 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="cf678bc" class="language-bash ">
-  <code>~# fdisk -l</code>
+  <pre id="8982339" class="language-bash ">
+  <code> fdisk -l</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-add-detail-process-05.png" width="840" alt="Ncloud(네이버 클라우드) Linux 서버 스토리지(디스크) 추가 상세 가이드" class="docimage">
@@ -2703,8 +2703,8 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="81ae048" class="language-bash ">
-  <code>~# fdisk /dev/xvdb</code>
+  <pre id="a052301" class="language-bash ">
+  <code> fdisk /dev/xvdb</code>
   </pre>
   </div>
 <h3 id="파티션-생성">파티션 생성 <a href="#%ed%8c%8c%ed%8b%b0%ec%85%98-%ec%83%9d%ec%84%b1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>파티션을 생성할 때는 여러 단계의 옵션이 있습니다. 일반적으로는 아래와 같은 단계로 진행하면 됩니다.</p>
@@ -2745,8 +2745,8 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="d8fbd21" class="language-bash ">
-  <code>~# mkfs.xfs /dev/xvdb1
+  <pre id="ac072ab" class="language-bash ">
+  <code> mkfs.xfs /dev/xvdb1
 
 - CentOS 5.x: mkfs.ext3 /dev/xvdb1
 - CentOS 6.x: mkfs.ext4 /dev/xvdb1
@@ -2773,9 +2773,9 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="7521d8e" class="language-bash ">
-  <code>~# mkdir /mnt/data
-~# mount /dev/xvdb1 /mnt/data</code>
+  <pre id="6d84a51" class="language-bash ">
+  <code> mkdir /mnt/data
+ mount /dev/xvdb1 /mnt/data</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-add-detail-process-12.png" width="840" alt="Ncloud(네이버 클라우드) Linux 서버 스토리지(디스크) 추가 상세 가이드" class="docimage">
@@ -2797,8 +2797,8 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="ac80b23" class="language-bash ">
-  <code>~# df -hT</code>
+  <pre id="d21c7a4" class="language-bash ">
+  <code> df -hT</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-add-detail-process-13.png" width="840" alt="Ncloud(네이버 클라우드) Linux 서버 스토리지(디스크) 추가 상세 가이드" class="docimage">
@@ -2821,8 +2821,8 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="fbacdc3" class="language-bash ">
-  <code>~# blkid /dev/xvdb1</code>
+  <pre id="edcc137" class="language-bash ">
+  <code> blkid /dev/xvdb1</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-add-detail-process-14.png" width="840" alt="Ncloud(네이버 클라우드) Linux 서버 스토리지(디스크) 추가 상세 가이드" class="docimage">
@@ -2843,8 +2843,8 @@ UUID=1fd5s61f5d-*** 중략 ***-f84ew13 /mnt/data xfs defaults 1 2
   
 
   <div class="prism-codeblock ">
-  <pre id="45a15d2" class="language-bash ">
-  <code>~# vi /etc/fstab</code>
+  <pre id="43bc2fe" class="language-bash ">
+  <code> vi /etc/fstab</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-storage-add-detail-process-15.png" width="845" alt="Ncloud(네이버 클라우드) Linux 서버 스토리지(디스크) 추가 상세 가이드" class="docimage">
@@ -3016,7 +3016,7 @@ UUID=29f58417-*** 중략 ***38d0f /mnt/data xfs defaults 1 2
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

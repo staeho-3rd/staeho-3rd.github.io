@@ -2573,7 +2573,15 @@ yum -y install awslogs</p>
 </li>
 </ol>
 <h2 id="오류-대처-법">오류 대처 법 <a href="#%ec%98%a4%eb%a5%98-%eb%8c%80%ec%b2%98-%eb%b2%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>로그 수집이 되지 않고 awslogs.log파일에 아래와 같이 로그 가 찍히는 경우 처리 방안</p>
-<p>{% include warning.html title=&ldquo;reason&rdquo; content=&ldquo;timestamp is more than 2 hours in future.&rdquo; %}</p>
+<div class="alert alert-danger d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  <span class="material-icons size-20 me-2">
+  report
+  </span></div>
+  <div class="w-100">
+<p>reason: timestamp is more than 2 hours in future.</p>
+  </div>
+  </div>
 <ol>
 <li>
 <p>/var/lib/awslogs/agent-state를 삭제</p>
@@ -2686,7 +2694,7 @@ yum -y install awslogs</p>
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

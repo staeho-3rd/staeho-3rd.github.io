@@ -2516,10 +2516,15 @@
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-windows-01.png" width="845" alt="Ncloud Windows 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
 <p>추가 블록 스토리지 할당 방법에 대한 가이드는 아래의 링크를 참조 바랍니다.</p>
 <ul>
-<li><a href="/compute/ncloud_compute_server_windows_storage_add_detail_process.html" target="_blank" style="word-break:break-all">Windows 스토리지(디스크) 추가 상세 가이드</a></li>
+<li><a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/docs/compute/server-storage/storage-add-detail-process-guide-windows/'><p>서버 스토리지(디스크) 설정</p><strong>Ncloud Windows 서버 스토리지(디스크) 추가 상세 가이드</strong><br>Ncloud (네이버 클라우드) Windows 서버 스토리지(디스크) 추가 상세 가이드입니다</a>" data-bs-toggle="tooltip" href="/docs/compute/server-storage/storage-add-detail-process-guide-windows/">Windows 스토리지(디스크) 추가 상세 가이드</a></li>
 </ul>
 <h2 id="스토리지-스냅샷-백업">스토리지 스냅샷 백업 <a href="#%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%8a%a4%eb%83%85%ec%83%b7-%eb%b0%b1%ec%97%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>아래와 같이 [Console] - [Server] - [Storage]에서 크기를 변경할 스토리지를 선택하고 [스토리지 설정] - [스냅샷 생성] 메뉴를 선택합니다.</p>
-<p>{% include callout-v2.html type=&ldquo;warning&rdquo; level=&ldquo;3&rdquo; content=&ldquo;블록스토리지의 크기를 변경하는 과정에 만에 하나 있을지 모르는 상황에 대비해서 해당 블록스토리지의 스냅샷을 생성해서 백업해 두는 것을 적극 권장합니다.&rdquo; %}</p>
+
+
+
+<div markdown="span" class="bs-callout-v2 bs-callout-v2-warning bs-callout-v2-level-3">
+    블록스토리지의 크기를 변경하는 과정에 만에 하나 있을지 모르는 상황에 대비해서 해당 블록스토리지의 스냅샷을 생성해서 백업해 두는 것을 적극 권장합니다.
+</div>  
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-windows-02.png" width="845" alt="Ncloud 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
 <p>스냅샷 이름을 입력하고 스냅샷을 생성합니다.</p>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-03.png" width="845" alt="Ncloud 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2530,7 +2535,12 @@
 <h3 id="서버-정지">서버 정지 <a href="#%ec%84%9c%eb%b2%84-%ec%a0%95%ec%a7%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>먼저 스토리지가 장착된 서버를 정지하겠습니다.</p>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-windows-05.png" width="845" alt="Ncloud 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
 <h3 id="크기-변경">크기 변경 <a href="#%ed%81%ac%ea%b8%b0-%eb%b3%80%ea%b2%bd" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>서버를 정지한 후 크기 변경 메뉴를 선택하면 아래와 같이 변경할 크기를 입력할 수 있습니다.  최대 2,000GB까지 가능합니다.</p>
-<p>{% include callout-v2.html type=&ldquo;info&rdquo; level=&ldquo;2&rdquo; content=&ldquo;스토리지 크기는 확대만 가능하며, 축소 기능은 제공하지 않습니다.&rdquo; %}</p>
+
+
+
+<div markdown="span" class="bs-callout-v2 bs-callout-v2-primary bs-callout-v2-level-2">
+    스토리지 크기는 확대만 가능하며, 축소 기능은 제공하지 않습니다.
+</div>  
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-07.png" width="680" alt="Ncloud 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
 <p>변경할 크기를 입력하고 [확인] 버튼을 클릭하면 크기 변경 작업이 진행됩니다. 이후에 서버에서 해당 스토리지의 파티션 확장 등의 작업을 추가로 진행해야 정상적으로 사용할 수 있습니다.</p>
 <img src="/images/compute/ncloud-compute-server-storage-extend-guide-linux-09.png" width="680" alt="Ncloud 서버 디스크 (블록 스토리지) 크기를 변경하는 방법" class="docimage">
@@ -2636,7 +2646,7 @@
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

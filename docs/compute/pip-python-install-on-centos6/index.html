@@ -2585,9 +2585,17 @@ python3 get-pip.py</code>
   </pre>
   </div>
 <p>이후에 aws cli설치나 Object Storage 백업과 관련된 내용은
-<a href="/database/ncloud_database_mysql_object_storage_auto_backup_centos.html" target="_blank" style="word-break:break-all;">CentOS에서 mysql DB를 Object Storage로 자동 백업하기</a> 문서를 참고하시기 바랍니다.</p>
+<a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/'><p>DB BACKUP</p><strong>MySQL DB를 Object Storage로 자동 백업하기 | Ubuntu</strong><br>Ncloud(네이버 클라우드) Ubuntu에서 MySQL DB를 Object Storage로 자동 백업하는 방법입니다</a>" data-bs-toggle="tooltip" href="/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/">MySQL DB를 Object Storage로 자동 백업하기 | Ubuntu</a> 문서를 참고하시기 바랍니다.</p>
 <h2 id="설치-오류-상황과-해결-방법">설치 오류 상황과 해결 방법 <a href="#%ec%84%a4%ec%b9%98-%ec%98%a4%eb%a5%98-%ec%83%81%ed%99%a9%ea%b3%bc-%ed%95%b4%ea%b2%b0-%eb%b0%a9%eb%b2%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>pip를 설치하는 과정에 발생하는 몇가지 오류 상황과 그에 따른 해결방법을 정리해보겠습니다.</p>
-<p>{% include warning.html title=&ldquo;curl: (35) SSL connect error&rdquo; content=&ldquo;pip 설치파일을 다운 받기 위해 curl을 실행할 때 발생하는 오류 메시지로 위쪽에서 필요 패키지들 설치할 때 있었던 다음 명령을 실행하면 해결됩니다.&rdquo; %}</p>
+<div class="alert alert-danger d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  <span class="material-icons size-20 me-2">
+  report
+  </span></div>
+  <div class="w-100">
+<p>curl: (35) SSL connect error: pip 설치파일을 다운 받기 위해 curl을 실행할 때 발생하는 오류 메시지로 위쪽에서 필요 패키지들 설치할 때 있었던 다음 명령을 실행하면 해결됩니다.</p>
+  </div>
+  </div>
 
 
 
@@ -2607,8 +2615,15 @@ python3 get-pip.py</code>
   <code>yum update curl nss</code>
   </pre>
   </div>
-<br />
-<p>{% include warning.html title=&ldquo;SyntaxError: invalid syntax&rdquo; content=&ldquo;pip를 설치할 때 Python 버전이 일치하지 않는 등의 이유로 발생하는 문제입니다. 위에서 설명했던 대로 Python 버전과 일치하는 pip 설치 파일을 다운 받으면 됩니다.&rdquo; %}</p>
+<div class="alert alert-danger d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  <span class="material-icons size-20 me-2">
+  report
+  </span></div>
+  <div class="w-100">
+<p>SyntaxError: invalid syntax: pip를 설치할 때 Python 버전이 일치하지 않는 등의 이유로 발생하는 문제입니다. 위에서 설명했던 대로 Python 버전과 일치하는 pip 설치 파일을 다운 받으면 됩니다.</p>
+  </div>
+  </div>
 
 
 
@@ -2718,7 +2733,7 @@ curl -O https://bootstrap.pypa.io/3.5/get-pip.py</code>
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

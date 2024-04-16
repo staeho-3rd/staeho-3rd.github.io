@@ -13,7 +13,7 @@
       <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0900</pubDate>
       <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</guid>
-      <description>개요 link네이버 클라우드에서는 MySQL Password 정책에 따라 처음 MySQL DB를 설치할 때 root의 초기 패스워드가 설정되지 않습니다. 그러므로 보안 침해 방지를 위해 설치 후에 root Password를 설정한 후에 DB를 사용하는 것이 안전합니다.&#xA;여기서는 Classic환경에서 MySQL 5.6과 5.7 버전의 root Password를 설정, 변경하는 방법에 대해 정리해보겠습니다.&#xA;MySQL 버전 link네이버 클라우드 Classic환경에서 지원하는 설치형 MySQL 버전은 5.6과 5.7 입니다.&#xA;{% include callout_v2.html type=&amp;ldquo;success&amp;rdquo; level=&amp;ldquo;2&amp;rdquo; content=&amp;ldquo;Ncloud는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다.</description>
+      <description>개요 link네이버 클라우드에서는 MySQL Password 정책에 따라 처음 MySQL DB를 설치할 때 root의 초기 패스워드가 설정되지 않습니다. 그러므로 보안 침해 방지를 위해 설치 후에 root Password를 설정한 후에 DB를 사용하는 것이 안전합니다.&#xA;여기서는 Classic환경에서 MySQL 5.6과 5.7 버전의 root Password를 설정, 변경하는 방법에 대해 정리해보겠습니다.&#xA;MySQL 버전 link네이버 클라우드 Classic환경에서 지원하는 설치형 MySQL 버전은 5.6과 5.7 입니다.&#xA;Ncloud는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다. 그러므로 VPC 환경에서 DB서버를 사용하려면 OS에 사용자가 직접 DB를 설치해서 사용하는 방법과 Cloud DB를 사용하는 방법 중에서 선택해야 합니다.</description>
     </item>
   </channel>
 </rss>

@@ -2510,8 +2510,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="2398274" class="language-bash ">
-  <code>~# vi /etc/yum.repos.d/CentOS-Base.repo</code>
+  <pre id="9a1362a" class="language-bash ">
+  <code>vi /etc/yum.repos.d/CentOS-Base.repo</code>
   </pre>
   </div>
 <br />
@@ -2562,8 +2562,8 @@ baseurl=http://mirror.ncloud.com/centos/$releaserver/extras/$basearch/</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="ff9050f" class="language-bash ">
-  <code>~# yum -y install httpd</code>
+  <pre id="caa2a85" class="language-bash ">
+  <code>yum -y install httpd</code>
   </pre>
   </div>
 <p>웹서버 설치가 문제없이 되는 것을 확인할 수 있습니다.</p>
@@ -2584,12 +2584,12 @@ baseurl=http://mirror.ncloud.com/centos/$releaserver/extras/$basearch/</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="788ec13" class="language-bash ">
+  <pre id="5ae6a0d" class="language-bash ">
   <code>## mirrorlist 주석처리
-~# sed -i &#39;s/mirrorlist=/#mirrorlist=/g&#39; /etc/yum.repos.d/CentOS-Base.repo
+sed -i &#39;s/mirrorlist=/#mirrorlist=/g&#39; /etc/yum.repos.d/CentOS-Base.repo
 
 ## baseurl 주석해제, 경로수정
-~# sed -i &#39;s/#baseurl=http:\/\/mirror.centos.org\/centos/baseurl=http:\/\/mirror.ncloud.com\/centos/g&#39; /etc/yum.repos.d/CentOS-Base.repo</code>
+sed -i &#39;s/#baseurl=http:\/\/mirror.centos.org\/centos/baseurl=http:\/\/mirror.ncloud.com\/centos/g&#39; /etc/yum.repos.d/CentOS-Base.repo</code>
   </pre>
   </div>
 <h3 id="vpc-환경---centos">VPC 환경 - CentOS <a href="#vpc-%ed%99%98%ea%b2%bd---centos" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>네이버 클라우드 VPC 환경은 이미 repository 경로가 네이버 클라우드 내부 repository ( <strong>mirror.ncloud.com</strong> )로 설정되어 있으므로 별도로 수정할 필요가 없습니다.</p>
@@ -2615,8 +2615,8 @@ baseurl=http://mirror.ncloud.com/centos/$releaserver/extras/$basearch/</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="19c63b9" class="language-bash ">
-  <code>~# vi /etc/apt/sources.list</code>
+  <pre id="c725e6c" class="language-bash ">
+  <code>vi /etc/apt/sources.list</code>
   </pre>
   </div>
 <h3 id="classic-환경---ubuntu">Classic 환경 - Ubuntu <a href="#classic-%ed%99%98%ea%b2%bd---ubuntu" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><img src="/images/compute/ncp_server_repository_change_on_private_network_05.png" width="770" alt="Ncloud Secure Zone이나 Private Network 환경에서 Repository를 변경해 리눅스 패키지 설치하는 방법" class="docimage">
@@ -2666,8 +2666,8 @@ archive.ubuntu.conm --&gt; mirror.ncloud.com (변경)</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="d289114" class="language-bash ">
-  <code>~# apt -y install apache2</code>
+  <pre id="aed920f" class="language-bash ">
+  <code>apt -y install apache2</code>
   </pre>
   </div>
 <img src="/images/compute/ncp_server_repository_change_on_private_network_09.png" width="820" alt="Ncloud Secure Zone이나 Private Network 환경에서 Repository를 변경해 리눅스 패키지 설치하는 방법" class="docimage">
@@ -2699,7 +2699,7 @@ sed -i &#39;s/archive.ubuntu.com/mirror.ncloud.com/g&#39; /etc/apt/sources.list<
 <h2 id="참고-url">참고 URL <a href="#%ec%b0%b8%ea%b3%a0-url" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ol>
 <li>
 <p>CentOS mirror 사이트 안내<br>
-<a href="https://www.centos.org/download/mirrors/%22" rel="external" target="_blank">https://www.centos.org/download/mirrors/&quot;<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+<a href="https://www.centos.org/download/mirrors/" rel="external" target="_blank">https://www.centos.org/download/mirrors/<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
 </li>
 <li>
 <p>Ubuntu mirror 사이트 안내<br>
@@ -2790,7 +2790,7 @@ sed -i &#39;s/archive.ubuntu.com/mirror.ncloud.com/g&#39; /etc/apt/sources.list<
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

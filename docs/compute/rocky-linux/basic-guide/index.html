@@ -2591,8 +2591,8 @@ Ncloud (네이버 클라우드)는 이 록키 리눅스의 핵심 파트너로 �
   
 
   <div class="prism-codeblock ">
-  <pre id="03457ee" class="language-bash ">
-  <code>~# dnf -y upgrade-minimal</code>
+  <pre id="afd4b43" class="language-bash ">
+  <code> dnf -y upgrade-minimal</code>
   </pre>
   </div>
 <div class="alert alert-primary d-flex" role="alert">
@@ -2622,8 +2622,8 @@ Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가�
   
 
   <div class="prism-codeblock ">
-  <pre id="ad3cc41" class="language-bash ">
-  <code>~# dnf -y install httpd php</code>
+  <pre id="2ef46a5" class="language-bash ">
+  <code> dnf -y install httpd php</code>
   </pre>
   </div>
 <p>설치된 버전은 다음과 같습니다.</p>
@@ -2651,8 +2651,8 @@ Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가�
   
 
   <div class="prism-codeblock ">
-  <pre id="58ad10d" class="language-bash ">
-  <code>~# dnf module list php</code>
+  <pre id="26a5b32" class="language-bash ">
+  <code> dnf module list php</code>
   </pre>
   </div>
 <ul>
@@ -2679,8 +2679,8 @@ Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가�
   
 
   <div class="prism-codeblock ">
-  <pre id="6b2f051" class="language-bash ">
-  <code>~# dnf module reset php</code>
+  <pre id="474423c" class="language-bash ">
+  <code> dnf module reset php</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-20.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2700,8 +2700,8 @@ Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가�
   
 
   <div class="prism-codeblock ">
-  <pre id="f2ed400" class="language-bash ">
-  <code>~# dnf module enable php:8.0</code>
+  <pre id="e90c39a" class="language-bash ">
+  <code> dnf module enable php:8.0</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-21.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2721,9 +2721,9 @@ Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가�
   
 
   <div class="prism-codeblock ">
-  <pre id="65be96c" class="language-bash ">
-  <code>~# dnf -y install php
-~# php -v</code>
+  <pre id="29b270a" class="language-bash ">
+  <code> dnf -y install php
+ php -v</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-22.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2745,8 +2745,8 @@ NginX 최신버전(mainline)을 설치하기 위해서는 epel-release 리포지
   
 
   <div class="prism-codeblock ">
-  <pre id="e10666a" class="language-Bash ">
-  <code>~# vi /etc/yum.repos.d/Rocky-Extras.repo</code>
+  <pre id="86fa4ae" class="language-Bash ">
+  <code> vi /etc/yum.repos.d/Rocky-Extras.repo</code>
   </pre>
   </div>
 
@@ -2794,8 +2794,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="aca0449" class="language-bash ">
-  <code>~# dnf -y install epel-release</code>
+  <pre id="54e87fc" class="language-bash ">
+  <code> dnf -y install epel-release</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-04.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2816,8 +2816,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="4df7f89" class="language-bash ">
-  <code>~# dnf module list nginx</code>
+  <pre id="68db071" class="language-bash ">
+  <code> dnf module list nginx</code>
   </pre>
   </div>
 <ul>
@@ -2845,8 +2845,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="b831d9f" class="language-bash ">
-  <code>~# dnf module reset nginx</code>
+  <pre id="ba80667" class="language-bash ">
+  <code> dnf module reset nginx</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-24.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2866,8 +2866,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="5cdb702" class="language-bash ">
-  <code>~# dnf module enable nginx:mainline</code>
+  <pre id="702af22" class="language-bash ">
+  <code> dnf module enable nginx:mainline</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-07.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2887,9 +2887,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="691286b" class="language-bash ">
-  <code>~# dnf -y install nginx
-~# nginx -v</code>
+  <pre id="d06719b" class="language-bash ">
+  <code> dnf -y install nginx
+ nginx -v</code>
   </pre>
   </div>
 <ul>
@@ -2912,9 +2912,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="864a55a" class="language-bash ">
-  <code>~# systemctl enable nginx
-~# systemctl start nginx</code>
+  <pre id="c901ad3" class="language-bash ">
+  <code> systemctl enable nginx
+ systemctl start nginx</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-09.png" width="845" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2935,8 +2935,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="4968881" class="language-bash ">
-  <code>~# dnf module list mariadb</code>
+  <pre id="58f3c88" class="language-bash ">
+  <code> dnf module list mariadb</code>
   </pre>
   </div>
 <ul>
@@ -2961,8 +2961,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="c8590c7" class="language-bash ">
-  <code>~# dnf -y install mariadb-server</code>
+  <pre id="dbef0cb" class="language-bash ">
+  <code> dnf -y install mariadb-server</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-12.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -2983,9 +2983,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="3195a3f" class="language-bash ">
-  <code>~# systemctl enable mariadb
-~# systemctl start mariadb</code>
+  <pre id="a04a1d9" class="language-bash ">
+  <code> systemctl enable mariadb
+ systemctl start mariadb</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-13.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -3009,8 +3009,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="3225fd2" class="language-bash ">
-  <code>~# mysql</code>
+  <pre id="d85b540" class="language-bash ">
+  <code> mysql</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-14.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -3032,8 +3032,8 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="f230252" class="language-bash ">
-  <code>~# systemctl enable --now cockpit.socket</code>
+  <pre id="fba235b" class="language-bash ">
+  <code> systemctl enable --now cockpit.socket</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-16.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -3071,10 +3071,10 @@ It is recommended to rather remove all installed content from the module, and re
   
 
   <div class="prism-codeblock ">
-  <pre id="d1b6b10" class="language-bash ">
+  <pre id="14d252c" class="language-bash ">
   <code>#예시
-~# dnf module reset php
-~# dnf module reset nginx</code>
+ dnf module reset php
+ dnf module reset nginx</code>
   </pre>
   </div>
 <img src="/images/compute/ncloud-compute-server-rocky-linux-guide-26.png" width="840" alt="Ncloud(네이버 클라우드)에서 제공하기 시작한 록키 리눅스 소개" class="docimage">
@@ -3174,7 +3174,7 @@ It is recommended to rather remove all installed content from the module, and re
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

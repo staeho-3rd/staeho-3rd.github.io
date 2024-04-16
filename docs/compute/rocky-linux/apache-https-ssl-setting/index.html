@@ -2571,8 +2571,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="03457ee" class="language-bash ">
-  <code>~# dnf -y upgrade-minimal</code>
+  <pre id="afd4b43" class="language-bash ">
+  <code> dnf -y upgrade-minimal</code>
   </pre>
   </div>
 
@@ -2596,8 +2596,8 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="5898c89" class="language-bash ">
-  <code>~# man dnf
+  <pre id="008dadd" class="language-bash ">
+  <code> man dnf
 #--- 중략 ---#
 Upgrade-Minimal Command
        Command: upgrade-minimal
@@ -2625,8 +2625,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="aaee7b1" class="language-bash ">
-  <code>~# dnf module list httpd</code>
+  <pre id="d180667" class="language-bash ">
+  <code> dnf module list httpd</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-02.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -2648,8 +2648,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="fffa542" class="language-bash ">
-  <code>~# dnf -y install httpd</code>
+  <pre id="3882618" class="language-bash ">
+  <code> dnf -y install httpd</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-03.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -2672,9 +2672,9 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="84eb7c1" class="language-bash ">
-  <code>~# systemctl start httpd
-~# systemctl status httpd</code>
+  <pre id="7d09091" class="language-bash ">
+  <code> systemctl start httpd
+ systemctl status httpd</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-04.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -2694,9 +2694,9 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="a917e4b" class="language-bash ">
-  <code>~# mkdir -p  /ncloud/data/www/rocky-https-test.com/
-~# vim /ncloud/data/www/rocky-https-test.com/index.html</code>
+  <pre id="531d6cc" class="language-bash ">
+  <code> mkdir -p  /ncloud/data/www/rocky-https-test.com/
+ vim /ncloud/data/www/rocky-https-test.com/index.html</code>
   </pre>
   </div>
 
@@ -2744,8 +2744,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="a06e5e7" class="language-bash ">
-  <code>~# vim /etc/httpd/conf.d/rocky-https-test.com.conf</code>
+  <pre id="81841d4" class="language-bash ">
+  <code> vim /etc/httpd/conf.d/rocky-https-test.com.conf</code>
   </pre>
   </div>
 
@@ -2799,8 +2799,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="bfba708" class="language-bash ">
-  <code>~# systemctl restart httpd</code>
+  <pre id="016edc7" class="language-bash ">
+  <code> systemctl restart httpd</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-07.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -2847,8 +2847,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="2d77c5b" class="language-bash ">
-  <code>~# dnf -y install mod_ssl</code>
+  <pre id="94b1c39" class="language-bash ">
+  <code> dnf -y install mod_ssl</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-12.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -2870,8 +2870,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="81c900e" class="language-bash ">
-  <code>~# mkdir -p /root/ssl/</code>
+  <pre id="39eef04" class="language-bash ">
+  <code> mkdir -p /root/ssl/</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-13.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -2892,8 +2892,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="21e6e65" class="language-bash ">
-  <code>~# openssl req -newkey rsa:2048 \
+  <pre id="d3462c4" class="language-bash ">
+  <code> openssl req -newkey rsa:2048 \
 -nodes -keyout /root/ssl/rocky-https-test.com.key \
 -x509 -days 365 -out /root/ssl/rocky-https-test.com.crt</code>
   </pre>
@@ -2917,8 +2917,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="9a2f4cb" class="language-bash ">
-  <code>~# ls -al /root/ssl/</code>
+  <pre id="59aa577" class="language-bash ">
+  <code> ls -al /root/ssl/</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-15.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -2938,8 +2938,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="29c1766" class="language-bash ">
-  <code>~# vim /etc/httpd/conf.d/rocky-https-test.com.conf</code>
+  <pre id="2161f5e" class="language-bash ">
+  <code> vim /etc/httpd/conf.d/rocky-https-test.com.conf</code>
   </pre>
   </div>
 
@@ -3008,8 +3008,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="820b438" class="language-bash ">
-  <code>~# systemctl restart httpd</code>
+  <pre id="1dbcb05" class="language-bash ">
+  <code> systemctl restart httpd</code>
   </pre>
   </div>
 <img src="/images/compute/lamp/ncloud-server-apache-ssl-setting-guide-rocky-linux-07.png" width="840" alt="Ncloud Rocky Linux 서버 Apache에 HTTPS 접속을 위한 SSL 인증서 설정하는 방법" class="docimage">
@@ -3036,8 +3036,8 @@ Upgrade-Minimal Command
   
 
   <div class="prism-codeblock ">
-  <pre id="8f58bcb" class="language-bash ">
-  <code>~# vim /etc/httpd/conf.d/rocky-https-test.com.conf</code>
+  <pre id="45a8dd8" class="language-bash ">
+  <code> vim /etc/httpd/conf.d/rocky-https-test.com.conf</code>
   </pre>
   </div>
 
@@ -3192,7 +3192,7 @@ Upgrade-Minimal Command
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">

@@ -13,7 +13,7 @@
       <link>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0900</pubDate>
       <guid>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide/</guid>
-      <description>개요 linkNcloud(네이버 클라우드)에서 리눅스 서버에 디스크를 추가하는 것은 스토리지 즉, Block Storage를 생성해서 서버에 연결하는 작업이 필요합니다.&#xA;전체 과정 요약 link스토리지(디스크)를 추가하는 전체 과정은 아래와 같이 하이퍼바이저별로 정리할 수 있으며, 각 단계별 상세 설명은 XEN 하이퍼바이저 기반 서버를 이용해서 진행하겠습니다.&#xA;XEN 하이퍼바이저&#xD;KVM 하이퍼바이저&#xD;~# fdisk -l&#xD;~# fdisk /dev/xvdb&#xD;~# mkfs.xfs /dev/xvdb1&#xD;- CentOS 5.x: mkfs.ext3 /dev/xvdb1&#xD;- CentOS 6.x: mkfs.ext4 /dev/xvdb1&#xD;- CentOS 7.x: mkfs.xfs /dev/xvdb1&#xD;- Rocky Linux: mkfs.</description>
+      <description>개요 linkNcloud(네이버 클라우드)에서 리눅스 서버에 디스크를 추가하는 것은 스토리지 즉, Block Storage를 생성해서 서버에 연결하는 작업이 필요합니다.&#xA;전체 과정 요약 link스토리지(디스크)를 추가하는 전체 과정은 아래와 같이 하이퍼바이저별로 정리할 수 있으며, 각 단계별 상세 설명은 XEN 하이퍼바이저 기반 서버를 이용해서 진행하겠습니다.&#xA;XEN 하이퍼바이저&#xD;KVM 하이퍼바이저&#xD;fdisk -l&#xD;fdisk /dev/xvdb&#xD;mkfs.xfs /dev/xvdb1&#xD;- CentOS 5.x: mkfs.ext3 /dev/xvdb1&#xD;- CentOS 6.x: mkfs.ext4 /dev/xvdb1&#xD;- CentOS 7.x: mkfs.xfs /dev/xvdb1&#xD;- Rocky Linux: mkfs.xfs /dev/xvdb1&#xD;- Ubuntu : mkfs.</description>
     </item>
     <item>
       <title>Linux 서버 스토리지 추가 생성 기본 가이드</title>

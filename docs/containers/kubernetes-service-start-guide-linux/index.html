@@ -2629,8 +2629,8 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
   
 
   <div class="prism-codeblock ">
-  <pre id="15abb38" class="language-bash ">
-  <code>~# curl -o ncp-iam-authenticator https://kr.object.ncloudstorage.com/nks-download/ncp-iam-authenticator/v1.0.5/linux/amd64/ncp-iam-authenticator</code>
+  <pre id="435444e" class="language-bash ">
+  <code> curl -o ncp-iam-authenticator https://kr.object.ncloudstorage.com/nks-download/ncp-iam-authenticator/v1.0.5/linux/amd64/ncp-iam-authenticator</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-14.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2652,8 +2652,8 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
   
 
   <div class="prism-codeblock ">
-  <pre id="ff0a737" class="language-bash ">
-  <code>~# chmod &#43;x ./ncp-iam-authenticator</code>
+  <pre id="7890902" class="language-bash ">
+  <code> chmod &#43;x ./ncp-iam-authenticator</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-15.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2676,8 +2676,8 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
   
 
   <div class="prism-codeblock ">
-  <pre id="14353da" class="language-bash ">
-  <code>~# mkdir -p $HOME/bin &amp;&amp; cp ./ncp-iam-authenticator $HOME/bin/ncp-iam-authenticator &amp;&amp; export PATH=$PATH:$HOME/bin</code>
+  <pre id="b88a4fd" class="language-bash ">
+  <code> mkdir -p $HOME/bin &amp;&amp; cp ./ncp-iam-authenticator $HOME/bin/ncp-iam-authenticator &amp;&amp; export PATH=$PATH:$HOME/bin</code>
   </pre>
   </div>
 
@@ -2695,8 +2695,8 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
   
 
   <div class="prism-codeblock ">
-  <pre id="7a3662f" class="language-bash ">
-  <code>~# echo &#39;export PATH=$PATH:$HOME/bin&#39; &gt;&gt; ~/.bash_profile</code>
+  <pre id="0275660" class="language-bash ">
+  <code> echo &#39;export PATH=$PATH:$HOME/bin&#39; &gt;&gt; ~/.bash_profile</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-16.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2718,8 +2718,8 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
   
 
   <div class="prism-codeblock ">
-  <pre id="b8e50cb" class="language-bash ">
-  <code>~# ncp-iam-authenticator help</code>
+  <pre id="dfced6a" class="language-bash ">
+  <code> ncp-iam-authenticator help</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-17.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2753,10 +2753,10 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
   
 
   <div class="prism-codeblock ">
-  <pre id="b54fe1e" class="language-bash ">
-  <code>~# export NCLOUD_ACCESS_KEY={Ncloud API AccessKey}
-~# export NCLOUD_SECRET_KEY={Ncloud API SecretKey}
-~# export NCLOUD_API_GW=https://ncloud.apigw.ntruss.com</code>
+  <pre id="5d395e2" class="language-bash ">
+  <code> export NCLOUD_ACCESS_KEY={Ncloud API AccessKey}
+ export NCLOUD_SECRET_KEY={Ncloud API SecretKey}
+ export NCLOUD_API_GW=https://ncloud.apigw.ntruss.com</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-18.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2778,9 +2778,9 @@ NAT Gateway를 생성해야 아웃바운드 트래픽을 활성화할 수 있기
   
 
   <div class="prism-codeblock ">
-  <pre id="a1bad6d" class="language-bash ">
-  <code>~# mkdir .ncloud 
-~# cat &lt;&lt; EOF &gt; .ncloud/configure
+  <pre id="5ca3a24" class="language-bash ">
+  <code> mkdir .ncloud 
+ cat &lt;&lt; EOF &gt; .ncloud/configure
 [DEFAULT]
 ncloud_access_key_id = {Ncloud API AccessKey}
 ncloud_secret_access_key = {Ncloud API SecretKey}
@@ -2812,11 +2812,11 @@ EOF</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="4fe7b7a" class="language-bash ">
-  <code>~# ncp-iam-authenticator create-kubeconfig --region &lt;region-code&gt; --clusterUuid &lt;cluster-uuid&gt; --output &lt;FileName&gt;.yaml
+  <pre id="953b4b7" class="language-bash ">
+  <code> ncp-iam-authenticator create-kubeconfig --region &lt;region-code&gt; --clusterUuid &lt;cluster-uuid&gt; --output &lt;FileName&gt;.yaml
 
 ## 예시
-~# ncp-iam-authenticator create-kubeconfig --region KR --clusterUuid 12345678-1234-1234-1234-1234567890 --output kubeconfig.yaml</code>
+ ncp-iam-authenticator create-kubeconfig --region KR --clusterUuid 12345678-1234-1234-1234-1234567890 --output kubeconfig.yaml</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-20.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2836,8 +2836,8 @@ EOF</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="6a185ee" class="language-bash ">
-  <code>~# curl -LO &#34;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&#34;</code>
+  <pre id="f461125" class="language-bash ">
+  <code> curl -LO &#34;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&#34;</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-21.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2857,11 +2857,11 @@ EOF</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="95cbea1" class="language-bash ">
-  <code>~# sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  <pre id="13fd9ed" class="language-bash ">
+  <code> sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # 버전 확인
-~# kubectl version --client --output=yaml</code>
+ kubectl version --client --output=yaml</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-22.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2882,8 +2882,8 @@ EOF</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="7aca768" class="language-bash ">
-  <code>~# kubectl get node --kubeconfig kubeconfig.yaml</code>
+  <pre id="6a58a89" class="language-bash ">
+  <code> kubectl get node --kubeconfig kubeconfig.yaml</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-23.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -2904,8 +2904,8 @@ EOF</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="923206a" class="language-bash ">
-  <code>~# cp kubeconfig.yaml .kube/config</code>
+  <pre id="fea2876" class="language-bash ">
+  <code> cp kubeconfig.yaml .kube/config</code>
   </pre>
   </div>
 <p>이렇게 하면 Kubectl을 사용 시 아래와 같이 &ndash;kuebeconfig 명령어 없이 사용 할 수 있습니다.</p>
@@ -2924,8 +2924,8 @@ EOF</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="8959a9c" class="language-bash ">
-  <code>~# kubectl get node</code>
+  <pre id="0f55553" class="language-bash ">
+  <code> kubectl get node</code>
   </pre>
   </div>
 <img src="/images/containers/ncloud-containers-kubernetes-start-guide-24.png" width="840" alt="Ncloud Kubernetes Service 클러스터 생성 및 제어하는 방법" class="docimage">
@@ -3031,7 +3031,7 @@ EOF</code>
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2023-03-17 <br />
+                        Page last modified:2021-04-07 <br />
                     </p>
                     
                     <p class="mb-0">
