@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Media on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/docs/media/</link>
+    <link>https://docs.3rdeyesys.com/docs/media/</link>
     <description>Recent content in Media on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/media/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/media/rss.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

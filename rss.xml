@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/</link>
+    <link>https://docs.3rdeyesys.com/</link>
     <description>Recent content on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud Clova OCR - Template OCR API 연동 PHP 샘플 예제</title>
-      <link>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-api-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-api-guide/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-api-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-api-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드) [Clova OCR]은 전송한 문서나 이미지를 인식하여 사용자가 지정한 영역의 텍스트와 데이터를 정확하게 추출하는 서비스입니다. 여기서는 API를 이용해서 Template OCR로 [사업자등록증]을 인식하는 예제를 PHP 코드로 정리해보겠습니다.&#xA;서비스 배포 link테스트는 Template을 미리 생성한 상태에서 진행해보겠습니다. Template 생성 방법은 아래 링크의 문서에서 확인하시면 됩니다.&#xA;⁃ Ncloud Clova OCR 서비스 중에서 Template OCR 사용 방법&#xD;[배포 관리]에서 [서비스 배포] 버튼을 클릭해서 해당 템플릿을 서비스 배포합니다. 서비스 배포 확인 팝업창에서 [확인] 버튼을 클릭합니다.</description>
     </item>
     <item>
       <title>Ncloud Security Monitoring WAF 서비스 요금 정보</title>
-      <link>https://staeho-3rd.github.io/docs/security/security-monitoring/waf-price-info/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/security-monitoring/waf-price-info/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/security-monitoring/waf-price-info/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/security-monitoring/waf-price-info/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Security Monitoring 서비스는 무료인 Basic 서비스와 유료인 Managed 서비스가 있고, 그 중에서 유료 서비스인 Managed 서비스는 IDS, Anti-DOS, WAF, Anti-Virus, IPS 등 4가지 서비스를 모두 제공하고 있는데 그 중에서 WAF(Web Application Firewall) 서비스의 이용 요금 구성과 신청 시 주의 사항에 대해 정리해보겠습니다.&#xA;구성 linkWAF 서비스 장비는 [WAF VM + WAF LB]로 구성되어 있습니다. 따라서 사용 요금도 WAF VM 요금과 WAF LB 요금이 별도로 청구됩니다.&#xA;요금 link&#xD;상품명&#xD;과금 구간 (Mbps)&#xD;가격 (월 요금, VAT별도)&#xD;비고&#xD;Multi</description>
     </item>
     <item>
       <title>Ncloud Cloud Log Analytics에서 수집하는 로그 유형</title>
-      <link>https://staeho-3rd.github.io/docs/management/cloud-log-analytics/cla-template-info/</link>
+      <link>https://docs.3rdeyesys.com/docs/management/cloud-log-analytics/cla-template-info/</link>
       <pubDate>Fri, 16 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/management/cloud-log-analytics/cla-template-info/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/management/cloud-log-analytics/cla-template-info/</guid>
       <description>개요 linkCloud Log Analytics는 네이버 클라우드 플랫폼의 여러 서비스에서 발생하는 다양한 로그들을 한 곳에 모아 저장하고 손쉽게 분석하게 해주는 서비스입니다.&#xA;로그 템플릿 종류 linkCloud Log Analytics에서 수집하는 각 종 서비스의 로그 템플릿 종류는 다음과 같습니다.&#xA;Server SYSLOG Apache 로그(Access log, Apache Error Log) MySQL 설치형 상품의 로그(Error Log, Slow Log) Microsoft SQL Server 설치형 상품의 Error Log Tomcat 로그(Catalina Log) Windows 서버의 Event Log Windows 서버의 각종 text 형식의 로그 Cloud DB for MySQL 로그 Cloud DB for MSSQL 로그 Cloud DB for MongoDB 로그 Cloud DB for PostgreSQL 로그 Application Server Launcher 로그 Application Load Balancer 로그 Search Engine Service 로그 Cloud Data Streaming Service 로그 Bare Metal Server 로그 Ncloud Kubernetes Service Audit 로그 그외 템플릿으로 제공되지 않는 로그도 Custom Log 기능으로 직접 대상 로그를 지정해서 수집할 수 있습니다 지원 운영 체제 link지원하는 운영 체제는 다음과 같습니다.</description>
     </item>
     <item>
       <title>Ncloud Clova OCR 서비스 중에서 Template OCR 사용 방법 안내</title>
-      <link>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-guide/</link>
       <pubDate>Wed, 14 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드) [Clova OCR]은 전송한 문서나 이미지를 인식하여 사용자가 지정한 영역의 텍스트와 데이터를 정확하게 추출하는 서비스입니다. 여기서는 [Clova OCR]에서 제공하는 OCR 서비스 종류 중에서 [Template OCR]의 사용 방법을 [사업자등록증]을 예시로 정리해보겠습니다.&#xA;서비스 이용 시 주의 사항 link[Clova OCR] 이용 시 주의 사항은 다음과 같습니다.&#xA;서비스 계정당 권장되는 호출 성능은 최대 1 tps입니다. 더 높은 호출 성능을 원하는 경우 고객 지원으로 문의하셔야 합니다. 인식 요청 시 45도 이상 회전된 문서는 인식률이 저하될 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud Cloud Outbound Mailer로 대량 메일 발송하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</link>
       <pubDate>Fri, 02 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</guid>
       <description>개요 link네이버 클라우드 서비스 중에서 각 종 공지나 이벤트, 마케팅으로 회원들에게 대량의 메일을 발송해야 할 때 사용할 수 있는 것이 Cloud Outbound Mailer 입니다.&#xA;대량 메일을 발송하는 방법은 여러가지 있지만, 그 중에서도 가장 자주, 간편하게 사용하는 것이 Excel 등의 파일을 업로드 해서 발송하는 방법입니다.&#xA;이용 신청 linkCloud Outbound Mailer는 먼저 이용신청을 하셔야 합니다. [Console] - [Cloud Outbound Mailer] - [Mailing list] 에서 [이용 신청] 버튼을 클릭하시면 됩니다.&#xA;다음으로 서비스 이용약관에 동의하시면 됩니다.</description>
     </item>
     <item>
       <title>Kubernetes Service 클러스터 생성 및 제어 가이드 | Linux</title>
-      <link>https://staeho-3rd.github.io/docs/containers/kubernetes-service-start-guide-linux/</link>
+      <link>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-linux/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/containers/kubernetes-service-start-guide-linux/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-linux/</guid>
       <description>개요 linkNcloud (네이버 클라우드) VPC 환경에서 Kubernetes(쿠버네티스) 서비스를 생성하고 Linux 환경에서 제어하는 방법에 대해 소개합니다.&#xA;쿠버네티스란? link쿠버네티스(Kubernetes, K8S)는 배포, 스케일링, 그리고 컨테이너화된 애플리케이션의 관리를 자동화 해주는 오픈 소스 컨테이너 오케스트레이션 엔진으로 구글에서 처음 개발하기 시작했으나 현재는 구글이 오픈소스 프로젝트로 공개한 상태입니다.&#xA;특징 link쿠버네티스는 다음과 같은 특징이 있으며, 자세한 내용은 쿠버네티스 공식 페이지를 참고하시기 바랍니다.&#xA;쿠버네티스 공식 페이지: https://kubernetes.io/ko/docs/home/&#xA;서비스 디스커버리와 로드 밸런싱 스토리지 오케스트레이션 자동화된 롤아웃과 롤백 자동화된 빈 패킹(bin packing) 자동화된 복구(self-healing) 시크릿과 구성 관리 사전 준비 link먼저 쿠버네티스 클러스터에 사용할 전용 VPC와 Private 또는 Public Subnet 그리고, Load Balancer용 Subnet이 필요합니다.</description>
     </item>
     <item>
       <title>PHP로 Archive Storage API 인증 토큰 생성하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</link>
       <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Archive Storage API를 이용하려고 할 때 먼저 인증 토큰을 생성하고 생성된 토큰을 이용해서 API로 Archive Storage에 접근해야 합니다. 여기서는 PHP로 API 인증 토큰을 생성하는 방법에 대해 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 정보 link OpenStack Swift API : 2.15.1 (Pike) OpenStack Keystone V3 API : v3.8 인증 토큰 생성 코드 link&#xD;&amp;lt;?php&#xD;// 전송해야 할 설정값&#xD;$ncloud_accesskey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;;&#xD;$ncloud_secretkey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;;&#xD;$ncloud_domain_id = &amp;#34;Archive Storage 도메인 ID&amp;#34;;&#xD;$ncloud_project_id = &amp;#34;Archive Storage 프로젝트 ID&amp;#34;;&#xD;$api_server = &amp;#34;https://kr.</description>
     </item>
     <item>
       <title>Ncloud Cloud Outbound Mailer 도메인 인증 방법 3가지(SPF, DKIM, DMARC) 안내</title>
-      <link>https://staeho-3rd.github.io/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</link>
       <pubDate>Fri, 26 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Cloud Outbound Mailer를 사용할 때 도메인을 등록하고 SPF(Sender Policy Framework), DKIM(DomainKeys Identified Mail), DMARC(Domain-based Message Authentication, Reporting, and Conformance) 인증을 받으면 발신자 자격을 입증할 수 있고 타인이 도메인을 사칭해 메일을 발송하는 것을 막을 수 있습니다.&#xA;또한, 인증된 도메인임을 증명함으로써 수신측 메일 서비스에서 차단되거나 스팸 처리될 가능성도 매우 낮아지는 이점이 있으므로 가능하면 도메인 인증을 하는 것이 좋습니다.&#xA;report&#xD;Gmail 공지: 특히 Gmail에서는 2024년 2월부터 새로운 이메일 발신자 가이드라인을 적용하면서 도메인 인증을 받지 않은 경우 메일이 스팸처리되거나 제대로 전송되지 않을 수 있다고 공지하고 있습니다.</description>
     </item>
     <item>
       <title>DNS 설정에서 255자 이상의 TXT 레코드(SPF, DKIM, DMARC 등) 등록하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/networking/dns/global-dns-configure-long-txt-record/</link>
+      <link>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-configure-long-txt-record/</link>
       <pubDate>Wed, 10 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/networking/dns/global-dns-configure-long-txt-record/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-configure-long-txt-record/</guid>
       <description>개요 linkDNS 설정할 때 TXT 레코드의 설정 값은 일반적으로 255자로 제한되어 있습니다. 하지만 메일 발신 도메인 인증을 위한 SPF, DKIM 레코드의 설정 값은 255자를 넘는 경우가 많은데 이때 이런 255자 이상의 문자열을 등록할 수 있는 방법에 대해 대표적인 DNS 서비스 업체별로 확인해보겠습니다.&#xA;Ncloud Global DNS link우선 Ncloud(네이버 클라우드)의 DNS 서비스인 [Global DNS]는 다른 DNS 제공 업체와 다르게 255자가 넘는 경우에도 자동으로 문자열을 분리해서 등록해줍니다.&#xA;그러므로 Ncloud(네이버 클라우드)에서는 TXT 레코드 값의 길이를 신경쓰지 않고 편하게 등록하시면 됩니다.</description>
     </item>
     <item>
       <title>Ncloud KVM Hypervisor 타입의 Rocky Linux 서버 Repository 미러 사이트 오류 문제 해결 방법</title>
-      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</link>
       <pubDate>Thu, 28 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 KVM Hypervisor 타입의 록키 리눅스(Rocky Linux) 8.8 서버를 제공하고 있는데, 서버를 생성하고 나서 Apache, PHP 등의 패키지를 설치할 때 패키지 다운로드 사이트 또는 미러 사이트에서 8.8 버전에 대한 패키지 정보를 찾을 수 없다는 메시지가 나타나면서 패키지를 설치할 수 없는 경우가 있습니다.&#xA;XEN Hypervisor 타입의 서버에서는 문제가 없는데 왜 KVM Hypervisor 타입 서버에서만 이런 문제가 생기는지와 어떻게 하면 해결할 수 있는지를 정리해보겠습니다.&#xA;오류 상황 link콘솔에서 서버를 생성한 후에 아무 것도 하지 않고 테스트로 Apache를 설치해보려고 했는데, 오류 메시지가 나타나면서 설치를 할 수 없었습니다.</description>
     </item>
   </channel>

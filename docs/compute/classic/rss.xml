@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Classic on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/docs/compute/classic/</link>
+    <link>https://docs.3rdeyesys.com/docs/compute/classic/</link>
     <description>Recent content in Classic on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 20 Jun 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/compute/classic/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/compute/classic/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classic 환경 Micro 타입 서버에서 사용할 수 없는 서비스</title>
-      <link>https://staeho-3rd.github.io/docs/compute/classic/micro-type-server-limit/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/classic/micro-type-server-limit/</link>
       <pubDate>Tue, 20 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/classic/micro-type-server-limit/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/classic/micro-type-server-limit/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Classic 환경에서 제공하는 서버 타입 중에서 Micro 타입의 서버는 신규 가입 후 최초 결제수단 등록월부터 1년간 무료로 제공되는 체험용 서버입니다. 계정당 1대만 이용 가능하며 1년이 지나면 유료로 전환됩니다.&#xA;제한되는 서비스 linkClassic 환경 Micro 타입의 서버에서 사용할 수 없는 서비스는 다음과 같습니다.&#xA;mssql LAMP, WordPress, LEMP 등 Network Interface Private Subnet MSSQL linkmssql 중에서 mssql 2017 Express은 무료로 제공되는 서비스이지만, mssql이 1년 무료제공 서버인 Micro서버에서는 설치가 되지 않기 때문에, compact 이상의 유료 서버를 이용해야 합니다.</description>
     </item>
     <item>
       <title>Classic 환경 Windows 서버 이미지를 VPC 환경으로 복제하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/compute/classic/windows-server-image-copy-to-vpc/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/classic/windows-server-image-copy-to-vpc/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/classic/windows-server-image-copy-to-vpc/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/classic/windows-server-image-copy-to-vpc/</guid>
       <description>개요 link네이버 클라우드 Classic 환경의 Windows 서버 이미지를 VPC 환경으로 복제하려면 몇가지 사전 작업과 조건이 있습니다. 이 사전 작업과 조건을 차례대로 정리해보겠습니다.&#xA;OS 조건 확인 linkClassic 환경의 서버 이미지를 VPC 환경으로 복제하는 것이므로 VPC에서 지원하는 OS만 복제 가능합니다.&#xA;즉, 현재 네이버 클라우드 VPC 환경에서 지원하는 Windows OS 버전은&#xA;Windows Server 2016 (64-bit) English Edition 하나이기 때문에 2016 R2 등의 OS를 사용 중이라면 VPC에서 지원하지 않아 복제가 불가능하니 VPC에서 지원할 때까지 작업을 보류하셔야 합니다.</description>
     </item>
     <item>
       <title>Classic 환경에서 서버 이미지를 다른 계정에 공유하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/compute/classic/server-image-share/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/classic/server-image-share/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/classic/server-image-share/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/classic/server-image-share/</guid>
       <description>개요 link네이버 클라우드 Classic 환경에서 내 서버 이미지를 다른 계정에 공유하는 방법입니다.&#xA;Linux와 Windows OS별 차이는 없으며, 일단은 서버 이미지가 생성되어 있는 것을 가정해서 내용을 정리해보겠습니다.&#xA;공유 권한 설정 link네이버 클라우드 콘솔 [Server] - [Server Image]에서 공유할 서버 이미지를 선택하고 상단 메뉴에 있는 [공유 권한 설정]을 클릭합니다.&#xA;다음으로 서버 이미지를 공유할 계정 즉, 로그인 ID를 입력합니다.&#xA;로그인 ID 입력 후 [권한 추가] 버튼을 클릭하고, [적용] 버튼을 클릭해 설정을 적용합니다.&#xA;공유 권한 설정을 적용하면 서버 이미지 정보에 [공유 중]이라고 표시되고, [공유 받은 계정] 정보도 확인할 수 있습니다.</description>
     </item>
   </channel>

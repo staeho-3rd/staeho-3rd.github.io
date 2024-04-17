@@ -2,699 +2,699 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://staeho-3rd.github.io/docs/compute/vpc/server-create/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/vpc/server-create/</loc>
     <lastmod>2023-12-04T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/vpc/micro-type-server-create/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/vpc/micro-type-server-create/</loc>
     <lastmod>2023-09-11T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/no-public-ip/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/no-public-ip/</loc>
     <lastmod>2020-12-21T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/by-public-ip/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/by-public-ip/</loc>
     <lastmod>2020-12-22T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/classic/server-image-share/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/classic/server-image-share/</loc>
     <lastmod>2021-05-31T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/classic/micro-type-server-limit/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/classic/micro-type-server-limit/</loc>
     <lastmod>2023-06-20T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</loc>
     <lastmod>2023-06-29T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</loc>
     <lastmod>2023-12-28T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</loc>
     <lastmod>2023-06-29T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/rocky-linux/apache-https-ssl-setting/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/rocky-linux/apache-https-ssl-setting/</loc>
     <lastmod>2023-07-13T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/redirect-http-to-https/apache-rocky-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-rocky-linux/</loc>
     <lastmod>2023-07-11T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/redirect-http-to-https/apache-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-ubuntu/</loc>
     <lastmod>2023-07-12T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/redirect-http-to-https/apache-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/redirect-http-to-https/apache-centos/</loc>
     <lastmod>2023-07-12T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/auth-security/server-admin-password-reset/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/auth-security/server-admin-password-reset/</loc>
     <lastmod>2022-08-17T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/auth-security/server-authentication-key-change/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/auth-security/server-authentication-key-change/</loc>
     <lastmod>2022-08-18T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/auth-security/server-access-by-ssh-key/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/auth-security/server-access-by-ssh-key/</loc>
     <lastmod>2023-06-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/auth-security/ssh-access-security-setting/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/auth-security/ssh-access-security-setting/</loc>
     <lastmod>2021-05-27T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-basic-guide/</loc>
     <lastmod>2023-12-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-detail-process-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide/</loc>
     <lastmod>2023-12-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-storage/storage-extend-guide-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-extend-guide-linux/</loc>
     <lastmod>2022-11-11T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-storage/storage-lvm-create/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-lvm-create/</loc>
     <lastmod>2021-07-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-storage/storage-add-detail-process-guide-windows/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-add-detail-process-guide-windows/</loc>
     <lastmod>2023-06-15T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-storage/storage-extend-guide-windows/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-storage/storage-extend-guide-windows/</loc>
     <lastmod>2022-11-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/autoscaling/service-limit/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/autoscaling/service-limit/</loc>
     <lastmod>2021-07-01T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/autoscaling/basic-guide-vpc/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/autoscaling/basic-guide-vpc/</loc>
     <lastmod>2023-09-05T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/autoscaling/basic-guide-classic/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/autoscaling/basic-guide-classic/</loc>
     <lastmod>2023-09-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/autoscaling/event-setting-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/autoscaling/event-setting-guide/</loc>
     <lastmod>2021-01-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</loc>
     <lastmod>2020-12-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</loc>
     <lastmod>2020-11-13T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</loc>
     <lastmod>2020-11-13T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-rocky-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-rocky-linux/</loc>
     <lastmod>2023-06-29T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/</loc>
     <lastmod>2022-04-25T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-centos/</loc>
     <lastmod>2022-04-25T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-ubuntu/</loc>
     <lastmod>2022-04-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/nginx/https-ssl-setting-guide-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/nginx/https-ssl-setting-guide-centos/</loc>
     <lastmod>2022-04-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/nginx/client-ip-logging-in-loadbalancer-guide/</loc>
     <lastmod>2023-05-23T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/x-forwarded-for/client-ip-logging-in-linux-apache-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/x-forwarded-for/client-ip-logging-in-linux-apache-guide/</loc>
     <lastmod>2023-08-21T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/x-forwarded-for/client-ip-logging-in-windows-iis-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/x-forwarded-for/client-ip-logging-in-windows-iis-guide/</loc>
     <lastmod>2023-11-17T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-cmd/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-cmd/</loc>
     <lastmod>2021-03-09T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</loc>
     <lastmod>2021-03-12T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/cloud-functions/php-smtp-via-gmail-with-phpmailer/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/cloud-functions/php-smtp-via-gmail-with-phpmailer/</loc>
     <lastmod>2021-03-17T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/classic/windows-server-image-copy-to-vpc/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/classic/windows-server-image-copy-to-vpc/</loc>
     <lastmod>2021-05-31T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-spec-change-limit/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-spec-change-limit/</loc>
     <lastmod>2021-07-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/server-operation-stop-price/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/server-operation-stop-price/</loc>
     <lastmod>2020-11-13T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/pip-python-install-on-centos6/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/pip-python-install-on-centos6/</loc>
     <lastmod>2021-01-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/compute/install-package-by-change-repository-in-private-network/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/compute/install-package-by-change-repository-in-private-network/</loc>
     <lastmod>2021-10-25T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/ncloud-storage-compare/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/ncloud-storage-compare/</loc>
     <lastmod>2020-12-28T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/services-required-integrating-with-object-storage/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/services-required-integrating-with-object-storage/</loc>
     <lastmod>2021-02-16T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/lifecycle-management-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/lifecycle-management-guide/</loc>
     <lastmod>2021-06-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/how-to-access-using-aws-cli/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/how-to-access-using-aws-cli/</loc>
     <lastmod>2021-06-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</loc>
     <lastmod>2021-04-12T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/bucket-access-log-management-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/bucket-access-log-management-guide/</loc>
     <lastmod>2023-08-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket/</loc>
     <lastmod>2023-02-23T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</loc>
     <lastmod>2023-03-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/content-type/mimetype-contenttype-setting-error-troubleshotting/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/content-type/mimetype-contenttype-setting-error-troubleshotting/</loc>
     <lastmod>2023-01-31T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/content-type/contenttype-bulk-change-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/content-type/contenttype-bulk-change-guide/</loc>
     <lastmod>2023-02-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</loc>
     <lastmod>2021-10-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cyberduck/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cyberduck/</loc>
     <lastmod>2021-10-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-s3browser/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-s3browser/</loc>
     <lastmod>2023-11-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</loc>
     <lastmod>2024-01-31T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/archive-storage/api-get-container-list-by-php/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-get-container-list-by-php/</loc>
     <lastmod>2021-11-17T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/archive-storage/cli-guide-windows/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/archive-storage/cli-guide-windows/</loc>
     <lastmod>2021-11-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/backup/service-basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/backup/service-basic-guide/</loc>
     <lastmod>2022-12-22T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-linux-data/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-linux-data/</loc>
     <lastmod>2023-01-04T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-windows-data/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-windows-data/</loc>
     <lastmod>2023-01-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/storage/nas/linux-mount-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/storage/nas/linux-mount-guide/</loc>
     <lastmod>2021-07-27T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/ncloud-service-port-info/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/ncloud-service-port-info/</loc>
     <lastmod>2021-01-14T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/find-my-ip-address/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/find-my-ip-address/</loc>
     <lastmod>2022-07-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</loc>
     <lastmod>2021-01-14T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/vpc-loadbalancer-type/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/vpc-loadbalancer-type/</loc>
     <lastmod>2020-12-01T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/vpc-application-loadbalancer-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/vpc-application-loadbalancer-guide/</loc>
     <lastmod>2022-08-04T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/lb-redirect-http-to-https/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/lb-redirect-http-to-https/</loc>
     <lastmod>2022-03-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/application-loadbalancer-access-log/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/application-loadbalancer-access-log/</loc>
     <lastmod>2023-05-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/lb-certificate-change/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/lb-certificate-change/</loc>
     <lastmod>2023-08-30T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-rocky-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-rocky-linux/</loc>
     <lastmod>2023-08-23T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-ubuntu/</loc>
     <lastmod>2023-08-22T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/loadbalancer/proxy-portocol/client-ip-logging-on-centos/</loc>
     <lastmod>2023-08-22T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/dns/global-dns-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-guide/</loc>
     <lastmod>2021-05-27T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/dns/global-dns-configure-long-txt-record/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/dns/global-dns-configure-long-txt-record/</loc>
     <lastmod>2024-01-10T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/natgateway/vpc-natgateway-routetable/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/natgateway/vpc-natgateway-routetable/</loc>
     <lastmod>2023-05-16T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/vpc/ncloud-vpc-overview/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/vpc/ncloud-vpc-overview/</loc>
     <lastmod>2020-11-30T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/vpc/acg-nacl-compare/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/vpc/acg-nacl-compare/</loc>
     <lastmod>2020-12-01T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/vpc/subnet-natgateway-compare/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/vpc/subnet-natgateway-compare/</loc>
     <lastmod>2020-12-01T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/vpc/vpc-peering-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/vpc/vpc-peering-guide/</loc>
     <lastmod>2023-11-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/networking/ipsecvpn/ipsecvpn-fortigate-configure-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/networking/ipsecvpn/ipsecvpn-fortigate-configure-guide/</loc>
     <lastmod>2022-09-28T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/ncloud-database-type-compare/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/ncloud-database-type-compare/</loc>
     <lastmod>2021-01-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</loc>
     <lastmod>2021-08-05T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</loc>
     <lastmod>2023-09-04T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</loc>
     <lastmod>2023-09-04T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</loc>
     <lastmod>2023-12-21T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</loc>
     <lastmod>2023-04-28T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-bind-address-position/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-bind-address-position/</loc>
     <lastmod>2021-02-24T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</loc>
     <lastmod>2021-02-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</loc>
     <lastmod>2021-02-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup/</loc>
     <lastmod>2021-06-11T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</loc>
     <lastmod>2021-10-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</loc>
     <lastmod>2021-10-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/basic-guide/</loc>
     <lastmod>2021-04-13T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-gtid-replication/</loc>
     <lastmod>2022-04-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/</loc>
     <lastmod>2023-04-05T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mariadb-multi-source-replication/</loc>
     <lastmod>2023-04-20T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/cdb-create-basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/cdb-create-basic-guide/</loc>
     <lastmod>2023-09-01T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</loc>
     <lastmod>2021-12-13T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-engine-upgrade-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-engine-upgrade-guide/</loc>
     <lastmod>2023-12-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</loc>
     <lastmod>2021-12-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/classic-lb/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/classic-lb/</loc>
     <lastmod>2022-07-20T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/vpc-network-lb/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/vpc-network-lb/</loc>
     <lastmod>2022-08-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/vpc-network-proxy-lb/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/vpc-network-proxy-lb/</loc>
     <lastmod>2022-08-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql57-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql57-guide/</loc>
     <lastmod>2023-10-23T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/</loc>
     <lastmod>2023-10-24T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/</loc>
     <lastmod>2023-10-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mariadb-to-mysql80-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mariadb-to-mysql80-guide/</loc>
     <lastmod>2023-11-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mssql/cdb-create-basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mssql/cdb-create-basic-guide/</loc>
     <lastmod>2023-05-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mssql/cdb-access-public-domain-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mssql/cdb-access-public-domain-guide/</loc>
     <lastmod>2023-05-30T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-mssql/db-config-manage-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-mssql/db-config-manage-guide/</loc>
     <lastmod>2023-05-31T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/postgresql/db-install-access-guide-rocky-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-rocky-linux/</loc>
     <lastmod>2023-09-13T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/postgresql/db-install-access-guide-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-ubuntu/</loc>
     <lastmod>2022-10-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/postgresql/db-install-access-guide-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/postgresql/db-install-access-guide-centos/</loc>
     <lastmod>2022-10-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-ubuntu/</loc>
     <lastmod>2022-04-27T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-create-basic-guide-centos/</loc>
     <lastmod>2022-04-27T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/database/cloud-db-postgresql/cdb-access-public-domain-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/database/cloud-db-postgresql/cdb-access-public-domain-guide/</loc>
     <lastmod>2022-05-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/ncloud-security-service-summary/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/ncloud-security-service-summary/</loc>
     <lastmod>2021-04-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/ncloud-security-service-onpremise-compare/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/ncloud-security-service-onpremise-compare/</loc>
     <lastmod>2020-12-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/acg/basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/acg/basic-guide/</loc>
     <lastmod>2022-06-30T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/acg/custom-acg-configure-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/acg/custom-acg-configure-sample/</loc>
     <lastmod>2022-07-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/security-monitoring/waf-price-info/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/security-monitoring/waf-price-info/</loc>
     <lastmod>2024-02-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-vpc/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-vpc/</loc>
     <lastmod>2022-07-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/ssl-vpn/basic-guide-classic/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/ssl-vpn/basic-guide-classic/</loc>
     <lastmod>2023-04-25T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/certificate/ssl-dcv-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/certificate/ssl-dcv-guide/</loc>
     <lastmod>2021-09-09T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/security/certificate/certificate-manager-register-ssl-certificate-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/security/certificate/certificate-manager-register-ssl-certificate-guide/</loc>
     <lastmod>2023-02-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/ncloud-vpc-vs-classic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/ncloud-vpc-vs-classic-guide/</loc>
     <lastmod>2021-12-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/sub-account/create-basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/sub-account/create-basic-guide/</loc>
     <lastmod>2023-08-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/sub-account/api-gateway-access-control-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/sub-account/api-gateway-access-control-guide/</loc>
     <lastmod>2023-12-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/sub-account/sts-temporary-accesskey-create-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/sub-account/sts-temporary-accesskey-create-guide/</loc>
     <lastmod>2022-06-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/cloud-insight/basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/cloud-insight/basic-guide/</loc>
     <lastmod>2023-02-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/cloud-insight/rule-template-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/cloud-insight/rule-template-guide/</loc>
     <lastmod>2023-03-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/cloud-log-analytics/basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/cloud-log-analytics/basic-guide/</loc>
     <lastmod>2021-12-14T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/cloud-log-analytics/cla-template-info/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/cloud-log-analytics/cla-template-info/</loc>
     <lastmod>2024-02-16T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/cloud-log-analytics/windows-iis-log-collect-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/cloud-log-analytics/windows-iis-log-collect-guide/</loc>
     <lastmod>2023-11-16T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/wms-basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/wms-basic-guide/</loc>
     <lastmod>2022-03-15T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/wms-step-detail-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/wms-step-detail-guide/</loc>
     <lastmod>2022-03-16T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/containers/kubernetes-service-start-guide-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-linux/</loc>
     <lastmod>2024-02-01T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/containers/kubernetes-service-start-guide-windows/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/containers/kubernetes-service-start-guide-windows/</loc>
     <lastmod>2023-05-15T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-guide/</loc>
     <lastmod>2024-02-14T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/ai-services/clova-ocr/template-ocr-api-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/ai-services/clova-ocr/template-ocr-api-guide/</loc>
     <lastmod>2024-02-19T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/ai-services/korean-name-romanizer/php-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/ai-services/korean-name-romanizer/php-sample/</loc>
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/application-services/nshorturl/nshorturl-php-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/application-services/nshorturl/nshorturl-php-sample/</loc>
     <lastmod>2021-04-30T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/bulk-mail-send-guide/</loc>
     <lastmod>2024-02-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/application-services/cloud-outbound-mailer/domain-authentication-guide/</loc>
     <lastmod>2024-01-26T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/developer-tools/sourcecommit/external-repository-copy-get/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/external-repository-copy-get/</loc>
     <lastmod>2022-04-20T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/developer-tools/sourcecommit/git-client-clone-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/developer-tools/sourcecommit/git-client-clone-guide/</loc>
     <lastmod>2022-06-02T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-rocky-linux/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-rocky-linux/</loc>
     <lastmod>2023-07-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-ubuntu/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-ubuntu/</loc>
     <lastmod>2023-07-14T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-centos/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-centos/</loc>
     <lastmod>2023-07-08T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/media/vod-station/basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/media/vod-station/basic-guide/</loc>
     <lastmod>2023-03-17T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/media/video-player-enhancement/basic-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/media/video-player-enhancement/basic-guide/</loc>
     <lastmod>2023-03-22T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/api/ncloud-api-call-php-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-php-sample/</loc>
     <lastmod>2021-04-06T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/api/ncloud-api-call-csharp-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-csharp-sample/</loc>
     <lastmod>2021-04-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/api/ncloud-api-call-python-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-python-sample/</loc>
     <lastmod>2022-02-24T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/api/ncloud-api-call-powershell-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-powershell-sample/</loc>
     <lastmod>2022-12-29T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/aws/s3-lifecycle-management/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/aws/s3-lifecycle-management/</loc>
     <lastmod>2021-09-16T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/aws/cloud-watch-log/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/aws/cloud-watch-log/</loc>
     <lastmod>2020-11-05T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/smtp-auth-error-troubleshooting-using-gmail-account/</loc>
     <lastmod>2020-11-30T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/php-to-telegram-message-send/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/php-to-telegram-message-send/</loc>
     <lastmod>2021-11-10T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/pdf-merge-php-sample/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/pdf-merge-php-sample/</loc>
     <lastmod>2021-05-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/phpspreadsheet-sample-code/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/phpspreadsheet-sample-code/</loc>
     <lastmod>2021-04-03T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-install-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-install-guide/</loc>
     <lastmod>2021-01-04T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-customizing/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-customizing/</loc>
     <lastmod>2021-02-23T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/documentation-theme-install-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/documentation-theme-install-guide/</loc>
     <lastmod>2022-03-04T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/documentation-theme-page-create-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/documentation-theme-page-create-guide/</loc>
     <lastmod>2022-03-07T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/etc/markdown/mkdocs/basic-install-guide/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/etc/markdown/mkdocs/basic-install-guide/</loc>
     <lastmod>2020-11-30T00:00:00+09:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/help/faq/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/help/faq/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/help/news/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/help/news/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
     <priority>0.7</priority>
   </url><url>
-    <loc>https://staeho-3rd.github.io/docs/help/update/</loc>
+    <loc>https://docs.3rdeyesys.com/docs/help/update/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
     <priority>0.7</priority>
   </url>

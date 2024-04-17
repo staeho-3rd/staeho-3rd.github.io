@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pdf on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/tags/pdf/</link>
+    <link>https://docs.3rdeyesys.com/tags/pdf/</link>
     <description>Recent content in Pdf on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 03 May 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/pdf/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/pdf/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pdf 문서 합치기 PHP로 구현하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/etc/pdf-merge-php-sample/</link>
+      <link>https://docs.3rdeyesys.com/docs/etc/pdf-merge-php-sample/</link>
       <pubDate>Mon, 03 May 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/etc/pdf-merge-php-sample/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/etc/pdf-merge-php-sample/</guid>
       <description>개요 link요즘은 회사 업무에서 파일을 전달할 때 PDF 문서를 활용하는 경우가 매우 많습니다.&#xA;그런데 이때 보내야 하는 PDF 문서가 여러개 일 경우 받는 쪽에서 각각의 파일을 일일이 열어봐야 해서 불편한 경우가 있습니다.&#xA;이럴때 여러 PDF 문서를 합쳐서 하나의 문서로 만들어 보내면 편리한 경우에 사용할 수 있는 PDF 문서 합치기 - merge 기능을 PHP로 구현하는 방법입니다.&#xA;라이브러리 설치 linkPDF 문서를 합쳐 주는 기능을 가진 라이브러리는 [ php pdf merger ]라고 검색해보면 여러가지 버전이 존재하는데 여기서는 Jurosh 라는 사람이 만든 것을 사용하겠습니다.</description>
     </item>
     <item>
       <title>PhpSpreadsheet 설정 샘플 코드</title>
-      <link>https://staeho-3rd.github.io/docs/etc/phpspreadsheet-sample-code/</link>
+      <link>https://docs.3rdeyesys.com/docs/etc/phpspreadsheet-sample-code/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/etc/phpspreadsheet-sample-code/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/etc/phpspreadsheet-sample-code/</guid>
       <description>개요 linkPHP에서 Excel 문서를 읽거나 Excel 형태로 문서를 저장해야 할 때 주로 PhpSpreadsheet를 사용하게 됩니다. 이전에는 PHPExcel이라는 이름이었으나 현재는 해당 버전의 개발-유지보수가 중단되고 새로운 프로젝트로 PhpSpreasheet라는 이름으로 업그레이드 되었습니다.&#xA;또한 PhpSpreadsheet는 Excel 뿐만 아니라 PDF 형식으로도 파일을 저장할 수 있어서 많이 사용되고 있습니다.&#xA;이번에는 이 PhpSpreadsheet로 문서를 저장할 때 사용하는 주요 소스 코드의 샘플을 정리해보겠습니다.&#xA;클래스 로드 link&#xD;&amp;lt;?php&#xD;require &amp;#39;vendor/autoload.php&amp;#39;;&#xD;use PhpOffice\PhpSpreadsheet\IOFactory;&#xD;use PhpOffice\PhpSpreadsheet\Spreadsheet;&#xD;$spreadsheet = new Spreadsheet();&#xD;?&amp;gt;&#xD;기본 설정 link&#xD;&amp;lt;?</description>
     </item>
   </channel>

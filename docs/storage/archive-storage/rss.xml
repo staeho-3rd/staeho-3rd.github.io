@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Archive Storage on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/docs/storage/archive-storage/</link>
+    <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/</link>
     <description>Recent content in Archive Storage on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/storage/archive-storage/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/storage/archive-storage/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP로 Archive Storage API 인증 토큰 생성하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</link>
       <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Archive Storage API를 이용하려고 할 때 먼저 인증 토큰을 생성하고 생성된 토큰을 이용해서 API로 Archive Storage에 접근해야 합니다. 여기서는 PHP로 API 인증 토큰을 생성하는 방법에 대해 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 정보 link OpenStack Swift API : 2.15.1 (Pike) OpenStack Keystone V3 API : v3.8 인증 토큰 생성 코드 link&#xD;&amp;lt;?php&#xD;// 전송해야 할 설정값&#xD;$ncloud_accesskey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;;&#xD;$ncloud_secretkey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;;&#xD;$ncloud_domain_id = &amp;#34;Archive Storage 도메인 ID&amp;#34;;&#xD;$ncloud_project_id = &amp;#34;Archive Storage 프로젝트 ID&amp;#34;;&#xD;$api_server = &amp;#34;https://kr.</description>
     </item>
     <item>
       <title>Archive Storage CLI 사용 가이드 | Windows 환경</title>
-      <link>https://staeho-3rd.github.io/docs/storage/archive-storage/cli-guide-windows/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/cli-guide-windows/</link>
       <pubDate>Fri, 19 Nov 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/archive-storage/cli-guide-windows/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/archive-storage/cli-guide-windows/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Archive Storage CLI를 Windows 환경에서 사용하는 방법에 대해 정리해보겠습니다.&#xA;CLI 정보 linkArchive Storage가 OepnStack으로 구성되어 있고, Client는 Python 기반의 Client를 사용하게 됩니다.&#xA;python-keystoneclient : 3.17.0 python-swiftclient : 3.6.0 Python 다운로드 link먼저 Python을 다운로드 합니다. 권장하는 버전은 3.6 이상입니다. 여기서는 3.9를 설치하겠습니다.&#xA;https://www.python.org/downloads/ Python 설치 linkPATH 추가 linkPython 설치 시작화면에 PATH에 python을 추가하는 옵션이 있습니다.&#xA;&amp;ldquo;Add Python 3.9 to PATH&amp;rdquo; 옵션을 선택하고 설치를 시작하면 됩니다.&#xA;PATH 문자 길이 제한 해제 linkWindows에는 기본설정에 파일경로가 최대 260자로 제한되어 있는데, 이 제한을 풀것인지 확인하는 과정입니다.</description>
     </item>
     <item>
       <title>PHP로 Archive Storage API 호출하기 - 컨테이너(버킷) 오브젝트 목록 조회</title>
-      <link>https://staeho-3rd.github.io/docs/storage/archive-storage/api-get-container-list-by-php/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-get-container-list-by-php/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/archive-storage/api-get-container-list-by-php/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-get-container-list-by-php/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Archive Storage API를 이용해서 컨테이너(버킷)에 있는 오브젝트 전체 목록을 PHP로 조회하는 방법에 대해 정리해보겠습니다.&#xA;API 정보 link OpenStack Swift API : 2.15.1 (Pike) OpenStack Keystone V3 API : v3.8 인증 토큰 생성 linkArchive Storage API를 호출할 때는 먼저 인증 토큰을 생성해야 하는데, 생성 방법은 내용이 다소 긴 관계로 다른 문서에서 자세히 설명해두었습니다. 아래 문서를 참고 하시기 바랍니다.&#xA;PHP로 Archive Storage API 인증 토큰 생성하는 방법 오브젝트 목록 조회 코드 link&#xD;&amp;lt;?</description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud DB 읽기 부하 분산 on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/</link>
+    <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/</link>
     <description>Recent content in Cloud DB 읽기 부하 분산 on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloud DB for MySQL 읽기 부하를 네트워크 프록시 로드밸런서로 분산시키는 방법 | VPC</title>
-      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/vpc-network-proxy-lb/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/vpc-network-proxy-lb/</link>
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/vpc-network-proxy-lb/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/vpc-network-proxy-lb/</guid>
       <description>개요 linkMySQL DB서버의 부하를 줄이기 위해 보통 읽기 전용 DB서버를 생성하게 되는데, 읽기 전용 서버를 여러대 생성해서 로드밸런서(Load Balancer)로 연결하면 읽기 부하를 분산 시키고 좀 더 안정적인 서비스가 가능해집니다.&#xA;여기서는 Ncloud (네이버 클라우드) VPC 환경에서 관리형 DB인 Cloud DB for MySQL의 읽기 전용 Slave DB를 네트워크 프록시 로드밸런서(Network Proxy Load Balancer)에 연결하고 제대로 부하가 분산되는지 확인해보겠습니다.&#xA;사전 준비 linkDB 접속과 부하 분산을 테스트할 서버가 필요합니다. 여기서는 CentOS 7.8 서버를 준비했습니다.</description>
     </item>
     <item>
       <title>Cloud DB for MySQL 읽기 부하를 네트워크 로드밸런서로 분산시키는 방법 | VPC</title>
-      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/vpc-network-lb/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/vpc-network-lb/</link>
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/vpc-network-lb/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/vpc-network-lb/</guid>
       <description>개요 linkMySQL DB서버의 부하를 줄이기 위해 보통 읽기 전용 DB서버를 생성하게 되는데, 읽기 전용 서버를 여러대 생성해서 로드밸런서(Load Balancer)로 연결하면 읽기 부하를 분산 시키고 좀 더 안정적인 서비스가 가능해집니다.&#xA;여기서는 Ncloud (네이버 클라우드) VPC 환경에서 관리형 DB인 Cloud DB for MySQL의 읽기 전용 Slave DB를 네트워크 로드밸런서(Network Load Balancer)에 연결하고 제대로 부하가 분산되는지 확인해보겠습니다.&#xA;사전 준비 linkDB 접속과 부하 분산을 테스트할 서버가 필요합니다. 여기서는 CentOS 7.8 서버를 준비했습니다.&#xA;DB 서버 생성 link우선 [Cloud DB for MySQL] - [DB Server]에서 DB를 생성합니다.</description>
     </item>
     <item>
       <title>Cloud DB for MySQL 읽기 부하 로드밸런서로 분산시키는 방법 | Classic</title>
-      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/classic-lb/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/classic-lb/</link>
       <pubDate>Wed, 20 Jul 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/load-balance/classic-lb/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/load-balance/classic-lb/</guid>
       <description>개요 linkMySQL DB서버의 부하를 줄이기 위해 보통 읽기 전용 DB서버를 생성하게 되는데, 읽기 전용 서버를 여러대 생성해서 로드밸런서(Load Balancer)로 연결하면 읽기 부하를 분산 시키고 좀 더 안정적인 서비스가 가능해집니다.&#xA;여기서는 Ncloud (네이버 클라우드) Classic 환경에서 관리형 DB인 Cloud DB for MySQL의 읽기 전용 Slave DB를 로드밸런서에 연결하고 제대로 부하가 분산되는지 확인해보겠습니다.&#xA;사전 준비 linkDB 접속과 부하 분산을 테스트할 서버가 필요합니다. 여기서는 CentOS 7.8 서버를 준비했습니다.&#xA;DB 서버 생성 link우선 [Cloud DB for MySQL] - [DB Server]에서 DB를 생성합니다.</description>
     </item>
   </channel>

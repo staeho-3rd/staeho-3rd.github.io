@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nas on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/tags/nas/</link>
+    <link>https://docs.3rdeyesys.com/tags/nas/</link>
     <description>Recent content in Nas on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 27 Jul 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/nas/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/nas/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NAS 볼륨을 생성하고 Linux 서버에 마운트하기 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/storage/nas/linux-mount-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/storage/nas/linux-mount-guide/</link>
       <pubDate>Tue, 27 Jul 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/storage/nas/linux-mount-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/storage/nas/linux-mount-guide/</guid>
       <description>개요 linkNAS (Network Attached Storage)는 다수의 서버, 사용자가 함께 사용하는 네트워크 저장공간으로, 서버 간 데이터 공유, 대용량 스토리지, 유연한 용량 확대/축소, 스냅샷 백업 등이 필요한 경우에 주로 사용하며, 네이버 클라우드 NAS 서비스의 주요 기능을 활용해 안전하고 편리하게 데이터를 관리할 수 있습니다.&#xA;이번 가이드에서는 NAS 볼륨을 생성하고, Linux 즉, CentOS와 Ubuntu 서버에 마운트하는 방법을 정리해보겠습니다.&#xA;특징 link 용량: 500GB ~ 10,000GB까지 가능하며, 확장은 100GB단위로 가능 접근제어 설정 가능 스냅샷 설정: 자동생성의 경우 최대 7개까지 보관 가능 볼륨 암호화: 볼륨 단위로 AES-256 알고리즘 기반의 암호화 키를 사용하여 FIPS-140-2 레벨 1 수준의 암호화를 제공 모니터링 및 이벤트 설정 가능 VPC-Subnet 생성 linkVPC 생성 linkVPC환경에서 작업할 것이므로 우선 VPC를 생성합니다.</description>
     </item>
   </channel>

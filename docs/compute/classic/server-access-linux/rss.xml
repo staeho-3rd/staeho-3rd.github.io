@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Classic 환경 서버 접속 가이드(Linux) on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/</link>
+    <link>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/</link>
     <description>Recent content in Classic 환경 서버 접속 가이드(Linux) on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classic 환경 서버 접속 가이드(Linux) - 공인IP 있을 때</title>
-      <link>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/by-public-ip/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/by-public-ip/</link>
       <pubDate>Tue, 22 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/by-public-ip/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/by-public-ip/</guid>
       <description>개요 link네이버 클라우드 Classic 환경에서 리눅스 서버에 접속하는 방법 중에서 공인아이피가 있을 때 접속하는 방법에 대한 내용을 정리하였습니다. 여기서는 서버에 접속하는 방법을 정리하기 때문에 이미 서버는 생성되어 있다는 전제하게 정리하게 됩니다.&#xA;요약 link우선은 전체 과정을 텍스트로 간단하게 요약해서 살펴보고 스크린샷을 포함한 상세 과정은 아래쪽에서 살펴보겠습니다.&#xA;포트 포워딩 설정 해제 (설정되어 있을 경우) 관리자(root) 비밀번호 확인 터미널 프로그램(Putty) 실행 공인IP로 접속 위 2번 관리자 비밀번호 확인에서 기록한 비번 입력 포트 포워딩 설정 해제 (설정되어 있을 경우) link네이버 클라우드에서는 Server, Bare Metal Server에서 공인 IP와 포트 포워딩을 동시에 사용하면 22(Linux), 3389(Windows) 포트가 포트 포워딩에 먼저 할당되므로 공인 IP에서 해당 포트 사용이 불가해집니다.</description>
     </item>
     <item>
       <title>Classic 환경 서버 접속 가이드(Linux) - 공인IP 없을 때</title>
-      <link>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/no-public-ip/</link>
+      <link>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/no-public-ip/</link>
       <pubDate>Mon, 21 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/no-public-ip/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/no-public-ip/</guid>
       <description>개요 link네이버 클라우드 Classic 환경에서 리눅스 서버에 접속하는 방법 중에서 공인아이피가 없을 때 접속하는 방법에 대한 내용을 정리하였습니다. 여기서는 서버에 접속하는 방법을 정리하기 때문에 이미 서버는 생성되어 있다는 전제하게 정리하게 됩니다.&#xA;또한, Classic 과 VPC 환경 중에서 VPC는 포트 포워딩이 없고 공인 IP로만 접속하기 때문에 아래에서 설명하는 내용은 Classic 환경 기준입니다.&#xA;추가로 SSL VPN으로 접속할 경우는 Classic, VPC 모두 사설 IP로 접속하게 되는데 이 내용은 아래 쪽에 별도로 정리한 문서 링크를 참고하시면 됩니다.</description>
     </item>
   </channel>

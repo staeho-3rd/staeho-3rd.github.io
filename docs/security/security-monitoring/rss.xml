@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security Monitoring on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/docs/security/security-monitoring/</link>
+    <link>https://docs.3rdeyesys.com/docs/security/security-monitoring/</link>
     <description>Recent content in Security Monitoring on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/docs/security/security-monitoring/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/docs/security/security-monitoring/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud Security Monitoring WAF 서비스 요금 정보</title>
-      <link>https://staeho-3rd.github.io/docs/security/security-monitoring/waf-price-info/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/security-monitoring/waf-price-info/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/security-monitoring/waf-price-info/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/security-monitoring/waf-price-info/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Security Monitoring 서비스는 무료인 Basic 서비스와 유료인 Managed 서비스가 있고, 그 중에서 유료 서비스인 Managed 서비스는 IDS, Anti-DOS, WAF, Anti-Virus, IPS 등 4가지 서비스를 모두 제공하고 있는데 그 중에서 WAF(Web Application Firewall) 서비스의 이용 요금 구성과 신청 시 주의 사항에 대해 정리해보겠습니다.&#xA;구성 linkWAF 서비스 장비는 [WAF VM + WAF LB]로 구성되어 있습니다. 따라서 사용 요금도 WAF VM 요금과 WAF LB 요금이 별도로 청구됩니다.&#xA;요금 link&#xD;상품명&#xD;과금 구간 (Mbps)&#xD;가격 (월 요금, VAT별도)&#xD;비고&#xD;Multi</description>
     </item>
   </channel>

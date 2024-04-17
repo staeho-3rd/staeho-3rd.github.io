@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Access on 써드아이시스템 기술문서</title>
-    <link>https://staeho-3rd.github.io/tags/access/</link>
+    <link>https://docs.3rdeyesys.com/tags/access/</link>
     <description>Recent content in Access on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 19 Dec 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://staeho-3rd.github.io/tags/access/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.3rdeyesys.com/tags/access/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL | Ubuntu</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-ubuntu/</guid>
       <description>개요 link네이버 클라우드 Ubuntu에서 mariaDB 외부접속을 허용하고, mariaDB용 클라이언트 HeidiSQL을 이용해서 원격접속하는 방법을 정리해보겠습니다.&#xA;여기서 원격접속이라 함은 SSH의 Tunnels를 이용하지 않고, 외부 클라이언트 등을 이용한 직접 접속을 뜻합니다.&#xA;계정 비밀번호 생성 link여기서는 네이버 클라우드에서 서버를 생성했을 때 자동으로 설정되는 root 계정을 이용한 방법을 정리하게 됩니다.&#xA;네이버 클라우드에서는 처음 mariaDB를 설치하면 root 계정에 비밀번호가 설정되어 있지 않습니다.&#xA;# mariadb 실행&#xD;mysql&#xD;# 비밀번호 설정&#xD;MariaDB [(None)]&amp;gt; set password=password(&amp;#39;비밀번호&amp;#39;);&#xD;계정 권한 부여 link외부에서 해당 계정(여기서는 root)으로 접속할 수 있도록 계정에 권한을 부여하는 쿼리입니다.</description>
     </item>
     <item>
       <title>mariaDB 외부접속 허용, 원격접속하기 with HeidiSQL | CentOS</title>
-      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</link>
+      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-mariadb-access-from-remote-centos/</guid>
       <description>개요 link네이버 클라우드 CentOS에서 mariaDB 외부접속을 허용하고, mariaDB용 클라이언트 HeidiSQL을 이용해서 원격접속하는 방법을 정리해보겠습니다.&#xA;여기서 원격접속이라 함은 SSH의 Tunnels를 이용하지 않고, 외부 클라이언트 등을 이용한 직접 접속을 뜻합니다.&#xA;CentOS는 Ubuntu와 달리 mariaDB 환경설정 파일 my.cnf에서 외부 IP에서 접근이 막혀 있지 않기에 환경설정 파일은 수정하지 않습니다.&#xA;계정 비밀번호 생성 link여기서는 네이버 클라우드에서 서버를 생성했을 때 자동으로 설정되는 root 계정을 이용한 방법을 정리하게 됩니다.&#xA;네이버 클라우드에서는 처음 mariaDB를 설치하면 root 계정에 비밀번호가 설정되어 있지 않습니다.</description>
     </item>
     <item>
       <title>Ncloud 방화벽 ACG 설정 기본 가이드</title>
-      <link>https://staeho-3rd.github.io/docs/security/acg/basic-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/acg/basic-guide/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/acg/basic-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/acg/basic-guide/</guid>
       <description>개요 linkACG(Access Control Group)는 서버 간 네트워크 접근 제어 및 관리를 할 수 있는 IP/Port 기반 필터링 방화벽 서비스로 AWS에서는 비슷하게 Security Group이라는 것이 있습니다.&#xA;제한 사항 linkVPC 환경 link VPC당 최대 500개까지 ACG 생성 가능 NIC당 3개의 ACG를 허용 Inbound / Outbound 각각 50개의 규칙 생성 가능 Classic 환경 link 계정당 최대 100개까지 ACG를 생성 가능 각 ACG에는 최대 100개까지의 규칙을 설정할 수 있음 서버는 최대 5개의 ACG에 중복 포함될 수 있음 서버가 생성될 시 선택한 ACG는 변경이 불가하며, 반납 전까지 해당 ACG 규칙을 적용 받게 됨 Classic 환경에서는 서버 자체에 할당되는 개념이었으나 VPC에는 NIC 즉, 네트워크 카드에 할당되는 개념이어서 VPC 환경에서는 NIC 당 최대 3개까지 ACG를 적용할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud 방화벽 ACG 권장설정과 Custom ACG 설정 예시</title>
-      <link>https://staeho-3rd.github.io/docs/security/acg/custom-acg-configure-sample/</link>
+      <link>https://docs.3rdeyesys.com/docs/security/acg/custom-acg-configure-sample/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/security/acg/custom-acg-configure-sample/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/security/acg/custom-acg-configure-sample/</guid>
       <description>개요 linkNcloud (네이버 클라우드)의 IP/Port 기반 필터링 방화벽 서비스인 ACG(Access Control Group) 권장설정과 Custom ACG 설정할 때 참고할 만한 예시를 몇가지 정리해보겠습니다.&#xA;Inboud 기본 규칙 삭제 link&#xD;서버 생성 시에 기본으로 생성되는 Default ACG에는 아래처럼 22, 3389 포트에 대해 0.0.0.0/0 즉, 전체 IP에 대해 접근이 허용되어 있는데 보안을 위해 이 항목을 삭제하고 지정된 IP에서만 접속하도록 수정하는 것을 적극 권장합니다.&#xD;VPC 화면 link아래는 Default ACG가 생성되면서 설정된 전체 접근 허용 상태입니다. 여기서 X버튼을 클릭해서 [0.</description>
     </item>
     <item>
       <title>Ncloud API Key 접근 제한 설정하는 방법</title>
-      <link>https://staeho-3rd.github.io/docs/management/sub-account/api-gateway-access-control-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/management/sub-account/api-gateway-access-control-guide/</link>
       <pubDate>Tue, 19 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/management/sub-account/api-gateway-access-control-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/management/sub-account/api-gateway-access-control-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)를 이용하다보면 여러 가지 정보를 조회하거나 서버를 생성하는 등의 작업을 위해 API를 활용하게 되는 경우가 많습니다. 그런데 이때 사용하는 API Key를 접근 제한 없이 사용하게 되면 외부에 유출되거나 했을 때 심각한 보안 문제를 일으키게 되므로 사전에 API Key에 대한 권한을 설정하거나 접근 제한을 설정해서 사용하는 것이 권장됩니다.&#xA;여기서는 API Key를 최소 권한으로 생성하고, 접근 경로를 제한 하는 등의 방법들을 정리해보겠습니다.&#xA;서브 계정 생성 linkAPI Key 보안과 관련해서 가장 중요한 원칙은 메인 계정이 아닌 최소 권한을 가진 서브 계정(Sub Account)에서 API Key를 생성하는 것입니다.</description>
     </item>
     <item>
       <title>Ncloud STS 기간 제한 임시 API AccessKey 발급하기</title>
-      <link>https://staeho-3rd.github.io/docs/management/sub-account/sts-temporary-accesskey-create-guide/</link>
+      <link>https://docs.3rdeyesys.com/docs/management/sub-account/sts-temporary-accesskey-create-guide/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://staeho-3rd.github.io/docs/management/sub-account/sts-temporary-accesskey-create-guide/</guid>
+      <guid>https://docs.3rdeyesys.com/docs/management/sub-account/sts-temporary-accesskey-create-guide/</guid>
       <description>개요 link클라우드 환경에서 서비스를 하다 보면 회사 내부의 다른 팀이나 외부 고객사에 서버나 오브젝트 스토리지 등 특정 서비스에 접근할 수 있는 API를 제공해야 하는 하는 경우가 생길 수 있습니다.&#xA;그런데 Ncloud(네이버 클라우드)에서 제공되는 기본 API Access Key는 기간 제한이 없는 Access Key이기 때문에 외부에 제공하게 되면 보안측면에서 위험한 상황이 생길 수 있습니다. 이때 STS를 이용하면 Access Key를 제한된 기간 동안 일회성으로 제공하거나 유효 기간이 매우 짧은 Access Key를 반복적으로 제공하게 되면 훨씬 안전한 서비스를 유지할 수 있습니다.</description>
     </item>
   </channel>
