@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DB Backup on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/</link>
+    <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/</link>
     <description>Recent content in DB Backup on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL DB를 Object Storage로 자동 백업하기 | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-centos/</guid>
       <description>개요 link네이버 클라우드 CentOS에서 설치형 mysql DB를 매일 일정한 시간에 Object Storage로 자동으로 백업 받는 방법에 대해 정리해보았습니다.&#xA;순서는 로컬에 백업 파일 생성 후에 Object Storage로 저장하는 단계로 진행됩니다.&#xA;백업 폴더 생성 link&#xD;mkdir /data_backup&#xD;mkdir /data_backup/db&#xD;mysql DB 로컬 백업 스크립트 작성 link우선은 mysql DB를 로컬에 백업 받는 스크립트를 작성합니다.&#xA;vi /bin/db_backup.sh&#xD;#!/bin/bash&#xD;DATE=$(date &amp;#43;%Y%m%d%H%M%S)&#xD;BACKUP_DIR=/data_backup/db/&#xD;# 전체 DB를 백업할 경우&#xD;mysqldump -u root -p디비패스워드 --all-databases &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;# 특정 DB를 백업할 경우&#xD;# mysqldump -u root -p디비패스워드 --databases DB명 &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.</description>
     </item>
     <item>
       <title>MySQL DB를 Object Storage로 자동 백업하기 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup-to-object-storage-ubuntu/</guid>
       <description>개요 link네이버 클라우드 Ubuntu에서 설치형 mysql DB를 매일 일정한 시간에 Object Storage로 자동으로 백업 받는 방법에 대해 정리해보았습니다.&#xA;순서는 로컬에 백업 파일 생성 후에 Object Storage로 저장하는 단계로 진행됩니다.&#xA;백업 폴더 생성 link&#xD;mkdir /data_backup&#xD;mkdir /data_backup/db&#xD;mysql DB 로컬 백업 스크립트 작성 link우선은 mysql DB를 로컬에 백업 받는 스크립트를 작성합니다.&#xA;vi /bin/db_backup.sh&#xD;#!/bin/bash&#xD;DATE=$(date &amp;#43;%Y%m%d%H%M%S)&#xD;BACKUP_DIR=/data_backup/db/&#xD;# 전체 DB를 백업할 경우&#xD;mysqldump -u root -p디비패스워드 --all-databases &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;# 특정 DB를 백업할 경우&#xD;# mysqldump -u root -p디비패스워드 --databases DB명 &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.</description>
     </item>
     <item>
       <title>MySQL DB 자동백업 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup/</link>
       <pubDate>Fri, 11 Jun 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/backup/mysql-auto-backup/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/backup/mysql-auto-backup/</guid>
       <description>개요 link매일 일정한 시간에 MySQL DB를 자동으로 백업 받는 방법에 대해 정리해보았습니다.&#xA;백업 폴더 생성 link루트에 /data_backup 폴더를 만들고 그 아래에 db 폴더를 생성합니다.&#xA;mkdir /data_backup&#xD;mkdir /data_backup/db&#xD;MySQL DB 백업 스크립트 작성 link&#xD;vi /bin/db_backup.sh&#xD;#!/bin/bash&#xD;DATE=$(date &amp;#43;%Y%m%d%H%M%S)&#xD;BACKUP_DIR=/data_backup/db/&#xD;# 전체 DB를 백업할 경우&#xD;mysqldump -u root -p디비패스워드 --all-databases &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;# 특정 DB를 백업할 경우&#xD;# mysqldump -u root -p디비패스워드 --databases DB명 &amp;gt; $BACKUP_DIR&amp;#34;backup_&amp;#34;$DATE.sql&#xD;find $BACKUP_DIR -ctime &amp;#43;7 -exec rm -f {} \;&#xD;# DATE=$(date &amp;#43;%Y%m%d%H%M%S)는 백업할 파일명을 # 202001224505 와 같은 형식으로 저장할 수 있게 날짜를 변수로 담습니다.</description>
     </item>
   </channel>

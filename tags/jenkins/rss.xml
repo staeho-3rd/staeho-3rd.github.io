@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/jenkins/</link>
+    <link>https://staeho-3rd.github.io/tags/jenkins/</link>
     <description>Recent content in Jenkins on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/jenkins/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/jenkins/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud Jenkins 서버 설치 가이드 | Rocky Linux</title>
-      <link>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-rocky-linux/</link>
+      <link>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-rocky-linux/</link>
       <pubDate>Mon, 03 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-rocky-linux/</guid>
+      <guid>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-rocky-linux/</guid>
       <description>개요 linkNcloud (네이버 클라우드)의 Classic 환경에서는 Jekins 서버 이미지를 제공하고 있지만, VPC 환경에서는 제공하지 않기에 VPC 환경 록키 리눅스(Rocky Linux) 서버에 Jekins 서버를 설치하는 과정을 정리해보겠습니다.&#xA;Jenkins란 linkJenkins는 지속적 통합(Continuous Integration, CI)과 지속적 배포(Continuous Delivery, CD)를 위한 대표적인 도구로 빌드, 테스트, 배포 프로세스를 자동화하여 소프트웨어 품질 향상과 개발 생산성 향상에 도움을 주는 도구입니다.&#xA;Jenkins 특징 link 지속적 통합을 사용하여 빌드, 테스트, 배포 과정을 자동화하여 개발 생산성을 향상할 수 있습니다. 자동화 테스트를 통하여 소프트웨어 품질을 향상할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud Jenkins 서버 설치 가이드 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-ubuntu/</link>
       <pubDate>Fri, 14 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-ubuntu/</guid>
       <description>개요 linkNcloud (네이버 클라우드)의 Classic 환경에서는 Jekins 서버 이미지를 제공하고 있지만, VPC 환경에서는 제공하지 않기에 VPC 환경 Ubuntu 서버에 Jekins 서버를 설치하는 과정을 정리해보겠습니다.&#xA;Jenkins란 linkJenkins는 지속적 통합(Continuous Integration, CI)과 지속적 배포(Continuous Delivery, CD)를 위한 대표적인 도구로 빌드, 테스트, 배포 프로세스를 자동화하여 소프트웨어 품질 향상과 개발 생산성 향상에 도움을 주는 도구입니다.&#xA;Jenkins 특징 link 지속적 통합을 사용하여 빌드, 테스트, 배포 과정을 자동화하여 개발 생산성을 향상할 수 있습니다. 자동화 테스트를 통하여 소프트웨어 품질을 향상할 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud Jenkins 서버 설치 가이드 | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-centos/</link>
       <pubDate>Sat, 08 Jul 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/developer-tools/jenkins/install-guide-on-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/developer-tools/jenkins/install-guide-on-centos/</guid>
       <description>개요 linkNcloud (네이버 클라우드)의 Classic 환경에서는 Jekins 서버 이미지를 제공하고 있지만, VPC 환경에서는 제공하지 않기에 VPC 환경 Ubuntu 서버에 Jekins 서버를 설치하는 과정을 정리해보겠습니다.&#xA;Jenkins란 linkJenkins는 지속적 통합(Continuous Integration, CI)과 지속적 배포(Continuous Delivery, CD)를 위한 대표적인 도구로 빌드, 테스트, 배포 프로세스를 자동화하여 소프트웨어 품질 향상과 개발 생산성 향상에 도움을 주는 도구입니다.&#xA;Jenkins 특징 link 지속적 통합을 사용하여 빌드, 테스트, 배포 과정을 자동화하여 개발 생산성을 향상할 수 있습니다. 자동화 테스트를 통하여 소프트웨어 품질을 향상할 수 있습니다.</description>
     </item>
   </channel>

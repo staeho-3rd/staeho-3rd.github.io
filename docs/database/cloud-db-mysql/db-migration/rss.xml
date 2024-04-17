@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ncloud 데이터베이스 마이그레이션 on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/</link>
+    <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/</link>
     <description>Recent content in Ncloud 데이터베이스 마이그레이션 on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 02 Nov 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 데이터베이스 마이그레이션 서비스 | From MariaDB To MySQL 8.0</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mariadb-to-mysql80-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mariadb-to-mysql80-guide/</link>
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mariadb-to-mysql80-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mariadb-to-mysql80-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Database Migration Service는 다양한 환경의 데이터베이스를 클라우드 환경으로 손쉽게 마이그레이션하도록 도와주는 서비스로 여기서는 Public 환경의 [MariaDB]를 Private 환경의 [Cloud DB for MySQL 8.0]으로 마이그레이션하는 방법에 대해 정리해보겠습니다.&#xA;서비스에서 제공하는 기능 link 마이그레이션의 단계별 작업 자동화: Migration 작업을 생성하여 마이그레이션에 필요한 단계별 작업 자동화 Endpoint 관리 기능: 손쉽게 Source DB Endpoint 생성 및 관리 가능 연결 테스트 기능: 마이그레이션 실행 전 Source DB와 Target DB 간 연결 테스트 진행 마이그레이션 작업 내역 모니터링: 마이그레이션 작업 상태와 내역 조회 가능 지원 데이터베이스 linkDatabase Migration Service는 MySQL 데이터베이스 간 마이그레이션을 지원합니다.</description>
     </item>
     <item>
       <title>Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 8.0 To MySQL 8.0</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql80-to-mysql80-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Database Migration Service는 다양한 환경의 데이터베이스를 클라우드 환경으로 손쉽게 마이그레이션하도록 도와주는 서비스로 여기서는 Public 환경의 MySQL 8.0을 Private 환경의 [Cloud DB for MySQL 8.0]으로 마이그레이션하는 방법에 대해 정리해보겠습니다.&#xA;서비스에서 제공하는 기능 link 마이그레이션의 단계별 작업 자동화: Migration 작업을 생성하여 마이그레이션에 필요한 단계별 작업 자동화 Endpoint 관리 기능: 손쉽게 Source DB Endpoint 생성 및 관리 가능 연결 테스트 기능: 마이그레이션 실행 전 Source DB와 Target DB 간 연결 테스트 진행 마이그레이션 작업 내역 모니터링: 마이그레이션 작업 상태와 내역 조회 가능 지원 데이터베이스 linkDatabase Migration Service는 MySQL 데이터베이스 간 마이그레이션을 지원합니다.</description>
     </item>
     <item>
       <title>Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 5.7 To MySQL 8.0</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/</link>
       <pubDate>Tue, 24 Oct 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql80-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Database Migration Service는 다양한 환경의 데이터베이스를 클라우드 환경으로 손쉽게 마이그레이션하도록 도와주는 서비스로 여기서는 Public 환경의 MySQL 5.7을 Private 환경의 [Cloud DB for MySQL 8.0]으로 마이그레이션하는 방법에 대해 정리해보겠습니다.&#xA;서비스에서 제공하는 기능 link 마이그레이션의 단계별 작업 자동화: Migration 작업을 생성하여 마이그레이션에 필요한 단계별 작업 자동화 Endpoint 관리 기능: 손쉽게 Source DB Endpoint 생성 및 관리 가능 연결 테스트 기능: 마이그레이션 실행 전 Source DB와 Target DB 간 연결 테스트 진행 마이그레이션 작업 내역 모니터링: 마이그레이션 작업 상태와 내역 조회 가능 지원 데이터베이스 linkDatabase Migration Service는 MySQL 데이터베이스 간 마이그레이션을 지원합니다.</description>
     </item>
     <item>
       <title>Ncloud 데이터베이스 마이그레이션 서비스 | From MySQL 5.7 To MySQL 5.7</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql57-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql57-guide/</link>
       <pubDate>Mon, 23 Oct 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql57-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-migration/from-mysql57-to-mysql57-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Database Migration Service는 다양한 환경의 데이터베이스를 클라우드 환경으로 손쉽게 마이그레이션하도록 도와주는 서비스로 여기서는 Public 환경의 MySQL 5.7을 Private 환경의 [Cloud DB for MySQL 5.7]로 마이그레이션하는 방법에 대해 정리해보겠습니다.&#xA;서비스에서 제공하는 기능 link 마이그레이션의 단계별 작업 자동화: Migration 작업을 생성하여 마이그레이션에 필요한 단계별 작업 자동화 Endpoint 관리 기능: 손쉽게 Source DB Endpoint 생성 및 관리 가능 연결 테스트 기능: 마이그레이션 실행 전 Source DB와 Target DB 간 연결 테스트 진행 마이그레이션 작업 내역 모니터링: 마이그레이션 작업 상태와 내역 조회 가능 지원 데이터베이스 linkDatabase Migration Service는 MySQL 데이터베이스 간 마이그레이션을 지원합니다.</description>
     </item>
   </channel>

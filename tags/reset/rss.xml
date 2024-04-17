@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reset on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/reset/</link>
+    <link>https://staeho-3rd.github.io/tags/reset/</link>
     <description>Recent content in Reset on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 17 Aug 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/reset/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/reset/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 서버 어드민 패스워드(관리자 비밀번호) 초기화하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/auth-security/server-admin-password-reset/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/auth-security/server-admin-password-reset/</link>
       <pubDate>Wed, 17 Aug 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/auth-security/server-admin-password-reset/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/auth-security/server-admin-password-reset/</guid>
       <description>개요 linkNcloud (네이버 클라우드) 서버의 [관리자 비밀번호] 즉, [어드민 패스워드]를 초기화하는 방법을 정리해보겠습니다.&#xA;어드민 패스워드를 초기화하게 되는 경우는 다음과 같은 경우가 있습니다.&#xA;보안을 위해 주기적으로 비밀번호를 변경하는 경우 해킹이나 패스워드 유출 등이 의심되어 비밀번호를 변경해야 하는 경우 담당자 퇴사 등으로 비밀번호 변경이 필요한 경우 비밀번호 확인 link비밀번호를 초기화 하기 전에 먼저 비밀번호를 확인하는 방법부터 알아보겠습니다.&#xA;(Linux, Windows 서버 모두 동일합니다.)&#xA;어드민 패스워드(관리자 비밀번호) 확인은 서버를 선택하고, [서버 관리 및 설정 변경] - [관리자 비밀번호 확인] 메뉴를 선택하면 됩니다.</description>
     </item>
   </channel>

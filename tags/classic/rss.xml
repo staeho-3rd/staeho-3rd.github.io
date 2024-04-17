@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Classic on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/classic/</link>
+    <link>https://staeho-3rd.github.io/tags/classic/</link>
     <description>Recent content in Classic on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 06 Sep 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/classic/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/classic/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classic 환경 서버 접속 가이드(Linux) - 공인IP 없을 때</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/no-public-ip/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/no-public-ip/</link>
       <pubDate>Mon, 21 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/no-public-ip/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/no-public-ip/</guid>
       <description>개요 link네이버 클라우드 Classic 환경에서 리눅스 서버에 접속하는 방법 중에서 공인아이피가 없을 때 접속하는 방법에 대한 내용을 정리하였습니다. 여기서는 서버에 접속하는 방법을 정리하기 때문에 이미 서버는 생성되어 있다는 전제하게 정리하게 됩니다.&#xA;또한, Classic 과 VPC 환경 중에서 VPC는 포트 포워딩이 없고 공인 IP로만 접속하기 때문에 아래에서 설명하는 내용은 Classic 환경 기준입니다.&#xA;추가로 SSL VPN으로 접속할 경우는 Classic, VPC 모두 사설 IP로 접속하게 되는데 이 내용은 아래 쪽에 별도로 정리한 문서 링크를 참고하시면 됩니다.</description>
     </item>
     <item>
       <title>Classic 환경 서버 접속 가이드(Linux) - 공인IP 있을 때</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/by-public-ip/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/by-public-ip/</link>
       <pubDate>Tue, 22 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/classic/server-access-linux/by-public-ip/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/classic/server-access-linux/by-public-ip/</guid>
       <description>개요 link네이버 클라우드 Classic 환경에서 리눅스 서버에 접속하는 방법 중에서 공인아이피가 있을 때 접속하는 방법에 대한 내용을 정리하였습니다. 여기서는 서버에 접속하는 방법을 정리하기 때문에 이미 서버는 생성되어 있다는 전제하게 정리하게 됩니다.&#xA;요약 link우선은 전체 과정을 텍스트로 간단하게 요약해서 살펴보고 스크린샷을 포함한 상세 과정은 아래쪽에서 살펴보겠습니다.&#xA;포트 포워딩 설정 해제 (설정되어 있을 경우) 관리자(root) 비밀번호 확인 터미널 프로그램(Putty) 실행 공인IP로 접속 위 2번 관리자 비밀번호 확인에서 기록한 비번 입력 포트 포워딩 설정 해제 (설정되어 있을 경우) link네이버 클라우드에서는 Server, Bare Metal Server에서 공인 IP와 포트 포워딩을 동시에 사용하면 22(Linux), 3389(Windows) 포트가 포트 포워딩에 먼저 할당되므로 공인 IP에서 해당 포트 사용이 불가해집니다.</description>
     </item>
     <item>
       <title>Classic 환경에서 서버 이미지를 다른 계정에 공유하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/classic/server-image-share/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/classic/server-image-share/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/classic/server-image-share/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/classic/server-image-share/</guid>
       <description>개요 link네이버 클라우드 Classic 환경에서 내 서버 이미지를 다른 계정에 공유하는 방법입니다.&#xA;Linux와 Windows OS별 차이는 없으며, 일단은 서버 이미지가 생성되어 있는 것을 가정해서 내용을 정리해보겠습니다.&#xA;공유 권한 설정 link네이버 클라우드 콘솔 [Server] - [Server Image]에서 공유할 서버 이미지를 선택하고 상단 메뉴에 있는 [공유 권한 설정]을 클릭합니다.&#xA;다음으로 서버 이미지를 공유할 계정 즉, 로그인 ID를 입력합니다.&#xA;로그인 ID 입력 후 [권한 추가] 버튼을 클릭하고, [적용] 버튼을 클릭해 설정을 적용합니다.&#xA;공유 권한 설정을 적용하면 서버 이미지 정보에 [공유 중]이라고 표시되고, [공유 받은 계정] 정보도 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>Classic 환경 Micro 타입 서버에서 사용할 수 없는 서비스</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/classic/micro-type-server-limit/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/classic/micro-type-server-limit/</link>
       <pubDate>Tue, 20 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/classic/micro-type-server-limit/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/classic/micro-type-server-limit/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Classic 환경에서 제공하는 서버 타입 중에서 Micro 타입의 서버는 신규 가입 후 최초 결제수단 등록월부터 1년간 무료로 제공되는 체험용 서버입니다. 계정당 1대만 이용 가능하며 1년이 지나면 유료로 전환됩니다.&#xA;제한되는 서비스 linkClassic 환경 Micro 타입의 서버에서 사용할 수 없는 서비스는 다음과 같습니다.&#xA;mssql LAMP, WordPress, LEMP 등 Network Interface Private Subnet MSSQL linkmssql 중에서 mssql 2017 Express은 무료로 제공되는 서비스이지만, mssql이 1년 무료제공 서버인 Micro서버에서는 설치가 되지 않기 때문에, compact 이상의 유료 서버를 이용해야 합니다.</description>
     </item>
     <item>
       <title>Classic 환경에서 Auto Scaling 설정하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/autoscaling/basic-guide-classic/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/autoscaling/basic-guide-classic/</link>
       <pubDate>Wed, 06 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/autoscaling/basic-guide-classic/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/autoscaling/basic-guide-classic/</guid>
       <description>개요 linkAutoScaling 서비스는 미리 등록한 설정에 따라 서버 수를 자동으로 증가 또는 감소시켜 안정적인 서비스를 유지하면서 비용을 절감할 수 있도록 해주는 서비스입니다.&#xA;여기서는 네이버 클라우드 Classic 환경에서 AutoScaling 설정하는 방법을 정리해보겠습니다.&#xA;기본 설정 linkAuto Scaling 설정은 우선 [Auto Scaling] - [Launch Configuration]에서&#xA;[Launch Configuration 생성] 버튼을 클릭하는 것으로 시작합니다.&#xA;서버 이미지 선택 link서버 이미지는 네이버 클라우드에서 제공하는 기본 이미지를 선택할 수도 있고, 기존 서버로 만들어 둔 [내 서버 이미지]를 사용할 수도 있습니다.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 환경 설정 정보</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</guid>
       <description>LAMP 기본설정 linkNcloud(네이버 클라우드 플랫폼, 이하 네이버 클라우드)에서 제공하는 Application중에서 가장 대표적인 LAMP(Linux + Apache, Mysql|MariaDB, PHP)의 기본설정입니다.&#xA;LAMP Application이미지는 Classic 환경에서만 이용 가능합니다.&#xD;LAMP 홈디렉토리 link네이버 클라우드에서 Linux 서버를 세팅하게 되면 기본적으로 root 계정으로 접속이 됩니다. 그래서 LAMP 서비스의 홈디렉토리도 /root/lamp로 설정됩니다.&#xA;LAMP 서비스 홈디렉토리 : /root/lamp&#xD;LAMP 서비스 전체 재시작 link네이버 클라우드에서는 LAMP 전체 서비스를 빠르게 재시작할 수 있는 기능을 제공하고 있습니다.&#xA;LAMP 서비스 전체 재시작 명령 : /root/lamp/lamp_restart.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 OS별로 조금씩 다른데 Ubuntu의 경우에는 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop apache2&#xD;- 시작 : systemctl start apache2&#xD;- 재시작 : systemctl restart apache2&#xD;mysql 시작, 중지, 재시작 linkmysql 시작, 중지, 재시작 명령어도 Apache와 마찬가지로 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop mysql&#xD;- 시작 : systemctl start mysql&#xD;- 재시작 : systemctl restart mysql&#xD;Apache 환경 설정 파일 linkApache의 기본 환경설정 파일은 CentOS의 경우 httpd.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 CentOS 6에서 사용하던 것이 CentOS 7이 되면서 변경되었습니다. CentOS 6.x 이하에서는 service {서비스명} [stop|start|restart] 순서였다면 CentOS 7.X 에서는 systemctl [stop|start|restart] {서비스명} 의 순서로 바뀌었습니다. 내용을 정리하면 다음과 같습니다.&#xA;CentOS 6.x 이하 link&#xD;- 중지 : service httpd stop&#xD;- 시작 : service httpd start&#xD;- 재시작 : service httpd restart&#xD;CentOS 7.x link&#xD;- 중지 : systemctl stop httpd&#xD;- 시작 : systemctl start httpd&#xD;- 재시작 : systemctl restart httpd&#xD;mysql 시작, 중지, 재시작 linkmysql도 Apache와 마찬가지 방식으로 CentOS 6 이하와 CentOS 7에서 사용하는 명령어가 변경되었습니다.</description>
     </item>
     <item>
       <title>Classic 환경 Windows 서버 이미지를 VPC 환경으로 복제하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/classic/windows-server-image-copy-to-vpc/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/classic/windows-server-image-copy-to-vpc/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/classic/windows-server-image-copy-to-vpc/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/classic/windows-server-image-copy-to-vpc/</guid>
       <description>개요 link네이버 클라우드 Classic 환경의 Windows 서버 이미지를 VPC 환경으로 복제하려면 몇가지 사전 작업과 조건이 있습니다. 이 사전 작업과 조건을 차례대로 정리해보겠습니다.&#xA;OS 조건 확인 linkClassic 환경의 서버 이미지를 VPC 환경으로 복제하는 것이므로 VPC에서 지원하는 OS만 복제 가능합니다.&#xA;즉, 현재 네이버 클라우드 VPC 환경에서 지원하는 Windows OS 버전은&#xA;Windows Server 2016 (64-bit) English Edition 하나이기 때문에 2016 R2 등의 OS를 사용 중이라면 VPC에서 지원하지 않아 복제가 불가능하니 VPC에서 지원할 때까지 작업을 보류하셔야 합니다.</description>
     </item>
     <item>
       <title>Classic환경 Load Balancer 운영을 위한 ACG 설정 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</link>
+      <link>https://staeho-3rd.github.io/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</link>
       <pubDate>Thu, 14 Jan 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/networking/loadbalancer/classic-loadbalancer-acg-setting/</guid>
       <description>개요 linkLoad Balancer가 정상적으로 동작하기 위해서는 Load Balancer &amp;ndash;&amp;gt; Server의 지정된 포트로 접근할 수 있어야 합니다.&#xA;그러기 위해서는 Server의 ACG에 Load Balancer가 접근할 수 있도록 권한을 설정해주어야 하는데, 여기서는 네이버 클라우드의 Classic Load Balancer를 운영할 때 ACG 설정을 어떻게 하는가에 대한 내용을 정리해보겠습니다.&#xA;서버연결 실패 상황 link서버 등록하고 Load Balancer의 다른 설정들을 모두 올바르게 했는데도 아래와 같이 서버연결 상태가 실패로 나타나고 Load Balancer는 동작이 정지되는 경우가 있습니다.&#xA;이런 경우가 바로 ACG에 Load Balancer의 접근 권한을 설정하지 않았을 때 입니다.</description>
     </item>
   </channel>

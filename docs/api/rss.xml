@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/docs/api/</link>
+    <link>https://staeho-3rd.github.io/docs/api/</link>
     <description>Recent content in API on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 29 Dec 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/api/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/api/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows PowerShell에서 Ncloud API를 호출하는 샘플 예제</title>
-      <link>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-powershell-sample/</link>
+      <link>https://staeho-3rd.github.io/docs/api/ncloud-api-call-powershell-sample/</link>
       <pubDate>Thu, 29 Dec 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-powershell-sample/</guid>
+      <guid>https://staeho-3rd.github.io/docs/api/ncloud-api-call-powershell-sample/</guid>
       <description>개요 link네이버 클라우드 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 Windows PowerShell에서 호출하는 샘플 예제를 정리해봅니다.&#xA;네이버 클라우드 API는 RESTful API 방식으로 제공되며, XML와 JSON 형식으로 응답합니다 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 호출 샘플 코드 link&#xD;function Sign-Request(&#xD;[string] $api_server,&#xD;[string] $api_url, [string] $apicall_method, [string] $ncloud_accesskey, [string] $ncloud_secretkey )&#xD;{ $unixtimestamp = [DateTimeOffset]::Now.ToUnixTimeSeconds() * 1000&#xD;$space = &amp;#34; &amp;#34;&#xD;$new_line = &amp;#34;`n&amp;#34;&#xD;$message = $apicall_method &amp;#43; $space &amp;#43;&#xD;$api_url &amp;#43; $new_line &amp;#43;&#xD;$unixtimestamp &amp;#43; $new_line &amp;#43;&#xD;$ncloud_accesskey $signature = Compute-HMACSHA256Hash $ncloud_secretkey $message&#xD;# Return request headers&#xD;return @{&#xD;&amp;#34;x-ncp-apigw-timestamp&amp;#34; = $unixtimestamp;&#xD;&amp;#34;x-ncp-iam-access-key&amp;#34; = $ncloud_accesskey;&#xD;&amp;#34;x-ncp-apigw-signature-v2&amp;#34; = $signature&#xD;}&#xD;}&#xD;function Compute-HMACSHA256Hash(&#xD;[string] $secret, # base64 encoded&#xD;[string] $content&#xD;)&#xD;{&#xD;$hmacsha = New-Object System.</description>
     </item>
     <item>
       <title>Python으로 Ncloud API를 호출하는 샘플 예제</title>
-      <link>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-python-sample/</link>
+      <link>https://staeho-3rd.github.io/docs/api/ncloud-api-call-python-sample/</link>
       <pubDate>Thu, 24 Feb 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-python-sample/</guid>
+      <guid>https://staeho-3rd.github.io/docs/api/ncloud-api-call-python-sample/</guid>
       <description>개요 linkNcloud (네이버 클라우드) 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 Python으로 호출하는 샘플 예제를 정리해봅니다.&#xA;Ncloud API는 RESTful API 방식으로 제공되며, XML와 JSON 형식으로 응답합니다 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 호출 샘플 코드 link&#xD;import sys&#xD;import os&#xD;import hashlib&#xD;import hmac&#xD;import base64&#xD;import requests&#xD;import time&#xD;# unix timestamp 설정&#xD;timestamp = int(time.time() * 1000)&#xD;timestamp = str(timestamp)&#xD;# Ncloud API Key 설정&#xD;ncloud_accesskey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;&#xD;ncloud_secretkey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;&#xD;# 암호화 문자열 생성을 위한 기본값 설정&#xD;apicall_method = &amp;#34;GET&amp;#34;&#xD;space = &amp;#34; &amp;#34;&#xD;new_line = &amp;#34;\n&amp;#34;&#xD;# API 서버 정보&#xD;api_server = &amp;#34;https://billingapi.</description>
     </item>
     <item>
       <title>C#으로 Ncloud API를 호출하는 샘플 예제</title>
-      <link>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-csharp-sample/</link>
+      <link>https://staeho-3rd.github.io/docs/api/ncloud-api-call-csharp-sample/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-csharp-sample/</guid>
+      <guid>https://staeho-3rd.github.io/docs/api/ncloud-api-call-csharp-sample/</guid>
       <description>개요 link네이버 클라우드 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 C#으로 호출하는 샘플 예제중에서 핵심인 인증을 위한 암호화 문자열 생성 코드를 정리해보겠습니다.&#xA;암호화 샘플 코드 link&#xD;public string unixTimeStamp;&#xD;public string ncpAccessKey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;;&#xD;public string ncpSecretKey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;;&#x9;public string apiCallMethod = &amp;#34;GET&amp;#34;;&#xD;public string apiServer = &amp;#34;https://billingapi.apigw.ntruss.com&amp;#34;;&#xD;public string apiUrl = &amp;#34;네이버 클라우드 API URL&amp;#34;;&#xD;public string MakeSignature()&#xD;{&#xD;string msgSignature;&#xD;string space = &amp;#34; &amp;#34;;&#xD;string newLine = &amp;#34;\n&amp;#34;;&#xD;// 13자리 유닉스 타임스탬프 설정&#xD;DateTime now = DateTime.</description>
     </item>
     <item>
       <title>PHP로 Ncloud API를 호출하는 샘플 예제</title>
-      <link>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-php-sample/</link>
+      <link>https://staeho-3rd.github.io/docs/api/ncloud-api-call-php-sample/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-php-sample/</guid>
+      <guid>https://staeho-3rd.github.io/docs/api/ncloud-api-call-php-sample/</guid>
       <description>개요 link네이버 클라우드 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 PHP로 호출하는 샘플 예제를 정리해봅니다.&#xA;네이버 클라우드 API는 RESTful API 방식으로 제공되며, XML와 JSON 형식으로 응답합니다 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 호출 샘플 코드 link&#xD;&amp;lt;?php&#xD;// 기본 데이터 설정&#xD;$unixtimestamp = round(microtime(true) * 1000);&#xD;$ncp_accesskey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;;&#xD;$ncp_secretkey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;;&#x9;$api_server = &amp;#34;https://billingapi.apigw.ntruss.com&amp;#34;;&#xD;// API URL 예시 : 상품별 가격 리스트 호출 api&#xD;$api_url = &amp;#34;/billing/v1/product/getProductPriceList&amp;#34;;&#xD;$api_url = $api_url.</description>
     </item>
   </channel>

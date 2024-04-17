@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tool on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/tool/</link>
+    <link>https://staeho-3rd.github.io/tags/tool/</link>
     <description>Recent content in Tool on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/tool/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/tool/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Object Storage 접속용 Windows Client Tool | CloudBerry Explorer</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</guid>
       <description>개요 link네이버 클라우드의 Object Storage에 접속, 관리하는 방법은 aws cli 등 여러가지 있지만 Windows PC에서 간편하게 접속해서 관리할 수 있는 클라이언트 툴이 몇개 있습니다.&#xA;그 중에서 가장 많이 사용되는 것이 바로 CloudBerry Explorer 인데, 사용법에 대해 간단히 정리해보겠습니다.&#xA;CloudBerry Explorer linkCloudBerry Explorer의 정식 명칭은 CloudBerry Explorer Freeware for Amazon S3입니다.&#xA;이 버전은 무료버전이며 더 많은 기능이 포함된 유료 버전도 있습니다. 그리고 Amazon S3 뿐만 아니라 Microsoft Azur, Google Cloud 등을 위한 버전도 따로 있습니다.</description>
     </item>
     <item>
       <title>Object Storage 접속용 Windows Client Tool | Cyberduck</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cyberduck/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cyberduck/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cyberduck/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cyberduck/</guid>
       <description>개요 link네이버 클라우드 Object Storage에 접속해서 파일을 업로드, 다운로드 등의 관리를 할 수 있는 클라이언트 툴중에서 이번에는 Cyberduck이라는 무료 제품을 소개하려고 합니다.&#xA;Object Storage는 AWS S3와 호환되기 때문에 S3를 지원하는 Cyberduck도 사용할 수 있는데 Cyberduck은 S3뿐만 아니라 FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure &amp;amp; OneDrive, Google Drive, Dropbox 등에도 접속 가능합니다.&#xA;설치파일 다운로드 linkCyberduck은 윈도우용과 macOS용 프로그램을 제공하고 있어, 원하는 제품을 다운 받으면 됩니다.&#xA;https://cyberduck.io/download/ 설치 link설치할 디렉토리를 선택하고, Cyberduck을 설치합니다.</description>
     </item>
     <item>
       <title>Object Storage 접속용 Windows Client Tool | S3 Browser</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-s3browser/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-s3browser/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-s3browser/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-s3browser/</guid>
       <description>개요 link네이버 클라우드의 Object Storage에 접속, 관리하는 방법은 aws cli 등 여러가지 있지만 Windows PC에서 간편하게 접속해서 관리할 수 있는 클라이언트 툴이 몇개 있습니다.&#xA;그 중에서 이번에는 S3 Browser의 사용법에 대해 간단히 정리해보겠습니다.&#xA;S3 Browser linkS3 Browser는 Amazon S3 and Amazon CloudFront를 위한 클라이언트입니다 이 버전은 무료버전이기는 하지만, 정확히는 personal use only, non-commecial use only라고 명시되어 있습니다.&#xA;그래서 라이선스와 관계없이 사용 가능하고, 더 많은 기능이 포함된 유료 버전도 있습니다.&#xA;상세한 정보와 다운로드는 아래 링크에서 확인하시면 됩니다.</description>
     </item>
   </channel>

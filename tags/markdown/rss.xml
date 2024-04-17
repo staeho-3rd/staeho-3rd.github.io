@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/markdown/</link>
+    <link>https://staeho-3rd.github.io/tags/markdown/</link>
     <description>Recent content in Markdown on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 07 Mar 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/markdown/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/markdown/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jekyll 설치(윈도 10) with base-theme</title>
-      <link>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-install-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-install-guide/</link>
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-install-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-install-guide/</guid>
       <description>설치 전체과정 요약 link Ruby 설치 ridk 설치 gem 업데이트 jekyll, Bundler 설치 Ruby 설치 link일반적으로 jekyll를 사용한다면 최신 버전을 사용하면 되겠지만 여기서는 base-theme를 기반으로 하기 때문에 호환에 잘되는 2.5를 설치합니다.&#xA;Ruby Installer 다운로드 경로&#xA;https://rubyinstaller.org/downloads/ 위 사이트에서 rubyinstaller-devkit-2.5.8-2-x64 를 다운 받아 설치하면 됩니다.&#xA;Ruby 설치가 끝나면서 완료화면에 Run &amp;lsquo;ridk install&amp;rsquo; to setup MSYS2 and development toolchain. 이라는 옵션이 나타납니다.&#xA;반드시 선택하고 완료를 하시기 바랍니다.&#xA;ridk 설치 link앞단계인 Ruby 설치 완료에서 ridk install을 선택했다면 ridk 설치 커맨드 창이 나타납니다.</description>
     </item>
     <item>
       <title>jekyll base-theme 커스터마이징</title>
-      <link>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-customizing/</link>
+      <link>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-customizing/</link>
       <pubDate>Tue, 23 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/base-theme-customizing/</guid>
+      <guid>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/base-theme-customizing/</guid>
       <description>폰트 교체 linkbase-theme는 기본 폰트가 Merriweather로 되어 있습니다.&#xA;영어 표기에는 적당하지만, 한글 표기에는 좋지 않아 나눔고딕 폰트로 변경하였습니다.&#xA;그리고 폰트 파일을 별도로 추가하기 보다는 구글에서 제공하는 폰트 경로를 설정하는 방식으로 교체했습니다.&#xA;구글에서 제공하는 폰트 리스트와 적용 방법은 아래 사이트에서 확인 가능합니다.&#xA;https://fonts.google.com/ html 수정 link파일 위치 : \_layouts\default.html&#xA;&amp;lt;link rel=&amp;#34;preconnect&amp;#34; href=&amp;#34;https://fonts.gstatic.com&amp;#34;&amp;gt;&#xD;&amp;lt;link href=&amp;#34;https://fonts.googleapis.com/css2?family=Nanum&amp;#43;Gothic&amp;amp;display=swap&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt; css 수정 link파일 위치: \_sass\typography.scss&#xA;body {&#xD;height: 100%;&#xD;max-height: 100%;&#xD;font-family: &amp;#39;Nanum Gothic&amp;#39;, sans-serif;&#xD;}&#xD;한글 검색 오류 수정 linkbase-theme 기본 설정으로는 한글 등 utf-8 언어 검색이 되지 않습니다.</description>
     </item>
     <item>
       <title>Jekyll Documentation Theme 설치 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/documentation-theme-install-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/documentation-theme-install-guide/</link>
       <pubDate>Fri, 04 Mar 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/documentation-theme-install-guide/</guid>
-      <description>Documentation Theme 특징 link이 기술문서에 사용된 Documentation Theme의 가장 큰 특징은 다음과 같습니다.&#xA;⁃ 문서를 카테고리별로 정렬해서 보여주는 네비게이션 리스트&#xA;⁃ 문서 상단에 보여주는 문서 목차 (TOC)&#xA;⁃ 다양한 상단 네비게이션 구성&#xA;⁃ Tag를 활용해서 비슷한 주제의 문서를 함께 확인할 수 있음&#xD;설치 전체과정 요약 link Ruby 설치 ridk 설치 Documentation Theme 다운로드 Jekyll gem 설치 Bundler 설치 {% include tip.html content=&amp;ldquo;이미 Ruby 2.5등 3.0 이전 버전이 설치되어 있더라도 3.0을 설치하시는 걸 추천드립니다.</description>
+      <guid>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/documentation-theme-install-guide/</guid>
+      <description>Documentation Theme 특징 link이 기술문서에 사용된 Documentation Theme의 가장 큰 특징은 다음과 같습니다.&#xA;⁃ 문서를 카테고리별로 정렬해서 보여주는 네비게이션 리스트&#xA;⁃ 문서 상단에 보여주는 문서 목차 (TOC)&#xA;⁃ 다양한 상단 네비게이션 구성&#xA;⁃ Tag를 활용해서 비슷한 주제의 문서를 함께 확인할 수 있음&#xD;설치 전체과정 요약 link Ruby 설치 ridk 설치 Documentation Theme 다운로드 Jekyll gem 설치 Bundler 설치 check_circle&#xD;이미 Ruby 2.5등 3.0 이전 버전이 설치되어 있더라도 3.0을 설치하시는 걸 추천드립니다.</description>
     </item>
     <item>
       <title>Jekyll Documentation Theme 문서 작성 기본 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/documentation-theme-page-create-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/documentation-theme-page-create-guide/</link>
       <pubDate>Mon, 07 Mar 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/etc/markdown/jekyll/documentation-theme-page-create-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/etc/markdown/jekyll/documentation-theme-page-create-guide/</guid>
       <description>문서 편집툴 linkVisual Studio Code linkWindows에서 Jekyll 문서를 편집하는 경우에는 Command 창을 열어서 로컬 사이트를 실행하거나 빌드하고, 오류가 발생하면 실시간으로 나타나는 오류 메시지를 확인하면서 작업하게 됩니다. 이때 문서 편집툴과 Command 창을 별도로 띄워놓고 확인하는 것이 불편한데 Visual Studio Code를 사용하면 아래 스샷처럼, 문서 편집화면과 터미널 창을 함께 보면서 작업 가능해서 무척 편리합니다.&#xA;다운로드: https://code.visualstudio.com/ md 파일 생성 link작성하려는 문서를 markdown 파일의 확장자인 .md 파일로 생성합니다.&#xA;파일 경로 link파일경로는 /pages 폴더 아래쪽에 카테고리 별로 적당히 나누어서 관리하기 편하게 구성하면 됩니다.</description>
     </item>
     <item>
       <title>MkDocs 설치 가이드 (윈도 10)</title>
-      <link>https://docs.3rdeyesys.com/docs/etc/markdown/mkdocs/basic-install-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/etc/markdown/mkdocs/basic-install-guide/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/etc/markdown/mkdocs/basic-install-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/etc/markdown/mkdocs/basic-install-guide/</guid>
       <description>설치 전체과정 요약 link Python 다운로드&#xA;Python 설치&#xA;2-1. Add Python 3.9 to PATH 옵션 선택&#xA;2-2. Disable path length limit 선택&#xA;mkdocs 설치&#xA;3-1. pip install mkdocs-material&#xA;3-2. python.exe -m pip install &amp;ndash;upgrade pip&#xA;3-3. pip install mkdocs-awesome-pages-plugin&#xA;3-4. mkdocs new {폴더명}&#xA;3-5. cd blog-mkdocs 이동 후 mkdocs serve&#xA;Python 다운로드 linkmkdocs를 사용하려면 먼저 Python을 설치해야 합니다.&#xA;https://www.python.org/downloads/&#xA;2020-11-27일 현재 최신버전은 3.9.0입니다.&#xA;Python 설치하기 linkPATH 추가 linkPython 설치 시작화면에 PATH에 python을 추가하는 옵션이 있습니다.</description>
     </item>
   </channel>

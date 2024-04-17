@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visual Studio on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/visual-studio/</link>
+    <link>https://staeho-3rd.github.io/tags/visual-studio/</link>
     <description>Recent content in Visual Studio on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/visual-studio/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/visual-studio/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법 </title>
-      <link>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</guid>
       <description>개요 link네이버 클라우드 Cloud Functions에서 Action을 만들 수 있는 언어로는 Node.js, Python, Java, Swift, PHP, .Net, Go Language 등이 있는데 다른 언어들은 네이버 클라우드 콘솔에서 직접 코드를 입력하면 되지만, Java는 로컬에서 작업 후 jar 파일로 .Net은 zip 파일로 압축해서 따로 등록해야 합니다.&#xA;여기서는 Visual Studio에서 .Net 그 중에서도 C#으로 Action을 만들고 zip 파일로 압축 후에 콘솔에 등록하고 테스트 하는 과정까지 정리해보겠습니다.&#xA;.Net 설치 link네이버 클라우드 Cloud Functions는 .Net Standard 2.0 규격을 요구하는데, 이 규격을 지원하는 버전을 설치하려면 .</description>
     </item>
   </channel>

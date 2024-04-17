@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Template on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/template/</link>
+    <link>https://staeho-3rd.github.io/tags/template/</link>
     <description>Recent content in Template on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 07 Mar 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/template/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/template/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 모니터링 서비스 Cloud Insight Rule Template 설정 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/management/cloud-insight/rule-template-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/management/cloud-insight/rule-template-guide/</link>
       <pubDate>Tue, 07 Mar 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/management/cloud-insight/rule-template-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/management/cloud-insight/rule-template-guide/</guid>
       <description>개요 linkCloud Insight를 설정할 때 매번 서버마다 일일이 설정하는 방법도 있지만 [CPU-메모리-디스크 사용률] 같은 자주 모니터링하는 항목들을 [Template]에 등록해 두면 모니터링을 설정할 때 좀 더 쉽고 정확하게 설정할 수 있는데, 그 방법을 정리해보겠습니다.&#xA;Cloud Insight 기본 설정 방법 linkCloud Insight의 기본적인 설정 방법은 아래 링크 문서에서 확인 가능합니다.&#xA;⁃ Cloud Insight Rule Template 설정 가이드&#xD;Template 설정 항목 linkTemplate 설정할 때 서비스 상황에 따라 여러가지를 설정할 수 있는데, 여기서 예시로 설정해 볼 항목은 다음과 같습니다.</description>
     </item>
   </channel>

@@ -38,19 +38,19 @@
 <meta property="og:title" content="MySQL Multi Source Replication 구성 가이드" />
 <meta property="og:description" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.3rdeyesys.com/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/" />
-<meta property="og:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
+<meta property="og:url" content="https://staeho-3rd.github.io/docs/database/mysql-mariadb/replication/mysql-multi-source-replication/" />
+<meta property="og:image" content="https://staeho-3rd.github.io/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
 <meta property="og:image:alt" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드" />
 <meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-04-05T00:00:00+09:00" />
 <meta property="article:modified_time" content="2023-04-05T00:00:00+09:00" />
 <meta property="og:locale" content="ko-kr" />
-<meta property="twitter:image" content="https://docs.3rdeyesys.com/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
+<meta property="twitter:image" content="https://staeho-3rd.github.io/images/database/ncloud-database-mysql-multi-source-replication-guide-01.png" />
 <meta property="twitter:image:alt" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드" />
 <meta name="twitter:title" content="MySQL Multi Source Replication 구성 가이드"/>
 <meta name="twitter:description" content="Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MySQL Multi Source Replication 구성 가이드","url":"https:\/\/docs.3rdeyesys.com\/docs\/database\/mysql-mariadb\/replication\/mysql-multi-source-replication\/"}
+{"@context":"https://schema.org","@type":"WebPage","description":"Ncloud(네이버 클라우드)에서 MySQL Multi Source Replication 구성하는 방법에 대한 상세 가이드입니다","headline":"MySQL Multi Source Replication 구성 가이드","url":"https:\/\/staeho-3rd.github.io\/docs\/database\/mysql-mariadb\/replication\/mysql-multi-source-replication\/"}
 </script>
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -2867,14 +2867,14 @@ MySQL 8.0 버전 부터는 replicate-do-db 설정에 채널 정보도 추가할 
 		
 
 		<a class="nav-link  active"
-		   id="cdafbeTab" data-bs-toggle="tab" data-bs-target="#cdafbe"
-		   type="button" role="tab" aria-controls="cdafbe" aria-selected="true">MySQL 5.7</a>
+		   id="acbdfeTab" data-bs-toggle="tab" data-bs-target="#acbdfe"
+		   type="button" role="tab" aria-controls="acbdfe" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="cbadfeTab" data-bs-toggle="tab" data-bs-target="#cbadfe"
-		   type="button" role="tab" aria-controls="cbadfe" aria-selected="true">MySQL 8.0</a>
+		   id="aefdcbTab" data-bs-toggle="tab" data-bs-target="#aefdcb"
+		   type="button" role="tab" aria-controls="aefdcb" aria-selected="true">MySQL 8.0</a>
 
 		
 
@@ -2890,7 +2890,7 @@ MySQL 8.0 버전 부터는 replicate-do-db 설정에 채널 정보도 추가할 
 
 
 
-<div class="tab-pane fade show active" id="cdafbe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="acbdfe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -2941,7 +2941,7 @@ systemctl restart mysqld</code>
 
 
 
-<div class="tab-pane fade" id="cbadfe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="aefdcb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3036,20 +3036,20 @@ mysql -u root -p testdb2 &lt; /data/test2.sql</code>
 		
 
 		<a class="nav-link  active"
-		   id="dfbcaeTab" data-bs-toggle="tab" data-bs-target="#dfbcae"
-		   type="button" role="tab" aria-controls="dfbcae" aria-selected="true">MySQL 5.7</a>
+		   id="fedcbaTab" data-bs-toggle="tab" data-bs-target="#fedcba"
+		   type="button" role="tab" aria-controls="fedcba" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="fabcdeTab" data-bs-toggle="tab" data-bs-target="#fabcde"
-		   type="button" role="tab" aria-controls="fabcde" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
+		   id="facbedTab" data-bs-toggle="tab" data-bs-target="#facbed"
+		   type="button" role="tab" aria-controls="facbed" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
 
 		
 
 		<a class="nav-link "
-		   id="cfeadbTab" data-bs-toggle="tab" data-bs-target="#cfeadb"
-		   type="button" role="tab" aria-controls="cfeadb" aria-selected="true">MySQL 8.0.23~</a>
+		   id="bacedfTab" data-bs-toggle="tab" data-bs-target="#bacedf"
+		   type="button" role="tab" aria-controls="bacedf" aria-selected="true">MySQL 8.0.23~</a>
 
 		
 
@@ -3065,7 +3065,7 @@ mysql -u root -p testdb2 &lt; /data/test2.sql</code>
 
 
 
-<div class="tab-pane fade show active" id="dfbcae" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fedcba" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3096,7 +3096,7 @@ mysql&gt; CHANGE MASTER TO MASTER_HOST=&#39;마스터IP&#39;, MASTER_PORT=포트
 
 
 
-<div class="tab-pane fade" id="fabcde" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="facbed" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3127,7 +3127,7 @@ mysql&gt; CHANGE MASTER TO MASTER_HOST=&#39;마스터IP&#39;, MASTER_PORT=포트
 
 
 
-<div class="tab-pane fade" id="cfeadb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bacedf" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3186,20 +3186,20 @@ mysql&gt; CHANGE REPLICATION SOURCE TO SOURCE_HOST=&#39;마스터IP&#39;, SOURCE
 		
 
 		<a class="nav-link  active"
-		   id="dcbfeaTab" data-bs-toggle="tab" data-bs-target="#dcbfea"
-		   type="button" role="tab" aria-controls="dcbfea" aria-selected="true">MySQL 5.7</a>
+		   id="aedfbcTab" data-bs-toggle="tab" data-bs-target="#aedfbc"
+		   type="button" role="tab" aria-controls="aedfbc" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="fcdaebTab" data-bs-toggle="tab" data-bs-target="#fcdaeb"
-		   type="button" role="tab" aria-controls="fcdaeb" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
+		   id="febdcaTab" data-bs-toggle="tab" data-bs-target="#febdca"
+		   type="button" role="tab" aria-controls="febdca" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
 
 		
 
 		<a class="nav-link "
-		   id="dcabefTab" data-bs-toggle="tab" data-bs-target="#dcabef"
-		   type="button" role="tab" aria-controls="dcabef" aria-selected="true">MySQL 8.0.23~</a>
+		   id="befdcaTab" data-bs-toggle="tab" data-bs-target="#befdca"
+		   type="button" role="tab" aria-controls="befdca" aria-selected="true">MySQL 8.0.23~</a>
 
 		
 
@@ -3215,7 +3215,7 @@ mysql&gt; CHANGE REPLICATION SOURCE TO SOURCE_HOST=&#39;마스터IP&#39;, SOURCE
 
 
 
-<div class="tab-pane fade show active" id="dcbfea" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="aedfbc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3251,7 +3251,7 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 
 
 
-<div class="tab-pane fade" id="fcdaeb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="febdca" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3287,7 +3287,7 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 
 
 
-<div class="tab-pane fade" id="dcabef" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="befdca" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3334,14 +3334,14 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 		
 
 		<a class="nav-link  active"
-		   id="dcaebfTab" data-bs-toggle="tab" data-bs-target="#dcaebf"
-		   type="button" role="tab" aria-controls="dcaebf" aria-selected="true">MySQL 5.7</a>
+		   id="aecbdfTab" data-bs-toggle="tab" data-bs-target="#aecbdf"
+		   type="button" role="tab" aria-controls="aecbdf" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="dabecfTab" data-bs-toggle="tab" data-bs-target="#dabecf"
-		   type="button" role="tab" aria-controls="dabecf" aria-selected="true">MySQL 8.0</a>
+		   id="edbcafTab" data-bs-toggle="tab" data-bs-target="#edbcaf"
+		   type="button" role="tab" aria-controls="edbcaf" aria-selected="true">MySQL 8.0</a>
 
 		
 
@@ -3357,7 +3357,7 @@ mysql&gt; FLUSH PRIVILEGES;</code>
 
 
 
-<div class="tab-pane fade show active" id="dcaebf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="aecbdf" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3392,7 +3392,7 @@ mysql&gt; show slave status for channel &#39;ch_testdb2&#39;\G</code>
 
 
 
-<div class="tab-pane fade" id="dabecf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="edbcaf" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -3467,20 +3467,20 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 		
 
 		<a class="nav-link  active"
-		   id="efcabdTab" data-bs-toggle="tab" data-bs-target="#efcabd"
-		   type="button" role="tab" aria-controls="efcabd" aria-selected="true">MySQL 5.7</a>
+		   id="acfdebTab" data-bs-toggle="tab" data-bs-target="#acfdeb"
+		   type="button" role="tab" aria-controls="acfdeb" aria-selected="true">MySQL 5.7</a>
 
 		
 
 		<a class="nav-link "
-		   id="acfdbeTab" data-bs-toggle="tab" data-bs-target="#acfdbe"
-		   type="button" role="tab" aria-controls="acfdbe" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
+		   id="baefcdTab" data-bs-toggle="tab" data-bs-target="#baefcd"
+		   type="button" role="tab" aria-controls="baefcd" aria-selected="true">MySQL 8.0 ~ 8.0.22</a>
 
 		
 
 		<a class="nav-link "
-		   id="fedbacTab" data-bs-toggle="tab" data-bs-target="#fedbac"
-		   type="button" role="tab" aria-controls="fedbac" aria-selected="true">MySQL 8.0.23~</a>
+		   id="cabdfeTab" data-bs-toggle="tab" data-bs-target="#cabdfe"
+		   type="button" role="tab" aria-controls="cabdfe" aria-selected="true">MySQL 8.0.23~</a>
 
 		
 
@@ -3496,7 +3496,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 
 
 
-<div class="tab-pane fade show active" id="efcabd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="acfdeb" role="tabpanel" aria-labelledby="nav-1">
 
 	<table class="simple_table">
   <thead>
@@ -3525,7 +3525,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 
 
 
-<div class="tab-pane fade" id="acfdbe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="baefcd" role="tabpanel" aria-labelledby="nav-1">
 
 	<table class="simple_table">
   <thead>
@@ -3554,7 +3554,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
 
 
 
-<div class="tab-pane fade" id="fedbac" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cabdfe" role="tabpanel" aria-labelledby="nav-1">
 
 	<table class="simple_table">
   <thead>
@@ -3674,7 +3674,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
                     </p>                    
                                     
                     <p class="mb-0">
-                        Page last modified:2021-04-07 <br />
+                        Page last modified:2021-05-24 <br />
                     </p>
                     
                     <p class="mb-0">
@@ -3724,7 +3724,7 @@ Slave 서버에서 testdb2 DB에 sampletable Table이 복제되었는지 확인�
     <script src="/docs/js/bootstrap.eac7ee3f6fa791c684e7a51fc2fd50b6f724271b9e39562e4fe8c3942412df3acbfc4045f043d03399dac70091207507.js" integrity="sha384-6sfuP2&#43;nkcaE56Ufwv1QtvckJxueOVYuT&#43;jDlCQS3zrL/EBF8EPQM5naxwCRIHUH"defer></script>
 
 
-    <script type="text/javascript" src="/docs/js/bundle.min.ee154403a9df249115acfd86b0edde4c167426fcac746995612a08385ed4e1c6441cd78dfc6e52400c72297f7c1f48f9.js" defer></script>
+    <script type="text/javascript" src="/docs/js/bundle.min.e1ade8d98c1c957f050eb9b2c51325c8cd894354e8a73c1583b14869dd2266204618e149eac86c898b051a828f3bdf13.js" defer></script>
         
 
         

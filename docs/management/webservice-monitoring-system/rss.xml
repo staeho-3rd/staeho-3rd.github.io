@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ncloud Web service Monitoring System on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/</link>
+    <link>https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/</link>
     <description>Recent content in Ncloud Web service Monitoring System on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud Web service Monitoring System 스텝 추가 상세 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/wms-step-detail-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/wms-step-detail-guide/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/wms-step-detail-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/wms-step-detail-guide/</guid>
       <description>개요 linkNcloud Web service Monitoring System의 모니터링 스텝에는 URL 접속 외에 텍스트 입력, 오브젝트 클릭 등이 있는데 구체적으로 어떻게 활용할 수 있는지 확인해보겠습니다.&#xA;스텝 종류 link[스텝 추가]에서 추가 가능한 스텝은 다음과 같습니다.&#xA;URL 접속 : 입력한 URL에 접속 합니다. 대기 시간 : 입력한 시간 만큼 대기 후에 진행합니다. 마우스 클릭 : 설정된 대상을 찾아 클릭 합니다. 텍스트 입력 : 설정된 대상을 찾아 텍스트를 입력 합니다. 유효성 검사 (오브젝트 찾기) : 페이지에서 설정된 오브젝트를 찾습니다.</description>
     </item>
     <item>
       <title>Ncloud Web service Monitoring System 사용 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/wms-basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/wms-basic-guide/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/management/webservice-monitoring-system/wms-basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/management/webservice-monitoring-system/wms-basic-guide/</guid>
       <description>개요 linkNcloud Web service Monitoring System은 고객의 웹 서비스를 실제 사용자 환경에서 모니터링하는 서비스입니다. 웹 서비스 URL을 입력하여 실시간으로 테스트를 진행할 수 있고, 스케줄을 등록하여 반복적으로 모니터링을 할 수도 있으며, 오류 발생 시 알람을 받을 수도 있습니다.&#xA;이용신청 linkNcloud 콘솔 [Management] - [Web service Monitoring System] - [Subscription]에서 이용 신청을 합니다.&#xA;다음으로 [Web Monitoring]에서 [서비스 등록] 버튼을 클릭합니다.&#xA;스텝 작성 link테스트 환경 선택 link모니터링 설정 전에 모니터링 유형, 서비스 유형, 지역 선택 등의 테스트를 진행할 환경을 설정합니다.</description>
     </item>
   </channel>

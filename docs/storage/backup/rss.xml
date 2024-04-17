@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backup 서비스 on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/docs/storage/backup/</link>
+    <link>https://staeho-3rd.github.io/docs/storage/backup/</link>
     <description>Recent content in Backup 서비스 on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/docs/storage/backup/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/docs/storage/backup/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud 백업 서비스 상세 가이드 - Windows Data</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-windows-data/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-windows-data/</link>
       <pubDate>Fri, 06 Jan 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-windows-data/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-windows-data/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Backup 상품은 기존에 별도의 신청서를 작성해서 사용하던 [Managed Backup]의 대체 상품으로 출시된, 콘솔에서 바로 이용할 수 있는 상품으로 이 백업 상품을 이용해 Windows 파일 데이터를 백업하는 방법을 알아보도록 하겠습니다.&#xA;상품위치 linkBackup 상품은 [Console] - [Services] - [Storage]에 있습니다.&#xA;테스트 서버 link백업을 테스트할 리눅스 서버를 아래와 같이 미리 준비했습니다.&#xA;그리고, 백업과 복원에 필요한 디렉토리를 다음과 같이 생성했습니다.&#xA;백업할 디렉토리: C:\Backup-Data 복원할 디렉토리: C:\Restore 리소스 생성 link먼저 백업 혹은 복구를 수행할 대상 서버를 설정합니다.</description>
     </item>
     <item>
       <title>Ncloud 백업 서비스 상세 가이드 - Linux Data</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-linux-data/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-linux-data/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/backup/service-detail-guide-linux-data/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/backup/service-detail-guide-linux-data/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Backup 상품은 기존에 별도의 신청서를 작성해서 사용하던 [Managed Backup]의 대체 상품으로 출시된, 콘솔에서 바로 이용할 수 있는 상품으로 이 백업 상품을 이용해 리눅스 파일 데이터를 백업하는 방법을 알아보도록 하겠습니다.&#xA;상품위치 linkBackup 상품은 [Console] - [Services] - [Storage]에 있습니다.&#xA;테스트 서버 link백업을 테스트할 리눅스 서버를 아래와 같이 미리 준비했습니다.&#xA;그리고, 백업과 복원에 필요한 디렉토리를 다음과 같이 생성했습니다.&#xA;백업할 디렉토리: /backup-data 복원할 디렉토리: /restore 리소스 생성 link먼저 백업 혹은 복구를 수행할 대상 서버를 설정합니다.</description>
     </item>
     <item>
       <title>Ncloud 백업 서비스 기본 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/backup/service-basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/backup/service-basic-guide/</link>
       <pubDate>Thu, 22 Dec 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/backup/service-basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/backup/service-basic-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 기존에 별도의 신청서를 작성해서 사용하던 Managed Backup의 대체 상품으로 출시된 콘솔에서 바로 이용할 수 있는 Backup 상품의 기본 가이드를 알아보도록 하겠습니다.&#xA;서비스 특징 link 다양한 플랫폼 및 데이터베이스 지원: Linux, Windows 계열 등 다양한 버전의 운영 체제를 지원하며 OS의 데이터 영역 및 서버에 설치된 데이터베이스의 온라인 백업이 가능합니다. 간편한 설치와 백업 단위 선택: 네이버 클라우드 웹 콘솔에서 간단한 설정을 통해 백업을 받고자 하는 리소스에 에이전트의 설치부터 백업 정책 구성까지 완료할 수 있습니다.</description>
     </item>
   </channel>

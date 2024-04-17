@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/mysql/</link>
+    <link>https://staeho-3rd.github.io/tags/mysql/</link>
     <description>Recent content in Mysql on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/mysql/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/mysql/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/basic-guide/</guid>
       <description>개요 linkRocky Linux (록키 리눅스)는 CentOS의 서비스 지원 종료로 대안으로 떠오른 CentOS 기반의 리눅스 OS입니다.&#xA;Ncloud (네이버 클라우드)는 이 록키 리눅스의 핵심 파트너로 선정되어 국내에서 록키 리눅스 인프라와 기술지원을 위해 협력해왔고, 드디어 Ncloud 콘솔에서 록키 리눅스를 제공하기 시작했기에 간단하게 소개해보려고 합니다.&#xA;제공 버전 linkNcloud에서는 현재 Rocky Linux 8.6 버전을 VPC 환경에서 제공하고 있습니다.&#xA;설치할 소프트웨어 link록키 리눅스 서버를 실행하고 보통 자주 사용하게 되는 아래의 소프트웨어들을 설치하고 확인해보겠습니다.&#xA;Apache PHP NGINX MariaDB (MySQL) 접속 화면 link서버를 생성하고 접속하면 아래와 같이 Ncloud 로고가 크게 표시된 화면을 볼 수 있습니다.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 환경 설정 정보</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-basic/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-basic/</guid>
       <description>LAMP 기본설정 linkNcloud(네이버 클라우드 플랫폼, 이하 네이버 클라우드)에서 제공하는 Application중에서 가장 대표적인 LAMP(Linux + Apache, Mysql|MariaDB, PHP)의 기본설정입니다.&#xA;LAMP Application이미지는 Classic 환경에서만 이용 가능합니다.&#xD;LAMP 홈디렉토리 link네이버 클라우드에서 Linux 서버를 세팅하게 되면 기본적으로 root 계정으로 접속이 됩니다. 그래서 LAMP 서비스의 홈디렉토리도 /root/lamp로 설정됩니다.&#xA;LAMP 서비스 홈디렉토리 : /root/lamp&#xD;LAMP 서비스 전체 재시작 link네이버 클라우드에서는 LAMP 전체 서비스를 빠르게 재시작할 수 있는 기능을 제공하고 있습니다.&#xA;LAMP 서비스 전체 재시작 명령 : /root/lamp/lamp_restart.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | Ubuntu</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-ubuntu/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-ubuntu/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 OS별로 조금씩 다른데 Ubuntu의 경우에는 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop apache2&#xD;- 시작 : systemctl start apache2&#xD;- 재시작 : systemctl restart apache2&#xD;mysql 시작, 중지, 재시작 linkmysql 시작, 중지, 재시작 명령어도 Apache와 마찬가지로 systemctl [stop|start|restart] {서비스명} 의 순서로 되어 있습니다.&#xA;Ubuntu link&#xD;- 중지 : systemctl stop mysql&#xD;- 시작 : systemctl start mysql&#xD;- 재시작 : systemctl restart mysql&#xD;Apache 환경 설정 파일 linkApache의 기본 환경설정 파일은 CentOS의 경우 httpd.</description>
     </item>
     <item>
       <title>Ncloud LAMP 기본 명령어와 환경 설정 파일 위치 | CentOS</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/lamp/config-centos/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/lamp/config-centos/</guid>
       <description>Apache 시작, 중지, 재시작 linkApache 시작, 중지, 재시작 명령어는 CentOS 6에서 사용하던 것이 CentOS 7이 되면서 변경되었습니다. CentOS 6.x 이하에서는 service {서비스명} [stop|start|restart] 순서였다면 CentOS 7.X 에서는 systemctl [stop|start|restart] {서비스명} 의 순서로 바뀌었습니다. 내용을 정리하면 다음과 같습니다.&#xA;CentOS 6.x 이하 link&#xD;- 중지 : service httpd stop&#xD;- 시작 : service httpd start&#xD;- 재시작 : service httpd restart&#xD;CentOS 7.x link&#xD;- 중지 : systemctl stop httpd&#xD;- 시작 : systemctl start httpd&#xD;- 재시작 : systemctl restart httpd&#xD;mysql 시작, 중지, 재시작 linkmysql도 Apache와 마찬가지 방식으로 CentOS 6 이하와 CentOS 7에서 사용하는 명령어가 변경되었습니다.</description>
     </item>
     <item>
       <title>Ncloud 설치형 DB서버와 관리형 Cloud DB 비교</title>
-      <link>https://docs.3rdeyesys.com/docs/database/ncloud-database-type-compare/</link>
+      <link>https://staeho-3rd.github.io/docs/database/ncloud-database-type-compare/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/ncloud-database-type-compare/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/ncloud-database-type-compare/</guid>
       <description>개요 link서버에 DB가 설치된 상태로 제공되는 설치형 DB서버와 Cloud 형태로 제공되는 관리형 DB서버는 어떤 특징과 차이점이 있는지 확인합니다. 더불어 비용 비교와 함께 각각의 DB서버를 어떤 경우에 사용하면 좋은지 예시를 통해 DB서버 선택에 도움을 드리고자 합니다.&#xA;설치형 DB 특징 link 저렴한 비용 DB관련 아주 세부적인 부분까지 직접 설정 가능 관리형 Cloud DB 특징 link 빠르고 손쉬운 설치 네이버 클라우드에서 검증된 최적화 설정 자동으로 증가하는 데이터 스토리지 (MSSQL : 2TB까지, Mysql : 6000GB까지) 장애 발생시 자동 Fail-over를 통한 장애 최소화를 할 수 있는 탁월한 가용성 제공 읽기 부하 분산을 위한 읽기 전용 Slave 5개까지 지원 자동화된 DB 백업, 최대 30일까지 보관 성능 모니터링과 알람 원하는 시간을 선택하여 DB 자동 복원 (Mysql) 1분 단위의 쿼리 레벨 성능 분석을 지원 (MSSQL) 비용 전체 비교 link DB 서버 스펙 : Standard(2 vCPU, 4GB 메모리, 100GB 디스크) DB 구분 설치형 DB (서버 비용 포함) 관리형 Cloud for DB mysql 69,000원/월 115,200원/월 MSSQL 379,000원/월 614,880원/월 비용 비교 상세 (Mysql) link설치형 link 69,000원/월 : 서버 비용 + DB 무료 관리형 Cloud link-115,200원/월 : 160원(시간당) * 24시간(1일) * 30일(한달)</description>
     </item>
     <item>
       <title>Classic 환경 설치형 MySQL DB에서 root Password 설정, 변경하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</guid>
-      <description>개요 link네이버 클라우드에서는 MySQL Password 정책에 따라 처음 MySQL DB를 설치할 때 root의 초기 패스워드가 설정되지 않습니다. 그러므로 보안 침해 방지를 위해 설치 후에 root Password를 설정한 후에 DB를 사용하는 것이 안전합니다.&#xA;여기서는 Classic환경에서 MySQL 5.6과 5.7 버전의 root Password를 설정, 변경하는 방법에 대해 정리해보겠습니다.&#xA;MySQL 버전 link네이버 클라우드 Classic환경에서 지원하는 설치형 MySQL 버전은 5.6과 5.7 입니다.&#xA;{% include callout_v2.html type=&amp;ldquo;success&amp;rdquo; level=&amp;ldquo;2&amp;rdquo; content=&amp;ldquo;Ncloud는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다.</description>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/classic-mysql-root-password-set-update/</guid>
+      <description>개요 link네이버 클라우드에서는 MySQL Password 정책에 따라 처음 MySQL DB를 설치할 때 root의 초기 패스워드가 설정되지 않습니다. 그러므로 보안 침해 방지를 위해 설치 후에 root Password를 설정한 후에 DB를 사용하는 것이 안전합니다.&#xA;여기서는 Classic환경에서 MySQL 5.6과 5.7 버전의 root Password를 설정, 변경하는 방법에 대해 정리해보겠습니다.&#xA;MySQL 버전 link네이버 클라우드 Classic환경에서 지원하는 설치형 MySQL 버전은 5.6과 5.7 입니다.&#xA;Ncloud는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다. 그러므로 VPC 환경에서 DB서버를 사용하려면 OS에 사용자가 직접 DB를 설치해서 사용하는 방법과 Cloud DB를 사용하는 방법 중에서 선택해야 합니다.</description>
     </item>
     <item>
       <title>MySQL 5.7 설치하는 방법 | Rocky Linux</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</link>
       <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</guid>
       <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 5.7 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
     <item>
       <title>MySQL 8.0 최신 버전 설치하는 방법 | Rocky Linux</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</link>
       <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</guid>
       <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 8.0 최신 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
     <item>
       <title>MySQL 데이터 저장 디렉토리(datadir) 위치를 변경해서 설치하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</link>
       <pubDate>Thu, 21 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 서버에 MySQL을 설치할 때 MySQL 데이터 저장 디렉토리(datadir) 위치를 변경해서 설치하는 방법을 정리해보겠습니다.&#xA;테스트 환경 link 서버: Rocky Linux 8.8 DB: MySQL 8.0 MySQL 설치 link아래와 같은 순서대로 MySQL 8.0 최신 버전을 설치합니다.&#xA;dnf -y upgrade-minimal&#xD;dnf -y install https://dev.mysql.com/get/mysql80-community-release-el8-9.noarch.rpm&#xD;dnf module reset mysql&#xD;dnf module disable mysql&#xD;dnf -y install mysql-community-server&#xD;데이터 저장 디렉토리 생성 linkDB 데이터를 저장할 임의의 디렉토리를 생성합니다. /database/mysql 과 같이 생성하고 실제 저장되는 디렉토리는 mysql로 하겠습니다.</description>
     </item>
     <item>
       <title>Mysql, MariaDB 환경설정 파일 my.cnf 위치</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</link>
       <pubDate>Fri, 28 Apr 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 Mysql MariaDB 환경설정 파일인 my.cnf 파일이 CentOS, Ubuntu, Rocky Linux OS 별로 어떤 경로에 위치하고 있는지 정리해보겠습니다.&#xA;Rocky Linux link우선, 록키 리눅스부터 살펴보겠습니다.&#xA;MySQL linkRocky Linux에서 MySQL은 my.cnf 파일이 /etc/ 바로 밑에 위치합니다.&#xA;/etc/my.cnf&#xD;MariaDB linkRocky Linux에서는 mariadb-server.cnf 파일입니다.&#xA;/etc/my.cnf.d/mariadb-server.cnf&#xD;MariaDB에서도 my.cnf 파일이 /etc/ 바로 밑에 위치하기는 하지만, 실제로 /etc/my.cnf 파일을 열어보면 다음과 같이 my.cnf.d 디렉토리에 있는 파일을 include만 하게 되어 있습니다.&#xA;즉, my.cnf 파일에 설정을 추가해도 되지만 가능하면 하위의 각각의 설정 파일에 추가하는 것이 좋습니다.</description>
     </item>
   </channel>

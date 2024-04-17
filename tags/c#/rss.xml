@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C# on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/c</link>
+    <link>https://staeho-3rd.github.io/tags/c</link>
     <description>Recent content in C# on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/c" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/c" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloud Functions Action을 .Net (C#)을 사용하여 윈도우 명령프롬프트(cmd)에서 만드는 방법 </title>
-      <link>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-cmd/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-cmd/</link>
       <pubDate>Tue, 09 Mar 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-cmd/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-cmd/</guid>
       <description>개요 link네이버 클라우드 Cloud Functions에서 Action을 만들 수 있는 언어로는 Node.js, Python, Java, Swift, PHP, .Net, Go Language 등이 있는데&#xA;다른 언어들은 네이버 클라우드 콘솔에서 직접 코드를 입력하면 되지만, Java는 로컬에서 작업 후 jar 파일로 .Net은 zip 파일로 압축해서 따로 등록해야 합니다.&#xA;여기서는 윈도우 명령프롬프트(cmd)에서 .Net 그 중에서도 C#으로 Action을 만들고 zip 파일로 압축 후에 콘솔에 등록하고 테스트 하는 과정까지 정리해보겠습니다.&#xA;.Net 설치 link네이버 클라우드 Cloud Functions는 .Net Standard 2.0 규격을 요구하는데, 이 규격을 지원하는 버전을 설치하려면 .</description>
     </item>
     <item>
       <title>Cloud Functions Action을 .Net (C#)을 사용하여 Visual Studio에서 만드는 방법 </title>
-      <link>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/cloud-functions/cf-create-using-dotnet-csharp-in-visual-studio/</guid>
       <description>개요 link네이버 클라우드 Cloud Functions에서 Action을 만들 수 있는 언어로는 Node.js, Python, Java, Swift, PHP, .Net, Go Language 등이 있는데 다른 언어들은 네이버 클라우드 콘솔에서 직접 코드를 입력하면 되지만, Java는 로컬에서 작업 후 jar 파일로 .Net은 zip 파일로 압축해서 따로 등록해야 합니다.&#xA;여기서는 Visual Studio에서 .Net 그 중에서도 C#으로 Action을 만들고 zip 파일로 압축 후에 콘솔에 등록하고 테스트 하는 과정까지 정리해보겠습니다.&#xA;.Net 설치 link네이버 클라우드 Cloud Functions는 .Net Standard 2.0 규격을 요구하는데, 이 규격을 지원하는 버전을 설치하려면 .</description>
     </item>
     <item>
       <title>C#으로 Ncloud API를 호출하는 샘플 예제</title>
-      <link>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-csharp-sample/</link>
+      <link>https://staeho-3rd.github.io/docs/api/ncloud-api-call-csharp-sample/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/api/ncloud-api-call-csharp-sample/</guid>
+      <guid>https://staeho-3rd.github.io/docs/api/ncloud-api-call-csharp-sample/</guid>
       <description>개요 link네이버 클라우드 인프라와 상품 및 솔루션 등의 활용을 도와주는 API를 C#으로 호출하는 샘플 예제중에서 핵심인 인증을 위한 암호화 문자열 생성 코드를 정리해보겠습니다.&#xA;암호화 샘플 코드 link&#xD;public string unixTimeStamp;&#xD;public string ncpAccessKey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;;&#xD;public string ncpSecretKey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;;&#x9;public string apiCallMethod = &amp;#34;GET&amp;#34;;&#xD;public string apiServer = &amp;#34;https://billingapi.apigw.ntruss.com&amp;#34;;&#xD;public string apiUrl = &amp;#34;네이버 클라우드 API URL&amp;#34;;&#xD;public string MakeSignature()&#xD;{&#xD;string msgSignature;&#xD;string space = &amp;#34; &amp;#34;;&#xD;string newLine = &amp;#34;\n&amp;#34;;&#xD;// 13자리 유닉스 타임스탬프 설정&#xD;DateTime now = DateTime.</description>
     </item>
   </channel>

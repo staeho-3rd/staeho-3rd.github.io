@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>S3 on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/s3/</link>
+    <link>https://staeho-3rd.github.io/tags/s3/</link>
     <description>Recent content in S3 on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 02 Aug 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/s3/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/s3/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Object Storage와 연동이 필수인 서비스</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/services-required-integrating-with-object-storage/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/services-required-integrating-with-object-storage/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/services-required-integrating-with-object-storage/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/services-required-integrating-with-object-storage/</guid>
       <description>개요 link네이버 클라우드의 수 많은 서비스들 중에는 Object Storage가 설정, 준비되어 있어야 하는 서비스들, 즉, Object Storage와 연동이 필수인 서비스들이 여럿 있습니다.&#xA;어떤 서비스들이 이에 해당하는지 정리해보겠습니다.&#xA;연동 필수 서비스 linkObject Storage와 연동이 필수인 서비스들에는 AI-Application Service와 Media 관련 서비스들이 많습니다.&#xA;CLOVA Speech CLOVA Dubbing VOD Transcoder VOD Station Video Player Image Optimizer SourceBuild Cloud Hadoop Data Analytics Service 연동 선택 서비스 linkObject Storage와 반드시 연동해야 하는 것은 아니지만, Object Storage를 이용하면 훨씬 편하고, 빠르고 안정적으로 서비스 가능한 경우도 있습니다.</description>
     </item>
     <item>
       <title>Object Storage Lifecycle Management 관리대상 설정 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/lifecycle-management-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/lifecycle-management-guide/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/lifecycle-management-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/lifecycle-management-guide/</guid>
       <description>개요 link네이버 클라우드 Object Storage에 저장된 Object 즉, 파일들의 Lifecycle(수명주기)를 설정할 때 관리대상이 되는 Object를 결정하는 규칙에 대해 정리해보겠습니다.&#xA;Lifecycle Management(수명주기) 정책설정 link수명주기 정책 설정은 크게 정책, 관리대상, 이동위치 3가지 항목으로 구성됩니다.&#xA;정책 link정책 유형은 다음의 3가지가 있습니다.&#xA;만료 삭제 : 설정된 기간이 지난 파일을 삭제 이관 : 설정된 기간이 지난 파일을 Archive Storage로 이동 이관 후 삭제 : 설정된 기간이 지난 파일을 Archive Storage로 이동한 후 Object Storage에서 삭제 그리고 이동 시점은 파일이 Object Storage에 저장-생성된 후 경과한 일자를 기준으로 하며 1일 ~ 3,650일 사이의 값을 입력합니다.</description>
     </item>
     <item>
       <title>AWS CLI 버전 2를 이용한 Object Storage 접속 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/how-to-access-using-aws-cli/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/how-to-access-using-aws-cli/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/how-to-access-using-aws-cli/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/how-to-access-using-aws-cli/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Object Storage는 AWS의 스토리지 서비스 S3와 호환이 되도록 설계되어 있습니다.&#xA;그래서 Object Storage에 접속, 관리할 때 AWS의 CLI(Command Line Interface)를 사용할 수 있는데 그 중에서 AWS CLI 버전 2의 설치와 사용방법에 대해 정리해보겠습니다.&#xA;AWS CLI 버전 2 설치 link&#xD;info&#xD;AWS CLI 버전 1에서는 설치와 실행에 Python과 PIP를 이용하는 방법이 주로 사용되었지만, AWS CLI 버전 2에서는 Python 임베디드 버전이 포함되어 있어 별도로 설치할 필요가 없기에 설치 파일도 ZIP 압축 파일 형태로 제공됩니다.</description>
     </item>
     <item>
       <title>Object Storage 데이터를 Archive Storage로 자동으로 이동시키는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/data-auto-transfer-to-archive-storage/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Object Storage는 일반 디스크인 Block Storage나 NAS에 비해 가격도 1/2 ~ 1/4정도이면서도 안정적이기 때문에 데이터 저장 특히 백업 용도로 많이 사용합니다.&#xA;그럼에도 불구하고 많이 양의 데이터가 저장되면 비용에 대한 부담이 생길 수 밖에 없는데, 이럴 때 Archive Storage를 이용하면 Object Storage의 1/5정도로 비용이 줄어들기에 매우 효과적입니다.&#xA;그래서 이번에는 Object Storage에 있는 데이터를 Archive Storage로 이동시키는 즉, 이관하는 방법에 대해 정리해보겠습니다.&#xA;스토리지 가격 비교 link위 개요에서도 간단하게 설명했지만, Archive Storage는 Object Storage에 비해 비용이 1/5 정도입니다.</description>
     </item>
     <item>
       <title>Object Storage 버킷 접근 로그 확인하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/bucket-access-log-management-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/bucket-access-log-management-guide/</link>
       <pubDate>Wed, 02 Aug 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/bucket-access-log-management-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/bucket-access-log-management-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Object Storage에 존재하는 오브젝트, 즉 파일을 호출, 접근한 기록이나 오브젝트를 업로드한 로그를 확인하는 방법을 정리해보겠습니다.&#xA;버킷 생성 link우선, 테스트에 사용할 버킷과 로그를 저장할 버킷을 생성하고, 테스트용 버킷에는 파일 몇개를 업로드 해두었습니다.&#xA;object-bucket-test: 테스트용 버킷 object-bucket-test-log: 로그를 저장할 버킷 로그 설정 link로그를 설정하는 방법은 버킷을 선택하고, 옆에 있는 [ ] 아이콘을 클릭하면 나타나는 메뉴에서 [로그 관리]를 선택합니다.&#xA;로그 관리 설정 link[로그 관리] 설정 팝업에서 로그를 저장할 버킷을 선택하고, 로그 파일의 Prefix를 입력한 후 [+ 추가] 버튼을 클릭합니다.</description>
     </item>
     <item>
       <title>Object Storage Bucket에 CORS 설정하기</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket/</link>
       <pubDate>Thu, 23 Feb 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket/</guid>
       <description>개요 linkObject Storage를 이용해 서비스 개발을 하다 보면 CORS 와 관련된 오류와 종종 마주치게 되는데, 테스트 버킷과 사이트를 생성해서 해결 방법을 알아보겠습니다. 그리고, Ncloud(네이버 클라우드) Object Storage의 CORS 설정은 콘솔이 아닌, CLI와 외부 Client Tool 등을 사용해야 하는데 각각의 방법을 차례로 소개합니다.&#xA;info&#xD;CORS(Cross-Origin Resource Sharing)는 웹 애플리케션이 서비스되는 도메인에서 다른 도메인에 있는 리소스를 접근해야 할 때 리소스에 대한 접근 허용, 제한 등에 대한 방법을 정의합니다.&#xA;테스트 방법 link Object Storage에 cors-test 라는 이름의 버킷 생성 http://cors-test.</description>
     </item>
     <item>
       <title>Object Storage에서 CORS를 SDK for S3 API로 설정하기</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/cors/setting-cors-on-bucket-using-api-sdk/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Object Storage Bucket CORS를 AWS S3에서 제공하는 [SDK for S3 API]로 설정하는 방법을 소개합니다. 여기서 소개할 SDK는 [Python용 SDK for S3 API]와 [PHP용 SDK for S3 API] 두가지입니다.&#xA;CORS 설정 기본 방법 linkObject Storage Bucket에 CORS를 설정하는 기본 방법인 CLI와 외부 Client Tool에 대한 것은 아래 문서에서 확인 가능합니다.&#xA;⁃ Object Storage Bucket에 CORS 설정하기 - CLI &amp;amp; Client Tool&#xD;Python용 SDK for S3 API linkSDK 설치 linkPython용 SDK를 설치하는 방법은 기본 설치방법과 특정 버전을 설치하는 방법이 있습니다.</description>
     </item>
     <item>
       <title>Object Storage에서 Content-Type 설정 문제로 html, 이미지 파일이 다운로드되는 문제 해결 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/content-type/mimetype-contenttype-setting-error-troubleshotting/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/content-type/mimetype-contenttype-setting-error-troubleshotting/</link>
       <pubDate>Tue, 31 Jan 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/content-type/mimetype-contenttype-setting-error-troubleshotting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/content-type/mimetype-contenttype-setting-error-troubleshotting/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Object Storage에 html 파일이나 이미지 파일을 올려두고 사용하는 경우가 많습니다.&#xA;그런데 간혹, 웹브라우저나 앱에서 해당 파일을 호출 했을 때 html 페이지나 이미지 파일이 화면에 표시되지 않고 다운로드 되는 현상이 발생하기도 합니다.&#xA;이것은 Object Storage에 파일이 등록될 때 파일의 속성을 나타내는 메타 데이터 중에서 파일의 종류를 구분하기 위한 MIME Type에 대한 정보를 담고 있는 Content-Type 항목이 제대로 설정되지 않아서 발생하는 문제입니다. 아래에서 이에 대한 내용을 자세히 정리해보겠습니다.&#xA;메타 데이터 link메타 데이터는 파일의 속성이나 정보를 나타내는 값으로 Ncloud Object Storage에서는 파일 수정 날짜, 파일 크기 등의 기본으로 설정되는 시스템 메타 데이터와 사용자가 임의로 정의하는 유저 메타 데이터로 구분할 수 있으며 아래와 같이 Console 화면에서 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>Object Storage 파일의 Content-Type 일괄 적용, 변경하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/content-type/contenttype-bulk-change-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/content-type/contenttype-bulk-change-guide/</link>
       <pubDate>Fri, 03 Feb 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/content-type/contenttype-bulk-change-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/content-type/contenttype-bulk-change-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드) Object Storage에서 업로드하는 파일의 Content-Type을 업로드 시에 일괄 적용하거나, 이미 업로드된 다수의 파일의 Content-Type을 일괄 변경하는 방법을 정리해보겠습니다.&#xA;테스트 순서 link일괄 적용, 변경 테스트는 다음과 같은 순서로 진행보겠습니다.&#xA;다수의 txt 파일을 업로드 하면서 [Content-Type]을 [application/octet-stream]으로 일괄 설정 업로드된 파일의 [Content-Type]이 [application/octet-stream]인지 확인 AWS CLI를 이용해서 파일들의 [Content-Type]을 [text/plain]으로 일괄 변경 파일의 [Content-Type]이 [text/plain]으로 변경되었는지 확인 CloudBerry Explorer를 이용해 파일들의 [Content-Type]을 [application/octet-stream]으로 일괄 변경 파일의 [Content-Type]이 [application/octet-stream]으로 변경되었는지 확인 업로드 시에 일괄 적용 link[Console] - [Object Storage] - [Bucket Management]에서 버킷을 선택하고 [파일 올리기] 버튼을 클릭합니다.</description>
     </item>
     <item>
       <title>Object Storage 접속용 Windows Client Tool | CloudBerry Explorer</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/object-storage/client-tool/s3-client-tool-cloudberry-explorer/</guid>
       <description>개요 link네이버 클라우드의 Object Storage에 접속, 관리하는 방법은 aws cli 등 여러가지 있지만 Windows PC에서 간편하게 접속해서 관리할 수 있는 클라이언트 툴이 몇개 있습니다.&#xA;그 중에서 가장 많이 사용되는 것이 바로 CloudBerry Explorer 인데, 사용법에 대해 간단히 정리해보겠습니다.&#xA;CloudBerry Explorer linkCloudBerry Explorer의 정식 명칭은 CloudBerry Explorer Freeware for Amazon S3입니다.&#xA;이 버전은 무료버전이며 더 많은 기능이 포함된 유료 버전도 있습니다. 그리고 Amazon S3 뿐만 아니라 Microsoft Azur, Google Cloud 등을 위한 버전도 따로 있습니다.</description>
     </item>
   </channel>

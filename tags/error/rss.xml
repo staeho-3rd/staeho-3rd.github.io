@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Error on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/error/</link>
+    <link>https://staeho-3rd.github.io/tags/error/</link>
     <description>Recent content in Error on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 28 Dec 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/error/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/error/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud KVM Hypervisor 타입의 Rocky Linux 서버 Repository 미러 사이트 오류 문제 해결 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</link>
       <pubDate>Thu, 28 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/kvm-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 KVM Hypervisor 타입의 록키 리눅스(Rocky Linux) 8.8 서버를 제공하고 있는데, 서버를 생성하고 나서 Apache, PHP 등의 패키지를 설치할 때 패키지 다운로드 사이트 또는 미러 사이트에서 8.8 버전에 대한 패키지 정보를 찾을 수 없다는 메시지가 나타나면서 패키지를 설치할 수 없는 경우가 있습니다.&#xA;XEN Hypervisor 타입의 서버에서는 문제가 없는데 왜 KVM Hypervisor 타입 서버에서만 이런 문제가 생기는지와 어떻게 하면 해결할 수 있는지를 정리해보겠습니다.&#xA;오류 상황 link콘솔에서 서버를 생성한 후에 아무 것도 하지 않고 테스트로 Apache를 설치해보려고 했는데, 오류 메시지가 나타나면서 설치를 할 수 없었습니다.</description>
     </item>
     <item>
       <title>Ncloud XEN Hypervisor 타입의 Rocky Linux 8.6 서버 Repository 미러 사이트 오류 문제 해결 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/compute/rocky-linux/xen-hypervisor-repository-mirror-site-error-troubleshooting/</guid>
       <description>개요 linkNcloud (네이버 클라우드)에서 XEN Hypervisor 타입의 록키 리눅스(Rocky Linux) 8.6 서버를 제공하고 있는데, 패키지를 설치할 때 간혹 패키지 다운로드 사이트 또는 미러 사이트에서 8.6 버전에 대한 패키지 정보를 찾을 수 없다는 메시지가 나타나면서 패키지를 설치할 수 없는 경우가 있습니다.&#xA;그렇다면 왜 이런 문제가 생기는지와 어떻게 하면 해결할 수 있는지를 정리해보겠습니다.&#xA;오류 상황 link테스트로 아파치를 설치해보려고 했는데, 오류 메시지가 나타나면서 설치를 할 수 없었습니다. 또한 리포지토리 미러 사이트도 Ncloud 내부 서버가 아닌 록키 리눅스 공식 미러 사이트로 연결하려고 시도한 것을 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>MySQL 복구 시 ERROR 1227 (42000) 문제 원인과 해결방법</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/db-restore-error-1227-troubleshotting/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Cloud DB for MySQL을 사용하면서 백업 데이터를 복구 하려고 할 때 ERROR 1227 (42000) 오류가 발생하는 경우가 있습니다. 오류 메시지로만 보면 계정 권한에 문제가 있는 것처럼 보이는데 정확하게 문제 원인이 무엇인지, 그리고 해결방법은 어떤 것이 있는지 정리해보겠습니다.&#xA;오류 메시지 link전체 오류 메시지는 아래와 같습니다.&#xA;이 오류 메시지의 원인은 크게 2가지로 구분할 수 있는데, 상황에 따라 각각의 원인 1가지에 해당하는 경우도 있고, 2가지 원인이 모두 해당되는 경우도 있습니다.</description>
     </item>
   </channel>

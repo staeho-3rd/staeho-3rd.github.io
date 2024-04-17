@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Install on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/install/</link>
+    <link>https://staeho-3rd.github.io/tags/install/</link>
     <description>Recent content in Install on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/install/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/install/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rocky Linux에서 NginX 설치, 설정하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-rocky-linux/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-rocky-linux/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-rocky-linux/</guid>
-      <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Rocky Linux 8.6 ⁃ NginX: NginX 1.23.1 ⁃ 테스트 사이트: nginx-test.com&#xD;서버 준비 linkNcloud 콘솔에서 Rocky Linux 8.6 서버를 아래와 같이 준비했습니다.&#xA;패키지 업데이트 link우선 패키지 관련한 보안-버그 수정 사항만 최소한으로 업데이트를 해보겠습니다.&#xA;~# dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
+      <guid>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-rocky-linux/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) Rocky Linux (록키 리눅스) 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Rocky Linux 8.6 ⁃ NginX: NginX 1.23.1 ⁃ 테스트 사이트: nginx-test.com&#xD;서버 준비 linkNcloud 콘솔에서 Rocky Linux 8.6 서버를 아래와 같이 준비했습니다.&#xA;패키지 업데이트 link우선 패키지 관련한 보안-버그 수정 사항만 최소한으로 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
     <item>
       <title>Ubuntu에서 NginX 설치, 설정하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-ubuntu/</link>
       <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-ubuntu/</guid>
-      <description>개요 linkNcloud (네이버 클라우드) Ubuntu 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Ubuntu 20.04 ⁃ NginX: NginX 1.21.6&#xD;NginX Signing Key 설정 linkNginX Package 설치에 필요한 Signing Key를 설정합니다.&#xA;gnupg2 등 설치 link&#xD;~# sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring&#xD;NginX Signing Key 가져오기 link&#xD;~# curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \&#xD;| sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg &amp;gt;/dev/null&#xD;NginX Signing Key 검증 link위에서 가져온 Signing Key를 아래 명령어로 검증합니다.</description>
+      <guid>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-ubuntu/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) Ubuntu 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: Ubuntu 20.04 ⁃ NginX: NginX 1.21.6&#xD;NginX Signing Key 설정 linkNginX Package 설치에 필요한 Signing Key를 설정합니다.&#xA;gnupg2 등 설치 link&#xD;sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring&#xD;NginX Signing Key 가져오기 link&#xD;curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \&#xD;| sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg &amp;gt;/dev/null&#xD;NginX Signing Key 검증 link위에서 가져온 Signing Key를 아래 명령어로 검증합니다.</description>
     </item>
     <item>
       <title>CentOS에서 NginX 설치, 설정하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-centos/</link>
+      <link>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-centos/</link>
       <pubDate>Mon, 25 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/compute/nginx/install-setting-guide-centos/</guid>
-      <description>개요 linkNcloud (네이버 클라우드) CentOS 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: CentOS 7.8 ⁃ NginX: NginX 1.21.5&#xD;yum 유틸리티 설치 linkyum으로 NginX를 설치하기 전에 yum-utils를 먼저 설치합니다. 이미 설치 되어 있을 경우에는 아래와 같이 설치되어 있다는 메시지가 출력됩니다.&#xA;~# yum install yum-utils&#xD;Repository 설정 linkNginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내용을 입력합니다.</description>
+      <guid>https://staeho-3rd.github.io/docs/compute/nginx/install-setting-guide-centos/</guid>
+      <description>개요 linkNcloud (네이버 클라우드) CentOS 서버에 NginX 최신 버전을 Package로 설치하고 기본 설정을 하는 방법에 대한 내용을 정리해보겠습니다.&#xA;서버 환경 link&#xD;⁃ OS: CentOS 7.8 ⁃ NginX: NginX 1.21.5&#xD;yum 유틸리티 설치 linkyum으로 NginX를 설치하기 전에 yum-utils를 먼저 설치합니다. 이미 설치 되어 있을 경우에는 아래와 같이 설치되어 있다는 메시지가 출력됩니다.&#xA;yum install yum-utils&#xD;Repository 설정 linkNginX package를 다운 받아 설치하기 위해서는 Repository를 설정해야 합니다. Repository 디렉토리에 nginx.repo 파일을 만들고 아래와 같은 내용을 입력합니다.</description>
     </item>
     <item>
       <title>MySQL 5.7 설치하는 방법 | Rocky Linux</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</link>
       <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-57-install-on-rocky-linux/</guid>
       <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 5.7 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
     <item>
       <title>MySQL 8.0 최신 버전 설치하는 방법 | Rocky Linux</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</link>
       <pubDate>Mon, 04 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/</guid>
       <description>개요 link록키 리눅스(Rocky Linux)는 기본 데이터베이스가 MariaDB인데, 상황에 따라 MySQL이 필요한 경우가 있습니다. 이번에는 그 중에서 MySQL 8.0 최신 버전을 설치하는 방법을 정리해보겠습니다.&#xA;서버 준비 link우선 Rocky Linux 서버를 준비합니다.&#xA;Rocky Linux 소개 link록키 리눅스에 대한 간략한 소개는 아래 문서에서 확인할 수 있습니다.&#xA;⁃ Ncloud에서 제공하는 록키 리눅스(Rocky Linux) 서버 소개&#xD;패키지 업데이트 link우선 패키지 업데이트를 해보겠습니다.&#xA;dnf -y upgrade-minimal&#xD;info&#xD;dnf: Dandified YUM의 약자인 dnf는 기존의 yum 패키지 관리자가 갖고 있던 여러 단점들을 수정, 업그레이드해서 Fedora 18 이후 버전에서 사용되고 있으며, Rocky Linux도 마찬가지로 dnf를 기본 패키지 관리자로 사용하고 있습니다.</description>
     </item>
     <item>
       <title>MySQL 데이터 저장 디렉토리(datadir) 위치를 변경해서 설치하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</link>
       <pubDate>Thu, 21 Dec 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/mysql-mariadb/install/mysql-datadir-change-install-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드) 서버에 MySQL을 설치할 때 MySQL 데이터 저장 디렉토리(datadir) 위치를 변경해서 설치하는 방법을 정리해보겠습니다.&#xA;테스트 환경 link 서버: Rocky Linux 8.8 DB: MySQL 8.0 MySQL 설치 link아래와 같은 순서대로 MySQL 8.0 최신 버전을 설치합니다.&#xA;dnf -y upgrade-minimal&#xD;dnf -y install https://dev.mysql.com/get/mysql80-community-release-el8-9.noarch.rpm&#xD;dnf module reset mysql&#xD;dnf module disable mysql&#xD;dnf -y install mysql-community-server&#xD;데이터 저장 디렉토리 생성 linkDB 데이터를 저장할 임의의 디렉토리를 생성합니다. /database/mysql 과 같이 생성하고 실제 저장되는 디렉토리는 mysql로 하겠습니다.</description>
     </item>
     <item>
       <title>VPC환경에서 Cloud DB for MySQL 생성하기</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/cdb-create-basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/cdb-create-basic-guide/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/cdb-create-basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/cdb-create-basic-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드)의 Cloud DB for MySQL 서비스는 MySQL 데이터베이스를 쉽고 간편하게 구축하고 관리할 수 있고 자동 Fail-Over, 자동백업, 네이버 서비스에서 검증된 최적화된 설정 등을 제공해주는 완전 관리형 클라우드 데이터베이스 서비스입니다.&#xA;여기서는 VPC환경에서 Cloud DB for MySQL 서비스를 생성하는 과정을 정리해보겠습니다.&#xA;특징 link 기본 10GB 데이터 스토리지를 제공하며, 10GB 단위로 6,000GB까지 자동으로 용량이 증가합니다. 하나의 마스터 DB마다 최대 10대의 슬레이브 DB를 생성할 수 있습니다. Load Balancer 상품을 통해 슬레이브 DB 서버들을 읽기 전용 복제본으로 사용함으로써 데이터베이스의 읽기 부하를 분산 시킬 수 있습니다.</description>
     </item>
     <item>
       <title>Cloud DB for MySQL 생성후 Public 도메인으로 접속하기</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</link>
       <pubDate>Mon, 13 Dec 2021 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mysql/cdb-access-public-domain-guide/</guid>
       <description>개요 link네이버 클라우드의 Cloud DB for MySQL 서비스는 MySQL 데이터베이스를 쉽고 간편하게 구축하고 관리할 수 있고 자동 Fail-Over, 자동백업, 네이버 서비스에서 검증된 최적화된 설정 등을 제공해주는 완전 관리형 클라우드 데이터베이스 서비스입니다.&#xA;여기서는 VPC환경에서 Cloud DB for MySQL 서비스를 생성하고, Public 도메인으로 접속하는 과정을 정리해보겠습니다.&#xA;네이버 클라우드는 Classic환경에서는 DB 서버 이미지를 제공하지만, VPC 환경에서는 제공하지 않습니다. 그러므로 VPC 환경에서 DB서버를 사용하려면 OS에 사용자가 직접 DB를 설치해서 사용하는 방법과 Cloud DB를 사용하는 방법 중에서 선택해야 합니다.</description>
     </item>
     <item>
       <title>VPC환경에서 Cloud DB for MSSQL 생성하기</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mssql/cdb-create-basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mssql/cdb-create-basic-guide/</link>
       <pubDate>Fri, 26 May 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mssql/cdb-create-basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mssql/cdb-create-basic-guide/</guid>
       <description>개요 linkNcloud (네이버 클라우드) Cloud DB for MSSQL의 메뉴와 주요 기능에 대한 간략한 소개를 정리해보겠습니다.&#xA;테스트 환경 link VPC와 Private Subnet Cloud DB for MSSQL 15.0.4.198.2 Standard Edition (MSSQL 2019) Cloud DB for MSSQL 서비스 위치 link[Cloud DB for MSSQL]은 [콘솔] - [Services] - [Database]에서 찾을 수 있습니다.&#xA;그리고 Cloud DB for MSSQL에는 다음과 같은 메뉴들이 있는데, 자세한 내용은 아래쪽에서 메뉴별로 하나씩 소개해보겠습니다.&#xA;DB Server Monitoring Backup Event Config Group DB Server 메뉴 linkDB Server 메뉴에서는 MSSQL Server를 생성, 삭제하거나 운영 중인 MSSQL Server 목록을 확인할 수 있습니다.</description>
     </item>
     <item>
       <title>Cloud DB for MSSQL 생성후 Public 도메인으로 접속하기</title>
-      <link>https://docs.3rdeyesys.com/docs/database/cloud-db-mssql/cdb-access-public-domain-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/database/cloud-db-mssql/cdb-access-public-domain-guide/</link>
       <pubDate>Tue, 30 May 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/database/cloud-db-mssql/cdb-access-public-domain-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/database/cloud-db-mssql/cdb-access-public-domain-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드) VPC 환경에서 관리형 MSSQL DB 서버인 Cloud DB for MSSQL 생성 Public 도메인으로 접속하는 방법에 대하여 정리해보겠습니다.&#xA;테스트 환경 link VPC와 Public Subnet Cloud DB for MSSQL 15.0.4.198.2 Standard Edition (MSSQL 2019) Cloud DB for MSSQL 서비스 위치 link[콘솔] - [Services] - [Database]에서 [Cloud DB for MSSQL]을 찾을 수 있습니다.&#xA;Cloud DB for MSSQL 서버 생성 link[Cloud DB for MSSQL] - [DB Server]에서 [DB server 생성] 버튼을 클릭합니다.</description>
     </item>
   </channel>

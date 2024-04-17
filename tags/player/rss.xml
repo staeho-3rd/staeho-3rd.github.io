@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Player on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/player/</link>
+    <link>https://staeho-3rd.github.io/tags/player/</link>
     <description>Recent content in Player on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/player/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/player/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncloud Video Player Enhancement 사용 가이드</title>
-      <link>https://docs.3rdeyesys.com/docs/media/video-player-enhancement/basic-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/media/video-player-enhancement/basic-guide/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/media/video-player-enhancement/basic-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/media/video-player-enhancement/basic-guide/</guid>
       <description>개요 linkNcloud(네이버 클라우드) [Video Player Enhancement]는 웹/앱에서 비디오 또는 오디오와 같은 미디어 재생을 위한 서비스로, Live Station, VOD Station과 연동을 통해, 다양한 디바이스 환경에서 시청자에게 최고 품질의 경험을 제공합니다.&#xA;특징 linkVideo Player Enhancement 서비스의 특징은 다음과 같습니다.&#xA;Live Station &amp;amp; VOD Station과 손쉽게 연동 가능 HTML5 표준 : HTML5 표준에 맞게 제작된 SaaS 기반의 서비스로 별도의 APP 설치 없이 모든 디바이스 및 OS Browser에서 재생 가능 사용자가 직접 커스터마이징 : Console 에서 UI &amp;amp; UX 패널 제공하여 고객이 직접 커스터마이징을 할 수 있음 (유료 버전) 개발 시간 단축 : 스크립트 코드 예제를 통해 플레이어를 웹페이지 내 손쉽게 임베디드가 가능하며 완성된 코드 제공을 통해 개발 시간을 단축 시킬 수 있음 제공 기능 linkVOD Station이 제공하는 기능은 다음과 같은 것들이 있습니다.</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Token on 써드아이시스템 기술문서</title>
-    <link>https://docs.3rdeyesys.com/tags/token/</link>
+    <link>https://staeho-3rd.github.io/tags/token/</link>
     <description>Recent content in Token on 써드아이시스템 기술문서</description>
     <generator>Hugo 0.124.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://docs.3rdeyesys.com/tags/token/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://staeho-3rd.github.io/tags/token/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP로 Archive Storage API 인증 토큰 생성하는 방법</title>
-      <link>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</link>
+      <link>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</link>
       <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/storage/archive-storage/api-access-token-create/</guid>
+      <guid>https://staeho-3rd.github.io/docs/storage/archive-storage/api-access-token-create/</guid>
       <description>개요 link네이버 클라우드(Ncloud) Archive Storage API를 이용하려고 할 때 먼저 인증 토큰을 생성하고 생성된 토큰을 이용해서 API로 Archive Storage에 접근해야 합니다. 여기서는 PHP로 API 인증 토큰을 생성하는 방법에 대해 우선 전체 소스코드를 살펴보고 다음으로 주요 코드를 상세하게 살펴보겠습니다.&#xA;API 정보 link OpenStack Swift API : 2.15.1 (Pike) OpenStack Keystone V3 API : v3.8 인증 토큰 생성 코드 link&#xD;&amp;lt;?php&#xD;// 전송해야 할 설정값&#xD;$ncloud_accesskey = &amp;#34;네이버 클라우드 AccessKey&amp;#34;;&#xD;$ncloud_secretkey = &amp;#34;네이버 클라우드 SecretKey&amp;#34;;&#xD;$ncloud_domain_id = &amp;#34;Archive Storage 도메인 ID&amp;#34;;&#xD;$ncloud_project_id = &amp;#34;Archive Storage 프로젝트 ID&amp;#34;;&#xD;$api_server = &amp;#34;https://kr.</description>
     </item>
     <item>
       <title>Ncloud STS 기간 제한 임시 API AccessKey 발급하기</title>
-      <link>https://docs.3rdeyesys.com/docs/management/sub-account/sts-temporary-accesskey-create-guide/</link>
+      <link>https://staeho-3rd.github.io/docs/management/sub-account/sts-temporary-accesskey-create-guide/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://docs.3rdeyesys.com/docs/management/sub-account/sts-temporary-accesskey-create-guide/</guid>
+      <guid>https://staeho-3rd.github.io/docs/management/sub-account/sts-temporary-accesskey-create-guide/</guid>
       <description>개요 link클라우드 환경에서 서비스를 하다 보면 회사 내부의 다른 팀이나 외부 고객사에 서버나 오브젝트 스토리지 등 특정 서비스에 접근할 수 있는 API를 제공해야 하는 하는 경우가 생길 수 있습니다.&#xA;그런데 Ncloud(네이버 클라우드)에서 제공되는 기본 API Access Key는 기간 제한이 없는 Access Key이기 때문에 외부에 제공하게 되면 보안측면에서 위험한 상황이 생길 수 있습니다. 이때 STS를 이용하면 Access Key를 제한된 기간 동안 일회성으로 제공하거나 유효 기간이 매우 짧은 Access Key를 반복적으로 제공하게 되면 훨씬 안전한 서비스를 유지할 수 있습니다.</description>
     </item>
   </channel>
